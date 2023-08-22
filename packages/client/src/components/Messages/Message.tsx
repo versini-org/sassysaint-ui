@@ -4,6 +4,7 @@ import { ROLE_ASSISTANT, ROLE_USER } from "../../common/constants";
 import { IconCopied } from "../Icons/IconCopied";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export type MessageProps = {
 	children: string;
@@ -12,7 +13,7 @@ export type MessageProps = {
 
 const renderContent = (content: string, type: string) => {
 	return type === ROLE_ASSISTANT ? (
-		<ReactMarkdown children={content} />
+		<ReactMarkdown remarkPlugins={[remarkGfm]} children={content} />
 	) : (
 		<div className="relative flex flex-col gap-1 md:gap-3 ">
 			<div className="flex flex-grow flex-col gap-3">

@@ -2,30 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.bubble li > p {
-	@apply inline-block;
-}
-
-.bubble ol ul {
-	@apply indent-5;
-}
-
-.bubble p {
-	@apply pt-3;
-}
-
-.bubble > p:first-child {
-	@apply pt-0;
-}
-
-.bubble ol {
-	@apply list-decimal indent-2 list-inside;
-}
-
-.bubble ul {
-	@apply list-disc indent-2 list-inside;
-}
-
-code {
-	@apply px-1 font-bold;
+.bubble-assistant {
+	@apply prose prose-p:-m-0.5 prose-indigo prose-ul:prose-li:marker:text-black;
 }
