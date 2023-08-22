@@ -23,7 +23,7 @@ export default defineConfig({
 				? JSON.stringify(buildTime)
 				: JSON.stringify("dev mode"),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),
-		"import.meta.env.OPENAI_MODEL": "gpt-3.5-turbo",
+		"import.meta.env.OPENAI_MODEL": JSON.stringify("gpt-3.5-turbo"),
 	},
 	plugins: [],
 });
