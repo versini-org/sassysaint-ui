@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"ts-node": {
+		"swc": true
+	},
+	"compilerOptions": {
+		/** Allow JavaScript files to be imported inside your project,
+		 * instead of just .ts and .tsx files.
+		 */
+		"allowJs": true,
+		/**
+		 * Allow default imports from modules with no default export.
+		 */
+		"allowSyntheticDefaultImports": true,
+		/**
+		 * Generate .d.ts files for every TypeScript or JavaScript file
+		 * inside your project.
+		 */
+		"declaration": true,
+		/**
+		 * Only output d.ts files and not JavaScript files.
+		 */
+		"emitDeclarationOnly": true,
+		/**
+		 * Emit additional JavaScript to ease support for importing
+		 * CommonJS modules.
+		 */
+		"esModuleInterop": false,
+		/**
+		 * Ensure that each file can be safely transpiled without
+		 * relying on other imports.
+		 */
+		"isolatedModules": true,
+		/**
+		 * Specify a set of bundled library declaration files that
+		 * describe the target runtime environment.
+		 */
+		"lib": ["ESNext"],
+		/**
+		 * Specify what module code is generated.
+		 */
+		"module": "ESNext",
+		/**
+		 * Specify the module resolution strategy:
+		 * - 'node' for Node.js’ CommonJS implementation
+		 * - 'node16' or 'nodenext' for Node.js’ ECMAScript Module Support
+		 *   from TypeScript 4.7 onwards
+		 */
+		"moduleResolution": "nodenext",
+		/**
+		 * Enable importing .json files
+		 */
+		"resolveJsonModule": true,
+		/**
+		 * Skip type checking of all declaration files (*.d.ts).
+		 */
+		"skipLibCheck": true,
+		/**
+		 * Enable all strict type checking options.
+		 */
+		"strict": false,
+		/**
+		 * Set the JavaScript language version for emitted JavaScript
+		 * and include compatible library declarations.
+		 */
+		"target": "ESNext"
+	}
+}
