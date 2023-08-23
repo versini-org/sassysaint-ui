@@ -4,7 +4,9 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+
+const ERROR_MESSAGE = "I'm having trouble right now. Please try again later.";
 
 export type onPromptInputSubmitProps = {
 	role: string;
@@ -13,16 +15,26 @@ export type onPromptInputSubmitProps = {
 export type PromptInputProps = {
 	onUserSubmit: (props: onPromptInputSubmitProps) => void;
 	onAiResponse: (props: onPromptInputSubmitProps) => void;
+	inputRef: React.RefObject<HTMLTextAreaElement>;
 };
 
-const ERROR_MESSAGE = "I'm having trouble right now. Please try again later.";
-
-export const PromptInput = React.forwardRef<
-	HTMLTextAreaElement,
-	PromptInputProps
->(({ onUserSubmit, onAiResponse }: PromptInputProps, ref) => {
+export const PromptInput = ({
+	onUserSubmit,
+	onAiResponse,
+	inputRef,
+}: PromptInputProps) => {
 	const [userInput, setUserInput] = useState("");
 	const [messages, setMessages] = useState<onPromptInputSubmitProps[]>([]);
+
+	/**
+	 * Save the user input to the messages state
+	 * in order to keep track of the whole conversation.
+	 * This is needed so that the gpt engine can
+	 * generate a response based on context.
+	 */
+	const saveConversation = (role: string, content: string) => {
+		setMessages((prev) => [...prev, { role, content }]);
+	};
 
 	useEffect(() => {
 		(async () => {
@@ -52,10 +64,7 @@ export const PromptInput = React.forwardRef<
 					role: ROLE_ASSISTANT,
 					content: data.result,
 				});
-				setMessages((prev) => [
-					...prev,
-					{ role: ROLE_ASSISTANT, content: data.result },
-				]);
+				saveConversation(ROLE_ASSISTANT, data.result);
 			} catch (error) {
 				// eslint-disable-next-line no-console
 				console.error(error);
@@ -63,10 +72,7 @@ export const PromptInput = React.forwardRef<
 					role: ROLE_ASSISTANT,
 					content: ERROR_MESSAGE,
 				});
-				setMessages((prev) => [
-					...prev,
-					{ role: ROLE_INTERNAL, content: ERROR_MESSAGE },
-				]);
+				saveConversation(ROLE_INTERNAL, ERROR_MESSAGE);
 			}
 		})();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,20 +80,28 @@ export const PromptInput = React.forwardRef<
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-
-		// save the user input to the messages state
-		setMessages((prev) => [...prev, { role: ROLE_USER, content: userInput }]);
-		// update the UI with the user input
+		saveConversation(ROLE_USER, userInput);
+		// Tell the caller the user has submitted a message
 		onUserSubmit({
 			role: ROLE_USER,
 			content: userInput,
 		});
+		// Clear the input field
+		setUserInput("");
 	};
 
-	const onInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
-		e.currentTarget.style.height = "auto";
-		e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
-	};
+	/**
+	 * This effect is used to resize the textarea based
+	 * on the content, so that the user can see all the
+	 * content they have typed.
+	 */
+	useLayoutEffect(() => {
+		if (inputRef && inputRef.current) {
+			inputRef.current.style.height = "inherit";
+			inputRef.current.style.height = inputRef.current.scrollHeight + "px";
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [userInput]);
 
 	return (
 		<>
@@ -98,9 +112,9 @@ export const PromptInput = React.forwardRef<
 
 				<div className="relative">
 					<textarea
-						ref={ref}
+						ref={inputRef}
 						id="chat-input"
-						onInput={onInput}
+						// onInput={onInput}
 						className="block w-full resize-none rounded-md border-none p-4 pr-24 text-base caret-slate-100 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 bg-slate-900 text-slate-200 placeholder-slate-400 sm:text-base"
 						rows={1}
 						placeholder="Enter your question"
@@ -119,4 +133,4 @@ export const PromptInput = React.forwardRef<
 			</form>
 		</>
 	);
-});
+};
