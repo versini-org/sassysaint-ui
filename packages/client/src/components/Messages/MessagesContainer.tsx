@@ -31,17 +31,14 @@ export const MessagesContainer = ({
 	messages = [],
 	inputRef,
 }: MessagesContainerProps) => {
-	useEffect(() => {
-		if (inputRef.current) {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			inputRef.current.scrollIntoView({ behavior: "smooth" });
-			inputRef.current.focus();
-			inputRef.current.value = "";
-			inputRef.current.style.height = "auto";
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [messages]);
+	// useEffect(() => {
+	// 	if (inputRef.current) {
+	// 		inputRef.current.scrollIntoView({ behavior: "smooth" });
+	// 		inputRef.current.focus();
+	// 		inputRef.current.value = "";
+	// 	}
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [messages]);
 
 	return (
 		<div className="flex-1 space-y-6 overflow-y-auto rounded-md p-4 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7">

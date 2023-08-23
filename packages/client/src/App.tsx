@@ -6,7 +6,7 @@ import { MessagesContainer } from "./components/Messages/MessagesContainer";
 import { PromptInput } from "./components/PromptInput/PromptInput";
 
 function App() {
-	const inputRef = useRef<HTMLTextAreaElement>(null);
+	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const [messages, setMessages] = useState([
 		{
 			role: "",
@@ -19,7 +19,7 @@ function App() {
 				<MessagesContainer inputRef={inputRef} messages={messages} />
 
 				<PromptInput
-					ref={inputRef}
+					inputRef={inputRef}
 					onUserSubmit={({ role, content }) => {
 						setMessages((prev) => [...prev, { role, content }]);
 					}}
