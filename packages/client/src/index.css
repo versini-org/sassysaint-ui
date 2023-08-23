@@ -5,3 +5,7 @@
 .bubble-assistant {
 	@apply prose prose-p:-m-0.5 prose-indigo prose-ul:prose-li:marker:text-black;
 }
+
+.bubble-user {
+	@apply prose prose-p:-m-0.5 prose-indigo text-white;
+}

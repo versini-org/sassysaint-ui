@@ -32,7 +32,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
 		if (type === ROLE_USER) {
 			mainClass = "flex items-start flex-row-reverse";
 			contentClass =
-				"bubble bubble-user flex min-h-[85px] rounded-b-xl rounded-tl-xl p-4 sm:min-h-0 sm:max-w-md md:max-w-2xl bg-[#0B93F6] text-white";
+				"bubble bubble-user flex flex-col rounded-b-xl rounded-tl-xl p-4 sm:max-w-md md:max-w-2xl bg-[#0B93F6] text-white";
 		} else {
 			mainClass = "flex items-start ";
 			contentClass =
