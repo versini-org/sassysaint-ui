@@ -31,7 +31,6 @@ export const MessagesContainer = ({
 			inputRef.current.scrollIntoView({ behavior: "smooth" });
 			inputRef.current.focus();
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [messages]);
 
 	return (
