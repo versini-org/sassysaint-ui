@@ -9,3 +9,7 @@
 .bubble-user {
 	@apply prose prose-p:-m-0.5 prose-indigo text-white;
 }
+
+h1 {
+	font-family: "Open Sans";
+}
