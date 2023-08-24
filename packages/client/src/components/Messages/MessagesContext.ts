@@ -1,2 +1,10 @@
 import React from "react";
-export const MessagesContext = React.createContext({});
+
+export type MessagesContextProps = {
+	state?: {
+		role?: string;
+		content?: string;
+	}[];
+	dispatch?: any;
+};
+export const MessagesContext = React.createContext<MessagesContextProps>({});
