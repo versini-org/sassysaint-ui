@@ -29,7 +29,7 @@ export const MessageAssistant = ({ children }: MessageAssistantProps) => {
 
 	return (
 		<div className="flex items-start">
-			<div className="text-slate-300">
+			<div className="text-slate-300 hidden sm:block">
 				<IconAssistant />
 			</div>
 			<div className="bubble bubble-assistant flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black">

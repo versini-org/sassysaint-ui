@@ -7,7 +7,7 @@ export type MessageUserProps = {
 export const MessageUser = ({ children }: MessageUserProps) => {
 	return (
 		<div className="flex items-start flex-row-reverse">
-			<div className="text-slate-300">
+			<div className="text-slate-300 hidden sm:block">
 				<IconUser />
 			</div>
 			<div className="bubble bubble-user flex flex-col rounded-b-xl rounded-tl-xl p-4 sm:max-w-md md:max-w-2xl bg-[#0B93F6] text-white">
