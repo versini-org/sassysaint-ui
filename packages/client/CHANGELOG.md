@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.2.0...client-v1.3.0) (2023-08-24)
+
+
+### Features
+
+* better AI bubble icon ([c64faf0](https://github.com/aversini/sassysaint-ui/commit/c64faf062b4389c35dd3c0060cf41c6398fef10d))
+
+
+### Bug Fixes
+
+* better AI and user icon sizes ([570e330](https://github.com/aversini/sassysaint-ui/commit/570e330a19eef28efffe7d2a1f4a0b3781cf8428))
+
 ## [1.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.1.1...client-v1.2.0) (2023-08-24)
 
 
