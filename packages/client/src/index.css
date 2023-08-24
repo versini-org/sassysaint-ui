@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 .bubble-assistant {
-	@apply prose prose-p:-m-0.5 prose-indigo prose-ul:prose-li:marker:text-black;
+	@apply prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black;
 }
 
 .bubble-user {
-	@apply prose prose-p:-m-0.5 prose-indigo text-white;
+	@apply prose prose-p:my-1 prose-indigo text-white;
 }
 
 h1 {
 	font-family: "Open Sans";
 }
+
+/* prose-p:my-1.5 */
