@@ -6,7 +6,7 @@ import {
 	ROLE_INTERNAL,
 	ROLE_USER,
 } from "../../common/constants";
-import { MessageAssistant, MessagesContainerHeader,MessageUser } from "../";
+import { MessageAssistant, MessagesContainerHeader, MessageUser } from "../";
 import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
 import { MessagesContext } from "./MessagesContext";
