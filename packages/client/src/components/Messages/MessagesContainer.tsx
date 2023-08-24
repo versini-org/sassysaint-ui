@@ -1,9 +1,7 @@
-import { ROLE_ASSISTANT, ROLE_USER } from "../../common/constants";
 import { useEffect, useRef, useState } from "react";
 
-import { MessageAssistant } from "./MessageAssistant";
-import { MessageUser } from "./MessageUser";
-import { MessagesContainerHeader } from "./MessagesContainerHeader";
+import { ROLE_ASSISTANT, ROLE_USER } from "../../common/constants";
+import { MessageAssistant, MessagesContainerHeader, MessageUser } from "../";
 import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
 

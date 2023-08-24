@@ -1,10 +1,11 @@
+import React, { useEffect, useLayoutEffect, useState } from "react";
+
 import {
 	ROLE_ASSISTANT,
 	ROLE_INTERNAL,
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-import React, { useEffect, useLayoutEffect, useState } from "react";
 
 const ERROR_MESSAGE = "I'm having trouble right now. Please try again later.";
 

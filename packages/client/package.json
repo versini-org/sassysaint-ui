@@ -8,7 +8,7 @@
 		"clean": "rimraf dist",
 		"dev": "vite --host",
 		"build": "yarn run clean && tsc && vite build",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix --color",
 		"start": "static-server dist --port 5173"
 	},
 	"dependencies": {

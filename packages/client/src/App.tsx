@@ -1,6 +1,4 @@
-import { Footer } from "./components/Footer/Footer";
-import { Main } from "./components/Main/Main";
-import { MessagesContainer } from "./components/Messages/MessagesContainer";
+import { Footer, Main, MessagesContainer } from "./components";
 
 function App() {
 	return (
