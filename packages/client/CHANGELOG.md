@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.1.0...client-v1.1.1) (2023-08-24)
+
+
+### Bug Fixes
+
+* input height broken on fresh page load ([29b6bcd](https://github.com/aversini/sassysaint-ui/commit/29b6bcd2d5cafc253e780c82b9e63a3bf05789c4))
+
 ## [1.1.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.0.0...client-v1.1.0) (2023-08-24)
 
 
