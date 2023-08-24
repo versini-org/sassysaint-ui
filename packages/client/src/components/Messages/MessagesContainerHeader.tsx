@@ -1,4 +1,4 @@
-import { IconDog } from "../Icons";
+import { IconDog } from "..";
 
 export const MessagesContainerHeader = () => {
 	return (

@@ -1,9 +1,8 @@
-import { IconAssistant, IconCopy } from "../Icons";
-
-import { IconCopied } from "../Icons/IconCopied";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+import { IconAssistant, IconCopied, IconCopy } from "../";
 
 export type MessageAssistantProps = {
 	children: string;
