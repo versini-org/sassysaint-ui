@@ -1,4 +1,4 @@
-import { IconUser } from "../Icons";
+import { IconUser } from "..";
 
 export type MessageUserProps = {
 	children: string;
