@@ -1,3 +1,5 @@
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
+
 import {
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
@@ -5,8 +7,6 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
-
 import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
@@ -74,6 +74,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 				});
 			}
 		})();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state]);
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -93,6 +94,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 			inputRef.current.style.height = "inherit";
 			inputRef.current.style.height = inputRef.current.scrollHeight + "px";
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [userInput]);
 
 	return (

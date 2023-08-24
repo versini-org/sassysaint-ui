@@ -1,15 +1,15 @@
+import { useEffect, useReducer, useRef } from "react";
+
 import {
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
 	ROLE_INTERNAL,
 	ROLE_USER,
 } from "../../common/constants";
-import { MessageAssistant, MessageUser, MessagesContainerHeader } from "../";
-import { useEffect, useReducer, useRef } from "react";
-
-import { MessagesContext } from "./MessagesContext";
+import { MessageAssistant, MessagesContainerHeader,MessageUser } from "../";
 import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
+import { MessagesContext } from "./MessagesContext";
 
 export type MessagesContainerProps = {
 	noHeader?: boolean;
