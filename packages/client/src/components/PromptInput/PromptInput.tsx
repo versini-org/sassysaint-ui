@@ -1,47 +1,39 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import {
+	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
 	ROLE_INTERNAL,
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-
-const ERROR_MESSAGE = "I'm having trouble right now. Please try again later.";
+import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
 	role: string;
 	content: string;
 };
 export type PromptInputProps = {
-	onUserSubmit: (props: onPromptInputSubmitProps) => void;
-	onAiResponse: (props: onPromptInputSubmitProps) => void;
 	inputRef: React.RefObject<HTMLTextAreaElement>;
 };
 
-export const PromptInput = ({
-	onUserSubmit,
-	onAiResponse,
-	inputRef,
-}: PromptInputProps) => {
-	const [userInput, setUserInput] = useState("");
-	const [messages, setMessages] = useState<onPromptInputSubmitProps[]>([]);
-
+export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	/**
-	 * Save the user input to the messages state
-	 * in order to keep track of the whole conversation.
-	 * This is needed so that the gpt engine can
-	 * generate a response based on context.
+	 * Save all messages to the state in order to keep track of
+	 * the whole conversation. This is needed so that the
+	 * gpt engine can generate a response based on context.
 	 */
-	const saveConversation = (role: string, content: string) => {
-		setMessages((prev) => [...prev, { role, content }]);
-	};
+	const { state, dispatch } = useContext(MessagesContext);
+	const [userInput, setUserInput] = useState("");
 
 	useEffect(() => {
 		(async () => {
-			const lastMessage = messages[messages.length - 1];
+			if (!state || state.length === 0) {
+				return;
+			}
+			const lastMessage = state[state.length - 1];
 			if (
-				messages.length === 0 ||
+				state.length === 0 ||
 				lastMessage.role === ROLE_ASSISTANT ||
 				lastMessage.role === ROLE_SYSTEM ||
 				lastMessage.role === ROLE_INTERNAL
@@ -57,36 +49,37 @@ export const PromptInput = ({
 						headers: {
 							"Content-Type": "application/json",
 						},
-						body: JSON.stringify({ messages }),
+						body: JSON.stringify({ messages: state }),
 					},
 				);
-				const data = await response.json();
-				onAiResponse({
-					role: ROLE_ASSISTANT,
-					content: data.result,
-				});
-				saveConversation(ROLE_ASSISTANT, data.result);
+
+				if (response.status !== 200) {
+					dispatch({
+						role: ROLE_INTERNAL,
+						content: ERROR_MESSAGE,
+					});
+				} else {
+					const data = await response.json();
+					dispatch({
+						role: ROLE_ASSISTANT,
+						content: data.result,
+					});
+				}
 			} catch (error) {
 				// eslint-disable-next-line no-console
 				console.error(error);
-				onAiResponse({
-					role: ROLE_ASSISTANT,
+				dispatch({
+					role: ROLE_INTERNAL,
 					content: ERROR_MESSAGE,
 				});
-				saveConversation(ROLE_INTERNAL, ERROR_MESSAGE);
 			}
 		})();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [messages]);
+	}, [state]);
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		saveConversation(ROLE_USER, userInput);
-		// Tell the caller the user has submitted a message
-		onUserSubmit({
-			role: ROLE_USER,
-			content: userInput,
-		});
+		dispatch({ role: ROLE_USER, content: userInput });
 		// Clear the input field
 		setUserInput("");
 	};
