@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useReducer, useState } from "react";
 
 import {
 	ROLE_ASSISTANT,
@@ -19,6 +19,16 @@ export type PromptInputProps = {
 	inputRef: React.RefObject<HTMLTextAreaElement>;
 };
 
+const reducer = (state: any, action: any) => {
+	switch (action.type) {
+		case ROLE_USER:
+		case ROLE_ASSISTANT:
+			return [...state, { role: action.role, content: action.content }];
+		default:
+			return state;
+	}
+};
+
 export const PromptInput = ({
 	onUserSubmit,
 	onAiResponse,
@@ -26,6 +36,7 @@ export const PromptInput = ({
 }: PromptInputProps) => {
 	const [userInput, setUserInput] = useState("");
 	const [messages, setMessages] = useState<onPromptInputSubmitProps[]>([]);
+	const [state, dispatch] = useReducer(reducer, []);
 
 	/**
 	 * Save the user input to the messages state
@@ -50,6 +61,9 @@ export const PromptInput = ({
 			}
 
 			try {
+				// eslint-disable-next-line no-console
+				console.log("==> sending ", state);
+
 				const response = await fetch(
 					`${import.meta.env.VITE_SERVER_URL}/api/generate`,
 					{
@@ -62,6 +76,11 @@ export const PromptInput = ({
 				);
 				const data = await response.json();
 				onAiResponse({
+					role: ROLE_ASSISTANT,
+					content: data.result,
+				});
+				dispatch({
+					type: ROLE_ASSISTANT,
 					role: ROLE_ASSISTANT,
 					content: data.result,
 				});
@@ -81,6 +100,7 @@ export const PromptInput = ({
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		dispatch({ type: ROLE_USER, role: ROLE_USER, content: userInput });
 		saveConversation(ROLE_USER, userInput);
 		// Tell the caller the user has submitted a message
 		onUserSubmit({
