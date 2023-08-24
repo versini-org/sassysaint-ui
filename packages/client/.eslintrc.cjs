@@ -12,12 +12,14 @@ module.exports = {
 	],
 	ignorePatterns: ["dist", ".eslintrc.cjs"],
 	parser: "@typescript-eslint/parser",
-	plugins: ["react-refresh"],
+	plugins: ["react-refresh", "simple-import-sort"],
 	rules: {
 		"@typescript-eslint/no-explicit-any": "off",
 		"react-refresh/only-export-components": [
 			"warn",
 			{ allowConstantExport: true },
 		],
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 	},
 };
