@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
 import fs from "fs-extra";
+import { defineConfig } from "vite";
 
 const packageJson = fs.readJSONSync("package.json");
 
