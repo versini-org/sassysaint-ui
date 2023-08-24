@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.1.1...client-v1.2.0) (2023-08-24)
+
+
+### Features
+
+* hiding User and AI icons at lower breakpoints ([ce59dd8](https://github.com/aversini/sassysaint-ui/commit/ce59dd84ec1d4d99a3cbdf551d9cdc6438c2138c))
+
+
+### Bug Fixes
+
+* better top and bottom typography spacing ([bb1ab2e](https://github.com/aversini/sassysaint-ui/commit/bb1ab2ef1ab852bbb5decd7a5e1534827d7c3226))
+
 ## [1.1.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.1.0...client-v1.1.1) (2023-08-24)
 
 
