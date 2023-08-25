@@ -7,6 +7,6 @@
 	"prod": {
 		"domain": "gizmette.us.auth0.com",
 		"clientId": "DXgr5yYcJUG51pKZDpgAjDUtRLyXnCak",
-		"audience": "toto"
+		"audience": "https://gizmette.us.auth0.com/api/v2/"
 	}
 }
