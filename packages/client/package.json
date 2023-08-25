@@ -12,6 +12,7 @@
 		"start": "static-server dist --port 5173"
 	},
 	"dependencies": {
+		"@auth0/auth0-react": "2.2.1",
 		"@tailwindcss/typography": "0.5.9",
 		"autoprefixer": "10.4.15",
 		"clsx": "2.0.0",
