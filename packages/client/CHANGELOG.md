@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.2...client-v1.4.0) (2023-08-25)
+
+
+### Features
+
+* adding authentication layer via auth0 ([9cfa924](https://github.com/aversini/sassysaint-ui/commit/9cfa924494e689d9201886031d2a361a8ac36f6f))
+
 ## [1.3.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.1...client-v1.3.2) (2023-08-25)
 
 
