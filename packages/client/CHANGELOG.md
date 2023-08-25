@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.0...client-v1.3.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* slightly better favicon especially on iOS ([ed30680](https://github.com/aversini/sassysaint-ui/commit/ed306803d7a26f9ec72b1cd2df682149063344ba))
+
 ## [1.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.2.0...client-v1.3.0) (2023-08-24)
 
 
