@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.1...client-v1.3.2) (2023-08-25)
+
+
+### Bug Fixes
+
+* force refresh favicon on iOS ([dc10480](https://github.com/aversini/sassysaint-ui/commit/dc10480c49c556b899089954c392680139c09ac0))
+
 ## [1.3.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.0...client-v1.3.1) (2023-08-25)
 
 
