@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.0...client-v1.4.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* user should not be asked to accept to link their account ([b1884c6](https://github.com/aversini/sassysaint-ui/commit/b1884c6b619f9d6c0b74ef878ca9a0b3d2906567))
+
 ## [1.4.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.3.2...client-v1.4.0) (2023-08-25)
 
 
