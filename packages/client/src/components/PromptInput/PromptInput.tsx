@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import {
@@ -7,6 +8,7 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
+import { isProd } from "../../common/utilities";
 import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
@@ -25,6 +27,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	 */
 	const { state, dispatch } = useContext(MessagesContext);
 	const [userInput, setUserInput] = useState("");
+	const { loginWithRedirect, isAuthenticated } = useAuth0();
 
 	useEffect(() => {
 		(async () => {
@@ -97,7 +100,16 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [userInput]);
 
-	return (
+	return !isAuthenticated && isProd ? (
+		<>
+			<button
+				className="mt-6 mb-4 px-4 py-2 md:w-1/2 md:mx-auto rounded-full text-sm font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 sm:text-base"
+				onClick={() => loginWithRedirect()}
+			>
+				Log in<span className="sr-only">Log in</span>
+			</button>
+		</>
+	) : (
 		<>
 			<form className="mt-2" onSubmit={onSubmit}>
 				<label htmlFor="chat-input" className="sr-only">
