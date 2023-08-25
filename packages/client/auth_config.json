@@ -2,11 +2,11 @@
 	"dev": {
 		"domain": "dev-wmhk30nql1510iab.us.auth0.com",
 		"clientId": "mUTFOiT6V1OYe6E1uMGJvn5pfvMUH1A3",
-		"audience": "toto"
+		"audience": ""
 	},
 	"prod": {
 		"domain": "gizmette.us.auth0.com",
 		"clientId": "DXgr5yYcJUG51pKZDpgAjDUtRLyXnCak",
-		"audience": "https://gizmette.us.auth0.com/api/v2/"
+		"audience": ""
 	}
 }
