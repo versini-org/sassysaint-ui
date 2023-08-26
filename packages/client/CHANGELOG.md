@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.2...client-v1.4.3) (2023-08-26)
+
+
+### Bug Fixes
+
+* more immersive app feeling on iOS ([02a2f67](https://github.com/aversini/sassysaint-ui/commit/02a2f670b67ad251f0e760aebbdedccb400b35f6))
+
 ## [1.4.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.1...client-v1.4.2) (2023-08-26)
 
 
