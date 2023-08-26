@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.1...client-v1.4.2) (2023-08-26)
+
+
+### Bug Fixes
+
+* on iOS login button shows up even after authentication ([6b92828](https://github.com/aversini/sassysaint-ui/commit/6b928286dc6b7a940786271b039f1cf483694b63))
+
 ## [1.4.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.0...client-v1.4.1) (2023-08-25)
 
 
