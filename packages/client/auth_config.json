@@ -5,7 +5,7 @@
 		"audience": ""
 	},
 	"prod": {
-		"domain": "gizmette.us.auth0.com",
+		"domain": "auth.gizmette.com",
 		"clientId": "DXgr5yYcJUG51pKZDpgAjDUtRLyXnCak",
 		"audience": ""
 	}
