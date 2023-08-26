@@ -2,5 +2,7 @@
 	"name": "Sassy Saint",
 	"start_url": "/",
 	"lang": "en-US",
-	"display": "standalone"
+	"display": "standalone",
+	"theme_color": "#64748b",
+	"background_color": "#64748b"
 }
