@@ -130,7 +130,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 					<button
 						type="submit"
-						className="absolute bottom-2 right-2.5 rounded-full  px-4 py-2 text-sm font-medium text-slate-200 bg-slate-500 hover:bg-blue-900 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 sm:text-base"
+						className="absolute bottom-2 right-2.5 rounded-full  px-4 py-2 text-sm font-medium text-slate-200 bg-slate-500 hover:bg-slate-600
+						active:bg-slate-700 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 sm:text-base"
 					>
 						Send <span className="sr-only">Send message</span>
 					</button>
