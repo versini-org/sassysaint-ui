@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.3...client-v1.5.0) (2023-08-30)
+
+
+### Features
+
+* adding IconClose and IconSettings ([c33dc07](https://github.com/aversini/sassysaint-ui/commit/c33dc07c0903e449ae8ff65a3d3a749b447621c0))
+* adding profile ([f0de837](https://github.com/aversini/sassysaint-ui/commit/f0de837ff193480d178d2fb72aedfea5a65f3a3d))
+
 ## [1.4.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.2...client-v1.4.3) (2023-08-26)
 
 
