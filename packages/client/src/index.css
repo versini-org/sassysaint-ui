@@ -10,7 +10,7 @@
 	@apply prose prose-p:my-1 prose-indigo text-white;
 }
 
-h1 {
+h1.heading {
 	font-family: "Open Sans";
 }
 
@@ -18,6 +18,12 @@ h1 {
 	animation: fadeInAnimation ease 1s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
+}
+
+.Dialog-overlay {
+	background: rgba(0, 0, 0, 0.8);
+	display: grid;
+	place-items: center;
 }
 
 @keyframes fadeInAnimation {

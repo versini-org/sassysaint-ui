@@ -38,7 +38,9 @@ export const MessageAssistant = ({ children }: MessageAssistantProps) => {
 			<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">
 				<button
 					className={
-						!copied ? "text-slate-300 hover:text-blue-700" : "text-slate-300"
+						!copied
+							? "text-slate-300 hover:text-slate-400 active:text-slate-500"
+							: "text-slate-300"
 					}
 					type="button"
 					onClick={copyToClipboard}
