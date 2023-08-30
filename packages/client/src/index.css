@@ -14,6 +14,12 @@ h1.heading {
 	font-family: "Open Sans";
 }
 
+.Dialog-overlay {
+	background: rgba(0, 0, 0, 0.8);
+	display: grid;
+	place-items: center;
+}
+
 .fade {
 	animation: fadeInAnimation ease 1s;
 	animation-iteration-count: 1;
