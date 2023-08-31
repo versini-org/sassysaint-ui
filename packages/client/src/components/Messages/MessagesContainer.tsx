@@ -40,6 +40,7 @@ export const MessagesContainer = ({
 	noHeader = false,
 }: MessagesContainerProps) => {
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
+	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const [state, dispatch] = useReducer(reducer, []);
 
 	/**
@@ -48,7 +49,16 @@ export const MessagesContainer = ({
 	 * field.
 	 */
 	useEffect(() => {
-		if (state && state.length > 0 && inputRef.current) {
+		if (!state || state.length === 0) {
+			return;
+		}
+		const lastMessage = state[state.length - 1];
+
+		if (spinnerRef.current && lastMessage.role !== ROLE_ASSISTANT) {
+			spinnerRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+
+		if (inputRef && inputRef.current && lastMessage.role === ROLE_ASSISTANT) {
 			inputRef.current.scrollIntoView({ behavior: "smooth" });
 			inputRef.current.focus();
 		}
@@ -83,7 +93,9 @@ export const MessagesContainer = ({
 
 					{state &&
 						state.length > 0 &&
-						state[state.length - 1].role === ROLE_USER && <Spinner />}
+						state[state.length - 1].role === ROLE_USER && (
+							<Spinner spinnerRef={spinnerRef} />
+						)}
 				</div>
 
 				<PromptInput inputRef={inputRef} />
