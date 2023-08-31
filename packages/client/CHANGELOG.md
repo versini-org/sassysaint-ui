@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.0...client-v1.5.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* profile display crashes upon rendering ([76bbd87](https://github.com/aversini/sassysaint-ui/commit/76bbd8760b3a8c1d0db2cf94b92b90c90954aa80))
+
 ## [1.5.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.4.3...client-v1.5.0) (2023-08-30)
 
 
