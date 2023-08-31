@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.1...client-v1.5.2) (2023-08-31)
+
+
+### Bug Fixes
+
+* better intermediate smooth scroll and focus ([a457687](https://github.com/aversini/sassysaint-ui/commit/a457687a65db5c70db094a7513e2cea465b5739e))
+
 ## [1.5.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.0...client-v1.5.1) (2023-08-31)
 
 
