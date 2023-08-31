@@ -13,7 +13,6 @@ import { MessagesContext } from "./MessagesContext";
 
 export type MessagesContainerProps = {
 	noHeader?: boolean;
-	intermediateRef?: React.RefObject<HTMLDivElement>;
 };
 
 export type actionProps = {
