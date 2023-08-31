@@ -15,26 +15,21 @@ export const SettingsContent = ({
 }: SettingsContentProps) => {
 	const endUser = isDev ? { name: "Arno", email: "versini@gmail.com" } : user;
 
-	return (
+	return (isAuthenticated && endUser) || isDev ? (
 		<>
-			{(isAuthenticated && endUser) ||
-				(isDev && (
-					<>
-						<dl>
-							<dt className="font-bold">User</dt>
-							<dd className="mb-2">{endUser.name}</dd>
-							<dt className="font-bold">Email</dt>
-							<dd className="mb-2">{endUser.email}</dd>
-						</dl>
-						<button
-							disabled={isDev}
-							className={`${buttonClasses} mt-5`}
-							onClick={() => logoutWithRedirect()}
-						>
-							Log out
-						</button>
-					</>
-				))}
+			<dl>
+				<dt className="font-bold">User</dt>
+				<dd className="mb-2">{endUser.name}</dd>
+				<dt className="font-bold">Email</dt>
+				<dd className="mb-2">{endUser.email}</dd>
+			</dl>
+			<button
+				disabled={isDev}
+				className={`${buttonClasses} mt-5`}
+				onClick={() => logoutWithRedirect()}
+			>
+				Log out
+			</button>
 		</>
-	);
+	) : null;
 };
