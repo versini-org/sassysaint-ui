@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { IconDog, IconSettings } from "..";
+import { Button, IconDog, IconSettings } from "..";
 import { Settings } from "..";
 
 export const MessagesContainerHeader = () => {
@@ -14,14 +14,15 @@ export const MessagesContainerHeader = () => {
 			<Settings open={showSettings} onOpenChange={setShowSettings} />
 
 			<div className="relative">
-				<button
-					className="absolute bottom-[-28px] right-[-7px] rounded-full p-2 hover:text-slate-400 active:text-slate-500 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300"
+				<Button
+					iconOnly
 					onClick={onClickSettings}
+					className="absolute bottom-[-28px] right-[-7px]"
 				>
 					<div>
 						<IconSettings />
 					</div>
-				</button>
+				</Button>
 			</div>
 
 			<div className="flex items-center justify-center">

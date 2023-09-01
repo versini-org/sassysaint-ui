@@ -1,3 +1,4 @@
+import { Button } from "./Button/Button";
 import { Footer } from "./Footer/Footer";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
@@ -16,6 +17,7 @@ import { Settings } from "./Settings/Settings";
 import { Spinner } from "./Spinner/Spinner";
 
 export {
+	Button,
 	Footer,
 	IconAssistant,
 	IconClose,

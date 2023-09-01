@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import { IconAssistant, IconCopied, IconCopy } from "../";
+import { Button, IconAssistant, IconCopied, IconCopy } from "../";
 
 export type MessageAssistantProps = {
 	children: string;
@@ -42,18 +42,18 @@ export const MessageAssistant = ({
 				</div>
 
 				<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">
-					<button
+					<Button
+						raw
 						className={
 							!copied
 								? "text-slate-300 hover:text-slate-400 active:text-slate-500"
 								: "text-slate-300"
 						}
-						type="button"
 						onClick={copyToClipboard}
 						disabled={copied}
 					>
 						{copied ? <IconCopied /> : <IconCopy />}
-					</button>
+					</Button>
 				</div>
 			</div>
 		</>

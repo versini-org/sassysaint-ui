@@ -7,6 +7,8 @@ import {
 } from "@floating-ui/react";
 import * as React from "react";
 
+import { Button } from "..";
+import type { ButtonProps } from "../Button/Button";
 import type { DialogOptions, DialogTriggerProps } from "./Dialog.d";
 import { DialogContext } from "./DialogContext";
 import { useDialog, useDialogContext } from "./DialogHooks";
@@ -126,12 +128,14 @@ export const DialogDescription = React.forwardRef<
 });
 
 export const DialogClose = React.forwardRef<
-	HTMLButtonElement,
-	React.ButtonHTMLAttributes<HTMLButtonElement>
+	HTMLButtonElement & ButtonProps,
+	ButtonProps
 >(function DialogClose(props, ref) {
 	const { setOpen } = useDialogContext();
-
+	const { children, ...rest } = props;
 	return (
-		<button type="button" {...props} ref={ref} onClick={() => setOpen(false)} />
+		<Button type="button" {...rest} ref={ref} onClick={() => setOpen(false)}>
+			{children}
+		</Button>
 	);
 });

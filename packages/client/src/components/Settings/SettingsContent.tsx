@@ -1,5 +1,6 @@
+import { Button } from "..";
+
 export type SettingsContentProps = {
-	buttonClasses: string;
 	isAuthenticated: boolean;
 	isDev: boolean;
 	logoutWithRedirect: () => void;
@@ -7,13 +8,12 @@ export type SettingsContentProps = {
 };
 
 export const SettingsContent = ({
-	buttonClasses,
 	isAuthenticated,
 	isDev,
 	logoutWithRedirect,
 	user,
 }: SettingsContentProps) => {
-	const endUser = isDev ? { name: "Arno", email: "versini@gmail.com" } : user;
+	const endUser = isDev ? { name: "ArnoDev", email: "toto@titi.fr" } : user;
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
@@ -23,13 +23,13 @@ export const SettingsContent = ({
 				<dt className="font-bold">Email</dt>
 				<dd className="mb-2">{endUser.email}</dd>
 			</dl>
-			<button
+			<Button
 				disabled={isDev}
-				className={`${buttonClasses} mt-5`}
+				className="mt-5"
 				onClick={() => logoutWithRedirect()}
 			>
 				Log out
-			</button>
+			</Button>
 		</>
 	) : null;
 };
