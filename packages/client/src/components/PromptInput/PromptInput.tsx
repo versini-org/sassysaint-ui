@@ -133,7 +133,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						type="submit"
 						className="absolute bottom-2 right-2.5"
 					>
-						hello
+						Send
 					</Button>
 				</div>
 			</form>
