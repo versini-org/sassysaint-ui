@@ -105,11 +105,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 	return !isAuthenticated && isProd ? (
 		<>
-			<Button
-				kind="dark"
-				className="mt-6 mb-4"
-				onClick={() => loginWithRedirect()}
-			>
+			<Button className="mt-6 mb-4" onClick={() => loginWithRedirect()}>
 				Log in
 			</Button>
 		</>
