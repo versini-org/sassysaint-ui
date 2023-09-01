@@ -32,7 +32,7 @@ export const MessageAssistant = ({
 
 	return (
 		<>
-			<div ref={smoothScrollRef} className="h-2" />
+			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
 				<div className="text-slate-300 hidden sm:block">
 					<IconAssistant />
