@@ -6,9 +6,13 @@ import { IconAssistant, IconCopied, IconCopy } from "../";
 
 export type MessageAssistantProps = {
 	children: string;
+	smoothScrollRef: React.RefObject<HTMLDivElement>;
 };
 
-export const MessageAssistant = ({ children }: MessageAssistantProps) => {
+export const MessageAssistant = ({
+	smoothScrollRef,
+	children,
+}: MessageAssistantProps) => {
 	const [copied, setCopied] = React.useState(false);
 
 	// copy to clipboard function
@@ -27,28 +31,31 @@ export const MessageAssistant = ({ children }: MessageAssistantProps) => {
 	}, [copied]);
 
 	return (
-		<div className="flex items-start">
-			<div className="text-slate-300 hidden sm:block">
-				<IconAssistant />
-			</div>
-			<div className="bubble bubble-assistant flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black">
-				<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
-			</div>
+		<>
+			<div ref={smoothScrollRef} className="h-0.5" />
+			<div className="flex items-start">
+				<div className="text-slate-300 hidden sm:block">
+					<IconAssistant />
+				</div>
+				<div className="bubble bubble-assistant flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black">
+					<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
+				</div>
 
-			<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">
-				<button
-					className={
-						!copied
-							? "text-slate-300 hover:text-slate-400 active:text-slate-500"
-							: "text-slate-300"
-					}
-					type="button"
-					onClick={copyToClipboard}
-					disabled={copied}
-				>
-					{copied ? <IconCopied /> : <IconCopy />}
-				</button>
+				<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">
+					<button
+						className={
+							!copied
+								? "text-slate-300 hover:text-slate-400 active:text-slate-500"
+								: "text-slate-300"
+						}
+						type="button"
+						onClick={copyToClipboard}
+						disabled={copied}
+					>
+						{copied ? <IconCopied /> : <IconCopy />}
+					</button>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };

@@ -40,6 +40,7 @@ export const MessagesContainer = ({
 	noHeader = false,
 }: MessagesContainerProps) => {
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
+	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const [state, dispatch] = useReducer(reducer, []);
 
@@ -54,13 +55,26 @@ export const MessagesContainer = ({
 		}
 		const lastMessage = state[state.length - 1];
 
+		/**
+		 * if the last message is from the user, scroll
+		 * to the spinner
+		 */
 		if (spinnerRef.current && lastMessage.role !== ROLE_ASSISTANT) {
 			spinnerRef.current.scrollIntoView({ behavior: "smooth" });
 		}
 
-		if (inputRef && inputRef.current && lastMessage.role === ROLE_ASSISTANT) {
-			inputRef.current.scrollIntoView({ behavior: "smooth" });
-			inputRef.current.focus();
+		/**
+		 * if the last message is from the assistant, scroll
+		 * to the top of the messages container.
+		 */
+		if (
+			smoothScrollRef &&
+			smoothScrollRef.current &&
+			lastMessage.role === ROLE_ASSISTANT
+		) {
+			smoothScrollRef.current.scrollIntoView({
+				behavior: "smooth",
+			});
 		}
 	}, [state]);
 
@@ -78,7 +92,10 @@ export const MessagesContainer = ({
 								content
 							) {
 								return (
-									<MessageAssistant key={`${index}-${role}`}>
+									<MessageAssistant
+										key={`${index}-${role}`}
+										smoothScrollRef={smoothScrollRef}
+									>
 										{content}
 									</MessageAssistant>
 								);

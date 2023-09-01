@@ -85,6 +85,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 		dispatch({ role: ROLE_USER, content: userInput });
 		// Clear the input field
 		setUserInput("");
+		// And focus on it again
+		inputRef?.current?.focus();
 	};
 
 	/**
