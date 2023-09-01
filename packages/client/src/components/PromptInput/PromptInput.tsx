@@ -9,6 +9,7 @@ import {
 	ROLE_USER,
 } from "../../common/constants";
 import { isProd } from "../../common/utilities";
+import { Button } from "..";
 import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
@@ -104,12 +105,13 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 	return !isAuthenticated && isProd ? (
 		<>
-			<button
-				className="mt-6 mb-4 px-4 py-2 md:w-1/2 md:mx-auto rounded-full text-sm font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 sm:text-base"
+			<Button
+				kind="dark"
+				className="mt-6 mb-4"
 				onClick={() => loginWithRedirect()}
 			>
-				Log in<span className="sr-only">Log in</span>
-			</button>
+				Log in
+			</Button>
 		</>
 	) : (
 		<>
@@ -130,13 +132,13 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						onChange={(e) => setUserInput(e.target.value)}
 					/>
 
-					<button
+					<Button
+						kind="light"
 						type="submit"
-						className="absolute bottom-2 right-2.5 rounded-full  px-4 py-2 text-sm font-medium text-slate-200 bg-slate-500 hover:bg-slate-600
-						active:bg-slate-700 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 sm:text-base"
+						className="absolute bottom-2 right-2.5"
 					>
-						Send <span className="sr-only">Send message</span>
-					</button>
+						hello
+					</Button>
 				</div>
 			</form>
 		</>
