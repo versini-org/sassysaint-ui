@@ -73,8 +73,6 @@ export const MessagesContainer = ({
 			lastMessage.role === ROLE_ASSISTANT
 		) {
 			smoothScrollRef.current.scrollIntoView({
-				block: "start",
-				inline: "nearest",
 				behavior: "smooth",
 			});
 		}
