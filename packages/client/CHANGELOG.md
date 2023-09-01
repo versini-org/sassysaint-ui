@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.2...client-v1.5.3) (2023-09-01)
+
+
+### Bug Fixes
+
+* better smooth scroll on response ([4a93655](https://github.com/aversini/sassysaint-ui/commit/4a93655d8f6b704017d838c42a74c17bd2c4fbb2))
+
 ## [1.5.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.1...client-v1.5.2) (2023-08-31)
 
 
