@@ -18,10 +18,7 @@ const buildTime = new Date()
 // https://vitejs.dev/config/
 export default defineConfig({
 	define: {
-		"import.meta.env.BUILDTIME":
-			process.env.NODE_ENV === "production"
-				? JSON.stringify(buildTime)
-				: JSON.stringify("dev mode"),
+		"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),
 		"import.meta.env.OPENAI_MODEL": JSON.stringify("gpt-3.5-turbo"),
 	},

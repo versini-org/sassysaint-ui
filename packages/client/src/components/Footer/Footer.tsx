@@ -1,4 +1,7 @@
+import { isDev } from "../../common/utilities";
+
 export const Footer = () => {
+	const buildClass = isDev ? "text-slate-900" : "text-slate-300";
 	return (
 		<footer className="mb-[100px] text-center text-xs text-slate-300">
 			<div>
@@ -6,7 +9,7 @@ export const Footer = () => {
 				{import.meta.env.BUILDTIME}
 			</div>
 			<div>Powered by OpenAI {import.meta.env.OPENAI_MODEL}</div>
-			<div>&copy; 2023 gizmette.com</div>
+			<div className={buildClass}>&copy; 2023 gizmette.com</div>
 		</footer>
 	);
 };
