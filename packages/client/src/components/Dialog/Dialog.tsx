@@ -130,7 +130,6 @@ export const DialogDescription = React.forwardRef<
 export const DialogClose = React.forwardRef<
 	HTMLButtonElement & ButtonProps,
 	ButtonProps
-	// React.ButtonHTMLAttributes<HTMLButtonElement>
 >(function DialogClose(props, ref) {
 	const { setOpen } = useDialogContext();
 	const { children, ...rest } = props;
