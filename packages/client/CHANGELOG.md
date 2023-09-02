@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.3...client-v1.6.0) (2023-09-02)
+
+
+### Features
+
+* adding reset option ([463c551](https://github.com/aversini/sassysaint-ui/commit/463c55182b3aaae7bb27f3083a72422d4d54984e))
+
 ## [1.5.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.2...client-v1.5.3) (2023-09-01)
 
 
