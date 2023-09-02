@@ -15,6 +15,7 @@ import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./PromptInput/PromptInput";
 import { Settings } from "./Settings/Settings";
 import { Spinner } from "./Spinner/Spinner";
+import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
 	Button,
@@ -34,4 +35,5 @@ export {
 	PromptInput,
 	Settings,
 	Spinner,
+	Toolbox,
 };
