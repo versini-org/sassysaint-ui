@@ -4,9 +4,15 @@ import {
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
 	ROLE_INTERNAL,
+	ROLE_RESET,
 	ROLE_USER,
 } from "../../common/constants";
-import { MessageAssistant, MessagesContainerHeader, MessageUser } from "../";
+import {
+	MessageAssistant,
+	MessagesContainerHeader,
+	MessageUser,
+	Toolbox,
+} from "../";
 import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
 import { MessagesContext } from "./MessagesContext";
@@ -31,6 +37,8 @@ const reducer = (state: actionProps[], action: actionProps) => {
 		case ROLE_ASSISTANT:
 		case ROLE_INTERNAL:
 			return [...state, { role: action.role, content: action.content }];
+		case ROLE_RESET:
+			return [];
 		default:
 			return [...state, { role: ROLE_INTERNAL, content: ERROR_MESSAGE }];
 	}
@@ -114,6 +122,10 @@ export const MessagesContainer = ({
 							<Spinner spinnerRef={spinnerRef} />
 						)}
 				</div>
+
+				{state &&
+					state.length > 0 &&
+					state[state.length - 1].role === ROLE_ASSISTANT && <Toolbox />}
 
 				<PromptInput inputRef={inputRef} />
 			</MessagesContext.Provider>

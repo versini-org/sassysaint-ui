@@ -3,7 +3,7 @@ import React from "react";
 
 export type ButtonProps = {
 	children?: React.ReactNode;
-	onClick?: () => void;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 	disabled?: boolean;
 	kind?: "dark" | "light";
 	fullWidth?: boolean;
