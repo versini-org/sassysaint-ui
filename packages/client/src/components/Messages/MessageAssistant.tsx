@@ -3,11 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { Button, IconAssistant, IconCopied, IconCopy } from "../";
-
-export type MessageAssistantProps = {
-	children: string;
-	smoothScrollRef: React.RefObject<HTMLDivElement>;
-};
+import type { MessageAssistantProps } from "./Messages";
 
 export const MessageAssistant = ({
 	smoothScrollRef,

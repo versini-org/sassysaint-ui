@@ -1,8 +1,5 @@
 import { IconUser } from "..";
-
-export type MessageUserProps = {
-	children: string;
-};
+import type { MessageUserProps } from "./Messages";
 
 export const MessageUser = ({ children }: MessageUserProps) => {
 	return (

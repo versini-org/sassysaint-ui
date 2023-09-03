@@ -15,16 +15,8 @@ import {
 } from "../";
 import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
+import type { actionProps, MessagesContainerProps } from "./Messages";
 import { MessagesContext } from "./MessagesContext";
-
-export type MessagesContainerProps = {
-	noHeader?: boolean;
-};
-
-export type actionProps = {
-	role: string;
-	content: string;
-};
 
 /**
  * When a new message is created either by the user or by the AI,
@@ -36,11 +28,27 @@ const reducer = (state: actionProps[], action: actionProps) => {
 		case ROLE_USER:
 		case ROLE_ASSISTANT:
 		case ROLE_INTERNAL:
-			return [...state, { role: action.role, content: action.content }];
+			return [
+				...state,
+				{
+					role: action.role,
+					content: action.content,
+					usage: action.usage,
+					model: action.model,
+				},
+			];
 		case ROLE_RESET:
 			return [];
 		default:
-			return [...state, { role: ROLE_INTERNAL, content: ERROR_MESSAGE }];
+			return [
+				...state,
+				{
+					role: ROLE_INTERNAL,
+					content: ERROR_MESSAGE,
+					usage: "N/A",
+					model: "N/A",
+				},
+			];
 	}
 };
 
