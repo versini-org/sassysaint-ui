@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.6.0...client-v1.7.0) (2023-09-03)
+
+
+### Features
+
+* move GPT stats to profile panel ([4daa176](https://github.com/aversini/sassysaint-ui/commit/4daa17665c605a7b91ccf9e1866e487d80fad84f))
+
 ## [1.6.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.5.3...client-v1.6.0) (2023-09-02)
 
 
