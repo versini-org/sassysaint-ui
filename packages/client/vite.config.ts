@@ -20,7 +20,6 @@ export default defineConfig({
 	define: {
 		"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),
-		"import.meta.env.OPENAI_MODEL": JSON.stringify("gpt-3.5-turbo"),
 	},
 	plugins: [],
 });

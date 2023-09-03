@@ -67,6 +67,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 					dispatch({
 						role: ROLE_ASSISTANT,
 						content: data.result,
+						usage: data.usage,
+						model: data.model,
 					});
 				}
 			} catch (error) {

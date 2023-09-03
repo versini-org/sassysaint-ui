@@ -8,7 +8,7 @@ export const Footer = () => {
 				Sassy Saint v{import.meta.env.BUILDVERSION} -{" "}
 				{import.meta.env.BUILDTIME}
 			</div>
-			<div>Powered by OpenAI {import.meta.env.OPENAI_MODEL}</div>
+			<div>Powered by OpenAI</div>
 			<div className={buildClass}>&copy; 2023 gizmette.com</div>
 		</footer>
 	);
