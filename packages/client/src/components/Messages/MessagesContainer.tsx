@@ -133,7 +133,9 @@ export const MessagesContainer = ({
 
 				{state &&
 					state.length > 0 &&
-					state[state.length - 1].role === ROLE_ASSISTANT && <Toolbox />}
+					state[state.length - 1].role === ROLE_ASSISTANT && (
+						<Toolbox className="mt-2" />
+					)}
 
 				<PromptInput inputRef={inputRef} />
 			</MessagesContext.Provider>
