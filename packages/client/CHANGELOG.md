@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.1...client-v1.8.2) (2023-09-04)
+
+
+### Bug Fixes
+
+* logout button text is not red ([4f1a8c2](https://github.com/aversini/sassysaint-ui/commit/4f1a8c22dd94e7cee2126c6a81aee3dfcb884ded))
+* more subtle icon setting ([6a1b633](https://github.com/aversini/sassysaint-ui/commit/6a1b6337bc0522bab1bfb322347438e48496724a))
+
 ## [1.8.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.0...client-v1.8.1) (2023-09-04)
 
 
