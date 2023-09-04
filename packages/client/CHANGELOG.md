@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.0...client-v1.8.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* message container top and bottom padding are not the same ([cf8538a](https://github.com/aversini/sassysaint-ui/commit/cf8538ae238218550866bb7ca3ca252f4c39321f))
+
 ## [1.8.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.2...client-v1.8.0) (2023-09-04)
 
 
