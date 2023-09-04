@@ -90,10 +90,10 @@ export const SettingsContent = ({
 			<Button
 				fullWidth
 				disabled={isDev}
-				className="mt-2 text-red-600"
+				className="mt-2"
 				onClick={() => logoutWithRedirect()}
 			>
-				Log out
+				<span className="text-red-600">Log out</span>
 			</Button>
 		</>
 	) : null;
