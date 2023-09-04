@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.0...client-v1.7.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* clearer statistics section ([5228c84](https://github.com/aversini/sassysaint-ui/commit/5228c84eca265e4632bc9d0548ecec6eca66e1c6))
+* profile panel crashes with new data ([d4ae767](https://github.com/aversini/sassysaint-ui/commit/d4ae7672e86a94e8b2f714d98117a8d450aadcaf))
+
 ## [1.7.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.6.0...client-v1.7.0) (2023-09-03)
 
 
