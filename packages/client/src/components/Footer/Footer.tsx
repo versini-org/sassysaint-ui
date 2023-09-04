@@ -9,7 +9,9 @@ export const Footer = () => {
 				{import.meta.env.BUILDTIME}
 			</div>
 			<div>Powered by OpenAI</div>
-			<div className={buildClass}>&copy; 2023 gizmette.com</div>
+			<div className={buildClass}>
+				&copy; {new Date().getFullYear()} gizmette.com
+			</div>
 		</footer>
 	);
 };
