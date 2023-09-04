@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.1",
-		"@floating-ui/react": "0.25.2",
+		"@floating-ui/react": "0.25.3",
 		"@tailwindcss/typography": "0.5.9",
 		"autoprefixer": "10.4.15",
 		"clsx": "2.0.0",
