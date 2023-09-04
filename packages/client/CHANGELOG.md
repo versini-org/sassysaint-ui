@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.9.0...client-v1.9.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* copyright year stuck to 2023 ([15d6944](https://github.com/aversini/sassysaint-ui/commit/15d6944f5ac83baaa2ccaca7bbcf06cb80dcb742))
+
 ## [1.9.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.2...client-v1.9.0) (2023-09-04)
 
 
