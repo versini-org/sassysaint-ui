@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.1...client-v1.7.2) (2023-09-04)
+
+
+### Bug Fixes
+
+* broken messages structure including model and usage ([27416db](https://github.com/aversini/sassysaint-ui/commit/27416dbe53fed21c4a658f300a49021c0c18e1cc))
+
 ## [1.7.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.0...client-v1.7.1) (2023-09-04)
 
 
