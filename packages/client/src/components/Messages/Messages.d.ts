@@ -3,8 +3,10 @@ export type MessagesContainerProps = {
 };
 
 export type actionProps = {
-	role?: string;
-	content?: string;
+	message: {
+		role?: string;
+		content?: string;
+	};
 	usage?: string;
 	model?: string;
 };

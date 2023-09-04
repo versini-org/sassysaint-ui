@@ -14,7 +14,7 @@ export const Toolbox = ({ className }: ToolboxProps) => {
 
 	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch({ role: ROLE_RESET });
+		dispatch({ message: { role: ROLE_RESET } });
 	};
 
 	return (

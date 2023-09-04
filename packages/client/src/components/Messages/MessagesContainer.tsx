@@ -24,15 +24,17 @@ import { MessagesContext } from "./MessagesContext";
  * to the state.
  */
 const reducer = (state: actionProps[], action: actionProps) => {
-	switch (action.role) {
+	switch (action.message.role) {
 		case ROLE_USER:
 		case ROLE_ASSISTANT:
 		case ROLE_INTERNAL:
 			return [
 				...state,
 				{
-					role: action.role,
-					content: action.content,
+					message: {
+						role: action.message.role,
+						content: action.message.content,
+					},
 					usage: action.usage,
 					model: action.model,
 				},
@@ -43,8 +45,10 @@ const reducer = (state: actionProps[], action: actionProps) => {
 			return [
 				...state,
 				{
-					role: ROLE_INTERNAL,
-					content: ERROR_MESSAGE,
+					message: {
+						role: ROLE_INTERNAL,
+						content: ERROR_MESSAGE,
+					},
 					usage: "N/A",
 					model: "N/A",
 				},
@@ -75,7 +79,7 @@ export const MessagesContainer = ({
 		 * if the last message is from the user, scroll
 		 * to the spinner
 		 */
-		if (spinnerRef.current && lastMessage.role !== ROLE_ASSISTANT) {
+		if (spinnerRef.current && lastMessage.message.role !== ROLE_ASSISTANT) {
 			spinnerRef.current.scrollIntoView({ behavior: "smooth" });
 		}
 
@@ -86,7 +90,7 @@ export const MessagesContainer = ({
 		if (
 			smoothScrollRef &&
 			smoothScrollRef.current &&
-			lastMessage.role === ROLE_ASSISTANT
+			lastMessage.message.role === ROLE_ASSISTANT
 		) {
 			smoothScrollRef.current.scrollIntoView({
 				behavior: "smooth",
@@ -101,8 +105,8 @@ export const MessagesContainer = ({
 					{!noHeader && <MessagesContainerHeader />}
 
 					{state &&
-						state.map((message, index) => {
-							const { role, content } = message;
+						state.map((data, index) => {
+							const { role, content } = data.message;
 							if (
 								(role === ROLE_ASSISTANT || role === ROLE_INTERNAL) &&
 								content
@@ -126,14 +130,14 @@ export const MessagesContainer = ({
 
 					{state &&
 						state.length > 0 &&
-						state[state.length - 1].role === ROLE_USER && (
+						state[state.length - 1].message.role === ROLE_USER && (
 							<Spinner spinnerRef={spinnerRef} />
 						)}
 				</div>
 
 				{state &&
 					state.length > 0 &&
-					state[state.length - 1].role === ROLE_ASSISTANT && (
+					state[state.length - 1].message.role === ROLE_ASSISTANT && (
 						<Toolbox className="mt-2" />
 					)}
 
