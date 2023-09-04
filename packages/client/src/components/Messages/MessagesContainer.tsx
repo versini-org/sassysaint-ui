@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useReducer, useRef } from "react";
 
 import {
@@ -7,6 +8,7 @@ import {
 	ROLE_RESET,
 	ROLE_USER,
 } from "../../common/constants";
+import { isDev } from "../../common/utilities";
 import {
 	MessageAssistant,
 	MessagesContainerHeader,
@@ -63,6 +65,8 @@ export const MessagesContainer = ({
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const [state, dispatch] = useReducer(reducer, []);
+	const { isAuthenticated } = useAuth0();
+	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
 
 	/**
 	 * Scroll to the bottom of the messages container when
@@ -101,7 +105,9 @@ export const MessagesContainer = ({
 	return (
 		<>
 			<MessagesContext.Provider value={{ state, dispatch }}>
-				<div className="flex-1 space-y-6 overflow-y-auto rounded-md px-4 pt-4 pb-10 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7">
+				<div
+					className={`flex-1 space-y-6 overflow-y-auto rounded-md px-4 ${paddingTop} pb-10 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7`}
+				>
 					{!noHeader && <MessagesContainerHeader />}
 
 					{state &&
