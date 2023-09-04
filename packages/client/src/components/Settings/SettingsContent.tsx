@@ -15,6 +15,36 @@ export type SettingsContentProps = {
 	user: any;
 };
 
+type CardProps = {
+	title: string;
+	subTitle?: string;
+	data: {
+		[key: string]: string | number | undefined;
+	};
+};
+
+const Card = ({ title, subTitle, data }: CardProps) => {
+	const titleClass = subTitle ? "font-bold text-lg" : "font-bold text-lg mb-4";
+	return (
+		<div className="border-slate-900 border-2 rounded-md p-4 bg-slate-900 text-slate-200">
+			<h2 className={titleClass}>{title}</h2>
+			{subTitle && <h3 className="text-sm mb-4">{subTitle}</h3>}
+			{Object.keys(data).map((idx) => {
+				return (
+					<dl key={`${title}-${idx}`}>
+						<div className="flex justify-between sm:block">
+							<dt className="font-bold text-slate-400 sm:block inline-block">
+								{idx}
+							</dt>
+							<dd className="mb-4 sm:block inline-block">{data[idx]}</dd>
+						</div>
+					</dl>
+				);
+			})}
+		</div>
+	);
+};
+
 export const SettingsContent = ({
 	isAuthenticated,
 	isDev,
@@ -39,38 +69,32 @@ export const SettingsContent = ({
 	}
 
 	return (isAuthenticated && endUser) || isDev ? (
-		<div className="grid grid-flow-col justify-stretch gap-x-1">
-			<div className="border-slate-900 border-2 rounded-md p-4 bg-slate-900 text-slate-200">
-				<h2 className="font-bold text-lg mb-4">User information</h2>
-				<dl>
-					<dt className="font-bold text-slate-400">Name</dt>
-					<dd className="mb-4">{endUser.name}</dd>
-					<dt className="font-bold text-slate-400">Email</dt>
-					<dd className="mb-4">{endUser.email}</dd>
-
-					<Button
-						kind="light"
-						fullWidth
-						slim
-						disabled={isDev}
-						className="mt-5"
-						onClick={() => logoutWithRedirect()}
-					>
-						Log out
-					</Button>
-				</dl>
+		<>
+			<div className="grid sm:grid-flow-col grid-flow-row justify-stretch gap-2">
+				<Card
+					title="User information"
+					data={{
+						Name: endUser.name,
+						Email: endUser.email,
+					}}
+				/>
+				<Card
+					title="Real time statistics"
+					subTitle="(current chat session)"
+					data={{
+						"GTP model": endState.model,
+						"Remaining tokens": remainingTokens,
+					}}
+				/>
 			</div>
-
-			<div className="border-slate-900 border-2 rounded-md p-4 bg-slate-900 text-slate-200">
-				<h2 className="font-bold text-lg">Real time statistics</h2>
-				<h3 className="text-sm mb-4">(current chat session)</h3>
-				<dl>
-					<dt className="font-bold text-slate-400">GTP model</dt>
-					<dd className="mb-4">{endState.model}</dd>
-					<dt className="font-bold text-slate-400">Remaining tokens</dt>
-					<dd className="mb-4">{remainingTokens}</dd>
-				</dl>
-			</div>
-		</div>
+			<Button
+				fullWidth
+				disabled={isDev}
+				className="mt-2 text-red-600"
+				onClick={() => logoutWithRedirect()}
+			>
+				Log out
+			</Button>
+		</>
 	) : null;
 };
