@@ -58,26 +58,34 @@ export const DialogTrigger = React.forwardRef<
 	);
 });
 
+type overlayBackgroundProps = {
+	overlayBackground?: string;
+};
 export const DialogContent = React.forwardRef<
 	HTMLDivElement,
-	React.HTMLProps<HTMLDivElement>
+	React.HTMLProps<HTMLDivElement> & overlayBackgroundProps
 >(function DialogContent(props, propRef) {
 	const { context: floatingContext, ...context } = useDialogContext();
 	const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
 	if (!floatingContext.open) return null;
 
+	const { overlayBackground, ...rest } = props;
+	const overlayClass = overlayBackground
+		? `grid place-items-center ${overlayBackground}`
+		: "grid place-items-center bg-black sm:bg-black/[.8]";
+
 	return (
 		<FloatingPortal>
-			<FloatingOverlay className="Dialog-overlay" lockScroll>
+			<FloatingOverlay className={overlayClass} lockScroll>
 				<FloatingFocusManager context={floatingContext}>
 					<div
 						ref={ref}
 						aria-labelledby={context.labelId}
 						aria-describedby={context.descriptionId}
-						{...context.getFloatingProps(props)}
+						{...context.getFloatingProps(rest)}
 					>
-						{props.children}
+						{rest.children}
 					</div>
 				</FloatingFocusManager>
 			</FloatingOverlay>
