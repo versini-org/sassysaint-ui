@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.2...client-v1.8.0) (2023-09-04)
+
+
+### Features
+
+* better panel UX at various breakpoints ([520a9d2](https://github.com/aversini/sassysaint-ui/commit/520a9d274a6e56d9a9bacc10f94573b5ecba6322))
+
 ## [1.7.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.7.1...client-v1.7.2) (2023-09-04)
 
 
