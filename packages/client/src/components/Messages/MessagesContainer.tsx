@@ -101,7 +101,7 @@ export const MessagesContainer = ({
 	return (
 		<>
 			<MessagesContext.Provider value={{ state, dispatch }}>
-				<div className="flex-1 space-y-6 overflow-y-auto rounded-md p-4 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7">
+				<div className="flex-1 space-y-6 overflow-y-auto rounded-md px-4 pt-4 pb-10 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7">
 					{!noHeader && <MessagesContainerHeader />}
 
 					{state &&
