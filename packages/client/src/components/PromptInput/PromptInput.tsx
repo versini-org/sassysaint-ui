@@ -13,8 +13,10 @@ import { Button } from "..";
 import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
-	role: string;
-	content: string;
+	message: {
+		role: string;
+		content: string;
+	};
 };
 export type PromptInputProps = {
 	inputRef: React.RefObject<HTMLTextAreaElement>;
@@ -38,9 +40,9 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 			const lastMessage = state[state.length - 1];
 			if (
 				state.length === 0 ||
-				lastMessage.role === ROLE_ASSISTANT ||
-				lastMessage.role === ROLE_SYSTEM ||
-				lastMessage.role === ROLE_INTERNAL
+				lastMessage.message.role === ROLE_ASSISTANT ||
+				lastMessage.message.role === ROLE_SYSTEM ||
+				lastMessage.message.role === ROLE_INTERNAL
 			) {
 				return;
 			}
@@ -59,14 +61,18 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 				if (response.status !== 200) {
 					dispatch({
-						role: ROLE_INTERNAL,
-						content: ERROR_MESSAGE,
+						message: {
+							role: ROLE_INTERNAL,
+							content: ERROR_MESSAGE,
+						},
 					});
 				} else {
 					const data = await response.json();
 					dispatch({
-						role: ROLE_ASSISTANT,
-						content: data.result,
+						message: {
+							role: ROLE_ASSISTANT,
+							content: data.result,
+						},
 						usage: data.usage,
 						model: data.model,
 					});
@@ -75,8 +81,10 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 				// eslint-disable-next-line no-console
 				console.error(error);
 				dispatch({
-					role: ROLE_INTERNAL,
-					content: ERROR_MESSAGE,
+					message: {
+						role: ROLE_INTERNAL,
+						content: ERROR_MESSAGE,
+					},
 				});
 			}
 		})();
@@ -85,7 +93,12 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		dispatch({ role: ROLE_USER, content: userInput });
+		dispatch({
+			message: {
+				role: ROLE_USER,
+				content: userInput,
+			},
+		});
 		// Clear the input field
 		setUserInput("");
 		// And focus on it again
