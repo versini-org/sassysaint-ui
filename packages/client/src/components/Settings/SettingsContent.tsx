@@ -62,7 +62,8 @@ export const SettingsContent = ({
 			</div>
 
 			<div className="border-slate-900 border-2 rounded-md p-4 bg-slate-900 text-slate-200">
-				<h2 className="font-bold text-lg mb-4">Real time statistics</h2>
+				<h2 className="font-bold text-lg">Real time statistics</h2>
+				<h3 className="text-sm mb-4">(current chat session)</h3>
 				<dl>
 					<dt className="font-bold text-slate-400">GTP model</dt>
 					<dd className="mb-4">{endState.model}</dd>
