@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.2...client-v1.9.0) (2023-09-04)
+
+
+### Features
+
+* hide settings button if not authenticated ([d93b9d3](https://github.com/aversini/sassysaint-ui/commit/d93b9d3b3920586786248f1ee8bcfc567cb95d06))
+
 ## [1.8.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.8.1...client-v1.8.2) (2023-09-04)
 
 
