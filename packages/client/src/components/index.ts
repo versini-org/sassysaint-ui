@@ -1,4 +1,5 @@
 import { Button } from "./Button/Button";
+import { Card } from "./Card/Card";
 import { Footer } from "./Footer/Footer";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
@@ -15,10 +16,12 @@ import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./PromptInput/PromptInput";
 import { Settings } from "./Settings/Settings";
 import { Spinner } from "./Spinner/Spinner";
+import { Toggle } from "./Toggle/Toggle";
 import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
 	Button,
+	Card,
 	Footer,
 	IconAssistant,
 	IconClose,
@@ -35,5 +38,6 @@ export {
 	PromptInput,
 	Settings,
 	Spinner,
+	Toggle,
 	Toolbox,
 };
