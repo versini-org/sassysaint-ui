@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import {
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
+	ROLE_HIDDEN,
 	ROLE_INTERNAL,
 	ROLE_SYSTEM,
 	ROLE_USER,
@@ -42,7 +43,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 				state.length === 0 ||
 				lastMessage.message.role === ROLE_ASSISTANT ||
 				lastMessage.message.role === ROLE_SYSTEM ||
-				lastMessage.message.role === ROLE_INTERNAL
+				lastMessage.message.role === ROLE_INTERNAL ||
+				lastMessage.message.role === ROLE_HIDDEN
 			) {
 				return;
 			}

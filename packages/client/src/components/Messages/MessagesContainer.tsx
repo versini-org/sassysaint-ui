@@ -2,13 +2,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useReducer, useRef } from "react";
 
 import {
+	DEFAULT_MODEL,
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
+	ROLE_HIDDEN,
 	ROLE_INTERNAL,
 	ROLE_RESET,
 	ROLE_USER,
 } from "../../common/constants";
-import { isDev } from "../../common/utilities";
+import { isDev, retrieveMode } from "../../common/utilities";
 import {
 	MessageAssistant,
 	MessagesContainerHeader,
@@ -30,6 +32,18 @@ const reducer = (state: actionProps[], action: actionProps) => {
 		case ROLE_USER:
 		case ROLE_ASSISTANT:
 		case ROLE_INTERNAL:
+			return [
+				...state,
+				{
+					message: {
+						role: action.message.role,
+						content: action.message.content,
+					},
+					usage: action.usage,
+					model: action.model,
+				},
+			];
+		case ROLE_HIDDEN:
 			return [
 				...state,
 				{
@@ -64,7 +78,17 @@ export const MessagesContainer = ({
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
-	const [state, dispatch] = useReducer(reducer, []);
+
+	const model = retrieveMode() || DEFAULT_MODEL;
+	const [state, dispatch] = useReducer(reducer, [
+		{
+			message: {
+				role: ROLE_HIDDEN,
+				content: model,
+			},
+			model,
+		},
+	]);
 	const { isAuthenticated } = useAuth0();
 	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
 

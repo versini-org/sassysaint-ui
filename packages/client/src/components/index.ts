@@ -15,6 +15,7 @@ import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./PromptInput/PromptInput";
 import { Settings } from "./Settings/Settings";
 import { Spinner } from "./Spinner/Spinner";
+import { Toggle } from "./Toggle/Toggle";
 import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
@@ -35,5 +36,6 @@ export {
 	PromptInput,
 	Settings,
 	Spinner,
+	Toggle,
 	Toolbox,
 };
