@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.10.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.9.1...client-v1.10.0) (2023-09-06)
+
+
+### Features
+
+* adding support for GPT-4 ([c7fc2fa](https://github.com/aversini/sassysaint-ui/commit/c7fc2fa55f03a3a0c4583d0a2d76d636c01ea975))
+
+
+### Bug Fixes
+
+* do not dismiss panel on click outside ([991fd35](https://github.com/aversini/sassysaint-ui/commit/991fd35e7115ba4da9b9aceab973f9c81d809532))
+* typos and lint errors ([f6bfeef](https://github.com/aversini/sassysaint-ui/commit/f6bfeef8934d364ff4540f9e8e510fccbbb1aeec))
+
 ## [1.9.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.9.0...client-v1.9.1) (2023-09-04)
 
 
