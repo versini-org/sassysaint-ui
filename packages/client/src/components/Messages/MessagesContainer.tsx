@@ -68,8 +68,9 @@ export const MessagesContainer = ({
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
+	const { isAuthenticated } = useAuth0();
 	const model = retrieveModel() || DEFAULT_MODEL;
-
+	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
 	const [state, dispatch] = useReducer(reducer, [
 		{
 			message: {
@@ -80,8 +81,6 @@ export const MessagesContainer = ({
 			usage: 0,
 		},
 	]);
-	const { isAuthenticated } = useAuth0();
-	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
 
 	/**
 	 * Scroll to the bottom of the messages container when
