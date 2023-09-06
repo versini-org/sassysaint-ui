@@ -32,17 +32,6 @@ const reducer = (state: actionProps[], action: actionProps) => {
 		case ROLE_USER:
 		case ROLE_ASSISTANT:
 		case ROLE_INTERNAL:
-			return [
-				...state,
-				{
-					message: {
-						role: action.message.role,
-						content: action.message.content,
-					},
-					usage: action.usage,
-					model: action.model,
-				},
-			];
 		case ROLE_HIDDEN:
 			return [
 				...state,
@@ -66,7 +55,7 @@ const reducer = (state: actionProps[], action: actionProps) => {
 						content: ERROR_MESSAGE,
 					},
 					usage: 0,
-					model: "N/A",
+					model: DEFAULT_MODEL,
 				},
 			];
 	}
