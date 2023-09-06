@@ -11,8 +11,8 @@ function obfuscate(str: string) {
 		? window.btoa(
 				encodeURIComponent(str).replace(
 					/%([0-9A-F]{2})/g,
-					function toSolidBytes(match, p1) {
-						return String.fromCharCode(`0x${p1}`);
+					function toSolidBytes(_match, p1) {
+						return String.fromCharCode(Number(`0x${p1}`));
 					},
 				),
 		  )
@@ -37,11 +37,11 @@ function unObfuscate(str: string) {
 		: null;
 }
 
-export const persistMode = (mode: string) => {
-	const obfuscatedCode = obfuscate(mode.trim()) || "";
-	localStorage.setItem(`sassy-saint-mode`, obfuscatedCode);
+export const persistModel = (model: string) => {
+	const obfuscatedCode = obfuscate(model.trim()) || "";
+	localStorage.setItem(`sassy-saint-model`, obfuscatedCode);
 };
 
-export const retrieveMode = () => {
-	return unObfuscate(localStorage.getItem(`sassy-saint-mode`) || "");
+export const retrieveModel = () => {
+	return unObfuscate(localStorage.getItem(`sassy-saint-model`) || "");
 };

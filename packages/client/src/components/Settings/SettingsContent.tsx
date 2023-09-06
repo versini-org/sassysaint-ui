@@ -8,7 +8,7 @@ import {
 	MODEL_GPT4,
 	ROLE_HIDDEN,
 } from "../../common/constants";
-import { persistMode, retrieveMode } from "../../common/utilities";
+import { persistModel, retrieveModel } from "../../common/utilities";
 import { Button, Card, Toggle } from "..";
 import { MessagesContext } from "../Messages/MessagesContext";
 
@@ -26,12 +26,13 @@ export const SettingsContent = ({
 	user,
 }: SettingsContentProps) => {
 	const { state, dispatch } = useContext(MessagesContext);
-	const mode = retrieveMode() || DEFAULT_MODEL;
+	const model = retrieveModel() || DEFAULT_MODEL;
+
 	const endUser = isDev ? { name: "ArnoDev", email: "toto@titi.fr" } : user;
 	const endState =
 		state && state.length > 0 && state[state.length - 1]
 			? state[state.length - 1]
-			: { model: mode, usage: 0 };
+			: { model, usage: 0 };
 
 	let remainingTokens = GTP3_MAX_TOKENS;
 
@@ -44,7 +45,7 @@ export const SettingsContent = ({
 	}
 
 	const onToggleGPT = (checked: boolean) => {
-		persistMode(checked ? MODEL_GPT4 : MODEL_GPT3);
+		persistModel(checked ? MODEL_GPT4 : MODEL_GPT3);
 		dispatch({
 			message: {
 				role: ROLE_HIDDEN,

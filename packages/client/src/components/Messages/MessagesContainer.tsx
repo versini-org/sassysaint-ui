@@ -10,7 +10,7 @@ import {
 	ROLE_RESET,
 	ROLE_USER,
 } from "../../common/constants";
-import { isDev, retrieveMode } from "../../common/utilities";
+import { isDev, retrieveModel } from "../../common/utilities";
 import {
 	MessageAssistant,
 	MessagesContainerHeader,
@@ -79,7 +79,8 @@ export const MessagesContainer = ({
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
-	const model = retrieveMode() || DEFAULT_MODEL;
+	const model = retrieveModel() || DEFAULT_MODEL;
+
 	const [state, dispatch] = useReducer(reducer, [
 		{
 			message: {
