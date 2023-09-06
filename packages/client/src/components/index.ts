@@ -1,4 +1,5 @@
 import { Button } from "./Button/Button";
+import { Card } from "./Card/Card";
 import { Footer } from "./Footer/Footer";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
@@ -20,6 +21,7 @@ import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
 	Button,
+	Card,
 	Footer,
 	IconAssistant,
 	IconClose,

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import {
 	DEFAULT_MODEL,
@@ -9,7 +9,7 @@ import {
 	ROLE_HIDDEN,
 } from "../../common/constants";
 import { persistMode, retrieveMode } from "../../common/utilities";
-import { Button, Toggle } from "..";
+import { Button, Card, Toggle } from "..";
 import { MessagesContext } from "../Messages/MessagesContext";
 
 export type SettingsContentProps = {
@@ -17,34 +17,6 @@ export type SettingsContentProps = {
 	isDev: boolean;
 	logoutWithRedirect: () => void;
 	user: any;
-};
-
-type CardProps = {
-	title: string;
-	subTitle?: string;
-	data: {
-		[key: string]: string | number | undefined | React.ReactNode;
-	};
-};
-
-const Card = ({ title, subTitle, data }: CardProps) => {
-	const titleClass = subTitle ? "font-bold text-lg" : "font-bold text-lg mb-4";
-	return (
-		<div className="border-slate-900 border-2 rounded-md p-4 bg-slate-900 text-slate-200">
-			<h2 className={titleClass}>{title}</h2>
-			{subTitle && <h3 className="text-sm mb-4">{subTitle}</h3>}
-			{Object.keys(data).map((idx) => {
-				return (
-					<dl className="mb-5" key={`${title}-${idx}`}>
-						<div className="flex justify-between items-center">
-							<dt className="font-bold text-slate-400 inline-block">{idx}</dt>
-							<dd className="inline-block">{data[idx]}</dd>
-						</div>
-					</dl>
-				);
-			})}
-		</div>
-	);
 };
 
 export const SettingsContent = ({
@@ -85,8 +57,9 @@ export const SettingsContent = ({
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
-			<div className="grid sm:grid-flow-col grid-flow-row justify-stretch gap-2">
+			<div className="flex flex-col sm:flex-row gap-2">
 				<Card
+					className="w-full sm:w-1/2"
 					title="User preferences"
 					data={{
 						Name: endUser.name,
@@ -100,6 +73,7 @@ export const SettingsContent = ({
 					}}
 				/>
 				<Card
+					className="w-full sm:w-1/2"
 					title="Real time statistics"
 					subTitle="(current chat session)"
 					data={{

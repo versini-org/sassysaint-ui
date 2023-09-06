@@ -7,7 +7,7 @@ export type actionProps = {
 		role?: string;
 		content?: string;
 	};
-	usage?: string;
+	usage?: string | number;
 	model?: string;
 };
 

@@ -65,7 +65,7 @@ const reducer = (state: actionProps[], action: actionProps) => {
 						role: ROLE_INTERNAL,
 						content: ERROR_MESSAGE,
 					},
-					usage: "N/A",
+					usage: 0,
 					model: "N/A",
 				},
 			];
@@ -87,6 +87,7 @@ export const MessagesContainer = ({
 				content: model,
 			},
 			model,
+			usage: 0,
 		},
 	]);
 	const { isAuthenticated } = useAuth0();
