@@ -2,19 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.bubble-assistant {
-	@apply prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black;
-}
-
-.bubble-user {
-	@apply prose prose-p:my-1 prose-indigo text-white;
-}
-
 h1.heading {
 	font-family: "Open Sans";
 }
 
-.fade {
+.fadeIn {
 	animation: fadeInAnimation ease 1s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;

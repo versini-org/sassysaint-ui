@@ -33,7 +33,7 @@ export const MessageAssistant = ({
 				<div className="text-slate-300 hidden sm:block">
 					<IconAssistant />
 				</div>
-				<div className="bubble bubble-assistant flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black">
+				<div className="flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black">
 					<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
 				</div>
 

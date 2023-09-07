@@ -62,7 +62,7 @@ function App() {
 	});
 
 	return isLoading && !isDev ? null : (
-		<div className="fade">
+		<div className="fadeIn">
 			<AppContext.Provider value={{ state, dispatch }}>
 				<Main>
 					<MessagesContainer />
