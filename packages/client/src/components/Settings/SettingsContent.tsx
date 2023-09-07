@@ -1,16 +1,16 @@
 import { useContext } from "react";
 
 import {
+	ACTION,
 	DEFAULT_MODEL,
 	GTP3_MAX_TOKENS,
 	GTP4_MAX_TOKENS,
 	MODEL_GPT3,
 	MODEL_GPT4,
-	ROLE_HIDDEN,
 } from "../../common/constants";
-import { persistModel, retrieveModel } from "../../common/utilities";
+import { persistModel } from "../../common/utilities";
+import { AppContext } from "../../modules/AppContext";
 import { Button, Card, Toggle } from "..";
-import { MessagesContext } from "../Messages/MessagesContext";
 
 export type SettingsContentProps = {
 	isAuthenticated: boolean;
@@ -25,34 +25,24 @@ export const SettingsContent = ({
 	logoutWithRedirect,
 	user,
 }: SettingsContentProps) => {
-	const { state, dispatch } = useContext(MessagesContext);
-	const model = retrieveModel() || DEFAULT_MODEL;
-
+	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev ? { name: "ArnoDev", email: "toto@titi.fr" } : user;
-	const endState =
-		state && state.length > 0 && state[state.length - 1]
-			? state[state.length - 1]
-			: { model, usage: 0 };
 
 	let remainingTokens = GTP3_MAX_TOKENS;
 
-	if (typeof endState?.usage === "number") {
-		if (endState?.model?.includes("4")) {
-			remainingTokens = GTP4_MAX_TOKENS - Number(endState.usage);
-		} else {
-			remainingTokens = GTP3_MAX_TOKENS - Number(endState.usage);
-		}
+	if (state?.model?.includes("4")) {
+		remainingTokens = GTP4_MAX_TOKENS - Number(state?.usage);
+	} else {
+		remainingTokens = GTP3_MAX_TOKENS - Number(state?.usage);
 	}
 
 	const onToggleGPT = (checked: boolean) => {
 		persistModel(checked ? MODEL_GPT4 : MODEL_GPT3);
 		dispatch({
-			message: {
-				role: ROLE_HIDDEN,
-				content: checked ? MODEL_GPT4 : MODEL_GPT3,
+			type: ACTION.MODEL,
+			payload: {
+				model: checked ? MODEL_GPT4 : MODEL_GPT3,
 			},
-			model: checked ? MODEL_GPT4 : MODEL_GPT3,
-			usage: endState.usage,
 		});
 	};
 
@@ -68,7 +58,7 @@ export const SettingsContent = ({
 						"GPT-4": (
 							<Toggle
 								onChange={onToggleGPT}
-								checked={endState?.model?.includes("4")}
+								checked={state?.model?.includes("4")}
 							/>
 						),
 					}}
@@ -78,7 +68,7 @@ export const SettingsContent = ({
 					title="Real time statistics"
 					subTitle="(current chat session)"
 					data={{
-						"GTP model": endState.model,
+						"GTP model": state?.model || DEFAULT_MODEL,
 						"Remaining tokens": remainingTokens,
 					}}
 				/>
