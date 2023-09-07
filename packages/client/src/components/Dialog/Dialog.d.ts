@@ -14,8 +14,3 @@ export type ContextType =
 			>;
 	  })
 	| null;
-
-export interface DialogTriggerProps {
-	children: React.ReactNode;
-	asChild?: boolean;
-}
