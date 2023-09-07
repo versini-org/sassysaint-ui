@@ -2,6 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import {
+	ACTION_MESSAGE,
+	ACTION_MODEL,
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
 	ROLE_HIDDEN,
@@ -10,8 +12,8 @@ import {
 	ROLE_USER,
 } from "../../common/constants";
 import { isProd } from "../../common/utilities";
+import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
-import { MessagesContext } from "../Messages/MessagesContext";
 
 export type onPromptInputSubmitProps = {
 	message: {
@@ -29,18 +31,18 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	 * the whole conversation. This is needed so that the
 	 * gpt engine can generate a response based on context.
 	 */
-	const { state, dispatch } = useContext(MessagesContext);
+	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated } = useAuth0();
 
 	useEffect(() => {
 		(async () => {
-			if (!state || state.length === 0) {
+			if (!state || state.messages.length === 0) {
 				return;
 			}
-			const lastMessage = state[state.length - 1];
+			const lastMessage = state.messages[state.messages.length - 1];
 			if (
-				state.length === 0 ||
+				state.messages.length === 0 ||
 				lastMessage.message.role === ROLE_ASSISTANT ||
 				lastMessage.message.role === ROLE_SYSTEM ||
 				lastMessage.message.role === ROLE_INTERNAL ||
@@ -57,35 +59,49 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						headers: {
 							"Content-Type": "application/json",
 						},
-						body: JSON.stringify({ messages: state }),
+						body: JSON.stringify({ messages: state.messages }),
 					},
 				);
 
 				if (response.status !== 200) {
 					dispatch({
-						message: {
-							role: ROLE_INTERNAL,
-							content: ERROR_MESSAGE,
+						type: ACTION_MESSAGE,
+						payload: {
+							message: {
+								role: ROLE_INTERNAL,
+								content: ERROR_MESSAGE,
+							},
 						},
 					});
 				} else {
 					const data = await response.json();
 					dispatch({
-						message: {
-							role: ROLE_ASSISTANT,
-							content: data.result,
+						type: ACTION_MODEL,
+						payload: {
+							usage: data.usage,
+							model: data.model,
 						},
-						usage: data.usage,
-						model: data.model,
+					});
+					dispatch({
+						type: ACTION_MESSAGE,
+						payload: {
+							message: {
+								role: ROLE_ASSISTANT,
+								content: data.result,
+							},
+						},
 					});
 				}
 			} catch (error) {
 				// eslint-disable-next-line no-console
 				console.error(error);
 				dispatch({
-					message: {
-						role: ROLE_INTERNAL,
-						content: ERROR_MESSAGE,
+					type: ACTION_MESSAGE,
+					payload: {
+						message: {
+							role: ROLE_INTERNAL,
+							content: ERROR_MESSAGE,
+						},
 					},
 				});
 			}
@@ -96,9 +112,12 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		dispatch({
-			message: {
-				role: ROLE_USER,
-				content: userInput,
+			type: ACTION_MESSAGE,
+			payload: {
+				message: {
+					role: ROLE_USER,
+					content: userInput,
+				},
 			},
 		});
 		// Clear the input field

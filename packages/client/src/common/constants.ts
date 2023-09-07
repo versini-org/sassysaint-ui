@@ -14,3 +14,7 @@ export const GTP3_MAX_TOKENS = 4096;
 export const GTP4_MAX_TOKENS = 8192;
 
 export const DEFAULT_MODEL = MODEL_GPT3;
+
+export const ACTION_MESSAGE = "action-message";
+export const ACTION_RESET = "action-reset";
+export const ACTION_MODEL = "action-model";
