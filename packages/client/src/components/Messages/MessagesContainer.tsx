@@ -14,9 +14,9 @@ import {
 	MessageUser,
 	Toolbox,
 } from "../";
-import { PromptInput } from "../PromptInput/PromptInput";
 import { Spinner } from "../Spinner/Spinner";
 import type { MessagesContainerProps } from "./Messages";
+import { PromptInput } from "./PromptInput";
 
 export const MessagesContainer = ({
 	noHeader = false,

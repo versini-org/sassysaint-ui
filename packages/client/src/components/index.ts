@@ -13,7 +13,7 @@ import { MessageAssistant } from "./Messages/MessageAssistant";
 import { MessagesContainer } from "./Messages/MessagesContainer";
 import { MessagesContainerHeader } from "./Messages/MessagesContainerHeader";
 import { MessageUser } from "./Messages/MessageUser";
-import { PromptInput } from "./PromptInput/PromptInput";
+import { PromptInput } from "./Messages/PromptInput";
 import { Settings } from "./Settings/Settings";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
