@@ -1,16 +1,21 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useReducer } from "react";
 
-import { ACTION, DEFAULT_MODEL } from "../common/constants";
+import {
+	ACTION_MESSAGE,
+	ACTION_MODEL,
+	ACTION_RESET,
+	DEFAULT_MODEL,
+} from "../common/constants";
 import { isDev, retrieveModel } from "../common/utilities";
 import { Footer, Main, MessagesContainer } from "../components";
 import { AppContext } from "./AppContext";
 import { ActionProps, StateProps } from "./AppTypes";
 
 const reducer = (state: StateProps, action: ActionProps) => {
-	if (action.type === ACTION.MESSAGE) {
-		const role = action.payload?.message?.role;
-		const content = action.payload?.message?.content;
+	if (action.type === ACTION_MESSAGE) {
+		const role = action.payload.message.role;
+		const content = action.payload.message.content;
 		if (role !== "" && content !== "") {
 			return {
 				model: state.model,
@@ -28,7 +33,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 		}
 	}
 
-	if (action.type === ACTION.RESET) {
+	if (action.type === ACTION_RESET) {
 		return {
 			model: DEFAULT_MODEL,
 			usage: 0,
@@ -36,10 +41,10 @@ const reducer = (state: StateProps, action: ActionProps) => {
 		};
 	}
 
-	if (action.type === ACTION.MODEL) {
+	if (action.type === ACTION_MODEL) {
 		return {
-			model: action.payload?.model || state.model,
-			usage: action.payload?.usage || state.usage,
+			model: action.payload.model || state.model,
+			usage: action.payload.usage || state.usage,
 			messages: state.messages,
 		};
 	}

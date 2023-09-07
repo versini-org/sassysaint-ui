@@ -2,7 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import {
-	ACTION,
+	ACTION_MESSAGE,
+	ACTION_MODEL,
 	ERROR_MESSAGE,
 	ROLE_ASSISTANT,
 	ROLE_HIDDEN,
@@ -64,7 +65,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 				if (response.status !== 200) {
 					dispatch({
-						type: ACTION.MESSAGE,
+						type: ACTION_MESSAGE,
 						payload: {
 							message: {
 								role: ROLE_INTERNAL,
@@ -75,14 +76,14 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 				} else {
 					const data = await response.json();
 					dispatch({
-						type: ACTION.MODEL,
+						type: ACTION_MODEL,
 						payload: {
 							usage: data.usage,
 							model: data.model,
 						},
 					});
 					dispatch({
-						type: ACTION.MESSAGE,
+						type: ACTION_MESSAGE,
 						payload: {
 							message: {
 								role: ROLE_ASSISTANT,
@@ -95,7 +96,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 				// eslint-disable-next-line no-console
 				console.error(error);
 				dispatch({
-					type: ACTION.MESSAGE,
+					type: ACTION_MESSAGE,
 					payload: {
 						message: {
 							role: ROLE_INTERNAL,
@@ -111,7 +112,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		dispatch({
-			type: ACTION.MESSAGE,
+			type: ACTION_MESSAGE,
 			payload: {
 				message: {
 					role: ROLE_USER,

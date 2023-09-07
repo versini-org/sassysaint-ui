@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useContext } from "react";
 
-import { ACTION } from "../../common/constants";
+import { ACTION_RESET } from "../../common/constants";
 import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
 
@@ -15,7 +15,7 @@ export const Toolbox = ({ className }: ToolboxProps) => {
 	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 		dispatch({
-			type: ACTION.RESET,
+			type: ACTION_RESET,
 		});
 	};
 

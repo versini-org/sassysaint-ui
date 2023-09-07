@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 import {
-	ACTION,
+	ACTION_MODEL,
 	DEFAULT_MODEL,
 	GTP3_MAX_TOKENS,
 	GTP4_MAX_TOKENS,
@@ -39,9 +39,10 @@ export const SettingsContent = ({
 	const onToggleGPT = (checked: boolean) => {
 		persistModel(checked ? MODEL_GPT4 : MODEL_GPT3);
 		dispatch({
-			type: ACTION.MODEL,
+			type: ACTION_MODEL,
 			payload: {
 				model: checked ? MODEL_GPT4 : MODEL_GPT3,
+				usage: state?.usage || 0,
 			},
 		});
 	};
