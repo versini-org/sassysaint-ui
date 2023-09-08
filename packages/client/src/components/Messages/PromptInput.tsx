@@ -59,7 +59,10 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						headers: {
 							"Content-Type": "application/json",
 						},
-						body: JSON.stringify({ messages: state.messages }),
+						body: JSON.stringify({
+							messages: state.messages,
+							model: state.model,
+						}),
 					},
 				);
 
