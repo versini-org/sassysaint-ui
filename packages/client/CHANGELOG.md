@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.1...client-v1.10.2) (2023-09-08)
+
+
+### Bug Fixes
+
+* model switch does not work anymore ([d75627a](https://github.com/aversini/sassysaint-ui/commit/d75627ab69a796bf79749e4bd8ca3fb3111b3ac1))
+
 ## [1.10.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.0...client-v1.10.1) (2023-09-08)
 
 
