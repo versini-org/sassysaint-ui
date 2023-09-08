@@ -62,14 +62,12 @@ function App() {
 	});
 
 	return isLoading && !isDev ? null : (
-		<div className="fadeIn">
-			<AppContext.Provider value={{ state, dispatch }}>
-				<Main>
-					<MessagesContainer />
-				</Main>
-				<Footer />
-			</AppContext.Provider>
-		</div>
+		<AppContext.Provider value={{ state, dispatch }}>
+			<Main>
+				<MessagesContainer />
+			</Main>
+			<Footer />
+		</AppContext.Provider>
 	);
 }
 
