@@ -19,6 +19,7 @@ export const MessagesContainerHeader = () => {
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
 					<Button
+						aria-label="Settings"
 						iconOnly
 						onClick={onClickSettings}
 						className="absolute bottom-[-28px] right-[-7px]"
