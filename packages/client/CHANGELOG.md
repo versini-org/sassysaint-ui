@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.0...client-v1.10.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* button with no label should still announce intent ([95161c8](https://github.com/aversini/sassysaint-ui/commit/95161c84fe409d6a7b044281cbb6fcb11382e4f0))
+
 ## [1.10.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.9.1...client-v1.10.0) (2023-09-06)
 
 
