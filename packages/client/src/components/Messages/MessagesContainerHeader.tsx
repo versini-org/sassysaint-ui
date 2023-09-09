@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 
+import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
 import { Button, IconDog, IconSettings } from "..";
 import { Settings } from "..";
@@ -37,9 +38,9 @@ export const MessagesContainerHeader = () => {
 				</div>
 				<div>
 					<h1 className="heading text-2xl md:text-3xl font-bold text-slate-300">
-						Sassy Saint
+						{APP_NAME}
 					</h1>
-					<h2 className="text-slate-300 md:text-xl">ASK! ME! ANYTHING!</h2>
+					<h2 className="text-slate-300 md:text-xl">{APP_MOTTO}</h2>
 				</div>
 			</div>
 		</>

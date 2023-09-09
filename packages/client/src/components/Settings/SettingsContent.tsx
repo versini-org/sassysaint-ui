@@ -8,6 +8,12 @@ import {
 	MODEL_GPT3,
 	MODEL_GPT4,
 } from "../../common/constants";
+import {
+	CARDS,
+	FAKE_USER_EMAIL,
+	FAKE_USER_NAME,
+	LOG_OUT,
+} from "../../common/strings";
 import { persistModel } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button, Card, Toggle } from "..";
@@ -26,7 +32,9 @@ export const SettingsContent = ({
 	user,
 }: SettingsContentProps) => {
 	const { state, dispatch } = useContext(AppContext);
-	const endUser = isDev ? { name: "ArnoDev", email: "toto@titi.fr" } : user;
+	const endUser = isDev
+		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
+		: user;
 
 	let remainingTokens = GTP3_MAX_TOKENS;
 
@@ -52,10 +60,10 @@ export const SettingsContent = ({
 			<div className="flex flex-col sm:flex-row gap-2">
 				<Card
 					className="w-full sm:w-1/2"
-					title="User preferences"
+					title={CARDS.PREFERENCES.TITLE}
 					data={{
-						Name: endUser.name,
-						Email: endUser.email,
+						[CARDS.PREFERENCES.NAME]: endUser.name,
+						[CARDS.PREFERENCES.EMAIL]: endUser.email,
 						"GPT-4": (
 							<Toggle
 								onChange={onToggleGPT}
@@ -66,11 +74,11 @@ export const SettingsContent = ({
 				/>
 				<Card
 					className="w-full sm:w-1/2"
-					title="Real time statistics"
-					subTitle="(current chat session)"
+					title={CARDS.STATISTICS.TITLE}
+					subTitle={CARDS.STATISTICS.SUBTITLE}
 					data={{
-						"GTP model": state?.model || DEFAULT_MODEL,
-						"Remaining tokens": remainingTokens,
+						[CARDS.STATISTICS.MODEL_NAME]: state?.model || DEFAULT_MODEL,
+						[CARDS.STATISTICS.TOKENS]: remainingTokens,
 					}}
 				/>
 			</div>
@@ -80,7 +88,7 @@ export const SettingsContent = ({
 				className="mt-2"
 				onClick={() => logoutWithRedirect()}
 			>
-				<span className="text-red-600">Log out</span>
+				<span className="text-red-600">{LOG_OUT}</span>
 			</Button>
 		</>
 	) : null;

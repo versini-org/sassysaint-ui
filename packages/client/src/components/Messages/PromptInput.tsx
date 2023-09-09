@@ -11,6 +11,7 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
+import { LOG_IN, SEND, TYPE_QUESTION } from "../../common/strings";
 import { isProd } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
@@ -145,14 +146,14 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	return !isAuthenticated && isProd ? (
 		<>
 			<Button className="mt-6 mb-4" onClick={() => loginWithRedirect()}>
-				Log in
+				{LOG_IN}
 			</Button>
 		</>
 	) : (
 		<>
 			<form className="mt-2" onSubmit={onSubmit}>
 				<label htmlFor="chat-input" className="sr-only">
-					Enter your question
+					{TYPE_QUESTION}
 				</label>
 
 				<div className="relative">
@@ -161,7 +162,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						id="chat-input"
 						className="block w-full resize-none rounded-md border-none p-4 pr-24 min-h-[56px] text-base caret-slate-100 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 bg-slate-900 text-slate-200 placeholder-slate-400 sm:text-base"
 						rows={1}
-						placeholder="Enter your question"
+						placeholder={TYPE_QUESTION}
 						required
 						value={userInput}
 						onChange={(e) => setUserInput(e.target.value)}
@@ -172,7 +173,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						type="submit"
 						className="absolute bottom-2 right-2.5"
 					>
-						Send
+						{SEND}
 					</Button>
 				</div>
 			</form>

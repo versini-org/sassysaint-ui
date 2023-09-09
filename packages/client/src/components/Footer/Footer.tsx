@@ -1,5 +1,6 @@
 import { useContext } from "react";
 
+import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import { isDev } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 
@@ -9,12 +10,13 @@ export const Footer = () => {
 	return (
 		<footer className="mb-[100px] text-center text-xs text-slate-300">
 			<div>
-				Sassy Saint v{import.meta.env.BUILDVERSION} -{" "}
-				{import.meta.env.BUILDTIME}
+				{APP_NAME} v{import.meta.env.BUILDVERSION} - {import.meta.env.BUILDTIME}
 			</div>
-			<div>Powered by OpenAI {state?.model}</div>
+			<div>
+				{POWERED_BY} {state?.model}
+			</div>
 			<div className={buildClass}>
-				&copy; {new Date().getFullYear()} gizmette.com
+				&copy; {new Date().getFullYear()} {APP_OWNER}
 			</div>
 		</footer>
 	);

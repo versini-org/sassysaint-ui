@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
+import { SETTINGS_TITLE } from "../../common/strings";
 import { isDev } from "../../common/utilities";
 import { IconClose } from "..";
 import {
@@ -37,7 +38,7 @@ export const Settings = ({
 					<DialogClose iconOnly>
 						<IconClose />
 					</DialogClose>
-					<div>Profile</div>
+					<div>{SETTINGS_TITLE}</div>
 				</DialogHeading>
 
 				<DialogDescription className="flex flex-col flex-grow p-4">
