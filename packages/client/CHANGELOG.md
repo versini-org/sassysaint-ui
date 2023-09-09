@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.2...client-v1.11.0) (2023-09-09)
+
+
+### Features
+
+* smooth splash screen ([9cccac2](https://github.com/aversini/sassysaint-ui/commit/9cccac24fac51f2285a3a372aa6d2401bbb06c0e))
+
 ## [1.10.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.1...client-v1.10.2) (2023-09-08)
 
 
