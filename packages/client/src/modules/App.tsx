@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 import {
 	ACTION_MESSAGE,
@@ -60,6 +60,18 @@ function App() {
 		usage: 0,
 		messages: [],
 	});
+
+	useEffect(() => {
+		if (isLoading && !isDev) {
+			return;
+		}
+		document.getElementById("logo")?.classList.add("fadeOut");
+		setTimeout(() => {
+			document
+				.getElementById("root")
+				?.classList.replace("app-hidden", "fadeIn");
+		}, 500);
+	}, [isLoading]);
 
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch }}>
