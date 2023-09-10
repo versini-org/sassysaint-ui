@@ -80,7 +80,6 @@ export const SettingsContent = ({
 
 				if (response.status === 200) {
 					const data = await response.json();
-					console.log("==> data: ", data[0]);
 					setHistory(data);
 				}
 			} catch (error) {
@@ -117,13 +116,22 @@ export const SettingsContent = ({
 				/>
 			</div>
 			{history && (
-				<div className="flex flex-col sm:flex-row gap-2 mt-2">
+				<div className="flex flex-col sm:flex-row gap-2 mt-2 w-screen">
 					<Card
-						className="w-full"
+						className="w-full max-h-48 overflow-y-scroll"
 						title={CARDS.HISTORY.TITLE}
-						data={{
-							[CARDS.STATISTICS.TOKENS]: history.id,
-						}}
+						rawData={history.map((item) => (
+							<dl className="mb-2" key={`${CARDS.HISTORY.TITLE}-${item.id}`}>
+								<div className="flex items-center justify-between">
+									<dt className="font-bold text-slate-400 inline-block">
+										{item.timestamp}
+									</dt>
+									<dd className="inline-block truncate">
+										{item.messages[1].content}
+									</dd>
+								</div>
+							</dl>
+						))}
 					/>
 				</div>
 			)}
