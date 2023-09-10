@@ -10,6 +10,7 @@ export type MessageProps = {
 };
 
 export type StateProps = {
+	id: string;
 	model: string;
 	usage: number;
 	messages: { message: MessageProps }[];

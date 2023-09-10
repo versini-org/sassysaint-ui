@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import {
 	ACTION_MODEL,
@@ -54,6 +54,33 @@ export const SettingsContent = ({
 			},
 		});
 	};
+
+	useEffect(() => {
+		(async () => {
+			if (!state) {
+				return;
+			}
+			try {
+				const response = await fetch(
+					`${import.meta.env.VITE_SERVER_URL}/api/chats`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({
+							messages: state.messages,
+							model: state.model,
+							user: user?.email || FAKE_USER_EMAIL,
+							id: state.id,
+						}),
+					},
+				);
+				const data = await response.json();
+				console.log("==> ", data);
+			} catch (error) {}
+		})();
+	}, []);
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>

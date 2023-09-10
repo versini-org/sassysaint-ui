@@ -11,7 +11,12 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-import { LOG_IN, SEND, TYPE_QUESTION } from "../../common/strings";
+import {
+	FAKE_USER_EMAIL,
+	LOG_IN,
+	SEND,
+	TYPE_QUESTION,
+} from "../../common/strings";
 import { isProd } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
@@ -34,7 +39,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	 */
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
-	const { loginWithRedirect, isAuthenticated } = useAuth0();
+	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
 	useEffect(() => {
 		(async () => {
@@ -63,6 +68,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						body: JSON.stringify({
 							messages: state.messages,
 							model: state.model,
+							user: user?.email || FAKE_USER_EMAIL,
+							id: state.id,
 						}),
 					},
 				);
