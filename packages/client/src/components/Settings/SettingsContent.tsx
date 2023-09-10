@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import {
 	ACTION_MODEL,
@@ -31,6 +31,7 @@ export const SettingsContent = ({
 	logoutWithRedirect,
 	user,
 }: SettingsContentProps) => {
+	const [history, setHistory] = useState<any[]>([]);
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -76,11 +77,17 @@ export const SettingsContent = ({
 						}),
 					},
 				);
-				const data = await response.json();
-				console.log("==> ", data);
-			} catch (error) {}
+
+				if (response.status === 200) {
+					const data = await response.json();
+					console.log("==> data: ", data[0]);
+					setHistory(data);
+				}
+			} catch (error) {
+				// nothing to declare officer
+			}
 		})();
-	}, []);
+	}, [state, user?.email]);
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
@@ -109,6 +116,18 @@ export const SettingsContent = ({
 					}}
 				/>
 			</div>
+			{history && (
+				<div className="flex flex-col sm:flex-row gap-2 mt-2">
+					<Card
+						className="w-full"
+						title={CARDS.HISTORY.TITLE}
+						data={{
+							[CARDS.STATISTICS.TOKENS]: history.id,
+						}}
+					/>
+				</div>
+			)}
+
 			<Button
 				fullWidth
 				disabled={isDev}

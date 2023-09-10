@@ -23,4 +23,7 @@ export const CARDS = {
 		MODEL_NAME: "GPT model",
 		TOKENS: "Remaining tokens",
 	},
+	HISTORY: {
+		TITLE: "Chat history",
+	},
 };
