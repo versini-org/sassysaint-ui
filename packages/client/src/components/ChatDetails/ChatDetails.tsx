@@ -19,14 +19,7 @@ export const ChatDetails = ({
 	open: boolean;
 	onOpenChange: any;
 }) => {
-	const { logout, isAuthenticated, user } = useAuth0();
-
-	const logoutWithRedirect = () =>
-		logout({
-			logoutParams: {
-				returnTo: window.location.origin,
-			},
-		});
+	const { isAuthenticated } = useAuth0();
 
 	return (
 		<Dialog open={open} onOpenChange={onOpenChange}>
@@ -42,12 +35,7 @@ export const ChatDetails = ({
 				</DialogHeading>
 
 				<DialogDescription className="flex flex-col flex-grow p-4">
-					<ChatDetailsContent
-						isAuthenticated={isAuthenticated}
-						isDev={isDev}
-						logoutWithRedirect={logoutWithRedirect}
-						user={user}
-					/>
+					<ChatDetailsContent isAuthenticated={isAuthenticated} isDev={isDev} />
 				</DialogDescription>
 			</DialogContent>
 		</Dialog>

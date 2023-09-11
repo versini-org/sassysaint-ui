@@ -5,26 +5,20 @@ import {
 	GTP3_MAX_TOKENS,
 	GTP4_MAX_TOKENS,
 } from "../../common/constants";
-import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
+import { CARDS } from "../../common/strings";
 import { AppContext } from "../../modules/AppContext";
 import { Card } from "..";
 
 export type ChatDetailsContentProps = {
 	isAuthenticated: boolean;
 	isDev: boolean;
-	logoutWithRedirect: () => void;
-	user: any;
 };
 
 export const ChatDetailsContent = ({
 	isAuthenticated,
 	isDev,
-	user,
 }: ChatDetailsContentProps) => {
 	const { state } = useContext(AppContext);
-	const endUser = isDev
-		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
-		: user;
 
 	let remainingTokens = GTP3_MAX_TOKENS;
 
@@ -34,7 +28,7 @@ export const ChatDetailsContent = ({
 		remainingTokens = GTP3_MAX_TOKENS - Number(state?.usage);
 	}
 
-	return (isAuthenticated && endUser) || isDev ? (
+	return isAuthenticated || isDev ? (
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
 				<Card
