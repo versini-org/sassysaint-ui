@@ -10,9 +10,9 @@ import {
 	DialogDescription,
 	DialogHeading,
 } from "../Dialog/Dialog";
-import { SettingsContent } from "./SettingsContent";
+import { ProfileContent } from "./ProfileContent";
 
-export const Settings = ({
+export const Profile = ({
 	open,
 	onOpenChange,
 }: {
@@ -42,7 +42,7 @@ export const Settings = ({
 				</DialogHeading>
 
 				<DialogDescription className="flex flex-col flex-grow p-4">
-					<SettingsContent
+					<ProfileContent
 						isAuthenticated={isAuthenticated}
 						isDev={isDev}
 						logoutWithRedirect={logoutWithRedirect}
