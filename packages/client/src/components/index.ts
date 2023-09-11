@@ -1,5 +1,7 @@
 import { Button } from "./Button/Button";
 import { Card } from "./Card/Card";
+import { ChatDetails } from "./ChatDetails/ChatDetails";
+import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
 import { Footer } from "./Footer/Footer";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
@@ -14,7 +16,7 @@ import { MessagesContainer } from "./Messages/MessagesContainer";
 import { MessagesContainerHeader } from "./Messages/MessagesContainerHeader";
 import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./Messages/PromptInput";
-import { Settings } from "./Settings/Settings";
+import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
 import { Toolbox } from "./Toolbox/Toolbox";
@@ -22,6 +24,7 @@ import { Toolbox } from "./Toolbox/Toolbox";
 export {
 	Button,
 	Card,
+	ChatDetails,
 	Footer,
 	IconAssistant,
 	IconClose,
@@ -31,12 +34,14 @@ export {
 	IconSettings,
 	IconUser,
 	Main,
+	Menu,
+	MenuItem,
 	MessageAssistant,
 	MessagesContainer,
 	MessagesContainerHeader,
 	MessageUser,
+	Profile,
 	PromptInput,
-	Settings,
 	Spinner,
 	Toggle,
 	Toolbox,

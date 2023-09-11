@@ -1,13 +1,6 @@
 import { useContext } from "react";
 
-import {
-	ACTION_MODEL,
-	DEFAULT_MODEL,
-	GTP3_MAX_TOKENS,
-	GTP4_MAX_TOKENS,
-	MODEL_GPT3,
-	MODEL_GPT4,
-} from "../../common/constants";
+import { ACTION_MODEL, MODEL_GPT3, MODEL_GPT4 } from "../../common/constants";
 import {
 	CARDS,
 	FAKE_USER_EMAIL,
@@ -18,31 +11,23 @@ import { persistModel } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button, Card, Toggle } from "..";
 
-export type SettingsContentProps = {
+export type ProfileContentProps = {
 	isAuthenticated: boolean;
 	isDev: boolean;
 	logoutWithRedirect: () => void;
 	user: any;
 };
 
-export const SettingsContent = ({
+export const ProfileContent = ({
 	isAuthenticated,
 	isDev,
 	logoutWithRedirect,
 	user,
-}: SettingsContentProps) => {
+}: ProfileContentProps) => {
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
-
-	let remainingTokens = GTP3_MAX_TOKENS;
-
-	if (state?.model?.includes("4")) {
-		remainingTokens = GTP4_MAX_TOKENS - Number(state?.usage);
-	} else {
-		remainingTokens = GTP3_MAX_TOKENS - Number(state?.usage);
-	}
 
 	const onToggleGPT = (checked: boolean) => {
 		persistModel(checked ? MODEL_GPT4 : MODEL_GPT3);
@@ -59,7 +44,7 @@ export const SettingsContent = ({
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
 				<Card
-					className="w-full sm:w-1/2"
+					className="w-full"
 					title={CARDS.PREFERENCES.TITLE}
 					data={{
 						[CARDS.PREFERENCES.NAME]: endUser.name,
@@ -70,15 +55,6 @@ export const SettingsContent = ({
 								checked={state?.model?.includes("4")}
 							/>
 						),
-					}}
-				/>
-				<Card
-					className="w-full sm:w-1/2"
-					title={CARDS.STATISTICS.TITLE}
-					subTitle={CARDS.STATISTICS.SUBTITLE}
-					data={{
-						[CARDS.STATISTICS.MODEL_NAME]: state?.model || DEFAULT_MODEL,
-						[CARDS.STATISTICS.TOKENS]: remainingTokens,
 					}}
 				/>
 			</div>
