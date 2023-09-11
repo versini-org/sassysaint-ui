@@ -38,7 +38,7 @@ export const ChatDetailsContent = ({
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
 				<Card
-					className="w-full sm:w-1/2"
+					className="w-full"
 					title={CARDS.STATISTICS.TITLE}
 					subTitle={CARDS.STATISTICS.SUBTITLE}
 					data={{
