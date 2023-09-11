@@ -9,6 +9,7 @@ export const POWERED_BY = "Powered by OpenAI";
 export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";
 export const CHAT_DETAILS_TITLE = "Chat details";
+export const HISTORY_TITLE = "Chat history";
 export const TYPE_QUESTION = "Type your question here";
 export const CLEAR = "Clear chat";
 export const CARDS = {

@@ -45,3 +45,7 @@ export const persistModel = (model: string) => {
 export const retrieveModel = () => {
 	return unObfuscate(localStorage.getItem(`sassy-saint-model`) || "");
 };
+
+export const truncate = (str: string, length: number) => {
+	return str.length > length ? str.substring(0, length) + "..." : str;
+};

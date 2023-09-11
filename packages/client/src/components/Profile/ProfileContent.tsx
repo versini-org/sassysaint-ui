@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import { ACTION_MODEL, MODEL_GPT3, MODEL_GPT4 } from "../../common/constants";
 import {
@@ -24,7 +24,6 @@ export const ProfileContent = ({
 	logoutWithRedirect,
 	user,
 }: ProfileContentProps) => {
-	const [history, setHistory] = useState<any[]>([]);
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -40,38 +39,6 @@ export const ProfileContent = ({
 			},
 		});
 	};
-
-	useEffect(() => {
-		(async () => {
-			if (!state) {
-				return;
-			}
-			try {
-				const response = await fetch(
-					`${import.meta.env.VITE_SERVER_URL}/api/chats`,
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							messages: state.messages,
-							model: state.model,
-							user: user?.email || FAKE_USER_EMAIL,
-							id: state.id,
-						}),
-					},
-				);
-
-				if (response.status === 200) {
-					const data = await response.json();
-					setHistory(data);
-				}
-			} catch (error) {
-				// nothing to declare officer
-			}
-		})();
-	}, [state, user?.email]);
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
@@ -91,26 +58,6 @@ export const ProfileContent = ({
 					}}
 				/>
 			</div>
-			{history && (
-				<div className="flex flex-col sm:flex-row gap-2 mt-2 w-screen">
-					<Card
-						className="w-full max-h-48 overflow-y-scroll"
-						title={CARDS.HISTORY.TITLE}
-						rawData={history.map((item) => (
-							<dl className="mb-2" key={`${CARDS.HISTORY.TITLE}-${item.id}`}>
-								<div className="flex items-center justify-between">
-									<dt className="font-bold text-slate-400 inline-block">
-										{item.timestamp}
-									</dt>
-									<dd className="inline-block truncate">
-										{item.messages[1].content}
-									</dd>
-								</div>
-							</dl>
-						))}
-					/>
-				</div>
-			)}
 
 			<Button
 				fullWidth

@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export type CardProps = {
 	className?: string;
-	title: string;
+	title?: string;
 	subTitle?: string;
 	data?: {
 		[key: string]: string | number | undefined | React.ReactNode;
@@ -24,7 +24,7 @@ export const Card = ({
 	);
 	return (
 		<div className={cardClass}>
-			<h2 className={titleClass}>{title}</h2>
+			{title && <h2 className={titleClass}>{title}</h2>}
 			{subTitle && <h3 className="text-sm mb-4">{subTitle}</h3>}
 			{data &&
 				Object.keys(data).map((idx) => {
