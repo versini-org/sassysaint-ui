@@ -3,32 +3,34 @@ import { useState } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { Button, IconDog, IconSettings } from "..";
-import { Settings } from "..";
+import { ChatDetails, IconDog, IconSettings } from "..";
+import { Menu, MenuItem, Profile } from "..";
 
 export const MessagesContainerHeader = () => {
-	const [showSettings, setShowSettings] = useState(false);
+	const [showProfile, setShowProfile] = useState(false);
+	const [showChatDetails, setShowChatDetails] = useState(false);
 	const { isAuthenticated } = useAuth0();
 
-	const onClickSettings = () => {
-		setShowSettings(!showSettings);
+	const onClickProfile = () => {
+		setShowProfile(!showProfile);
 	};
+	const onClickChatDetails = () => {
+		setShowChatDetails(!showChatDetails);
+	};
+
 	return (
 		<>
-			<Settings open={showSettings} onOpenChange={setShowSettings} />
+			<Profile open={showProfile} onOpenChange={setShowProfile} />
+			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
 
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
-					<Button
-						aria-label="Settings"
-						iconOnly
-						onClick={onClickSettings}
-						className="absolute bottom-[-28px] right-[-7px]"
-					>
-						<div>
-							<IconSettings />
-						</div>
-					</Button>
+					<div className="absolute bottom-[-28px] right-[-7px]">
+						<Menu icon={<IconSettings />}>
+							<MenuItem label="Profile" onClick={onClickProfile} />
+							<MenuItem label="Chat details" onClick={onClickChatDetails} />
+						</Menu>
+					</div>
 				</div>
 			)}
 
