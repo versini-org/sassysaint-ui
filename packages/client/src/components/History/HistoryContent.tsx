@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 
+import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
-import { truncate } from "../../common/utilities";
+import { serviceCall, truncate } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button, Card, IconRestore } from "..";
 import { IconDelete } from "../Icons/IconDelete";
@@ -10,21 +11,87 @@ export type HistoryContentProps = {
 	isAuthenticated: boolean;
 	isDev: boolean;
 	user: any;
+	onOpenChange: any;
 };
 
-const renderAsTable = (history: any[]) => {
+const onClickRestore = async (
+	item: {
+		user: string;
+		id: number;
+		model: string;
+		messages: [];
+		usage: number;
+	},
+	dispatch: any,
+	onOpenChange: any,
+) => {
+	dispatch({
+		type: ACTION_RESET,
+	});
+
+	dispatch({
+		type: ACTION_RESTORE,
+		payload: {
+			id: item.id,
+			model: item.model,
+			usage: item.usage,
+			messages: item.messages,
+		},
+	});
+	onOpenChange(false);
+};
+
+const onClickDelete = async (
+	item: { user: any; id: any },
+	setHistory: (arg0: any) => void,
+) => {
+	try {
+		const response = await serviceCall({
+			name: "delete",
+			data: {
+				user: item?.user,
+				id: item?.id,
+			},
+		});
+		if (response.status === 200) {
+			const data = await response.json();
+			setHistory(data);
+		}
+	} catch (error) {
+		// nothing to declare officer
+	}
+};
+
+const extractFirstUserMessage = (messages: any[]) => {
+	const message = messages.find((item) => item.role === "user");
+	return truncate(message?.content, 100);
+};
+
+const renderAsTable = (
+	history: any[],
+	setHistory: any,
+	dispatch: any,
+	onOpenChange: any,
+) => {
+	const borderClass = "border border-gray-700";
+	const xPadding = "px-4";
 	return (
 		<div className="relative overflow-x-auto shadow-md rounded-lg">
 			<table className="w-full text-sm text-left text-gray-400">
-				<thead className="text-xs uppercase bg-gray-700 text-gray-400">
+				<thead
+					className={`text-xs uppercase bg-gray-700 text-gray-400 ${borderClass}`}
+				>
 					<tr>
-						<th scope="col" className="px-6 py-3">
-							Timestamp
+						<th scope="col" className={`${xPadding} py-3 text-white`}>
+							Date
 						</th>
-						<th scope="col" className="px-6 py-3">
+						<th scope="col" className={`${xPadding} py-3 text-white`}>
 							First message
 						</th>
-						<th scope="col" className="px-6 py-3">
+						<th
+							scope="col"
+							className={`${xPadding} py-3 hidden sm:block text-white text-right`}
+						>
 							Actions
 						</th>
 					</tr>
@@ -35,25 +102,39 @@ const renderAsTable = (history: any[]) => {
 						return (
 							<tr
 								key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}
-								className={`border ${rowClass} border-gray-700`}
+								className={`${borderClass} ${rowClass}`}
 							>
 								<th
 									scope="row"
-									className="px-6 py-4 font-medium sm:whitespace-nowrap"
+									className={`${xPadding} py-4 font-medium sm:whitespace-nowrap`}
 								>
 									{item.timestamp}
 								</th>
-								<td className="px-6 py-4 text-white">
-									{truncate(item.messages[1].content, 200)}
+								<td className={`${xPadding} py-4 text-white`}>
+									{extractFirstUserMessage(item.messages)}
 								</td>
 
-								<td className="px-6 py-4">
-									<div className="flex gap-2 justify-center">
-										<Button iconOnly kind="light">
+								<td className={`${xPadding} py-4 hidden sm:block`}>
+									<div className="flex gap-2 justify-end">
+										<Button
+											iconOnly
+											kind="light"
+											onClick={() => {
+												onClickRestore(item, dispatch, onOpenChange);
+											}}
+										>
 											<IconRestore />
 										</Button>
-										<Button iconOnly kind="light">
-											<IconDelete />
+										<Button
+											iconOnly
+											kind="light"
+											onClick={() => {
+												onClickDelete(item, setHistory);
+											}}
+										>
+											<div className="text-red-400">
+												<IconDelete />
+											</div>
 										</Button>
 									</div>
 								</td>
@@ -70,9 +151,10 @@ export const HistoryContent = ({
 	isAuthenticated,
 	isDev,
 	user,
+	onOpenChange,
 }: HistoryContentProps) => {
 	const [history, setHistory] = useState<any[]>([]);
-	const { state } = useContext(AppContext);
+	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
@@ -83,21 +165,15 @@ export const HistoryContent = ({
 				return;
 			}
 			try {
-				const response = await fetch(
-					`${import.meta.env.VITE_SERVER_URL}/api/chats`,
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							messages: state.messages,
-							model: state.model,
-							user: user?.email || FAKE_USER_EMAIL,
-							id: state.id,
-						}),
+				const response = await serviceCall({
+					name: "chats",
+					data: {
+						messages: state.messages,
+						model: state.model,
+						user: user?.email || FAKE_USER_EMAIL,
+						id: state.id,
 					},
-				);
+				});
 
 				if (response.status === 200) {
 					const data = await response.json();
@@ -114,8 +190,9 @@ export const HistoryContent = ({
 			{history && (
 				<div className="flex flex-col sm:flex-row gap-2">
 					<Card
+						noBackground
 						className="w-full overflow-y-scroll max-h-[75vh]"
-						rawData={renderAsTable(history)}
+						rawData={renderAsTable(history, setHistory, dispatch, onOpenChange)}
 					/>
 				</div>
 			)}

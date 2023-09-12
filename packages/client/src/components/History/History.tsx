@@ -39,6 +39,7 @@ export const History = ({
 						isAuthenticated={isAuthenticated}
 						isDev={isDev}
 						user={user}
+						onOpenChange={onOpenChange}
 					/>
 				</DialogDescription>
 			</DialogContent>

@@ -8,6 +8,7 @@ export type CardProps = {
 		[key: string]: string | number | undefined | React.ReactNode;
 	};
 	rawData?: React.ReactNode;
+	noBackground?: boolean;
 };
 
 export const Card = ({
@@ -15,13 +16,14 @@ export const Card = ({
 	subTitle,
 	data,
 	rawData,
+	noBackground = false,
 	className,
 }: CardProps) => {
 	const titleClass = subTitle ? "font-bold text-lg" : "font-bold text-lg mb-4";
-	const cardClass = clsx(
-		"rounded-md p-4 border-slate-900 border-2 bg-slate-900 text-slate-200",
-		className,
-	);
+	const cardClass = clsx("rounded-md text-slate-200", className, {
+		"p-4 border-slate-900 border-2 bg-slate-900": !noBackground,
+	});
+
 	return (
 		<div className={cardClass}>
 			{title && <h2 className={titleClass}>{title}</h2>}

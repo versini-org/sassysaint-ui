@@ -17,7 +17,7 @@ import {
 	SEND,
 	TYPE_QUESTION,
 } from "../../common/strings";
-import { isProd } from "../../common/utilities";
+import { isProd, serviceCall } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
 
@@ -58,21 +58,15 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 			}
 
 			try {
-				const response = await fetch(
-					`${import.meta.env.VITE_SERVER_URL}/api/generate`,
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							messages: state.messages,
-							model: state.model,
-							user: user?.email || FAKE_USER_EMAIL,
-							id: state.id,
-						}),
+				const response = await serviceCall({
+					name: "generate",
+					data: {
+						messages: state.messages,
+						model: state.model,
+						user: user?.email || FAKE_USER_EMAIL,
+						id: state.id,
 					},
-				);
+				});
 
 				if (response.status !== 200) {
 					dispatch({

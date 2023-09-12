@@ -2,6 +2,7 @@ import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
+	ACTION_RESTORE,
 } from "../common/constants";
 
 export type MessageProps = {
@@ -17,6 +18,15 @@ export type StateProps = {
 };
 
 export type ActionProps =
+	| {
+			type: typeof ACTION_RESTORE;
+			payload: {
+				model: string;
+				id: string;
+				usage: number;
+				messages: { message: MessageProps }[];
+			};
+	  }
 	| {
 			type: typeof ACTION_MODEL;
 			payload: {

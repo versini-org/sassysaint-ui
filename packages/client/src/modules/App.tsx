@@ -6,6 +6,7 @@ import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
+	ACTION_RESTORE,
 	DEFAULT_MODEL,
 } from "../common/constants";
 import { isDev, retrieveModel } from "../common/utilities";
@@ -14,6 +15,23 @@ import { AppContext } from "./AppContext";
 import { ActionProps, StateProps } from "./AppTypes";
 
 const reducer = (state: StateProps, action: ActionProps) => {
+	if (action.type === ACTION_RESTORE) {
+		const messages = action.payload.messages.map((item: any) => {
+			return {
+				message: {
+					role: item.role,
+					content: item.content,
+				},
+			};
+		});
+		return {
+			id: action.payload.id,
+			model: action.payload.model,
+			usage: action.payload.usage,
+			messages,
+		};
+	}
+
 	if (action.type === ACTION_MESSAGE) {
 		const role = action.payload.message.role;
 		const content = action.payload.message.content;
