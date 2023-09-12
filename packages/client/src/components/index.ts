@@ -20,6 +20,7 @@ import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
 import { Toolbox } from "./Toolbox/Toolbox";
+import { Tooltip } from "./Tooltip/Tooltip";
 
 export {
 	Button,
@@ -45,4 +46,5 @@ export {
 	Spinner,
 	Toggle,
 	Toolbox,
+	Tooltip,
 };

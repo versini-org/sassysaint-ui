@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import React from "react";
 
+import { Tooltip } from "..";
+
 export type ButtonProps = {
 	children?: React.ReactNode;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -52,17 +54,36 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			},
 		);
 
-		return (
-			<button
-				ref={ref}
-				className={buttonClass}
-				onClick={onClick}
-				disabled={disabled}
-				type={type}
-				aria-label={ariaLabel}
-			>
-				{children}
-			</button>
-		);
+		if (iconOnly) {
+			return (
+				<Tooltip
+					element={
+						<button
+							ref={ref}
+							className={buttonClass}
+							onClick={onClick}
+							disabled={disabled}
+							type={type}
+							aria-label={ariaLabel}
+						>
+							{children}
+						</button>
+					}
+				/>
+			);
+		} else {
+			return (
+				<button
+					ref={ref}
+					className={buttonClass}
+					onClick={onClick}
+					disabled={disabled}
+					type={type}
+					aria-label={ariaLabel}
+				>
+					{children}
+				</button>
+			);
+		}
 	},
 );
