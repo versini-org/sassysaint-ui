@@ -8,13 +8,7 @@ import {
 	DEFAULT_MODEL,
 } from "../common/constants";
 import { isDev, retrieveModel } from "../common/utilities";
-import {
-	Button,
-	Footer,
-	IconSettings,
-	Main,
-	MessagesContainer,
-} from "../components";
+import { Footer, Main, MessagesContainer } from "../components";
 import { AppContext } from "./AppContext";
 import { ActionProps, StateProps } from "./AppTypes";
 
@@ -85,9 +79,6 @@ function App() {
 				<MessagesContainer />
 			</Main>
 			<Footer />
-			<Button iconOnly>
-				<IconSettings />
-			</Button>
 		</AppContext.Provider>
 	);
 }

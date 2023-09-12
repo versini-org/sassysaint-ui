@@ -1,4 +1,5 @@
 import { Button } from "./Button/Button";
+import { ButtonIcon } from "./Button/ButtonIcon";
 import { Card } from "./Card/Card";
 import { ChatDetails } from "./ChatDetails/ChatDetails";
 import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
@@ -20,10 +21,10 @@ import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
 import { Toolbox } from "./Toolbox/Toolbox";
-import { Tooltip } from "./Tooltip/Tooltip";
 
 export {
 	Button,
+	ButtonIcon,
 	Card,
 	ChatDetails,
 	Footer,
@@ -46,5 +47,4 @@ export {
 	Spinner,
 	Toggle,
 	Toolbox,
-	Tooltip,
 };
