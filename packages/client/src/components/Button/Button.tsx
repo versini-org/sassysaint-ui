@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React from "react";
 
 import type { ButtonProps } from "./ButtonTypes";
+import { getButtonClasses, TYPE_BUTTON } from "./utilities";
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
@@ -19,7 +20,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		},
 		ref,
 	) => {
-		const buttonClass = clsx(
+		const buttonClass = getButtonClasses({
+			type: TYPE_BUTTON,
+			kind,
+			fullWidth,
+			disabled,
+			raw,
+			className,
+			slim,
+		});
+		clsx(
 			className,
 			"text-sm font-medium sm:text-base focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300",
 			{

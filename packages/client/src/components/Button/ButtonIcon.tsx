@@ -11,10 +11,10 @@ import {
 	useMergeRefs,
 	useRole,
 } from "@floating-ui/react";
-import clsx from "clsx";
 import React, { useState } from "react";
 
 import type { ButtonIconProps } from "./ButtonTypes";
+import { getButtonClasses, TYPE_ICON } from "./utilities";
 
 export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 	(
@@ -32,23 +32,15 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 		},
 		ref,
 	) => {
-		const buttonClass = clsx(
+		const buttonClass = getButtonClasses({
+			type: TYPE_ICON,
+			kind,
+			fullWidth,
+			disabled,
+			raw,
 			className,
-			"p-2 text-sm font-medium sm:text-base focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300",
-			{
-				"rounded-full ": !raw,
-				"rounded-sm ": raw,
-				"text-slate-200 bg-slate-900 hover:bg-slate-800 active:text-slate-300 active:bg-slate-700":
-					kind === "dark" && !disabled && !raw,
-				"text-slate-200 bg-slate-900": kind === "dark" && disabled && !raw,
+		});
 
-				"text-slate-200 bg-slate-500 hover:bg-slate-600 active:text-slate-300 active:bg-slate-700":
-					kind === "light" && !disabled && !raw,
-				"text-slate-200 bg-slate-500": kind === "light" && disabled && !raw,
-				"w-full": fullWidth,
-				"disabled:opacity-50 disabled:cursor-not-allowed": disabled,
-			},
-		);
 		const [isOpen, setIsOpen] = useState(false);
 		const { refs, floatingStyles, context } = useFloating({
 			open: isOpen,
