@@ -38,6 +38,7 @@ const onClickRestore = async (
 			messages: item.messages,
 		},
 	});
+	// close the panel
 	onOpenChange(false);
 };
 
