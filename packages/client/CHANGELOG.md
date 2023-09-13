@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.11.0...client-v1.12.0) (2023-09-13)
+
+
+### Features
+
+* adding chat history ([da899f9](https://github.com/aversini/sassysaint-ui/commit/da899f9adfccc953b1325b218ef5bf18edd9ebf6))
+* Profile and Chat details are now separate panels ([fb08fa5](https://github.com/aversini/sassysaint-ui/commit/fb08fa50e3f5c63d99fd3de3aa5ea92bf37c3609))
+
 ## [1.11.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.10.2...client-v1.11.0) (2023-09-09)
 
 
