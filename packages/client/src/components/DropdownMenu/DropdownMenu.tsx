@@ -27,7 +27,7 @@ import {
 } from "@floating-ui/react";
 import * as React from "react";
 
-import { Button } from "../Button/Button";
+import { ButtonIcon } from "..";
 
 const MenuContext = React.createContext<{
 	getItemProps: (
@@ -145,8 +145,8 @@ export const MenuComponent = React.forwardRef<
 
 	return (
 		<FloatingNode id={nodeId}>
-			<Button
-				iconOnly
+			<ButtonIcon
+				label={label || "Open menu"}
 				ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
 				tabIndex={
 					!isNested ? undefined : parent.activeIndex === item.index ? 0 : -1
@@ -174,7 +174,8 @@ export const MenuComponent = React.forwardRef<
 						▶
 					</span>
 				)}
-			</Button>
+			</ButtonIcon>
+
 			<MenuContext.Provider
 				value={{
 					activeIndex,

@@ -7,8 +7,8 @@ import {
 } from "@floating-ui/react";
 import * as React from "react";
 
-import { Button } from "..";
-import type { ButtonProps } from "../Button/Button";
+import { ButtonIcon } from "..";
+import type { ButtonProps } from "../Button/ButtonTypes";
 import type { DialogOptions } from "./Dialog.d";
 import { DialogContext } from "./DialogContext";
 import { useDialog, useDialogContext } from "./DialogHooks";
@@ -109,8 +109,14 @@ export const DialogClose = React.forwardRef<
 	const { setOpen } = useDialogContext();
 	const { children, ...rest } = props;
 	return (
-		<Button type="button" {...rest} ref={ref} onClick={() => setOpen(false)}>
+		<ButtonIcon
+			label="Close"
+			type="button"
+			{...rest}
+			ref={ref}
+			onClick={() => setOpen(false)}
+		>
 			{children}
-		</Button>
+		</ButtonIcon>
 	);
 });
