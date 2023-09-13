@@ -1,8 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
+import { AppContext } from "../../modules/AppContext";
 import {
 	ChatDetails,
 	History,
@@ -14,6 +15,7 @@ import {
 } from "..";
 
 export const MessagesContainerHeader = () => {
+	const { state } = useContext(AppContext);
 	const [showProfile, setShowProfile] = useState(false);
 	const [showChatDetails, setShowChatDetails] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
@@ -40,7 +42,11 @@ export const MessagesContainerHeader = () => {
 					<div className="absolute bottom-[-28px] right-[-7px]">
 						<Menu icon={<IconSettings />}>
 							<MenuItem label="Profile" onClick={onClickProfile} />
-							<MenuItem label="Chat details" onClick={onClickChatDetails} />
+							<MenuItem
+								label="Chat details"
+								onClick={onClickChatDetails}
+								disabled={!state || state.messages.length === 0}
+							/>
 							<MenuItem label="History" onClick={onClickHistory} />
 						</Menu>
 					</div>
