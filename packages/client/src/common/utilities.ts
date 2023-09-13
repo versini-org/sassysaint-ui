@@ -45,3 +45,29 @@ export const persistModel = (model: string) => {
 export const retrieveModel = () => {
 	return unObfuscate(localStorage.getItem(`sassy-saint-model`) || "");
 };
+
+export const truncate = (str: string, length: number) => {
+	return str.length > length ? str.substring(0, length) + "..." : str;
+};
+
+export const serviceCall = async ({
+	name,
+	data,
+	method = "POST",
+}: {
+	name: string;
+	data: any;
+	method?: string;
+}) => {
+	const response = await fetch(
+		`${import.meta.env.VITE_SERVER_URL}/api/${name}`,
+		{
+			method,
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		},
+	);
+	return response;
+};

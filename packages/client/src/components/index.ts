@@ -4,11 +4,13 @@ import { Card } from "./Card/Card";
 import { ChatDetails } from "./ChatDetails/ChatDetails";
 import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
 import { Footer } from "./Footer/Footer";
+import { History } from "./History/History";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
 import { IconCopied } from "./Icons/IconCopied";
 import { IconCopy } from "./Icons/IconCopy";
 import { IconDog } from "./Icons/IconDog";
+import { IconRestore } from "./Icons/IconRestore";
 import { IconSettings } from "./Icons/IconSettings";
 import { IconUser } from "./Icons/IconUser";
 import { Main } from "./Main/Main";
@@ -28,11 +30,13 @@ export {
 	Card,
 	ChatDetails,
 	Footer,
+	History,
 	IconAssistant,
 	IconClose,
 	IconCopied,
 	IconCopy,
 	IconDog,
+	IconRestore,
 	IconSettings,
 	IconUser,
 	Main,

@@ -11,8 +11,13 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
-import { LOG_IN, SEND, TYPE_QUESTION } from "../../common/strings";
-import { isProd } from "../../common/utilities";
+import {
+	FAKE_USER_EMAIL,
+	LOG_IN,
+	SEND,
+	TYPE_QUESTION,
+} from "../../common/strings";
+import { isProd, serviceCall } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button } from "..";
 
@@ -34,7 +39,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	 */
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
-	const { loginWithRedirect, isAuthenticated } = useAuth0();
+	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
 	useEffect(() => {
 		(async () => {
@@ -53,19 +58,15 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 			}
 
 			try {
-				const response = await fetch(
-					`${import.meta.env.VITE_SERVER_URL}/api/generate`,
-					{
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							messages: state.messages,
-							model: state.model,
-						}),
+				const response = await serviceCall({
+					name: "generate",
+					data: {
+						messages: state.messages,
+						model: state.model,
+						user: user?.email || FAKE_USER_EMAIL,
+						id: state.id,
 					},
-				);
+				});
 
 				if (response.status !== 200) {
 					dispatch({

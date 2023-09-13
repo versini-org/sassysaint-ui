@@ -3,12 +3,20 @@ import { useState } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { ChatDetails, IconDog, IconSettings } from "..";
-import { Menu, MenuItem, Profile } from "..";
+import {
+	ChatDetails,
+	History,
+	IconDog,
+	IconSettings,
+	Menu,
+	MenuItem,
+	Profile,
+} from "..";
 
 export const MessagesContainerHeader = () => {
 	const [showProfile, setShowProfile] = useState(false);
 	const [showChatDetails, setShowChatDetails] = useState(false);
+	const [showHistory, setShowHistory] = useState(false);
 	const { isAuthenticated } = useAuth0();
 
 	const onClickProfile = () => {
@@ -17,11 +25,15 @@ export const MessagesContainerHeader = () => {
 	const onClickChatDetails = () => {
 		setShowChatDetails(!showChatDetails);
 	};
+	const onClickHistory = () => {
+		setShowHistory(!showHistory);
+	};
 
 	return (
 		<>
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
 			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
+			<History open={showHistory} onOpenChange={setShowHistory} />
 
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
@@ -29,6 +41,7 @@ export const MessagesContainerHeader = () => {
 						<Menu icon={<IconSettings />}>
 							<MenuItem label="Profile" onClick={onClickProfile} />
 							<MenuItem label="Chat details" onClick={onClickChatDetails} />
+							<MenuItem label="History" onClick={onClickHistory} />
 						</Menu>
 					</div>
 				</div>
