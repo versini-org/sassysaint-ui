@@ -91,7 +91,7 @@ const renderAsTable = (
 						</th>
 						<th
 							scope="col"
-							className={`${xPadding} py-3 hidden sm:block text-white text-right`}
+							className={`${xPadding} py-3 block text-white text-right`}
 						>
 							Actions
 						</th>
@@ -115,7 +115,7 @@ const renderAsTable = (
 									{extractFirstUserMessage(item.messages)}
 								</td>
 
-								<td className={`${xPadding} py-4 hidden sm:block`}>
+								<td className={`${xPadding} py-4`}>
 									<div className="flex gap-2 justify-end">
 										<ButtonIcon
 											label="Restore chat"
