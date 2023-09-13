@@ -97,7 +97,7 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 					<FloatingPortal>
 						{isOpen && (
 							<div
-								className="w-max bg-slate-600 text-white text-sm px-2 py-2 rounded-md shadow-md"
+								className="w-max bg-slate-600 text-white text-sm px-2 py-2 rounded-md shadow-md border border-gray-400"
 								ref={refs.setFloating}
 								style={floatingStyles}
 								{...getFloatingProps()}

@@ -4,7 +4,7 @@ import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
-import { Button, Card, IconRestore } from "..";
+import { ButtonIcon, Card, IconRestore } from "..";
 import { IconDelete } from "../Icons/IconDelete";
 
 export type HistoryContentProps = {
@@ -117,17 +117,17 @@ const renderAsTable = (
 
 								<td className={`${xPadding} py-4 hidden sm:block`}>
 									<div className="flex gap-2 justify-end">
-										<Button
-											iconOnly
+										<ButtonIcon
+											label="Restore chat"
 											kind="light"
 											onClick={() => {
 												onClickRestore(item, dispatch, onOpenChange);
 											}}
 										>
 											<IconRestore />
-										</Button>
-										<Button
-											iconOnly
+										</ButtonIcon>
+										<ButtonIcon
+											label="Delete chat"
 											kind="light"
 											onClick={() => {
 												onClickDelete(item, setHistory);
@@ -136,7 +136,7 @@ const renderAsTable = (
 											<div className="text-red-400">
 												<IconDelete />
 											</div>
-										</Button>
+										</ButtonIcon>
 									</div>
 								</td>
 							</tr>
