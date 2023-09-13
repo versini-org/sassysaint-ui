@@ -44,3 +44,8 @@
 	background: rgba(255, 255, 255, 0.5);
 	text-decoration: underline;
 }
+
+.MenuItem:disabled {
+	color: #737579;
+	cursor: not-allowed;
+}
