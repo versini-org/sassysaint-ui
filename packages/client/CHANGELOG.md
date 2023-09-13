@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.0...client-v1.12.1) (2023-09-13)
+
+
+### Bug Fixes
+
+* chat details should not be enabled when there are no chats ([fd45d1a](https://github.com/aversini/sassysaint-ui/commit/fd45d1aa7b98668d57f42d7b1ed68a86aef32ce8))
+* history chat actions hidden at smaller viewport ([a48c3a8](https://github.com/aversini/sassysaint-ui/commit/a48c3a8f1f2fec0c51662fa1f47af81b67f5573a))
+
 ## [1.12.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.11.0...client-v1.12.0) (2023-09-13)
 
 
