@@ -1,4 +1,5 @@
 import { Button } from "./Button/Button";
+import { ButtonIcon } from "./Button/ButtonIcon";
 import { Card } from "./Card/Card";
 import { ChatDetails } from "./ChatDetails/ChatDetails";
 import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
@@ -25,6 +26,7 @@ import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
 	Button,
+	ButtonIcon,
 	Card,
 	ChatDetails,
 	Footer,
