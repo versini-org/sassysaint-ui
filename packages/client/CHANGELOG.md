@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.3...client-v1.12.4) (2023-09-14)
+
+
+### Bug Fixes
+
+* custom model is lost when chat is cleared ([9086b76](https://github.com/aversini/sassysaint-ui/commit/9086b7623a7898f1da98e23f8ce3d3fd1e753468))
+
 ## [1.12.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.2...client-v1.12.3) (2023-09-14)
 
 
