@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.1...client-v1.12.2) (2023-09-13)
+
+
+### Bug Fixes
+
+* overlay background not black at lower bp ([1466f56](https://github.com/aversini/sassysaint-ui/commit/1466f56cbd3f7f8c28dac4949310c641ce5c98eb))
+
 ## [1.12.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.0...client-v1.12.1) (2023-09-13)
 
 
