@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.2...client-v1.12.3) (2023-09-14)
+
+
+### Bug Fixes
+
+* panel sizes at lower breakpoints is too wide ([0efd1bd](https://github.com/aversini/sassysaint-ui/commit/0efd1bd802da21691c879006dc45e476702b4947))
+
 ## [1.12.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.1...client-v1.12.2) (2023-09-13)
 
 
