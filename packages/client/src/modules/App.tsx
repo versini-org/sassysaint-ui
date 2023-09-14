@@ -56,7 +56,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 	if (action.type === ACTION_RESET) {
 		return {
 			id: uuidv4(),
-			model: DEFAULT_MODEL,
+			model: state.model || DEFAULT_MODEL,
 			usage: 0,
 			messages: [],
 		};
