@@ -7,8 +7,8 @@ import {
 } from "@floating-ui/react";
 import * as React from "react";
 
-import type { DialogOptions } from "./Dialog.d";
 import { DialogContext } from "./DialogContext";
+import type { DialogOptions } from "./DialogTypes";
 
 export function useDialog({
 	initialOpen = false,

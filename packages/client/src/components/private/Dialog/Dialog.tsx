@@ -7,11 +7,11 @@ import {
 } from "@floating-ui/react";
 import * as React from "react";
 
-import { ButtonIcon } from "..";
-import type { ButtonProps } from "../Button/ButtonTypes";
-import type { DialogOptions } from "./Dialog.d";
+import { ButtonIcon } from "../..";
+import type { ButtonProps } from "../../Button/ButtonTypes";
 import { DialogContext } from "./DialogContext";
 import { useDialog, useDialogContext } from "./DialogHooks";
+import type { DialogOptions } from "./DialogTypes";
 
 export function Dialog({
 	children,
