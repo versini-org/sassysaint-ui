@@ -21,6 +21,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 				message: {
 					role: item.role,
 					content: item.content,
+					name: item.name,
 				},
 			};
 		});
@@ -35,7 +36,21 @@ const reducer = (state: StateProps, action: ActionProps) => {
 	if (action.type === ACTION_MESSAGE) {
 		const role = action.payload.message.role;
 		const content = action.payload.message.content;
+		const name = action.payload.message.name;
+
 		if (role !== "" && content !== "") {
+			const message =
+				name && name !== ""
+					? {
+							role,
+							content,
+							name,
+					  }
+					: {
+							role,
+							content,
+					  };
+
 			return {
 				id: state.id,
 				model: state.model,
@@ -43,10 +58,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 				messages: [
 					...state.messages,
 					{
-						message: {
-							role,
-							content,
-						},
+						message,
 					},
 				],
 			};

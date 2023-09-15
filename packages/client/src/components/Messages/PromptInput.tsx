@@ -93,6 +93,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 							message: {
 								role: ROLE_ASSISTANT,
 								content: data.result,
+								name: data.name,
 							},
 						},
 					});

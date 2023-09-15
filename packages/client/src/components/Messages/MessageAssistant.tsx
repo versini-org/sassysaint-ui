@@ -2,14 +2,17 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { retrieveEngineDetails } from "../../common/utilities";
 import { Button, IconAssistant, IconCopied, IconCopy } from "../";
 import type { MessageAssistantProps } from "./Messages";
 
 export const MessageAssistant = ({
 	smoothScrollRef,
 	children,
+	name,
 }: MessageAssistantProps) => {
 	const [copied, setCopied] = React.useState(false);
+	const showEngineDetails = retrieveEngineDetails();
 
 	// copy to clipboard function
 	const copyToClipboard = () => {
@@ -33,8 +36,13 @@ export const MessageAssistant = ({
 				<div className="text-slate-300 hidden sm:block">
 					<IconAssistant />
 				</div>
-				<div className="flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black">
-					<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
+				<div>
+					<div className="flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black">
+						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
+					</div>
+					{name && showEngineDetails && (
+						<p className="text-end text-xs pr-2 pt-1">Chat engine: {name}</p>
+					)}
 				</div>
 
 				<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">

@@ -8,5 +8,6 @@ export type MessageUserProps = {
 
 export type MessageAssistantProps = {
 	children: string;
+	name?: string;
 	smoothScrollRef: React.RefObject<HTMLDivElement>;
 };
