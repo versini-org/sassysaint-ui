@@ -16,6 +16,14 @@ import React, { useState } from "react";
 import type { ButtonIconProps } from "./ButtonTypes";
 import { getButtonClasses, TYPE_ICON } from "./utilities";
 
+// function to get the viewport width
+function getViewportWidth() {
+	return Math.max(
+		document.documentElement.clientWidth || 0,
+		window.innerWidth || 0,
+	);
+}
+
 export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 	(
 		{
@@ -41,6 +49,7 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 			className,
 		});
 
+		const viewportWidth = getViewportWidth();
 		const [isOpen, setIsOpen] = useState(false);
 		const { refs, floatingStyles, context } = useFloating({
 			open: isOpen,
@@ -79,6 +88,8 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 
 		const allRef = useMergeRefs([refs.setReference, ref]);
 
+		const showTooltip = label && viewportWidth > 640;
+
 		return (
 			<>
 				<button
@@ -93,7 +104,7 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 					{children}
 				</button>
 
-				{label && (
+				{showTooltip && (
 					<FloatingPortal>
 						{isOpen && (
 							<div
