@@ -8,6 +8,7 @@ import {
 export type MessageProps = {
 	role?: string;
 	content?: string;
+	name?: string;
 };
 
 export type StateProps = {

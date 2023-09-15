@@ -42,8 +42,23 @@ export const persistModel = (model: string) => {
 	localStorage.setItem(`sassy-saint-model`, obfuscatedCode);
 };
 
+export const persistEngineDetails = (flag: boolean) => {
+	const obfuscatedCode = obfuscate(flag ? "yes" : "no") || "no";
+	localStorage.setItem(`sassy-saint-engine-name`, obfuscatedCode);
+};
+
 export const retrieveModel = () => {
 	return unObfuscate(localStorage.getItem(`sassy-saint-model`) || "");
+};
+
+export const retrieveEngineDetails = () => {
+	const flag = unObfuscate(
+		localStorage.getItem(`sassy-saint-engine-name`) || "",
+	);
+	if (flag === "yes") {
+		return true;
+	}
+	return false;
 };
 
 export const truncate = (str: string, length: number) => {

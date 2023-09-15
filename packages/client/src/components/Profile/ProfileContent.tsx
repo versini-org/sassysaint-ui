@@ -7,7 +7,11 @@ import {
 	FAKE_USER_NAME,
 	LOG_OUT,
 } from "../../common/strings";
-import { persistModel } from "../../common/utilities";
+import {
+	persistEngineDetails,
+	persistModel,
+	retrieveEngineDetails,
+} from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import { Button, Card, Toggle } from "..";
 
@@ -40,6 +44,10 @@ export const ProfileContent = ({
 		});
 	};
 
+	const onToggleEngineDetails = (checked: boolean) => {
+		persistEngineDetails(checked);
+	};
+
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
@@ -53,6 +61,12 @@ export const ProfileContent = ({
 							<Toggle
 								onChange={onToggleGPT}
 								checked={state?.model?.includes("4")}
+							/>
+						),
+						"Show engine details": (
+							<Toggle
+								onChange={onToggleEngineDetails}
+								checked={retrieveEngineDetails()}
 							/>
 						),
 					}}
