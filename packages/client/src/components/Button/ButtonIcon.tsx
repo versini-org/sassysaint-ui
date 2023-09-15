@@ -16,7 +16,6 @@ import React, { useState } from "react";
 import type { ButtonIconProps } from "./ButtonTypes";
 import { getButtonClasses, TYPE_ICON } from "./utilities";
 
-// function to get the viewport width
 function getViewportWidth() {
 	return Math.max(
 		document.documentElement.clientWidth || 0,
