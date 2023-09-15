@@ -19,6 +19,7 @@ import { MessagesContainer } from "./Messages/MessagesContainer";
 import { MessagesContainerHeader } from "./Messages/MessagesContainerHeader";
 import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./Messages/PromptInput";
+import { Panel } from "./Panel/Panel";
 import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
@@ -46,6 +47,7 @@ export {
 	MessagesContainer,
 	MessagesContainerHeader,
 	MessageUser,
+	Panel,
 	Profile,
 	PromptInput,
 	Spinner,
