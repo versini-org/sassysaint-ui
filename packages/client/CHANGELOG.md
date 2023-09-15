@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.4...client-v1.13.0) (2023-09-15)
+
+
+### Features
+
+* show engine details opt-in ([f3a970b](https://github.com/aversini/sassysaint-ui/commit/f3a970b1b6ef639a06e15b7631fd079dda6d9f75))
+
+
+### Bug Fixes
+
+* hide tooltip on small viewports ([a8894c9](https://github.com/aversini/sassysaint-ui/commit/a8894c917d3732f5f63f81d596570a0ea6e877b1))
+
 ## [1.12.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.3...client-v1.12.4) (2023-09-14)
 
 
