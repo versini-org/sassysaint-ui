@@ -13,6 +13,7 @@ import {
 	retrieveEngineDetails,
 } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
+import type { GeoLocation } from "../../modules/AppTypes";
 import { Button, Card, Toggle } from "..";
 
 export type ProfileContentProps = {
@@ -48,6 +49,13 @@ export const ProfileContent = ({
 		persistEngineDetails(checked);
 	};
 
+	const formatLocation = (location?: GeoLocation) => {
+		const fixed = (value?: number) => value?.toFixed(10);
+		const lat = fixed(location?.latitude);
+		const lon = fixed(location?.longitude);
+		return lat && lon ? `${lat}" N ${lon}" W` : "N/A";
+	};
+
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
@@ -69,9 +77,7 @@ export const ProfileContent = ({
 								checked={retrieveEngineDetails()}
 							/>
 						),
-						[CARDS.PREFERENCES.LOCATION]: state?.location
-							? `${state?.location?.latitude}" N ${state?.location?.longitude}" W`
-							: "N/A",
+						[CARDS.PREFERENCES.LOCATION]: formatLocation(state?.location),
 					}}
 				/>
 			</div>
