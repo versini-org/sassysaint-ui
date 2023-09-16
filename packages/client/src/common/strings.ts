@@ -18,6 +18,8 @@ export const CARDS = {
 		NAME: "Name",
 		EMAIL: "Email",
 		MODEL_NAME: "GPT-4",
+		ENGINE_DETAILS: "Show engine details",
+		LOCATION: "Current location",
 	},
 	STATISTICS: {
 		TITLE: "Real time statistics",

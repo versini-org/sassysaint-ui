@@ -57,18 +57,21 @@ export const ProfileContent = ({
 					data={{
 						[CARDS.PREFERENCES.NAME]: endUser.name,
 						[CARDS.PREFERENCES.EMAIL]: endUser.email,
-						"GPT-4": (
+						[CARDS.PREFERENCES.MODEL_NAME]: (
 							<Toggle
 								onChange={onToggleGPT}
 								checked={state?.model?.includes("4")}
 							/>
 						),
-						"Show engine details": (
+						[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 							<Toggle
 								onChange={onToggleEngineDetails}
 								checked={retrieveEngineDetails()}
 							/>
 						),
+						[CARDS.PREFERENCES.LOCATION]: state?.location
+							? `${state?.location?.latitude}" N ${state?.location?.longitude}" W`
+							: "N/A",
 					}}
 				/>
 			</div>

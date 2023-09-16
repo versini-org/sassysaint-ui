@@ -1,15 +1,20 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
+	ACTION_LOCATION,
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
 	DEFAULT_MODEL,
 } from "../common/constants";
-import { isDev, retrieveModel } from "../common/utilities";
+import {
+	getCurrentGeoLocation,
+	isDev,
+	retrieveModel,
+} from "../common/utilities";
 import { Footer, Main, MessagesContainer } from "../components";
 import { AppContext } from "./AppContext";
 import { ActionProps, StateProps } from "./AppTypes";
@@ -83,18 +88,47 @@ const reducer = (state: StateProps, action: ActionProps) => {
 		};
 	}
 
+	if (action.type === ACTION_LOCATION) {
+		return {
+			id: state.id,
+			model: state.model,
+			usage: state.usage,
+			messages: state.messages,
+			location: action.payload.location,
+		};
+	}
+
 	return state;
 };
 
 function App() {
 	const { isLoading } = useAuth0();
 	const model = retrieveModel() || DEFAULT_MODEL;
+	const locationRef = useRef({
+		latitude: 0,
+		longitude: 0,
+		accuracy: 0,
+	});
 	const [state, dispatch] = useReducer(reducer, {
 		id: uuidv4(),
 		model,
 		usage: 0,
 		messages: [],
 	});
+
+	useEffect(() => {
+		if (!locationRef.current || locationRef.current.accuracy === 0) {
+			(async () => {
+				locationRef.current = await getCurrentGeoLocation();
+				dispatch({
+					type: ACTION_LOCATION,
+					payload: {
+						location: locationRef.current,
+					},
+				});
+			})();
+		}
+	}, []);
 
 	useEffect(() => {
 		if (isLoading && !isDev) {
