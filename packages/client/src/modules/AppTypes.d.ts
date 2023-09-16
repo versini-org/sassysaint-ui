@@ -1,9 +1,16 @@
 import {
+	ACTION_LOCATION,
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
 } from "../common/constants";
+
+export type GeoLocation = {
+	latitude: number;
+	longitude: number;
+	accuracy: number;
+};
 
 export type MessageProps = {
 	role?: string;
@@ -15,6 +22,7 @@ export type StateProps = {
 	id: string;
 	model: string;
 	usage: number;
+	location?: GeoLocation;
 	messages: { message: MessageProps }[];
 };
 
@@ -41,7 +49,13 @@ export type ActionProps =
 				message: MessageProps;
 			};
 	  }
-	| { type: typeof ACTION_RESET };
+	| { type: typeof ACTION_RESET }
+	| {
+			type: typeof ACTION_LOCATION;
+			payload: {
+				location: GeoLocation;
+			};
+	  };
 
 export type AppContextProps = {
 	state?: StateProps;

@@ -18,3 +18,4 @@ export const ACTION_MESSAGE = "action-message";
 export const ACTION_RESET = "action-reset";
 export const ACTION_MODEL = "action-model";
 export const ACTION_RESTORE = "action-restore";
+export const ACTION_LOCATION = "action-location";
