@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.13.0...client-v1.13.1) (2023-09-17)
+
+
+### Bug Fixes
+
+* better location formatting ([013e358](https://github.com/aversini/sassysaint-ui/commit/013e35897bfda83bf3a7babb5d78876fdf2aefbd))
+* increase GPT3 max tokens ([1a77fcd](https://github.com/aversini/sassysaint-ui/commit/1a77fcd9c5676a7581edda16524bc13ed4e85f48))
+
 ## [1.13.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.12.4...client-v1.13.0) (2023-09-15)
 
 
