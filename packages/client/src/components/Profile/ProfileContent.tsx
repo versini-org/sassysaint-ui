@@ -8,11 +8,14 @@ import {
 	LOG_OUT,
 } from "../../common/strings";
 import {
+	convertLatitudeToDMS,
+	convertLongitudeToDMS,
 	persistEngineDetails,
 	persistModel,
 	retrieveEngineDetails,
 } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
+import type { GeoLocation } from "../../modules/AppTypes";
 import { Button, Card, Toggle } from "..";
 
 export type ProfileContentProps = {
@@ -48,6 +51,17 @@ export const ProfileContent = ({
 		persistEngineDetails(checked);
 	};
 
+	const renderLocation = (location?: GeoLocation) => {
+		const lat = convertLatitudeToDMS(location?.latitude);
+		const lon = convertLongitudeToDMS(location?.longitude);
+		return (
+			<>
+				<div>{lat}</div>
+				<div>{lon}</div>
+			</>
+		);
+	};
+
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
 			<div className="flex flex-col sm:flex-row gap-2">
@@ -69,9 +83,7 @@ export const ProfileContent = ({
 								checked={retrieveEngineDetails()}
 							/>
 						),
-						[CARDS.PREFERENCES.LOCATION]: state?.location
-							? `${state?.location?.latitude}" N ${state?.location?.longitude}" W`
-							: "N/A",
+						[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
 					}}
 				/>
 			</div>

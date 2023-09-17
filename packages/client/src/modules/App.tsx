@@ -34,6 +34,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 			id: action.payload.id,
 			model: action.payload.model,
 			usage: action.payload.usage,
+			location: state.location,
 			messages,
 		};
 	}
@@ -60,6 +61,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 				id: state.id,
 				model: state.model,
 				usage: state.usage,
+				location: state.location,
 				messages: [
 					...state.messages,
 					{
@@ -76,6 +78,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 			model: state.model || DEFAULT_MODEL,
 			usage: 0,
 			messages: [],
+			location: state.location,
 		};
 	}
 
@@ -85,6 +88,7 @@ const reducer = (state: StateProps, action: ActionProps) => {
 			model: action.payload.model || state.model,
 			usage: action.payload.usage || state.usage,
 			messages: state.messages,
+			location: state.location,
 		};
 	}
 
