@@ -1,4 +1,8 @@
-const LOCAL_STORAGE_PREFIX = "sassy-saint-";
+import {
+	LOCAL_STORAGE_ENGINE,
+	LOCAL_STORAGE_MODEL,
+	LOCAL_STORAGE_PREFIX,
+} from "./constants";
 
 function obfuscate(str: string) {
 	/**
@@ -36,20 +40,20 @@ function unObfuscate(str: string) {
 		: null;
 }
 
+type LocalStorageKey = typeof LOCAL_STORAGE_MODEL | typeof LOCAL_STORAGE_ENGINE;
+
 export const useLocalStorage = () => {
 	return {
-		get: (key: string): string | boolean | null => {
+		get: (key: LocalStorageKey): string | boolean | null => {
 			const data = unObfuscate(
 				localStorage.getItem(LOCAL_STORAGE_PREFIX + key) || "",
 			);
-			console.log("==> ", data);
-
 			if (data === "true" || data === "false") {
 				return data === "true";
 			}
 			return data;
 		},
-		set: (key: string, value: string | boolean) => {
+		set: (key: LocalStorageKey, value: string | boolean) => {
 			const data = typeof value === "boolean" ? value.toString() : value;
 			const obfuscatedValue = obfuscate(data.trim()) || "";
 			localStorage.setItem(LOCAL_STORAGE_PREFIX + key, obfuscatedValue);

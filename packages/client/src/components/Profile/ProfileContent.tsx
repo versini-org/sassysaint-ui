@@ -1,6 +1,12 @@
 import { useContext } from "react";
 
-import { ACTION_MODEL, MODEL_GPT3, MODEL_GPT4 } from "../../common/constants";
+import {
+	ACTION_MODEL,
+	LOCAL_STORAGE_ENGINE,
+	LOCAL_STORAGE_MODEL,
+	MODEL_GPT3,
+	MODEL_GPT4,
+} from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
 import {
 	CARDS,
@@ -11,8 +17,6 @@ import {
 import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
-	persistEngineDetails,
-	retrieveEngineDetails,
 } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
 import type { GeoLocation } from "../../modules/AppTypes";
@@ -38,7 +42,7 @@ export const ProfileContent = ({
 		: user;
 
 	const onToggleGPT = (checked: boolean) => {
-		storage.set("model", checked ? MODEL_GPT4 : MODEL_GPT3);
+		storage.set(LOCAL_STORAGE_MODEL, checked ? MODEL_GPT4 : MODEL_GPT3);
 		dispatch({
 			type: ACTION_MODEL,
 			payload: {
@@ -49,7 +53,7 @@ export const ProfileContent = ({
 	};
 
 	const onToggleEngineDetails = (checked: boolean) => {
-		persistEngineDetails(checked);
+		storage.set(LOCAL_STORAGE_ENGINE, checked);
 	};
 
 	const renderLocation = (location?: GeoLocation) => {
@@ -62,8 +66,6 @@ export const ProfileContent = ({
 			</>
 		);
 	};
-
-	console.log("==> ", storage.get("engine"));
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
@@ -83,7 +85,7 @@ export const ProfileContent = ({
 						[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 							<Toggle
 								onChange={onToggleEngineDetails}
-								checked={retrieveEngineDetails()}
+								checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
 							/>
 						),
 						[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),

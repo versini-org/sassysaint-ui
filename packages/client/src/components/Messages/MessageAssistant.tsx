@@ -2,7 +2,8 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import { retrieveEngineDetails } from "../../common/utilities";
+import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
+import { useLocalStorage } from "../../common/hooks";
 import { Button, IconAssistant, IconCopied, IconCopy } from "../";
 import type { MessageAssistantProps } from "./Messages";
 
@@ -12,7 +13,8 @@ export const MessageAssistant = ({
 	name,
 }: MessageAssistantProps) => {
 	const [copied, setCopied] = React.useState(false);
-	const showEngineDetails = retrieveEngineDetails();
+	const storage = useLocalStorage();
+	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
 
 	// copy to clipboard function
 	const copyToClipboard = () => {
