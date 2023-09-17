@@ -13,8 +13,8 @@
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.1",
-		"@floating-ui/react": "0.25.3",
-		"@tailwindcss/typography": "0.5.9",
+		"@floating-ui/react": "0.25.4",
+		"@tailwindcss/typography": "0.5.10",
 		"autoprefixer": "10.4.15",
 		"clsx": "2.0.0",
 		"postcss": "8.4.29",
@@ -23,6 +23,6 @@
 		"remark-gfm": "3.0.1",
 		"react-markdown": "8.0.7",
 		"tailwindcss": "3.3.3",
-		"uuid": "9.0.0"
+		"uuid": "9.0.1"
 	}
 }
