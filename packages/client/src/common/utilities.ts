@@ -39,18 +39,9 @@ function unObfuscate(str: string) {
 		: null;
 }
 
-export const persistModel = (model: string) => {
-	const obfuscatedCode = obfuscate(model.trim()) || "";
-	localStorage.setItem(`sassy-saint-model`, obfuscatedCode);
-};
-
 export const persistEngineDetails = (flag: boolean) => {
 	const obfuscatedCode = obfuscate(flag ? "yes" : "no") || "no";
 	localStorage.setItem(`sassy-saint-engine-name`, obfuscatedCode);
-};
-
-export const retrieveModel = () => {
-	return unObfuscate(localStorage.getItem(`sassy-saint-model`) || "");
 };
 
 export const retrieveEngineDetails = () => {

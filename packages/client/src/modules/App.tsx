@@ -10,11 +10,8 @@ import {
 	ACTION_RESTORE,
 	DEFAULT_MODEL,
 } from "../common/constants";
-import {
-	getCurrentGeoLocation,
-	isDev,
-	retrieveModel,
-} from "../common/utilities";
+import { useLocalStorage } from "../common/hooks";
+import { getCurrentGeoLocation, isDev } from "../common/utilities";
 import { Footer, Main, MessagesContainer } from "../components";
 import { AppContext } from "./AppContext";
 import { ActionProps, StateProps } from "./AppTypes";
@@ -107,7 +104,9 @@ const reducer = (state: StateProps, action: ActionProps) => {
 
 function App() {
 	const { isLoading } = useAuth0();
-	const model = retrieveModel() || DEFAULT_MODEL;
+	const storage = useLocalStorage();
+	const model = storage.get("model") || DEFAULT_MODEL;
+
 	const locationRef = useRef({
 		latitude: 0,
 		longitude: 0,

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 
 import { ACTION_MODEL, MODEL_GPT3, MODEL_GPT4 } from "../../common/constants";
+import { useLocalStorage } from "../../common/hooks";
 import {
 	CARDS,
 	FAKE_USER_EMAIL,
@@ -11,7 +12,6 @@ import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
 	persistEngineDetails,
-	persistModel,
 	retrieveEngineDetails,
 } from "../../common/utilities";
 import { AppContext } from "../../modules/AppContext";
@@ -31,13 +31,14 @@ export const ProfileContent = ({
 	logoutWithRedirect,
 	user,
 }: ProfileContentProps) => {
+	const storage = useLocalStorage();
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
 
 	const onToggleGPT = (checked: boolean) => {
-		persistModel(checked ? MODEL_GPT4 : MODEL_GPT3);
+		storage.set("model", checked ? MODEL_GPT4 : MODEL_GPT3);
 		dispatch({
 			type: ACTION_MODEL,
 			payload: {
@@ -61,6 +62,8 @@ export const ProfileContent = ({
 			</>
 		);
 	};
+
+	console.log("==> ", storage.get("engine"));
 
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
