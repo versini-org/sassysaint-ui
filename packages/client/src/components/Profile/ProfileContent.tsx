@@ -8,6 +8,8 @@ import {
 	LOG_OUT,
 } from "../../common/strings";
 import {
+	convertLatitudeToDMS,
+	convertLongitudeToDMS,
 	persistEngineDetails,
 	persistModel,
 	retrieveEngineDetails,
@@ -49,11 +51,15 @@ export const ProfileContent = ({
 		persistEngineDetails(checked);
 	};
 
-	const formatLocation = (location?: GeoLocation) => {
-		const fixed = (value?: number) => value?.toFixed(10);
-		const lat = fixed(location?.latitude);
-		const lon = fixed(location?.longitude);
-		return lat && lon ? `${lat}" N ${lon}" W` : "N/A";
+	const renderLocation = (location?: GeoLocation) => {
+		const lat = convertLatitudeToDMS(location?.latitude);
+		const lon = convertLongitudeToDMS(location?.longitude);
+		return (
+			<>
+				<div>{lat}</div>
+				<div>{lon}</div>
+			</>
+		);
 	};
 
 	return (isAuthenticated && endUser) || isDev ? (
@@ -77,7 +83,7 @@ export const ProfileContent = ({
 								checked={retrieveEngineDetails()}
 							/>
 						),
-						[CARDS.PREFERENCES.LOCATION]: formatLocation(state?.location),
+						[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
 					}}
 				/>
 			</div>

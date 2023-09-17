@@ -46,6 +46,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 			if (!state || state.messages.length === 0) {
 				return;
 			}
+
 			const lastMessage = state.messages[state.messages.length - 1];
 			if (
 				state.messages.length === 0 ||
@@ -65,6 +66,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 						model: state.model,
 						user: user?.email || FAKE_USER_EMAIL,
 						id: state.id,
+						location: state.location,
 					},
 				});
 

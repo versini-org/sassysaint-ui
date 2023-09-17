@@ -13,15 +13,9 @@ import {
 } from "@floating-ui/react";
 import React, { useState } from "react";
 
+import { getViewportWidth } from "../../common/utilities";
 import type { ButtonIconProps } from "./ButtonTypes";
 import { getButtonClasses, TYPE_ICON } from "./utilities";
-
-function getViewportWidth() {
-	return Math.max(
-		document.documentElement.clientWidth || 0,
-		window.innerWidth || 0,
-	);
-}
 
 export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 	(
