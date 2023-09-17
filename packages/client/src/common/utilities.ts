@@ -89,6 +89,28 @@ export const serviceCall = async ({
 	return response;
 };
 
+// function to convert latitude and longitude to degree minutes seconds format
+export const convertDDToDMS = (dd: number, lng: boolean) => {
+	return {
+		dir: dd < 0 ? (lng ? "W" : "S") : lng ? "E" : "N",
+		deg: 0 | (dd < 0 ? (dd = -dd) : dd),
+		min: 0 | (((dd += 1e-9) % 1) * 60),
+		sec: (0 | (((dd * 60) % 1) * 6000)) / 100,
+	};
+};
+
+export const convertLatitudeToDMS = (lat?: number) => {
+	if (!lat) return "N/A";
+	const latitude = convertDDToDMS(lat, false);
+	return `${latitude.deg}° ${latitude.min}' ${latitude.sec}" ${latitude.dir}`;
+};
+
+export const convertLongitudeToDMS = (lng?: number) => {
+	if (!lng) return "N/A";
+	const longitude = convertDDToDMS(lng, true);
+	return `${longitude.deg}° ${longitude.min}' ${longitude.sec}" ${longitude.dir}`;
+};
+
 export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 	const options = {
 		/**
@@ -110,7 +132,7 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 		 * is Infinity, meaning that getCurrentPosition() won't
 		 * return until the position is available.
 		 */
-		timeout: 5000,
+		timeout: 10000,
 		/**
 		 * A positive long value indicating the maximum age in
 		 * milliseconds of a possible cached position that is
@@ -138,4 +160,11 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 			options,
 		);
 	});
+};
+
+export const getViewportWidth = () => {
+	return Math.max(
+		document.documentElement.clientWidth || 0,
+		window.innerWidth || 0,
+	);
 };
