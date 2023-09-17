@@ -9,7 +9,7 @@ export const ERROR_MESSAGE =
 
 export const MODEL_GPT3 = "gpt-3.5-turbo";
 export const MODEL_GPT4 = "gpt-4";
-export const GTP3_MAX_TOKENS = 4096;
+export const GTP3_MAX_TOKENS = 16385;
 export const GTP4_MAX_TOKENS = 8192;
 
 export const DEFAULT_MODEL = MODEL_GPT3;
