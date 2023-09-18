@@ -1,5 +1,9 @@
-import baseConfig from "../configuration/lint-staged.config.cjs";
+// import baseConfig from "../configuration/lint-staged.config.cjs";
+
+// export default {
+// 	...baseConfig,
+// };
 
 export default {
-	...baseConfig,
+	"*.{ts,js,tsx,jsx}": ["lint", "prettier --write"],
 };
