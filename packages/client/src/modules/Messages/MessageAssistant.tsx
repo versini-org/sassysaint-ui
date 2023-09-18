@@ -4,8 +4,8 @@ import remarkGfm from "remark-gfm";
 
 import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
+import type { MessageAssistantProps } from "../../common/types";
 import { Button, IconAssistant, IconCopied, IconCopy } from "../../components";
-import type { MessageAssistantProps } from "./Messages";
 
 export const MessageAssistant = ({
 	smoothScrollRef,

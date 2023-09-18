@@ -1,4 +1,4 @@
-import type { GeoLocation } from "../modules/App/AppTypes";
+import type { GeoLocation } from "../common/types";
 
 export const isProd = process.env.NODE_ENV === "production";
 export const isDev = !isProd;

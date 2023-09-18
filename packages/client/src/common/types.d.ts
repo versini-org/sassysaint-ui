@@ -4,7 +4,7 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
-} from "../../common/constants";
+} from "./constants";
 
 export type GeoLocation = {
 	latitude: number;
@@ -60,4 +60,18 @@ export type ActionProps =
 export type AppContextProps = {
 	state?: StateProps;
 	dispatch: React.Dispatch<ActionProps>;
+};
+
+export type MessagesContainerProps = {
+	noHeader?: boolean;
+};
+
+export type MessageUserProps = {
+	children: string;
+};
+
+export type MessageAssistantProps = {
+	children: string;
+	name?: string;
+	smoothScrollRef: React.RefObject<HTMLDivElement>;
 };

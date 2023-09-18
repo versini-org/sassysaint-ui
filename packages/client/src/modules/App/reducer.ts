@@ -8,7 +8,7 @@ import {
 	ACTION_RESTORE,
 	DEFAULT_MODEL,
 } from "../../common/constants";
-import { ActionProps, StateProps } from "./AppTypes";
+import { ActionProps, StateProps } from "../../common/types";
 
 export const reducer = (state: StateProps, action: ActionProps) => {
 	if (action.type === ACTION_RESTORE) {
