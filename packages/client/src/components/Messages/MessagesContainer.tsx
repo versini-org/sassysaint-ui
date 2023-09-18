@@ -8,13 +8,13 @@ import {
 } from "../../common/constants";
 import { isDev } from "../../common/utilities";
 import { AppContext } from "../../modules/App/AppContext";
+import { Toolbox } from "../../modules/Toolbox/Toolbox";
 import {
 	MessageAssistant,
 	MessagesContainerHeader,
 	MessageUser,
-	Toolbox,
+	Spinner,
 } from "../";
-import { Spinner } from "../Spinner/Spinner";
 import type { MessagesContainerProps } from "./Messages";
 import { PromptInput } from "./PromptInput";
 
