@@ -7,6 +7,7 @@ export const truncate = (str: string, length: number) => {
 	return str.length > length ? str.substring(0, length) + "..." : str;
 };
 
+/* c8 ignore start */
 export const serviceCall = async ({
 	name,
 	data,
@@ -28,6 +29,7 @@ export const serviceCall = async ({
 	);
 	return response;
 };
+/* c8 ignore stop */
 
 // function to convert latitude and longitude to degree minutes seconds format
 export const convertDDToDMS = (dd: number, lng: boolean) => {
@@ -40,17 +42,18 @@ export const convertDDToDMS = (dd: number, lng: boolean) => {
 };
 
 export const convertLatitudeToDMS = (lat?: number) => {
-	if (!lat) return "N/A";
+	if (!lat && lat !== 0) return "N/A";
 	const latitude = convertDDToDMS(lat, false);
 	return `${latitude.deg}° ${latitude.min}' ${latitude.sec}" ${latitude.dir}`;
 };
 
 export const convertLongitudeToDMS = (lng?: number) => {
-	if (!lng) return "N/A";
+	if (!lng && lng !== 0) return "N/A";
 	const longitude = convertDDToDMS(lng, true);
 	return `${longitude.deg}° ${longitude.min}' ${longitude.sec}" ${longitude.dir}`;
 };
 
+/* c8 ignore start */
 export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 	const options = {
 		/**
@@ -101,10 +104,45 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 		);
 	});
 };
+/* c8 ignore stop */
 
+/* c8 ignore start */
 export const getViewportWidth = () => {
 	return Math.max(
 		document.documentElement.clientWidth || 0,
 		window.innerWidth || 0,
+	);
+};
+/* c8 ignore stop */
+
+export const obfuscate = (str: string) => {
+	/**
+	 * First we use encodeURIComponent to get percent-encoded
+	 * UTF-8, then we convert the percent encodings into raw
+	 * bytes which can be fed into btoa.
+	 */
+	return window.btoa(
+		encodeURIComponent(str).replace(
+			/%([0-9A-F]{2})/g,
+			function toSolidBytes(_match, p1) {
+				return String.fromCharCode(Number(`0x${p1}`));
+			},
+		),
+	);
+};
+
+export const unObfuscate = (str: string) => {
+	/**
+	 * Going backwards: from bytestream, to percent-encoding,
+	 * to original string.
+	 */
+	return decodeURIComponent(
+		window
+			.atob(str)
+			.split("")
+			.map(function (c) {
+				return `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`;
+			})
+			.join(""),
 	);
 };
