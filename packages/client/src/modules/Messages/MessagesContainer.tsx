@@ -8,13 +8,15 @@ import {
 } from "../../common/constants";
 import { isDev } from "../../common/utilities";
 import { Spinner } from "../../components";
+import {
+	MessageAssistant,
+	MessagesContainerHeader,
+	MessageUser,
+	PromptInput,
+	Toolbox,
+} from "..";
 import { AppContext } from "../App/AppContext";
-import { Toolbox } from "../Toolbox/Toolbox";
-import { MessageAssistant } from "./MessageAssistant";
 import type { MessagesContainerProps } from "./Messages";
-import { MessagesContainerHeader } from "./MessagesContainerHeader";
-import { MessageUser } from "./MessageUser";
-import { PromptInput } from "./PromptInput";
 
 export const MessagesContainer = ({
 	noHeader = false,
