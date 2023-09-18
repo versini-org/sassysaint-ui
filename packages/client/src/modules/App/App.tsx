@@ -10,7 +10,7 @@ import {
 import { useLocalStorage } from "../../common/hooks";
 import { getCurrentGeoLocation, isDev } from "../../common/utilities";
 import { Footer, Main } from "../../components";
-import { MessagesContainer } from "../Messages/MessagesContainer";
+import { MessagesContainer } from "..";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
 

@@ -3,8 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
-import { ButtonIcon, Card, IconRestore } from "../../components";
-import { IconDelete } from "../../components/Icons/IconDelete";
+import { ButtonIcon, Card, IconDelete, IconRestore } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {

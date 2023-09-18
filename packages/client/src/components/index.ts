@@ -7,6 +7,7 @@ import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
 import { IconCopied } from "./Icons/IconCopied";
 import { IconCopy } from "./Icons/IconCopy";
+import { IconDelete } from "./Icons/IconDelete";
 import { IconDog } from "./Icons/IconDog";
 import { IconRestore } from "./Icons/IconRestore";
 import { IconSettings } from "./Icons/IconSettings";
@@ -25,6 +26,7 @@ export {
 	IconClose,
 	IconCopied,
 	IconCopy,
+	IconDelete,
 	IconDog,
 	IconRestore,
 	IconSettings,
