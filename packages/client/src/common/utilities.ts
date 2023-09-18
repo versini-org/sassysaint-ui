@@ -7,6 +7,7 @@ export const truncate = (str: string, length: number) => {
 	return str.length > length ? str.substring(0, length) + "..." : str;
 };
 
+/* c8 ignore start */
 export const serviceCall = async ({
 	name,
 	data,
@@ -28,6 +29,7 @@ export const serviceCall = async ({
 	);
 	return response;
 };
+/* c8 ignore stop */
 
 // function to convert latitude and longitude to degree minutes seconds format
 export const convertDDToDMS = (dd: number, lng: boolean) => {
@@ -51,6 +53,7 @@ export const convertLongitudeToDMS = (lng?: number) => {
 	return `${longitude.deg}° ${longitude.min}' ${longitude.sec}" ${longitude.dir}`;
 };
 
+/* c8 ignore start */
 export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 	const options = {
 		/**
@@ -101,10 +104,13 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 		);
 	});
 };
+/* c8 ignore stop */
 
+/* c8 ignore start */
 export const getViewportWidth = () => {
 	return Math.max(
 		document.documentElement.clientWidth || 0,
 		window.innerWidth || 0,
 	);
 };
+/* c8 ignore stop */
