@@ -3,7 +3,6 @@ import { ButtonIcon } from "./Button/ButtonIcon";
 import { Card } from "./Card/Card";
 import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
 import { Footer } from "./Footer/Footer";
-import { History } from "./History/History";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
 import { IconCopied } from "./Icons/IconCopied";
@@ -28,7 +27,6 @@ export {
 	ButtonIcon,
 	Card,
 	Footer,
-	History,
 	IconAssistant,
 	IconClose,
 	IconCopied,
