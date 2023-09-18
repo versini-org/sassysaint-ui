@@ -6,8 +6,8 @@ import {
 	GTP4_MAX_TOKENS,
 } from "../../common/constants";
 import { CARDS } from "../../common/strings";
-import { AppContext } from "../../modules/App/AppContext";
-import { Card } from "..";
+import { Card } from "../../components";
+import { AppContext } from "../App/AppContext";
 
 export type ChatDetailsContentProps = {
 	isAuthenticated: boolean;
