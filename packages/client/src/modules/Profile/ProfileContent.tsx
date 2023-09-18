@@ -14,13 +14,13 @@ import {
 	FAKE_USER_NAME,
 	LOG_OUT,
 } from "../../common/strings";
+import type { GeoLocation } from "../../common/types";
 import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
 } from "../../common/utilities";
 import { Button, Card, Toggle } from "../../components";
 import { AppContext } from "../App/AppContext";
-import type { GeoLocation } from "../App/AppTypes";
 
 export type ProfileContentProps = {
 	isAuthenticated: boolean;

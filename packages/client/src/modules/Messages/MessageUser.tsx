@@ -1,5 +1,5 @@
+import type { MessageUserProps } from "../../common/types";
 import { IconUser } from "../../components";
-import type { MessageUserProps } from "./Messages";
 
 export const MessageUser = ({ children }: MessageUserProps) => {
 	return (

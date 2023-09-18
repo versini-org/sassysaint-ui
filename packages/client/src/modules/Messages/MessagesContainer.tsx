@@ -6,6 +6,7 @@ import {
 	ROLE_INTERNAL,
 	ROLE_USER,
 } from "../../common/constants";
+import type { MessagesContainerProps } from "../../common/types";
 import { isDev } from "../../common/utilities";
 import { Spinner } from "../../components";
 import {
@@ -16,7 +17,6 @@ import {
 	Toolbox,
 } from "..";
 import { AppContext } from "../App/AppContext";
-import type { MessagesContainerProps } from "./Messages";
 
 export const MessagesContainer = ({
 	noHeader = false,
