@@ -4,7 +4,9 @@ import {
 	convertDDToDMS,
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
+	obfuscate,
 	truncate,
+	unObfuscate,
 } from "../utilities";
 
 describe("Non-DOM tests", () => {
@@ -60,6 +62,16 @@ describe("Non-DOM tests", () => {
 			expect(convertLongitudeToDMS(0)).toBe("0° 0' 0\" E");
 			expect(convertLongitudeToDMS(1.23456789)).toBe("1° 14' 4.44\" E");
 			expect(convertLongitudeToDMS(-1.23456789)).toBe("1° 14' 4.44\" W");
+		});
+	});
+
+	describe("obfuscate and unObfuscate", () => {
+		it("should obfuscate data", () => {
+			expect(obfuscate("hello world")).toBe("aGVsbG8gd29ybGQ=");
+		});
+
+		it("should unObfuscate data", () => {
+			expect(unObfuscate("aGVsbG8gd29ybGQ=")).toBe("hello world");
 		});
 	});
 });
