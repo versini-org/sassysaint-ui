@@ -22,7 +22,6 @@ import { Panel } from "./Panel/Panel";
 import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
-import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
 	Button,
@@ -50,5 +49,4 @@ export {
 	PromptInput,
 	Spinner,
 	Toggle,
-	Toolbox,
 };
