@@ -18,9 +18,9 @@ import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
 } from "../../common/utilities";
-import { AppContext } from "../../modules/App/AppContext";
-import type { GeoLocation } from "../../modules/App/AppTypes";
-import { Button, Card, Toggle } from "..";
+import { Button, Card, Toggle } from "../../components";
+import { AppContext } from "../App/AppContext";
+import type { GeoLocation } from "../App/AppTypes";
 
 export type ProfileContentProps = {
 	isAuthenticated: boolean;
