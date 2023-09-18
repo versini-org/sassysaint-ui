@@ -61,7 +61,7 @@ function App() {
 			<Main>
 				<MessagesContainer />
 			</Main>
-			<Footer />
+			<Footer poweredBy={state.model} />
 		</AppContext.Provider>
 	);
 }
