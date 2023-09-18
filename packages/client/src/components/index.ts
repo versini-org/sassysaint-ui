@@ -13,7 +13,6 @@ import { IconSettings } from "./Icons/IconSettings";
 import { IconUser } from "./Icons/IconUser";
 import { Main } from "./Main/Main";
 import { Panel } from "./Panel/Panel";
-import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
 import { Toggle } from "./Toggle/Toggle";
 
@@ -34,7 +33,6 @@ export {
 	Menu,
 	MenuItem,
 	Panel,
-	Profile,
 	Spinner,
 	Toggle,
 };
