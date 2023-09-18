@@ -1,8 +1,9 @@
-import { CHAT_DETAILS_TITLE } from "../../common/strings";
-import { ChatDetailsContent } from "./ChatDetailsContent";
-import { Panel } from "../../components";
-import { isDev } from "../../common/utilities";
 import { useAuth0 } from "@auth0/auth0-react";
+
+import { CHAT_DETAILS_TITLE } from "../../common/strings";
+import { isDev } from "../../common/utilities";
+import { Panel } from "../../components";
+import { ChatDetailsContent } from "./ChatDetailsContent";
 
 export const ChatDetails = ({
 	open,
