@@ -7,15 +7,13 @@ import {
 	ROLE_USER,
 } from "../../common/constants";
 import { isDev } from "../../common/utilities";
-import { AppContext } from "../../modules/App/AppContext";
-import { Toolbox } from "../../modules/Toolbox/Toolbox";
-import {
-	MessageAssistant,
-	MessagesContainerHeader,
-	MessageUser,
-	Spinner,
-} from "../";
+import { Spinner } from "../../components";
+import { AppContext } from "../App/AppContext";
+import { Toolbox } from "../Toolbox/Toolbox";
+import { MessageAssistant } from "./MessageAssistant";
 import type { MessagesContainerProps } from "./Messages";
+import { MessagesContainerHeader } from "./MessagesContainerHeader";
+import { MessageUser } from "./MessageUser";
 import { PromptInput } from "./PromptInput";
 
 export const MessagesContainer = ({
