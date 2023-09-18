@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 
 export const Footer = () => {
 	const { state } = useContext(AppContext);

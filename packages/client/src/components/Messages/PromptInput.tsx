@@ -18,7 +18,7 @@ import {
 	TYPE_QUESTION,
 } from "../../common/strings";
 import { isProd, serviceCall } from "../../common/utilities";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 import { Button } from "..";
 
 export type onPromptInputSubmitProps = {

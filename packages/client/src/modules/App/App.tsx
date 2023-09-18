@@ -6,10 +6,10 @@ import {
 	ACTION_LOCATION,
 	DEFAULT_MODEL,
 	LOCAL_STORAGE_MODEL,
-} from "../common/constants";
-import { useLocalStorage } from "../common/hooks";
-import { getCurrentGeoLocation, isDev } from "../common/utilities";
-import { Footer, Main, MessagesContainer } from "../components";
+} from "../../common/constants";
+import { useLocalStorage } from "../../common/hooks";
+import { getCurrentGeoLocation, isDev } from "../../common/utilities";
+import { Footer, Main, MessagesContainer } from "../../components";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
 

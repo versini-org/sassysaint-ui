@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import { ACTION_RESET } from "../../common/constants";
 import { CLEAR } from "../../common/strings";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 import { Button } from "..";
 
 export type ToolboxProps = {

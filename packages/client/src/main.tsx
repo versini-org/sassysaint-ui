@@ -6,7 +6,7 @@ import ReactDOM from "react-dom/client";
 
 import { isDev } from "./common/utilities";
 import { getConfig } from "./config";
-import App from "./modules/App";
+import App from "./modules/App/App";
 
 const config = getConfig();
 

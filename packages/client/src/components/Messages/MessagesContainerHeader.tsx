@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 import {
 	ChatDetails,
 	History,

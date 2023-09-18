@@ -18,8 +18,8 @@ import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
 } from "../../common/utilities";
-import { AppContext } from "../../modules/AppContext";
-import type { GeoLocation } from "../../modules/AppTypes";
+import { AppContext } from "../../modules/App/AppContext";
+import type { GeoLocation } from "../../modules/App/AppTypes";
 import { Button, Card, Toggle } from "..";
 
 export type ProfileContentProps = {
