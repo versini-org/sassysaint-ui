@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.13.1...client-v1.14.0) (2023-09-18)
+
+
+### Features
+
+* adding bare minimum test harness ([4f54e58](https://github.com/aversini/sassysaint-ui/commit/4f54e580aaec510b086fe358825caff97162b09b))
+
 ## [1.13.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.13.0...client-v1.13.1) (2023-09-17)
 
 
