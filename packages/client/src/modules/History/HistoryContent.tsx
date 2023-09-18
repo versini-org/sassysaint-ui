@@ -3,9 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
-import { AppContext } from "../../modules/App/AppContext";
-import { ButtonIcon, Card, IconRestore } from "..";
-import { IconDelete } from "../Icons/IconDelete";
+import { AppContext } from "../App/AppContext";
+import { ButtonIcon, Card, IconRestore } from "../../components";
+import { IconDelete } from "../../components/Icons/IconDelete";
 
 export type HistoryContentProps = {
 	isAuthenticated: boolean;

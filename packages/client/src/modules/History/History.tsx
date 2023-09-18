@@ -2,7 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import { HISTORY_TITLE } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { Panel } from "..";
+import { Panel } from "../../components";
 import { HistoryContent } from "./HistoryContent";
 
 export const History = ({
