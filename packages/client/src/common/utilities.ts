@@ -40,13 +40,13 @@ export const convertDDToDMS = (dd: number, lng: boolean) => {
 };
 
 export const convertLatitudeToDMS = (lat?: number) => {
-	if (!lat) return "N/A";
+	if (!lat && lat !== 0) return "N/A";
 	const latitude = convertDDToDMS(lat, false);
 	return `${latitude.deg}° ${latitude.min}' ${latitude.sec}" ${latitude.dir}`;
 };
 
 export const convertLongitudeToDMS = (lng?: number) => {
-	if (!lng) return "N/A";
+	if (!lng && lng !== 0) return "N/A";
 	const longitude = convertDDToDMS(lng, true);
 	return `${longitude.deg}° ${longitude.min}' ${longitude.sec}" ${longitude.dir}`;
 };

@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import fs from "fs-extra";
 import { defineConfig } from "vite";
 
@@ -15,8 +17,13 @@ const buildTime = new Date()
 	})
 	.replace(/,/g, "");
 
-// https://vitejs.dev/config/
 export default defineConfig({
+	test: {
+		environment: "happy-dom",
+		coverage: {
+			provider: "v8",
+		},
+	},
 	define: {
 		"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),

@@ -9,7 +9,11 @@
 		"dev": "vite --host",
 		"build": "yarn run clean && tsc && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix --color",
-		"start": "static-server dist --port 5173"
+		"start": "static-server dist --port 5173",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:coverage:ui": "vitest --coverage --ui",
+		"test:watch": "vitest"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.1",
@@ -20,8 +24,8 @@
 		"postcss": "8.4.29",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"remark-gfm": "3.0.1",
 		"react-markdown": "8.0.7",
+		"remark-gfm": "3.0.1",
 		"tailwindcss": "3.3.3",
 		"uuid": "9.0.1"
 	}
