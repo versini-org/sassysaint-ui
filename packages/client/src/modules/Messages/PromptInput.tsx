@@ -18,8 +18,8 @@ import {
 	TYPE_QUESTION,
 } from "../../common/strings";
 import { isProd, serviceCall } from "../../common/utilities";
-import { AppContext } from "../../modules/App/AppContext";
-import { Button } from "..";
+import { Button } from "../../components";
+import { AppContext } from "../App/AppContext";
 
 export type onPromptInputSubmitProps = {
 	message: {

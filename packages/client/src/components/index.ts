@@ -12,11 +12,6 @@ import { IconRestore } from "./Icons/IconRestore";
 import { IconSettings } from "./Icons/IconSettings";
 import { IconUser } from "./Icons/IconUser";
 import { Main } from "./Main/Main";
-import { MessageAssistant } from "./Messages/MessageAssistant";
-import { MessagesContainer } from "./Messages/MessagesContainer";
-import { MessagesContainerHeader } from "./Messages/MessagesContainerHeader";
-import { MessageUser } from "./Messages/MessageUser";
-import { PromptInput } from "./Messages/PromptInput";
 import { Panel } from "./Panel/Panel";
 import { Profile } from "./Profile/Profile";
 import { Spinner } from "./Spinner/Spinner";
@@ -38,13 +33,8 @@ export {
 	Main,
 	Menu,
 	MenuItem,
-	MessageAssistant,
-	MessagesContainer,
-	MessagesContainerHeader,
-	MessageUser,
 	Panel,
 	Profile,
-	PromptInput,
 	Spinner,
 	Toggle,
 };
