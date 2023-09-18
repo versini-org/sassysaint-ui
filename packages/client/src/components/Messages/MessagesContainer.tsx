@@ -7,7 +7,7 @@ import {
 	ROLE_USER,
 } from "../../common/constants";
 import { isDev } from "../../common/utilities";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 import {
 	MessageAssistant,
 	MessagesContainerHeader,

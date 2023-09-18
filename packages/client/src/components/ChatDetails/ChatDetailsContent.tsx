@@ -6,7 +6,7 @@ import {
 	GTP4_MAX_TOKENS,
 } from "../../common/constants";
 import { CARDS } from "../../common/strings";
-import { AppContext } from "../../modules/AppContext";
+import { AppContext } from "../../modules/App/AppContext";
 import { Card } from "..";
 
 export type ChatDetailsContentProps = {

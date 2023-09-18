@@ -7,7 +7,7 @@ import {
 	ACTION_RESET,
 	ACTION_RESTORE,
 	DEFAULT_MODEL,
-} from "../common/constants";
+} from "../../common/constants";
 import { ActionProps, StateProps } from "./AppTypes";
 
 export const reducer = (state: StateProps, action: ActionProps) => {

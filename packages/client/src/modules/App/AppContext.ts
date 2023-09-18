@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DEFAULT_MODEL } from "../common/constants";
+import { DEFAULT_MODEL } from "../../common/constants";
 import type { AppContextProps } from "./AppTypes";
 
 export const AppContext = React.createContext<AppContextProps>({

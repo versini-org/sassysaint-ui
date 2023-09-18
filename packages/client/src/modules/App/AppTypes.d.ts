@@ -4,7 +4,7 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
-} from "../common/constants";
+} from "../../common/constants";
 
 export type GeoLocation = {
 	latitude: number;
