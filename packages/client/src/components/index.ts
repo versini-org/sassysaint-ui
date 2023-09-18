@@ -1,7 +1,6 @@
 import { Button } from "./Button/Button";
 import { ButtonIcon } from "./Button/ButtonIcon";
 import { Card } from "./Card/Card";
-import { ChatDetails } from "./ChatDetails/ChatDetails";
 import { Menu, MenuItem } from "./DropdownMenu/DropdownMenu";
 import { Footer } from "./Footer/Footer";
 import { History } from "./History/History";
@@ -29,7 +28,6 @@ export {
 	Button,
 	ButtonIcon,
 	Card,
-	ChatDetails,
 	Footer,
 	History,
 	IconAssistant,

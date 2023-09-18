@@ -4,15 +4,8 @@ import { useContext, useState } from "react";
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
 import { AppContext } from "../../modules/App/AppContext";
-import {
-	ChatDetails,
-	History,
-	IconDog,
-	IconSettings,
-	Menu,
-	MenuItem,
-	Profile,
-} from "..";
+import { ChatDetails } from "../../modules/ChatDetails/ChatDetails";
+import { History, IconDog, IconSettings, Menu, MenuItem, Profile } from "..";
 
 export const MessagesContainerHeader = () => {
 	const { state } = useContext(AppContext);
