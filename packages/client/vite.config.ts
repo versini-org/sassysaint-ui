@@ -22,6 +22,10 @@ export default defineConfig({
 		environment: "happy-dom",
 		coverage: {
 			provider: "v8",
+			lines: 30,
+			functions: 50,
+			branches: 100,
+			statements: 30,
 		},
 	},
 	define: {
