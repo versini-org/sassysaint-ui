@@ -6,12 +6,11 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
-	DEFAULT_MODEL,
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
 
 export const reducer = (state: StateProps, action: ActionProps) => {
-	if (action.type === ACTION_RESTORE) {
+	if (action?.type === ACTION_RESTORE) {
 		const messages = action.payload.messages.map((item: any) => {
 			return {
 				message: {
@@ -30,7 +29,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		};
 	}
 
-	if (action.type === ACTION_MESSAGE) {
+	if (action?.type === ACTION_MESSAGE) {
 		const role = action.payload.message.role;
 		const content = action.payload.message.content;
 		const name = action.payload.message.name;
@@ -63,27 +62,27 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		}
 	}
 
-	if (action.type === ACTION_RESET) {
+	if (action?.type === ACTION_RESET) {
 		return {
 			id: uuidv4(),
-			model: state.model || DEFAULT_MODEL,
+			model: state.model,
 			usage: 0,
 			messages: [],
 			location: state.location,
 		};
 	}
 
-	if (action.type === ACTION_MODEL) {
+	if (action?.type === ACTION_MODEL) {
 		return {
 			id: state.id,
-			model: action.payload.model || state.model,
-			usage: action.payload.usage || state.usage,
+			model: action.payload.model,
+			usage: action.payload.usage,
 			messages: state.messages,
 			location: state.location,
 		};
 	}
 
-	if (action.type === ACTION_LOCATION) {
+	if (action?.type === ACTION_LOCATION) {
 		return {
 			id: state.id,
 			model: state.model,

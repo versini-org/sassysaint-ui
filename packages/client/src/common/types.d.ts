@@ -27,13 +27,14 @@ export type StateProps = {
 };
 
 export type ActionProps =
+	| undefined
 	| {
 			type: typeof ACTION_RESTORE;
 			payload: {
 				model: string;
 				id: string;
 				usage: number;
-				messages: { message: MessageProps }[];
+				messages: MessageProps[];
 			};
 	  }
 	| {
