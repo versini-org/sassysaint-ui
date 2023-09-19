@@ -1,43 +1,52 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import { Button } from "../..";
+import { ButtonIcon } from "../..";
 
-describe("Button (exceptions)", () => {
+describe("ButtonIcon (exceptions)", () => {
 	it("should be able to require/import from root", () => {
-		expect(Button).toBeDefined();
+		expect(ButtonIcon).toBeDefined();
 	});
 });
 
-describe("Button modifiers", () => {
+describe("ButtonIcon with a tooltip", () => {
 	it("should render a default button", async () => {
-		render(<Button>hello</Button>);
-		const button = await screen.findByRole("button");
-		expect(button.className).toContain("py-2");
-	});
+		const user = userEvent.setup();
 
-	it("should render a slim button", async () => {
-		render(<Button slim>hello</Button>);
+		render(<ButtonIcon label="Close">hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
-		expect(button.className).toContain("py-1");
+		expect(button.className).toContain("p-2");
+		await user.hover(button);
+
+		await screen.findByText("Close");
+		expect(button).toHaveAttribute("aria-describedby");
+	});
+});
+
+describe("ButtonIcon modifiers", () => {
+	it("should render a default button", async () => {
+		render(<ButtonIcon>hello</ButtonIcon>);
+		const button = await screen.findByRole("button");
+		expect(button.className).toContain("p-2");
 	});
 
 	it("should render a dark button", async () => {
-		render(<Button kind="dark">hello</Button>);
+		render(<ButtonIcon kind="dark">hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain("text-slate-200 bg-slate-900");
 	});
 
 	it("should render a light button", async () => {
-		render(<Button kind="light">hello</Button>);
+		render(<ButtonIcon kind="light">hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain("text-slate-200 bg-slate-500");
 	});
 
 	it("should render a disabled dark button", async () => {
 		render(
-			<Button kind="dark" disabled>
+			<ButtonIcon kind="dark" disabled>
 				hello
-			</Button>,
+			</ButtonIcon>,
 		);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain(
@@ -47,9 +56,9 @@ describe("Button modifiers", () => {
 
 	it("should render a disabled light button", async () => {
 		render(
-			<Button kind="light" disabled>
+			<ButtonIcon kind="light" disabled>
 				hello
-			</Button>,
+			</ButtonIcon>,
 		);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain(
@@ -58,7 +67,7 @@ describe("Button modifiers", () => {
 	});
 
 	it("should render a fullWidth button", async () => {
-		render(<Button fullWidth>hello</Button>);
+		render(<ButtonIcon fullWidth>hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain("w-full");
 	});
