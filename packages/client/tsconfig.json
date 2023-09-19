@@ -5,6 +5,7 @@
 		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"module": "ESNext",
 		"skipLibCheck": true,
+		"types": ["vitest/globals", "@testing-library/jest-dom"],
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
@@ -21,5 +22,15 @@
 		"noFallthroughCasesInSwitch": true
 	},
 	"include": ["src"],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"build",
+		"coverage",
+		"scripts",
+		"vite.config.ts",
+		"vitest.setup.ts",
+		"**/*.test.tsx"
+	],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
