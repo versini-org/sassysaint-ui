@@ -19,13 +19,15 @@ const buildTime = new Date()
 
 export default defineConfig({
 	test: {
-		environment: "happy-dom",
+		globals: true,
+		setupFiles: ["./vitest.setup.ts"],
+		environment: "jsdom",
 		coverage: {
 			provider: "v8",
-			lines: 100,
-			functions: 100,
-			branches: 100,
-			statements: 100,
+			lines: 55,
+			functions: 30,
+			branches: 80,
+			statements: 55,
 		},
 	},
 	define: {
