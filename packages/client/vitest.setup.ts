@@ -5,6 +5,7 @@ import "@testing-library/jest-dom/vitest";
 
 import util from "node:util";
 
+import * as jsDomMatchers from "@testing-library/jest-dom/matchers";
 import { expect } from "vitest";
 import * as axeMatchers from "vitest-axe/matchers";
 
@@ -23,3 +24,4 @@ console.error = (...args: any) => {
 };
 
 expect.extend(axeMatchers);
+expect.extend(jsDomMatchers);
