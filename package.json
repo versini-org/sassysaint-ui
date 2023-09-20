@@ -51,7 +51,6 @@
 		"typescript": "5.2.2",
 		"vite": "4.4.9",
 		"vitest": "0.34.4",
-		"vitest-axe": "0.1.0",
 		"vitest-canvas-mock": "0.3.3"
 	}
 }

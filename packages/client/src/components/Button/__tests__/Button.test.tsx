@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import { render, screen } from "@testing-library/react";
-import React from "react";
+import userEvent from "@testing-library/user-event";
 
 import { Button } from "../..";
 
@@ -62,5 +64,36 @@ describe("Button modifiers", () => {
 		render(<Button fullWidth>hello</Button>);
 		const button = await screen.findByRole("button");
 		expect(button.className).toContain("w-full");
+	});
+});
+
+describe("Button methods", () => {
+	afterEach(() => {
+		vi.restoreAllMocks();
+	});
+
+	it("should honor the onClick prop", async () => {
+		const events = {
+			onClick: () => {},
+		};
+		const spyOnClick = vi.spyOn(events, "onClick");
+		const user = userEvent.setup();
+
+		// @ts-ignore
+		render(<Button onClick={spyOnClick}>hello</Button>);
+		const button = await screen.findByRole("button");
+		await user.click(button);
+		await user.click(button);
+
+		expect(spyOnClick).toHaveBeenCalledTimes(2);
+	});
+
+	it("should implement a focus method via the ref prop", () => {
+		const buttonRef = (ref: HTMLButtonElement) => {
+			if (ref) {
+				expect(ref.focus).toBeDefined();
+			}
+		};
+		render(<Button ref={buttonRef}>Button</Button>);
 	});
 });
