@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.0...client-v1.14.1) (2023-09-20)
+
+
+### Bug Fixes
+
+* adding full coverage for reducer ([2a55622](https://github.com/aversini/sassysaint-ui/commit/2a5562290af94f81fce4cc3bdc7d1385478aeb9b))
+* adding some tests for Button - including Axe ([e939f80](https://github.com/aversini/sassysaint-ui/commit/e939f802ce33463678408e436d9eb1b5b5526ede))
+
 ## [1.14.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.13.1...client-v1.14.0) (2023-09-18)
 
 
