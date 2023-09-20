@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 
 import { Card } from "../..";
 
@@ -12,9 +11,40 @@ describe("Card (exceptions)", () => {
 describe("Card modifiers", () => {
 	it("should render a default card", async () => {
 		const { container } = render(<Card />);
+		const card = container.children[0];
 
-		expect(container.firstChild.className).toContain(
-			"p-4 rounded-md text-slate-200",
+		expect(card.className).toContain("p-4");
+		expect(card.className).toContain("rounded-md");
+		expect(card.className).toContain("text-slate-200");
+	});
+
+	it("should render a card with a title", async () => {
+		render(<Card title="hello" />);
+		const card = await screen.findByText("hello");
+		expect(card).toBeDefined();
+	});
+
+	it("should render a card with a subTitle", async () => {
+		render(<Card subTitle="hello" />);
+		const card = await screen.findByText("hello");
+		expect(card).toBeDefined();
+	});
+
+	it("should render a card with raw data", async () => {
+		render(<Card rawData={<p>hello</p>} />);
+		const card = await screen.findByText("hello");
+		expect(card).toBeDefined();
+	});
+
+	it("should render a card with non-raw data", async () => {
+		render(
+			<Card
+				data={{
+					hello: "world",
+				}}
+			/>,
 		);
+		const card = await screen.findByText("hello");
+		expect(card).toBeDefined();
 	});
 });
