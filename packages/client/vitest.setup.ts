@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 
-import "vitest-canvas-mock";
 import "@testing-library/jest-dom/vitest";
 
 import util from "node:util";
