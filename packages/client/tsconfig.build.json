@@ -1,0 +1,13 @@
+{
+	"extends": "./tsconfig",
+	"exclude": [
+		"node_modules",
+		"dist",
+		"build",
+		"coverage",
+		"scripts",
+		"vite.config.ts",
+		"vitest.setup.ts",
+		"**/*.test.tsx"
+	]
+}
