@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 module.exports = {
+	reportOutput: ["github"],
 	baseDir: "./dist",
 	defaultCompression: "gzip",
 	files: [
