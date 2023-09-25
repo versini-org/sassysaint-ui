@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.1...client-v1.14.2) (2023-09-25)
+
+
+### Bug Fixes
+
+* removing vitest-axe which is far from stable ([4f6a126](https://github.com/aversini/sassysaint-ui/commit/4f6a1266a552e8277acee6699701b69e4c41f31d))
+
 ## [1.14.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.0...client-v1.14.1) (2023-09-20)
 
 
