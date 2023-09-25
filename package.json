@@ -27,6 +27,7 @@
 		"@vitest/ui": "0.34.5",
 		"@vitejs/plugin-react-swc": "3.4.0",
 		"barrelsby": "2.8.1",
+		"bundlemon": "2.0.2",
 		"chokidar": "3.5.3",
 		"cross-env": "7.0.3",
 		"dotenv": "16.3.1",

@@ -5,6 +5,7 @@
 	"author": "Arno Versini",
 	"type": "module",
 	"scripts": {
+		"bundlesize": "bundlemon",
 		"clean": "rimraf dist",
 		"dev": "vite --host",
 		"build": "yarn run clean && tsc && vite build",
