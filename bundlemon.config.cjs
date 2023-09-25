@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 module.exports = {
 	reportOutput: ["github"],
-	baseDir: "./dist",
+	baseDir: "./packages/client/dist",
 	defaultCompression: "gzip",
 	files: [
 		{
