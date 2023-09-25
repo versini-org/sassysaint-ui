@@ -18,13 +18,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: sarthak-saxena/JSBundleSize@master
-        with:
-          bootstrap: "yarn install"
-          build_command: "npx lerna run build"
-          dist_path: "packages/client/dist"
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - run: yarn install
       - run: npx lerna run build
       - run: npx lerna run lint
