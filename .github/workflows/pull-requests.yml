@@ -19,6 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn install
+      - run: npx lerna run build
       - name: Get Bundle Size
         uses: lironer/bundlemon-action@v1
 
