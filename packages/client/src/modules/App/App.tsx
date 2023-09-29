@@ -15,7 +15,7 @@ import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
 
 function App() {
-	const { isLoading } = useAuth0();
+	const { isLoading, isAuthenticated } = useAuth0();
 	const storage = useLocalStorage();
 	const model = storage.get(LOCAL_STORAGE_MODEL)?.toString() || DEFAULT_MODEL;
 
@@ -32,6 +32,14 @@ function App() {
 	});
 
 	useEffect(() => {
+		/**
+		 * The user is in the process of being authenticated.
+		 * We cannot request for location yet.
+		 */
+		if (!isAuthenticated || isLoading) {
+			return;
+		}
+
 		if (!locationRef.current || locationRef.current.accuracy === 0) {
 			(async () => {
 				locationRef.current = await getCurrentGeoLocation();
@@ -43,7 +51,7 @@ function App() {
 				});
 			})();
 		}
-	}, []);
+	}, [isAuthenticated, isLoading]);
 
 	useEffect(() => {
 		if (isLoading && !isDev) {
