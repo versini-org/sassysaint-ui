@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.2...client-v1.14.3) (2023-09-29)
+
+
+### Bug Fixes
+
+* location request should be only for authenticated user ([4c1147a](https://github.com/aversini/sassysaint-ui/commit/4c1147a41a916ce40d760aadc5d55dc7f25d8ebf))
+
 ## [1.14.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.1...client-v1.14.2) (2023-09-25)
 
 
