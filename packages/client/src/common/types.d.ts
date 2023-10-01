@@ -10,6 +10,9 @@ export type GeoLocation = {
 	latitude: number;
 	longitude: number;
 	accuracy: number;
+	city?: string;
+	region?: string;
+	country?: string;
 };
 
 export type MessageProps = {

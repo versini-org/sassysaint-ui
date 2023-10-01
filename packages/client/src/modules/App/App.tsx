@@ -8,7 +8,11 @@ import {
 	LOCAL_STORAGE_MODEL,
 } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
-import { getCurrentGeoLocation, isDev } from "../../common/utilities";
+import {
+	getCurrentGeoLocation,
+	isDev,
+	serviceCall,
+} from "../../common/utilities";
 import { Footer, Main } from "../../components";
 import { MessagesContainer } from "..";
 import { AppContext } from "./AppContext";
@@ -34,9 +38,9 @@ function App() {
 	useEffect(() => {
 		/**
 		 * The user is in the process of being authenticated.
-		 * We cannot request for location yet.
+		 * We cannot request for location yet, unless we are in dev mode.
 		 */
-		if (!isAuthenticated || isLoading) {
+		if (!isDev && (!isAuthenticated || isLoading)) {
 			return;
 		}
 
@@ -52,6 +56,40 @@ function App() {
 			})();
 		}
 	}, [isAuthenticated, isLoading]);
+
+	useEffect(() => {
+		if (!locationRef.current || state.location?.city !== "") {
+			return;
+		}
+
+		(async () => {
+			console.log("locationRef.current", locationRef.current);
+			try {
+				const response = await serviceCall({
+					name: "location",
+					data: {
+						location: locationRef.current,
+					},
+				});
+
+				if (response.status === 200) {
+					const data = await response.json();
+					console.log("==> ", data);
+					dispatch({
+						type: ACTION_LOCATION,
+						payload: {
+							location: {
+								...locationRef.current,
+								...data,
+							},
+						},
+					});
+				}
+			} catch (error) {
+				// nothing to declare officer
+			}
+		})();
+	}, [state]);
 
 	useEffect(() => {
 		if (isLoading && !isDev) {

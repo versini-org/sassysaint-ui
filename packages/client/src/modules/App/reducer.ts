@@ -10,6 +10,8 @@ import {
 import { ActionProps, StateProps } from "../../common/types";
 
 export const reducer = (state: StateProps, action: ActionProps) => {
+	console.log("==> state: ", state);
+
 	if (action?.type === ACTION_RESTORE) {
 		const messages = action.payload.messages.map((item: any) => {
 			return {
