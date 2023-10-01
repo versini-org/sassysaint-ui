@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.3...client-v1.14.4) (2023-10-01)
+
+
+### Bug Fixes
+
+* more accurate location ([6e99dd5](https://github.com/aversini/sassysaint-ui/commit/6e99dd518de6ba85fe0efdb278e6dd078f28a808))
+
 ## [1.14.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.2...client-v1.14.3) (2023-09-29)
 
 
