@@ -58,12 +58,23 @@ function App() {
 	}, [isAuthenticated, isLoading]);
 
 	useEffect(() => {
-		if (!locationRef.current || state.location?.city !== "") {
+		/**
+		 * Basic location is not available yet.
+		 * We cannot request for detailled location yet.
+		 */
+		if (!state.location) {
+			return;
+		}
+
+		/**
+		 * We already have the detailled location.
+		 * We do not need to request it again.
+		 */
+		if (state.location.city) {
 			return;
 		}
 
 		(async () => {
-			console.log("locationRef.current", locationRef.current);
 			try {
 				const response = await serviceCall({
 					name: "location",
@@ -74,13 +85,16 @@ function App() {
 
 				if (response.status === 200) {
 					const data = await response.json();
-					console.log("==> ", data);
 					dispatch({
 						type: ACTION_LOCATION,
 						payload: {
 							location: {
 								...locationRef.current,
-								...data,
+								city: data?.address?.City,
+								region: data?.address?.Region,
+								regionShort: data?.address?.RegionAbbr,
+								country: data?.address?.CntryName,
+								countryShort: data?.address?.CountryCode,
 							},
 						},
 					});

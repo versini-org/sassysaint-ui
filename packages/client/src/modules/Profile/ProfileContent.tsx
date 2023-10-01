@@ -57,6 +57,17 @@ export const ProfileContent = ({
 	};
 
 	const renderLocation = (location?: GeoLocation) => {
+		if (location?.city && location?.countryShort && location?.regionShort) {
+			return (
+				<>
+					<div className="text-right">
+						{location.city}, {location.regionShort}
+					</div>
+					<div className="text-right">{location.countryShort}</div>
+				</>
+			);
+		}
+
 		const lat = convertLatitudeToDMS(location?.latitude);
 		const lon = convertLongitudeToDMS(location?.longitude);
 		return (
