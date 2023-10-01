@@ -60,14 +60,14 @@ function App() {
 	useEffect(() => {
 		/**
 		 * Basic location is not available yet.
-		 * We cannot request for detailled location yet.
+		 * We cannot request for detailed location yet.
 		 */
 		if (!state.location) {
 			return;
 		}
 
 		/**
-		 * We already have the detailled location.
+		 * We already have the detailed location.
 		 * We do not need to request it again.
 		 */
 		if (state.location.city) {
