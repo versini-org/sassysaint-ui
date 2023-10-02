@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.4...client-v1.14.5) (2023-10-02)
+
+
+### Bug Fixes
+
+* icon only button is missing label ([0056f2b](https://github.com/aversini/sassysaint-ui/commit/0056f2bee220c925332116b3aee08b118a911922))
+
 ## [1.14.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.3...client-v1.14.4) (2023-10-01)
 
 
