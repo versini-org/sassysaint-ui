@@ -91,7 +91,7 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 					onClick={onClick}
 					disabled={disabled}
 					type={type}
-					aria-label={ariaLabel}
+					aria-label={ariaLabel || label}
 					{...getReferenceProps()}
 				>
 					{children}
