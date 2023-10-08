@@ -18,14 +18,14 @@
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.1",
-		"@floating-ui/react": "0.25.4",
+		"@floating-ui/react": "0.26.0",
 		"@tailwindcss/typography": "0.5.10",
 		"autoprefixer": "10.4.16",
 		"clsx": "2.0.0",
-		"postcss": "8.4.30",
+		"postcss": "8.4.31",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-markdown": "8.0.7",
+		"react-markdown": "9.0.0",
 		"remark-gfm": "4.0.0",
 		"tailwindcss": "3.3.3",
 		"uuid": "9.0.1"
