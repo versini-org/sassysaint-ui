@@ -1,7 +1,6 @@
 import {
 	autoUpdate,
 	flip,
-	FloatingPortal,
 	offset,
 	shift,
 	useDismiss,
@@ -13,7 +12,6 @@ import {
 } from "@floating-ui/react";
 import React, { useState } from "react";
 
-import { getViewportWidth } from "../../common/utilities";
 import type { ButtonIconProps } from "./ButtonTypes";
 import { getButtonClasses, TYPE_ICON } from "./utilities";
 
@@ -42,9 +40,8 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 			className,
 		});
 
-		const viewportWidth = getViewportWidth();
 		const [isOpen, setIsOpen] = useState(false);
-		const { refs, floatingStyles, context } = useFloating({
+		const { refs, context } = useFloating({
 			open: isOpen,
 			onOpenChange: setIsOpen,
 			placement: "top",
@@ -73,15 +70,9 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 		const role = useRole(context, { role: "tooltip" });
 
 		// Merge all the interactions into prop getters
-		const { getReferenceProps, getFloatingProps } = useInteractions([
-			hover,
-			dismiss,
-			role,
-		]);
+		const { getReferenceProps } = useInteractions([hover, dismiss, role]);
 
 		const allRef = useMergeRefs([refs.setReference, ref]);
-
-		const showTooltip = label && viewportWidth > 640;
 
 		return (
 			<>
@@ -96,21 +87,6 @@ export const ButtonIcon = React.forwardRef<HTMLButtonElement, ButtonIconProps>(
 				>
 					{children}
 				</button>
-
-				{showTooltip && (
-					<FloatingPortal>
-						{isOpen && (
-							<div
-								className="w-max bg-slate-600 text-white text-sm px-2 py-2 rounded-md shadow-md border border-gray-400"
-								ref={refs.setFloating}
-								style={floatingStyles}
-								{...getFloatingProps()}
-							>
-								{label}
-							</div>
-						)}
-					</FloatingPortal>
-				)}
 			</>
 		);
 	},
