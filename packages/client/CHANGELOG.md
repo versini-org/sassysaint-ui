@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.5...client-v1.14.6) (2023-10-08)
+
+
+### Bug Fixes
+
+* removing non-accessible Tooltip ([0515354](https://github.com/aversini/sassysaint-ui/commit/0515354467537187650fdc6e0ae9abc7fcfa7fe2))
+
 ## [1.14.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.4...client-v1.14.5) (2023-10-02)
 
 
