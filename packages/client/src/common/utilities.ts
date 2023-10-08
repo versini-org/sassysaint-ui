@@ -106,15 +106,6 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 };
 /* c8 ignore stop */
 
-/* c8 ignore start */
-export const getViewportWidth = () => {
-	return Math.max(
-		document.documentElement.clientWidth || 0,
-		window.innerWidth || 0,
-	);
-};
-/* c8 ignore stop */
-
 export const obfuscate = (str: string) => {
 	/**
 	 * First we use encodeURIComponent to get percent-encoded
