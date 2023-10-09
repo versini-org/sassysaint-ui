@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.7](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.6...client-v1.14.7) (2023-10-09)
+
+
+### Performance Improvements
+
+* postponing MessageAssistant load ([67a3bde](https://github.com/aversini/sassysaint-ui/commit/67a3bde1aed458b0dceac05ac35db48f28213f79))
+
 ## [1.14.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.5...client-v1.14.6) (2023-10-08)
 
 
