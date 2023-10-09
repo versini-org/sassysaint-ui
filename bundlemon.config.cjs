@@ -22,7 +22,7 @@ module.exports = {
 			maxSize: "10kb",
 		},
 		{
-			path: "assets/**/*.{png,svg}",
+			path: "assets/**/*.{png,svg,jpg}",
 		},
 	],
 };
