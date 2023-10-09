@@ -75,9 +75,8 @@ export const MessagesContainer = ({
 							content
 						) {
 							return (
-								<Suspense fallback={<span></span>}>
+								<Suspense key={`${index}-${role}`} fallback={<span></span>}>
 									<MessageAssistant
-										key={`${index}-${role}`}
 										smoothScrollRef={smoothScrollRef}
 										name={name}
 									>
