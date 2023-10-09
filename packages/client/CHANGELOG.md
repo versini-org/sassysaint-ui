@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.8](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.7...client-v1.14.8) (2023-10-09)
+
+
+### Performance Improvements
+
+* minor apple splash optimization ([f4bec0c](https://github.com/aversini/sassysaint-ui/commit/f4bec0cea4cb11c6feaeb2ce1cb6bf7a35094397))
+* reduce apple touch icon size ([9458fbe](https://github.com/aversini/sassysaint-ui/commit/9458fbef7e586d3ea4072b7cc6e1b31153620c49))
+
 ## [1.14.7](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.6...client-v1.14.7) (2023-10-09)
 
 
