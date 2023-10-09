@@ -1,5 +1,14 @@
 # Development FAQ
 
+## Apple touch icons
+
+All icons under `packages/client/public` are used as apple touch icons. They were automatically generated with the following command:
+
+```sh
+cd packages/client
+npx pwa-asset-generator -i ./index.html -m ./public/manifest.json  third-party/noun-dachshund-208024.svg --splash-only -b "#64748b" -q 60 ./public
+```
+
 ## Information about auth0 domain and client id
 
 Both values are public and can be found in the `auth_config.json` file in the `packages/client` folder. Since they are public, there is no need to hide them: the `auth_config.json` can be pushed to GitHub.
