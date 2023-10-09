@@ -66,4 +66,8 @@ export const MessageAssistant = ({
 	);
 };
 
+/**
+ * This is required to be able to load the component
+ * dynamically using React Lazy and Suspense.
+ */
 export default MessageAssistant;
