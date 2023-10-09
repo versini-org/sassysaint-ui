@@ -1,5 +1,5 @@
 import configJson from "../auth_config.json";
-import { isDev } from "./common/utilities";
+import { isDev, isLocal } from "./common/utilities";
 
 export function getConfig() {
 	// Configure the audience here. By default, it will take whatever is in the config
@@ -9,7 +9,7 @@ export function getConfig() {
 	// If this resolves to `null`, the API page changes to show some helpful info about what to do
 	// with the audience.
 
-	const config = isDev ? configJson.dev : configJson.prod;
+	const config = isDev || isLocal ? configJson.dev : configJson.prod;
 	const audience =
 		config.audience && config.audience !== "YOUR_API_IDENTIFIER"
 			? config.audience

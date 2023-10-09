@@ -65,3 +65,5 @@ export const MessageAssistant = ({
 		</>
 	);
 };
+
+export default MessageAssistant;

@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext, useEffect, useRef } from "react";
+import { lazy, Suspense, useContext, useEffect, useRef } from "react";
 
 import {
 	ROLE_ASSISTANT,
@@ -9,14 +9,10 @@ import {
 import type { MessagesContainerProps } from "../../common/types";
 import { isDev } from "../../common/utilities";
 import { Spinner } from "../../components";
-import {
-	MessageAssistant,
-	MessagesContainerHeader,
-	MessageUser,
-	PromptInput,
-	Toolbox,
-} from "..";
+import { MessagesContainerHeader, MessageUser, PromptInput, Toolbox } from "..";
 import { AppContext } from "../App/AppContext";
+
+const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
 
 export const MessagesContainer = ({
 	noHeader = false,
@@ -79,13 +75,15 @@ export const MessagesContainer = ({
 							content
 						) {
 							return (
-								<MessageAssistant
-									key={`${index}-${role}`}
-									smoothScrollRef={smoothScrollRef}
-									name={name}
-								>
-									{content}
-								</MessageAssistant>
+								<Suspense fallback={<span></span>}>
+									<MessageAssistant
+										key={`${index}-${role}`}
+										smoothScrollRef={smoothScrollRef}
+										name={name}
+									>
+										{content}
+									</MessageAssistant>
+								</Suspense>
 							);
 						}
 						if (role === ROLE_USER && content) {
