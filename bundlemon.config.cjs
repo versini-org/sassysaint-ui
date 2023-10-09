@@ -11,7 +11,11 @@ module.exports = {
 		},
 		{
 			path: "assets/index-<hash>.js",
-			maxSize: "140kb",
+			maxSize: "95kb",
+		},
+		{
+			path: "assets/MessageAssistant-<hash>.js",
+			maxSize: "40kb",
 		},
 		{
 			path: "assets/index-<hash>.css",
