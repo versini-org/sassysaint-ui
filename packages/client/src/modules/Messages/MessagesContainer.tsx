@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import clsx from "clsx";
 import { lazy, Suspense, useContext, useEffect, useRef } from "react";
 
 import {
@@ -23,6 +24,10 @@ export const MessagesContainer = ({
 
 	const { isAuthenticated } = useAuth0();
 	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
+	const containerClass = clsx(
+		"flex-1 space-y-6 overflow-y-auto rounded-md bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7",
+		paddingTop,
+	);
 	const { state } = useContext(AppContext);
 
 	/**
@@ -61,9 +66,7 @@ export const MessagesContainer = ({
 
 	return (
 		<>
-			<div
-				className={`flex-1 space-y-6 overflow-y-auto rounded-md px-4 ${paddingTop} bg-slate-900 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7`}
-			>
+			<div className={containerClass}>
 				{!noHeader && <MessagesContainerHeader />}
 
 				{state &&
