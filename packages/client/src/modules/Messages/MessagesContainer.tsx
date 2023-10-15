@@ -62,7 +62,7 @@ export const MessagesContainer = ({
 	return (
 		<>
 			<div
-				className={`flex-1 space-y-6 overflow-y-auto rounded-md px-4 ${paddingTop} pb-10 text-base leading-6 shadow-sm bg-slate-900 text-slate-300 sm:text-base sm:leading-7`}
+				className={`flex-1 space-y-6 overflow-y-auto rounded-md px-4 ${paddingTop} bg-slate-900 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7`}
 			>
 				{!noHeader && <MessagesContainerHeader />}
 

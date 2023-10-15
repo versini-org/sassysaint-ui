@@ -149,7 +149,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 	return !isAuthenticated && isProd ? (
 		<>
-			<Button className="mt-6 mb-4" onClick={() => loginWithRedirect()}>
+			<Button className="mb-4 mt-6" onClick={() => loginWithRedirect()}>
 				{LOG_IN}
 			</Button>
 		</>
@@ -164,7 +164,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 					<textarea
 						ref={inputRef}
 						id="chat-input"
-						className="block w-full resize-none rounded-md border-none p-4 pr-24 min-h-[56px] text-base caret-slate-100 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-300 bg-slate-900 text-slate-200 placeholder-slate-400 sm:text-base"
+						className="block min-h-[56px] w-full resize-none rounded-md border-none bg-slate-900 p-4 pr-24 text-base text-slate-200 placeholder-slate-400 caret-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-0 sm:text-base"
 						rows={1}
 						placeholder={TYPE_QUESTION}
 						required
