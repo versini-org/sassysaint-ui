@@ -11,7 +11,7 @@ export type ToolboxProps = {
 };
 export const Toolbox = ({ className }: ToolboxProps) => {
 	const { dispatch } = useContext(AppContext);
-	const toolboxClass = clsx(className, "rounded-md flex justify-center");
+	const toolboxClass = clsx(className, "flex justify-center rounded-md");
 
 	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();

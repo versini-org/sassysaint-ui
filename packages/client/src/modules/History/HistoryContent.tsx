@@ -76,10 +76,10 @@ const renderAsTable = (
 	const borderClass = "border border-gray-700";
 	const xPadding = "px-4";
 	return (
-		<div className="relative overflow-x-auto shadow-md rounded-lg">
-			<table className="w-full text-sm text-left text-gray-400">
+		<div className="relative overflow-x-auto rounded-lg shadow-md">
+			<table className="w-full text-left text-sm text-gray-400">
 				<thead
-					className={`text-xs uppercase bg-gray-700 text-gray-400 ${borderClass}`}
+					className={`bg-gray-700 text-xs uppercase text-gray-400 ${borderClass}`}
 				>
 					<tr>
 						<th scope="col" className={`${xPadding} py-3 text-white`}>
@@ -90,7 +90,7 @@ const renderAsTable = (
 						</th>
 						<th
 							scope="col"
-							className={`${xPadding} py-3 block text-white text-right`}
+							className={`${xPadding} block py-3 text-right text-white`}
 						>
 							Actions
 						</th>
@@ -115,7 +115,7 @@ const renderAsTable = (
 								</td>
 
 								<td className={`${xPadding} py-4`}>
-									<div className="flex gap-2 justify-end">
+									<div className="flex justify-end gap-2">
 										<ButtonIcon
 											label="Restore chat"
 											kind="light"
@@ -188,10 +188,10 @@ export const HistoryContent = ({
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
 			{history && (
-				<div className="flex flex-col sm:flex-row gap-2">
+				<div className="flex flex-col gap-2 sm:flex-row">
 					<Card
 						noBackground
-						className="w-full overflow-y-scroll max-h-[75vh]"
+						className="max-h-[75vh] w-full overflow-y-scroll"
 						rawData={renderAsTable(history, setHistory, dispatch, onOpenChange)}
 					/>
 				</div>

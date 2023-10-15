@@ -35,15 +35,15 @@ export const MessageAssistant = ({
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
-				<div className="text-slate-300 hidden sm:block">
+				<div className="hidden text-slate-300 sm:block">
 					<IconAssistant />
 				</div>
 				<div>
-					<div className="flex flex-col rounded-b-xl rounded-tr-xl p-4 sm:max-w-md md:max-w-2xl bg-[#E5E5EA] text-black prose prose-p:my-3 prose-ol:my-3 prose-ul:my-3 prose-blockquote:my-3 prose-indigo prose-ul:prose-li:marker:text-black">
+					<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl">
 						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
 					</div>
 					{name && showEngineDetails && (
-						<p className="text-end text-xs pr-2 pt-1">Chat engine: {name}</p>
+						<p className="pr-2 pt-1 text-end text-xs">Chat engine: {name}</p>
 					)}
 				</div>
 

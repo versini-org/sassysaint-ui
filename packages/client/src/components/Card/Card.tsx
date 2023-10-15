@@ -19,21 +19,23 @@ export const Card = ({
 	noBackground = false,
 	className,
 }: CardProps) => {
-	const titleClass = subTitle ? "font-bold text-lg" : "font-bold text-lg mb-4";
+	const titleClass = clsx("text-lg font-bold", {
+		"mb-4": !!subTitle,
+	});
 	const cardClass = clsx("rounded-md text-slate-200", className, {
-		"p-4 border-slate-900 border-2 bg-slate-900": !noBackground,
+		"border-2 border-slate-900 bg-slate-900 p-4": !noBackground,
 	});
 
 	return (
 		<div className={cardClass}>
 			{title && <h2 className={titleClass}>{title}</h2>}
-			{subTitle && <h3 className="text-sm mb-4">{subTitle}</h3>}
+			{subTitle && <h3 className="mb-4 text-sm">{subTitle}</h3>}
 			{data &&
 				Object.keys(data).map((idx) => {
 					return (
 						<dl className="mb-5" key={`${title}-${idx}`}>
-							<div className="flex justify-between items-center">
-								<dt className="font-bold text-slate-400 inline-block">{idx}</dt>
+							<div className="flex items-center justify-between">
+								<dt className="inline-block font-bold text-slate-400">{idx}</dt>
 								<dd className="inline-block">{data[idx]}</dd>
 							</div>
 						</dl>
