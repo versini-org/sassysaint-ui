@@ -18,13 +18,17 @@ describe("ButtonIcon modifiers", () => {
 	it("should render a dark button", async () => {
 		render(<ButtonIcon kind="dark">hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
-		expect(button.className).toContain("text-slate-200 bg-slate-900");
+		const buttonClass = button.className;
+		expect(buttonClass).toContain("text-slate-200");
+		expect(buttonClass).toContain("bg-slate-900");
 	});
 
 	it("should render a light button", async () => {
 		render(<ButtonIcon kind="light">hello</ButtonIcon>);
 		const button = await screen.findByRole("button");
-		expect(button.className).toContain("text-slate-200 bg-slate-500");
+		const buttonClass = button.className;
+		expect(buttonClass).toContain("text-slate-200");
+		expect(buttonClass).toContain("bg-slate-500");
 	});
 
 	it("should render a disabled dark button", async () => {
@@ -34,9 +38,9 @@ describe("ButtonIcon modifiers", () => {
 			</ButtonIcon>,
 		);
 		const button = await screen.findByRole("button");
-		expect(button.className).toContain(
-			"disabled:opacity-50 disabled:cursor-not-allowed",
-		);
+		const buttonClass = button.className;
+		expect(buttonClass).toContain("disabled:opacity-50");
+		expect(buttonClass).toContain("disabled:cursor-not-allowed");
 	});
 
 	it("should render a disabled light button", async () => {
@@ -46,9 +50,9 @@ describe("ButtonIcon modifiers", () => {
 			</ButtonIcon>,
 		);
 		const button = await screen.findByRole("button");
-		expect(button.className).toContain(
-			"disabled:opacity-50 disabled:cursor-not-allowed",
-		);
+		const buttonClass = button.className;
+		expect(buttonClass).toContain("disabled:opacity-50");
+		expect(buttonClass).toContain("disabled:cursor-not-allowed");
 	});
 
 	it("should render a fullWidth button", async () => {
