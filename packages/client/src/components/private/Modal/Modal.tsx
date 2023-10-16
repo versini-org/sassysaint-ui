@@ -5,42 +5,44 @@ import {
 	useId,
 	useMergeRefs,
 } from "@floating-ui/react";
+import clsx from "clsx";
 import * as React from "react";
 
 import { ButtonIcon } from "../..";
 import type { ButtonProps } from "../../Button/ButtonTypes";
-import { DialogContext } from "./DialogContext";
-import { useDialog, useDialogContext } from "./DialogHooks";
-import type { DialogOptions } from "./DialogTypes";
+import { ModalContext } from "./ModalContext";
+import { useModal, useModalContext } from "./ModalHooks";
+import type { ModalOptions } from "./ModalTypes";
 
-export function Dialog({
+export function Modal({
 	children,
 	...options
 }: {
 	children: React.ReactNode;
-} & DialogOptions) {
-	const dialog = useDialog(options);
+} & ModalOptions) {
+	const dialog = useModal(options);
 	return (
-		<DialogContext.Provider value={dialog}>{children}</DialogContext.Provider>
+		<ModalContext.Provider value={dialog}>{children}</ModalContext.Provider>
 	);
 }
 
 type overlayBackgroundProps = {
 	overlayBackground?: string;
 };
-export const DialogContent = React.forwardRef<
+export const ModalContent = React.forwardRef<
 	HTMLDivElement,
 	React.HTMLProps<HTMLDivElement> & overlayBackgroundProps
->(function DialogContent(props, propRef) {
-	const { context: floatingContext, ...context } = useDialogContext();
+>(function ModalContent(props, propRef) {
+	const { context: floatingContext, ...context } = useModalContext();
 	const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
 	if (!floatingContext.open) return null;
 
 	const { overlayBackground, ...rest } = props;
-	const overlayClass = overlayBackground
-		? `grid place-items-center ${overlayBackground}`
-		: "grid place-items-center bg-black sm:bg-black/[.8]";
+	const overlayClass = clsx("grid place-items-center", {
+		[`${overlayBackground}`]: overlayBackground,
+		"bg-black sm:bg-black/[.8]": !overlayBackground,
+	});
 
 	return (
 		<FloatingPortal>
@@ -60,14 +62,14 @@ export const DialogContent = React.forwardRef<
 	);
 });
 
-export const DialogHeading = React.forwardRef<
+export const ModalHeading = React.forwardRef<
 	HTMLHeadingElement,
 	React.HTMLProps<HTMLHeadingElement>
->(function DialogHeading({ children, ...props }, ref) {
-	const { setLabelId } = useDialogContext();
+>(function ModalHeading({ children, ...props }, ref) {
+	const { setLabelId } = useModalContext();
 	const id = useId();
 
-	// Only sets `aria-labelledby` on the Dialog root element
+	// Only sets `aria-labelledby` on the Modal root element
 	// if this component is mounted inside it.
 	React.useLayoutEffect(() => {
 		setLabelId(id);
@@ -81,14 +83,14 @@ export const DialogHeading = React.forwardRef<
 	);
 });
 
-export const DialogDescription = React.forwardRef<
+export const ModalDescription = React.forwardRef<
 	HTMLParagraphElement,
 	React.HTMLProps<HTMLParagraphElement>
->(function DialogDescription({ children, ...props }, ref) {
-	const { setDescriptionId } = useDialogContext();
+>(function ModalDescription({ children, ...props }, ref) {
+	const { setDescriptionId } = useModalContext();
 	const id = useId();
 
-	// Only sets `aria-describedby` on the Dialog root element
+	// Only sets `aria-describedby` on the Modal root element
 	// if this component is mounted inside it.
 	React.useLayoutEffect(() => {
 		setDescriptionId(id);
@@ -102,11 +104,11 @@ export const DialogDescription = React.forwardRef<
 	);
 });
 
-export const DialogClose = React.forwardRef<
+export const ModalClose = React.forwardRef<
 	HTMLButtonElement & ButtonProps,
 	ButtonProps
->(function DialogClose(props, ref) {
-	const { setOpen } = useDialogContext();
+>(function ModalClose(props, ref) {
+	const { setOpen } = useModalContext();
 	const { children, ...rest } = props;
 	return (
 		<ButtonIcon
