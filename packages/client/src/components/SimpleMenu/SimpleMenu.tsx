@@ -9,15 +9,12 @@ import {
 	FloatingPortal,
 	FloatingTree,
 	offset,
-	safePolygon,
 	shift,
 	useClick,
 	useDismiss,
 	useFloating,
 	useFloatingNodeId,
-	useFloatingParentNodeId,
 	useFloatingTree,
-	useHover,
 	useInteractions,
 	useListItem,
 	useListNavigation,
@@ -48,7 +45,6 @@ const MenuContext = React.createContext<{
 interface MenuProps {
 	icon?: React.ReactNode;
 	label?: string;
-	nested?: boolean;
 	children?: React.ReactNode;
 }
 
@@ -66,40 +62,28 @@ export const MenuComponent = React.forwardRef<
 
 	const tree = useFloatingTree();
 	const nodeId = useFloatingNodeId();
-	const parentId = useFloatingParentNodeId();
 	const item = useListItem();
-
-	const isNested = parentId != null;
 
 	const { floatingStyles, refs, context } = useFloating<HTMLButtonElement>({
 		nodeId,
 		open: isOpen,
 		onOpenChange: setIsOpen,
-		placement: isNested ? "right-start" : "bottom-start",
-		middleware: [
-			offset({ mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? -4 : 0 }),
-			flip(),
-			shift(),
-		],
+		placement: "bottom-start",
+		middleware: [offset({ mainAxis: 4, alignmentAxis: 0 }), flip(), shift()],
 		whileElementsMounted: autoUpdate,
 	});
 
-	const hover = useHover(context, {
-		enabled: isNested,
-		delay: { open: 75 },
-		handleClose: safePolygon({ blockPointerEvents: true }),
-	});
 	const click = useClick(context, {
 		event: "mousedown",
-		toggle: !isNested,
-		ignoreMouse: isNested,
+		toggle: true,
+		ignoreMouse: false,
 	});
 	const role = useRole(context, { role: "menu" });
 	const dismiss = useDismiss(context, { bubbles: true });
 	const listNavigation = useListNavigation(context, {
 		listRef: elementsRef,
 		activeIndex,
-		nested: isNested,
+		nested: false,
 		onNavigate: setActiveIndex,
 	});
 	const typeahead = useTypeahead(context, {
@@ -109,7 +93,7 @@ export const MenuComponent = React.forwardRef<
 	});
 
 	const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions(
-		[hover, click, role, dismiss, listNavigation, typeahead],
+		[click, role, dismiss, listNavigation, typeahead],
 	);
 
 	// Event emitter allows you to communicate across tree components.
@@ -123,7 +107,7 @@ export const MenuComponent = React.forwardRef<
 		}
 
 		function onSubMenuOpen(event: { nodeId: string; parentId: string }) {
-			if (event.nodeId !== nodeId && event.parentId === parentId) {
+			if (event.nodeId !== nodeId && event.parentId === null) {
 				setIsOpen(false);
 			}
 		}
@@ -135,27 +119,22 @@ export const MenuComponent = React.forwardRef<
 			tree.events.off("click", handleTreeClick);
 			tree.events.off("menuopen", onSubMenuOpen);
 		};
-	}, [tree, nodeId, parentId]);
+	}, [tree, nodeId]);
 
 	React.useEffect(() => {
 		if (isOpen && tree) {
-			tree.events.emit("menuopen", { parentId, nodeId });
+			tree.events.emit("menuopen", { nodeId });
 		}
-	}, [tree, isOpen, nodeId, parentId]);
+	}, [tree, isOpen, nodeId]);
 
 	return (
 		<FloatingNode id={nodeId}>
 			<ButtonIcon
 				label={label || "Open menu"}
 				ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
-				tabIndex={
-					!isNested ? undefined : parent.activeIndex === item.index ? 0 : -1
-				}
-				role={isNested ? "menuitem" : undefined}
 				data-open={isOpen ? "" : undefined}
-				data-nested={isNested ? "" : undefined}
 				data-focus-inside={hasFocusInside ? "" : undefined}
-				className={isNested ? "MenuItem" : "RootMenu"}
+				className="RootMenu"
 				{...getReferenceProps(
 					parent.getItemProps({
 						...props,
@@ -169,11 +148,6 @@ export const MenuComponent = React.forwardRef<
 			>
 				{label}
 				{icon}
-				{isNested && (
-					<span aria-hidden style={{ marginLeft: 10, fontSize: 10 }}>
-						▶
-					</span>
-				)}
 			</ButtonIcon>
 
 			<MenuContext.Provider
@@ -191,8 +165,8 @@ export const MenuComponent = React.forwardRef<
 							<FloatingFocusManager
 								context={context}
 								modal={false}
-								initialFocus={isNested ? -1 : 0}
-								returnFocus={!isNested}
+								initialFocus={0}
+								returnFocus
 							>
 								<div
 									ref={refs.setFloating}
@@ -254,15 +228,9 @@ export const Menu = React.forwardRef<
 	HTMLButtonElement,
 	MenuProps & React.HTMLProps<HTMLButtonElement>
 >((props, ref) => {
-	const parentId = useFloatingParentNodeId();
-
-	if (parentId === null) {
-		return (
-			<FloatingTree>
-				<MenuComponent {...props} ref={ref} />
-			</FloatingTree>
-		);
-	}
-
-	return <MenuComponent {...props} ref={ref} />;
+	return (
+		<FloatingTree>
+			<MenuComponent {...props} ref={ref} />
+		</FloatingTree>
+	);
 });
