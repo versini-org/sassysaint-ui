@@ -960,19 +960,14 @@
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.32.tgz#f6cd08939ae3ad886fcc92ef7f0109dacddf61ab"
   integrity sha512-xPSg0jm4mqgEkNhowKgZFBNtwoEwF6gJ4Dhww+GFpm3IgtNseHQZ5IqdNwnquZEoANxyDAKDRAdVo4Z72VvD/g==
 
-"@types/node-notifier@8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@types/node-notifier/-/node-notifier-8.0.3.tgz#69a1f8ab7a4af96ffd2833f83a14402740ec6249"
-  integrity sha512-hbAykVDD1DKj5iiV9ecAKX1GuYSKtFIpBJxaWCrXHW3hzZs9AHu8dGOLMsjYT2HZyCeJJSsZgQPAEu9RmCKgnQ==
+"@types/node-notifier@8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@types/node-notifier/-/node-notifier-8.0.4.tgz#a17a637b133391db689d5a1da363aba5201029f0"
+  integrity sha512-DKr9gzvyTCQiNNFzWPRdrwmuJm5FN7bE1TPiIOOEmQma0R4WrI/M1XCDyJVT7zM9QO44mrhvTWVAmc37NHerYQ==
   dependencies:
     "@types/node" "*"
 
-"@types/node@*":
-  version "20.8.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.8.3.tgz#c4ae2bb1cfab2999ed441a95c122bbbe1567a66d"
-  integrity sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw==
-
-"@types/node@20.8.6":
+"@types/node@*", "@types/node@20.8.6":
   version "20.8.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.8.6.tgz#0dbd4ebcc82ad0128df05d0e6f57e05359ee47fa"
   integrity sha512-eWO4K2Ji70QzKUqRy6oyJWUeB7+g2cRagT3T/nxYibYcT4y2BDL8lqolRXjTHmkZCdJfIPaY73KbJAZmcryxTQ==
