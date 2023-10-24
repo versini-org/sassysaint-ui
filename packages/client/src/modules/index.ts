@@ -1,3 +1,4 @@
+import { About } from "./About/About";
 import { ChatDetails } from "./ChatDetails/ChatDetails";
 import { ChatDetailsContent } from "./ChatDetails/ChatDetailsContent";
 import { History } from "./History/History";
@@ -12,6 +13,7 @@ import { ProfileContent } from "./Profile/ProfileContent";
 import { Toolbox } from "./Toolbox/Toolbox";
 
 export {
+	About,
 	ChatDetails,
 	ChatDetailsContent,
 	History,

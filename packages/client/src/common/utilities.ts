@@ -3,6 +3,7 @@ import type { GeoLocation } from "../common/types";
 export const isProd = process.env.NODE_ENV === "production";
 export const isDev = !isProd;
 export const isLocal = window.location.hostname !== "chat.gizmette.com";
+export const isMobile = window.innerWidth < 640;
 
 export const truncate = (str: string, length: number) => {
 	return str.length > length ? str.substring(0, length) + "..." : str;

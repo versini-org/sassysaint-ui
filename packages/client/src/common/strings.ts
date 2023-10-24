@@ -10,6 +10,7 @@ export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";
 export const CHAT_DETAILS_TITLE = "Chat details";
 export const HISTORY_TITLE = "Chat history";
+export const ABOUT_TITLE = "About";
 export const TYPE_QUESTION = "Type your question here";
 export const CLEAR = "Clear chat";
 export const CARDS = {
@@ -29,5 +30,11 @@ export const CARDS = {
 	},
 	HISTORY: {
 		TITLE: "Chat history",
+	},
+	ABOUT: {
+		TITLE: "About",
+		VERSION: "Version",
+		BUILD_TIMESTAMP: "Build date",
+		ENGINE: "Powered by OpenAI ",
 	},
 };

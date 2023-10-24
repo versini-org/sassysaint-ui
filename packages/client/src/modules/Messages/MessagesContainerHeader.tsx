@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
 import { IconDog, IconSettings, Menu, MenuItem } from "../../components";
-import { ChatDetails, History, Profile } from "..";
+import { About, ChatDetails, History, Profile } from "..";
 import { AppContext } from "../App/AppContext";
 
 export const MessagesContainerHeader = () => {
@@ -12,6 +12,7 @@ export const MessagesContainerHeader = () => {
 	const [showProfile, setShowProfile] = useState(false);
 	const [showChatDetails, setShowChatDetails] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
+	const [showAbout, setShowAbout] = useState(false);
 	const { isAuthenticated } = useAuth0();
 
 	const onClickProfile = () => {
@@ -23,12 +24,16 @@ export const MessagesContainerHeader = () => {
 	const onClickHistory = () => {
 		setShowHistory(!showHistory);
 	};
+	const onClickAbout = () => {
+		setShowAbout(!showAbout);
+	};
 
 	return (
 		<>
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
 			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
 			<History open={showHistory} onOpenChange={setShowHistory} />
+			<About open={showAbout} onOpenChange={setShowAbout} />
 
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
@@ -41,6 +46,7 @@ export const MessagesContainerHeader = () => {
 								disabled={!state || state.messages.length === 0}
 							/>
 							<MenuItem label="History" onClick={onClickHistory} />
+							<MenuItem label="About" onClick={onClickAbout} />
 						</Menu>
 					</div>
 				</div>
