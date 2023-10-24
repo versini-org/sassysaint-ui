@@ -1,5 +1,3 @@
-import "./style.css";
-
 import {
 	autoUpdate,
 	flip,
@@ -134,7 +132,6 @@ export const MenuComponent = React.forwardRef<
 				ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
 				data-open={isOpen ? "" : undefined}
 				data-focus-inside={hasFocusInside ? "" : undefined}
-				className="RootMenu"
 				{...getReferenceProps(
 					parent.getItemProps({
 						...props,
@@ -170,7 +167,7 @@ export const MenuComponent = React.forwardRef<
 							>
 								<div
 									ref={refs.setFloating}
-									className="Menu"
+									className="rounded-md bg-slate-300 p-4 outline-none sm:p-2"
 									style={floatingStyles}
 									{...getFloatingProps()}
 								>
@@ -205,7 +202,7 @@ export const MenuItem = React.forwardRef<
 			ref={useMergeRefs([item.ref, forwardedRef])}
 			type="button"
 			role="menuitem"
-			className="MenuItem"
+			className="m-0 flex w-full items-center justify-between rounded-md border-none bg-none px-3 py-2 text-left text-base outline-none focus:bg-slate-200 focus:underline disabled:cursor-not-allowed disabled:text-slate-500 sm:py-1"
 			tabIndex={isActive ? 0 : -1}
 			disabled={disabled}
 			{...menu.getItemProps({
