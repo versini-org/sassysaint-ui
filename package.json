@@ -12,6 +12,6 @@
 		"test": "yarn lerna run test"
 	},
 	"devDependencies": {
-		"@versini/dev-dependencies-client": "1.0.0"
+		"@versini/dev-dependencies-client": "1.0.2"
 	}
 }
