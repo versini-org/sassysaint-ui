@@ -1,7 +1,6 @@
 import { Button } from "./Button/Button";
 import { ButtonIcon } from "./Button/ButtonIcon";
 import { Card } from "./Card/Card";
-import { Footer } from "./Footer/Footer";
 import { IconAssistant } from "./Icons/IconAssistant";
 import { IconClose } from "./Icons/IconClose";
 import { IconCopied } from "./Icons/IconCopied";
@@ -21,7 +20,6 @@ export {
 	Button,
 	ButtonIcon,
 	Card,
-	Footer,
 	IconAssistant,
 	IconClose,
 	IconCopied,
