@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Footer } from "@versini/ui-components";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -8,12 +9,14 @@ import {
 	LOCAL_STORAGE_MODEL,
 } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
+import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import {
 	getCurrentGeoLocation,
 	isDev,
+	isMobile,
 	serviceCall,
 } from "../../common/utilities";
-import { Footer, Main } from "../../components";
+import { Main } from "../../components";
 import { MessagesContainer } from "..";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
@@ -117,12 +120,36 @@ function App() {
 		}, 500);
 	}, [isLoading]);
 
+	const buildClass = isDev ? "text-red-900" : "text-slate-300";
+
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch }}>
 			<Main>
 				<MessagesContainer />
 			</Main>
-			<Footer poweredBy={state.model} />
+			<Footer
+				poweredBy={state.model}
+				row1={
+					!isMobile && (
+						<>
+							<div>
+								{APP_NAME} v{import.meta.env.BUILDVERSION} -{" "}
+								{import.meta.env.BUILDTIME}
+							</div>
+							{state.model && (
+								<div>
+									{POWERED_BY} {state.model}
+								</div>
+							)}
+						</>
+					)
+				}
+				row2={
+					<div className={buildClass}>
+						&copy; {new Date().getFullYear()} {APP_OWNER}
+					</div>
+				}
+			/>
 		</AppContext.Provider>
 	);
 }
