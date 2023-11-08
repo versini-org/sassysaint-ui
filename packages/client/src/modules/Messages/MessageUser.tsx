@@ -1,11 +1,12 @@
+import { IconUser } from "@versini/ui-components";
+
 import type { MessageUserProps } from "../../common/types";
-import { IconUser } from "../../components";
 
 export const MessageUser = ({ children }: MessageUserProps) => {
 	return (
 		<div className="flex flex-row-reverse items-start">
 			<div className="hidden text-slate-300 sm:block">
-				<IconUser />
+				<IconUser spacing={{ l: 2 }} />
 			</div>
 			<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tl-xl bg-[#0B93F6] p-4 text-white prose-p:my-1 sm:max-w-md md:max-w-2xl">
 				<div className="relative flex flex-col gap-1 md:gap-3 ">

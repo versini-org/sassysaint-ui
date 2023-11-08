@@ -23,18 +23,6 @@ export default defineConfig({
 			"top-level-await": true, //browsers can handle top-level-await features
 		},
 	},
-	test: {
-		globals: true,
-		setupFiles: ["./vitest.setup.ts"],
-		environment: "jsdom",
-		coverage: {
-			provider: "v8",
-			lines: 55,
-			functions: 30,
-			branches: 100,
-			statements: 55,
-		},
-	},
 	define: {
 		"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),

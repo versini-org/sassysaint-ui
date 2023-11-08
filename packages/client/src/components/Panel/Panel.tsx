@@ -1,6 +1,6 @@
+import { IconClose } from "@versini/ui-components";
 import React from "react";
 
-import { IconClose } from "..";
 import {
 	Modal,
 	ModalClose,
