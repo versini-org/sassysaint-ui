@@ -1,4 +1,5 @@
 import "./index.css";
+import "@versini/ui-components/dist/style.css";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import React from "react";

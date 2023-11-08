@@ -1,9 +1,10 @@
+import { IconDelete, IconRestore } from "@versini/ui-components";
 import { useContext, useEffect, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
-import { ButtonIcon, Card, IconDelete, IconRestore } from "../../components";
+import { ButtonIcon, Card } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {
@@ -123,7 +124,7 @@ const renderAsTable = (
 												onClickRestore(item, dispatch, onOpenChange);
 											}}
 										>
-											<IconRestore />
+											<IconRestore className="h-3 w-3" />
 										</ButtonIcon>
 										<ButtonIcon
 											label="Delete chat"
@@ -133,7 +134,7 @@ const renderAsTable = (
 											}}
 										>
 											<div className="text-red-400">
-												<IconDelete />
+												<IconDelete className="h-3 w-3" />
 											</div>
 										</ButtonIcon>
 									</div>

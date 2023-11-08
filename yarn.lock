@@ -233,19 +233,28 @@
     "@floating-ui/core" "^1.4.2"
     "@floating-ui/utils" "^0.1.3"
 
-"@floating-ui/react-dom@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.0.2.tgz#fab244d64db08e6bed7be4b5fcce65315ef44d20"
-  integrity sha512-5qhlDvjaLmAst/rKb3VdlCinwTF4EYMiVxuuc/HVUjs46W0zgtbMmAZ1UTsDrRTxRmUEzl92mOtWbeeXL26lSQ==
+"@floating-ui/react-dom@^2.0.2", "@floating-ui/react-dom@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.0.3.tgz#c2696dc16f56e443029d54a471dcaa1f84b6c351"
+  integrity sha512-wOoKUw2P24/OXbNr3bbCqWgoltsyY7lFBDPVtjj/V4WDIJ5hja2C/r+CoWmS+Y75Ahndds3wa7eJRhnJxTCJaQ==
   dependencies:
     "@floating-ui/dom" "^1.5.1"
 
-"@floating-ui/react@0.26.1", "@floating-ui/react@^0.26.1":
+"@floating-ui/react@0.26.1":
   version "0.26.1"
   resolved "https://registry.yarnpkg.com/@floating-ui/react/-/react-0.26.1.tgz#a790bd3cff5f334d9e87d3ec132a3dc39d937800"
   integrity sha512-5gyJIJ2tZOPMgmZ/vEcVhdmQiy75b7LPO71sYIiDsxGcZ4hxLuygQWCuT0YXHqppt//Eese+L6t5KnX/gZ3tVA==
   dependencies:
     "@floating-ui/react-dom" "^2.0.2"
+    "@floating-ui/utils" "^0.1.5"
+    tabbable "^6.0.1"
+
+"@floating-ui/react@^0.26.1":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react/-/react-0.26.2.tgz#1a548f0f9aae64a742c868ae36aa620d15dec728"
+  integrity sha512-ocpz3MxYoZlgsASiVFayiTnKukR8QZDQUMqxMdF0YFLbu8lw/IL6AHKLROI8SOpp6CxpUGPh9Q4a03eBAVEZNQ==
+  dependencies:
+    "@floating-ui/react-dom" "^2.0.3"
     "@floating-ui/utils" "^0.1.5"
     tabbable "^6.0.1"
 
@@ -1318,10 +1327,10 @@
     vite-plugin-lib-inject-css "1.3.0"
     vitest "0.34.6"
 
-"@versini/ui-components@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@versini/ui-components/-/ui-components-0.2.2.tgz#8a3c5c07d95310fecd1136dfe641a0df2ecf97bc"
-  integrity sha512-IDTCEtEJxl5NPdxY5+tJneb2MP7QmS4CKxMvZUD/HGT/cS6s78XOoQalYhtC08+F34+1Wt+n5khXNCRRyILjcg==
+"@versini/ui-components@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@versini/ui-components/-/ui-components-1.0.0.tgz#2dfb74bccc6215bd835ff09076e84155e067d775"
+  integrity sha512-mQXqPukxb3zXVtctAIHM1x+bgZTIDuPm37CP9EiqYrRP2sgB6F3URR41SpqMdBCzCu9kpsyZGpr4ZAG0Ux6Fjg==
   dependencies:
     "@floating-ui/react" "^0.26.1"
     "@tailwindcss/typography" "^0.5.10"
@@ -1747,9 +1756,9 @@ axios-retry@^3.3.1:
     is-retry-allowed "^2.2.0"
 
 axios@^1.0.0, axios@^1.1.3:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.0.tgz#f1e5292f26b2fd5c2e66876adc5b06cdbd7d2102"
-  integrity sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.1.tgz#76550d644bf0a2d469a01f9244db6753208397d7"
+  integrity sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -4114,9 +4123,9 @@ isobject@^3.0.1:
   integrity sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==
 
 istanbul-lib-coverage@^3.0.0, istanbul-lib-coverage@^3.2.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.2.1.tgz#c680fd1544600460367af5811866c34c44c6f3b1"
-  integrity sha512-opCrKqbthmq3SKZ10mFMQG9dk3fTa3quaOLD35kJa5ejwZHd9xAr+kLuziiZz2cG32s4lMZxNdmdcEQnTDP4+g==
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/istanbul-lib-coverage/-/istanbul-lib-coverage-3.2.2.tgz#2d166c4b0644d43a39f04bf6c2edd1e585f31756"
+  integrity sha512-O8dpsF+r0WV/8MNRKfnmrtCWhuKjxrq2w+jpzBL5UZKTi2LeVWnWOmWRxFlesJONmc+wLAGvKQZEOanko0LFTg==
 
 istanbul-lib-report@^3.0.0, istanbul-lib-report@^3.0.1:
   version "3.0.1"
