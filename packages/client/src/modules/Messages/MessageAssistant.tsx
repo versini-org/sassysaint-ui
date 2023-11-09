@@ -1,5 +1,9 @@
-import { IconCopied, IconCopy, IconDogInShield } from "@versini/ui-components";
-import { Button } from "@versini/ui-components";
+import {
+	Button,
+	IconCopied,
+	IconCopy,
+	IconDogInShield,
+} from "@versini/ui-components";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
