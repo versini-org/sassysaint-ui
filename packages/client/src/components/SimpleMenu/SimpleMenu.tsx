@@ -20,9 +20,8 @@ import {
 	useRole,
 	useTypeahead,
 } from "@floating-ui/react";
+import { ButtonIcon } from "@versini/ui-components";
 import * as React from "react";
-
-import { ButtonIcon } from "..";
 
 const MenuContext = React.createContext<{
 	getItemProps: (

@@ -1,10 +1,10 @@
-import { IconDelete, IconRestore } from "@versini/ui-components";
+import { ButtonIcon, IconDelete, IconRestore } from "@versini/ui-components";
 import { useContext, useEffect, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
-import { ButtonIcon, Card } from "../../components";
+import { Card } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {

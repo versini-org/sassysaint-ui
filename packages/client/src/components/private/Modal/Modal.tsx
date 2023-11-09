@@ -5,11 +5,10 @@ import {
 	useId,
 	useMergeRefs,
 } from "@floating-ui/react";
+import { ButtonIcon } from "@versini/ui-components";
 import clsx from "clsx";
 import * as React from "react";
 
-import { ButtonIcon } from "../..";
-import type { ButtonProps } from "../../Button/ButtonTypes";
 import { ModalContext } from "./ModalContext";
 import { useModal, useModalContext } from "./ModalHooks";
 import type { ModalOptions } from "./ModalTypes";
@@ -103,6 +102,18 @@ export const ModalDescription = React.forwardRef<
 		</div>
 	);
 });
+
+type ButtonProps = {
+	children?: React.ReactNode;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	disabled?: boolean;
+	kind?: "dark" | "light";
+	fullWidth?: boolean;
+	className?: string;
+	slim?: boolean;
+	type?: "button" | "submit" | "reset";
+	raw?: boolean;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const ModalClose = React.forwardRef<
 	HTMLButtonElement & ButtonProps,

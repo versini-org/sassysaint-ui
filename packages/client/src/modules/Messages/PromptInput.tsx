@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "@versini/ui-components";
 import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import {
@@ -18,7 +19,6 @@ import {
 	TYPE_QUESTION,
 } from "../../common/strings";
 import { isProd, serviceCall } from "../../common/utilities";
-import { Button } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type onPromptInputSubmitProps = {
