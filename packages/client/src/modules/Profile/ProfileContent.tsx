@@ -1,3 +1,4 @@
+import { Button } from "@versini/ui-components";
 import { useContext } from "react";
 
 import {
@@ -19,7 +20,7 @@ import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
 } from "../../common/utilities";
-import { Button, Card, Toggle } from "../../components";
+import { Card, Toggle } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type ProfileContentProps = {

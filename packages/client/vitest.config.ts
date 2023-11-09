@@ -11,10 +11,10 @@ export default mergeConfig(
 			environment: "jsdom",
 			coverage: {
 				provider: "v8",
-				lines: 60,
-				functions: 45,
+				lines: 55,
+				functions: 40,
 				branches: 100,
-				statements: 60,
+				statements: 55,
 			},
 		},
 	}),

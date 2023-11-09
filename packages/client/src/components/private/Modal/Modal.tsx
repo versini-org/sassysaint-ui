@@ -5,10 +5,10 @@ import {
 	useId,
 	useMergeRefs,
 } from "@floating-ui/react";
+import { ButtonIcon } from "@versini/ui-components";
 import clsx from "clsx";
 import * as React from "react";
 
-import { ButtonIcon } from "../..";
 import type { ButtonProps } from "../../Button/ButtonTypes";
 import { ModalContext } from "./ModalContext";
 import { useModal, useModalContext } from "./ModalHooks";
