@@ -103,21 +103,11 @@ export const ModalDescription = React.forwardRef<
 	);
 });
 
-type ButtonProps = {
-	children?: React.ReactNode;
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-	disabled?: boolean;
-	kind?: "dark" | "light";
-	fullWidth?: boolean;
-	className?: string;
-	slim?: boolean;
-	type?: "button" | "submit" | "reset";
-	raw?: boolean;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
 export const ModalClose = React.forwardRef<
-	HTMLButtonElement & ButtonProps,
-	ButtonProps
+	HTMLButtonElement,
+	{
+		children?: React.ReactNode;
+	}
 >(function ModalClose(props, ref) {
 	const { setOpen } = useModalContext();
 	const { children, ...rest } = props;
