@@ -1327,10 +1327,10 @@
     vite-plugin-lib-inject-css "1.3.0"
     vitest "0.34.6"
 
-"@versini/ui-components@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@versini/ui-components/-/ui-components-1.0.0.tgz#2dfb74bccc6215bd835ff09076e84155e067d775"
-  integrity sha512-mQXqPukxb3zXVtctAIHM1x+bgZTIDuPm37CP9EiqYrRP2sgB6F3URR41SpqMdBCzCu9kpsyZGpr4ZAG0Ux6Fjg==
+"@versini/ui-components@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@versini/ui-components/-/ui-components-1.0.2.tgz#7b4cbcca8a7476393fe312d26c81d53e30bcbb54"
+  integrity sha512-b1XMQgF99yhTHaRyiV/h4R2p5X4nMC41oeLF5RveQb9EuosoaUeY/UqQRX6mwotnjXbjsAtdwxfq/VWPOCKnXw==
   dependencies:
     "@floating-ui/react" "^0.26.1"
     "@tailwindcss/typography" "^0.5.10"
