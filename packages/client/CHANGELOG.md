@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.15.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.8...client-v1.15.0) (2023-11-14)
+
+
+### Features
+
+* migrate all Buttons to common UI lib ([692ec58](https://github.com/aversini/sassysaint-ui/commit/692ec58b103bfd7f3cfcb6341fa7fdb7df371d14))
+* migrate all Icons to common UI lib ([6010076](https://github.com/aversini/sassysaint-ui/commit/601007627a3d537c390fce512edbefd4d920636e))
+
+
+### Bug Fixes
+
+* bump prod dependencies to latest ([7368d37](https://github.com/aversini/sassysaint-ui/commit/7368d3705b90368737f2076ec87ec6b0393ecf6c))
+* improve footer display + add "About" section ([41b6403](https://github.com/aversini/sassysaint-ui/commit/41b64034a62c7c1fbcf21427d1bafc03f7ed0bdc))
+* minor UI optimization for lower breakpoints ([5d4ce00](https://github.com/aversini/sassysaint-ui/commit/5d4ce008d0b099a39bf9c30a0c80bd091e1c640b))
+* using common library for Footer ([c06f382](https://github.com/aversini/sassysaint-ui/commit/c06f382c7242112b20ca547ffba46836f8506578))
+
 ## [1.14.8](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.7...client-v1.14.8) (2023-10-09)
 
 
