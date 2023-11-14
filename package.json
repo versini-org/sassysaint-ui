@@ -5,13 +5,14 @@
 		"packages/*"
 	],
 	"scripts": {
-		"build": "yarn lerna run build",
-		"lint": "yarn lerna run lint",
+		"build": "lerna run build",
+		"lint": "lerna run lint",
 		"lint-staged": "lint-staged --config \"./configuration/lint-staged.config.cjs\"",
 		"prepare": "husky install",
-		"test": "yarn lerna run test"
+		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@versini/dev-dependencies-client": "1.0.3"
-	}
+		"@versini/dev-dependencies-client": "1.2.1"
+	},
+	"packageManager": "yarn@4.0.2"
 }
