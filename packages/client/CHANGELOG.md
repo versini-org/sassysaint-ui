@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.15.0...client-v1.15.1) (2023-11-14)
+
+
+### Bug Fixes
+
+* update to latest common UI lib ([13ed4fb](https://github.com/aversini/sassysaint-ui/commit/13ed4fbee4ae07a50a6d9a8871f7ba1a9977f457))
+
 ## [1.15.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.14.8...client-v1.15.0) (2023-11-14)
 
 
