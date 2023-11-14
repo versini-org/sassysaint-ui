@@ -128,7 +128,6 @@ function App() {
 				<MessagesContainer />
 			</Main>
 			<Footer
-				poweredBy={state.model}
 				row1={
 					!isMobile && (
 						<>

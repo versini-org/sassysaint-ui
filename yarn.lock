@@ -341,7 +341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react-dom@npm:^2.0.2, @floating-ui/react-dom@npm:^2.0.3":
+"@floating-ui/react-dom@npm:^2.0.3":
   version: 2.0.3
   resolution: "@floating-ui/react-dom@npm:2.0.3"
   dependencies:
@@ -353,21 +353,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/react@npm:0.26.1":
-  version: 0.26.1
-  resolution: "@floating-ui/react@npm:0.26.1"
-  dependencies:
-    "@floating-ui/react-dom": "npm:^2.0.2"
-    "@floating-ui/utils": "npm:^0.1.5"
-    tabbable: "npm:^6.0.1"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 755631fc0adc17f4481fe6813387bdec3b90a1a0423685838d4d0e111392f1e643de1a02516a3736ead4b40388285017e6ca8044d0a049d44a86f41e53a0fa3f
-  languageName: node
-  linkType: hard
-
-"@floating-ui/react@npm:^0.26.1":
+"@floating-ui/react@npm:0.26.2":
   version: 0.26.2
   resolution: "@floating-ui/react@npm:0.26.2"
   dependencies:
@@ -1132,15 +1118,15 @@ __metadata:
   resolution: "@sassysaint/client@workspace:packages/client"
   dependencies:
     "@auth0/auth0-react": "npm:2.2.3"
-    "@floating-ui/react": "npm:0.26.1"
+    "@floating-ui/react": "npm:0.26.2"
     "@tailwindcss/typography": "npm:0.5.10"
-    "@versini/ui-components": "npm:1.0.0"
+    "@versini/ui-components": "npm:1.0.3"
     autoprefixer: "npm:10.4.16"
     clsx: "npm:2.0.0"
     postcss: "npm:8.4.31"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
-    react-markdown: "npm:9.0.0"
+    react-markdown: "npm:9.0.1"
     remark-gfm: "npm:4.0.0"
     tailwindcss: "npm:3.3.5"
     uuid: "npm:9.0.1"
@@ -1321,7 +1307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:0.5.10, @tailwindcss/typography@npm:^0.5.10":
+"@tailwindcss/typography@npm:0.5.10":
   version: 0.5.10
   resolution: "@tailwindcss/typography@npm:0.5.10"
   dependencies:
@@ -1894,19 +1880,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/ui-components@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@versini/ui-components@npm:1.0.0"
+"@versini/ui-components@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@versini/ui-components@npm:1.0.3"
   dependencies:
-    "@floating-ui/react": "npm:^0.26.1"
-    "@tailwindcss/typography": "npm:^0.5.10"
-    clsx: "npm:^2.0.0"
-    tailwindcss: "npm:^3.3.5"
-    uuid: "npm:^9.0.1"
+    "@floating-ui/react": "npm:0.26.2"
+    "@tailwindcss/typography": "npm:0.5.10"
+    clsx: "npm:2.0.0"
+    tailwindcss: "npm:3.3.5"
+    uuid: "npm:9.0.1"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 955873d5fabcf0a784d7b90f5969726d088680d3857f5262b9e5dade8473c59c8b32028a830241e6872657518f56bdb8e4fc778f5d7e9e81ce604ce1b32bfc9c
+  checksum: 55d32720ec450161a0be960601e1b5e22e60745f82b4fb024e8603f816b9593eba566b927e3f0fa35a243d6420cffc75301f38d1ee5587afbde23e1c02f0214d
   languageName: node
   linkType: hard
 
@@ -3073,7 +3059,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.0.0, clsx@npm:^2.0.0":
+"clsx@npm:2.0.0":
   version: 2.0.0
   resolution: "clsx@npm:2.0.0"
   checksum: c09f43b3144a0b7826b6b11b6a111b2c7440831004eecc02d333533c5e58ef0aa5f2dce071d3b25fbb8c8ea97b45df96c74bcc1d51c8c2027eb981931107b0cd
@@ -8950,16 +8936,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:9.0.0":
-  version: 9.0.0
-  resolution: "react-markdown@npm:9.0.0"
+"react-markdown@npm:9.0.1":
+  version: 9.0.1
+  resolution: "react-markdown@npm:9.0.1"
   dependencies:
     "@types/hast": "npm:^3.0.0"
     devlop: "npm:^1.0.0"
     hast-util-to-jsx-runtime: "npm:^2.0.0"
     html-url-attributes: "npm:^3.0.0"
     mdast-util-to-hast: "npm:^13.0.0"
-    micromark-util-sanitize-uri: "npm:^2.0.0"
     remark-parse: "npm:^11.0.0"
     remark-rehype: "npm:^11.0.0"
     unified: "npm:^11.0.0"
@@ -8968,7 +8953,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=18"
     react: ">=18"
-  checksum: c0b1ef17bf1efe32f7c3f015e3bad695cf6192e1d5f0e85d9207eff3c6809da6af1f49820fb10c6b37b6d615e06ba823a3d30de511e099c77d4de4780be87fc4
+  checksum: 3a3895dbd56647bc864b8da46dd575e71a9e609eb1e43fea8e8e6209d86e208eddd5b07bf8d7b5306a194b405440760a8d134aebd5a4ce5dc7dee4299e84db96
   languageName: node
   linkType: hard
 
@@ -10117,7 +10102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.3.5, tailwindcss@npm:^3.3.5":
+"tailwindcss@npm:3.3.5":
   version: 3.3.5
   resolution: "tailwindcss@npm:3.3.5"
   dependencies:
@@ -10861,7 +10846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:9.0.1, uuid@npm:^9.0.0, uuid@npm:^9.0.1":
+"uuid@npm:9.0.1, uuid@npm:^9.0.0":
   version: 9.0.1
   resolution: "uuid@npm:9.0.1"
   bin:
