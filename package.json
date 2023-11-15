@@ -6,6 +6,7 @@
 	],
 	"scripts": {
 		"build": "lerna run build",
+		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
 		"lint": "lerna run lint",
 		"lint-staged": "lint-staged --config \"./configuration/lint-staged.config.cjs\"",
 		"prepare": "husky install",
