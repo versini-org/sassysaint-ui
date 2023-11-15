@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer } from "@versini/ui-components";
+import { Footer, Main } from "@versini/ui-components";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -16,7 +16,6 @@ import {
 	isMobile,
 	serviceCall,
 } from "../../common/utilities";
-import { Main } from "../../components";
 import { MessagesContainer } from "..";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
