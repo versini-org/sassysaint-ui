@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.15.1...client-v1.15.2) (2023-11-15)
+
+
+### Bug Fixes
+
+* "clear chat" button text leaks out at lower breakpoints ([98a3197](https://github.com/aversini/sassysaint-ui/commit/98a3197137bb218caf84e9ac15315d5f0ddd2ddf))
+
 ## [1.15.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.15.0...client-v1.15.1) (2023-11-14)
 
 
