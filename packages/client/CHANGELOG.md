@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.15.2...client-v1.16.0) (2023-11-15)
+
+
+### Features
+
+* using Main from common UI lib ([f26bc64](https://github.com/aversini/sassysaint-ui/commit/f26bc6465cac48d4f8e7c6b570177ff9f22722ba))
+
 ## [1.15.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.15.1...client-v1.15.2) (2023-11-15)
 
 
