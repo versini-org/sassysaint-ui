@@ -127,6 +127,7 @@ export const MenuComponent = React.forwardRef<
 	return (
 		<FloatingNode id={nodeId}>
 			<ButtonIcon
+				noBorder
 				label={label || "Open menu"}
 				ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
 				data-open={isOpen ? "" : undefined}

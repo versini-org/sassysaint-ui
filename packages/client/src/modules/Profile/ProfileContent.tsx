@@ -106,6 +106,7 @@ export const ProfileContent = ({
 			</div>
 
 			<Button
+				noBorder
 				fullWidth
 				disabled={isDev}
 				className="mt-2"
