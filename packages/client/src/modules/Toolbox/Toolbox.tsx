@@ -22,7 +22,7 @@ export const Toolbox = ({ className }: ToolboxProps) => {
 
 	return (
 		<div className={toolboxClass}>
-			<Button slim onClick={clearChat}>
+			<Button noBorder slim onClick={clearChat}>
 				{CLEAR}
 			</Button>
 		</div>

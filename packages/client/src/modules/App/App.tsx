@@ -13,7 +13,6 @@ import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import {
 	getCurrentGeoLocation,
 	isDev,
-	isMobile,
 	serviceCall,
 } from "../../common/utilities";
 import { MessagesContainer } from "..";
@@ -127,20 +126,19 @@ function App() {
 				<MessagesContainer />
 			</Main>
 			<Footer
+				kind="light"
 				row1={
-					!isMobile && (
-						<>
+					<>
+						<div>
+							{APP_NAME} v{import.meta.env.BUILDVERSION} -{" "}
+							{import.meta.env.BUILDTIME}
+						</div>
+						{state.model && (
 							<div>
-								{APP_NAME} v{import.meta.env.BUILDVERSION} -{" "}
-								{import.meta.env.BUILDTIME}
+								{POWERED_BY} {state.model}
 							</div>
-							{state.model && (
-								<div>
-									{POWERED_BY} {state.model}
-								</div>
-							)}
-						</>
-					)
+						)}
+					</>
 				}
 				row2={
 					<div className={buildClass}>

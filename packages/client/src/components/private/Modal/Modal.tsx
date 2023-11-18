@@ -113,6 +113,7 @@ export const ModalClose = React.forwardRef<
 	const { children, ...rest } = props;
 	return (
 		<ButtonIcon
+			noBorder
 			label="Close"
 			type="button"
 			{...rest}

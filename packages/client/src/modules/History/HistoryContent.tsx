@@ -118,6 +118,7 @@ const renderAsTable = (
 								<td className={`${xPadding} py-4`}>
 									<div className="flex justify-end gap-2">
 										<ButtonIcon
+											noBorder
 											label="Restore chat"
 											kind="light"
 											onClick={() => {
@@ -127,6 +128,7 @@ const renderAsTable = (
 											<IconRestore className="h-3 w-3" />
 										</ButtonIcon>
 										<ButtonIcon
+											noBorder
 											label="Delete chat"
 											kind="light"
 											onClick={() => {

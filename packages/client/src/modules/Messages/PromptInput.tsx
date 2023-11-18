@@ -149,7 +149,11 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 	return !isAuthenticated && isProd ? (
 		<>
-			<Button className="mb-4 mt-6" onClick={() => loginWithRedirect()}>
+			<Button
+				noBorder
+				className="mb-4 mt-6"
+				onClick={() => loginWithRedirect()}
+			>
 				{LOG_IN}
 			</Button>
 		</>
@@ -173,9 +177,10 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 					/>
 
 					<Button
+						noBorder
 						kind="light"
 						type="submit"
-						className="absolute bottom-2 right-2.5"
+						className="absolute bottom-2.5 right-2.5"
 					>
 						{SEND}
 					</Button>
