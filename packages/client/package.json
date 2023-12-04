@@ -20,7 +20,7 @@
 		"@auth0/auth0-react": "2.2.3",
 		"@floating-ui/react": "0.26.2",
 		"@tailwindcss/typography": "0.5.10",
-		"@versini/ui-components": "2.0.0",
+		"@versini/ui-components": "4.3.0",
 		"autoprefixer": "10.4.16",
 		"clsx": "2.0.0",
 		"postcss": "8.4.31",
