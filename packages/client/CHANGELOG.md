@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.0...client-v1.17.1) (2023-12-06)
+
+
+### Bug Fixes
+
+* bump non-breaking prod dependencies ([76c6d0b](https://github.com/aversini/sassysaint-ui/commit/76c6d0bba99410e3457b9aca0e907758b53570a5))
+
 ## [1.17.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.16.1...client-v1.17.0) (2023-12-06)
 
 
