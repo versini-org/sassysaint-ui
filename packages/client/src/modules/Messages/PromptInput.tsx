@@ -154,7 +154,7 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 
 				<TextArea
 					ref={inputRef}
-					name="chat"
+					name="chat-input"
 					label={TYPE_QUESTION}
 					helperText={state?.model && `${POWERED_BY} ${state.model}`}
 					required
