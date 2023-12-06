@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.16.1...client-v1.17.0) (2023-12-06)
+
+
+### Features
+
+* using TextArea from common UI lib ([9d2e3f8](https://github.com/aversini/sassysaint-ui/commit/9d2e3f8db1d8988c64d0da4d2a980641aec5ded7))
+
 ## [1.16.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.16.0...client-v1.16.1) (2023-11-18)
 
 
