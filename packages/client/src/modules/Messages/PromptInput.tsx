@@ -152,22 +152,20 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 					{TYPE_QUESTION}
 				</label>
 
-				<div className="mt-5">
-					<TextArea
-						ref={inputRef}
-						name="chat"
-						label={TYPE_QUESTION}
-						helperText={state?.model && `${POWERED_BY} ${state.model}`}
-						required
-						value={userInput}
-						onChange={(e) => setUserInput(e.target.value)}
-						rightElement={
-							<Button noBorder kind="light" type="submit">
-								{SEND}
-							</Button>
-						}
-					/>
-				</div>
+				<TextArea
+					ref={inputRef}
+					name="chat"
+					label={TYPE_QUESTION}
+					helperText={state?.model && `${POWERED_BY} ${state.model}`}
+					required
+					value={userInput}
+					onChange={(e) => setUserInput(e.target.value)}
+					rightElement={
+						<Button noBorder kind="light" type="submit">
+							{SEND}
+						</Button>
+					}
+				/>
 			</form>
 		</>
 	);
