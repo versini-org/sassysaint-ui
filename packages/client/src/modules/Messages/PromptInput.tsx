@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button } from "@versini/ui-components";
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
+import { Button, TextArea } from "@versini/ui-components";
+import React, { useContext, useEffect, useState } from "react";
 
 import {
 	ACTION_MESSAGE,
@@ -15,6 +15,7 @@ import {
 import {
 	FAKE_USER_EMAIL,
 	LOG_IN,
+	POWERED_BY,
 	SEND,
 	TYPE_QUESTION,
 } from "../../common/strings";
@@ -134,19 +135,6 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 		inputRef?.current?.focus();
 	};
 
-	/**
-	 * This effect is used to resize the textarea based
-	 * on the content, so that the user can see all the
-	 * content they have typed.
-	 */
-	useLayoutEffect(() => {
-		if (inputRef && inputRef.current) {
-			inputRef.current.style.height = "inherit";
-			inputRef.current.style.height = inputRef.current.scrollHeight + "px";
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [userInput]);
-
 	return !isAuthenticated && isProd ? (
 		<>
 			<Button
@@ -164,26 +152,21 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 					{TYPE_QUESTION}
 				</label>
 
-				<div className="relative">
-					<textarea
+				<div className="mt-5">
+					<TextArea
 						ref={inputRef}
-						id="chat-input"
-						className="block min-h-[56px] w-full resize-none rounded-md border-none bg-slate-900 p-4 pr-24 text-base text-slate-200 placeholder-slate-400 caret-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-0 sm:text-base"
-						rows={1}
-						placeholder={TYPE_QUESTION}
+						name="chat"
+						label={TYPE_QUESTION}
+						helperText={state?.model && `${POWERED_BY} ${state.model}`}
 						required
 						value={userInput}
 						onChange={(e) => setUserInput(e.target.value)}
+						rightElement={
+							<Button noBorder kind="light" type="submit">
+								{SEND}
+							</Button>
+						}
 					/>
-
-					<Button
-						noBorder
-						kind="light"
-						type="submit"
-						className="absolute bottom-2.5 right-2.5"
-					>
-						{SEND}
-					</Button>
 				</div>
 			</form>
 		</>
