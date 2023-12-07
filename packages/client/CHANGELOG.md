@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.1...client-v1.17.2) (2023-12-07)
+
+
+### Bug Fixes
+
+* replace internal Card with common UI lib ([d7dc12e](https://github.com/aversini/sassysaint-ui/commit/d7dc12e66913e3a3dbc5925254e5ad420be56621))
+
 ## [1.17.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.0...client-v1.17.1) (2023-12-06)
 
 
