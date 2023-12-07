@@ -1,4 +1,4 @@
-import type { GeoLocation } from "../common/types";
+import type { GeoLocation } from "./types";
 
 export const isProd = process.env.NODE_ENV === "production";
 export const isDev = !isProd;
@@ -137,4 +137,19 @@ export const unObfuscate = (str: string) => {
 			})
 			.join(""),
 	);
+};
+
+export const renderDataAsList = (title: string, data: any) => {
+	return data
+		? Object.keys(data).map((idx) => {
+				return (
+					<dl className="mb-5" key={`${title}-${idx}`}>
+						<div className="flex items-center justify-between">
+							<dt className="inline-block font-bold text-slate-400">{idx}</dt>
+							<dd className="inline-block">{data[idx]}</dd>
+						</div>
+					</dl>
+				);
+		  })
+		: null;
 };
