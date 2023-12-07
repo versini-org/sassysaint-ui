@@ -139,7 +139,7 @@ export const unObfuscate = (str: string) => {
 	);
 };
 
-export const renderDataAsList = (title: string, data: any) => {
+export const renderDataAsList = (title: string, data: Record<string, any>) => {
 	return data
 		? Object.keys(data).map((idx) => {
 				return (
