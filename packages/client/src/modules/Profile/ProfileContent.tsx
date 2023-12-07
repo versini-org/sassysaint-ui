@@ -1,4 +1,4 @@
-import { Button } from "@versini/ui-components";
+import { Button, Card } from "@versini/ui-components";
 import { useContext } from "react";
 
 import {
@@ -19,8 +19,9 @@ import type { GeoLocation } from "../../common/types";
 import {
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
+	renderDataAsList,
 } from "../../common/utilities";
-import { Card, Toggle } from "../../components";
+import { Toggle } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type ProfileContentProps = {
@@ -82,10 +83,8 @@ export const ProfileContent = ({
 	return (isAuthenticated && endUser) || isDev ? (
 		<>
 			<div className="flex flex-col gap-2 sm:flex-row">
-				<Card
-					className="w-full"
-					title={CARDS.PREFERENCES.TITLE}
-					data={{
+				<Card header={CARDS.PREFERENCES.TITLE}>
+					{renderDataAsList(CARDS.PREFERENCES.TITLE, {
 						[CARDS.PREFERENCES.NAME]: endUser.name,
 						[CARDS.PREFERENCES.EMAIL]: endUser.email,
 						[CARDS.PREFERENCES.MODEL_NAME]: (
@@ -101,8 +100,8 @@ export const ProfileContent = ({
 							/>
 						),
 						[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
-					}}
-				/>
+					})}
+				</Card>
 			</div>
 
 			<Button

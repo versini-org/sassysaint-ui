@@ -1,10 +1,14 @@
-import { ButtonIcon, IconDelete, IconRestore } from "@versini/ui-components";
+import {
+	ButtonIcon,
+	Card,
+	IconDelete,
+	IconRestore,
+} from "@versini/ui-components";
 import { useContext, useEffect, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { serviceCall, truncate } from "../../common/utilities";
-import { Card } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {
@@ -192,11 +196,9 @@ export const HistoryContent = ({
 		<>
 			{history && (
 				<div className="flex flex-col gap-2 sm:flex-row">
-					<Card
-						noBackground
-						className="max-h-[75vh] w-full overflow-y-scroll"
-						rawData={renderAsTable(history, setHistory, dispatch, onOpenChange)}
-					/>
+					<Card noBackground className="max-h-[75vh] w-full overflow-y-scroll">
+						{renderAsTable(history, setHistory, dispatch, onOpenChange)}
+					</Card>
 				</div>
 			)}
 		</>
