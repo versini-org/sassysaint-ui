@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.2...client-v1.17.3) (2023-12-07)
+
+
+### Bug Fixes
+
+* use the most recent UI lib for better Card header ([2301f9e](https://github.com/aversini/sassysaint-ui/commit/2301f9e5dd6b3c7f75932d2b5ce176afcdabeeb5))
+
 ## [1.17.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.1...client-v1.17.2) (2023-12-07)
 
 
