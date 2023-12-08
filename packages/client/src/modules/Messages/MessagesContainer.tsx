@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Spinner } from "@versini/ui-components";
 import clsx from "clsx";
 import { lazy, Suspense, useContext, useEffect, useRef } from "react";
 
@@ -9,7 +10,6 @@ import {
 } from "../../common/constants";
 import type { MessagesContainerProps } from "../../common/types";
 import { isDev } from "../../common/utilities";
-import { Spinner } from "../../components";
 import { MessagesContainerHeader, MessageUser, PromptInput, Toolbox } from "..";
 import { AppContext } from "../App/AppContext";
 
@@ -99,7 +99,7 @@ export const MessagesContainer = ({
 				{state &&
 					state.messages.length > 0 &&
 					state.messages[state.messages.length - 1].message.role ===
-						ROLE_USER && <Spinner spinnerRef={spinnerRef} />}
+						ROLE_USER && <Spinner kind="light" spinnerRef={spinnerRef} />}
 			</div>
 
 			{state &&
