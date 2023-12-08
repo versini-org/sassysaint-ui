@@ -130,8 +130,7 @@ function App() {
 				row1={
 					<>
 						<div>
-							{APP_NAME} v{import.meta.env.BUILDVERSION} -{" "}
-							{import.meta.env.BUILDTIME}
+							{APP_NAME} v{import.meta.env.BUILDVERSION}
 						</div>
 					</>
 				}

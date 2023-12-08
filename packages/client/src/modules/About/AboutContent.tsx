@@ -16,6 +16,12 @@ export const AboutContent = () => {
 						[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
 						[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
 						[CARDS.ABOUT.ENGINE]: state?.model || null,
+						[CARDS.ABOUT.PLUGINS]: (
+							<>
+								<div className="text-right">Wolfram Alpha</div>
+								<div className="text-right">OpenWeatherMap</div>
+							</>
+						),
 					})}
 				</Card>
 			</div>
