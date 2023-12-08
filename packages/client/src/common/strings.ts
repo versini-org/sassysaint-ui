@@ -36,5 +36,6 @@ export const CARDS = {
 		VERSION: "Version",
 		BUILD_TIMESTAMP: "Build date",
 		ENGINE: "Powered by OpenAI ",
+		PLUGINS: "Plugins",
 	},
 };
