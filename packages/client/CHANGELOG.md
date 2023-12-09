@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.18.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.3...client-v1.18.0) (2023-12-09)
+
+
+### Features
+
+* replacing custom Toggle with common UI ([c57b2c7](https://github.com/aversini/sassysaint-ui/commit/c57b2c703f5acf90eaba4ee31e909c173b608b2f))
+* simpler footer and better list rendering ([8d8f9ac](https://github.com/aversini/sassysaint-ui/commit/8d8f9ac5f9dee67d34d6c189f900807d6aa953d4))
+
+
+### Bug Fixes
+
+* replace custom Spinner with one from UI lib ([f8ac5c3](https://github.com/aversini/sassysaint-ui/commit/f8ac5c3ed90ca2717963d23e8c6664aff02443ed))
+
 ## [1.17.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.2...client-v1.17.3) (2023-12-07)
 
 
