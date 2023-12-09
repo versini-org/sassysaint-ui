@@ -1,4 +1,4 @@
-import { Button, Card } from "@versini/ui-components";
+import { Button, Card, Toggle } from "@versini/ui-components";
 import { useContext } from "react";
 
 import {
@@ -21,7 +21,6 @@ import {
 	convertLongitudeToDMS,
 	renderDataAsList,
 } from "../../common/utilities";
-import { Toggle } from "../../components";
 import { AppContext } from "../App/AppContext";
 
 export type ProfileContentProps = {
@@ -89,12 +88,20 @@ export const ProfileContent = ({
 						[CARDS.PREFERENCES.EMAIL]: endUser.email,
 						[CARDS.PREFERENCES.MODEL_NAME]: (
 							<Toggle
+								labelHidden
+								label={CARDS.PREFERENCES.MODEL_NAME}
+								name={CARDS.PREFERENCES.MODEL_NAME}
+								kind="light"
 								onChange={onToggleGPT}
-								checked={state?.model?.includes("4")}
+								checked={Boolean(state?.model?.includes("4"))}
 							/>
 						),
 						[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 							<Toggle
+								labelHidden
+								label={CARDS.PREFERENCES.ENGINE_DETAILS}
+								name={CARDS.PREFERENCES.ENGINE_DETAILS}
+								kind="light"
 								onChange={onToggleEngineDetails}
 								checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
 							/>
