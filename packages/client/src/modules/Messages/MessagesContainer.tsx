@@ -18,7 +18,6 @@ const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
 export const MessagesContainer = ({
 	noHeader = false,
 }: MessagesContainerProps) => {
-	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
@@ -106,8 +105,7 @@ export const MessagesContainer = ({
 				state.messages.length > 0 &&
 				state.messages[state.messages.length - 1].message.role ===
 					ROLE_ASSISTANT && <Toolbox className="mt-2" />}
-
-			<PromptInput inputRef={inputRef} />
+			<PromptInput />
 		</>
 	);
 };
