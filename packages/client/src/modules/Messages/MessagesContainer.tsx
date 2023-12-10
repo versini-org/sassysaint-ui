@@ -27,20 +27,12 @@ export const MessagesContainer = ({
 	);
 	const { state } = useContext(AppContext);
 
-	const isLastMessageFromUser = () => {
-		if (!state || state.messages.length === 0) {
-			return false;
-		}
-		const lastMessage = state.messages[state.messages.length - 1];
-		return lastMessage.message.role === ROLE_USER;
-	};
-
-	const isLastMessageFromAssistant = () => {
-		if (!state || state.messages.length === 0) {
-			return false;
-		}
-		const lastMessage = state.messages[state.messages.length - 1];
-		return lastMessage.message.role === ROLE_ASSISTANT;
+	const isLastMessageFromRole = (role: string) => {
+		return (
+			state &&
+			state.messages.length > 0 &&
+			state.messages[state.messages.length - 1].message.role === role
+		);
 	};
 
 	/**
@@ -101,14 +93,14 @@ export const MessagesContainer = ({
 						return null;
 					})}
 
-				{isLastMessageFromUser() && (
+				{isLastMessageFromRole(ROLE_USER) && (
 					<Suspense fallback={<span></span>}>
 						<MessageAssistant smoothScrollRef={smoothScrollRef} loading />
 					</Suspense>
 				)}
 			</div>
 
-			{isLastMessageFromAssistant() && <Toolbox className="mt-2" />}
+			{isLastMessageFromRole(ROLE_ASSISTANT) && <Toolbox className="mt-2" />}
 			<PromptInput />
 		</>
 	);
