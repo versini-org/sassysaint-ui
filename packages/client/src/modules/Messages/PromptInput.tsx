@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button, TextArea } from "@versini/ui-components";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 import {
 	ACTION_MESSAGE,
@@ -28,11 +28,8 @@ export type onPromptInputSubmitProps = {
 		content: string;
 	};
 };
-export type PromptInputProps = {
-	inputRef: React.RefObject<HTMLTextAreaElement>;
-};
 
-export const PromptInput = ({ inputRef }: PromptInputProps) => {
+export const PromptInput = () => {
 	/**
 	 * Save all messages to the state in order to keep track of
 	 * the whole conversation. This is needed so that the
@@ -41,6 +38,8 @@ export const PromptInput = ({ inputRef }: PromptInputProps) => {
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+
+	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 
 	useEffect(() => {
 		(async () => {
