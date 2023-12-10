@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.0...client-v1.19.1) (2023-12-10)
+
+
+### Bug Fixes
+
+* **TextArea:** unexpected visible scrollbar ([4fc0199](https://github.com/aversini/sassysaint-ui/commit/4fc0199623bd86a7533a78d0cdb06224fd1c5f43))
+
 ## [1.19.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.18.0...client-v1.19.0) (2023-12-10)
 
 
