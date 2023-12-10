@@ -16,6 +16,8 @@ export const MessageAssistant = ({
 	const [copied, setCopied] = React.useState(false);
 	const storage = useLocalStorage();
 	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
+	const bubbleClass =
+		"prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl";
 
 	// copy to clipboard function
 	const copyToClipboard = () => {
@@ -39,7 +41,7 @@ export const MessageAssistant = ({
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
 				<div>
-					<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl">
+					<div className={bubbleClass}>
 						<Spinner type="dots" />
 					</div>
 				</div>
@@ -50,7 +52,7 @@ export const MessageAssistant = ({
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
 				<div>
-					<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl">
+					<div className={bubbleClass}>
 						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
 					</div>
 					{name && showEngineDetails && (
