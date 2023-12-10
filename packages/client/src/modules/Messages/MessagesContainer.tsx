@@ -1,5 +1,4 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Spinner } from "@versini/ui-components";
 import clsx from "clsx";
 import { lazy, Suspense, useContext, useEffect, useRef } from "react";
 
@@ -19,7 +18,6 @@ export const MessagesContainer = ({
 	noHeader = false,
 }: MessagesContainerProps) => {
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
-	const spinnerRef: React.RefObject<HTMLDivElement> = useRef(null);
 
 	const { isAuthenticated } = useAuth0();
 	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
@@ -28,6 +26,14 @@ export const MessagesContainer = ({
 		paddingTop,
 	);
 	const { state } = useContext(AppContext);
+
+	const isLastMessageFromRole = (role: string) => {
+		return (
+			state &&
+			state.messages.length > 0 &&
+			state.messages[state.messages.length - 1].message.role === role
+		);
+	};
 
 	/**
 	 * Scroll to the bottom of the messages container when
@@ -39,14 +45,6 @@ export const MessagesContainer = ({
 			return;
 		}
 		const lastMessage = state.messages[state.messages.length - 1];
-
-		/**
-		 * if the last message is from the user, scroll
-		 * to the spinner
-		 */
-		if (spinnerRef.current && lastMessage.message.role !== ROLE_ASSISTANT) {
-			spinnerRef.current.scrollIntoView({ behavior: "smooth" });
-		}
 
 		/**
 		 * if the last message is from the assistant, scroll
@@ -95,16 +93,14 @@ export const MessagesContainer = ({
 						return null;
 					})}
 
-				{state &&
-					state.messages.length > 0 &&
-					state.messages[state.messages.length - 1].message.role ===
-						ROLE_USER && <Spinner kind="light" spinnerRef={spinnerRef} />}
+				{isLastMessageFromRole(ROLE_USER) && (
+					<Suspense fallback={<span></span>}>
+						<MessageAssistant smoothScrollRef={smoothScrollRef} loading />
+					</Suspense>
+				)}
 			</div>
 
-			{state &&
-				state.messages.length > 0 &&
-				state.messages[state.messages.length - 1].message.role ===
-					ROLE_ASSISTANT && <Toolbox className="mt-2" />}
+			{isLastMessageFromRole(ROLE_ASSISTANT) && <Toolbox className="mt-2" />}
 			<PromptInput />
 		</>
 	);

@@ -55,6 +55,7 @@ export const PromptInput = () => {
 				lastMessage.message.role === ROLE_INTERNAL ||
 				lastMessage.message.role === ROLE_HIDDEN
 			) {
+				// the last message is not from the user, ignoring
 				return;
 			}
 
@@ -115,7 +116,7 @@ export const PromptInput = () => {
 			}
 		})();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [state]);
+	}, [state?.messages]);
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
