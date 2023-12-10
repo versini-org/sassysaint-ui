@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.18.0...client-v1.19.0) (2023-12-10)
+
+
+### Features
+
+* better loading indicator while waiting for AI response ([e63caa3](https://github.com/aversini/sassysaint-ui/commit/e63caa3122b9c94d357712f4ec9e9039b5c89e99))
+
 ## [1.18.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.17.3...client-v1.18.0) (2023-12-09)
 
 
