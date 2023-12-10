@@ -1,9 +1,4 @@
-import {
-	Button,
-	IconCopied,
-	IconCopy,
-	IconDogInShield,
-} from "@versini/ui-components";
+import { Button, IconCopied, IconCopy, Spinner } from "@versini/ui-components";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -16,6 +11,7 @@ export const MessageAssistant = ({
 	smoothScrollRef,
 	children,
 	name,
+	loading,
 }: MessageAssistantProps) => {
 	const [copied, setCopied] = React.useState(false);
 	const storage = useLocalStorage();
@@ -24,7 +20,9 @@ export const MessageAssistant = ({
 	// copy to clipboard function
 	const copyToClipboard = () => {
 		setCopied(true);
-		navigator.clipboard.writeText(children);
+		if (children) {
+			navigator.clipboard.writeText(children);
+		}
 	};
 
 	// after 3 seconds, reset the copied state
@@ -36,13 +34,21 @@ export const MessageAssistant = ({
 		}
 	}, [copied]);
 
-	return (
+	return loading ? (
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
-				<div className="hidden text-slate-300 sm:block">
-					<IconDogInShield spacing={{ r: 2 }} className="h-6 w-6" />
+				<div>
+					<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl">
+						<Spinner type="dots" />
+					</div>
 				</div>
+			</div>
+		</>
+	) : (
+		<>
+			<div ref={smoothScrollRef} className="h-0.5" />
+			<div className="flex items-start">
 				<div>
 					<div className="prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl">
 						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
