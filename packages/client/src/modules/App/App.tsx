@@ -9,7 +9,7 @@ import {
 	LOCAL_STORAGE_MODEL,
 } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
-import { APP_NAME, APP_OWNER } from "../../common/strings";
+import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import {
 	getCurrentGeoLocation,
 	isDev,
@@ -130,7 +130,7 @@ function App() {
 				row1={
 					<>
 						<div>
-							{APP_NAME} v{import.meta.env.BUILDVERSION}
+							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
 						</div>
 					</>
 				}
