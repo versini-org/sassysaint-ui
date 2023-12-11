@@ -18,7 +18,7 @@
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.3",
-		"@floating-ui/react": "0.26.3",
+		"@floating-ui/react": "0.26.4",
 		"@tailwindcss/typography": "0.5.10",
 		"@versini/ui-components": "4.11.2",
 		"autoprefixer": "10.4.16",
