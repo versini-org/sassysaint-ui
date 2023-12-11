@@ -15,7 +15,6 @@ import {
 import {
 	FAKE_USER_EMAIL,
 	LOG_IN,
-	POWERED_BY,
 	SEND,
 	TYPE_QUESTION,
 } from "../../common/strings";
@@ -156,7 +155,7 @@ export const PromptInput = () => {
 					ref={inputRef}
 					name="chat-input"
 					label={TYPE_QUESTION}
-					helperText={state?.model && `${POWERED_BY} ${state.model}`}
+					helperText={"Press ENTER to add a new line"}
 					required
 					value={userInput}
 					onChange={(e) => setUserInput(e.target.value)}

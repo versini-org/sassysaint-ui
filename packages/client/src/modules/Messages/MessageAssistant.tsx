@@ -1,11 +1,12 @@
 import { Button, IconCopied, IconCopy, Spinner } from "@versini/ui-components";
-import React from "react";
+import React, { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
 import type { MessageAssistantProps } from "../../common/types";
+import { AppContext } from "../App/AppContext";
 
 export const MessageAssistant = ({
 	smoothScrollRef,
@@ -13,6 +14,7 @@ export const MessageAssistant = ({
 	name,
 	loading,
 }: MessageAssistantProps) => {
+	const { state } = useContext(AppContext);
 	const [copied, setCopied] = React.useState(false);
 	const storage = useLocalStorage();
 	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
@@ -55,8 +57,11 @@ export const MessageAssistant = ({
 					<div className={bubbleClass}>
 						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
 					</div>
+					{state && state.model && showEngineDetails && (
+						<p className="pr-2 pt-1 text-end text-xs">Model: {state.model}</p>
+					)}
 					{name && showEngineDetails && (
-						<p className="pr-2 pt-1 text-end text-xs">Chat engine: {name}</p>
+						<p className="pr-2 pt-1 text-end text-xs">Plugin: {name}</p>
 					)}
 				</div>
 
