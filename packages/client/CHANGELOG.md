@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.1...client-v1.19.2) (2023-12-11)
+
+
+### Bug Fixes
+
+* slightly better model and plugin information ([54d8217](https://github.com/aversini/sassysaint-ui/commit/54d82174230253efdf83a7a881fa4bdf95f54da1))
+
 ## [1.19.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.0...client-v1.19.1) (2023-12-10)
 
 
