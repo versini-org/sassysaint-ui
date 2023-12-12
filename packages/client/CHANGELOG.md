@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.2...client-v1.19.3) (2023-12-12)
+
+
+### Bug Fixes
+
+* use Panel from common UI library ([eccc205](https://github.com/aversini/sassysaint-ui/commit/eccc2051cf86b18eb87d15cc5320ea71c7c80623))
+
 ## [1.19.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.1...client-v1.19.2) (2023-12-11)
 
 
