@@ -1,5 +1,6 @@
+import { Panel } from "@versini/ui-components";
+
 import { ABOUT_TITLE } from "../../common/strings";
-import { Panel } from "../../components";
 import { AboutContent } from "./AboutContent";
 
 export const About = ({

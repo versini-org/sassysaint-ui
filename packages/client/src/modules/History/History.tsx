@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Panel } from "@versini/ui-components";
 
 import { HISTORY_TITLE } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { Panel } from "../../components";
 import { HistoryContent } from "./HistoryContent";
 
 export const History = ({
