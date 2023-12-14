@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.3...client-v1.19.4) (2023-12-14)
+
+
+### Bug Fixes
+
+* replace SimpleMenu with Menu from common lib ([640b3ab](https://github.com/aversini/sassysaint-ui/commit/640b3ab8df33c72fc329c6b732573bebc6fafbb2))
+
 ## [1.19.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.2...client-v1.19.3) (2023-12-12)
 
 
