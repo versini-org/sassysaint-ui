@@ -1,10 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { IconDog, IconSettings } from "@versini/ui-components";
+import { IconDog, IconSettings, Menu, MenuItem } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 import { isDev } from "../../common/utilities";
-import { Menu, MenuItem } from "../../components";
 import { About, ChatDetails, History, Profile } from "..";
 import { AppContext } from "../App/AppContext";
 
