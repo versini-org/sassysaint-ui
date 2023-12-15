@@ -38,7 +38,7 @@ export const MessagesContainerHeader = () => {
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
 					<div className="absolute bottom-[-28px] right-[-7px]">
-						<Menu icon={<IconSettings />}>
+						<Menu icon={<IconSettings />} defaultPlacement="bottom-end">
 							<MenuItem label="Profile" onClick={onClickProfile} />
 							<MenuItem
 								label="Chat details"
