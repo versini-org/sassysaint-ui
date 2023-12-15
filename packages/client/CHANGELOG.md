@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.4...client-v1.19.5) (2023-12-15)
+
+
+### Bug Fixes
+
+* minor lint errors and menu placement update for iPad ([ca7168c](https://github.com/aversini/sassysaint-ui/commit/ca7168cc6c55b71ec43ce812dcbeaec3cb3728ac))
+
 ## [1.19.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.3...client-v1.19.4) (2023-12-14)
 
 
