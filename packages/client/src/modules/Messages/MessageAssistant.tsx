@@ -55,7 +55,9 @@ export const MessageAssistant = ({
 			<div className="flex items-start">
 				<div>
 					<div className={bubbleClass}>
-						<ReactMarkdown remarkPlugins={[remarkGfm]} children={children} />
+						<ReactMarkdown remarkPlugins={[remarkGfm]}>
+							{children}
+						</ReactMarkdown>
 					</div>
 					{state && state.model && showEngineDetails && (
 						<p className="pr-2 pt-1 text-end text-xs">Model: {state.model}</p>

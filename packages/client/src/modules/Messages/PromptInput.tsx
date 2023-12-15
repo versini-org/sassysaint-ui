@@ -135,37 +135,29 @@ export const PromptInput = () => {
 	};
 
 	return !isAuthenticated && isProd ? (
-		<>
-			<Button
-				noBorder
-				className="mb-4 mt-6"
-				onClick={() => loginWithRedirect()}
-			>
-				{LOG_IN}
-			</Button>
-		</>
+		<Button noBorder className="mb-4 mt-6" onClick={() => loginWithRedirect()}>
+			{LOG_IN}
+		</Button>
 	) : (
-		<>
-			<form className="mt-2" onSubmit={onSubmit}>
-				<label htmlFor="chat-input" className="sr-only">
-					{TYPE_QUESTION}
-				</label>
+		<form className="mt-2" onSubmit={onSubmit}>
+			<label htmlFor="chat-input" className="sr-only">
+				{TYPE_QUESTION}
+			</label>
 
-				<TextArea
-					ref={inputRef}
-					name="chat-input"
-					label={TYPE_QUESTION}
-					helperText={"Press ENTER to add a new line"}
-					required
-					value={userInput}
-					onChange={(e) => setUserInput(e.target.value)}
-					rightElement={
-						<Button noBorder kind="light" type="submit">
-							{SEND}
-						</Button>
-					}
-				/>
-			</form>
-		</>
+			<TextArea
+				ref={inputRef}
+				name="chat-input"
+				label={TYPE_QUESTION}
+				helperText={"Press ENTER to add a new line"}
+				required
+				value={userInput}
+				onChange={(e) => setUserInput(e.target.value)}
+				rightElement={
+					<Button noBorder kind="light" type="submit">
+						{SEND}
+					</Button>
+				}
+			/>
+		</form>
 	);
 };

@@ -30,16 +30,14 @@ export const ChatDetailsContent = ({
 	}
 
 	return isAuthenticated || isDev ? (
-		<>
-			<div className="flex flex-col gap-2 sm:flex-row">
-				<Card header={CARDS.STATISTICS.TITLE}>
-					<h3 className="mb-4 text-sm">{CARDS.STATISTICS.SUBTITLE}</h3>
-					{renderDataAsList(CARDS.STATISTICS.TITLE, {
-						[CARDS.STATISTICS.MODEL_NAME]: state?.model || DEFAULT_MODEL,
-						[CARDS.STATISTICS.TOKENS]: remainingTokens,
-					})}
-				</Card>
-			</div>
-		</>
+		<div className="flex flex-col gap-2 sm:flex-row">
+			<Card header={CARDS.STATISTICS.TITLE}>
+				<h3 className="mb-4 text-sm">{CARDS.STATISTICS.SUBTITLE}</h3>
+				{renderDataAsList(CARDS.STATISTICS.TITLE, {
+					[CARDS.STATISTICS.MODEL_NAME]: state?.model || DEFAULT_MODEL,
+					[CARDS.STATISTICS.TOKENS]: remainingTokens,
+				})}
+			</Card>
+		</div>
 	) : null;
 };
