@@ -192,15 +192,13 @@ export const HistoryContent = ({
 		})();
 	}, [state, user?.email]);
 
-	return (isAuthenticated && endUser) || isDev ? (
-		<>
-			{history && (
+	return (isAuthenticated && endUser) || isDev
+		? history && (
 				<div className="flex flex-col gap-2 sm:flex-row">
 					<Card noBackground className="max-h-[75vh] w-full overflow-y-scroll">
 						{renderAsTable(history, setHistory, dispatch, onOpenChange)}
 					</Card>
 				</div>
-			)}
-		</>
-	) : null;
+			)
+		: null;
 };

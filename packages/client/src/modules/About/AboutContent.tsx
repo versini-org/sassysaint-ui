@@ -9,22 +9,20 @@ export const AboutContent = () => {
 	const { state } = useContext(AppContext);
 
 	return (
-		<>
-			<div className="flex flex-col gap-2 sm:flex-row">
-				<Card>
-					{renderDataAsList("about", {
-						[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
-						[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
-						[CARDS.ABOUT.ENGINE]: state?.model || null,
-						[CARDS.ABOUT.PLUGINS]: (
-							<>
-								<div className="text-right">Wolfram Alpha</div>
-								<div className="text-right">OpenWeatherMap</div>
-							</>
-						),
-					})}
-				</Card>
-			</div>
-		</>
+		<div className="flex flex-col gap-2 sm:flex-row">
+			<Card>
+				{renderDataAsList("about", {
+					[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
+					[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
+					[CARDS.ABOUT.ENGINE]: state?.model || null,
+					[CARDS.ABOUT.PLUGINS]: (
+						<>
+							<div className="text-right">Wolfram Alpha</div>
+							<div className="text-right">OpenWeatherMap</div>
+						</>
+					),
+				})}
+			</Card>
+		</div>
 	);
 };

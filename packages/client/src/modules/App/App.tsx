@@ -128,11 +128,9 @@ function App() {
 			<Footer
 				kind="light"
 				row1={
-					<>
-						<div>
-							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-						</div>
-					</>
+					<div>
+						{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
+					</div>
 				}
 				row2={
 					<div className={buildClass}>
