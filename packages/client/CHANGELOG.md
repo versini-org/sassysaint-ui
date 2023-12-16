@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.7...client-v1.20.0) (2023-12-16)
+
+
+### Features
+
+* prefetch history on menu hover ([186ce7a](https://github.com/aversini/sassysaint-ui/commit/186ce7a8e3eb3658e540321376880304bf84de4b))
+
 ## [1.19.7](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.6...client-v1.19.7) (2023-12-16)
 
 
