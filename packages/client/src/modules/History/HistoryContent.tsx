@@ -16,6 +16,7 @@ export type HistoryContentProps = {
 	isDev: boolean;
 	user: any;
 	onOpenChange: any;
+	historyData: any[];
 };
 
 const onClickRestore = async (
@@ -159,6 +160,7 @@ export const HistoryContent = ({
 	isDev,
 	user,
 	onOpenChange,
+	historyData,
 }: HistoryContentProps) => {
 	const [history, setHistory] = useState<any[]>([]);
 	const { state, dispatch } = useContext(AppContext);
@@ -168,6 +170,11 @@ export const HistoryContent = ({
 
 	useEffect(() => {
 		(async () => {
+			// we already have the data
+			if (historyData.length > 0) {
+				setHistory(historyData);
+				return;
+			}
 			if (!state) {
 				return;
 			}
@@ -190,7 +197,7 @@ export const HistoryContent = ({
 				// nothing to declare officer
 			}
 		})();
-	}, [state, user?.email]);
+	}, [historyData, state, user?.email]);
 
 	return (isAuthenticated && endUser) || isDev
 		? history && (
