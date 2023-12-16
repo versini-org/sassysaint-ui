@@ -149,6 +149,7 @@ export const PromptInput = () => {
 				name="chat-input"
 				label={TYPE_QUESTION}
 				helperText={"Press ENTER to add a new line"}
+				helperTextOnFocus
 				required
 				value={userInput}
 				onChange={(e) => setUserInput(e.target.value)}
