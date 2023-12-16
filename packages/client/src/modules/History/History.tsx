@@ -8,9 +8,11 @@ import { HistoryContent } from "./HistoryContent";
 export const History = ({
 	open,
 	onOpenChange,
+	historyData,
 }: {
 	open: boolean;
 	onOpenChange: any;
+	historyData: any[];
 }) => {
 	const { isAuthenticated, user } = useAuth0();
 
@@ -21,6 +23,7 @@ export const History = ({
 				isDev={isDev}
 				user={user}
 				onOpenChange={onOpenChange}
+				historyData={historyData}
 			/>
 		</Panel>
 	);

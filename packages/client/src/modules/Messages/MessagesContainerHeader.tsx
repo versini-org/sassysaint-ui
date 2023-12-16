@@ -2,18 +2,22 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { IconDog, IconSettings, Menu, MenuItem } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
-import { APP_MOTTO, APP_NAME } from "../../common/strings";
-import { isDev } from "../../common/utilities";
+import { APP_MOTTO, APP_NAME, FAKE_USER_EMAIL } from "../../common/strings";
+import { isDev, serviceCall } from "../../common/utilities";
 import { About, ChatDetails, History, Profile } from "..";
 import { AppContext } from "../App/AppContext";
 
 export const MessagesContainerHeader = () => {
 	const { state } = useContext(AppContext);
+
 	const [showProfile, setShowProfile] = useState(false);
 	const [showChatDetails, setShowChatDetails] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
 	const [showAbout, setShowAbout] = useState(false);
-	const { isAuthenticated } = useAuth0();
+	const [historyData, setHistoryData] = useState<any[]>([]);
+	const [fetchingHistory, setFetchingHistory] = useState(false);
+
+	const { isAuthenticated, user } = useAuth0();
 
 	const onClickProfile = () => {
 		setShowProfile(!showProfile);
@@ -27,12 +31,43 @@ export const MessagesContainerHeader = () => {
 	const onClickAbout = () => {
 		setShowAbout(!showAbout);
 	};
+	const handleFocus = async () => {
+		if (!state || fetchingHistory) {
+			return;
+		}
+
+		// prevent multiple calls
+		setFetchingHistory(true);
+		try {
+			const response = await serviceCall({
+				name: "chats",
+				data: {
+					messages: state.messages,
+					model: state.model,
+					user: user?.email || FAKE_USER_EMAIL,
+					id: state.id,
+				},
+			});
+
+			if (response.status === 200) {
+				const data = await response.json();
+				setHistoryData(data);
+			}
+		} catch (error) {
+			setFetchingHistory(false);
+			// nothing to declare officer
+		}
+	};
 
 	return (
 		<>
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
 			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
-			<History open={showHistory} onOpenChange={setShowHistory} />
+			<History
+				open={showHistory}
+				onOpenChange={setShowHistory}
+				historyData={historyData}
+			/>
 			<About open={showAbout} onOpenChange={setShowAbout} />
 
 			{(isAuthenticated || isDev) && (
@@ -45,7 +80,11 @@ export const MessagesContainerHeader = () => {
 								onClick={onClickChatDetails}
 								disabled={!state || state.messages.length === 0}
 							/>
-							<MenuItem label="History" onClick={onClickHistory} />
+							<MenuItem
+								label="History"
+								onClick={onClickHistory}
+								onFocus={handleFocus}
+							/>
 							<MenuItem label="About" onClick={onClickAbout} />
 						</Menu>
 					</div>
