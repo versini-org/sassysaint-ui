@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.5...client-v1.19.6) (2023-12-16)
+
+
+### Bug Fixes
+
+* Footer rows are one one line instead of 2 ([f984746](https://github.com/aversini/sassysaint-ui/commit/f984746b720ab83e473073eaab6c79181610aca1))
+
 ## [1.19.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.4...client-v1.19.5) (2023-12-15)
 
 
