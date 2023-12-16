@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.7](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.6...client-v1.19.7) (2023-12-16)
+
+
+### Bug Fixes
+
+* better helper text on input ([7c90a89](https://github.com/aversini/sassysaint-ui/commit/7c90a8949a8bb7f16ad1362cbb97d51e9bf56daa))
+
 ## [1.19.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.5...client-v1.19.6) (2023-12-16)
 
 
