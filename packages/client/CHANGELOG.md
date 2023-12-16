@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.20.0...client-v1.20.1) (2023-12-16)
+
+
+### Bug Fixes
+
+* prefetch history should resume after 5 seconds ([dcc4963](https://github.com/aversini/sassysaint-ui/commit/dcc49635a0de91663e3288137a9b4f947c0a0551))
+
 ## [1.20.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.19.7...client-v1.20.0) (2023-12-16)
 
 
