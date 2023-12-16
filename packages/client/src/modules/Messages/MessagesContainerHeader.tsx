@@ -15,7 +15,10 @@ export const MessagesContainerHeader = () => {
 	const [showHistory, setShowHistory] = useState(false);
 	const [showAbout, setShowAbout] = useState(false);
 	const [historyData, setHistoryData] = useState<any[]>([]);
-	const [fetchingHistory, setFetchingHistory] = useState(false);
+	const [fetchingHistory, setFetchingHistory] = useState({
+		progress: false,
+		timestamp: Date.now(),
+	});
 
 	const { isAuthenticated, user } = useAuth0();
 
@@ -32,12 +35,20 @@ export const MessagesContainerHeader = () => {
 		setShowAbout(!showAbout);
 	};
 	const handleFocus = async () => {
-		if (!state || fetchingHistory) {
+		const now = Date.now();
+		if (
+			!state ||
+			fetchingHistory.progress ||
+			now - fetchingHistory.timestamp < 5000
+		) {
 			return;
 		}
 
 		// prevent multiple calls
-		setFetchingHistory(true);
+		setFetchingHistory({
+			progress: true,
+			timestamp: now,
+		});
 		try {
 			const response = await serviceCall({
 				name: "chats",
@@ -52,9 +63,16 @@ export const MessagesContainerHeader = () => {
 			if (response.status === 200) {
 				const data = await response.json();
 				setHistoryData(data);
+				setFetchingHistory({
+					progress: false,
+					timestamp: Date.now(),
+				});
 			}
 		} catch (error) {
-			setFetchingHistory(false);
+			setFetchingHistory({
+				progress: false,
+				timestamp: Date.now(),
+			});
 			// nothing to declare officer
 		}
 	};
