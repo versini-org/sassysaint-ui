@@ -23,9 +23,12 @@ const getAverageProcessingTime = (messages?: { message: MessageProps }[]) => {
 	}
 
 	const processingTime = messages
-		.filter((message) => message.message.role === ROLE_ASSISTANT)
-		.map((data) => data.message.processingTime)
-		.filter((time) => typeof time === "number");
+		.filter(
+			(message) =>
+				message?.message?.role === ROLE_ASSISTANT &&
+				typeof message?.message?.processingTime === "number",
+		)
+		.map((data) => data.message.processingTime);
 
 	if (processingTime.length > 0) {
 		const totalProcessingTime = processingTime.reduce(
