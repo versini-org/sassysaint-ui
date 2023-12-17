@@ -1,8 +1,12 @@
 import { Card } from "@versini/ui-components";
 import { useContext } from "react";
 
-import { DEFAULT_MODEL, GTP4_MAX_TOKENS } from "../../common/constants";
-import { CARDS } from "../../common/strings";
+import {
+	DEFAULT_MODEL,
+	GTP4_MAX_TOKENS,
+	ROLE_ASSISTANT,
+} from "../../common/constants";
+import { CARDS, NA } from "../../common/strings";
 import { renderDataAsList } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
@@ -13,17 +17,17 @@ export type ChatDetailsContentProps = {
 
 const getAverageProcessingTime = (messages?: any[]) => {
 	if (!messages || messages.length === 0) {
-		return 0;
+		return NA;
 	}
 
 	const processingTime = messages
-		.filter((message) => message.message.role === "assistant")
+		.filter((message) => message.message.role === ROLE_ASSISTANT)
 		.map((data) => data.message.processingTime);
 
 	const averageProcessingTime =
 		processingTime.reduce((a, b) => a + b, 0) / processingTime.length;
 	if (isNaN(averageProcessingTime)) {
-		return "N/A";
+		return NA;
 	} else {
 		return `${averageProcessingTime.toFixed(0)}ms`;
 	}
