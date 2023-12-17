@@ -8,7 +8,7 @@ export const LOG_OUT = "Log out";
 export const POWERED_BY = "Powered by OpenAI";
 export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";
-export const CHAT_DETAILS_TITLE = "Chat details";
+export const CHAT_DETAILS_TITLE = "Current chat details";
 export const HISTORY_TITLE = "Chat history";
 export const ABOUT_TITLE = "About";
 export const TYPE_QUESTION = "Type your question here";
@@ -18,8 +18,7 @@ export const CARDS = {
 		TITLE: "User preferences",
 		NAME: "Name",
 		EMAIL: "Email",
-		MODEL_NAME: "GPT-4",
-		ENGINE_DETAILS: "Show engine details",
+		ENGINE_DETAILS: "Show message statistics",
 		LOCATION: "Current location",
 	},
 	STATISTICS: {
@@ -27,6 +26,7 @@ export const CARDS = {
 		SUBTITLE: "(current chat session)",
 		MODEL_NAME: "GPT model",
 		TOKENS: "Remaining tokens",
+		PROCESSING_TIME: "Average response time",
 	},
 	HISTORY: {
 		TITLE: "Chat history",

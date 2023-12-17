@@ -96,6 +96,7 @@ export const PromptInput = () => {
 								role: ROLE_ASSISTANT,
 								content: data.result,
 								name: data.name,
+								processingTime: data.processingTime,
 							},
 						},
 					});

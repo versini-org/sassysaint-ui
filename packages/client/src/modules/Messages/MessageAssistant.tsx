@@ -13,6 +13,7 @@ export const MessageAssistant = ({
 	children,
 	name,
 	loading,
+	processingTime,
 }: MessageAssistantProps) => {
 	const { state } = useContext(AppContext);
 	const [copied, setCopied] = React.useState(false);
@@ -64,6 +65,11 @@ export const MessageAssistant = ({
 					)}
 					{name && showEngineDetails && (
 						<p className="pr-2 pt-1 text-end text-xs">Plugin: {name}</p>
+					)}
+					{processingTime && showEngineDetails && (
+						<p className="pr-2 pt-1 text-end text-xs">
+							Processing time: {processingTime} ms
+						</p>
 					)}
 				</div>
 
