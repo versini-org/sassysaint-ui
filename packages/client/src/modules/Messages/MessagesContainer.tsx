@@ -69,7 +69,7 @@ export const MessagesContainer = ({
 				{state &&
 					state.messages.length > 0 &&
 					state.messages.map((data, index) => {
-						const { role, content, name } = data.message;
+						const { role, content, name, processingTime } = data.message;
 						if (
 							(role === ROLE_ASSISTANT || role === ROLE_INTERNAL) &&
 							content
@@ -79,6 +79,7 @@ export const MessagesContainer = ({
 									<MessageAssistant
 										smoothScrollRef={smoothScrollRef}
 										name={name}
+										processingTime={processingTime}
 									>
 										{content}
 									</MessageAssistant>

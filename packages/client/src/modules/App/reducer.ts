@@ -17,6 +17,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 					role: item.role,
 					content: item.content,
 					name: item.name,
+					processingTime: item.processingTime,
 				},
 			};
 		});
@@ -33,19 +34,15 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		const role = action.payload.message.role;
 		const content = action.payload.message.content;
 		const name = action.payload.message.name;
+		const processingTime = action.payload.message.processingTime;
 
 		if (role !== "" && content !== "") {
-			const message =
-				name && name !== ""
-					? {
-							role,
-							content,
-							name,
-					  }
-					: {
-							role,
-							content,
-					  };
+			const message = {
+				role,
+				content,
+				name,
+				processingTime,
+			};
 
 			return {
 				id: state.id,
