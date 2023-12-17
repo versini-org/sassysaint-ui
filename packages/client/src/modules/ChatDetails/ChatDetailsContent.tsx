@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import { Card } from "@versini/ui-components";
 import { useContext } from "react";
 
@@ -19,8 +17,9 @@ export type ChatDetailsContentProps = {
 };
 
 const getAverageProcessingTime = (messages?: { message: MessageProps }[]) => {
+	let averageProcessingTime = NA;
 	if (!messages || messages.length === 0) {
-		return NA;
+		return averageProcessingTime;
 	}
 
 	const processingTime = messages
@@ -29,18 +28,16 @@ const getAverageProcessingTime = (messages?: { message: MessageProps }[]) => {
 		.filter((time) => typeof time === "number");
 
 	if (processingTime.length > 0) {
-		const averageProcessingTime =
-			// @ts-ignore - TS doesn't know that we filtered out the non-numbers
-			processingTime.reduce((a, b) => a + b, 0) / processingTime.length;
-
-		if (isNaN(averageProcessingTime)) {
-			return NA;
-		} else {
-			return `${averageProcessingTime.toFixed(0)}ms`;
-		}
-	} else {
-		return NA;
+		const totalProcessingTime = processingTime.reduce(
+			(a: number, b: any) => a + b,
+			0,
+		);
+		averageProcessingTime = totalProcessingTime
+			? `${(totalProcessingTime / processingTime.length).toFixed(0)}ms`
+			: NA;
 	}
+
+	return averageProcessingTime;
 };
 
 export const ChatDetailsContent = ({
