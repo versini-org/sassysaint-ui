@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.20.1...client-v1.21.0) (2023-12-17)
+
+
+### Features
+
+* adding chat response time ([dfa375d](https://github.com/aversini/sassysaint-ui/commit/dfa375d2b6f3b3d7e4572737bd64c66cb53c1fb2))
+
 ## [1.20.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.20.0...client-v1.20.1) (2023-12-16)
 
 
