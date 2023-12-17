@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import { Card } from "@versini/ui-components";
 import { useContext } from "react";
 
@@ -7,6 +9,7 @@ import {
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { CARDS, NA } from "../../common/strings";
+import type { MessageProps } from "../../common/types";
 import { renderDataAsList } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
@@ -15,21 +18,28 @@ export type ChatDetailsContentProps = {
 	isDev: boolean;
 };
 
-const getAverageProcessingTime = (messages?: any[]) => {
+const getAverageProcessingTime = (messages?: { message: MessageProps }[]) => {
 	if (!messages || messages.length === 0) {
 		return NA;
 	}
 
 	const processingTime = messages
 		.filter((message) => message.message.role === ROLE_ASSISTANT)
-		.map((data) => data.message.processingTime);
+		.map((data) => data.message.processingTime)
+		.filter((time) => typeof time === "number");
 
-	const averageProcessingTime =
-		processingTime.reduce((a, b) => a + b, 0) / processingTime.length;
-	if (isNaN(averageProcessingTime)) {
-		return NA;
+	if (processingTime.length > 0) {
+		const averageProcessingTime =
+			// @ts-ignore - TS doesn't know that we filtered out the non-numbers
+			processingTime.reduce((a, b) => a + b, 0) / processingTime.length;
+
+		if (isNaN(averageProcessingTime)) {
+			return NA;
+		} else {
+			return `${averageProcessingTime.toFixed(0)}ms`;
+		}
 	} else {
-		return `${averageProcessingTime.toFixed(0)}ms`;
+		return NA;
 	}
 };
 
