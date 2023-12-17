@@ -32,7 +32,7 @@ const getAverageProcessingTime = (messages?: { message: MessageProps }[]) => {
 
 	if (processingTime.length > 0) {
 		const totalProcessingTime = processingTime.reduce(
-			(a: number, b: any) => a + b,
+			(a: number | undefined, b: number | undefined) => (a || 0) + (b || 0),
 			0,
 		);
 		averageProcessingTime = totalProcessingTime
