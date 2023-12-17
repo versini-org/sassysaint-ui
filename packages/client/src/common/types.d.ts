@@ -21,6 +21,7 @@ export type MessageProps = {
 	role?: string;
 	content?: string;
 	name?: string;
+	processingTime?: number;
 };
 
 export type StateProps = {
@@ -79,6 +80,7 @@ export type MessageUserProps = {
 export type MessageAssistantProps = {
 	children?: string;
 	name?: string;
+	processingTime?: number;
 	smoothScrollRef: React.RefObject<HTMLDivElement>;
 	loading?: boolean;
 };

@@ -3,12 +3,7 @@ import { Footer, Main } from "@versini/ui-components";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import {
-	ACTION_LOCATION,
-	DEFAULT_MODEL,
-	LOCAL_STORAGE_MODEL,
-} from "../../common/constants";
-import { useLocalStorage } from "../../common/hooks";
+import { ACTION_LOCATION, DEFAULT_MODEL } from "../../common/constants";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import {
 	getCurrentGeoLocation,
@@ -21,8 +16,7 @@ import { reducer } from "./reducer";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
-	const storage = useLocalStorage();
-	const model = storage.get(LOCAL_STORAGE_MODEL)?.toString() || DEFAULT_MODEL;
+	const model = DEFAULT_MODEL;
 
 	const locationRef = useRef({
 		latitude: 0,
