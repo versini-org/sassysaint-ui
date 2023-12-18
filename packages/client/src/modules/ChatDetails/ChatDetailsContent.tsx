@@ -105,13 +105,14 @@ export const ChatDetailsContent = ({
 	 * Effect to update the statistics.
 	 */
 	useEffect(() => {
+		let isCancelled = false;
 		(async () => {
 			// there is no state
 			if (!state) {
 				return;
 			}
 			// we already have the data
-			if (history.length > 0) {
+			if (history.length > 0 && !isCancelled) {
 				setStatistics(extractStatisticsFromHistory(history));
 				return;
 			}
@@ -127,7 +128,7 @@ export const ChatDetailsContent = ({
 					},
 				});
 
-				if (response.status === 200) {
+				if (response.status === 200 && !isCancelled) {
 					const data = await response.json();
 					setHistory(data.messages);
 				}
@@ -135,6 +136,9 @@ export const ChatDetailsContent = ({
 				// nothing to declare officer
 			}
 		})();
+		return () => {
+			isCancelled = true;
+		};
 	}, [history, state, user?.email]);
 
 	return isAuthenticated || isDev ? (
