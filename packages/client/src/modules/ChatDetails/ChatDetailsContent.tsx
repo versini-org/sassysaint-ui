@@ -47,11 +47,10 @@ const getAverageProcessingTimePerSession = (
 };
 
 const getAverageProcessingTimes = (chatSessions?: any[]) => {
-	const averageProcessingTime: string = NA;
 	const averageProcessingTimes: number[] = [];
 
 	if (!chatSessions || chatSessions.length === 0) {
-		return averageProcessingTime;
+		return NA;
 	}
 
 	chatSessions.forEach((chatSession) => {
