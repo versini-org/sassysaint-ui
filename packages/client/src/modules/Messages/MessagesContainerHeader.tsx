@@ -2,7 +2,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { IconDog, IconSettings, Menu, MenuItem } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
-import { APP_MOTTO, APP_NAME, FAKE_USER_EMAIL } from "../../common/strings";
+import {
+	APP_MOTTO,
+	APP_NAME,
+	FAKE_USER_EMAIL,
+	STATS,
+} from "../../common/strings";
 import { isDev, serviceCall } from "../../common/utilities";
 import { About, ChatDetails, History, Profile } from "..";
 import { AppContext } from "../App/AppContext";
@@ -62,7 +67,7 @@ export const MessagesContainerHeader = () => {
 
 			if (response.status === 200) {
 				const data = await response.json();
-				setHistoryData(data);
+				setHistoryData(data.messages);
 				setFetchingHistory({
 					progress: false,
 					timestamp: Date.now(),
@@ -80,7 +85,11 @@ export const MessagesContainerHeader = () => {
 	return (
 		<>
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
-			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
+			<ChatDetails
+				open={showChatDetails}
+				onOpenChange={setShowChatDetails}
+				historyData={historyData}
+			/>
 			<History
 				open={showHistory}
 				onOpenChange={setShowHistory}
@@ -94,9 +103,9 @@ export const MessagesContainerHeader = () => {
 						<Menu icon={<IconSettings />} defaultPlacement="bottom-end">
 							<MenuItem label="Profile" onClick={onClickProfile} />
 							<MenuItem
-								label="Chat details"
+								label={STATS}
 								onClick={onClickChatDetails}
-								disabled={!state || state.messages.length === 0}
+								onFocus={handleFocus}
 							/>
 							<MenuItem
 								label="History"

@@ -162,7 +162,7 @@ export const HistoryContent = ({
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
-	const [history, setHistory] = useState<any[]>([]);
+	const [history, setHistory] = useState<any[]>(historyData);
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -170,14 +170,11 @@ export const HistoryContent = ({
 
 	useEffect(() => {
 		(async () => {
-			// we already have the data
-			if (historyData.length > 0) {
-				setHistory(historyData);
+			// we already have the data or there is no state
+			if (!state || history.length > 0) {
 				return;
 			}
-			if (!state) {
-				return;
-			}
+
 			try {
 				const response = await serviceCall({
 					name: "chats",
@@ -191,13 +188,13 @@ export const HistoryContent = ({
 
 				if (response.status === 200) {
 					const data = await response.json();
-					setHistory(data);
+					setHistory(data.messages);
 				}
 			} catch (error) {
 				// nothing to declare officer
 			}
 		})();
-	}, [historyData, state, user?.email]);
+	}, [history.length, state, user?.email]);
 
 	return (isAuthenticated && endUser) || isDev
 		? history && (
