@@ -158,7 +158,7 @@ export const ChatDetailsContent = ({
 			<Card header={CARDS.MAIN_STATISTICS.TITLE}>
 				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
 					[CARDS.MAIN_STATISTICS.TOTAL]: statistics.total,
-					[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]: statistics.processingTime,
+					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: statistics.processingTime,
 				})}
 			</Card>
 		</div>

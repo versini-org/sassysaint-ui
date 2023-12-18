@@ -31,7 +31,7 @@ export const CARDS = {
 	MAIN_STATISTICS: {
 		TITLE: "Lifetime statistics",
 		TOTAL: "Total chat sessions",
-		PROCESSING_TIME: "Average",
+		PROCESSING_TIME: "Average response time",
 	},
 	HISTORY: {
 		TITLE: "Chat history",
