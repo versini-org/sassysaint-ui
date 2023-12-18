@@ -4,6 +4,7 @@ import {
 	convertDDToDMS,
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
+	extractAverage,
 	obfuscate,
 	truncate,
 	unObfuscate,
@@ -72,6 +73,36 @@ describe("Non-DOM tests", () => {
 
 		it("should unObfuscate data", () => {
 			expect(unObfuscate("aGVsbG8gd29ybGQ=")).toBe("hello world");
+		});
+	});
+
+	describe("average from array", () => {
+		it("should return average from array", () => {
+			const formatter = (value: number) => `${value.toFixed(0)}ms`;
+			expect(extractAverage({ data: [1, 2, 3, 4, 5], formatter })).toBe("3ms");
+			expect(extractAverage({ data: [1, 0, 2, 3, 4, 5], formatter })).toBe(
+				"3ms",
+			);
+			expect(extractAverage({ data: [1, null, 2, 3, 4, 5], formatter })).toBe(
+				"3ms",
+			);
+			expect(
+				extractAverage({ data: [1, undefined, 2, 3, 4, 5], formatter }),
+			).toBe("3ms");
+			expect(extractAverage({ data: [], formatter })).toBe("0ms");
+		});
+
+		it("should return average from array with formatter", () => {
+			const formatter = (value: number) => value;
+			expect(extractAverage({ data: [1, 2, 3, 4, 5], formatter })).toBe(3);
+			expect(extractAverage({ data: [1, 0, 2, 3, 4, 5], formatter })).toBe(3);
+			expect(extractAverage({ data: [1, null, 2, 3, 4, 5], formatter })).toBe(
+				3,
+			);
+			expect(
+				extractAverage({ data: [1, undefined, 2, 3, 4, 5], formatter }),
+			).toBe(3);
+			expect(extractAverage({ data: [], formatter })).toBe(0);
 		});
 	});
 });
