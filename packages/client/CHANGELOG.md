@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.22.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.21.0...client-v1.22.0) (2023-12-18)
+
+
+### Features
+
+* updating chat details panel with more statistics ([66b40ef](https://github.com/aversini/sassysaint-ui/commit/66b40ef248917675157d746ef7d6636b51431398))
+
 ## [1.21.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.20.1...client-v1.21.0) (2023-12-17)
 
 
