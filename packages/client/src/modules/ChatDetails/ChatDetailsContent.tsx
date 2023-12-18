@@ -29,7 +29,7 @@ const getAverageProcessingTimePerSession = (
 	chatSession?: { message: MessageProps }[],
 ) => {
 	if (!chatSession || chatSession.length === 0) {
-		return "N/A";
+		return NA;
 	}
 
 	const processingTimes = chatSession
