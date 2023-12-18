@@ -141,14 +141,18 @@ export const ChatDetailsContent = ({
 
 	return isAuthenticated || isDev ? (
 		<div className="flex flex-col gap-4 sm:flex-row">
-			<Card header={CARDS.CURRENT_STATISTICS.TITLE}>
-				{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
-					[CARDS.CURRENT_STATISTICS.MODEL_NAME]: state?.model || DEFAULT_MODEL,
-					[CARDS.CURRENT_STATISTICS.TOKENS]: remainingTokens,
-					[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]:
-						getAverageProcessingTimePerSession(state?.messages),
-				})}
-			</Card>
+			{state && state.messages.length > 0 && (
+				<Card header={CARDS.CURRENT_STATISTICS.TITLE}>
+					{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
+						[CARDS.CURRENT_STATISTICS.MODEL_NAME]:
+							state?.model || DEFAULT_MODEL,
+						[CARDS.CURRENT_STATISTICS.TOKENS]: remainingTokens,
+						[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]:
+							getAverageProcessingTimePerSession(state?.messages),
+					})}
+				</Card>
+			)}
+
 			<Card header={CARDS.MAIN_STATISTICS.TITLE}>
 				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
 					[CARDS.MAIN_STATISTICS.TOTAL]: statistics.total,
