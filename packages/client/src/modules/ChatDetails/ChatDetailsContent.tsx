@@ -10,6 +10,7 @@ import { CARDS, FAKE_USER_EMAIL, NA } from "../../common/strings";
 import type { MessageProps } from "../../common/types";
 import {
 	extractAverage,
+	isDev,
 	renderDataAsList,
 	serviceCall,
 } from "../../common/utilities";
@@ -17,7 +18,6 @@ import { AppContext } from "../App/AppContext";
 
 export type ChatDetailsContentProps = {
 	isAuthenticated: boolean;
-	isDev: boolean;
 	historyData: any[];
 	user: any;
 };
@@ -91,7 +91,6 @@ const extractStatisticsFromHistory = (history: any[]) => {
 
 export const ChatDetailsContent = ({
 	isAuthenticated,
-	isDev,
 	historyData,
 	user,
 }: ChatDetailsContentProps) => {
