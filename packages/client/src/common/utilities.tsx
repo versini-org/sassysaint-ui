@@ -164,17 +164,18 @@ export const renderDataAsList = (title: string, data: Record<string, any>) => {
  * console.log(res); // 27.5 -> (11 + 22 + 33 + 44) / 4
  *
  * Any value that is not a number or is less than 0 will be ignored.
- * A formatter function can be passed to format the output.
+ *
+ * A formatter function can be passed to format the output. If no
+ * formatter is provided, the default behavior is to cast the number
+ * to the generic Output type.
  */
 export function extractAverage<Output>({
 	data,
-	formatter,
+	formatter = (value: number) => value as unknown as Output,
 }: {
 	data: (number | undefined | null)[];
 	formatter?: (value: number) => Output;
 }): Output {
-	formatter = formatter || ((value: number) => value as unknown as Output);
-
 	const filteredData = data.filter(
 		(item) => typeof item === "number" && item > 0,
 	);
