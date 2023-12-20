@@ -1,8 +1,12 @@
 import {
 	ButtonIcon,
-	Card,
 	IconDelete,
 	IconRestore,
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableRow,
 } from "@versini/ui-components";
 import { useContext, useEffect, useState } from "react";
 
@@ -79,79 +83,63 @@ const renderAsTable = (
 	dispatch: any,
 	onOpenChange: any,
 ) => {
-	const borderClass = "border border-gray-700";
-	const xPadding = "px-4";
 	return (
-		<div className="relative overflow-x-auto rounded-lg shadow-md">
-			<table className="w-full text-left text-sm text-gray-400">
-				<thead
-					className={`bg-gray-700 text-xs uppercase text-gray-400 ${borderClass}`}
-				>
-					<tr>
-						<th scope="col" className={`${xPadding} py-3 text-white`}>
-							Date
-						</th>
-						<th scope="col" className={`${xPadding} py-3 text-white`}>
-							First message
-						</th>
-						<th
-							scope="col"
-							className={`${xPadding} block py-3 text-right text-white`}
-						>
-							Actions
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{history.map((item, idx) => {
-						const rowClass = idx % 2 === 0 ? "bg-gray-800" : "bg-gray-900";
-						return (
-							<tr
-								key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}
-								className={`${borderClass} ${rowClass}`}
+		<Table stickyHeader maxHeight="75vh">
+			<TableHead>
+				<TableRow>
+					<TableCell className="uppercase text-white">Date</TableCell>
+					<TableCell className="uppercase text-white">First message</TableCell>
+					<TableCell className="text-right uppercase text-white">
+						Actions
+					</TableCell>
+				</TableRow>
+			</TableHead>
+			<TableBody>
+				{history.map((item, idx) => {
+					return (
+						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
+							<TableCell
+								component="th"
+								scope="row"
+								className="font-medium text-gray-400 sm:whitespace-nowrap"
 							>
-								<th
-									scope="row"
-									className={`${xPadding} py-4 font-medium sm:whitespace-nowrap`}
-								>
-									{item.timestamp}
-								</th>
-								<td className={`${xPadding} py-4 text-white`}>
-									{extractFirstUserMessage(item.messages)}
-								</td>
+								{item.timestamp}
+							</TableCell>
+							<TableCell className="text-white">
+								{extractFirstUserMessage(item.messages)}
+							</TableCell>
 
-								<td className={`${xPadding} py-4`}>
-									<div className="flex justify-end gap-2">
-										<ButtonIcon
-											noBorder
-											label="Restore chat"
-											kind="light"
-											onClick={() => {
-												onClickRestore(item, dispatch, onOpenChange);
-											}}
-										>
-											<IconRestore className="h-3 w-3" />
-										</ButtonIcon>
-										<ButtonIcon
-											noBorder
-											label="Delete chat"
-											kind="light"
-											onClick={() => {
-												onClickDelete(item, setHistory);
-											}}
-										>
-											<div className="text-red-400">
-												<IconDelete className="h-3 w-3" />
-											</div>
-										</ButtonIcon>
-									</div>
-								</td>
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
-		</div>
+							<TableCell>
+								<div className="flex justify-end gap-2">
+									<ButtonIcon
+										noBorder
+										label="Restore chat"
+										kind="light"
+										onClick={() => {
+											onClickRestore(item, dispatch, onOpenChange);
+										}}
+									>
+										<IconRestore className="h-3 w-3" />
+									</ButtonIcon>
+									<ButtonIcon
+										noBorder
+										label="Delete chat"
+										kind="light"
+										onClick={() => {
+											onClickDelete(item, setHistory);
+										}}
+									>
+										<div className="text-red-400">
+											<IconDelete className="h-3 w-3" />
+										</div>
+									</ButtonIcon>
+								</div>
+							</TableCell>
+						</TableRow>
+					);
+				})}
+			</TableBody>
+		</Table>
 	);
 };
 
@@ -199,9 +187,7 @@ export const HistoryContent = ({
 	return (isAuthenticated && endUser) || isDev
 		? history && (
 				<div className="flex flex-col gap-2 sm:flex-row">
-					<Card noBackground className="max-h-[75vh] w-full overflow-y-scroll">
-						{renderAsTable(history, setHistory, dispatch, onOpenChange)}
-					</Card>
+					{renderAsTable(history, setHistory, dispatch, onOpenChange)}
 				</div>
 			)
 		: null;
