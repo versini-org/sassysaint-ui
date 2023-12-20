@@ -83,8 +83,6 @@ const renderAsTable = (
 	dispatch: any,
 	onOpenChange: any,
 ) => {
-	const borderClass = "border border-gray-700";
-	const xPadding = "px-4";
 	return (
 		<Table stickyHeader maxHeight="75vh">
 			<TableHead>
@@ -96,24 +94,20 @@ const renderAsTable = (
 			</TableHead>
 			<TableBody>
 				{history.map((item, idx) => {
-					const rowClass = idx % 2 === 0 ? "bg-gray-800" : "bg-gray-900";
 					return (
-						<TableRow
-							key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}
-							className={`${borderClass} ${rowClass}`}
-						>
+						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
 							<TableCell
 								component="th"
 								scope="row"
-								className={`${xPadding} py-4 font-medium sm:whitespace-nowrap`}
+								className="font-medium sm:whitespace-nowrap"
 							>
 								{item.timestamp}
 							</TableCell>
-							<TableCell className={`${xPadding} py-4 text-white`}>
+							<TableCell className="text-white">
 								{extractFirstUserMessage(item.messages)}
 							</TableCell>
 
-							<TableCell className={`${xPadding} py-4`}>
+							<TableCell>
 								<div className="flex justify-end gap-2">
 									<ButtonIcon
 										noBorder
