@@ -87,9 +87,11 @@ const renderAsTable = (
 		<Table stickyHeader maxHeight="75vh">
 			<TableHead>
 				<TableRow>
-					<TableCell className="uppercase">Date</TableCell>
-					<TableCell className="uppercase">First message</TableCell>
-					<TableCell className="text-right uppercase">Actions</TableCell>
+					<TableCell className="uppercase text-white">Date</TableCell>
+					<TableCell className="uppercase text-white">First message</TableCell>
+					<TableCell className="text-right uppercase text-white">
+						Actions
+					</TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
@@ -99,7 +101,7 @@ const renderAsTable = (
 							<TableCell
 								component="th"
 								scope="row"
-								className="font-medium sm:whitespace-nowrap"
+								className="font-medium text-gray-400 sm:whitespace-nowrap"
 							>
 								{item.timestamp}
 							</TableCell>
