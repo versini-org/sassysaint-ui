@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.22.0...client-v1.23.0) (2023-12-20)
+
+
+### Features
+
+* using Table component from UI library ([3e65b86](https://github.com/aversini/sassysaint-ui/commit/3e65b86b6f6cf14f4e70ae7a62341ca26a0136cf))
+
 ## [1.22.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.21.0...client-v1.22.0) (2023-12-18)
 
 
