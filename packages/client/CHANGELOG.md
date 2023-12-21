@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.24.0...client-v1.25.0) (2023-12-21)
+
+
+### Features
+
+* moving logout button from profile to menu ([96b211d](https://github.com/aversini/sassysaint-ui/commit/96b211d9e8b9325b88f40c4b675193632d4eb9bc))
+
 ## [1.24.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.23.0...client-v1.24.0) (2023-12-21)
 
 
