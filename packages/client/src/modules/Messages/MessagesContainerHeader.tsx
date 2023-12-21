@@ -142,7 +142,7 @@ export const MessagesContainerHeader = () => {
 							/>
 							<MenuSeparator />
 							<MenuItem
-								label="Logout"
+								label="Log out"
 								onClick={() => logoutWithRedirect()}
 								icon={
 									<div className="text-red-700">
