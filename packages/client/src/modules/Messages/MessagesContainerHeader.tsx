@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import {
+	IconBack,
 	IconChart,
 	IconDog,
 	IconHistory,
@@ -8,6 +9,7 @@ import {
 	IconSettings,
 	Menu,
 	MenuItem,
+	MenuSeparator,
 } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
@@ -34,7 +36,13 @@ export const MessagesContainerHeader = () => {
 		timestamp: Date.now(),
 	});
 
-	const { isAuthenticated, user } = useAuth0();
+	const { isAuthenticated, user, logout } = useAuth0();
+	const logoutWithRedirect = () =>
+		logout({
+			logoutParams: {
+				returnTo: window.location.origin,
+			},
+		});
 
 	const onClickProfile = () => {
 		setShowProfile(!showProfile);
@@ -131,6 +139,16 @@ export const MessagesContainerHeader = () => {
 								label="About"
 								onClick={onClickAbout}
 								icon={<IconInfo decorative />}
+							/>
+							<MenuSeparator />
+							<MenuItem
+								label="Log out"
+								onClick={() => logoutWithRedirect()}
+								icon={
+									<div className="text-red-700">
+										<IconBack decorative monotone />
+									</div>
+								}
 							/>
 						</Menu>
 					</div>

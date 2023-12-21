@@ -12,21 +12,13 @@ export const Profile = ({
 	open: boolean;
 	onOpenChange: any;
 }) => {
-	const { logout, isAuthenticated, user } = useAuth0();
-
-	const logoutWithRedirect = () =>
-		logout({
-			logoutParams: {
-				returnTo: window.location.origin,
-			},
-		});
+	const { isAuthenticated, user } = useAuth0();
 
 	return (
 		<Panel open={open} onOpenChange={onOpenChange} title={PROFILE_TITLE}>
 			<ProfileContent
 				isAuthenticated={isAuthenticated}
 				isDev={isDev}
-				logoutWithRedirect={logoutWithRedirect}
 				user={user}
 			/>
 		</Panel>

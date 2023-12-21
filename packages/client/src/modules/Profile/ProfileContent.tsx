@@ -1,14 +1,9 @@
-import { Button, Card, Toggle } from "@versini/ui-components";
+import { Card, Toggle } from "@versini/ui-components";
 import { useContext } from "react";
 
 import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
 import { useLocalStorage } from "../../common/hooks";
-import {
-	CARDS,
-	FAKE_USER_EMAIL,
-	FAKE_USER_NAME,
-	LOG_OUT,
-} from "../../common/strings";
+import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import type { GeoLocation } from "../../common/types";
 import {
 	convertLatitudeToDMS,
@@ -20,14 +15,12 @@ import { AppContext } from "../App/AppContext";
 export type ProfileContentProps = {
 	isAuthenticated: boolean;
 	isDev: boolean;
-	logoutWithRedirect: () => void;
 	user: any;
 };
 
 export const ProfileContent = ({
 	isAuthenticated,
 	isDev,
-	logoutWithRedirect,
 	user,
 }: ProfileContentProps) => {
 	const storage = useLocalStorage();
@@ -63,36 +56,24 @@ export const ProfileContent = ({
 	};
 
 	return (isAuthenticated && endUser) || isDev ? (
-		<>
-			<div className="flex flex-col gap-2 sm:flex-row">
-				<Card header={CARDS.PREFERENCES.TITLE}>
-					{renderDataAsList(CARDS.PREFERENCES.TITLE, {
-						[CARDS.PREFERENCES.NAME]: endUser.name,
-						[CARDS.PREFERENCES.EMAIL]: endUser.email,
-						[CARDS.PREFERENCES.ENGINE_DETAILS]: (
-							<Toggle
-								labelHidden
-								label={CARDS.PREFERENCES.ENGINE_DETAILS}
-								name={CARDS.PREFERENCES.ENGINE_DETAILS}
-								kind="light"
-								onChange={onToggleEngineDetails}
-								checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
-							/>
-						),
-						[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
-					})}
-				</Card>
-			</div>
-
-			<Button
-				noBorder
-				fullWidth
-				disabled={isDev}
-				className="mt-2"
-				onClick={() => logoutWithRedirect()}
-			>
-				<span className="text-red-600">{LOG_OUT}</span>
-			</Button>
-		</>
+		<div className="flex flex-col gap-2 sm:flex-row">
+			<Card header={CARDS.PREFERENCES.TITLE}>
+				{renderDataAsList(CARDS.PREFERENCES.TITLE, {
+					[CARDS.PREFERENCES.NAME]: endUser.name,
+					[CARDS.PREFERENCES.EMAIL]: endUser.email,
+					[CARDS.PREFERENCES.ENGINE_DETAILS]: (
+						<Toggle
+							labelHidden
+							label={CARDS.PREFERENCES.ENGINE_DETAILS}
+							name={CARDS.PREFERENCES.ENGINE_DETAILS}
+							kind="light"
+							onChange={onToggleEngineDetails}
+							checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
+						/>
+					),
+					[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
+				})}
+			</Card>
+		</div>
 	) : null;
 };
