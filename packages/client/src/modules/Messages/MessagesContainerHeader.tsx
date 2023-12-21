@@ -1,5 +1,14 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { IconDog, IconSettings, Menu, MenuItem } from "@versini/ui-components";
+import {
+	IconChart,
+	IconDog,
+	IconHistory,
+	IconInfo,
+	IconProfile,
+	IconSettings,
+	Menu,
+	MenuItem,
+} from "@versini/ui-components";
 import { useContext, useState } from "react";
 
 import {
@@ -101,18 +110,28 @@ export const MessagesContainerHeader = () => {
 				<div className="relative">
 					<div className="absolute bottom-[-28px] right-[-7px]">
 						<Menu icon={<IconSettings />} defaultPlacement="bottom-end">
-							<MenuItem label="Profile" onClick={onClickProfile} />
+							<MenuItem
+								label="Profile"
+								onClick={onClickProfile}
+								icon={<IconProfile decorative />}
+							/>
 							<MenuItem
 								label={STATS}
 								onClick={onClickChatDetails}
 								onFocus={handleFocus}
+								icon={<IconChart decorative />}
 							/>
 							<MenuItem
 								label="History"
 								onClick={onClickHistory}
 								onFocus={handleFocus}
+								icon={<IconHistory decorative />}
 							/>
-							<MenuItem label="About" onClick={onClickAbout} />
+							<MenuItem
+								label="About"
+								onClick={onClickAbout}
+								icon={<IconInfo decorative />}
+							/>
 						</Menu>
 					</div>
 				</div>

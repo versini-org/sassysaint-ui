@@ -119,7 +119,7 @@ const renderAsTable = (
 											onClickRestore(item, dispatch, onOpenChange);
 										}}
 									>
-										<IconRestore className="h-3 w-3" />
+										<IconRestore className="h-3 w-3" monotone />
 									</ButtonIcon>
 									<ButtonIcon
 										noBorder
@@ -130,7 +130,7 @@ const renderAsTable = (
 										}}
 									>
 										<div className="text-red-400">
-											<IconDelete className="h-3 w-3" />
+											<IconDelete className="h-3 w-3" monotone />
 										</div>
 									</ButtonIcon>
 								</div>
