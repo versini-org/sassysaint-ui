@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.24.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.23.0...client-v1.24.0) (2023-12-21)
+
+
+### Features
+
+* adding icons to menu items for better UX ([5be6373](https://github.com/aversini/sassysaint-ui/commit/5be637359dfc48bffb5f720e98b8b34d1e6c8a74))
+
 ## [1.23.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.22.0...client-v1.23.0) (2023-12-20)
 
 
