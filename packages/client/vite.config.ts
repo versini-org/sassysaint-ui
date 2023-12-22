@@ -18,11 +18,6 @@ const buildTime = new Date()
 	.replace(/,/g, "");
 
 export default defineConfig({
-	esbuild: {
-		supported: {
-			"top-level-await": true, //browsers can handle top-level-await features
-		},
-	},
 	define: {
 		"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
 		"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),
