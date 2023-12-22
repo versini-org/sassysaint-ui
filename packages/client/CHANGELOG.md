@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.25.0...client-v1.26.0) (2023-12-22)
+
+
+### Features
+
+* adding log out confirmation message ([27d34f2](https://github.com/aversini/sassysaint-ui/commit/27d34f232cc8875aebcb8d0a5ac7941aa373200e))
+
 ## [1.25.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.24.0...client-v1.25.0) (2023-12-21)
 
 
