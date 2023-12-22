@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import {
+	Button,
 	IconBack,
 	IconChart,
 	IconDog,
@@ -10,6 +11,7 @@ import {
 	Menu,
 	MenuItem,
 	MenuSeparator,
+	Panel,
 } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
@@ -31,6 +33,7 @@ export const MessagesContainerHeader = () => {
 	const [showHistory, setShowHistory] = useState(false);
 	const [showAbout, setShowAbout] = useState(false);
 	const [historyData, setHistoryData] = useState<any[]>([]);
+	const [showConfirmation, setShowConfirmation] = useState(false);
 	const [fetchingHistory, setFetchingHistory] = useState({
 		progress: false,
 		timestamp: Date.now(),
@@ -98,9 +101,33 @@ export const MessagesContainerHeader = () => {
 			// nothing to declare officer
 		}
 	};
+	const onClickConfirmLogout = () => {
+		setShowConfirmation(!showConfirmation);
+	};
 
 	return (
 		<>
+			<Panel
+				kind="messagebox"
+				open={showConfirmation}
+				onOpenChange={setShowConfirmation}
+				title="Log out"
+				footer={
+					<div className="flex flex-row-reverse gap-2">
+						<Button onClick={() => logoutWithRedirect()}>Log out</Button>
+						<Button
+							kind="light"
+							onClick={() => {
+								setShowConfirmation(false);
+							}}
+						>
+							Cancel
+						</Button>
+					</div>
+				}
+			>
+				<p>Are you sure you want to log out?</p>
+			</Panel>
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
 			<ChatDetails
 				open={showChatDetails}
@@ -143,7 +170,7 @@ export const MessagesContainerHeader = () => {
 							<MenuSeparator />
 							<MenuItem
 								label="Log out"
-								onClick={() => logoutWithRedirect()}
+								onClick={onClickConfirmLogout}
 								icon={
 									<div className="text-red-700">
 										<IconBack decorative monotone />
