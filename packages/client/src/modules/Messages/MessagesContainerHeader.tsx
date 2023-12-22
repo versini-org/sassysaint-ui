@@ -101,14 +101,7 @@ export const MessagesContainerHeader = () => {
 			// nothing to declare officer
 		}
 	};
-	const onClickLogout = () => {
-		setShowConfirmation(!showConfirmation);
-	};
-	const onLogout = () => {
-		setShowConfirmation(!showConfirmation);
-		logoutWithRedirect();
-	};
-	const onCancel = () => {
+	const onClickConfirmLogout = () => {
 		setShowConfirmation(!showConfirmation);
 	};
 
@@ -121,8 +114,13 @@ export const MessagesContainerHeader = () => {
 				title="Log out"
 				footer={
 					<div className="flex flex-row-reverse gap-2">
-						<Button onClick={onLogout}>Log out</Button>
-						<Button kind="light" onClick={onCancel}>
+						<Button onClick={() => logoutWithRedirect()}>Log out</Button>
+						<Button
+							kind="light"
+							onClick={() => {
+								setShowConfirmation(false);
+							}}
+						>
 							Cancel
 						</Button>
 					</div>
@@ -172,7 +170,7 @@ export const MessagesContainerHeader = () => {
 							<MenuSeparator />
 							<MenuItem
 								label="Log out"
-								onClick={onClickLogout}
+								onClick={onClickConfirmLogout}
 								icon={
 									<div className="text-red-700">
 										<IconBack decorative monotone />
