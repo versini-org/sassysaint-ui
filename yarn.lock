@@ -1330,7 +1330,6 @@ __metadata:
     react-dom: "npm:18.2.0"
     react-markdown: "npm:9.0.1"
     remark-gfm: "npm:4.0.0"
-    tailwindcss: "npm:3.3.6"
     uuid: "npm:9.0.1"
   languageName: unknown
   linkType: soft
