@@ -35,6 +35,7 @@ export const MessagesContainerHeader = () => {
 	const [historyData, setHistoryData] = useState<any[]>([]);
 	const [showConfirmation, setShowConfirmation] = useState(false);
 	const [fetchingHistory, setFetchingHistory] = useState({
+		done: false,
 		progress: false,
 		timestamp: Date.now(),
 	});
@@ -59,21 +60,37 @@ export const MessagesContainerHeader = () => {
 	const onClickAbout = () => {
 		setShowAbout(!showAbout);
 	};
-	const handleFocus = async () => {
+	const onOpenChange = async (open: boolean) => {
 		const now = Date.now();
-		if (
-			!state ||
-			fetchingHistory.progress ||
-			now - fetchingHistory.timestamp < 5000
-		) {
+
+		if (!open) {
+			/**
+			 * Menu is closed, no pre-fetching
+			 */
 			return;
 		}
 
-		// prevent multiple calls
+		if (
+			!state ||
+			fetchingHistory.progress ||
+			(fetchingHistory.done === true && now - fetchingHistory.timestamp < 5000)
+		) {
+			/**
+			 * Menu is opened, but
+			 * - prefetching is in progress, or
+			 * - prefetching was done at least once, but it was less than 5 seconds ago
+			 *
+			 * Therefore, no prefetching.
+			 */
+			return;
+		}
+
 		setFetchingHistory({
+			done: true,
 			progress: true,
 			timestamp: now,
 		});
+
 		try {
 			const response = await serviceCall({
 				name: "chats",
@@ -89,12 +106,14 @@ export const MessagesContainerHeader = () => {
 				const data = await response.json();
 				setHistoryData(data.messages);
 				setFetchingHistory({
+					done: true,
 					progress: false,
 					timestamp: Date.now(),
 				});
 			}
 		} catch (error) {
 			setFetchingHistory({
+				done: true,
 				progress: false,
 				timestamp: Date.now(),
 			});
@@ -144,7 +163,11 @@ export const MessagesContainerHeader = () => {
 			{(isAuthenticated || isDev) && (
 				<div className="relative">
 					<div className="absolute bottom-[-28px] right-[-7px]">
-						<Menu icon={<IconSettings />} defaultPlacement="bottom-end">
+						<Menu
+							icon={<IconSettings />}
+							defaultPlacement="bottom-end"
+							onOpenChange={onOpenChange}
+						>
 							<MenuItem
 								label="Profile"
 								onClick={onClickProfile}
@@ -153,13 +176,11 @@ export const MessagesContainerHeader = () => {
 							<MenuItem
 								label={STATS}
 								onClick={onClickChatDetails}
-								onFocus={handleFocus}
 								icon={<IconChart decorative />}
 							/>
 							<MenuItem
 								label="History"
 								onClick={onClickHistory}
-								onFocus={handleFocus}
 								icon={<IconHistory decorative />}
 							/>
 							<MenuItem
