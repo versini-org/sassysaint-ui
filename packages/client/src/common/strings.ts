@@ -40,7 +40,7 @@ export const CARDS = {
 		TITLE: "About",
 		VERSION: "Version",
 		BUILD_TIMESTAMP: "Build date",
-		ENGINE: "Powered by OpenAI ",
+		ENGINE: "OpenAI model",
 		PLUGINS: "Plugins",
 	},
 };
