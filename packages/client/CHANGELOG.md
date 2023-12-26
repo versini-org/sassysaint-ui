@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.26.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.0...client-v1.26.1) (2023-12-25)
+
+
+### Bug Fixes
+
+* remove tailwind dependency ([a8a9465](https://github.com/aversini/sassysaint-ui/commit/a8a94657817134196fb08d487ab5b159d9153de8))
+* smarter chat history pre-fetching ([52f75f4](https://github.com/aversini/sassysaint-ui/commit/52f75f46b0fc1e744fd968c51190f02cfc22f753))
+
 ## [1.26.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.25.0...client-v1.26.0) (2023-12-22)
 
 
