@@ -1,5 +1,3 @@
-/// <reference types="vitest" />
-
 import fs from "fs-extra";
 import { defineConfig } from "vite";
 
