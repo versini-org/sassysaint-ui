@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.1...client-v1.26.2) (2023-12-28)
+
+
+### Bug Fixes
+
+* [optimization] split chunks for React and floating-ui ([9a9aecb](https://github.com/aversini/sassysaint-ui/commit/9a9aecb2d401769493d15fd2b2240114462f2a3c))
+
 ## [1.26.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.0...client-v1.26.1) (2023-12-25)
 
 
