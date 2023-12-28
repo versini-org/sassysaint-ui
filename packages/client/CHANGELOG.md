@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.2...client-v1.26.3) (2023-12-28)
+
+
+### Bug Fixes
+
+* [optimization] fallback font and font swap ([61e032a](https://github.com/aversini/sassysaint-ui/commit/61e032a624952323c26a8ed39fe767ebc4dd0b15))
+
 ## [1.26.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.1...client-v1.26.2) (2023-12-28)
 
 
