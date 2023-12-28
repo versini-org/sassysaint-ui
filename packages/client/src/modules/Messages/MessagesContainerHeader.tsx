@@ -126,81 +126,82 @@ export const MessagesContainerHeader = () => {
 
 	return (
 		<>
-			<Panel
-				kind="messagebox"
-				open={showConfirmation}
-				onOpenChange={setShowConfirmation}
-				title="Log out"
-				footer={
-					<div className="flex flex-row-reverse gap-2">
-						<Button onClick={() => logoutWithRedirect()}>Log out</Button>
-						<Button
-							kind="light"
-							onClick={() => {
-								setShowConfirmation(false);
-							}}
-						>
-							Cancel
-						</Button>
-					</div>
-				}
-			>
-				<p>Are you sure you want to log out?</p>
-			</Panel>
-			<Profile open={showProfile} onOpenChange={setShowProfile} />
-			<ChatDetails
-				open={showChatDetails}
-				onOpenChange={setShowChatDetails}
-				historyData={historyData}
-			/>
-			<History
-				open={showHistory}
-				onOpenChange={setShowHistory}
-				historyData={historyData}
-			/>
-			<About open={showAbout} onOpenChange={setShowAbout} />
-
 			{(isAuthenticated || isDev) && (
-				<div className="relative">
-					<div className="absolute bottom-[-28px] right-[-7px]">
-						<Menu
-							icon={<IconSettings />}
-							defaultPlacement="bottom-end"
-							onOpenChange={onOpenChange}
-						>
-							<MenuItem
-								label="Profile"
-								onClick={onClickProfile}
-								icon={<IconProfile decorative />}
-							/>
-							<MenuItem
-								label={STATS}
-								onClick={onClickChatDetails}
-								icon={<IconChart decorative />}
-							/>
-							<MenuItem
-								label="History"
-								onClick={onClickHistory}
-								icon={<IconHistory decorative />}
-							/>
-							<MenuItem
-								label="About"
-								onClick={onClickAbout}
-								icon={<IconInfo decorative />}
-							/>
-							<MenuSeparator />
-							<MenuItem
-								label="Log out"
-								onClick={onClickConfirmLogout}
-								icon={
-									<div className="text-red-700">
-										<IconBack decorative monotone />
-									</div>
-								}
-							/>
-						</Menu>
+				<>
+					<Panel
+						kind="messagebox"
+						open={showConfirmation}
+						onOpenChange={setShowConfirmation}
+						title="Log out"
+						footer={
+							<div className="flex flex-row-reverse gap-2">
+								<Button onClick={() => logoutWithRedirect()}>Log out</Button>
+								<Button
+									kind="light"
+									onClick={() => {
+										setShowConfirmation(false);
+									}}
+								>
+									Cancel
+								</Button>
+							</div>
+						}
+					>
+						<p>Are you sure you want to log out?</p>
+					</Panel>
+					<Profile open={showProfile} onOpenChange={setShowProfile} />
+					<ChatDetails
+						open={showChatDetails}
+						onOpenChange={setShowChatDetails}
+						historyData={historyData}
+					/>
+					<History
+						open={showHistory}
+						onOpenChange={setShowHistory}
+						historyData={historyData}
+					/>
+					<About open={showAbout} onOpenChange={setShowAbout} />
+					<div className="relative">
+						<div className="absolute bottom-[-28px] right-[-7px]">
+							<Menu
+								icon={<IconSettings />}
+								defaultPlacement="bottom-end"
+								onOpenChange={onOpenChange}
+							>
+								<MenuItem
+									label="Profile"
+									onClick={onClickProfile}
+									icon={<IconProfile decorative />}
+								/>
+								<MenuItem
+									label={STATS}
+									onClick={onClickChatDetails}
+									icon={<IconChart decorative />}
+								/>
+								<MenuItem
+									label="History"
+									onClick={onClickHistory}
+									icon={<IconHistory decorative />}
+								/>
+								<MenuItem
+									label="About"
+									onClick={onClickAbout}
+									icon={<IconInfo decorative />}
+								/>
+								<MenuSeparator />
+								<MenuItem
+									label="Log out"
+									onClick={onClickConfirmLogout}
+									icon={
+										<div className="text-red-700">
+											<IconBack decorative monotone />
+										</div>
+									}
+								/>
+							</Menu>
+						</div>
 					</div>
-				</div>
+				</>
 			)}
 
 			<div className="flex items-center justify-center">
