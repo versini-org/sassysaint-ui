@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.3...client-v1.26.4) (2023-12-28)
+
+
+### Bug Fixes
+
+* only load Panel and Menu when authenticated ([542001a](https://github.com/aversini/sassysaint-ui/commit/542001af7982da918cd069d0c1ab1c47fc12b8ee))
+
 ## [1.26.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.2...client-v1.26.3) (2023-12-28)
 
 
