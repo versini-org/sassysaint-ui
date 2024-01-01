@@ -13,7 +13,7 @@
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@versini/dev-dependencies-client": "3.0.0",
+		"@versini/dev-dependencies-client": "4.0.0",
 		"@versini/dev-dependencies-types": "1.0.0"
 	},
 	"packageManager": "yarn@4.0.2"
