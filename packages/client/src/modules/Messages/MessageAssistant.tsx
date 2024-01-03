@@ -1,4 +1,10 @@
-import { Button, IconCopied, IconCopy, Spinner } from "@versini/ui-components";
+import {
+	Bubble,
+	Button,
+	IconCopied,
+	IconCopy,
+	Spinner,
+} from "@versini/ui-components";
 import React, { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -19,8 +25,6 @@ export const MessageAssistant = ({
 	const [copied, setCopied] = React.useState(false);
 	const storage = useLocalStorage();
 	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
-	const bubbleClass =
-		"prose prose-indigo flex flex-col rounded-b-xl rounded-tr-xl bg-[#E5E5EA] p-4 text-black prose-p:my-3 prose-blockquote:my-3 prose-ol:my-3 prose-ul:my-3 prose-ul:prose-li:marker:text-black sm:max-w-md md:max-w-2xl";
 
 	// copy to clipboard function
 	const copyToClipboard = () => {
@@ -42,24 +46,20 @@ export const MessageAssistant = ({
 	return loading ? (
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
-			<div className="flex items-start">
-				<div>
-					<div className={bubbleClass}>
-						<Spinner type="dots" />
-					</div>
-				</div>
-			</div>
+			<Bubble kind="left">
+				<Spinner type="dots" />
+			</Bubble>
 		</>
 	) : (
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
 				<div>
-					<div className={bubbleClass}>
+					<Bubble kind="left">
 						<ReactMarkdown remarkPlugins={[remarkGfm]}>
 							{children}
 						</ReactMarkdown>
-					</div>
+					</Bubble>
 					{state && state.model && showEngineDetails && (
 						<p className="pr-2 pt-1 text-end text-xs">Model: {state.model}</p>
 					)}

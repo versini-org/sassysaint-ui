@@ -6,7 +6,6 @@ import { HistoryContent } from "./History/HistoryContent";
 import { MessageAssistant } from "./Messages/MessageAssistant";
 import { MessagesContainer } from "./Messages/MessagesContainer";
 import { MessagesContainerHeader } from "./Messages/MessagesContainerHeader";
-import { MessageUser } from "./Messages/MessageUser";
 import { PromptInput } from "./Messages/PromptInput";
 import { Profile } from "./Profile/Profile";
 import { ProfileContent } from "./Profile/ProfileContent";
@@ -21,7 +20,6 @@ export {
 	MessageAssistant,
 	MessagesContainer,
 	MessagesContainerHeader,
-	MessageUser,
 	Profile,
 	ProfileContent,
 	PromptInput,
