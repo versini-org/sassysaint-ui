@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Bubble } from "@versini/ui-components";
 import clsx from "clsx";
 import { lazy, Suspense, useContext, useEffect, useRef } from "react";
 
@@ -9,7 +10,7 @@ import {
 } from "../../common/constants";
 import type { MessagesContainerProps } from "../../common/types";
 import { isDev } from "../../common/utilities";
-import { MessagesContainerHeader, MessageUser, PromptInput, Toolbox } from "..";
+import { MessagesContainerHeader, PromptInput, Toolbox } from "..";
 import { AppContext } from "../App/AppContext";
 
 const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
@@ -88,7 +89,9 @@ export const MessagesContainer = ({
 						}
 						if (role === ROLE_USER && content) {
 							return (
-								<MessageUser key={`${index}-${role}`}>{content}</MessageUser>
+								<Bubble kind="right" key={`${index}-${role}`}>
+									{content}
+								</Bubble>
 							);
 						}
 						return null;
