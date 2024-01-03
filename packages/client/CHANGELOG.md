@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.5...client-v1.26.6) (2024-01-03)
+
+
+### Bug Fixes
+
+* replacing custom Bubbles with common UI library ([0c5d949](https://github.com/aversini/sassysaint-ui/commit/0c5d949361ddd823ab4a28f35e7f9c55b7be661d))
+
 ## [1.26.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.4...client-v1.26.5) (2024-01-03)
 
 
