@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.27.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.6...client-v1.27.0) (2024-01-04)
+
+
+### Features
+
+* using Bubble new footer prop ([12f1b52](https://github.com/aversini/sassysaint-ui/commit/12f1b52d0b0d57302965b97cd57bd0098b38b6e8))
+
+
+### Bug Fixes
+
+* remove unused noHeader prop ([5e6da05](https://github.com/aversini/sassysaint-ui/commit/5e6da05f41a181d906330f8edd1caac5e4dea19c))
+
 ## [1.26.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.5...client-v1.26.6) (2024-01-03)
 
 
