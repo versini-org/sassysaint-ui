@@ -14,6 +14,12 @@ import { useLocalStorage } from "../../common/hooks";
 import type { MessageAssistantProps } from "../../common/types";
 import { AppContext } from "../App/AppContext";
 
+const FOOTER_KEYS = {
+	MODEL: "Model",
+	PLUGIN: "Plugin",
+	PROCESSING_TIME: "Processing time",
+};
+
 export const MessageAssistant = ({
 	smoothScrollRef,
 	children,
@@ -58,10 +64,10 @@ export const MessageAssistant = ({
 					<Bubble
 						kind="left"
 						footer={{
-							Model:
+							[FOOTER_KEYS.MODEL]:
 								state && state.model && showEngineDetails ? state.model : null,
-							Plugin: name && showEngineDetails ? name : null,
-							["Processing time"]:
+							[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
+							[FOOTER_KEYS.PROCESSING_TIME]:
 								processingTime && showEngineDetails
 									? `${processingTime}ms`
 									: null,
