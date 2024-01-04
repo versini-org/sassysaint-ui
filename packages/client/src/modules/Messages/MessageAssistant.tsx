@@ -55,22 +55,22 @@ export const MessageAssistant = ({
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<div className="flex items-start">
 				<div>
-					<Bubble kind="left">
+					<Bubble
+						kind="left"
+						footer={{
+							Model:
+								state && state.model && showEngineDetails ? state.model : null,
+							Plugin: name && showEngineDetails ? name : null,
+							["Processing time"]:
+								processingTime && showEngineDetails
+									? `${processingTime}ms`
+									: null,
+						}}
+					>
 						<ReactMarkdown remarkPlugins={[remarkGfm]}>
 							{children}
 						</ReactMarkdown>
 					</Bubble>
-					{state && state.model && showEngineDetails && (
-						<p className="pr-2 pt-1 text-end text-xs">Model: {state.model}</p>
-					)}
-					{name && showEngineDetails && (
-						<p className="pr-2 pt-1 text-end text-xs">Plugin: {name}</p>
-					)}
-					{processingTime && showEngineDetails && (
-						<p className="pr-2 pt-1 text-end text-xs">
-							Processing time: {processingTime} ms
-						</p>
-					)}
 				</div>
 
 				<div className="ml-2 mt-1 flex flex-col-reverse gap-2 sm:flex-row">
