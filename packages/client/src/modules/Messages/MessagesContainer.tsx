@@ -8,16 +8,13 @@ import {
 	ROLE_INTERNAL,
 	ROLE_USER,
 } from "../../common/constants";
-import type { MessagesContainerProps } from "../../common/types";
 import { isDev } from "../../common/utilities";
 import { MessagesContainerHeader, PromptInput, Toolbox } from "..";
 import { AppContext } from "../App/AppContext";
 
 const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
 
-export const MessagesContainer = ({
-	noHeader = false,
-}: MessagesContainerProps) => {
+export const MessagesContainer = () => {
 	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
 
 	const { isAuthenticated } = useAuth0();
@@ -65,7 +62,7 @@ export const MessagesContainer = ({
 	return (
 		<>
 			<div className={containerClass}>
-				{!noHeader && <MessagesContainerHeader />}
+				<MessagesContainerHeader />
 
 				{state &&
 					state.messages.length > 0 &&

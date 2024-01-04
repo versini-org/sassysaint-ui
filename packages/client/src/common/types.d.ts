@@ -69,10 +69,6 @@ export type AppContextProps = {
 	dispatch: React.Dispatch<ActionProps>;
 };
 
-export type MessagesContainerProps = {
-	noHeader?: boolean;
-};
-
 export type MessageAssistantProps = {
 	children?: string;
 	name?: string;
