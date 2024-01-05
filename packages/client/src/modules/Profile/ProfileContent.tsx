@@ -56,7 +56,7 @@ export const ProfileContent = ({
 	};
 
 	return (isAuthenticated && endUser) || isDev ? (
-		<div className="flex flex-col gap-2 sm:flex-row">
+		<div>
 			<Card header={CARDS.PREFERENCES.TITLE}>
 				{renderDataAsList(CARDS.PREFERENCES.TITLE, {
 					[CARDS.PREFERENCES.NAME]: endUser.name,
