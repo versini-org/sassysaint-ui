@@ -56,24 +56,22 @@ export const ProfileContent = ({
 	};
 
 	return (isAuthenticated && endUser) || isDev ? (
-		<div className="flex flex-col gap-2 sm:flex-row">
-			<Card header={CARDS.PREFERENCES.TITLE}>
-				{renderDataAsList(CARDS.PREFERENCES.TITLE, {
-					[CARDS.PREFERENCES.NAME]: endUser.name,
-					[CARDS.PREFERENCES.EMAIL]: endUser.email,
-					[CARDS.PREFERENCES.ENGINE_DETAILS]: (
-						<Toggle
-							labelHidden
-							label={CARDS.PREFERENCES.ENGINE_DETAILS}
-							name={CARDS.PREFERENCES.ENGINE_DETAILS}
-							kind="light"
-							onChange={onToggleEngineDetails}
-							checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
-						/>
-					),
-					[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
-				})}
-			</Card>
-		</div>
+		<Card header={CARDS.PREFERENCES.TITLE}>
+			{renderDataAsList(CARDS.PREFERENCES.TITLE, {
+				[CARDS.PREFERENCES.NAME]: endUser.name,
+				[CARDS.PREFERENCES.EMAIL]: endUser.email,
+				[CARDS.PREFERENCES.ENGINE_DETAILS]: (
+					<Toggle
+						labelHidden
+						label={CARDS.PREFERENCES.ENGINE_DETAILS}
+						name={CARDS.PREFERENCES.ENGINE_DETAILS}
+						kind="light"
+						onChange={onToggleEngineDetails}
+						checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
+					/>
+				),
+				[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
+			})}
+		</Card>
 	) : null;
 };

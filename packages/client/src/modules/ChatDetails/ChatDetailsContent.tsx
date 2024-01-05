@@ -142,17 +142,19 @@ export const ChatDetailsContent = ({
 	}, [history, state, user?.email]);
 
 	return isAuthenticated || isDev ? (
-		<div className="flex flex-col gap-4 sm:flex-row">
+		<>
 			{state && state.messages.length > 0 && (
-				<Card header={CARDS.CURRENT_STATISTICS.TITLE}>
-					{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
-						[CARDS.CURRENT_STATISTICS.MODEL_NAME]:
-							state?.model || DEFAULT_MODEL,
-						[CARDS.CURRENT_STATISTICS.TOKENS]: remainingTokens,
-						[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]:
-							getAverageProcessingTimePerSession(state?.messages),
-					})}
-				</Card>
+				<div className="mb-4">
+					<Card header={CARDS.CURRENT_STATISTICS.TITLE}>
+						{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
+							[CARDS.CURRENT_STATISTICS.MODEL_NAME]:
+								state?.model || DEFAULT_MODEL,
+							[CARDS.CURRENT_STATISTICS.TOKENS]: remainingTokens,
+							[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]:
+								getAverageProcessingTimePerSession(state?.messages),
+						})}
+					</Card>
+				</div>
 			)}
 
 			<Card header={CARDS.MAIN_STATISTICS.TITLE}>
@@ -161,6 +163,6 @@ export const ChatDetailsContent = ({
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: statistics.processingTime,
 				})}
 			</Card>
-		</div>
+		</>
 	) : null;
 };

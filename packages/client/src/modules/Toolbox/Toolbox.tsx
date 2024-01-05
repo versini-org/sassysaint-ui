@@ -1,17 +1,14 @@
 import { Button } from "@versini/ui-components";
-import clsx from "clsx";
 import { useContext } from "react";
 
-import { ACTION_RESET } from "../../common/constants";
+import { ACTION_RESET, ROLE_ASSISTANT } from "../../common/constants";
 import { CLEAR } from "../../common/strings";
+import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-export type ToolboxProps = {
-	className?: string;
-};
-export const Toolbox = ({ className }: ToolboxProps) => {
-	const { dispatch } = useContext(AppContext);
-	const toolboxClass = clsx(className, "flex justify-center rounded-md");
+export const Toolbox = () => {
+	const { dispatch, state } = useContext(AppContext);
+	const toolboxClass = "mt-2 flex justify-center rounded-md";
 
 	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
@@ -20,11 +17,11 @@ export const Toolbox = ({ className }: ToolboxProps) => {
 		});
 	};
 
-	return (
+	return isLastMessageFromRole(ROLE_ASSISTANT, state) ? (
 		<div className={toolboxClass}>
 			<Button noBorder slim onClick={clearChat}>
 				{CLEAR}
 			</Button>
 		</div>
-	);
+	) : null;
 };

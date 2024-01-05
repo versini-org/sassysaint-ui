@@ -25,28 +25,29 @@ export const MessageAssistant = ({
 	const storage = useLocalStorage();
 	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
 
-	return loading ? (
+	return (
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
-			<Bubble>
-				<Spinner type="dots" />
-			</Bubble>
-		</>
-	) : (
-		<>
-			<div ref={smoothScrollRef} className="h-0.5" />
-			<Bubble
-				copyToClipboard={children}
-				footer={{
-					[FOOTER_KEYS.MODEL]:
-						state && state.model && showEngineDetails ? state.model : null,
-					[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
-					[FOOTER_KEYS.PROCESSING_TIME]:
-						processingTime && showEngineDetails ? `${processingTime}ms` : null,
-				}}
-			>
-				<ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
-			</Bubble>
+			{loading ? (
+				<Bubble>
+					<Spinner type="dots" />
+				</Bubble>
+			) : (
+				<Bubble
+					copyToClipboard={children}
+					footer={{
+						[FOOTER_KEYS.MODEL]:
+							state && state.model && showEngineDetails ? state.model : null,
+						[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
+						[FOOTER_KEYS.PROCESSING_TIME]:
+							processingTime && showEngineDetails
+								? `${processingTime}ms`
+								: null,
+					}}
+				>
+					<ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+				</Bubble>
+			)}
 		</>
 	);
 };

@@ -22,8 +22,11 @@ import {
 	STATS,
 } from "../../common/strings";
 import { isDev, serviceCall } from "../../common/utilities";
-import { About, ChatDetails, History, Profile } from "..";
+import { About } from "../About/About";
 import { AppContext } from "../App/AppContext";
+import { ChatDetails } from "../ChatDetails/ChatDetails";
+import { History } from "../History/History";
+import { Profile } from "../Profile/Profile";
 
 export const MessagesContainerHeader = () => {
 	const { state } = useContext(AppContext);

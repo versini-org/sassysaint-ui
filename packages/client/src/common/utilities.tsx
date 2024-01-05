@@ -186,3 +186,14 @@ export function extractAverage<Output>({
 	);
 	return total ? formatter(total / filteredData.length) : formatter(0);
 }
+
+export const isLastMessageFromRole = (
+	role: string,
+	state?: { messages: string | any[] },
+) => {
+	return (
+		state &&
+		state.messages.length > 0 &&
+		state.messages[state.messages.length - 1].message.role === role
+	);
+};

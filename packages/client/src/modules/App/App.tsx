@@ -10,7 +10,7 @@ import {
 	isDev,
 	serviceCall,
 } from "../../common/utilities";
-import { MessagesContainer } from "..";
+import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
 
