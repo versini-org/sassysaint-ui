@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.0...client-v1.27.1) (2024-01-05)
+
+
+### Bug Fixes
+
+* replace custom copy to clipboard with Bubble's own ([95b71c2](https://github.com/aversini/sassysaint-ui/commit/95b71c29ca934eb3ae4c1ca70332d14fb965d90e))
+
 ## [1.27.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.26.6...client-v1.27.0) (2024-01-04)
 
 
