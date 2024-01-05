@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.1...client-v1.27.2) (2024-01-05)
+
+
+### Bug Fixes
+
+* minor code refactor ([90eddd6](https://github.com/aversini/sassysaint-ui/commit/90eddd68ee57c12c338b773ee51834b6464c6e5e))
+
 ## [1.27.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.0...client-v1.27.1) (2024-01-05)
 
 
