@@ -25,14 +25,10 @@ export const MessageAssistant = ({
 	const storage = useLocalStorage();
 	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
 
-	const handleCopyToClipboard = () => {
-		navigator.clipboard.writeText(children as string);
-	};
-
 	return loading ? (
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
-			<Bubble kind="left">
+			<Bubble>
 				<Spinner type="dots" />
 			</Bubble>
 		</>
@@ -40,8 +36,7 @@ export const MessageAssistant = ({
 		<>
 			<div ref={smoothScrollRef} className="h-0.5" />
 			<Bubble
-				copyToClipboard={handleCopyToClipboard}
-				kind="left"
+				copyToClipboard={children}
 				footer={{
 					[FOOTER_KEYS.MODEL]:
 						state && state.model && showEngineDetails ? state.model : null,
