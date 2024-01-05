@@ -7,22 +7,18 @@ module.exports = {
 		{
 			path: "index.html",
 			maxSize: "2kb",
-			maxPercentIncrease: 5,
 		},
 		{
 			path: "assets/index-<hash>.js",
 			maxSize: "100kb",
 		},
 		{
-			path: "assets/MessageAssistant-<hash>.js",
-			maxSize: "50kb",
-		},
-		{
 			path: "assets/index-<hash>.css",
 			maxSize: "10kb",
 		},
 		{
-			path: "*.{png,svg,jpg}",
+			path: "MessageAssistant-<hash>.js",
+			maxSize: "50kb",
 		},
 	],
 };

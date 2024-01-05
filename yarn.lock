@@ -1270,6 +1270,7 @@ __metadata:
   resolution: "@sassysaint/client@workspace:packages/client"
   dependencies:
     "@auth0/auth0-react": "npm:2.2.4"
+    "@floating-ui/react": "npm:0.26.4"
     "@versini/ui-components": "npm:4.26.0"
     autoprefixer: "npm:10.4.16"
     postcss: "npm:8.4.32"
