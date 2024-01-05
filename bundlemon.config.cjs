@@ -21,8 +21,5 @@ module.exports = {
 			path: "assets/index-<hash>.css",
 			maxSize: "10kb",
 		},
-		{
-			path: "*.{png,svg,jpg}",
-		},
 	],
 };

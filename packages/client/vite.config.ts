@@ -4,9 +4,11 @@ import { defineConfig } from "vite";
 const packageJson = fs.readJSONSync("package.json");
 const reactVersion = packageJson.dependencies.react;
 const floatingUIVersion = packageJson.dependencies["@floating-ui/react"];
+const auth0Version = packageJson.dependencies["@auth0/auth0-react"];
 
 const REACT_CHUNK = "reactChunk";
 const FLOATING_UI_CHUNK = "floatingUIChunk";
+const AUTH0_CHUNK = "auth0Chunk";
 
 const buildTime = new Date()
 	.toLocaleString("en-US", {
@@ -36,6 +38,7 @@ export default defineConfig({
 						"react-dom",
 						"react-dom/server",
 					],
+					[AUTH0_CHUNK]: ["@auth0/auth0-react"],
 					[FLOATING_UI_CHUNK]: ["@floating-ui/react"],
 				},
 				/**
@@ -55,6 +58,9 @@ export default defineConfig({
 					}
 					if (chunkInfo.name.includes(FLOATING_UI_CHUNK)) {
 						return `floating-ui-${floatingUIVersion}.js`;
+					}
+					if (chunkInfo.name.includes(AUTH0_CHUNK)) {
+						return `auth0-${auth0Version}.js`;
 					}
 					return "[name]-[hash].js";
 				},
