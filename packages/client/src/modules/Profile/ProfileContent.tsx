@@ -1,8 +1,11 @@
 import { Card, Toggle } from "@versini/ui-components";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 
-import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
-import { useLocalStorage } from "../../common/hooks";
+import {
+	LOCAL_STORAGE_CHAT_DETAILS,
+	LOCAL_STORAGE_PREFIX,
+} from "../../common/constants";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import type { GeoLocation } from "../../common/types";
 import {
@@ -23,14 +26,18 @@ export const ProfileContent = ({
 	isDev,
 	user,
 }: ProfileContentProps) => {
-	const storage = useLocalStorage();
+	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
+		defaultValue: false,
+	});
+
 	const { state } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
 
 	const onToggleEngineDetails = (checked: boolean) => {
-		storage.set(LOCAL_STORAGE_ENGINE, checked);
+		setShowEngineDetails(checked);
 	};
 
 	const renderLocation = (location?: GeoLocation) => {
@@ -67,7 +74,7 @@ export const ProfileContent = ({
 						name={CARDS.PREFERENCES.ENGINE_DETAILS}
 						kind="light"
 						onChange={onToggleEngineDetails}
-						checked={Boolean(storage.get(LOCAL_STORAGE_ENGINE))}
+						checked={showEngineDetails}
 					/>
 				),
 				[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),

@@ -1272,6 +1272,7 @@ __metadata:
     "@auth0/auth0-react": "npm:2.2.4"
     "@floating-ui/react": "npm:0.26.4"
     "@versini/ui-components": "npm:4.26.0"
+    "@versini/ui-hooks": "npm:2.1.0"
     autoprefixer: "npm:10.4.16"
     postcss: "npm:8.4.32"
     react: "npm:18.2.0"
@@ -2117,6 +2118,16 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
   checksum: eeb03b80884194d4afaa664a033204f70f315b5b19b356d45a8282d53176bdfd3dbae309a2618b403cc1552c6226602f88466d2a3a0764c42ecad3bcca973c33
+  languageName: node
+  linkType: hard
+
+"@versini/ui-hooks@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@versini/ui-hooks@npm:2.1.0"
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 72c99765e1a4f9aa0ff62c04e8155f5f5deced5382b2a3b32b4c42eda21bef4e347d8279694e4cde0eba1405349c53d607e818e954032a18552d698c1303055c
   languageName: node
   linkType: hard
 
