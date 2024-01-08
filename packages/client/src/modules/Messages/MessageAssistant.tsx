@@ -25,11 +25,10 @@ export const MessageAssistant = ({
 	processingTime,
 }: MessageAssistantProps) => {
 	const { state } = useContext(AppContext);
-	const [storage] = useLocalStorage({
+	const [showEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
 		defaultValue: false,
 	});
-	const showEngineDetails = storage || false;
 
 	return (
 		<>
