@@ -19,5 +19,4 @@ export const ACTION_RESTORE = "action-restore";
 export const ACTION_LOCATION = "action-location";
 
 export const LOCAL_STORAGE_PREFIX = "sassy-saint-";
-export const LOCAL_STORAGE_MODEL = "model";
-export const LOCAL_STORAGE_ENGINE = "engine";
+export const LOCAL_STORAGE_CHAT_DETAILS = "details";

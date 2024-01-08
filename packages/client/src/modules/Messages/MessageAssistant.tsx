@@ -1,10 +1,13 @@
 import { Bubble, Spinner } from "@versini/ui-components";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import { LOCAL_STORAGE_ENGINE } from "../../common/constants";
-import { useLocalStorage } from "../../common/hooks";
+import {
+	LOCAL_STORAGE_CHAT_DETAILS,
+	LOCAL_STORAGE_PREFIX,
+} from "../../common/constants";
 import type { MessageAssistantProps } from "../../common/types";
 import { AppContext } from "../App/AppContext";
 
@@ -22,8 +25,11 @@ export const MessageAssistant = ({
 	processingTime,
 }: MessageAssistantProps) => {
 	const { state } = useContext(AppContext);
-	const storage = useLocalStorage();
-	const showEngineDetails = storage.get(LOCAL_STORAGE_ENGINE) || false;
+	const [storage] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
+		defaultValue: false,
+	});
+	const showEngineDetails = storage || false;
 
 	return (
 		<>
