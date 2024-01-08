@@ -26,7 +26,7 @@ export const ProfileContent = ({
 	isDev,
 	user,
 }: ProfileContentProps) => {
-	const [storage, setStorage] = useLocalStorage({
+	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
 		defaultValue: false,
 	});
@@ -37,7 +37,7 @@ export const ProfileContent = ({
 		: user;
 
 	const onToggleEngineDetails = (checked: boolean) => {
-		setStorage(checked);
+		setShowEngineDetails(checked);
 	};
 
 	const renderLocation = (location?: GeoLocation) => {
@@ -74,7 +74,7 @@ export const ProfileContent = ({
 						name={CARDS.PREFERENCES.ENGINE_DETAILS}
 						kind="light"
 						onChange={onToggleEngineDetails}
-						checked={Boolean(storage)}
+						checked={showEngineDetails}
 					/>
 				),
 				[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
