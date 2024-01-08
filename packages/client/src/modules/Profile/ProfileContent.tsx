@@ -1,5 +1,4 @@
-import { Card, Toggle } from "@versini/ui-components";
-import { useLocalStorage } from "@versini/ui-hooks";
+import { Card, Toggle, useLocalStorage } from "@versini/ui-components";
 import { useContext } from "react";
 
 import {
