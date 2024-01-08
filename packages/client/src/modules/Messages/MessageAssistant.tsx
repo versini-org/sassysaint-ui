@@ -1,5 +1,4 @@
-import { Bubble, Spinner } from "@versini/ui-components";
-import { useLocalStorage } from "@versini/ui-hooks";
+import { Bubble, Spinner, useLocalStorage } from "@versini/ui-components";
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
