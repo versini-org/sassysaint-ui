@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.28.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.2...client-v1.28.0) (2024-01-10)
+
+
+### Features
+
+* using tailwind plugin to render UI css ([f96139d](https://github.com/aversini/sassysaint-ui/commit/f96139d17682cd14ead9f45eadcba3be8a7330ab))
+
+
+### Bug Fixes
+
+* bump deps and import useLocalStorage for common UI lib ([17013f3](https://github.com/aversini/sassysaint-ui/commit/17013f3b4e3febbb34d41608b488c5f28805ff5b))
+* using UI common hooks for localStorage ([aee1600](https://github.com/aversini/sassysaint-ui/commit/aee16008d38b7d0c3d7d9595db98a1e2949abec9))
+
 ## [1.27.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.1...client-v1.27.2) (2024-01-05)
 
 
