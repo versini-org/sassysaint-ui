@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.28.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.0...client-v1.28.1) (2024-01-11)
+
+
+### Bug Fixes
+
+* trying to fix localStorage hook issue ([49016cb](https://github.com/aversini/sassysaint-ui/commit/49016cb909672387ff154a05727220d785b46e38))
+
 ## [1.28.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.27.2...client-v1.28.0) (2024-01-10)
 
 
