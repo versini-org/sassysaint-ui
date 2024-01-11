@@ -1167,7 +1167,7 @@ __metadata:
   dependencies:
     "@auth0/auth0-react": "npm:2.2.4"
     "@floating-ui/react": "npm:0.26.5"
-    "@versini/ui-components": "npm:4.28.0"
+    "@versini/ui-components": "npm:4.28.1"
     autoprefixer: "npm:10.4.16"
     postcss: "npm:8.4.33"
     react: "npm:18.2.0"
@@ -1989,13 +1989,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/ui-components@npm:4.28.0":
-  version: 4.28.0
-  resolution: "@versini/ui-components@npm:4.28.0"
+"@versini/ui-components@npm:4.28.1":
+  version: 4.28.1
+  resolution: "@versini/ui-components@npm:4.28.1"
   dependencies:
     "@floating-ui/react": "npm:0.26.5"
     "@tailwindcss/typography": "npm:0.5.10"
-    "@versini/ui-hooks": "npm:2.1.0"
+    "@versini/ui-hooks": "npm:>=2.1.1"
     clsx: "npm:2.1.0"
     fast-equals: "npm:5.0.1"
     micro-memoize: "npm:4.1.2"
@@ -2003,17 +2003,17 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: ba11a27e767677d0f775522a22fe86406a8fc9fbbc16cbbbfaa34871cbde687f7972d2dcc937465a0ef186ddda73a14d3affc3dc998206ed79cc38b93f5c0577
+  checksum: 74fd3bca339b98baaf83814a8da6ab4a15e91e1ba1b6e4908a5a5c63350828ef04616622d08dee1ed5f5854018093e18e6fa7e9832d71a6a87d89441aed589b9
   languageName: node
   linkType: hard
 
-"@versini/ui-hooks@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@versini/ui-hooks@npm:2.1.0"
+"@versini/ui-hooks@npm:>=2.1.1":
+  version: 2.1.1
+  resolution: "@versini/ui-hooks@npm:2.1.1"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 72c99765e1a4f9aa0ff62c04e8155f5f5deced5382b2a3b32b4c42eda21bef4e347d8279694e4cde0eba1405349c53d607e818e954032a18552d698c1303055c
+  checksum: c11733f5b6aa56bf5ac848776adea756ac5ddbac906481134c5e659631e86acd343b65fac8eae2c1f89eafd067b8286fabf4c0a8cd7f55414e60b3fd5346b414
   languageName: node
   linkType: hard
 
