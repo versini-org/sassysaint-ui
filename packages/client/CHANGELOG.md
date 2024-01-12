@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.28.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.1...client-v1.28.2) (2024-01-12)
+
+
+### Bug Fixes
+
+* bump common types and fix ESLint warning ([8548ad8](https://github.com/aversini/sassysaint-ui/commit/8548ad85e73699fd46d7e30c420a2989b961b6cf))
+* using common ESLint rules ([5c322c8](https://github.com/aversini/sassysaint-ui/commit/5c322c8df815f13c84475cb42778b468705fa013))
+
 ## [1.28.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.0...client-v1.28.1) (2024-01-11)
 
 
