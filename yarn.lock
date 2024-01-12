@@ -1520,6 +1520,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/culori@npm:2.0.4":
+  version: 2.0.4
+  resolution: "@types/culori@npm:2.0.4"
+  checksum: fd5d22c40e33d410a4c5f2c29d6b6ee2aa7925915ad0e3c728058ac1424922a35c7f1cf4ca6e255a377506d8257c89a02a7d13d06401fec900c9517a5aaaffff
+  languageName: node
+  linkType: hard
+
 "@types/debug@npm:^4.0.0":
   version: 4.1.12
   resolution: "@types/debug@npm:4.1.12"
@@ -1972,10 +1979,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/dev-dependencies-types@npm:1.0.3":
-  version: 1.0.3
-  resolution: "@versini/dev-dependencies-types@npm:1.0.3"
+"@versini/dev-dependencies-types@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@versini/dev-dependencies-types@npm:1.1.0"
   dependencies:
+    "@types/culori": "npm:2.0.4"
     "@types/fs-extra": "npm:11.0.4"
     "@types/jest": "npm:29.5.11"
     "@types/lodash-es": "npm:4.17.12"
@@ -1985,7 +1993,7 @@ __metadata:
     "@types/react-dom": "npm:18.2.18"
     "@types/uuid": "npm:9.0.7"
     "@types/yargs": "npm:17.0.32"
-  checksum: 40e7d96bd8b0094fba72207636f8737f3e8943766d80c74510fe1a58c71c7fc2a9fc1e49a9f5c4aca24a56a70c7b857bc482d8e16d78a94897ab02050f3cd685
+  checksum: 3f8409ae9fd14ee4b5c590888f69ebf4b8e351da666a5dde963bcd601157c6e8d2c78238b34348fd4c61f3e1d0ab4ae7aca1cb533f931dab67e4d598fd8976ed
   languageName: node
   linkType: hard
 
@@ -9955,7 +9963,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@versini/dev-dependencies-client": "npm:4.1.1"
-    "@versini/dev-dependencies-types": "npm:1.0.3"
+    "@versini/dev-dependencies-types": "npm:1.1.0"
   languageName: unknown
   linkType: soft
 
