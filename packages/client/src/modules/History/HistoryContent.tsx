@@ -16,20 +16,20 @@ import { serviceCall, truncate } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {
+	historyData: any[];
 	isAuthenticated: boolean;
 	isDev: boolean;
-	user: any;
 	onOpenChange: any;
-	historyData: any[];
+	user: any;
 };
 
 const onClickRestore = async (
 	item: {
-		user: string;
 		id: number;
-		model: string;
 		messages: [];
+		model: string;
 		usage: number;
+		user: string;
 	},
 	dispatch: any,
 	onOpenChange: any,
@@ -52,7 +52,7 @@ const onClickRestore = async (
 };
 
 const onClickDelete = async (
-	item: { user: any; id: any },
+	item: { id: any; user: any },
 	setHistory: (arg0: any) => void,
 ) => {
 	try {

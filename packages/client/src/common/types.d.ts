@@ -7,72 +7,76 @@ import {
 } from "./constants";
 
 export type GeoLocation = {
+	accuracy: number;
 	latitude: number;
 	longitude: number;
-	accuracy: number;
+
 	city?: string;
-	region?: string;
-	regionShort?: string;
 	country?: string;
 	countryShort?: string;
+	region?: string;
+	regionShort?: string;
 };
 
 export type MessageProps = {
-	role?: string;
 	content?: string;
 	name?: string;
 	processingTime?: number;
+	role?: string;
 };
 
 export type StateProps = {
 	id: string;
+	messages: { message: MessageProps }[];
 	model: string;
 	usage: number;
+
 	location?: GeoLocation;
-	messages: { message: MessageProps }[];
 };
 
 export type ActionProps =
 	| undefined
 	| {
-			type: typeof ACTION_RESTORE;
 			payload: {
-				model: string;
 				id: string;
-				usage: number;
 				messages: MessageProps[];
+				model: string;
+				usage: number;
 			};
+			type: typeof ACTION_RESTORE;
 	  }
 	| {
-			type: typeof ACTION_MODEL;
 			payload: {
 				model: string;
 				usage: number;
 			};
+			type: typeof ACTION_MODEL;
 	  }
 	| {
-			type: typeof ACTION_MESSAGE;
 			payload: {
 				message: MessageProps;
 			};
+			type: typeof ACTION_MESSAGE;
 	  }
 	| { type: typeof ACTION_RESET }
 	| {
-			type: typeof ACTION_LOCATION;
 			payload: {
 				location: GeoLocation;
 			};
+			type: typeof ACTION_LOCATION;
 	  };
 
 export type AppContextProps = {
-	state?: StateProps;
 	dispatch: React.Dispatch<ActionProps>;
+
+	state?: StateProps;
 };
 
 export type MessageAssistantProps = {
+	smoothScrollRef: React.RefObject<HTMLDivElement>;
+
 	children?: string;
+	loading?: boolean;
 	name?: string;
 	processingTime?: number;
-	smoothScrollRef: React.RefObject<HTMLDivElement>;
-	loading?: boolean;
 };

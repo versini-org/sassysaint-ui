@@ -7,8 +7,8 @@ export const About = ({
 	open,
 	onOpenChange,
 }: {
-	open: boolean;
 	onOpenChange: any;
+	open: boolean;
 }) => {
 	return (
 		<Panel open={open} onOpenChange={onOpenChange} title={ABOUT_TITLE}>

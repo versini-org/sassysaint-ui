@@ -10,9 +10,9 @@ export const History = ({
 	onOpenChange,
 	historyData,
 }: {
-	open: boolean;
-	onOpenChange: any;
 	historyData: any[];
+	onOpenChange: any;
+	open: boolean;
 }) => {
 	const { isAuthenticated, user } = useAuth0();
 
