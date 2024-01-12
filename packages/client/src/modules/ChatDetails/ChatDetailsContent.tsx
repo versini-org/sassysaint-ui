@@ -17,8 +17,8 @@ import {
 import { AppContext } from "../App/AppContext";
 
 export type ChatDetailsContentProps = {
-	isAuthenticated: boolean;
 	historyData: any[];
+	isAuthenticated: boolean;
 	user: any;
 };
 

@@ -9,8 +9,8 @@ export const Profile = ({
 	open,
 	onOpenChange,
 }: {
-	open: boolean;
 	onOpenChange: any;
+	open: boolean;
 }) => {
 	const { isAuthenticated, user } = useAuth0();
 

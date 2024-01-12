@@ -23,8 +23,8 @@ import { AppContext } from "../App/AppContext";
 
 export type onPromptInputSubmitProps = {
 	message: {
-		role: string;
 		content: string;
+		role: string;
 	};
 };
 

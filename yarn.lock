@@ -1167,7 +1167,7 @@ __metadata:
   dependencies:
     "@auth0/auth0-react": "npm:2.2.4"
     "@floating-ui/react": "npm:0.26.5"
-    "@versini/ui-components": "npm:4.29.0"
+    "@versini/ui-components": "npm:4.30.0"
     autoprefixer: "npm:10.4.16"
     postcss: "npm:8.4.33"
     react: "npm:18.2.0"
@@ -1997,9 +1997,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/ui-components@npm:4.29.0":
-  version: 4.29.0
-  resolution: "@versini/ui-components@npm:4.29.0"
+"@versini/eslint-plugin-client@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@versini/eslint-plugin-client@npm:1.0.1"
+  peerDependencies:
+    eslint: ">=8"
+  checksum: 3bb41f56cf5f25cc91ea64eaee8c32643fd78078788f9e0ec19fd87e03915d7baa07a948c245b3280806db22bafc97527ab80191fc81f210afeec8cf58025774
+  languageName: node
+  linkType: hard
+
+"@versini/ui-components@npm:4.30.0":
+  version: 4.30.0
+  resolution: "@versini/ui-components@npm:4.30.0"
   dependencies:
     "@floating-ui/react": "npm:0.26.5"
     "@tailwindcss/typography": "npm:0.5.10"
@@ -2011,7 +2020,7 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 30601e51262611e28fd63231aa7af1b3af857261be3a8428a187d816ebcb4c0b9016d0a78d3a041ace8bae9a6fb68cabae96e662f86943fbfbb6bb5e2f49d5cb
+  checksum: e902addc93a7e33eb5e6b83c5a7525f0d1d4e42ebafe0381e9527114c633840990baf76b4ac04881360cfb6dc5907df1569113a0e5238394aed835618cede2f2
   languageName: node
   linkType: hard
 
@@ -9964,6 +9973,7 @@ __metadata:
   dependencies:
     "@versini/dev-dependencies-client": "npm:4.1.1"
     "@versini/dev-dependencies-types": "npm:1.1.0"
+    "@versini/eslint-plugin-client": "npm:1.0.1"
   languageName: unknown
   linkType: soft
 

@@ -14,8 +14,8 @@ export const serviceCall = async ({
 	data,
 	method = "POST",
 }: {
-	name: string;
 	data: any;
+	name: string;
 	method?: string;
 }) => {
 	const response = await fetch(
