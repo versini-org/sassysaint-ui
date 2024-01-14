@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.29.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.2...client-v1.29.0) (2024-01-14)
+
+
+### Features
+
+* moving location services from REST to GraphQL ([dc1ea6e](https://github.com/aversini/sassysaint-ui/commit/dc1ea6ea967401f430c4add7941c4c09721c61e1))
+
 ## [1.28.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.1...client-v1.28.2) (2024-01-12)
 
 
