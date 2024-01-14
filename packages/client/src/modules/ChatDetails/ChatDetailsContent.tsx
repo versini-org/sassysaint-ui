@@ -6,13 +6,13 @@ import {
 	GTP4_MAX_TOKENS,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
+import { serviceCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL, NA } from "../../common/strings";
 import type { MessageProps } from "../../common/types";
 import {
 	extractAverage,
 	isDev,
 	renderDataAsList,
-	serviceCall,
 } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
