@@ -11,8 +11,9 @@ import {
 import { useContext, useEffect, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
+import { serviceCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
-import { serviceCall, truncate } from "../../common/utilities";
+import { truncate } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
 export type HistoryContentProps = {

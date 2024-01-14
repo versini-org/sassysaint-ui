@@ -4,12 +4,9 @@ import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { ACTION_LOCATION, DEFAULT_MODEL } from "../../common/constants";
+import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
-import {
-	getCurrentGeoLocation,
-	isDev,
-	serviceCall,
-} from "../../common/utilities";
+import { getCurrentGeoLocation, isDev } from "../../common/utilities";
 import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext } from "./AppContext";
 import { reducer } from "./reducer";
@@ -71,25 +68,26 @@ function App() {
 
 		(async () => {
 			try {
-				const response = await serviceCall({
-					name: "location",
+				const response = await graphQLCall({
+					query: GRAPHQL_QUERIES.GET_LOCATION,
 					data: {
-						location: locationRef.current,
+						latitude: locationRef.current.latitude,
+						longitude: locationRef.current.longitude,
 					},
 				});
 
 				if (response.status === 200) {
-					const data = await response.json();
+					const res = await response.json();
 					dispatch({
 						type: ACTION_LOCATION,
 						payload: {
 							location: {
 								...locationRef.current,
-								city: data?.address?.City,
-								region: data?.address?.Region,
-								regionShort: data?.address?.RegionAbbr,
-								country: data?.address?.CntryName,
-								countryShort: data?.address?.CountryCode,
+								city: res?.data?.getLocationDetails?.city,
+								region: res?.data?.getLocationDetails?.region,
+								regionShort: res?.data?.getLocationDetails?.regionShort,
+								country: res?.data?.getLocationDetails?.country,
+								countryShort: res?.data?.getLocationDetails?.countryShort,
 							},
 						},
 					});

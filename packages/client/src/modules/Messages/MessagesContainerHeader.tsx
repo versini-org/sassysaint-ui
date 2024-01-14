@@ -15,13 +15,14 @@ import {
 } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
+import { serviceCall } from "../../common/services";
 import {
 	APP_MOTTO,
 	APP_NAME,
 	FAKE_USER_EMAIL,
 	STATS,
 } from "../../common/strings";
-import { isDev, serviceCall } from "../../common/utilities";
+import { isDev } from "../../common/utilities";
 import { About } from "../About/About";
 import { AppContext } from "../App/AppContext";
 import { ChatDetails } from "../ChatDetails/ChatDetails";

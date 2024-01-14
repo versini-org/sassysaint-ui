@@ -8,30 +8,6 @@ export const truncate = (str: string, length: number) => {
 	return str.length > length ? str.substring(0, length) + "..." : str;
 };
 
-/* c8 ignore start */
-export const serviceCall = async ({
-	name,
-	data,
-	method = "POST",
-}: {
-	data: any;
-	name: string;
-	method?: string;
-}) => {
-	const response = await fetch(
-		`${import.meta.env.VITE_SERVER_URL}/api/${name}`,
-		{
-			method,
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		},
-	);
-	return response;
-};
-/* c8 ignore stop */
-
 // function to convert latitude and longitude to degree minutes seconds format
 export const convertDDToDMS = (dd: number, lng: boolean) => {
 	return {

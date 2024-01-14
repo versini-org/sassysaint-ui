@@ -12,13 +12,14 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 } from "../../common/constants";
+import { serviceCall } from "../../common/services";
 import {
 	FAKE_USER_EMAIL,
 	LOG_IN,
 	SEND,
 	TYPE_QUESTION,
 } from "../../common/strings";
-import { isProd, serviceCall } from "../../common/utilities";
+import { isProd } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
 export type onPromptInputSubmitProps = {
