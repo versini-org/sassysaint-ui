@@ -13,8 +13,8 @@
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@versini/dev-dependencies-client": "4.1.1",
-		"@versini/dev-dependencies-types": "1.1.0",
+		"@versini/dev-dependencies-client": "4.1.4",
+		"@versini/dev-dependencies-types": "1.1.1",
 		"@versini/eslint-plugin-client": "1.0.1"
 	},
 	"packageManager": "yarn@4.0.2"
