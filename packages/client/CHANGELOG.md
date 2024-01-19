@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.29.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.29.0...client-v1.29.1) (2024-01-19)
+
+
+### Bug Fixes
+
+* replace bundlemon with bundlesize ([7fab022](https://github.com/aversini/sassysaint-ui/commit/7fab0226d014a8ce2178c18fe998016fa31865fe))
+
 ## [1.29.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.28.2...client-v1.29.0) (2024-01-14)
 
 
