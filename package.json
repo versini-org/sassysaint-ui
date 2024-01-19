@@ -10,12 +10,15 @@
 		"lint": "lerna run lint",
 		"lint-staged": "lint-staged --config \"./configuration/lint-staged.config.cjs\"",
 		"prepare": "husky install",
+		"stats": "node ./lib/pr-stats.mjs",
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@versini/dev-dependencies-client": "4.1.4",
-		"@versini/dev-dependencies-types": "1.1.1",
-		"@versini/eslint-plugin-client": "1.0.1"
+		"@node-cli/bundlesize": "2.1.2",
+		"@versini/dev-dependencies-client": "4.1.6",
+		"@versini/dev-dependencies-types": "1.1.2",
+		"@versini/eslint-plugin-client": "1.0.1",
+		"semver": "7.5.4"
 	},
 	"packageManager": "yarn@4.0.2"
 }
