@@ -7,6 +7,7 @@ import {
 	TableCell,
 	TableHead,
 	TableRow,
+	TextInput,
 } from "@versini/ui-components";
 import { useContext, useEffect, useState } from "react";
 
@@ -16,7 +17,7 @@ import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { truncate } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-export type HistoryContentProps = {
+type HistoryContentProps = {
 	historyData: any[];
 	isAuthenticated: boolean;
 	isDev: boolean;
@@ -24,14 +25,17 @@ export type HistoryContentProps = {
 	user: any;
 };
 
+type HistoryItemProps = {
+	id: number;
+	messages: [];
+	model: string;
+	timestamp: string;
+	usage: number;
+	user: string;
+};
+
 const onClickRestore = async (
-	item: {
-		id: number;
-		messages: [];
-		model: string;
-		usage: number;
-		user: string;
-	},
+	item: HistoryItemProps,
 	dispatch: any,
 	onOpenChange: any,
 ) => {
@@ -78,8 +82,18 @@ const extractFirstUserMessage = (messages: any[]) => {
 	return truncate(message?.content, 100);
 };
 
+function filterDataByContent(data: any, searchString: string) {
+	return data.filter((item: { messages: any[] }) =>
+		item.messages.some(
+			(message) =>
+				message.content !== null &&
+				message.content.toLowerCase().includes(searchString.toLowerCase()),
+		),
+	);
+}
+
 const renderAsTable = (
-	history: any[],
+	data: any[],
 	setHistory: any,
 	dispatch: any,
 	onOpenChange: any,
@@ -96,8 +110,8 @@ const renderAsTable = (
 				</TableRow>
 			</TableHead>
 			<TableBody>
-				{history.map((item, idx) => {
-					return (
+				{data.map((item: HistoryItemProps, idx: any) => {
+					return item?.messages?.length > 0 ? (
 						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
 							<TableCell
 								component="th"
@@ -137,7 +151,7 @@ const renderAsTable = (
 								</div>
 							</TableCell>
 						</TableRow>
-					);
+					) : null;
 				})}
 			</TableBody>
 		</Table>
@@ -152,6 +166,7 @@ export const HistoryContent = ({
 	historyData,
 }: HistoryContentProps) => {
 	const [history, setHistory] = useState<any[]>(historyData);
+	const [filteredHistory, setFilteredHistory] = useState<any[]>(historyData);
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -185,11 +200,29 @@ export const HistoryContent = ({
 		})();
 	}, [history.length, state, user?.email]);
 
+	const onSearchChange = (e: any) => {
+		const searchString = e.target.value;
+		const filteredData = filterDataByContent(history, searchString);
+		setFilteredHistory(filteredData);
+	};
+
 	return (isAuthenticated && endUser) || isDev
-		? history && (
-				<div className="flex flex-col gap-2 sm:flex-row">
-					{renderAsTable(history, setHistory, dispatch, onOpenChange)}
-				</div>
+		? filteredHistory && (
+				<>
+					<div className="text-md text-center">
+						{filteredHistory.length}{" "}
+						{`chat${filteredHistory.length === 1 ? "" : "s"}`}
+					</div>
+					<TextInput
+						name="Search"
+						label="Search"
+						onChange={onSearchChange}
+						spacing={{ t: 2, b: 2 }}
+					/>
+					<div className="flex flex-col gap-2 sm:flex-row">
+						{renderAsTable(filteredHistory, setHistory, dispatch, onOpenChange)}
+					</div>
+				</>
 			)
 		: null;
 };
