@@ -8,9 +8,9 @@ export const ERROR_MESSAGE =
 	"I'm having trouble right now. Please try again later.";
 
 export const MODEL_GPT4 = "gpt-4";
-export const GTP4_MAX_TOKENS = 128000;
+export const GPT4_MAX_TOKENS = 128000;
 export const MODEL_GPT3 = "gpt-3";
-export const GTP3_MAX_TOKENS = 128000;
+export const GPT3_MAX_TOKENS = 128000;
 
 export const DEFAULT_MODEL = MODEL_GPT3;
 

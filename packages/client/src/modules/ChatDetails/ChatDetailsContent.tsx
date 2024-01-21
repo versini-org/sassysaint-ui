@@ -3,7 +3,9 @@ import { useContext, useEffect, useState } from "react";
 
 import {
 	DEFAULT_MODEL,
-	GTP4_MAX_TOKENS,
+	GPT3_MAX_TOKENS,
+	GPT4_MAX_TOKENS,
+	MODEL_GPT4,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { serviceCall } from "../../common/services";
@@ -99,7 +101,10 @@ export const ChatDetailsContent = ({
 		total: 0,
 		processingTime: NA,
 	});
-	const remainingTokens = GTP4_MAX_TOKENS - Number(state?.usage);
+	const remainingTokens =
+		state?.model === MODEL_GPT4
+			? GPT4_MAX_TOKENS
+			: GPT3_MAX_TOKENS - Number(state?.usage);
 
 	/**
 	 * Effect to update the statistics.
