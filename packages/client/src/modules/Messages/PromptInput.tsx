@@ -1,11 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, TextArea } from "@versini/ui-components";
+import { Button, TextArea, useLocalStorage } from "@versini/ui-components";
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ERROR_MESSAGE,
+	LOCAL_STORAGE_MODEL,
+	LOCAL_STORAGE_PREFIX,
+	MODEL_GPT3,
+	MODEL_GPT4,
 	ROLE_ASSISTANT,
 	ROLE_HIDDEN,
 	ROLE_INTERNAL,
@@ -38,6 +42,10 @@ export const PromptInput = () => {
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+	const [isModel4] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
+		defaultValue: false,
+	});
 
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 
@@ -64,7 +72,7 @@ export const PromptInput = () => {
 					name: "generate",
 					data: {
 						messages: state.messages,
-						model: state.model,
+						model: isModel4 ? MODEL_GPT4 : MODEL_GPT3,
 						user: user?.email || FAKE_USER_EMAIL,
 						id: state.id,
 						location: state.location,

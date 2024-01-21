@@ -1,9 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Main } from "@versini/ui-components";
+import { Footer, Main, useLocalStorage } from "@versini/ui-components";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { ACTION_LOCATION, DEFAULT_MODEL } from "../../common/constants";
+import {
+	ACTION_LOCATION,
+	DEFAULT_MODEL,
+	LOCAL_STORAGE_MODEL,
+	LOCAL_STORAGE_PREFIX,
+	MODEL_GPT4,
+} from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import { getCurrentGeoLocation, isDev } from "../../common/utilities";
@@ -13,7 +19,10 @@ import { reducer } from "./reducer";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
-	const model = DEFAULT_MODEL;
+	const [isModel4] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
+		defaultValue: false,
+	});
 
 	const locationRef = useRef({
 		latitude: 0,
@@ -22,7 +31,7 @@ function App() {
 	});
 	const [state, dispatch] = useReducer(reducer, {
 		id: uuidv4(),
-		model,
+		model: isModel4 ? MODEL_GPT4 : DEFAULT_MODEL,
 		usage: 0,
 		messages: [],
 	});
