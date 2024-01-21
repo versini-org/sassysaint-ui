@@ -22,4 +22,4 @@ export const ACTION_LOCATION = "action-location";
 
 export const LOCAL_STORAGE_PREFIX = "sassy-saint-";
 export const LOCAL_STORAGE_CHAT_DETAILS = "details";
-export const LOCAL_STORAGE_MODEL = "gpt4";
+export const LOCAL_STORAGE_MODEL = "use-gpt4";
