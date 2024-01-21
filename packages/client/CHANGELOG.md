@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.30.0...client-v1.31.0) (2024-01-21)
+
+
+### Features
+
+* adding filtering option to chat history ([e4975b3](https://github.com/aversini/sassysaint-ui/commit/e4975b34370ee114ff74726bea7bdd346a4aeaed))
+
 ## [1.30.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.29.1...client-v1.30.0) (2024-01-21)
 
 
