@@ -21,6 +21,7 @@ export const CARDS = {
 		EMAIL: "Email",
 		ENGINE_DETAILS: "Show message statistics",
 		LOCATION: "Current location",
+		MODEL_TYPE: "Use GPT model 4",
 	},
 	CURRENT_STATISTICS: {
 		TITLE: "Current chat statistics",
