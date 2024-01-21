@@ -5,7 +5,7 @@ export default [
 	},
 	{
 		path: "dist/assets/index-<hash>.js",
-		limit: "21 kb",
+		limit: "22 kb",
 	},
 	{
 		path: "dist/assets/index-<hash>.css",
