@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.30.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.29.1...client-v1.30.0) (2024-01-21)
+
+
+### Features
+
+* use GPT3 by default and allow override in profile for GPT4 ([c421821](https://github.com/aversini/sassysaint-ui/commit/c421821ec3c93f0e323afc5a71d363f3e3e49a2d))
+
 ## [1.29.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.29.0...client-v1.29.1) (2024-01-19)
 
 
