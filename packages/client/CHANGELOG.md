@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.3...client-v1.31.4) (2024-01-22)
+
+
+### Bug Fixes
+
+* using simple TextInput to filter history and fix sync on delete ([b072354](https://github.com/aversini/sassysaint-ui/commit/b0723545cfa36b725041a826c49eb8e312861573))
+
 ## [1.31.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.2...client-v1.31.3) (2024-01-22)
 
 
