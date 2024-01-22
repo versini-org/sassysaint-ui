@@ -120,7 +120,7 @@ const renderAsTable = (
 							>
 								{item.timestamp}
 							</TableCell>
-							<TableCell className="text-white">
+							<TableCell className="max-w-[100px] text-white sm:max-w-full">
 								{extractFirstUserMessage(item.messages)}
 							</TableCell>
 
