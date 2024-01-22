@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.2...client-v1.31.3) (2024-01-22)
+
+
+### Bug Fixes
+
+* adding comments ([a8e683a](https://github.com/aversini/sassysaint-ui/commit/a8e683a32ca8ec7cd844bba708728fd17e973362))
+
 ## [1.31.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.1...client-v1.31.2) (2024-01-22)
 
 
