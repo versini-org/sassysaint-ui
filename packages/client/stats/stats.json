@@ -202,7 +202,7 @@
     },
     "dist/MessageAssistant-<hash>.js": {
       "fileSize": 153990,
-      "fileSizeGzip": 46654,
+      "fileSizeGzip": 46652,
       "limit": "50 kb",
       "passed": true
     }
