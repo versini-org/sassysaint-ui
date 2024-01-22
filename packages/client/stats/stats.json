@@ -164,7 +164,7 @@
     },
     "dist/assets/index-<hash>.js": {
       "fileSize": 65433,
-      "fileSizeGzip": 21651,
+      "fileSizeGzip": 21652,
       "limit": "22 kb",
       "passed": true
     },
@@ -176,7 +176,7 @@
     },
     "dist/MessageAssistant-<hash>.js": {
       "fileSize": 153990,
-      "fileSizeGzip": 46652,
+      "fileSizeGzip": 46653,
       "limit": "50 kb",
       "passed": true
     }
