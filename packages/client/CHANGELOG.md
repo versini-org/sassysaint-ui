@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.1...client-v1.31.2) (2024-01-22)
+
+
+### Bug Fixes
+
+* history table is too wide in some cases on small devices ([5d2ff55](https://github.com/aversini/sassysaint-ui/commit/5d2ff558cb15bdbc1ead92d016850e6c22ad40cd))
+
 ## [1.31.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.0...client-v1.31.1) (2024-01-22)
 
 
