@@ -21,7 +21,7 @@
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
 		"@floating-ui/react": "0.26.6",
-		"@versini/ui-components": "4.30.2",
+		"@versini/ui-components": "4.31.0",
 		"autoprefixer": "10.4.17",
 		"postcss": "8.4.33",
 		"react": "18.2.0",

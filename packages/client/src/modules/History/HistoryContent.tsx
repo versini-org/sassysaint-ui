@@ -99,7 +99,7 @@ const renderAsTable = (
 	onOpenChange: any,
 ) => {
 	return (
-		<Table stickyHeader maxHeight="75vh">
+		<Table stickyHeader wrapperClassName="max-h-[60vh]">
 			<TableHead>
 				<TableRow>
 					<TableCell className="uppercase text-white">Date</TableCell>
