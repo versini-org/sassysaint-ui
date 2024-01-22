@@ -102,5 +102,31 @@
       "limit": "50 kb",
       "passed": true
     }
+  },
+  "1.31.1": {
+    "dist/index.html": {
+      "fileSize": 9466,
+      "fileSizeGzip": 1840,
+      "limit": "2 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.js": {
+      "fileSize": 65405,
+      "fileSizeGzip": 21641,
+      "limit": "22 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.css": {
+      "fileSize": 45874,
+      "fileSizeGzip": 7667,
+      "limit": "10 kb",
+      "passed": true
+    },
+    "dist/MessageAssistant-<hash>.js": {
+      "fileSize": 153990,
+      "fileSizeGzip": 46652,
+      "limit": "50 kb",
+      "passed": true
+    }
   }
 }
