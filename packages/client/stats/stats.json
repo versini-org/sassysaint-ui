@@ -184,13 +184,13 @@
   "1.31.4": {
     "dist/index.html": {
       "fileSize": 9466,
-      "fileSizeGzip": 1840,
+      "fileSizeGzip": 1838,
       "limit": "2 kb",
       "passed": true
     },
     "dist/assets/index-<hash>.js": {
       "fileSize": 65793,
-      "fileSizeGzip": 21816,
+      "fileSizeGzip": 21817,
       "limit": "22 kb",
       "passed": true
     },
