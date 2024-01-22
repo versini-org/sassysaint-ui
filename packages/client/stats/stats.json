@@ -184,13 +184,13 @@
   "1.31.4": {
     "dist/index.html": {
       "fileSize": 9466,
-      "fileSizeGzip": 1838,
+      "fileSizeGzip": 1842,
       "limit": "2 kb",
       "passed": true
     },
     "dist/assets/index-<hash>.js": {
       "fileSize": 65793,
-      "fileSizeGzip": 21817,
+      "fileSizeGzip": 21818,
       "limit": "22 kb",
       "passed": true
     },
@@ -202,7 +202,7 @@
     },
     "dist/MessageAssistant-<hash>.js": {
       "fileSize": 153990,
-      "fileSizeGzip": 46652,
+      "fileSizeGzip": 46653,
       "limit": "50 kb",
       "passed": true
     }
