@@ -1485,7 +1485,7 @@ __metadata:
   dependencies:
     "@auth0/auth0-react": "npm:2.2.4"
     "@floating-ui/react": "npm:0.26.6"
-    "@versini/ui-components": "npm:4.31.0"
+    "@versini/ui-components": "npm:4.32.0"
     autoprefixer: "npm:10.4.17"
     postcss: "npm:8.4.33"
     react: "npm:18.2.0"
@@ -2523,9 +2523,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/ui-components@npm:4.31.0":
-  version: 4.31.0
-  resolution: "@versini/ui-components@npm:4.31.0"
+"@versini/ui-components@npm:4.32.0":
+  version: 4.32.0
+  resolution: "@versini/ui-components@npm:4.32.0"
   dependencies:
     "@floating-ui/react": "npm:0.26.6"
     "@tailwindcss/typography": "npm:0.5.10"
@@ -2537,7 +2537,7 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 4810c87a017e9fe98870b3f5116bdabcd490d8d5a07707c3bd13e3513a7587cf1a52c5390dc48f8598cd5c2d6f568b7ea3680321f4c93aa0687e8251a862593b
+  checksum: 8a8252b7c9a09a81a32c825ae72d597519eae48c5243a16c251a3db59a0b0639223363c4686ee66ef3a171928621e9a5ddfc575b70be8cef50bf33ce85424ee8
   languageName: node
   linkType: hard
 
