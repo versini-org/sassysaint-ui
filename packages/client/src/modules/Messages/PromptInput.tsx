@@ -124,9 +124,24 @@ export const PromptInput = () => {
 				});
 			}
 		})();
+		/**
+		 * The dependency array is limited to state.messages because
+		 * we only want to call the OpenAI API when a new message
+		 * is added to the state.
+		 * All other dependencies such as dispatch, isModel4, state,
+		 * and user.email should be ignored -> if they change, we do
+		 * not want to call the OpenAI API again.
+		 */
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state?.messages]);
 
+	/**
+	 * On submit, we dispatch the message to the state. The state
+	 * is keeping track of the whole conversation and must be
+	 * used to generate the next response. That's why the call
+	 * to OpenAI can only be done after the message is dispatched,
+	 * in the useEffect hook above.
+	 */
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		dispatch({
