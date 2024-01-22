@@ -9,7 +9,7 @@ import {
 	TableRow,
 	TextInput,
 } from "@versini/ui-components";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { serviceCall } from "../../common/services";
@@ -58,7 +58,8 @@ const onClickRestore = async (
 
 const onClickDelete = async (
 	item: { id: any; user: any },
-	setHistory: (arg0: any) => void,
+	setFilteredHistory: (arg0: any) => void,
+	inputRef: any,
 ) => {
 	try {
 		const response = await serviceCall({
@@ -70,7 +71,10 @@ const onClickDelete = async (
 		});
 		if (response.status === 200) {
 			const data = await response.json();
-			setHistory(data);
+			setFilteredHistory({ data });
+			if (inputRef?.current) {
+				inputRef.current.value = "";
+			}
 		}
 	} catch (error) {
 		// nothing to declare officer
@@ -93,11 +97,13 @@ function filterDataByContent(data: any, searchString: string) {
 }
 
 const renderAsTable = (
-	data: any[],
-	setHistory: any,
+	filteredHistory: any,
+	setFilteredHistory: any,
 	dispatch: any,
 	onOpenChange: any,
+	inputRef: any,
 ) => {
+	const data = filteredHistory.data;
 	return (
 		<Table stickyHeader wrapperClassName="max-h-[60vh]">
 			<TableHead>
@@ -141,7 +147,7 @@ const renderAsTable = (
 										label="Delete chat"
 										kind="light"
 										onClick={() => {
-											onClickDelete(item, setHistory);
+											onClickDelete(item, setFilteredHistory, inputRef);
 										}}
 									>
 										<div className="text-red-400">
@@ -165,8 +171,14 @@ export const HistoryContent = ({
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
-	const [history, setHistory] = useState<any[]>(historyData);
-	const [filteredHistory, setFilteredHistory] = useState<any[]>(historyData);
+	const [filteredHistory, setFilteredHistory] = useState<{
+		data: any[];
+		searchString: string;
+	}>({
+		data: historyData,
+		searchString: "",
+	});
+	const inputRef = useRef<HTMLInputElement>(null);
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -192,35 +204,46 @@ export const HistoryContent = ({
 
 				if (response.status === 200) {
 					const data = await response.json();
-					setHistory(data.messages);
+					setFilteredHistory({
+						data: data.messages,
+						searchString: filteredHistory.searchString,
+					});
 				}
 			} catch (error) {
 				// nothing to declare officer
 			}
 		})();
-	}, [history.length, state, user?.email]);
+	}, [filteredHistory.searchString, state, user?.email]);
 
 	const onSearchChange = (e: any) => {
 		const searchString = e.target.value;
-		const filteredData = filterDataByContent(history, searchString);
-		setFilteredHistory(filteredData);
+		const filteredData = filterDataByContent(historyData, searchString);
+		setFilteredHistory({ searchString, data: filteredData });
 	};
 
 	return (isAuthenticated && endUser) || isDev
-		? filteredHistory && (
+		? filteredHistory && filteredHistory.data && (
 				<>
 					<div className="text-md text-center">
-						{filteredHistory.length}{" "}
-						{`chat${filteredHistory.length === 1 ? "" : "s"}`}
+						{filteredHistory.data.length}{" "}
+						{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
 					</div>
 					<TextInput
+						ref={inputRef}
+						simple
 						name="Search"
 						label="Search"
 						onChange={onSearchChange}
 						spacing={{ t: 2, b: 2 }}
 					/>
 					<div className="flex flex-col gap-2 sm:flex-row">
-						{renderAsTable(filteredHistory, setHistory, dispatch, onOpenChange)}
+						{renderAsTable(
+							filteredHistory,
+							setFilteredHistory,
+							dispatch,
+							onOpenChange,
+							inputRef,
+						)}
 					</div>
 				</>
 			)
