@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.4...client-v1.31.5) (2024-01-24)
+
+
+### Bug Fixes
+
+* bump to recent bundle size and update configuration ([e1ed5ba](https://github.com/aversini/sassysaint-ui/commit/e1ed5ba017d83a2c89fc01d83fbc670062f318f7))
+
 ## [1.31.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.3...client-v1.31.4) (2024-01-22)
 
 
