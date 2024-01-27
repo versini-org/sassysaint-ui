@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.5...client-v1.32.0) (2024-01-27)
+
+
+### Features
+
+* converting most REST API to GraphQL ([fea5a34](https://github.com/aversini/sassysaint-ui/commit/fea5a348d83a311880d8a70da3b67c59f8f392f5))
+
 ## [1.31.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.4...client-v1.31.5) (2024-01-24)
 
 
