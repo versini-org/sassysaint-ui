@@ -226,7 +226,7 @@ export const HistoryContent = ({
 						{filteredHistory.data.length}{" "}
 						{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
 					</div>
-					<form autoComplete="off" role="search" onSubmit={onSubmit}>
+					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
 							ref={inputRef}
 							simple
