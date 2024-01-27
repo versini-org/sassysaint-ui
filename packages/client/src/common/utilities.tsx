@@ -173,3 +173,10 @@ export const isLastMessageFromRole = (
 		state.messages[state.messages.length - 1].message.role === role
 	);
 };
+
+export const numberFormatter = new Intl.NumberFormat("en", {
+	style: "decimal",
+	signDisplay: "never",
+	minimumFractionDigits: 0,
+	maximumFractionDigits: 0,
+});
