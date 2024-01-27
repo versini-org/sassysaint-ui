@@ -215,6 +215,10 @@ export const HistoryContent = ({
 		setFilteredHistory({ searchString, data: filteredData });
 	};
 
+	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+	};
+
 	return (isAuthenticated && endUser) || isDev
 		? filteredHistory && filteredHistory.data && (
 				<>
@@ -222,14 +226,16 @@ export const HistoryContent = ({
 						{filteredHistory.data.length}{" "}
 						{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
 					</div>
-					<TextInput
-						ref={inputRef}
-						simple
-						name="Search"
-						label="Search"
-						onChange={onSearchChange}
-						spacing={{ t: 2, b: 2 }}
-					/>
+					<form autoComplete="off" onSubmit={onSubmit}>
+						<TextInput
+							ref={inputRef}
+							simple
+							name="Search"
+							label="Search"
+							onChange={onSearchChange}
+							spacing={{ t: 2, b: 2 }}
+						/>
+					</form>
 					<div className="flex flex-col gap-2 sm:flex-row">
 						{renderAsTable(
 							filteredHistory,
