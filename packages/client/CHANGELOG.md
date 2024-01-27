@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.0...client-v1.32.1) (2024-01-27)
+
+
+### Bug Fixes
+
+* trying to fix the safari prompt for keychain access on search ([f291f4e](https://github.com/aversini/sassysaint-ui/commit/f291f4e00b7b26420fec74ae4adfbc3634be5c74))
+
 ## [1.32.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.31.5...client-v1.32.0) (2024-01-27)
 
 
