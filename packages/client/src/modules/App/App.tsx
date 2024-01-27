@@ -92,11 +92,11 @@ function App() {
 						payload: {
 							location: {
 								...locationRef.current,
-								city: res?.data?.getLocationDetails?.city,
-								region: res?.data?.getLocationDetails?.region,
-								regionShort: res?.data?.getLocationDetails?.regionShort,
-								country: res?.data?.getLocationDetails?.country,
-								countryShort: res?.data?.getLocationDetails?.countryShort,
+								city: res?.data?.location?.city,
+								region: res?.data?.location?.region,
+								regionShort: res?.data?.location?.regionShort,
+								country: res?.data?.location?.country,
+								countryShort: res?.data?.location?.countryShort,
 							},
 						},
 					});

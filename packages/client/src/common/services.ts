@@ -1,6 +1,6 @@
 export const GRAPHQL_QUERIES = {
 	GET_LOCATION: `query GetLocation($latitude: Float!, $longitude: Float!) {
-    getLocationDetails(latitude: $latitude, longitude: $longitude) {
+    location(latitude: $latitude, longitude: $longitude) {
       city
       region
       regionShort
@@ -8,6 +8,42 @@ export const GRAPHQL_QUERIES = {
       countryShort
     }
   }`,
+	GET_CHATS: `query GetChats($userId: String!) {
+		chats(user: $userId) {
+			timestamp
+			id
+			messages {
+				content
+			}
+		}
+	}`,
+	GET_CHATS_STATS: `query GetChatsStats($userId: String!) {
+		chatsStats(user: $userId) {
+			totalChats
+			averageProcessingTimes
+		}
+	}`,
+	GET_CHAT: `query GetChatById($id: String!) {
+		chatById(id: $id) {
+			model
+			usage
+			messages {
+				content
+				role
+				name
+				processingTime
+			}
+		}
+	}`,
+	DELETE_CHAT: `mutation DeleteChat($id: String!, $userId: String!) {
+		deleteChat(id: $id, user: $userId) {
+			timestamp
+			id
+			messages {
+				content
+			}
+		}
+	}`,
 };
 
 /* c8 ignore start */

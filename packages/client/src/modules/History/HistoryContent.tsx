@@ -9,10 +9,10 @@ import {
 	TableRow,
 	TextInput,
 } from "@versini/ui-components";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
-import { serviceCall } from "../../common/services";
+import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { truncate } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
@@ -39,39 +39,55 @@ const onClickRestore = async (
 	dispatch: any,
 	onOpenChange: any,
 ) => {
-	dispatch({
-		type: ACTION_RESET,
-	});
+	try {
+		const response = await graphQLCall({
+			query: GRAPHQL_QUERIES.GET_CHAT,
+			data: {
+				id: item.id,
+			},
+		});
 
-	dispatch({
-		type: ACTION_RESTORE,
-		payload: {
-			id: item.id,
-			model: item.model,
-			usage: item.usage,
-			messages: item.messages,
-		},
-	});
-	// close the panel
-	onOpenChange(false);
+		if (response.status === 200) {
+			const data = await response.json();
+			dispatch({
+				type: ACTION_RESET,
+			});
+			dispatch({
+				type: ACTION_RESTORE,
+				payload: {
+					id: item.id,
+					model: data.data.chatById.model,
+					usage: data.data.chatById.usage,
+					messages: data.data.chatById.messages,
+				},
+			});
+			// close the panel
+			onOpenChange(false);
+		}
+	} catch (error) {
+		// nothing to declare officer
+	}
 };
 
 const onClickDelete = async (
-	item: { id: any; user: any },
+	item: { id: any },
 	setFilteredHistory: (arg0: any) => void,
+	setFullHistory: (arg0: any) => void,
 	inputRef: any,
+	endUser: any,
 ) => {
 	try {
-		const response = await serviceCall({
-			name: "delete",
+		const response = await graphQLCall({
+			query: GRAPHQL_QUERIES.DELETE_CHAT,
 			data: {
-				user: item?.user,
+				userId: endUser?.email || FAKE_USER_EMAIL,
 				id: item?.id,
 			},
 		});
 		if (response.status === 200) {
 			const data = await response.json();
-			setFilteredHistory({ data });
+			setFullHistory(data.data.deleteChat);
+			setFilteredHistory({ data: data.data.deleteChat, searchString: "" });
 			if (inputRef?.current) {
 				inputRef.current.value = "";
 			}
@@ -82,7 +98,7 @@ const onClickDelete = async (
 };
 
 const extractFirstUserMessage = (messages: any[]) => {
-	const message = messages.find((item) => item.role === "user");
+	const message = messages[0];
 	return truncate(message?.content, 100);
 };
 
@@ -99,9 +115,11 @@ function filterDataByContent(data: any, searchString: string) {
 const renderAsTable = (
 	filteredHistory: any,
 	setFilteredHistory: any,
+	setFullHistory: any,
 	dispatch: any,
 	onOpenChange: any,
 	inputRef: any,
+	endUser: any,
 ) => {
 	const data = filteredHistory.data;
 	return (
@@ -147,7 +165,13 @@ const renderAsTable = (
 										label="Delete chat"
 										kind="light"
 										onClick={() => {
-											onClickDelete(item, setFilteredHistory, inputRef);
+											onClickDelete(
+												item,
+												setFilteredHistory,
+												setFullHistory,
+												inputRef,
+												endUser,
+											);
 										}}
 									>
 										<div className="text-red-400">
@@ -171,53 +195,23 @@ export const HistoryContent = ({
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
+	const [fullHistory, setFullHistory] = useState<any[]>(historyData);
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
 		searchString: string;
 	}>({
-		data: historyData,
+		data: fullHistory,
 		searchString: "",
 	});
 	const inputRef = useRef<HTMLInputElement>(null);
-	const { state, dispatch } = useContext(AppContext);
+	const { dispatch } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
 
-	useEffect(() => {
-		(async () => {
-			// we already have the data or there is no state
-			if (!state || history.length > 0) {
-				return;
-			}
-
-			try {
-				const response = await serviceCall({
-					name: "chats",
-					data: {
-						messages: state.messages,
-						model: state.model,
-						user: user?.email || FAKE_USER_EMAIL,
-						id: state.id,
-					},
-				});
-
-				if (response.status === 200) {
-					const data = await response.json();
-					setFilteredHistory({
-						data: data.messages,
-						searchString: filteredHistory.searchString,
-					});
-				}
-			} catch (error) {
-				// nothing to declare officer
-			}
-		})();
-	}, [filteredHistory.searchString, state, user?.email]);
-
 	const onSearchChange = (e: any) => {
 		const searchString = e.target.value;
-		const filteredData = filterDataByContent(historyData, searchString);
+		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({ searchString, data: filteredData });
 	};
 
@@ -240,9 +234,11 @@ export const HistoryContent = ({
 						{renderAsTable(
 							filteredHistory,
 							setFilteredHistory,
+							setFullHistory,
 							dispatch,
 							onOpenChange,
 							inputRef,
+							endUser,
 						)}
 					</div>
 				</>

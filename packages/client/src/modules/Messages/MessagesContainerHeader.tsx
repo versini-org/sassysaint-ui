@@ -15,7 +15,7 @@ import {
 } from "@versini/ui-components";
 import { useContext, useState } from "react";
 
-import { serviceCall } from "../../common/services";
+import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import {
 	APP_MOTTO,
 	APP_NAME,
@@ -96,19 +96,16 @@ export const MessagesContainerHeader = () => {
 		});
 
 		try {
-			const response = await serviceCall({
-				name: "chats",
+			const response = await graphQLCall({
+				query: GRAPHQL_QUERIES.GET_CHATS,
 				data: {
-					messages: state.messages,
-					model: state.model,
-					user: user?.email || FAKE_USER_EMAIL,
-					id: state.id,
+					userId: user?.email || FAKE_USER_EMAIL,
 				},
 			});
 
 			if (response.status === 200) {
 				const data = await response.json();
-				setHistoryData(data.messages);
+				setHistoryData(data.data.chats);
 				setFetchingHistory({
 					done: true,
 					progress: false,
@@ -124,6 +121,7 @@ export const MessagesContainerHeader = () => {
 			// nothing to declare officer
 		}
 	};
+
 	const onClickConfirmLogout = () => {
 		setShowConfirmation(!showConfirmation);
 	};
@@ -157,7 +155,6 @@ export const MessagesContainerHeader = () => {
 					<ChatDetails
 						open={showChatDetails}
 						onOpenChange={setShowChatDetails}
-						historyData={historyData}
 					/>
 					<History
 						open={showHistory}
