@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.1...client-v1.32.2) (2024-01-28)
+
+
+### Bug Fixes
+
+* adding missing dependencies to bundle size reports ([98d4e68](https://github.com/aversini/sassysaint-ui/commit/98d4e68c9d69b2d085b97e6adc1d63832c5100e0))
+
 ## [1.32.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.0...client-v1.32.1) (2024-01-27)
 
 
