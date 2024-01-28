@@ -20,5 +20,17 @@ export default {
 			path: "dist/MessageAssistant-<hash>.js",
 			limit: "50 kb",
 		},
+		{
+			path: "dist/auth0-<semver>.js",
+			limit: "16 kb",
+		},
+		{
+			path: "dist/floating-ui-<semver>.js",
+			limit: "21 kb",
+		},
+		{
+			path: "dist/react-<semver>.js",
+			limit: "46 kb",
+		},
 	],
 };
