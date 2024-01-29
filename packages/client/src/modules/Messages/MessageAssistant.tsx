@@ -8,6 +8,7 @@ import {
 	LOCAL_STORAGE_PREFIX,
 } from "../../common/constants";
 import type { MessageAssistantProps } from "../../common/types";
+import { durationFormatter } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
 const FOOTER_KEYS = {
@@ -45,7 +46,7 @@ export const MessageAssistant = ({
 						[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
 						[FOOTER_KEYS.PROCESSING_TIME]:
 							processingTime && showEngineDetails
-								? `${processingTime}ms`
+								? durationFormatter({ value: processingTime, unit: "ms" })
 								: null,
 					}}
 				>
