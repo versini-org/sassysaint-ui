@@ -345,6 +345,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@floating-ui/core@npm:1.6.0"
+  dependencies:
+    "@floating-ui/utils": "npm:^0.2.1"
+  checksum: 667a68036f7dd5ed19442c7792a6002ca02d1799221c4396691bbe0b6008b48f6ccad581225e81fa266bb91232f6c66838a5f825f554217e1ec886178b93381b
+  languageName: node
+  linkType: hard
+
 "@floating-ui/dom@npm:^1.5.4":
   version: 1.5.4
   resolution: "@floating-ui/dom@npm:1.5.4"
@@ -352,6 +361,16 @@ __metadata:
     "@floating-ui/core": "npm:^1.5.3"
     "@floating-ui/utils": "npm:^0.2.0"
   checksum: 8a47ac5b8cf90214d73011d436d66821ccb7f4b9a29170e23117df2cc6008845834db7f59e73d998add19807f62f09e5e6a84516eed81cebbf25770dea595a84
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "@floating-ui/dom@npm:1.6.1"
+  dependencies:
+    "@floating-ui/core": "npm:^1.6.0"
+    "@floating-ui/utils": "npm:^0.2.1"
+  checksum: f810ab62280e86f5f9199cf7f6123b1dd2a7b44b3b273caa7d3a23cf70ad12c3fb689053e6d3db7acf4f724dbd6d43693e2fc538e5d30d805dcabb9647f8f494
   languageName: node
   linkType: hard
 
@@ -367,6 +386,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/react-dom@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@floating-ui/react-dom@npm:2.0.8"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.6.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 4d87451e2dcc54b4753a0d81181036e47821cfd0d4c23f7e9c31590c7c91fb15fb0a5a458969a5ddabd61601eca5875ebd4e40bff37cee31f373b8f1ccc64518
+  languageName: node
+  linkType: hard
+
 "@floating-ui/react@npm:0.26.6":
   version: 0.26.6
   resolution: "@floating-ui/react@npm:0.26.6"
@@ -378,6 +409,20 @@ __metadata:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   checksum: 078503673e84c459d658d415ef6e8bf9cf4fbfbd9ea17279b66e0d965eab9afc28edae23fae56f37c2dd2dd452b0d2f286e602da7b23a61f6d5ddc429afa8d43
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:0.26.8":
+  version: 0.26.8
+  resolution: "@floating-ui/react@npm:0.26.8"
+  dependencies:
+    "@floating-ui/react-dom": "npm:^2.0.8"
+    "@floating-ui/utils": "npm:^0.2.1"
+    tabbable: "npm:^6.0.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: e0c03a4b2d8047abae6e1e81d5cd4129dca05cde5db660d97c801785e92feb570cfdfd2ac5f54a853f87da98c1bdc85b2b0eac9b6039f9d739513738045464c8
   languageName: node
   linkType: hard
 
@@ -1473,8 +1518,8 @@ __metadata:
   resolution: "@sassysaint/client@workspace:packages/client"
   dependencies:
     "@auth0/auth0-react": "npm:2.2.4"
-    "@floating-ui/react": "npm:0.26.6"
-    "@versini/ui-components": "npm:4.32.0"
+    "@floating-ui/react": "npm:0.26.8"
+    "@versini/ui-components": "npm:4.32.2"
     autoprefixer: "npm:10.4.17"
     postcss: "npm:8.4.33"
     react: "npm:18.2.0"
@@ -2515,9 +2560,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@versini/ui-components@npm:4.32.0":
-  version: 4.32.0
-  resolution: "@versini/ui-components@npm:4.32.0"
+"@versini/ui-components@npm:4.32.2":
+  version: 4.32.2
+  resolution: "@versini/ui-components@npm:4.32.2"
   dependencies:
     "@floating-ui/react": "npm:0.26.6"
     "@tailwindcss/typography": "npm:0.5.10"
@@ -2529,7 +2574,7 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 8a8252b7c9a09a81a32c825ae72d597519eae48c5243a16c251a3db59a0b0639223363c4686ee66ef3a171928621e9a5ddfc575b70be8cef50bf33ce85424ee8
+  checksum: d82baa22698165a827d4544d898e3d43754d7046025082e3a6ef242e45f98b6674b323a36d8f6c4b013ac14a0e6215b402731863237b2f7a1960f4734e56d5fc
   languageName: node
   linkType: hard
 
