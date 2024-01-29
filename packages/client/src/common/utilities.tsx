@@ -180,3 +180,13 @@ export const numberFormatter = new Intl.NumberFormat("en", {
 	minimumFractionDigits: 0,
 	maximumFractionDigits: 0,
 });
+
+export const durationFormatter = ({
+	value,
+	unit,
+}: {
+	value: number;
+	unit?: string;
+}) => {
+	return `${numberFormatter.format(value)} ${unit}`.trim();
+};

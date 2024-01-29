@@ -11,6 +11,7 @@ import {
 import { CARDS, NA } from "../../common/strings";
 import type { MessageProps } from "../../common/types";
 import {
+	durationFormatter,
 	extractAverage,
 	isDev,
 	numberFormatter,
@@ -28,7 +29,7 @@ export type ChatDetailsContentProps = {
 };
 
 const averageProcessingTimeFormatter = (value: number) =>
-	`${numberFormatter.format(value)} ms`;
+	durationFormatter({ value });
 
 const getAverageProcessingTimePerSession = (
 	chatSession?: { message: MessageProps }[],
@@ -81,8 +82,9 @@ export const ChatDetailsContent = ({
 			<Card header={CARDS.MAIN_STATISTICS.TITLE}>
 				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
 					[CARDS.MAIN_STATISTICS.TOTAL]: stats.totalChats,
-					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]:
-						`${numberFormatter.format(stats.averageProcessingTimes)} ms`,
+					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter({
+						value: stats.averageProcessingTimes,
+					}),
 				})}
 			</Card>
 		</>
