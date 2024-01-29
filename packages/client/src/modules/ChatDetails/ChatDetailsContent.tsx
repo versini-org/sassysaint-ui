@@ -29,7 +29,7 @@ export type ChatDetailsContentProps = {
 };
 
 const averageProcessingTimeFormatter = (value: number) =>
-	durationFormatter({ value });
+	durationFormatter({ value, unit: "ms" });
 
 const getAverageProcessingTimePerSession = (
 	chatSession?: { message: MessageProps }[],
@@ -84,6 +84,7 @@ export const ChatDetailsContent = ({
 					[CARDS.MAIN_STATISTICS.TOTAL]: stats.totalChats,
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter({
 						value: stats.averageProcessingTimes,
+						unit: "ms",
 					}),
 				})}
 			</Card>
