@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.32.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.2...client-v1.32.3) (2024-01-29)
+
+
+### Bug Fixes
+
+* refactor duration formatter ([0a2a5e9](https://github.com/aversini/sassysaint-ui/commit/0a2a5e9ff0eb6741f8baacb29ce99bf235a87eb6))
+
 ## [1.32.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.1...client-v1.32.2) (2024-01-28)
 
 
