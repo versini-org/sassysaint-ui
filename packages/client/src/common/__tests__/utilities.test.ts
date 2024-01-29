@@ -4,6 +4,7 @@ import {
 	convertDDToDMS,
 	convertLatitudeToDMS,
 	convertLongitudeToDMS,
+	durationFormatter,
 	extractAverage,
 	obfuscate,
 	truncate,
@@ -103,6 +104,13 @@ describe("Non-DOM tests", () => {
 				extractAverage({ data: [1, undefined, 2, 3, 4, 5], formatter }),
 			).toBe(3);
 			expect(extractAverage({ data: [], formatter })).toBe(0);
+		});
+	});
+
+	describe("durationFormatter", () => {
+		it("should convert duration with or without a suffix", () => {
+			expect(durationFormatter({ value: 100 })).toBe("100");
+			expect(durationFormatter({ value: 100, unit: "ms" })).toBe("100 ms");
 		});
 	});
 });

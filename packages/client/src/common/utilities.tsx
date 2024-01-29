@@ -183,7 +183,7 @@ export const numberFormatter = new Intl.NumberFormat("en", {
 
 export const durationFormatter = ({
 	value,
-	unit,
+	unit = "",
 }: {
 	value: number;
 	unit?: string;
