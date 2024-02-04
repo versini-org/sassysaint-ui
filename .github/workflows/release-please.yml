@@ -1,3 +1,5 @@
+name: release-please
+
 on:
   push:
     branches:
@@ -7,25 +9,24 @@ permissions:
   contents: write
   pull-requests: write
 
-name: release-please
+env:
+  COREPACK_ENABLE_STRICT: 0
 
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - uses: google-github-actions/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.NODE_CLI }}
-          command: manifest
-          monorepo-tags: true
 
       - name: Checkout Repository
         if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         if: ${{ steps.release.outputs.releases_created }}
         with:
           node-version: 20.x
