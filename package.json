@@ -16,8 +16,7 @@
 		"@node-cli/bundlesize": "4.0.0",
 		"@versini/dev-dependencies-client": "4.1.11",
 		"@versini/dev-dependencies-types": "1.1.3",
-		"@versini/eslint-plugin-client": "1.0.1",
-		"semver": "7.5.4"
+		"@versini/eslint-plugin-client": "1.0.1"
 	},
-	"packageManager": "yarn@4.1.0"
+	"packageManager": "pnpm@8.15.1+sha256.245fe901f8e7fa8782d7f17d32b6a83995e2ae03984cb5b62b8949bfdc27c7b5"
 }
