@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.33.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.4...client-v1.33.0) (2024-02-10)
+
+
+### Features
+
+* better time duration formatter ([7056b9b](https://github.com/aversini/sassysaint-ui/commit/7056b9b3431f59261e6ac563f0ec9f8e05fec722))
+
 ## [1.32.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.3...client-v1.32.4) (2024-02-04)
 
 
