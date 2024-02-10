@@ -46,7 +46,7 @@ export const MessageAssistant = ({
 						[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
 						[FOOTER_KEYS.PROCESSING_TIME]:
 							processingTime && showEngineDetails
-								? durationFormatter({ value: processingTime, unit: "ms" })
+								? durationFormatter(processingTime)
 								: null,
 					}}
 				>

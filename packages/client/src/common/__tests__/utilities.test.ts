@@ -109,8 +109,8 @@ describe("Non-DOM tests", () => {
 
 	describe("durationFormatter", () => {
 		it("should convert duration with or without a suffix", () => {
-			expect(durationFormatter({ value: 100 })).toBe("100");
-			expect(durationFormatter({ value: 100, unit: "ms" })).toBe("100 ms");
+			expect(durationFormatter(100)).toBe("100ms");
+			expect(durationFormatter(10000)).toBe("10s");
 		});
 	});
 });
