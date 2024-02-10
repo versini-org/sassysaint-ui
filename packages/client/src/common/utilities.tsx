@@ -1,3 +1,5 @@
+import prettyMilliseconds from "pretty-ms";
+
 import type { GeoLocation } from "./types";
 
 export const isProd = process.env.NODE_ENV === "production";
@@ -181,12 +183,9 @@ export const numberFormatter = new Intl.NumberFormat("en", {
 	maximumFractionDigits: 0,
 });
 
-export const durationFormatter = ({
-	value,
-	unit = "",
-}: {
-	value: number;
-	unit?: string;
-}) => {
-	return `${numberFormatter.format(value)} ${unit}`.trim();
+export const durationFormatter = (value: number) => {
+	return prettyMilliseconds(value, {
+		secondsDecimalDigits: 2,
+		unitCount: 2,
+	});
 };
