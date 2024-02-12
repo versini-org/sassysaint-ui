@@ -13,7 +13,7 @@
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@node-cli/bundlesize": "4.0.0",
+		"@node-cli/bundlesize": "4.0.1",
 		"@versini/dev-dependencies-client": "4.1.14",
 		"@versini/dev-dependencies-types": "1.1.5",
 		"@versini/eslint-plugin-client": "1.0.1"
