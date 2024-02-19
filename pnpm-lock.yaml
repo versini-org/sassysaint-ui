@@ -30,8 +30,8 @@ importers:
         specifier: 0.26.9
         version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
-        specifier: 4.32.4
-        version: 4.32.4(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.34.0
+        version: 4.34.0(react-dom@18.2.0)(react@18.2.0)
       autoprefixer:
         specifier: 10.4.17
         version: 10.4.17(postcss@8.4.33)
@@ -2018,8 +2018,8 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /@versini/ui-components@4.32.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ODRoJ+88un1yGLKX3Qb44LlxNttcwf98Gfn9yubVQev/KZwX0TTwDcRhf78dmEKcZG/1zVTS3Z8YdrLV161CTA==}
+  /@versini/ui-components@4.34.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-76uL4kCChUFvncMkLswPHNuql4Kw1t0qZXp8OaJnkjbuiSeawXoS6VegCDR7qkRVbRV8KvXuFeXh9w21zjSCqw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
