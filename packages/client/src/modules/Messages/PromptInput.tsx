@@ -162,7 +162,13 @@ export const PromptInput = () => {
 	};
 
 	return !isAuthenticated && isProd ? (
-		<Button noBorder className="mb-4 mt-6" onClick={() => loginWithRedirect()}>
+		<Button
+			mode="dark"
+			focusMode="light"
+			noBorder
+			className="mb-4 mt-6"
+			onClick={() => loginWithRedirect()}
+		>
 			{LOG_IN}
 		</Button>
 	) : (
