@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.34.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.33.0...client-v1.34.0) (2024-03-16)
+
+
+### Features
+
+* migrate to UI Components v5 ([ef8ffa4](https://github.com/aversini/sassysaint-ui/commit/ef8ffa4e3ead93c1bad09037dfce5db5ac5c7a39))
+
+
+### Bug Fixes
+
+* bump dependencies to latest ([f075912](https://github.com/aversini/sassysaint-ui/commit/f075912190d5a6cada79c70bda640eb16a963971))
+
 ## [1.33.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.32.4...client-v1.33.0) (2024-02-10)
 
 
