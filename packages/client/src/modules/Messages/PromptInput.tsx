@@ -1,5 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, TextArea, useLocalStorage } from "@versini/ui-components";
+import { Button } from "@versini/ui-components";
+import { TextArea } from "@versini/ui-form";
+import { useLocalStorage } from "@versini/ui-hooks";
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 import {
@@ -170,6 +172,8 @@ export const PromptInput = () => {
 			</label>
 
 			<TextArea
+				mode="dark"
+				focusMode="light"
 				ref={inputRef}
 				name="chat-input"
 				label={TYPE_QUESTION}
@@ -179,7 +183,7 @@ export const PromptInput = () => {
 				value={userInput}
 				onChange={(e) => setUserInput(e.target.value)}
 				rightElement={
-					<Button noBorder kind="light" type="submit">
+					<Button noBorder type="submit" mode="light" focusMode="light">
 						{SEND}
 					</Button>
 				}

@@ -1,4 +1,6 @@
-import { Card, Toggle, useLocalStorage } from "@versini/ui-components";
+import { Card } from "@versini/ui-components";
+import { Toggle } from "@versini/ui-form";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 
 import {
@@ -94,7 +96,6 @@ export const ProfileContent = ({
 						labelHidden
 						label={CARDS.PREFERENCES.ENGINE_DETAILS}
 						name={CARDS.PREFERENCES.ENGINE_DETAILS}
-						kind="light"
 						onChange={onToggleEngineDetails}
 						checked={showEngineDetails}
 					/>
@@ -104,7 +105,6 @@ export const ProfileContent = ({
 						labelHidden
 						label={CARDS.PREFERENCES.MODEL_TYPE}
 						name={CARDS.PREFERENCES.MODEL_TYPE}
-						kind="light"
 						onChange={onToggleModelType}
 						checked={showModelType}
 					/>

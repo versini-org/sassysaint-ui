@@ -1,4 +1,5 @@
-import { Bubble, Spinner, useLocalStorage } from "@versini/ui-components";
+import { Bubble, Spinner } from "@versini/ui-components";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -40,6 +41,7 @@ export const MessageAssistant = ({
 			) : (
 				<Bubble
 					copyToClipboard={children}
+					copyToClipboardFocusMode="light"
 					footer={{
 						[FOOTER_KEYS.MODEL]:
 							state && state.model && showEngineDetails ? state.model : null,
