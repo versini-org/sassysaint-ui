@@ -1,6 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import {
 	Button,
+	Menu,
+	MenuItem,
+	MenuSeparator,
+	Panel,
+} from "@versini/ui-components";
+import {
 	IconBack,
 	IconChart,
 	IconDog,
@@ -8,11 +14,8 @@ import {
 	IconInfo,
 	IconProfile,
 	IconSettings,
-	Menu,
-	MenuItem,
-	MenuSeparator,
-	Panel,
-} from "@versini/ui-components";
+} from "@versini/ui-icons";
+import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useState } from "react";
 
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
@@ -20,6 +23,7 @@ import {
 	APP_MOTTO,
 	APP_NAME,
 	FAKE_USER_EMAIL,
+	LOG_OUT,
 	STATS,
 } from "../../common/strings";
 import { isDev } from "../../common/utilities";
@@ -134,19 +138,30 @@ export const MessagesContainerHeader = () => {
 						kind="messagebox"
 						open={showConfirmation}
 						onOpenChange={setShowConfirmation}
-						title="Log out"
+						title={LOG_OUT}
 						footer={
-							<div className="flex flex-row-reverse gap-2">
-								<Button onClick={() => logoutWithRedirect()}>Log out</Button>
-								<Button
-									kind="light"
-									onClick={() => {
-										setShowConfirmation(false);
-									}}
-								>
-									Cancel
-								</Button>
-							</div>
+							<Flexgrid columnGap={2} alignHorizontal="flex-end">
+								<FlexgridItem>
+									<Button
+										mode="dark"
+										focusMode="light"
+										onClick={() => {
+											setShowConfirmation(false);
+										}}
+									>
+										Cancel
+									</Button>
+								</FlexgridItem>
+								<FlexgridItem>
+									<Button
+										mode="dark"
+										focusMode="light"
+										onClick={() => logoutWithRedirect()}
+									>
+										{LOG_OUT}
+									</Button>
+								</FlexgridItem>
+							</Flexgrid>
 						}
 					>
 						<p>Are you sure you want to log out?</p>
@@ -165,6 +180,8 @@ export const MessagesContainerHeader = () => {
 					<div className="relative">
 						<div className="absolute bottom-[-28px] right-[-7px]">
 							<Menu
+								mode="dark"
+								focusMode="light"
 								icon={<IconSettings />}
 								defaultPlacement="bottom-end"
 								onOpenChange={onOpenChange}
@@ -172,22 +189,22 @@ export const MessagesContainerHeader = () => {
 								<MenuItem
 									label="Profile"
 									onClick={onClickProfile}
-									icon={<IconProfile decorative />}
+									icon={<IconProfile />}
 								/>
 								<MenuItem
 									label={STATS}
 									onClick={onClickChatDetails}
-									icon={<IconChart decorative />}
+									icon={<IconChart />}
 								/>
 								<MenuItem
 									label="History"
 									onClick={onClickHistory}
-									icon={<IconHistory decorative />}
+									icon={<IconHistory />}
 								/>
 								<MenuItem
 									label="About"
 									onClick={onClickAbout}
-									icon={<IconInfo decorative />}
+									icon={<IconInfo />}
 								/>
 								<MenuSeparator />
 								<MenuItem
@@ -195,7 +212,7 @@ export const MessagesContainerHeader = () => {
 									onClick={onClickConfirmLogout}
 									icon={
 										<div className="text-red-700">
-											<IconBack decorative monotone />
+											<IconBack monotone />
 										</div>
 									}
 								/>

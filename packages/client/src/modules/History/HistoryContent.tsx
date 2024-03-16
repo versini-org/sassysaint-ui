@@ -1,14 +1,13 @@
 import {
 	ButtonIcon,
-	IconDelete,
-	IconRestore,
 	Table,
 	TableBody,
 	TableCell,
 	TableHead,
 	TableRow,
-	TextInput,
 } from "@versini/ui-components";
+import { TextInput } from "@versini/ui-form";
+import { IconDelete, IconRestore } from "@versini/ui-icons";
 import { useContext, useRef, useState } from "react";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
@@ -151,9 +150,9 @@ const renderAsTable = (
 							<TableCell>
 								<div className="flex justify-end gap-2">
 									<ButtonIcon
+										focusMode="alt-system"
 										noBorder
 										label="Restore chat"
-										kind="light"
 										onClick={() => {
 											onClickRestore(item, dispatch, onOpenChange);
 										}}
@@ -161,9 +160,9 @@ const renderAsTable = (
 										<IconRestore className="h-3 w-3" monotone />
 									</ButtonIcon>
 									<ButtonIcon
+										focusMode="alt-system"
 										noBorder
 										label="Delete chat"
-										kind="light"
 										onClick={() => {
 											onClickDelete(
 												item,
@@ -228,8 +227,8 @@ export const HistoryContent = ({
 					</div>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
+							focusMode="light"
 							ref={inputRef}
-							simple
 							name="Search"
 							label="Search"
 							onChange={onSearchChange}

@@ -125,7 +125,9 @@ export const renderDataAsList = (title: string, data: Record<string, any>) => {
 				return (
 					<dl className={isLast ? "mb-0" : "mb-5"} key={`${title}-${key}`}>
 						<div className="flex items-center justify-between">
-							<dt className="inline-block font-bold text-slate-400">{key}</dt>
+							<dt className="inline-block font-bold text-copy-dark dark:text-copy-lighter">
+								{key}
+							</dt>
 							<dd className="inline-block">{data[key]}</dd>
 						</div>
 					</dl>

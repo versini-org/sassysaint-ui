@@ -19,7 +19,7 @@ export const Toolbox = () => {
 
 	return isLastMessageFromRole(ROLE_ASSISTANT, state) ? (
 		<div className={toolboxClass}>
-			<Button noBorder slim onClick={clearChat}>
+			<Button noBorder onClick={clearChat} mode="dark" focusMode="light">
 				{CLEAR}
 			</Button>
 		</div>

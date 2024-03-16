@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Main, useLocalStorage } from "@versini/ui-components";
+import { Footer, Main } from "@versini/ui-components";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -119,22 +120,20 @@ function App() {
 		}, 500);
 	}, [isLoading]);
 
-	const buildClass = isDev ? "text-red-900" : "text-slate-300";
-
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch }}>
 			<Main>
 				<MessagesContainer />
 			</Main>
 			<Footer
-				kind="light"
+				mode="light"
 				row1={
 					<div>
 						{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
 					</div>
 				}
 				row2={
-					<div className={buildClass}>
+					<div>
 						&copy; {new Date().getFullYear()} {APP_OWNER}
 					</div>
 				}
