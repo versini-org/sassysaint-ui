@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.0...client-v1.34.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* invisible login button ([827058e](https://github.com/aversini/sassysaint-ui/commit/827058e07cdc431c3eb92ea6eb9186abfe3fe2fe))
+
 ## [1.34.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.33.0...client-v1.34.0) (2024-03-16)
 
 
