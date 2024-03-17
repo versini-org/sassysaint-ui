@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.2...client-v1.34.3) (2024-03-17)
+
+
+### Bug Fixes
+
+* better headings next to the logo ([809e595](https://github.com/aversini/sassysaint-ui/commit/809e5956a251b9d774c84692d8e25816104a2d2c))
+
 ## [1.34.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.1...client-v1.34.2) (2024-03-17)
 
 
