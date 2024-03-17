@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-h1.heading {
-	font-family:
-		"Open Sans",
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		"Segoe UI",
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		"Helvetica Neue",
-		sans-serif;
-}
-
 .fadeIn {
 	animation: fadeInAnimation ease 1s;
 	animation-iteration-count: 1;
