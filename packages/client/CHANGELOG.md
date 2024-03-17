@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.1...client-v1.34.2) (2024-03-17)
+
+
+### Bug Fixes
+
+* use the new variant "danger" for the logout button ([69a0331](https://github.com/aversini/sassysaint-ui/commit/69a033177f6ff79ffdce0f324d71bada14a3a12d))
+
 ## [1.34.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.0...client-v1.34.1) (2024-03-16)
 
 
