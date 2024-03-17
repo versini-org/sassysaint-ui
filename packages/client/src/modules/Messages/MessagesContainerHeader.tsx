@@ -144,6 +144,7 @@ export const MessagesContainerHeader = () => {
 								<FlexgridItem>
 									<Button
 										mode="dark"
+										variant="secondary"
 										focusMode="light"
 										onClick={() => {
 											setShowConfirmation(false);
@@ -155,6 +156,7 @@ export const MessagesContainerHeader = () => {
 								<FlexgridItem>
 									<Button
 										mode="dark"
+										variant="danger"
 										focusMode="light"
 										onClick={() => logoutWithRedirect()}
 									>
