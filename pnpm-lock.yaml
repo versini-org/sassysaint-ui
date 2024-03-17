@@ -30,8 +30,8 @@ importers:
         specifier: 0.26.9
         version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
-        specifier: 5.8.0
-        version: 5.8.0(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 5.9.0
+        version: 5.9.0(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
         specifier: 1.1.1
         version: 1.1.1(react-dom@18.2.0)(react@18.2.0)
@@ -67,8 +67,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@versini/ui-styles':
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 1.5.0
+        version: 1.5.0
 
 packages:
 
@@ -2025,8 +2025,8 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /@versini/ui-components@5.8.0(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-ykPG9dA+cdXnxgtvT41A6Vt4Tl1kiDZxAkcfAIpZFghABJKoy8nOugISd0RQwgs1i/guCbdTTdZ2R6aTj9wnQA==}
+  /@versini/ui-components@5.9.0(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-67LIndhU5WxMNff2FD6A1ZSLW38DgQnznifZIyp+LmxM30zeoVQ4EIqM+W3j6ck0Ss7TR6gOW6q7GGTyfZJx+g==}
     peerDependencies:
       '@floating-ui/react': 0.26.9
       fast-equals: 5.0.1
@@ -2109,8 +2109,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@versini/ui-styles@1.4.0:
-    resolution: {integrity: sha512-wZBpWkqo2g4qsI9yeewwBODXtTSBaoXVBnmV+gt/avhBaPHvp9cKuPm+Pe+M98lRX5LlaDxyoxcriCASrJI0Gg==}
+  /@versini/ui-styles@1.5.0:
+    resolution: {integrity: sha512-pKUCv0VUu3grHkaRcoukbrzoY0DZO+tWy1G8wFnruOmLb1hy2nUBkIEA21ipv3V7woSho7SQuqYglzHLgYxcUA==}
     dependencies:
       '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.1)
       culori: 4.0.1
