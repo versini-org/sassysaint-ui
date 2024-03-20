@@ -3,6 +3,7 @@ import {
 	Table,
 	TableBody,
 	TableCell,
+	TableFooter,
 	TableHead,
 	TableRow,
 } from "@versini/ui-components";
@@ -122,7 +123,7 @@ const renderAsTable = (
 ) => {
 	const data = filteredHistory.data;
 	return (
-		<Table stickyHeader wrapperClassName="max-h-[60vh]">
+		<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
 			<TableHead>
 				<TableRow>
 					<TableCell className="uppercase text-white">Date</TableCell>
@@ -183,6 +184,16 @@ const renderAsTable = (
 					) : null;
 				})}
 			</TableBody>
+			<TableFooter>
+				<TableRow>
+					<TableCell colSpan={3}>
+						<div className="text-white">
+							{filteredHistory.data.length}{" "}
+							{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
+						</div>
+					</TableCell>
+				</TableRow>
+			</TableFooter>
 		</Table>
 	);
 };
@@ -221,10 +232,6 @@ export const HistoryContent = ({
 	return (isAuthenticated && endUser) || isDev
 		? filteredHistory && filteredHistory.data && (
 				<>
-					<div className="text-md text-center">
-						{filteredHistory.data.length}{" "}
-						{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
-					</div>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
 							focusMode="light"
