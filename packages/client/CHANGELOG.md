@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.3...client-v1.34.4) (2024-03-20)
+
+
+### Bug Fixes
+
+* bump dependencies for better history table ([84d01ff](https://github.com/aversini/sassysaint-ui/commit/84d01ff1de3a2d257439332c7216fee4896b06d8))
+
 ## [1.34.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.2...client-v1.34.3) (2024-03-17)
 
 
