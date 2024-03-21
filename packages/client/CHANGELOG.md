@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.5](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.4...client-v1.34.5) (2024-03-21)
+
+
+### Bug Fixes
+
+* minor optimization based on capo.js ([0649135](https://github.com/aversini/sassysaint-ui/commit/0649135ed239d7028a9d222b9eaa3df5f734c5d7))
+
 ## [1.34.4](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.3...client-v1.34.4) (2024-03-20)
 
 
