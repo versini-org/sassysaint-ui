@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.0.2",
 		"@versini/dev-dependencies-client": "4.1.17",
-		"@versini/dev-dependencies-types": "1.1.7",
+		"@versini/dev-dependencies-types": "1.1.8",
 		"@versini/eslint-plugin-client": "1.0.1"
 	},
 	"packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
