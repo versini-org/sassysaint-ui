@@ -20,7 +20,7 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.6.0"
+		"@versini/ui-styles": "1.6.1"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
