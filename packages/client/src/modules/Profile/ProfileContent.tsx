@@ -87,7 +87,10 @@ export const ProfileContent = ({
 	};
 
 	return (isAuthenticated && endUser) || isDev ? (
-		<Card header={CARDS.PREFERENCES.TITLE}>
+		<Card
+			header={CARDS.PREFERENCES.TITLE}
+			className="prose-dark dark:prose-lighter"
+		>
 			{renderDataAsList(CARDS.PREFERENCES.TITLE, {
 				[CARDS.PREFERENCES.NAME]: endUser.name,
 				[CARDS.PREFERENCES.EMAIL]: endUser.email,

@@ -14,9 +14,9 @@
 	},
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.0.2",
-		"@versini/dev-dependencies-client": "4.1.17",
-		"@versini/dev-dependencies-types": "1.1.7",
-		"@versini/eslint-plugin-client": "1.0.1"
+		"@versini/dev-dependencies-client": "4.1.19",
+		"@versini/dev-dependencies-types": "1.1.9",
+		"@versini/eslint-plugin-client": "1.0.2"
 	},
-	"packageManager": "pnpm@8.15.5+sha256.4b4efa12490e5055d59b9b9fc9438b7d581a6b7af3b5675eb5c5f447cee1a589"
+	"packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f"
 }
