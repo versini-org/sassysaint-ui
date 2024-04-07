@@ -173,10 +173,6 @@ export const PromptInput = () => {
 		</Button>
 	) : (
 		<form className="mt-2" onSubmit={onSubmit}>
-			<label htmlFor="chat-input" className="sr-only">
-				{TYPE_QUESTION}
-			</label>
-
 			<TextArea
 				mode="dark"
 				focusMode="light"

@@ -66,7 +66,10 @@ export const ChatDetailsContent = ({
 		<>
 			{state && state.messages.length > 0 && (
 				<div className="mb-4">
-					<Card header={CARDS.CURRENT_STATISTICS.TITLE}>
+					<Card
+						header={CARDS.CURRENT_STATISTICS.TITLE}
+						className="prose-dark dark:prose-lighter"
+					>
 						{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
 							[CARDS.CURRENT_STATISTICS.MODEL_NAME]:
 								state?.model || DEFAULT_MODEL,
@@ -79,7 +82,10 @@ export const ChatDetailsContent = ({
 				</div>
 			)}
 
-			<Card header={CARDS.MAIN_STATISTICS.TITLE}>
+			<Card
+				header={CARDS.MAIN_STATISTICS.TITLE}
+				className="prose-dark dark:prose-lighter"
+			>
 				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
 					[CARDS.MAIN_STATISTICS.TOTAL]: stats.totalChats,
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter(

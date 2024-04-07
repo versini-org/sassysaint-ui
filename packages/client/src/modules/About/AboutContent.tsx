@@ -9,7 +9,7 @@ export const AboutContent = () => {
 	const { state } = useContext(AppContext);
 
 	return (
-		<Card>
+		<Card className="prose-dark dark:prose-lighter">
 			{renderDataAsList("about", {
 				[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
 				[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
