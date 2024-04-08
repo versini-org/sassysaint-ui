@@ -27,7 +27,7 @@
 		"@floating-ui/react": "0.26.9",
 		"@versini/ui-components": "5.14.2",
 		"@versini/ui-form": "1.2.0",
-		"@versini/ui-icons": "1.4.0",
+		"@versini/ui-icons": "1.5.0",
 		"@versini/ui-system": "1.3.0",
 		"autoprefixer": "10.4.19",
 		"postcss": "8.4.38",

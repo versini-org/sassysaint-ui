@@ -36,8 +36,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-icons':
-        specifier: 1.4.0
-        version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.5.0
+        version: 1.5.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-system':
         specifier: 1.3.0
         version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -2331,6 +2331,17 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@versini/ui-private': 1.4.0(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@versini/ui-icons@1.5.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JFYwFx2dqJNQvnUXX1311GXs+peqDSzn+tsNgwLDqXJ9e90R9m/8FdiLEOlgX0CmMYpUBX/rbKh+LRpWMiPTvg==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@versini/ui-private': 1.4.1(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
