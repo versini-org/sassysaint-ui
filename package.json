@@ -14,8 +14,8 @@
 	},
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.0.2",
-		"@versini/dev-dependencies-client": "4.1.19",
-		"@versini/dev-dependencies-types": "1.1.9",
+		"@versini/dev-dependencies-client": "4.1.20",
+		"@versini/dev-dependencies-types": "1.1.10",
 		"@versini/eslint-plugin-client": "1.0.2"
 	},
 	"packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f"
