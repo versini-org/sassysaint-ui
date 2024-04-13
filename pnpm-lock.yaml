@@ -30,8 +30,8 @@ importers:
         specifier: 0.26.9
         version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
-        specifier: 5.14.2
-        version: 5.14.2(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 5.14.3
+        version: 5.14.3(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
         specifier: 1.2.0
         version: 1.2.0(react-dom@18.2.0)(react@18.2.0)
@@ -58,7 +58,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       react-markdown:
         specifier: 9.0.1
-        version: 9.0.1(@types/react@18.2.74)(react@18.2.0)
+        version: 9.0.1(@types/react@18.2.77)(react@18.2.0)
       remark-gfm:
         specifier: 4.0.0
         version: 4.0.0
@@ -67,8 +67,8 @@ importers:
         version: 9.0.1
     devDependencies:
       '@versini/ui-styles':
-        specifier: 1.8.1
-        version: 1.8.1
+        specifier: 1.8.2
+        version: 1.8.2
 
 packages:
 
@@ -1951,13 +1951,13 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.11
       csstype: 3.1.3
+    dev: true
 
   /@types/react@18.2.77:
     resolution: {integrity: sha512-CUT9KUUF+HytDM7WiXKLF9qUSg4tGImwy4FXTlfEDPEkkNUzJ7rVFolYweJ9fS1ljoIaP7M7Rdjc5eUm/Yu5AA==}
     dependencies:
       '@types/prop-types': 15.7.11
       csstype: 3.1.3
-    dev: true
 
   /@types/semver@7.5.6:
     resolution: {integrity: sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==}
@@ -2272,8 +2272,8 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /@versini/ui-components@5.14.2(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-C2e/cHfgASwQ7w2rspaXX6/6hbM+PgEGUKznWkDs0PwV6QFKazVZ76k3fYBTON+5DcYNVUxItvyzVgU/3WoHMA==}
+  /@versini/ui-components@5.14.3(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YdQmHdX0ESGF/y1PCbXbp3QGd7uFBKodgobOYS4q3ZFlozsxeLuThmTNMQ6cq2adbPlvvvsaX5k28iEhCaelAQ==}
     peerDependencies:
       '@floating-ui/react': <=0.26.9
       fast-equals: 5.0.1
@@ -2284,7 +2284,7 @@ packages:
       '@floating-ui/react': 0.26.9(react-dom@18.2.0)(react@18.2.0)
       '@tailwindcss/typography': 0.5.12(tailwindcss@3.4.3)
       '@versini/ui-hooks': 2.2.0(react-dom@18.2.0)(react@18.2.0)
-      '@versini/ui-icons': 1.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@versini/ui-icons': 1.5.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-private': 1.4.1(react-dom@18.2.0)(react@18.2.0)
       clsx: 2.1.0
       fast-equals: 5.0.1
@@ -2315,17 +2315,6 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@versini/ui-icons@1.4.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-AgyRwihwjmjGPnJFRXu+HPzUOSN1Ahp3M4P9LJi9Hvlr1X/gQuOcKMOYw4Hv+VGnIvEI6bjeHWj0wKQiMuuXKg==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@versini/ui-private': 1.4.0(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -2367,8 +2356,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@versini/ui-styles@1.8.1:
-    resolution: {integrity: sha512-v9m2ROXUSwgiz0hgSeNRt70xwvHglxWV0ElahI2mRxa6C3QNN7NKHF0U+dtM7x/EnIHerJXPR/4rdaZCW73Sug==}
+  /@versini/ui-styles@1.8.2:
+    resolution: {integrity: sha512-jErjHrUF+slhuxN1GvIKXWPn9irIcmoXsHAF+srJ/FvOu14doALC4Tdse7b8rTdl7XmBb/8UdUQE9ct3akvJKA==}
     dependencies:
       '@tailwindcss/typography': 0.5.12(tailwindcss@3.4.3)
       culori: 4.0.1
@@ -8011,14 +8000,14 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-markdown@9.0.1(@types/react@18.2.74)(react@18.2.0):
+  /react-markdown@9.0.1(@types/react@18.2.77)(react@18.2.0):
     resolution: {integrity: sha512-186Gw/vF1uRkydbsOIkcGXw7aHq0sZOCRFFjGrr7b9+nVZg4UfA4enXCaxm4fUzecU38sWfrNDitGhshuU7rdg==}
     peerDependencies:
       '@types/react': '>=18'
       react: '>=18'
     dependencies:
       '@types/hast': 3.0.4
-      '@types/react': 18.2.74
+      '@types/react': 18.2.77
       devlop: 1.1.0
       hast-util-to-jsx-runtime: 2.3.0
       html-url-attributes: 3.0.0
