@@ -126,6 +126,7 @@ const renderAsTable = (
 		<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
 			<TableHead>
 				<TableRow>
+					<TableCell className="sr-only">Row</TableCell>
 					<TableCell className="uppercase text-white">Date</TableCell>
 					<TableCell className="uppercase text-white">First message</TableCell>
 					<TableCell className="text-right uppercase text-white">
@@ -137,6 +138,7 @@ const renderAsTable = (
 				{data.map((item: HistoryItemProps, idx: any) => {
 					return item?.messages?.length > 0 ? (
 						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
+							<TableCell>{idx + 1}</TableCell>
 							<TableCell
 								component="th"
 								scope="row"
@@ -186,8 +188,8 @@ const renderAsTable = (
 			</TableBody>
 			<TableFooter>
 				<TableRow>
-					<TableCell colSpan={3}>
-						<div className="text-white">
+					<TableCell colSpan={4}>
+						<div>
 							{filteredHistory.data.length}{" "}
 							{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
 						</div>
