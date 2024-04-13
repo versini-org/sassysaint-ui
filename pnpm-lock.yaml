@@ -27,11 +27,11 @@ importers:
         specifier: 2.2.4
         version: 2.2.4(react-dom@18.2.0)(react@18.2.0)
       '@floating-ui/react':
-        specifier: 0.26.9
-        version: 0.26.9(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.26.12
+        version: 0.26.12(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
         specifier: 5.14.3
-        version: 5.14.3(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
+        version: 5.14.3(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
         specifier: 1.2.0
         version: 1.2.0(react-dom@18.2.0)(react@18.2.0)
@@ -643,6 +643,19 @@ packages:
       '@floating-ui/dom': 1.6.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@floating-ui/react@0.26.12(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-D09o62HrWdIkstF2kGekIKAC0/N/Dl6wo3CQsnLcOmO3LkW6Ik8uIb3kw8JYkwxNCcg+uJ2bpWUiIijTBep05w==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@floating-ui/react-dom': 2.0.8(react-dom@18.2.0)(react@18.2.0)
+      '@floating-ui/utils': 0.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tabbable: 6.2.0
     dev: false
 
   /@floating-ui/react@0.26.9(react-dom@18.2.0)(react@18.2.0):
@@ -2272,7 +2285,7 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /@versini/ui-components@5.14.3(@floating-ui/react@0.26.9)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
+  /@versini/ui-components@5.14.3(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-YdQmHdX0ESGF/y1PCbXbp3QGd7uFBKodgobOYS4q3ZFlozsxeLuThmTNMQ6cq2adbPlvvvsaX5k28iEhCaelAQ==}
     peerDependencies:
       '@floating-ui/react': <=0.26.9
@@ -2281,7 +2294,7 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@floating-ui/react': 0.26.9(react-dom@18.2.0)(react@18.2.0)
+      '@floating-ui/react': 0.26.12(react-dom@18.2.0)(react@18.2.0)
       '@tailwindcss/typography': 0.5.12(tailwindcss@3.4.3)
       '@versini/ui-hooks': 2.2.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-icons': 1.5.0(react-dom@18.2.0)(react@18.2.0)
