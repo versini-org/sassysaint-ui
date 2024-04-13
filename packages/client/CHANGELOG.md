@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.34.7](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.6...client-v1.34.7) (2024-04-13)
+
+
+### Bug Fixes
+
+* bump dependencies to latest ([8747922](https://github.com/aversini/sassysaint-ui/commit/8747922010da0ac78a7669bb4397ea78c5ee68e8))
+* chat history footer table is not visible in dark mode ([706cae2](https://github.com/aversini/sassysaint-ui/commit/706cae24800a805e73e1bb690b952e03d295324b))
+
 ## [1.34.6](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.5...client-v1.34.6) (2024-04-07)
 
 
