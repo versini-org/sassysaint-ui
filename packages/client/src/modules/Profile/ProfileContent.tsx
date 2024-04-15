@@ -96,6 +96,7 @@ export const ProfileContent = ({
 				[CARDS.PREFERENCES.EMAIL]: endUser.email,
 				[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 					<Toggle
+						noBorder
 						labelHidden
 						label={CARDS.PREFERENCES.ENGINE_DETAILS}
 						name={CARDS.PREFERENCES.ENGINE_DETAILS}
@@ -105,6 +106,7 @@ export const ProfileContent = ({
 				),
 				[CARDS.PREFERENCES.MODEL_TYPE]: (
 					<Toggle
+						noBorder
 						labelHidden
 						label={CARDS.PREFERENCES.MODEL_TYPE}
 						name={CARDS.PREFERENCES.MODEL_TYPE}
