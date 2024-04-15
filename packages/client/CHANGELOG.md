@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.10](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.9...client-v1.34.10) (2024-04-15)
+
+
+### Bug Fixes
+
+* bump to most recent UI lib for better Toggle ([5bc10a6](https://github.com/aversini/sassysaint-ui/commit/5bc10a67a5d0350cd7a2c020900b3a40beebb08c))
+
 ## [1.34.9](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.8...client-v1.34.9) (2024-04-14)
 
 
