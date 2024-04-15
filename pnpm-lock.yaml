@@ -33,8 +33,8 @@ importers:
         specifier: 5.14.5
         version: 5.14.5(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
-        specifier: 1.2.1
-        version: 1.2.1(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.3.0
+        version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-icons':
         specifier: 1.5.0
         version: 1.5.0(react-dom@18.2.0)(react@18.2.0)
@@ -2309,8 +2309,8 @@ packages:
       - ts-node
     dev: false
 
-  /@versini/ui-form@1.2.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-r0xvyiPTtD0QK0Tc7a+mc9WnuVJ2PfhTxz5b20VKuzPeKYbgE+vYXOimWCdPt94fQKQs7wFEUcUjfrJ80KgSrg==}
+  /@versini/ui-form@1.3.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-iuHFXTx4FLJ3jh2I1sqOZI0xgRlnXDjzJvXEcIdQN4uO0aY5cPj2m72VQVq+YLzhbDmQ+zOTv312mnxupNpYdQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
