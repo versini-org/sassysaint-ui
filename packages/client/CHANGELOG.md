@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.10...client-v1.35.0) (2024-04-16)
+
+
+### Features
+
+* adding sort capability to history table ([4abe35a](https://github.com/aversini/sassysaint-ui/commit/4abe35a41ecff0c5239389c037c6992b7cf202a1))
+
 ## [1.34.10](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.9...client-v1.34.10) (2024-04-15)
 
 
