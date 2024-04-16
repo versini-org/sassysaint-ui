@@ -167,7 +167,6 @@ export const HistoryTable = ({
 					<TableCell className="sr-only">Row</TableCell>
 					<TableCellSort
 						cellId="timestamp"
-						className="uppercase"
 						align="left"
 						sortDirection={sortState.direction}
 						sortedCell={sortState.cell}
@@ -177,10 +176,8 @@ export const HistoryTable = ({
 					>
 						Date
 					</TableCellSort>
-					<TableCell className="uppercase text-white">First message</TableCell>
-					<TableCell className="text-right uppercase text-white">
-						Actions
-					</TableCell>
+					<TableCell>First message</TableCell>
+					<TableCell className="text-right">Actions</TableCell>
 				</TableRow>
 			</TableHead>
 			<TableBody>
