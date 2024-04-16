@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.0...client-v1.35.1) (2024-04-16)
+
+
+### Bug Fixes
+
+* bump UI lib to latest for better sort indicator ([162ba09](https://github.com/aversini/sassysaint-ui/commit/162ba0934801576c59d2c69e9fb68810201116e0))
+
 ## [1.35.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.34.10...client-v1.35.0) (2024-04-16)
 
 
