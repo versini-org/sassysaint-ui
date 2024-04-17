@@ -6,8 +6,29 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
+	ACTION_SEARCH,
+	ACTION_SORT,
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
+
+export const historyReducer = (state: any, action: any) => {
+	if (action?.type === ACTION_SEARCH) {
+		return {
+			searchString: action.payload.searchString,
+			sortedCell: state.sortedCell,
+			sortDirection: state.sortDirection,
+		};
+	}
+
+	if (action?.type === ACTION_SORT) {
+		return {
+			searchString: state.searchString,
+			sortedCell: action.payload.sortedCell,
+			sortDirection: action.payload.sortDirection,
+		};
+	}
+	return state;
+};
 
 export const reducer = (state: StateProps, action: ActionProps) => {
 	if (action?.type === ACTION_RESTORE) {

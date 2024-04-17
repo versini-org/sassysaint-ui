@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Main } from "@versini/ui-components";
+import { Footer, Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -9,20 +9,30 @@ import {
 	DEFAULT_MODEL,
 	LOCAL_STORAGE_MODEL,
 	LOCAL_STORAGE_PREFIX,
+	LOCAL_STORAGE_SEARCH,
+	LOCAL_STORAGE_SORT,
 	MODEL_GPT4,
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import { getCurrentGeoLocation, isDev } from "../../common/utilities";
 import { MessagesContainer } from "../Messages/MessagesContainer";
-import { AppContext } from "./AppContext";
-import { reducer } from "./reducer";
+import { AppContext, HistoryContext } from "./AppContext";
+import { historyReducer, reducer } from "./reducer";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
 	const [isModel4] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
 		defaultValue: false,
+	});
+	const [cachedSearchedString] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
+		defaultValue: "",
+	});
+	const [cachedSortDirection] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
+		defaultValue: TableCellSortDirections.ASC,
 	});
 
 	const locationRef = useRef({
@@ -35,6 +45,11 @@ function App() {
 		model: isModel4 ? MODEL_GPT4 : DEFAULT_MODEL,
 		usage: 0,
 		messages: [],
+	});
+	const [stateHistory, dispatchHistory] = useReducer(historyReducer, {
+		searchString: cachedSearchedString,
+		sortedCell: "timestamp",
+		sortDirection: cachedSortDirection,
 	});
 
 	useEffect(() => {
@@ -122,22 +137,29 @@ function App() {
 
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch }}>
-			<Main>
-				<MessagesContainer />
-			</Main>
-			<Footer
-				mode="light"
-				row1={
-					<div>
-						{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-					</div>
-				}
-				row2={
-					<div>
-						&copy; {new Date().getFullYear()} {APP_OWNER}
-					</div>
-				}
-			/>
+			<HistoryContext.Provider
+				value={{
+					state: stateHistory,
+					dispatch: dispatchHistory,
+				}}
+			>
+				<Main>
+					<MessagesContainer />
+				</Main>
+				<Footer
+					mode="light"
+					row1={
+						<div>
+							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
+						</div>
+					}
+					row2={
+						<div>
+							&copy; {new Date().getFullYear()} {APP_OWNER}
+						</div>
+					}
+				/>
+			</HistoryContext.Provider>
 		</AppContext.Provider>
 	);
 }

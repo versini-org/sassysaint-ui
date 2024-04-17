@@ -7,3 +7,8 @@ export const AppContext = React.createContext<AppContextProps>({
 	state: { id: "", model: DEFAULT_MODEL, usage: 0, messages: [] },
 	dispatch: () => {},
 });
+
+export const HistoryContext = React.createContext<any>({
+	state: { searchString: "", sortedCell: "", sortDirection: "" },
+	dispatch: () => {},
+});
