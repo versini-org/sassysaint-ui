@@ -9,6 +9,6 @@ export const AppContext = React.createContext<AppContextProps>({
 });
 
 export const HistoryContext = React.createContext<any>({
-	state: { searchString: "" },
+	state: { searchString: "", sortedCell: "", sortDirection: "" },
 	dispatch: () => {},
 });

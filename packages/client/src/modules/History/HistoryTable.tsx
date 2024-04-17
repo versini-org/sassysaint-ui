@@ -9,14 +9,22 @@ import {
 	TableHead,
 	TableRow,
 } from "@versini/ui-components";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
-import { useState } from "react";
+import { useContext } from "react";
 import { useMedia } from "react-use";
 
-import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
+import {
+	ACTION_RESET,
+	ACTION_RESTORE,
+	ACTION_SORT,
+	LOCAL_STORAGE_PREFIX,
+	LOCAL_STORAGE_SORT,
+} from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL } from "../../common/strings";
 import { truncate } from "../../common/utilities";
+import { HistoryContext } from "../App/AppContext";
 
 type HistoryItemProps = {
 	id: number;
@@ -80,7 +88,7 @@ const onClickDelete = async (
 		if (response.status === 200) {
 			const data = await response.json();
 			setFullHistory(data.data.deleteChat);
-			setFilteredHistory({ data: data.data.deleteChat, searchString: "" });
+			setFilteredHistory({ data: data.data.deleteChat });
 			if (inputRef?.current) {
 				inputRef.current.value = "";
 			}
@@ -113,30 +121,31 @@ export const HistoryTable = ({
 	setFullHistory: any;
 }) => {
 	const isWide = useMedia("(min-width: 480px)");
-	const [sortState, setSortState] = useState<{
-		cell: string;
-		direction:
-			| typeof TableCellSortDirections.ASC
-			| typeof TableCellSortDirections.DESC
-			| false;
-	}>({ direction: TableCellSortDirections.ASC, cell: "timestamp" });
+	const { state: historyState, dispatch: historyDispatch } =
+		useContext(HistoryContext);
+	const [, setCachedSortDirection] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
+		defaultValue: historyState.sortDirection,
+	});
 
 	const data = filteredHistory.data.sort(
 		(
 			a: { [x: string]: string | number | Date },
 			b: { [x: string]: string | number | Date },
 		) => {
-			switch (sortState.cell) {
+			switch (historyState.sortedCell) {
 				case "timestamp":
-					if (sortState.direction === TableCellSortDirections.ASC) {
+					if (historyState.sortDirection === TableCellSortDirections.ASC) {
 						return (
-							new Date(a[sortState.cell]).getTime() -
-							new Date(b[sortState.cell]).getTime()
+							new Date(a[historyState.sortedCell]).getTime() -
+							new Date(b[historyState.sortedCell]).getTime()
 						);
-					} else if (sortState.direction === TableCellSortDirections.DESC) {
+					} else if (
+						historyState.sortDirection === TableCellSortDirections.DESC
+					) {
 						return (
-							new Date(b[sortState.cell]).getTime() -
-							new Date(a[sortState.cell]).getTime()
+							new Date(b[historyState.sortedCell]).getTime() -
+							new Date(a[historyState.sortedCell]).getTime()
 						);
 					}
 					break;
@@ -149,15 +158,36 @@ export const HistoryTable = ({
 	);
 
 	const onClickSort = (key: string) => {
-		switch (sortState.direction) {
+		switch (historyState.sortDirection) {
 			case false:
-				setSortState({ cell: key, direction: TableCellSortDirections.ASC });
+				setCachedSortDirection(TableCellSortDirections.ASC);
+				historyDispatch({
+					type: ACTION_SORT,
+					payload: {
+						sortedCell: key,
+						sortDirection: TableCellSortDirections.ASC,
+					},
+				});
 				break;
 			case TableCellSortDirections.ASC:
-				setSortState({ cell: key, direction: TableCellSortDirections.DESC });
+				setCachedSortDirection(TableCellSortDirections.DESC);
+				historyDispatch({
+					type: ACTION_SORT,
+					payload: {
+						sortedCell: key,
+						sortDirection: TableCellSortDirections.DESC,
+					},
+				});
 				break;
 			default:
-				setSortState({ cell: key, direction: TableCellSortDirections.ASC });
+				setCachedSortDirection(TableCellSortDirections.ASC);
+				historyDispatch({
+					type: ACTION_SORT,
+					payload: {
+						sortedCell: key,
+						sortDirection: TableCellSortDirections.ASC,
+					},
+				});
 				break;
 		}
 	};
@@ -170,8 +200,8 @@ export const HistoryTable = ({
 					<TableCellSort
 						cellId="timestamp"
 						align="left"
-						sortDirection={sortState.direction}
-						sortedCell={sortState.cell}
+						sortDirection={historyState.sortDirection}
+						sortedCell={historyState.sortedCell}
 						onClick={() => {
 							onClickSort("timestamp");
 						}}

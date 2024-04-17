@@ -1,6 +1,12 @@
 import { TextInput } from "@versini/ui-form";
-import { useContext, useRef, useState } from "react";
+import { useLocalStorage } from "@versini/ui-hooks";
+import { useContext, useEffect, useRef, useState } from "react";
 
+import {
+	ACTION_SEARCH,
+	LOCAL_STORAGE_PREFIX,
+	LOCAL_STORAGE_SEARCH,
+} from "../../common/constants";
 import { FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { AppContext, HistoryContext } from "../App/AppContext";
 import { HistoryTable } from "./HistoryTable";
@@ -32,18 +38,17 @@ export const HistoryContent = ({
 }: HistoryContentProps) => {
 	const { state: historyState, dispatch: historyDispatch } =
 		useContext(HistoryContext);
-	console.log(
-		`==> [${Date.now()}] historyState.searchString: `,
-		historyState.searchString,
-	);
+
+	const [, setCachedSearchString] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
+		defaultValue: historyState.searchString,
+	});
 
 	const [fullHistory, setFullHistory] = useState<any[]>(historyData);
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
-		searchString: string;
 	}>({
 		data: fullHistory,
-		searchString: historyState.searchString,
 	});
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { dispatch } = useContext(AppContext);
@@ -52,21 +57,16 @@ export const HistoryContent = ({
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
 
-	const filteredData = filterDataByContent(
-		fullHistory,
-		historyState.searchString,
-	);
-	setFilteredHistory({
-		searchString: historyState.searchString,
-		data: filteredData,
-	});
-
 	const onSearchChange = (e: any) => {
 		const searchString = e.target.value;
 		const filteredData = filterDataByContent(fullHistory, searchString);
-		setFilteredHistory({ searchString, data: filteredData });
+		setFilteredHistory({
+			data: filteredData,
+		});
+		setCachedSearchString(searchString);
+
 		historyDispatch({
-			type: "SEARCH",
+			type: ACTION_SEARCH,
 			payload: { searchString },
 		});
 	};
@@ -74,6 +74,16 @@ export const HistoryContent = ({
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 	};
+
+	useEffect(() => {
+		const filteredData = filterDataByContent(
+			fullHistory,
+			historyState.searchString,
+		);
+		setFilteredHistory({
+			data: filteredData,
+		});
+	}, [fullHistory, historyState.searchString]);
 
 	return (isAuthenticated && endUser) || isDev
 		? filteredHistory && filteredHistory.data && (

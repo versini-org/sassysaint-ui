@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Main } from "@versini/ui-components";
+import { Footer, Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { useEffect, useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,8 @@ import {
 	DEFAULT_MODEL,
 	LOCAL_STORAGE_MODEL,
 	LOCAL_STORAGE_PREFIX,
+	LOCAL_STORAGE_SEARCH,
+	LOCAL_STORAGE_SORT,
 	MODEL_GPT4,
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
@@ -24,6 +26,14 @@ function App() {
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
 		defaultValue: false,
 	});
+	const [cachedSearchedString] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
+		defaultValue: "",
+	});
+	const [cachedSortDirection] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
+		defaultValue: TableCellSortDirections.ASC,
+	});
 
 	const locationRef = useRef({
 		latitude: 0,
@@ -37,7 +47,9 @@ function App() {
 		messages: [],
 	});
 	const [stateHistory, dispatchHistory] = useReducer(historyReducer, {
-		searchString: "",
+		searchString: cachedSearchedString,
+		sortedCell: "timestamp",
+		sortDirection: cachedSortDirection,
 	});
 
 	useEffect(() => {

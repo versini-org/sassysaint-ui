@@ -30,8 +30,8 @@ importers:
         specifier: 0.26.12
         version: 0.26.12(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
-        specifier: 5.18.0
-        version: 5.18.0(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 5.18.1
+        version: 5.18.1(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
         specifier: 1.3.0
         version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -2278,8 +2278,8 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /@versini/ui-components@5.18.0(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-1inub9NHfvB5m49g08M9PXvrTwbQ0cfuvZnq3r+84pEWqI3Y+P1Zd6MC/CGE3m0XsLt6zojJ/CUdYQW0dEqLFA==}
+  /@versini/ui-components@5.18.1(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Gs5nCi1Vo8X0w7D+Uj/wKxytKpBIstBcTeO0vgwxNjMIj34jWmOnQkBf0iTZjXo2cVArhZh4bliZ9DRJuQY2MA==}
     peerDependencies:
       '@floating-ui/react': 0.26.12
       fast-equals: 5.0.1
