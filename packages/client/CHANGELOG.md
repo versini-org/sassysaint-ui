@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.37.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.36.0...client-v1.37.0) (2024-04-17)
+
+
+### Features
+
+* adding reset button to easy-reset the history filter ([2d25e3d](https://github.com/aversini/sassysaint-ui/commit/2d25e3da7aaaeef7ace1518c9c61b118d7423bdf))
+
+
+### Bug Fixes
+
+* no need to reset search field on delete chat anymore ([cb446f9](https://github.com/aversini/sassysaint-ui/commit/cb446f97737357a54834e383f5e4906ab24e30ef))
+
 ## [1.36.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.3...client-v1.36.0) (2024-04-17)
 
 
