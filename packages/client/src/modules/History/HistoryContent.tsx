@@ -1,6 +1,6 @@
 import { TextInput } from "@versini/ui-form";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import {
 	ACTION_SEARCH,
@@ -50,7 +50,6 @@ export const HistoryContent = ({
 	}>({
 		data: fullHistory,
 	});
-	const inputRef = useRef<HTMLInputElement>(null);
 	const { dispatch } = useContext(AppContext);
 
 	const endUser = isDev
@@ -92,7 +91,6 @@ export const HistoryContent = ({
 						<TextInput
 							defaultValue={historyState.searchString}
 							focusMode="light"
-							ref={inputRef}
 							name="Search"
 							label="Search"
 							onChange={onSearchChange}
@@ -106,7 +104,6 @@ export const HistoryContent = ({
 							setFullHistory={setFullHistory}
 							dispatch={dispatch}
 							onOpenChange={onOpenChange}
-							inputRef={inputRef}
 							endUser={endUser}
 						/>
 					</div>
