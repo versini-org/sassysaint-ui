@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.2...client-v1.35.3) (2024-04-17)
+
+
+### Bug Fixes
+
+* history table is not fully visible at lower breakpoints ([6dc6ee9](https://github.com/aversini/sassysaint-ui/commit/6dc6ee93e8fc04a8e60bee6110cf5079cbddd6f2))
+
 ## [1.35.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.1...client-v1.35.2) (2024-04-17)
 
 
