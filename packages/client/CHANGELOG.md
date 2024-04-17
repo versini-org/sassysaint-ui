@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.36.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.3...client-v1.36.0) (2024-04-17)
+
+
+### Features
+
+* retain chat history search criteria ([58507db](https://github.com/aversini/sassysaint-ui/commit/58507dbd2916983e351274db685594a4f861ce86))
+
 ## [1.35.3](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.2...client-v1.35.3) (2024-04-17)
 
 
