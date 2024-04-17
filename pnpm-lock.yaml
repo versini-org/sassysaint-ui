@@ -30,14 +30,14 @@ importers:
         specifier: 0.26.12
         version: 0.26.12(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-components':
-        specifier: 5.17.2
-        version: 5.17.2(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 5.18.0
+        version: 5.18.0(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-form':
         specifier: 1.3.0
         version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-icons':
-        specifier: 1.7.0
-        version: 1.7.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.8.0
+        version: 1.8.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-system':
         specifier: 1.3.0
         version: 1.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -2272,8 +2272,8 @@ packages:
       eslint: 8.57.0
     dev: true
 
-  /@versini/ui-components@5.17.2(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-sVv5/zFpwF6nGGURMEMX9rgCe4Lu71ctCOG3BWwjhe03ApBzv66L5z/s6EWEN6Dr2w0UmbhLF4Ia6sYQ1gOkwQ==}
+  /@versini/ui-components@5.18.0(@floating-ui/react@0.26.12)(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1inub9NHfvB5m49g08M9PXvrTwbQ0cfuvZnq3r+84pEWqI3Y+P1Zd6MC/CGE3m0XsLt6zojJ/CUdYQW0dEqLFA==}
     peerDependencies:
       '@floating-ui/react': 0.26.12
       fast-equals: 5.0.1
@@ -2284,7 +2284,7 @@ packages:
       '@floating-ui/react': 0.26.12(react-dom@18.2.0)(react@18.2.0)
       '@tailwindcss/typography': 0.5.12(tailwindcss@3.4.3)
       '@versini/ui-hooks': 2.2.0(react-dom@18.2.0)(react@18.2.0)
-      '@versini/ui-icons': 1.7.0(react-dom@18.2.0)(react@18.2.0)
+      '@versini/ui-icons': 1.8.0(react-dom@18.2.0)(react@18.2.0)
       '@versini/ui-private': 1.4.2(react-dom@18.2.0)(react@18.2.0)
       clsx: 2.1.0
       fast-equals: 5.0.1
@@ -2319,8 +2319,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@versini/ui-icons@1.7.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-3BBx6AbNrjZbOhNRBlEJPVNnXe3pGq8i+Iu6MI3PMFDAH+W3bZAfXPUBnAFx15qXec64TgPnC5mO06/8uarceA==}
+  /@versini/ui-icons@1.8.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1Nr6qP1jDpKaESMWzfLLEVYFtNEjmRAUftFoy74hC+GncDlA+D46ZiFyiPjmWoHmHeweWvmrjWqvFK2QmFwvKw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
