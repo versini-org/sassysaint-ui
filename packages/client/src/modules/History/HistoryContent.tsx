@@ -1,6 +1,7 @@
+import { Button } from "@versini/ui-components";
 import { TextInput } from "@versini/ui-form";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import {
 	ACTION_SEARCH,
@@ -36,6 +37,9 @@ export const HistoryContent = ({
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
+	const inputRef = useRef<HTMLInputElement>(null);
+
+	const { dispatch } = useContext(AppContext);
 	const { state: historyState, dispatch: historyDispatch } =
 		useContext(HistoryContext);
 
@@ -50,14 +54,12 @@ export const HistoryContent = ({
 	}>({
 		data: fullHistory,
 	});
-	const { dispatch } = useContext(AppContext);
 
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
 
-	const onSearchChange = (e: any) => {
-		const searchString = e.target.value;
+	const updateDataOnSearch = (searchString: string) => {
 		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({
 			data: filteredData,
@@ -68,6 +70,10 @@ export const HistoryContent = ({
 			type: ACTION_SEARCH,
 			payload: { searchString },
 		});
+	};
+
+	const onSearchChange = (e: any) => {
+		updateDataOnSearch(e.target.value);
 	};
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,12 +95,28 @@ export const HistoryContent = ({
 				<>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
+							ref={inputRef}
 							defaultValue={historyState.searchString}
 							focusMode="light"
 							name="Search"
 							label="Search"
 							onChange={onSearchChange}
 							spacing={{ t: 2, b: 2 }}
+							rightElement={
+								<Button
+									mode="light"
+									noBorder
+									size="small"
+									onClick={() => {
+										updateDataOnSearch("");
+										if (inputRef.current?.value) {
+											inputRef.current.value = "";
+										}
+									}}
+								>
+									Reset
+								</Button>
+							}
 						/>
 					</form>
 					<div className="flex flex-col gap-2 sm:flex-row">
