@@ -11,6 +11,7 @@ import {
 } from "@versini/ui-components";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
 import { useState } from "react";
+import { useMedia } from "react-use";
 
 import { ACTION_RESET, ACTION_RESTORE } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
@@ -111,6 +112,7 @@ export const HistoryTable = ({
 	setFilteredHistory: any;
 	setFullHistory: any;
 }) => {
+	const isWide = useMedia("(min-width: 480px)");
 	const [sortState, setSortState] = useState<{
 		cell: string;
 		direction:
@@ -164,7 +166,7 @@ export const HistoryTable = ({
 		<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
 			<TableHead>
 				<TableRow>
-					<TableCell className="sr-only">Row</TableCell>
+					{isWide && <TableCell className="sr-only">Row</TableCell>}
 					<TableCellSort
 						cellId="timestamp"
 						align="left"
@@ -184,7 +186,7 @@ export const HistoryTable = ({
 				{data.map((item: HistoryItemProps, idx: any) => {
 					return item?.messages?.length > 0 ? (
 						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
-							<TableCell>{idx + 1}</TableCell>
+							{isWide && <TableCell>{idx + 1}</TableCell>}
 							<TableCell
 								component="th"
 								scope="row"
