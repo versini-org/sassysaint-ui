@@ -15,8 +15,8 @@ import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import { getCurrentGeoLocation, isDev } from "../../common/utilities";
 import { MessagesContainer } from "../Messages/MessagesContainer";
-import { AppContext } from "./AppContext";
-import { reducer } from "./reducer";
+import { AppContext, HistoryContext } from "./AppContext";
+import { historyReducer, reducer } from "./reducer";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
@@ -35,6 +35,9 @@ function App() {
 		model: isModel4 ? MODEL_GPT4 : DEFAULT_MODEL,
 		usage: 0,
 		messages: [],
+	});
+	const [stateHistory, dispatchHistory] = useReducer(historyReducer, {
+		searchString: "",
 	});
 
 	useEffect(() => {
@@ -122,22 +125,29 @@ function App() {
 
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch }}>
-			<Main>
-				<MessagesContainer />
-			</Main>
-			<Footer
-				mode="light"
-				row1={
-					<div>
-						{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-					</div>
-				}
-				row2={
-					<div>
-						&copy; {new Date().getFullYear()} {APP_OWNER}
-					</div>
-				}
-			/>
+			<HistoryContext.Provider
+				value={{
+					state: stateHistory,
+					dispatch: dispatchHistory,
+				}}
+			>
+				<Main>
+					<MessagesContainer />
+				</Main>
+				<Footer
+					mode="light"
+					row1={
+						<div>
+							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
+						</div>
+					}
+					row2={
+						<div>
+							&copy; {new Date().getFullYear()} {APP_OWNER}
+						</div>
+					}
+				/>
+			</HistoryContext.Provider>
 		</AppContext.Provider>
 	);
 }

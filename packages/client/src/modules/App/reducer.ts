@@ -9,6 +9,15 @@ import {
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
 
+export const historyReducer = (state: any, action: any) => {
+	// console.log(`==> [${Date.now()}] state: `, state);
+	// console.log(`==> [${Date.now()}] action: `, action);
+
+	return {
+		searchString: action.payload.searchString,
+	};
+};
+
 export const reducer = (state: StateProps, action: ActionProps) => {
 	if (action?.type === ACTION_RESTORE) {
 		const messages = action.payload.messages.map((item: any) => {

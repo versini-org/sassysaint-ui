@@ -2,7 +2,7 @@ import { TextInput } from "@versini/ui-form";
 import { useContext, useRef, useState } from "react";
 
 import { FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
-import { AppContext } from "../App/AppContext";
+import { AppContext, HistoryContext } from "../App/AppContext";
 import { HistoryTable } from "./HistoryTable";
 
 type HistoryContentProps = {
@@ -30,24 +30,45 @@ export const HistoryContent = ({
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
+	const { state: historyState, dispatch: historyDispatch } =
+		useContext(HistoryContext);
+	console.log(
+		`==> [${Date.now()}] historyState.searchString: `,
+		historyState.searchString,
+	);
+
 	const [fullHistory, setFullHistory] = useState<any[]>(historyData);
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
 		searchString: string;
 	}>({
 		data: fullHistory,
-		searchString: "",
+		searchString: historyState.searchString,
 	});
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { dispatch } = useContext(AppContext);
+
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
 		: user;
+
+	const filteredData = filterDataByContent(
+		fullHistory,
+		historyState.searchString,
+	);
+	setFilteredHistory({
+		searchString: historyState.searchString,
+		data: filteredData,
+	});
 
 	const onSearchChange = (e: any) => {
 		const searchString = e.target.value;
 		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({ searchString, data: filteredData });
+		historyDispatch({
+			type: "SEARCH",
+			payload: { searchString },
+		});
 	};
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -59,6 +80,7 @@ export const HistoryContent = ({
 				<>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
+							defaultValue={historyState.searchString}
 							focusMode="light"
 							ref={inputRef}
 							name="Search"
