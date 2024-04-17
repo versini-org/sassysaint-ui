@@ -1120,5 +1120,49 @@
       "limit": "46 kb",
       "passed": true
     }
+  },
+  "1.36.0": {
+    "dist/index.html": {
+      "fileSize": 9560,
+      "fileSizeGzip": 1871,
+      "limit": "2 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.js": {
+      "fileSize": 83739,
+      "fileSizeGzip": 24166,
+      "limit": "25 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.css": {
+      "fileSize": 70053,
+      "fileSizeGzip": 9916,
+      "limit": "10 kb",
+      "passed": true
+    },
+    "dist/MessageAssistant-<hash>.js": {
+      "fileSize": 154335,
+      "fileSizeGzip": 46839,
+      "limit": "50 kb",
+      "passed": true
+    },
+    "dist/auth0-<semver>.js": {
+      "fileSize": 49189,
+      "fileSizeGzip": 16173,
+      "limit": "16 kb",
+      "passed": true
+    },
+    "dist/floating-ui-<semver>.js": {
+      "fileSize": 57266,
+      "fileSizeGzip": 20760,
+      "limit": "21 kb",
+      "passed": true
+    },
+    "dist/react-<semver>.js": {
+      "fileSize": 142313,
+      "fileSizeGzip": 45634,
+      "limit": "46 kb",
+      "passed": true
+    }
   }
 }
