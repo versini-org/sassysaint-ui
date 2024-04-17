@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.1...client-v1.35.2) (2024-04-17)
+
+
+### Bug Fixes
+
+* use new "sort icons" from recent UI lib update ([eb465c0](https://github.com/aversini/sassysaint-ui/commit/eb465c093620eb8c903c696368f3ec2f59f9eb42))
+
 ## [1.35.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.35.0...client-v1.35.1) (2024-04-16)
 
 
