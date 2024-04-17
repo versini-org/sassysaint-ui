@@ -74,7 +74,6 @@ const onClickDelete = async (
 	item: { id: any },
 	setFilteredHistory: (arg0: any) => void,
 	setFullHistory: (arg0: any) => void,
-	inputRef: any,
 	endUser: any,
 ) => {
 	try {
@@ -89,9 +88,6 @@ const onClickDelete = async (
 			const data = await response.json();
 			setFullHistory(data.data.deleteChat);
 			setFilteredHistory({ data: data.data.deleteChat });
-			if (inputRef?.current) {
-				inputRef.current.value = "";
-			}
 		}
 	} catch (error) {
 		// nothing to declare officer
@@ -109,13 +105,11 @@ export const HistoryTable = ({
 	setFullHistory,
 	dispatch,
 	onOpenChange,
-	inputRef,
 	endUser,
 }: {
 	dispatch: any;
 	endUser: any;
 	filteredHistory: any;
-	inputRef: any;
 	onOpenChange: any;
 	setFilteredHistory: any;
 	setFullHistory: any;
@@ -249,7 +243,6 @@ export const HistoryTable = ({
 												item,
 												setFilteredHistory,
 												setFullHistory,
-												inputRef,
 												endUser,
 											);
 										}}
