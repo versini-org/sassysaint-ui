@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.37.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.37.0...client-v1.37.1) (2024-04-21)
+
+
+### Bug Fixes
+
+* bump to latest deps + replace ESLint/Prettier with Biome ([0bf2995](https://github.com/aversini/sassysaint-ui/commit/0bf2995abf081ea3432018fc79dc6a0375cc7b00))
+
 ## [1.37.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.36.0...client-v1.37.0) (2024-04-17)
 
 
