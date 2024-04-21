@@ -42,7 +42,7 @@ export const ChatDetails = ({
 					const data = await response.json();
 					setStats(data.data.chatsStats);
 				}
-			} catch (error) {
+			} catch (_error) {
 				// nothing to declare officer
 			}
 		})();

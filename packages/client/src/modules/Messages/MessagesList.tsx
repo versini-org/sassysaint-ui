@@ -1,5 +1,5 @@
 import { Bubble } from "@versini/ui-components";
-import { lazy, Suspense, useContext, useEffect, useRef } from "react";
+import { Suspense, lazy, useContext, useEffect, useRef } from "react";
 
 import {
 	ROLE_ASSISTANT,

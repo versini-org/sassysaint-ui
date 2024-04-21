@@ -117,7 +117,7 @@ function App() {
 						},
 					});
 				}
-			} catch (error) {
+			} catch (_error) {
 				// nothing to declare officer
 			}
 		})();

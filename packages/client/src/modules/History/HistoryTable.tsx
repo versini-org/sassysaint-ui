@@ -65,7 +65,7 @@ const onClickRestore = async (
 			// close the panel
 			onOpenChange(false);
 		}
-	} catch (error) {
+	} catch (_error) {
 		// nothing to declare officer
 	}
 };
@@ -89,7 +89,7 @@ const onClickDelete = async (
 			setFullHistory(data.data.deleteChat);
 			setFilteredHistory({ data: data.data.deleteChat });
 		}
-	} catch (error) {
+	} catch (_error) {
 		// nothing to declare officer
 	}
 };
@@ -208,6 +208,7 @@ export const HistoryTable = ({
 			</TableHead>
 			<TableBody>
 				{data.map((item: HistoryItemProps, idx: any) => {
+					// biome-ignore lint/correctness/useJsxKeyInIterable: This is a table, the key is the row
 					return item?.messages?.length > 0 ? (
 						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
 							{isWide && <TableCell>{idx + 1}</TableCell>}

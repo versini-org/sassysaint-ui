@@ -12,22 +12,31 @@ export const truncate = (str: string, length: number) => {
 
 // function to convert latitude and longitude to degree minutes seconds format
 export const convertDDToDMS = (dd: number, lng: boolean) => {
+	const dir = dd < 0 ? (lng ? "W" : "S") : lng ? "E" : "N";
+	const deg = 0 | Math.abs(dd);
+	const min = 0 | ((Math.abs(dd) * 60) % 60);
+	const sec = (0 | (((Math.abs(dd) * 60) % 1) * 6000)) / 100;
+
 	return {
-		dir: dd < 0 ? (lng ? "W" : "S") : lng ? "E" : "N",
-		deg: 0 | (dd < 0 ? (dd = -dd) : dd),
-		min: 0 | (((dd += 1e-9) % 1) * 60),
-		sec: (0 | (((dd * 60) % 1) * 6000)) / 100,
+		dir,
+		deg,
+		min,
+		sec,
 	};
 };
 
 export const convertLatitudeToDMS = (lat?: number) => {
-	if (!lat && lat !== 0) return "N/A";
+	if (!lat && lat !== 0) {
+		return "N/A";
+	}
 	const latitude = convertDDToDMS(lat, false);
 	return `${latitude.deg}° ${latitude.min}' ${latitude.sec}" ${latitude.dir}`;
 };
 
 export const convertLongitudeToDMS = (lng?: number) => {
-	if (!lng && lng !== 0) return "N/A";
+	if (!lng && lng !== 0) {
+		return "N/A";
+	}
 	const longitude = convertDDToDMS(lng, true);
 	return `${longitude.deg}° ${longitude.min}' ${longitude.sec}" ${longitude.dir}`;
 };
