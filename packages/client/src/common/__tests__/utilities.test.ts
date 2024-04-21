@@ -53,8 +53,8 @@ describe("Non-DOM tests", () => {
 		it("should convert latitude to degree minutes seconds format", () => {
 			expect(convertLatitudeToDMS(undefined)).toBe("N/A");
 			expect(convertLatitudeToDMS(0)).toBe("0° 0' 0\" N");
-			expect(convertLatitudeToDMS(10.123456)).toBe("10° 7' 24.44\" N");
-			expect(convertLatitudeToDMS(-10.123456)).toBe("10° 7' 24.44\" S");
+			expect(convertLatitudeToDMS(1.23456789)).toBe("1° 14' 4.44\" N");
+			expect(convertLatitudeToDMS(-1.23456789)).toBe("1° 14' 4.44\" S");
 		});
 	});
 
@@ -62,8 +62,8 @@ describe("Non-DOM tests", () => {
 		it("should convert longitude to degree minutes seconds format", () => {
 			expect(convertLongitudeToDMS(undefined)).toBe("N/A");
 			expect(convertLongitudeToDMS(0)).toBe("0° 0' 0\" E");
-			expect(convertLongitudeToDMS(10.123456)).toBe("10° 7' 24.44\" E");
-			expect(convertLongitudeToDMS(-10.123456)).toBe("10° 7' 24.44\" W");
+			expect(convertLongitudeToDMS(1.23456789)).toBe("1° 14' 4.44\" E");
+			expect(convertLongitudeToDMS(-1.23456789)).toBe("1° 14' 4.44\" W");
 		});
 	});
 
