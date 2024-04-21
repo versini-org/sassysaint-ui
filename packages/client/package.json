@@ -8,7 +8,7 @@
 		"clean": "rimraf dist",
 		"dev": "vite --host",
 		"build": "tsc && vite build",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix --color",
+		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
 		"stats:pr": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o tmp/stats.json --silent",
 		"stats:release": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o stats/stats.json --silent",
@@ -20,7 +20,7 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.8.2"
+		"@versini/ui-styles": "1.8.3"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",

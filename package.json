@@ -1,9 +1,7 @@
 {
 	"name": "root",
 	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": ["packages/*"],
 	"scripts": {
 		"build": "lerna run build",
 		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
@@ -14,9 +12,8 @@
 	},
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.0.2",
-		"@versini/dev-dependencies-client": "4.1.20",
-		"@versini/dev-dependencies-types": "1.1.10",
-		"@versini/eslint-plugin-client": "1.0.2"
+		"@versini/dev-dependencies-client": "4.1.22",
+		"@versini/dev-dependencies-types": "1.1.11"
 	},
 	"packageManager": "pnpm@8.15.7+sha256.50783dd0fa303852de2dd1557cd4b9f07cb5b018154a6e76d0f40635d6cee019"
 }

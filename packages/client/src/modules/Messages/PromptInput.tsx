@@ -51,6 +51,7 @@ export const PromptInput = () => {
 
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		(async () => {
 			if (!state || state.messages.length === 0) {

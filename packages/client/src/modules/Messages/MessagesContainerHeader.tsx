@@ -116,7 +116,7 @@ export const MessagesContainerHeader = () => {
 					timestamp: Date.now(),
 				});
 			}
-		} catch (error) {
+		} catch (_error) {
 			setFetchingHistory({
 				done: true,
 				progress: false,
