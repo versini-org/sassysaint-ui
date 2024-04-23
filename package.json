@@ -1,7 +1,9 @@
 {
 	"name": "root",
 	"private": true,
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
 		"build": "lerna run build",
 		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
@@ -11,9 +13,9 @@
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@node-cli/bundlesize": "4.0.2",
-		"@versini/dev-dependencies-client": "4.1.22",
+		"@node-cli/bundlesize": "4.0.3",
+		"@versini/dev-dependencies-client": "4.1.23",
 		"@versini/dev-dependencies-types": "1.1.11"
 	},
-	"packageManager": "pnpm@8.15.7+sha256.50783dd0fa303852de2dd1557cd4b9f07cb5b018154a6e76d0f40635d6cee019"
+	"packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
 }
