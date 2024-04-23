@@ -20,15 +20,15 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.8.3"
+		"@versini/ui-styles": "1.9.0"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
 		"@floating-ui/react": "0.26.12",
 		"@versini/ui-components": "5.18.1",
-		"@versini/ui-form": "1.3.0",
+		"@versini/ui-form": "1.3.2",
 		"@versini/ui-icons": "1.8.0",
-		"@versini/ui-system": "1.3.0",
+		"@versini/ui-system": "1.4.0",
 		"autoprefixer": "10.4.19",
 		"postcss": "8.4.38",
 		"pretty-ms": "9.0.0",
