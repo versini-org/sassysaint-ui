@@ -1,11 +1,9 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import {
-	Button,
 	ButtonIcon,
 	Menu,
 	MenuItem,
 	MenuSeparator,
-	Panel,
 } from "@versini/ui-components";
 import {
 	IconBack,
@@ -16,7 +14,6 @@ import {
 	IconProfile,
 	IconSettings,
 } from "@versini/ui-icons";
-import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useState } from "react";
 
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
@@ -31,6 +28,7 @@ import { isDev } from "../../common/utilities";
 import { About } from "../About/About";
 import { AppContext } from "../App/AppContext";
 import { ChatDetails } from "../ChatDetails/ChatDetails";
+import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 import { History } from "../History/History";
 import { Profile } from "../Profile/Profile";
 
@@ -135,40 +133,19 @@ export const MessagesContainerHeader = () => {
 		<>
 			{(isAuthenticated || isDev) && (
 				<>
-					<Panel
-						kind="messagebox"
-						open={showConfirmation}
-						onOpenChange={setShowConfirmation}
-						title={LOG_OUT}
-						footer={
-							<Flexgrid columnGap={2} alignHorizontal="flex-end">
-								<FlexgridItem>
-									<Button
-										mode="dark"
-										variant="secondary"
-										focusMode="light"
-										onClick={() => {
-											setShowConfirmation(false);
-										}}
-									>
-										Cancel
-									</Button>
-								</FlexgridItem>
-								<FlexgridItem>
-									<Button
-										mode="dark"
-										variant="danger"
-										focusMode="light"
-										onClick={() => logoutWithRedirect()}
-									>
-										{LOG_OUT}
-									</Button>
-								</FlexgridItem>
-							</Flexgrid>
-						}
+					<ConfirmationPanel
+						showConfirmation={showConfirmation}
+						setShowConfirmation={setShowConfirmation}
+						action={logoutWithRedirect}
+						customStrings={{
+							confirmAction: LOG_OUT,
+							cancelAction: "Cancel",
+							title: LOG_OUT,
+						}}
 					>
 						<p>Are you sure you want to log out?</p>
-					</Panel>
+					</ConfirmationPanel>
+
 					<Profile open={showProfile} onOpenChange={setShowProfile} />
 					<ChatDetails
 						open={showChatDetails}
