@@ -11,7 +11,7 @@ import {
 } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
-import { useContext } from "react";
+import { useContext, useRef, useState } from "react";
 import { useMedia } from "react-use";
 
 import {
@@ -25,6 +25,7 @@ import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL } from "../../common/strings";
 import { truncate } from "../../common/utilities";
 import { HistoryContext } from "../App/AppContext";
+import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 
 type HistoryItemProps = {
 	id: number;
@@ -70,30 +71,6 @@ const onClickRestore = async (
 	}
 };
 
-const onClickDelete = async (
-	item: { id: any },
-	setFilteredHistory: (arg0: any) => void,
-	setFullHistory: (arg0: any) => void,
-	endUser: any,
-) => {
-	try {
-		const response = await graphQLCall({
-			query: GRAPHQL_QUERIES.DELETE_CHAT,
-			data: {
-				userId: endUser?.email || FAKE_USER_EMAIL,
-				id: item?.id,
-			},
-		});
-		if (response.status === 200) {
-			const data = await response.json();
-			setFullHistory(data.data.deleteChat);
-			setFilteredHistory({ data: data.data.deleteChat });
-		}
-	} catch (_error) {
-		// nothing to declare officer
-	}
-};
-
 const extractFirstUserMessage = (messages: any[]) => {
 	const message = messages[0];
 	return truncate(message?.content, 100);
@@ -114,6 +91,12 @@ export const HistoryTable = ({
 	setFilteredHistory: any;
 	setFullHistory: any;
 }) => {
+	const chatToDeleteRef = useRef({
+		id: 0,
+		timestamp: "",
+		message: "",
+	});
+	const [showConfirmation, setShowConfirmation] = useState(false);
 	const isWide = useMedia("(min-width: 480px)");
 	const { state: historyState, dispatch: historyDispatch } =
 		useContext(HistoryContext);
@@ -186,88 +169,136 @@ export const HistoryTable = ({
 		}
 	};
 
-	return (
-		<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
-			<TableHead>
-				<TableRow>
-					{isWide && <TableCell className="sr-only">Row</TableCell>}
-					<TableCellSort
-						cellId="timestamp"
-						align="left"
-						sortDirection={historyState.sortDirection}
-						sortedCell={historyState.sortedCell}
-						onClick={() => {
-							onClickSort("timestamp");
-						}}
-					>
-						Date
-					</TableCellSort>
-					<TableCell>First message</TableCell>
-					<TableCell className="text-right">Actions</TableCell>
-				</TableRow>
-			</TableHead>
-			<TableBody>
-				{data.map((item: HistoryItemProps, idx: any) => {
-					// biome-ignore lint/correctness/useJsxKeyInIterable: This is a table, the key is the row
-					return item?.messages?.length > 0 ? (
-						<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
-							{isWide && <TableCell>{idx + 1}</TableCell>}
-							<TableCell
-								component="th"
-								scope="row"
-								className="font-medium text-gray-400 sm:whitespace-nowrap"
-							>
-								{item.timestamp}
-							</TableCell>
-							<TableCell className="max-w-[100px] text-white sm:max-w-full">
-								{extractFirstUserMessage(item.messages)}
-							</TableCell>
+	const onClickDelete = async () => {
+		const item = chatToDeleteRef.current;
+		try {
+			const response = await graphQLCall({
+				query: GRAPHQL_QUERIES.DELETE_CHAT,
+				data: {
+					userId: endUser?.email || FAKE_USER_EMAIL,
+					id: item?.id,
+				},
+			});
+			if (response.status === 200) {
+				const data = await response.json();
+				setFullHistory(data.data.deleteChat);
+				setFilteredHistory({ data: data.data.deleteChat });
+			}
+		} catch (_error) {
+			// nothing to declare officer
+		}
+	};
 
-							<TableCell>
-								<div className="flex justify-end gap-2">
-									<ButtonIcon
-										focusMode="alt-system"
-										noBorder
-										label="Restore chat"
-										onClick={() => {
-											onClickRestore(item, dispatch, onOpenChange);
-										}}
-									>
-										<IconRestore className="h-3 w-3" monotone />
-									</ButtonIcon>
-									<ButtonIcon
-										focusMode="alt-system"
-										noBorder
-										label="Delete chat"
-										onClick={() => {
-											onClickDelete(
-												item,
-												setFilteredHistory,
-												setFullHistory,
-												endUser,
-											);
-										}}
-									>
-										<div className="text-red-400">
-											<IconDelete className="h-3 w-3" monotone />
-										</div>
-									</ButtonIcon>
-								</div>
-							</TableCell>
-						</TableRow>
-					) : null;
-				})}
-			</TableBody>
-			<TableFooter>
-				<TableRow>
-					<TableCell colSpan={4}>
-						<div>
-							{filteredHistory.data.length}{" "}
-							{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
-						</div>
-					</TableCell>
-				</TableRow>
-			</TableFooter>
-		</Table>
+	return (
+		<>
+			<ConfirmationPanel
+				showConfirmation={showConfirmation}
+				setShowConfirmation={setShowConfirmation}
+				action={onClickDelete}
+				customStrings={{
+					confirmAction: "Delete",
+					cancelAction: "Cancel",
+					title: "Delete chat",
+				}}
+			>
+				<p className="m-0">
+					Are you sure you want to delete the following chat:
+				</p>
+				<ul className="m-0">
+					<li>
+						Timestamp:{" "}
+						<span className="text-lg">
+							{chatToDeleteRef.current && chatToDeleteRef.current.timestamp}
+						</span>
+					</li>
+					<li>
+						First message:{" "}
+						<span className="text-lg">{chatToDeleteRef.current?.message}</span>
+					</li>
+				</ul>
+			</ConfirmationPanel>
+			<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
+				<TableHead>
+					<TableRow>
+						{isWide && <TableCell className="sr-only">Row</TableCell>}
+						<TableCellSort
+							cellId="timestamp"
+							align="left"
+							sortDirection={historyState.sortDirection}
+							sortedCell={historyState.sortedCell}
+							onClick={() => {
+								onClickSort("timestamp");
+							}}
+						>
+							Date
+						</TableCellSort>
+						<TableCell>First message</TableCell>
+						<TableCell className="text-right">Actions</TableCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					{data.map((item: HistoryItemProps, idx: any) => {
+						// biome-ignore lint/correctness/useJsxKeyInIterable: This is a table, the key is the row
+						return item?.messages?.length > 0 ? (
+							<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
+								{isWide && <TableCell>{idx + 1}</TableCell>}
+								<TableCell
+									component="th"
+									scope="row"
+									className="font-medium text-gray-400 sm:whitespace-nowrap"
+								>
+									{item.timestamp}
+								</TableCell>
+								<TableCell className="max-w-[100px] text-white sm:max-w-full">
+									{extractFirstUserMessage(item.messages)}
+								</TableCell>
+
+								<TableCell>
+									<div className="flex justify-end gap-2">
+										<ButtonIcon
+											focusMode="alt-system"
+											noBorder
+											label="Restore chat"
+											onClick={() => {
+												onClickRestore(item, dispatch, onOpenChange);
+											}}
+										>
+											<IconRestore className="h-3 w-3" monotone />
+										</ButtonIcon>
+										<ButtonIcon
+											focusMode="alt-system"
+											noBorder
+											label="Delete chat"
+											onClick={() => {
+												chatToDeleteRef.current = {
+													id: item.id,
+													timestamp: item.timestamp,
+													message: extractFirstUserMessage(item.messages),
+												};
+												setShowConfirmation(!showConfirmation);
+											}}
+										>
+											<div className="text-red-400">
+												<IconDelete className="h-3 w-3" monotone />
+											</div>
+										</ButtonIcon>
+									</div>
+								</TableCell>
+							</TableRow>
+						) : null;
+					})}
+				</TableBody>
+				<TableFooter>
+					<TableRow>
+						<TableCell colSpan={4}>
+							<div>
+								{filteredHistory.data.length}{" "}
+								{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
+							</div>
+						</TableCell>
+					</TableRow>
+				</TableFooter>
+			</Table>
+		</>
 	);
 };
