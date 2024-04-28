@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import {
 	Button,
+	ButtonIcon,
 	Menu,
 	MenuItem,
 	MenuSeparator,
@@ -184,7 +185,11 @@ export const MessagesContainerHeader = () => {
 							<Menu
 								mode="dark"
 								focusMode="light"
-								icon={<IconSettings />}
+								trigger={
+									<ButtonIcon>
+										<IconSettings />
+									</ButtonIcon>
+								}
 								defaultPlacement="bottom-end"
 								onOpenChange={onOpenChange}
 							>
