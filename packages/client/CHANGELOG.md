@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.38.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.37.2...client-v1.38.0) (2024-04-28)
+
+
+### Features
+
+* adding confirmation panel before deleting a chat ([b9a7bb6](https://github.com/aversini/sassysaint-ui/commit/b9a7bb65aaa41a480f48bcec498c32529b8b5bcd))
+
+
+### Bug Fixes
+
+* refactoring logout confirmation panel ([b7f7512](https://github.com/aversini/sassysaint-ui/commit/b7f751228eb7f71a52e02b2c9d0eb3581e2e82e3))
+
 ## [1.37.2](https://github.com/aversini/sassysaint-ui/compare/client-v1.37.1...client-v1.37.2) (2024-04-28)
 
 
