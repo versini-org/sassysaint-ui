@@ -14,8 +14,8 @@
 	},
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.0.3",
-		"@versini/dev-dependencies-client": "4.1.23",
-		"@versini/dev-dependencies-types": "1.1.11"
+		"@versini/dev-dependencies-client": "4.1.24",
+		"@versini/dev-dependencies-types": "1.1.12"
 	},
-	"packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
+	"packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3"
 }
