@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.38.0...client-v1.38.1) (2024-05-04)
+
+
+### Bug Fixes
+
+* input text overlap with "send" button ([3d26020](https://github.com/aversini/sassysaint-ui/commit/3d26020f0200fd336dfa992737357b09ab912ac6))
+
 ## [1.38.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.37.2...client-v1.38.0) (2024-04-28)
 
 
