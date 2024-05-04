@@ -30,8 +30,8 @@ importers:
         specifier: 5.19.1
         version: 5.19.1(@floating-ui/react@0.26.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(fast-equals@5.0.1)(micro-memoize@4.1.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-form':
-        specifier: 1.3.3
-        version: 1.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.3.4
+        version: 1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.8.1
         version: 1.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1274,8 +1274,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-form@1.3.3':
-    resolution: {integrity: sha512-ebf1ilYVMlG4MDl9T8U/3GH7XsgTsN2pxQ0d8cZUw0fXFxV7RLaszhuC7tNcbHtPhJ/tA/Qc7zJKiawKSV1LEA==}
+  '@versini/ui-form@1.3.4':
+    resolution: {integrity: sha512-1/u/20NCe9c+4SFwwLLOHP9wsOJAPSNqeUhhrq35F/elshwRQmR/Try2IkxpSR/NvuCt8VBZe10WzET8TXFm1A==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6680,7 +6680,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-form@1.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-form@1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@versini/ui-hooks': 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
