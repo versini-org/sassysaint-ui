@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.38.1...client-v2.0.0) (2024-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* function calls are not working yet in streaming
+
+### Features
+
+* introducing streaming responses ([f5be44a](https://github.com/aversini/sassysaint-ui/commit/f5be44a7a523a50c979a74e2fc8cdc1431d5c9a2))
+
 ## [1.38.1](https://github.com/aversini/sassysaint-ui/compare/client-v1.38.0...client-v1.38.1) (2024-05-04)
 
 
