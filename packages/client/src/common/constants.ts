@@ -28,3 +28,5 @@ export const LOCAL_STORAGE_CHAT_DETAILS = "details";
 export const LOCAL_STORAGE_MODEL = "use-gpt4";
 export const LOCAL_STORAGE_SEARCH = "search";
 export const LOCAL_STORAGE_SORT = "sort";
+
+export const STATS_SEPARATOR = "==stats==";

@@ -3,6 +3,7 @@ import { Button } from "@versini/ui-components";
 import { TextArea } from "@versini/ui-form";
 import { useLocalStorage } from "@versini/ui-hooks";
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import {
 	ACTION_MESSAGE,
@@ -17,6 +18,7 @@ import {
 	ROLE_INTERNAL,
 	ROLE_SYSTEM,
 	ROLE_USER,
+	STATS_SEPARATOR,
 } from "../../common/constants";
 import { serviceCall } from "../../common/services";
 import {
@@ -81,40 +83,66 @@ export const PromptInput = () => {
 						location: state.location,
 					},
 				});
+				if (response && response.ok) {
+					const messageId = uuidv4();
+					const reader = response.body!.getReader();
+					const decoder = new TextDecoder();
+					while (true) {
+						const { done, value } = await reader.read();
+						if (done) {
+							// stream completed
+							break;
+						}
 
-				if (response.status !== 200) {
-					dispatch({
-						type: ACTION_MESSAGE,
-						payload: {
-							message: {
-								role: ROLE_INTERNAL,
-								content: ERROR_MESSAGE,
-							},
-						},
-					});
-				} else {
-					const data = await response.json();
-					dispatch({
-						type: ACTION_MODEL,
-						payload: {
-							usage: data.usage,
-							model: data.model,
-						},
-					});
-					dispatch({
-						type: ACTION_MESSAGE,
-						payload: {
-							message: {
-								role: ROLE_ASSISTANT,
-								content: data.result,
-								name: data.name,
-								processingTime: data.processingTime,
-							},
-						},
-					});
+						// decode the value from the chunk
+						const chunk = decoder.decode(value, { stream: true });
+
+						/**
+						 * If the chunk contains ==stats==, it means the response is complete.
+						 * We need to remove ==stats== from the chunk and extract the string
+						 * before as a normal chunk and JSON.parse the rest which contains the
+						 * following stats: processingTime, model and usage.
+						 */
+						const statsIndex = chunk.indexOf(STATS_SEPARATOR);
+						if (statsIndex !== -1) {
+							const content = chunk.substring(0, statsIndex);
+							const stats = JSON.parse(
+								chunk.substring(statsIndex + STATS_SEPARATOR.length),
+							);
+							dispatch({
+								type: ACTION_MODEL,
+								payload: {
+									model: stats.model,
+									usage: stats.usage,
+								},
+							});
+							dispatch({
+								type: ACTION_MESSAGE,
+								payload: {
+									message: {
+										content,
+										role: ROLE_ASSISTANT,
+										messageId,
+										processingTime: stats.processingTime,
+									},
+								},
+							});
+							break;
+						} else {
+							dispatch({
+								type: ACTION_MESSAGE,
+								payload: {
+									message: {
+										content: chunk,
+										role: ROLE_ASSISTANT,
+										messageId,
+									},
+								},
+							});
+						}
+					}
 				}
 			} catch (error) {
-				// eslint-disable-next-line no-console
 				console.error(error);
 				dispatch({
 					type: ACTION_MESSAGE,
