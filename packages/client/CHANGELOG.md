@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.0.0...client-v2.0.1) (2024-05-11)
+
+
+### Bug Fixes
+
+* simplifying auto scroll by removing it :) ([43ecd18](https://github.com/aversini/sassysaint-ui/commit/43ecd18658d3b060c69cd5cbaecf07364dbfe809))
+
 ## [2.0.0](https://github.com/aversini/sassysaint-ui/compare/client-v1.38.1...client-v2.0.0) (2024-05-11)
 
 
