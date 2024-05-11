@@ -19,7 +19,6 @@ const FOOTER_KEYS = {
 };
 
 export const MessageAssistant = ({
-	smoothScrollRef,
 	children,
 	name,
 	loading,
@@ -33,7 +32,7 @@ export const MessageAssistant = ({
 
 	return (
 		<>
-			<div ref={smoothScrollRef} className="h-0.5" />
+			<div className="h-0.5" />
 			{loading ? (
 				<Bubble>
 					<Spinner type="dots" />

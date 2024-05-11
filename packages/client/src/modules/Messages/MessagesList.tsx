@@ -1,5 +1,5 @@
 import { Bubble } from "@versini/ui-components";
-import { Suspense, lazy, useContext, useEffect, useRef } from "react";
+import { Suspense, lazy, useContext } from "react";
 
 import {
 	ROLE_ASSISTANT,
@@ -13,26 +13,6 @@ const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
 
 export const MessagesList = () => {
 	const { state } = useContext(AppContext);
-	const smoothScrollRef: React.RefObject<HTMLDivElement> = useRef(null);
-
-	/**
-	 * if the last message is from the assistant, scroll
-	 * to the top of the messages assistant container.
-	 */
-	useEffect(() => {
-		if (!state || state.messages.length === 0) {
-			return;
-		}
-		if (
-			smoothScrollRef &&
-			smoothScrollRef.current &&
-			isLastMessageFromRole(ROLE_ASSISTANT, state)
-		) {
-			smoothScrollRef.current.scrollIntoView({
-				behavior: "smooth",
-			});
-		}
-	}, [state]);
 
 	return (
 		<>
@@ -43,11 +23,7 @@ export const MessagesList = () => {
 					if ((role === ROLE_ASSISTANT || role === ROLE_INTERNAL) && content) {
 						return (
 							<Suspense key={`${index}-${role}`} fallback={<span></span>}>
-								<MessageAssistant
-									smoothScrollRef={smoothScrollRef}
-									name={name}
-									processingTime={processingTime}
-								>
+								<MessageAssistant name={name} processingTime={processingTime}>
 									{content}
 								</MessageAssistant>
 							</Suspense>
@@ -65,7 +41,7 @@ export const MessagesList = () => {
 
 			{isLastMessageFromRole(ROLE_USER, state) && (
 				<Suspense fallback={<span></span>}>
-					<MessageAssistant smoothScrollRef={smoothScrollRef} loading />
+					<MessageAssistant loading />
 				</Suspense>
 			)}
 		</>
