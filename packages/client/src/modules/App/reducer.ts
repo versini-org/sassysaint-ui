@@ -8,6 +8,7 @@ import {
 	ACTION_RESTORE,
 	ACTION_SEARCH,
 	ACTION_SORT,
+	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
 
@@ -56,14 +57,45 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		const content = action.payload.message.content;
 		const name = action.payload.message.name;
 		const processingTime = action.payload.message.processingTime;
+		const messageId = action.payload.message.messageId;
 
-		if (role !== "" && content !== "") {
+		if (role !== "") {
 			const message = {
 				role,
 				content,
 				name,
 				processingTime,
+				messageId,
 			};
+
+			// need to find if a message with the same messageId already exists
+			// if it exists, append the content to it, otherwise create a new message
+			if (role === ROLE_ASSISTANT) {
+				const index = state.messages.findIndex(
+					(item) => item.message.messageId === messageId,
+				);
+				if (index !== -1) {
+					const messages = state.messages.map((item, i) => {
+						if (i === index) {
+							return {
+								message: {
+									...item.message,
+									content: `${item.message.content}${content}`,
+									processingTime,
+								},
+							};
+						}
+						return item;
+					});
+					return {
+						id: state.id,
+						model: state.model,
+						usage: state.usage,
+						location: state.location,
+						messages,
+					};
+				}
+			}
 
 			return {
 				id: state.id,

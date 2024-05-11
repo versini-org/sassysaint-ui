@@ -23,6 +23,7 @@ export type MessageProps = {
 	name?: string;
 	processingTime?: number;
 	role?: string;
+	messageId?: string;
 };
 
 export type StateProps = {
