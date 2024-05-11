@@ -74,8 +74,6 @@ export type AppContextProps = {
 };
 
 export type MessageAssistantProps = {
-	smoothScrollRef: React.RefObject<HTMLDivElement>;
-
 	children?: string;
 	loading?: boolean;
 	name?: string;
