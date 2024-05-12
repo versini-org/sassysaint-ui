@@ -19,6 +19,7 @@ export const ACTION_RESET = "action-reset";
 export const ACTION_MODEL = "action-model";
 export const ACTION_RESTORE = "action-restore";
 export const ACTION_LOCATION = "action-location";
+export const ACTION_STREAMING = "action-streaming";
 
 export const ACTION_SEARCH = "action-search";
 export const ACTION_SORT = "action-sort";

@@ -4,6 +4,7 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
+	ACTION_STREAMING,
 } from "./constants";
 
 export type GeoLocation = {
@@ -33,6 +34,7 @@ export type StateProps = {
 	usage: number;
 
 	location?: GeoLocation;
+	streaming?: boolean;
 };
 
 export type ActionProps =
@@ -65,6 +67,12 @@ export type ActionProps =
 				location: GeoLocation;
 			};
 			type: typeof ACTION_LOCATION;
+	  }
+	| {
+			payload: {
+				streaming: boolean;
+			};
+			type: typeof ACTION_STREAMING;
 	  };
 
 export type AppContextProps = {
