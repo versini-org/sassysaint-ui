@@ -2,6 +2,7 @@ import { Bubble, Spinner } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 
 import {
@@ -51,7 +52,12 @@ export const MessageAssistant = ({
 								: null,
 					}}
 				>
-					<ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+					<ReactMarkdown
+						remarkPlugins={[remarkGfm]}
+						rehypePlugins={[rehypeHighlight]}
+					>
+						{children}
+					</ReactMarkdown>
 				</Bubble>
 			)}
 		</>

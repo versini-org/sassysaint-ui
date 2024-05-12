@@ -18,7 +18,7 @@ export default {
 		},
 		{
 			path: "dist/MessageAssistant-<hash>.js",
-			limit: "50 kb",
+			limit: "96 kb",
 		},
 		{
 			path: "dist/auth0-<semver>.js",

@@ -20,7 +20,7 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.9.1"
+		"@versini/ui-styles": "1.9.2"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
@@ -36,6 +36,7 @@
 		"react-dom": "18.3.1",
 		"react-markdown": "9.0.1",
 		"react-use": "17.5.0",
+		"rehype-highlight": "7.0.0",
 		"remark-gfm": "4.0.0",
 		"uuid": "9.0.1"
 	}
