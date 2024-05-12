@@ -52,11 +52,16 @@ export const PromptInput = () => {
 	});
 
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
+	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
+		null,
+	);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		(async () => {
 			if (!state || state.messages.length === 0) {
+				// cancel the reader stream if there are no messages (e.g. on chat reset)
+				readerRef?.current?.cancel();
 				return;
 			}
 
@@ -85,10 +90,11 @@ export const PromptInput = () => {
 				});
 				if (response && response.ok) {
 					const messageId = uuidv4();
-					const reader = response.body!.getReader();
+					readerRef.current = response.body!.getReader();
 					const decoder = new TextDecoder();
+
 					while (true) {
-						const { done, value } = await reader.read();
+						const { done, value } = await readerRef.current.read();
 						if (done) {
 							// stream completed
 							break;
