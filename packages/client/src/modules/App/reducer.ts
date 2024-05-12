@@ -8,6 +8,7 @@ import {
 	ACTION_RESTORE,
 	ACTION_SEARCH,
 	ACTION_SORT,
+	ACTION_STREAMING,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
@@ -139,6 +140,13 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: state.usage,
 			messages: state.messages,
 			location: action.payload.location,
+		};
+	}
+
+	if (action?.type === ACTION_STREAMING) {
+		return {
+			...state,
+			streaming: action.payload.streaming,
 		};
 	}
 

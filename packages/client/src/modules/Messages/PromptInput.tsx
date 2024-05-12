@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
+	ACTION_STREAMING,
 	ERROR_MESSAGE,
 	LOCAL_STORAGE_MODEL,
 	LOCAL_STORAGE_PREFIX,
@@ -94,9 +95,21 @@ export const PromptInput = () => {
 					const decoder = new TextDecoder();
 
 					while (true) {
+						dispatch({
+							type: ACTION_STREAMING,
+							payload: {
+								streaming: true,
+							},
+						});
 						const { done, value } = await readerRef.current.read();
 						if (done) {
 							// stream completed
+							dispatch({
+								type: ACTION_STREAMING,
+								payload: {
+									streaming: false,
+								},
+							});
 							break;
 						}
 
@@ -150,6 +163,12 @@ export const PromptInput = () => {
 				}
 			} catch (error) {
 				console.error(error);
+				dispatch({
+					type: ACTION_STREAMING,
+					payload: {
+						streaming: false,
+					},
+				});
 				dispatch({
 					type: ACTION_MESSAGE,
 					payload: {
