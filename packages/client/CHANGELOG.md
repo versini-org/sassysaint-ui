@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.0.1...client-v2.1.0) (2024-05-12)
+
+
+### Features
+
+* clear chat button is now also stopping the stream ([6de97e7](https://github.com/aversini/sassysaint-ui/commit/6de97e74e662afe8bd793913151961ee05d23279))
+* move focus on "clear chat" button when streaming ([ee5e986](https://github.com/aversini/sassysaint-ui/commit/ee5e9865a4426c73f0a2e7db24151a0e67a1fee0))
+
+
+### Bug Fixes
+
+* better code highlight using reHype plugin ([caa5a39](https://github.com/aversini/sassysaint-ui/commit/caa5a395a7647b6bb813ad74970d076e7d00d784))
+
 ## [2.0.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.0.0...client-v2.0.1) (2024-05-11)
 
 
