@@ -2,7 +2,7 @@ import { Button } from "@versini/ui-components";
 import { useContext, useEffect, useRef } from "react";
 
 import { ACTION_RESET, ROLE_ASSISTANT } from "../../common/constants";
-import { CLEAR } from "../../common/strings";
+import { CANCEL, CLEAR } from "../../common/strings";
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
@@ -39,7 +39,7 @@ export const Toolbox = () => {
 				mode="dark"
 				focusMode="light"
 			>
-				{CLEAR}
+				{state?.streaming ? CANCEL : CLEAR}
 			</Button>
 		</div>
 	) : null;

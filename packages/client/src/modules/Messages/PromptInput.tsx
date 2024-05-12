@@ -239,7 +239,13 @@ export const PromptInput = () => {
 				value={userInput}
 				onChange={(e) => setUserInput(e.target.value)}
 				rightElement={
-					<Button noBorder type="submit" mode="light" focusMode="light">
+					<Button
+						disabled={state?.streaming}
+						noBorder
+						type="submit"
+						mode="light"
+						focusMode="light"
+					>
 						{SEND}
 					</Button>
 				}

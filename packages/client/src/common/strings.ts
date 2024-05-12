@@ -13,6 +13,7 @@ export const HISTORY_TITLE = "Chat history";
 export const ABOUT_TITLE = "About";
 export const TYPE_QUESTION = "Type your question here";
 export const CLEAR = "Clear chat";
+export const CANCEL = "Cancel chat";
 export const NA = "N/A";
 export const CARDS = {
 	PREFERENCES: {
