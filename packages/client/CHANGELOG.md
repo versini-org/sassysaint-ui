@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.2.0...client-v2.2.1) (2024-05-13)
+
+
+### Bug Fixes
+
+* adding missing plugin name from streaming response ([c9a454d](https://github.com/aversini/sassysaint-ui/commit/c9a454da8cb0ff527e79d0b0904327fea82133e7))
+
 ## [2.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.1.0...client-v2.2.0) (2024-05-13)
 
 
