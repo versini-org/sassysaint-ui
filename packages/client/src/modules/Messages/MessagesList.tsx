@@ -31,7 +31,12 @@ export const MessagesList = () => {
 					}
 					if (role === ROLE_USER && content) {
 						return (
-							<Bubble kind="right" key={`${index}-${role}`}>
+							<Bubble
+								kind="right"
+								key={`${index}-${role}`}
+								copyToClipboard={content}
+								copyToClipboardFocusMode="light"
+							>
 								{content}
 							</Bubble>
 						);
