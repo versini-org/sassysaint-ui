@@ -83,6 +83,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 									...item.message,
 									content: `${item.message.content}${content}`,
 									processingTime,
+									name,
 								},
 							};
 						}

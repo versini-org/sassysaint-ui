@@ -143,6 +143,7 @@ export const PromptInput = () => {
 										role: ROLE_ASSISTANT,
 										messageId,
 										processingTime: stats.processingTime,
+										name: stats.name,
 									},
 								},
 							});
