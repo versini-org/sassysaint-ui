@@ -24,8 +24,8 @@
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
-		"@floating-ui/react": "0.26.13",
-		"@versini/ui-components": "5.19.1",
+		"@floating-ui/react": "0.26.14",
+		"@versini/ui-components": "5.19.3",
 		"@versini/ui-form": "1.3.4",
 		"@versini/ui-icons": "1.8.1",
 		"@versini/ui-system": "1.4.1",
