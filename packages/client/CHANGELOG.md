@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.1.0...client-v2.2.0) (2024-05-13)
+
+
+### Features
+
+* enabling copy-to-clipboard for user bubble too ([313668b](https://github.com/aversini/sassysaint-ui/commit/313668b93e24a53f2ab99624abcbd0eee16cd55c))
+
+
+### Bug Fixes
+
+* bump dependencies to latest ([b4990cc](https://github.com/aversini/sassysaint-ui/commit/b4990cccc76e33168270990edd5344332f76a3c5))
+
 ## [2.1.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.0.1...client-v2.1.0) (2024-05-12)
 
 
