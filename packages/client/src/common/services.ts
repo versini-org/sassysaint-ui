@@ -44,6 +44,13 @@ export const GRAPHQL_QUERIES = {
 			}
 		}
 	}`,
+	ABOUT: `query About {
+		about {
+			version
+			models
+			plugins
+		}
+	}`,
 };
 
 /* c8 ignore start */

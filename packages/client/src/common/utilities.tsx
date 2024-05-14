@@ -127,12 +127,10 @@ export const unObfuscate = (str: string) => {
 };
 
 export const renderDataAsList = (title: string, data: Record<string, any>) => {
-	const totalEntries = Object.keys(data).length;
 	return data
-		? Object.keys(data).map((key, idx) => {
-				const isLast = Number(idx) === totalEntries - 1;
+		? Object.keys(data).map((key) => {
 				return (
-					<dl className={isLast ? "mb-0" : "mb-5"} key={`${title}-${key}`}>
+					<dl className="my-0" key={`${title}-${key}`}>
 						<div className="flex items-center justify-between">
 							<dt className="inline-block font-bold text-copy-dark dark:text-copy-lighter">
 								{key}
