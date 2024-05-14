@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.2.1...client-v2.3.0) (2024-05-14)
+
+
+### Features
+
+* adding backend server details to "About" ([330532b](https://github.com/aversini/sassysaint-ui/commit/330532bb519cf138d11b6d560ada94a75b8a4e9c))
+
+
+### Bug Fixes
+
+* disabled reset history filter button when there is no filter ([61e867a](https://github.com/aversini/sassysaint-ui/commit/61e867adbe888a0a9a806a530873dd7e8e83971c))
+
 ## [2.2.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.2.0...client-v2.2.1) (2024-05-13)
 
 
