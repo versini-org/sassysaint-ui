@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.1...client-v2.3.2) (2024-05-14)
+
+
+### Performance Improvements
+
+* trying to simplify the asset build process ([3e8e521](https://github.com/aversini/sassysaint-ui/commit/3e8e5210cffbc00d9a1d5748fd7a88f7ad0e0fa9))
+
 ## [2.3.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.0...client-v2.3.1) (2024-05-14)
 
 
