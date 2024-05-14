@@ -104,7 +104,8 @@ export const HistoryContent = ({
 							spacing={{ t: 2, b: 2 }}
 							rightElement={
 								<Button
-									mode="light"
+									disabled={!historyState.searchString}
+									mode="dark"
 									noBorder
 									size="small"
 									onClick={() => {
