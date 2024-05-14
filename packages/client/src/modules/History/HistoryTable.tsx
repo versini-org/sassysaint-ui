@@ -238,7 +238,6 @@ export const HistoryTable = ({
 				</TableHead>
 				<TableBody>
 					{data.map((item: HistoryItemProps, idx: any) => {
-						// biome-ignore lint/correctness/useJsxKeyInIterable: This is a table, the key is the row
 						return item?.messages?.length > 0 ? (
 							<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
 								{isWide && <TableCell>{idx + 1}</TableCell>}
