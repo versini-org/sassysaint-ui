@@ -39,10 +39,12 @@ export const CARDS = {
 		TITLE: "Chat history",
 	},
 	ABOUT: {
-		TITLE: "About",
+		TITLE_CLIENT: "Client details",
+		TITLE_SERVER: "Server details",
 		VERSION: "Version",
 		BUILD_TIMESTAMP: "Build date",
 		ENGINE: "OpenAI model",
+		ENGINES: "OpenAI models",
 		PLUGINS: "Plugins",
 	},
 };
