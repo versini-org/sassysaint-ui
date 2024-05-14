@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.0...client-v2.3.1) (2024-05-14)
+
+
+### Performance Improvements
+
+* lazy load Message Header so non auth is smaller ([41f1608](https://github.com/aversini/sassysaint-ui/commit/41f16086893cfcb744cbdd27a439ba5516cbb217))
+
 ## [2.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.2.1...client-v2.3.0) (2024-05-14)
 
 
