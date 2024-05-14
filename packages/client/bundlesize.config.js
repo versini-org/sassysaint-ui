@@ -6,7 +6,7 @@ export default {
 	sizes: [
 		{
 			path: "dist/assets/index-<hash>.js",
-			limit: "97 kb",
+			limit: "77 kb",
 		},
 		{
 			path: "dist/assets/index-<hash>.css",
@@ -14,7 +14,7 @@ export default {
 		},
 		{
 			path: "dist/assets/LazyHeader-<hash>.js",
-			limit: "12 kb",
+			limit: "31 kb",
 		},
 		{
 			path: "dist/assets/MessageAssistant-<hash>.js",
