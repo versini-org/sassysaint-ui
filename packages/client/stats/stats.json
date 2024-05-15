@@ -1718,5 +1718,31 @@
       "limit": "96 kb",
       "passed": true
     }
+  },
+  "2.4.0": {
+    "dist/assets/index-<hash>.js": {
+      "fileSize": 244372,
+      "fileSizeGzip": 77661,
+      "limit": "77 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.css": {
+      "fileSize": 70975,
+      "fileSizeGzip": 10067,
+      "limit": "10 kb",
+      "passed": true
+    },
+    "dist/assets/LazyHeader-<hash>.js": {
+      "fileSize": 92041,
+      "fileSizeGzip": 31261,
+      "limit": "31 kb",
+      "passed": true
+    },
+    "dist/assets/MessageAssistant-<hash>.js": {
+      "fileSize": 318607,
+      "fileSizeGzip": 97321,
+      "limit": "96 kb",
+      "passed": true
+    }
   }
 }

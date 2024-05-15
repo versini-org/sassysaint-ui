@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.2...client-v2.4.0) (2024-05-15)
+
+
+### Features
+
+* removing support for gpt-3.5 ([16cca13](https://github.com/aversini/sassysaint-ui/commit/16cca13c6312dc3cbf2b4c9fe2bcb4026713121e))
+
 ## [2.3.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.1...client-v2.3.2) (2024-05-14)
 
 
