@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "@versini/ui-components";
 import { TextArea } from "@versini/ui-form";
-import { useLocalStorage } from "@versini/ui-hooks";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -10,9 +9,6 @@ import {
 	ACTION_MODEL,
 	ACTION_STREAMING,
 	ERROR_MESSAGE,
-	LOCAL_STORAGE_MODEL,
-	LOCAL_STORAGE_PREFIX,
-	MODEL_GPT3,
 	MODEL_GPT4,
 	ROLE_ASSISTANT,
 	ROLE_HIDDEN,
@@ -47,10 +43,6 @@ export const PromptInput = () => {
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
-	const [isModel4] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
-		defaultValue: false,
-	});
 
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
@@ -83,7 +75,7 @@ export const PromptInput = () => {
 					name: "generate",
 					data: {
 						messages: state.messages,
-						model: isModel4 ? MODEL_GPT4 : MODEL_GPT3,
+						model: MODEL_GPT4,
 						user: user?.email || FAKE_USER_EMAIL,
 						id: state.id,
 						location: state.location,
@@ -192,6 +184,13 @@ export const PromptInput = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state?.messages]);
 
+	useEffect(() => {
+		// Focus on the input field when the chat is not streaming
+		if (!state?.streaming) {
+			inputRef?.current?.focus();
+		}
+	}, [state]);
+
 	/**
 	 * On submit, we dispatch the message to the state. The state
 	 * is keeping track of the whole conversation and must be
@@ -212,8 +211,6 @@ export const PromptInput = () => {
 		});
 		// Clear the input field
 		setUserInput("");
-		// And focus on it again
-		inputRef?.current?.focus();
 	};
 
 	return !isAuthenticated && isProd ? (

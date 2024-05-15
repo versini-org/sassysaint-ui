@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 
 import {
 	ACTION_LOCATION,
-	DEFAULT_MODEL,
-	LOCAL_STORAGE_MODEL,
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 	LOCAL_STORAGE_SORT,
@@ -22,10 +20,6 @@ import { historyReducer, reducer } from "./reducer";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
-	const [isModel4] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_MODEL,
-		defaultValue: false,
-	});
 	const [cachedSearchedString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
 		defaultValue: "",
@@ -42,7 +36,7 @@ function App() {
 	});
 	const [state, dispatch] = useReducer(reducer, {
 		id: uuidv4(),
-		model: isModel4 ? MODEL_GPT4 : DEFAULT_MODEL,
+		model: MODEL_GPT4,
 		usage: 0,
 		messages: [],
 	});

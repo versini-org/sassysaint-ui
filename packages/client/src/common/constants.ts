@@ -9,10 +9,6 @@ export const ERROR_MESSAGE =
 
 export const MODEL_GPT4 = "gpt-4";
 export const GPT4_MAX_TOKENS = 128000;
-export const MODEL_GPT3 = "gpt-3";
-export const GPT3_MAX_TOKENS = 128000;
-
-export const DEFAULT_MODEL = MODEL_GPT3;
 
 export const ACTION_MESSAGE = "action-message";
 export const ACTION_RESET = "action-reset";
@@ -26,7 +22,6 @@ export const ACTION_SORT = "action-sort";
 
 export const LOCAL_STORAGE_PREFIX = "sassy-saint-";
 export const LOCAL_STORAGE_CHAT_DETAILS = "details";
-export const LOCAL_STORAGE_MODEL = "use-gpt4";
 export const LOCAL_STORAGE_SEARCH = "search";
 export const LOCAL_STORAGE_SORT = "sort";
 
