@@ -1,11 +1,10 @@
 import { Card } from "@versini/ui-components";
 
 import { CARDS } from "../../common/strings";
+import type { ServerStatsProps } from "../../common/types";
 import { renderDataAsList } from "../../common/utilities";
 
-export const AboutContent = ({
-	stats,
-}: { stats: { plugins: string[]; version: string; models: string[] } }) => {
+export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 	const plugins = stats?.plugins || [];
 	const version = stats?.version || "";
 	const models = stats?.models || [];

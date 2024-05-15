@@ -75,10 +75,17 @@ export type ActionProps =
 			type: typeof ACTION_STREAMING;
 	  };
 
+export type ServerStatsProps = {
+	version: string;
+	models: string[];
+	plugins: string[];
+};
+
 export type AppContextProps = {
 	dispatch: React.Dispatch<ActionProps>;
 
 	state?: StateProps;
+	serverStats?: ServerStatsProps;
 };
 
 export type MessageAssistantProps = {
