@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Footer, Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -13,6 +13,7 @@ import {
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
+import type { ServerStatsProps } from "../../common/types";
 import { getCurrentGeoLocation, isDev } from "../../common/utilities";
 import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext, HistoryContext } from "./AppContext";
@@ -45,6 +46,33 @@ function App() {
 		sortedCell: "timestamp",
 		sortDirection: cachedSortDirection,
 	});
+	const [serverStats, setServerStats] = useState<ServerStatsProps>({
+		version: "",
+		models: [],
+		plugins: [],
+	});
+
+	useEffect(() => {
+		if (serverStats.version !== "") {
+			// We already have the server stats.
+			return;
+		}
+		(async () => {
+			try {
+				const response = await graphQLCall({
+					query: GRAPHQL_QUERIES.ABOUT,
+					data: {},
+				});
+
+				if (response.status === 200) {
+					const data = await response.json();
+					setServerStats(data.data.about);
+				}
+			} catch (_error) {
+				// nothing to declare officer
+			}
+		})();
+	}, [serverStats]);
 
 	useEffect(() => {
 		/**
@@ -130,7 +158,7 @@ function App() {
 	}, [isLoading]);
 
 	return isLoading && !isDev ? null : (
-		<AppContext.Provider value={{ state, dispatch }}>
+		<AppContext.Provider value={{ state, dispatch, serverStats }}>
 			<HistoryContext.Provider
 				value={{
 					state: stateHistory,
@@ -145,6 +173,9 @@ function App() {
 					row1={
 						<div>
 							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
+							{isDev && serverStats.models[0] === "development"
+								? " - Development Mode"
+								: ""}
 						</div>
 					}
 					row2={
