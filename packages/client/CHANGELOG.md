@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.0...client-v2.4.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* moving serverStats to app context ([85336de](https://github.com/aversini/sassysaint-ui/commit/85336de536e29f775f2483192eb8e142f8e8ded5))
+
 ## [2.4.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.3.2...client-v2.4.0) (2024-05-15)
 
 
