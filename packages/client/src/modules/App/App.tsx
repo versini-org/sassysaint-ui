@@ -173,7 +173,9 @@ function App() {
 					row1={
 						<div>
 							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-							{isDev && serverStats.version !== "" ? " - Development Mode" : ""}
+							{isDev && serverStats.models[0] === "development"
+								? " - Development Mode"
+								: ""}
 						</div>
 					}
 					row2={
