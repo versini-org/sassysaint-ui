@@ -44,6 +44,7 @@ export const PromptInput = () => {
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
+	const isStreaming = useRef(false);
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
 		null,
@@ -185,9 +186,16 @@ export const PromptInput = () => {
 	}, [state?.messages]);
 
 	useEffect(() => {
-		// Focus on the input field when the chat is not streaming
-		if (!state?.streaming) {
+		/**
+		 * Focus on the input field when the chat is not streaming,
+		 * but only if it was streaming before.
+		 */
+		if (isStreaming.current && !state?.streaming) {
 			inputRef?.current?.focus();
+			isStreaming.current = false;
+		}
+		if (state?.streaming) {
+			isStreaming.current = state.streaming;
 		}
 	}, [state]);
 
