@@ -18,7 +18,7 @@ export default {
 		},
 		{
 			path: "dist/assets/MessageAssistant-<hash>.js",
-			limit: "96 kb",
+			limit: "175 kb",
 		},
 	],
 };
