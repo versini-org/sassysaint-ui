@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.1...client-v2.4.2) (2024-05-16)
+
+
+### Bug Fixes
+
+* using smaller copy icon and only focus on input after stream ([1ecd62f](https://github.com/aversini/sassysaint-ui/commit/1ecd62f69b0f1fe63ae35179bc35c1c0efe24937))
+
 ## [2.4.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.0...client-v2.4.1) (2024-05-15)
 
 
