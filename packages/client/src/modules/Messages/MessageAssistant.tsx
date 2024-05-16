@@ -1,9 +1,13 @@
+import "katex/dist/katex.min.css";
+
 import { Bubble, Spinner } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 import {
 	LOCAL_STORAGE_CHAT_DETAILS,
@@ -53,8 +57,8 @@ export const MessageAssistant = ({
 					}}
 				>
 					<ReactMarkdown
-						remarkPlugins={[remarkGfm]}
-						rehypePlugins={[rehypeHighlight]}
+						remarkPlugins={[remarkGfm, remarkMath]}
+						rehypePlugins={[rehypeHighlight, rehypeKatex]}
 					>
 						{children}
 					</ReactMarkdown>
