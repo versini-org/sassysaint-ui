@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.3](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.2...client-v2.4.3) (2024-05-16)
+
+
+### Bug Fixes
+
+* display math responses correctly ([7e153c4](https://github.com/aversini/sassysaint-ui/commit/7e153c42d1092823277a41300ab48eb17a389cef))
+
 ## [2.4.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.1...client-v2.4.2) (2024-05-16)
 
 
