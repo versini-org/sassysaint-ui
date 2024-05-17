@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button, Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { Suspense, lazy, useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -21,13 +21,10 @@ import {
 	isProd,
 } from "../../common/utilities";
 import { AppFooter } from "../Footer/Footer";
+import { MessagesContainer } from "../Messages/MessagesContainer";
 import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
 import { AppContext, HistoryContext } from "./AppContext";
 import { historyReducer, reducer } from "./reducer";
-
-const LazyMessagesContainer = lazy(
-	() => import("../Messages/LazyMessagesContainer"),
-);
 
 function App() {
 	const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0();
@@ -197,9 +194,7 @@ function App() {
 				}}
 			>
 				<Main>
-					<Suspense fallback={<div />}>
-						<LazyMessagesContainer />
-					</Suspense>
+					<MessagesContainer />
 				</Main>
 				<AppFooter serverStats={serverStats} />
 			</HistoryContext.Provider>
@@ -207,4 +202,5 @@ function App() {
 	);
 }
 
+App.displayName = "App";
 export default App;

@@ -6,7 +6,7 @@ import { MessagesContainerHeader } from "./MessagesContainerHeader";
 import { MessagesList } from "./MessagesList";
 import { PromptInput } from "./PromptInput";
 
-const LazyMessagesContainer = () => {
+export const MessagesContainer = () => {
 	const { isAuthenticated } = useAuth0();
 	const containerClass = getMessageContaintWrapperClass(isAuthenticated);
 
@@ -22,5 +22,3 @@ const LazyMessagesContainer = () => {
 		</>
 	);
 };
-
-export default LazyMessagesContainer;
