@@ -1,12 +1,13 @@
 import "./index.css";
 
 import { Auth0Provider } from "@auth0/auth0-react";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 
+import { AppBootstrap } from "./bootstrap";
 import { isDev } from "./common/utilities";
 import { getConfig } from "./config";
-import App from "./modules/App/App";
+const LazyApp = lazy(() => import("./modules/App/App"));
 
 const config = getConfig();
 
@@ -22,10 +23,12 @@ const providerConfig = {
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		{isDev ? (
-			<App />
+			<Suspense fallback={<div />}>
+				<LazyApp />
+			</Suspense>
 		) : (
 			<Auth0Provider {...providerConfig}>
-				<App />
+				<AppBootstrap />
 			</Auth0Provider>
 		)}
 	</React.StrictMode>,

@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Button, Main, TableCellSortDirections } from "@versini/ui-components";
+import { Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -12,22 +12,15 @@ import {
 	MODEL_GPT4,
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
-import { LOG_IN } from "../../common/strings";
 import type { ServerStatsProps } from "../../common/types";
-import {
-	getCurrentGeoLocation,
-	getMessageContaintWrapperClass,
-	isDev,
-	isProd,
-} from "../../common/utilities";
-import { AppFooter } from "../Footer/Footer";
+import { getCurrentGeoLocation, isDev } from "../../common/utilities";
+import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainer } from "../Messages/MessagesContainer";
-import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
 import { AppContext, HistoryContext } from "./AppContext";
 import { historyReducer, reducer } from "./reducer";
 
 function App() {
-	const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0();
+	const { isLoading, isAuthenticated } = useAuth0();
 	const [cachedSearchedString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
 		defaultValue: "",
@@ -163,29 +156,7 @@ function App() {
 		}, 500);
 	}, [isLoading]);
 
-	if (!isAuthenticated && isProd) {
-		return (
-			<>
-				<Main>
-					<div className={getMessageContaintWrapperClass(isAuthenticated)}>
-						<MessagesContainerHeader />
-					</div>
-					<Button
-						mode="dark"
-						focusMode="light"
-						noBorder
-						className="mb-4 mt-6"
-						onClick={() => loginWithRedirect()}
-					>
-						{LOG_IN}
-					</Button>
-				</Main>
-				<AppFooter serverStats={serverStats} />
-			</>
-		);
-	}
-
-	return isLoading && !isDev ? null : (
+	return (
 		<AppContext.Provider value={{ state, dispatch, serverStats }}>
 			<HistoryContext.Provider
 				value={{

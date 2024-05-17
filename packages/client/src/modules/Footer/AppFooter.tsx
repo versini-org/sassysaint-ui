@@ -5,7 +5,7 @@ import { isDev } from "../../common/utilities";
 
 export const AppFooter = ({
 	serverStats,
-}: { serverStats: ServerStatsProps }) => {
+}: { serverStats?: ServerStatsProps }) => {
 	return (
 		<Footer
 			mode="light"
@@ -13,6 +13,7 @@ export const AppFooter = ({
 				<div>
 					{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
 					{isDev &&
+					serverStats &&
 					serverStats.models.length > 0 &&
 					serverStats.models[0] === "development"
 						? " - Development Mode"
