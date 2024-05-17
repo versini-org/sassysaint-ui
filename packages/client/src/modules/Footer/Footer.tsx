@@ -12,7 +12,9 @@ export const AppFooter = ({
 			row1={
 				<div>
 					{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-					{isDev && serverStats.models[0] === "development"
+					{isDev &&
+					serverStats.models.length > 0 &&
+					serverStats.models[0] === "development"
 						? " - Development Mode"
 						: ""}
 				</div>
