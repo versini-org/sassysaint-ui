@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.6](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.5...client-v2.4.6) (2024-05-17)
+
+
+### Performance Improvements
+
+* second pass at optimizing login page bundle size ([b8c1645](https://github.com/aversini/sassysaint-ui/commit/b8c16456607933e1a12341c3391390536079022e))
+
 ## [2.4.5](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.4...client-v2.4.5) (2024-05-17)
 
 
