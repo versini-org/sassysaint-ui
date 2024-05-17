@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.5](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.4...client-v2.4.5) (2024-05-17)
+
+
+### Performance Improvements
+
+* lazy load main container to free up bundle size in login mode ([cc27c01](https://github.com/aversini/sassysaint-ui/commit/cc27c01e0a9fed2daf4225ea65d92919e925811a))
+
 ## [2.4.4](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.3...client-v2.4.4) (2024-05-17)
 
 
