@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Footer, Main, TableCellSortDirections } from "@versini/ui-components";
+import { Button, Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -12,15 +12,25 @@ import {
 	MODEL_GPT4,
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
-import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
+import { LOG_IN } from "../../common/strings";
 import type { ServerStatsProps } from "../../common/types";
-import { getCurrentGeoLocation, isDev } from "../../common/utilities";
-import { MessagesContainer } from "../Messages/MessagesContainer";
+import {
+	getCurrentGeoLocation,
+	getMessageContaintWrapperClass,
+	isDev,
+	isProd,
+} from "../../common/utilities";
+import { AppFooter } from "../Footer/Footer";
+import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
 import { AppContext, HistoryContext } from "./AppContext";
 import { historyReducer, reducer } from "./reducer";
 
+const LazyMessagesContainer = lazy(
+	() => import("../Messages/LazyMessagesContainer"),
+);
+
 function App() {
-	const { isLoading, isAuthenticated } = useAuth0();
+	const { isLoading, isAuthenticated, loginWithRedirect } = useAuth0();
 	const [cachedSearchedString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
 		defaultValue: "",
@@ -29,7 +39,6 @@ function App() {
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
 		defaultValue: TableCellSortDirections.ASC,
 	});
-
 	const locationRef = useRef({
 		latitude: 0,
 		longitude: 0,
@@ -157,6 +166,28 @@ function App() {
 		}, 500);
 	}, [isLoading]);
 
+	if (!isAuthenticated && isProd) {
+		return (
+			<>
+				<Main>
+					<div className={getMessageContaintWrapperClass(isAuthenticated)}>
+						<MessagesContainerHeader />
+					</div>
+					<Button
+						mode="dark"
+						focusMode="light"
+						noBorder
+						className="mb-4 mt-6"
+						onClick={() => loginWithRedirect()}
+					>
+						{LOG_IN}
+					</Button>
+				</Main>
+				<AppFooter serverStats={serverStats} />
+			</>
+		);
+	}
+
 	return isLoading && !isDev ? null : (
 		<AppContext.Provider value={{ state, dispatch, serverStats }}>
 			<HistoryContext.Provider
@@ -166,24 +197,11 @@ function App() {
 				}}
 			>
 				<Main>
-					<MessagesContainer />
+					<Suspense fallback={<div />}>
+						<LazyMessagesContainer />
+					</Suspense>
 				</Main>
-				<Footer
-					mode="light"
-					row1={
-						<div>
-							{APP_NAME} v{import.meta.env.BUILDVERSION} - {POWERED_BY}
-							{isDev && serverStats.models[0] === "development"
-								? " - Development Mode"
-								: ""}
-						</div>
-					}
-					row2={
-						<div>
-							&copy; {new Date().getFullYear()} {APP_OWNER}
-						</div>
-					}
-				/>
+				<AppFooter serverStats={serverStats} />
 			</HistoryContext.Provider>
 		</AppContext.Provider>
 	);
