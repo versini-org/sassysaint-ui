@@ -12,6 +12,10 @@ export default {
 			limit: "77 kb",
 		},
 		{
+			path: "dist/assets/App-<hash>.js",
+			limit: "6 kb",
+		},
+		{
 			path: "dist/assets/LazyHeader-<hash>.js",
 			limit: "31 kb",
 		},
