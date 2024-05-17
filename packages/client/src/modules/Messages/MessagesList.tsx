@@ -9,7 +9,7 @@ import {
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-const MessageAssistant = lazy(() => import("../Messages/MessageAssistant"));
+const LazyMessageAssistant = lazy(() => import("./LazyMessageAssistant"));
 
 export const MessagesList = () => {
 	const { state } = useContext(AppContext);
@@ -23,9 +23,12 @@ export const MessagesList = () => {
 					if ((role === ROLE_ASSISTANT || role === ROLE_INTERNAL) && content) {
 						return (
 							<Suspense key={`${index}-${role}`} fallback={<span></span>}>
-								<MessageAssistant name={name} processingTime={processingTime}>
+								<LazyMessageAssistant
+									name={name}
+									processingTime={processingTime}
+								>
 									{content}
-								</MessageAssistant>
+								</LazyMessageAssistant>
 							</Suspense>
 						);
 					}
@@ -46,7 +49,7 @@ export const MessagesList = () => {
 
 			{isLastMessageFromRole(ROLE_USER, state) && (
 				<Suspense fallback={<span></span>}>
-					<MessageAssistant loading />
+					<LazyMessageAssistant loading />
 				</Suspense>
 			)}
 		</>

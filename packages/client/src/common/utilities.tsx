@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import prettyMilliseconds from "pretty-ms";
 
 import type { GeoLocation } from "./types";
@@ -197,4 +198,12 @@ export const durationFormatter = (value: number) => {
 		secondsDecimalDigits: 2,
 		unitCount: 2,
 	});
+};
+
+export const getMessageContaintWrapperClass = (isAuthenticated: boolean) => {
+	const paddingTop = isAuthenticated || isDev ? "pt-4" : "pt-10";
+	return clsx(
+		"flex-1 space-y-6 overflow-y-auto rounded-md bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7",
+		paddingTop,
+	);
 };

@@ -4,6 +4,9 @@ export default {
 		current: "tmp/stats.json",
 	},
 	sizes: [
+		/**
+		 * JavaScript assets.
+		 */
 		{
 			path: "dist/assets/index-<hash>.js",
 			limit: "77 kb",
@@ -13,19 +16,23 @@ export default {
 			limit: "31 kb",
 		},
 		{
-			path: "dist/assets/MessageAssistant-<hash>.js",
+			path: "dist/assets/LazyMessageAssistant-<hash>.js",
 			limit: "47 kb",
 		},
 		{
 			path: "dist/assets/LazyMarkdownWithExtra-<hash>.js",
 			limit: "130 kb",
 		},
+
+		/**
+		 * CSS assets.
+		 */
 		{
 			path: "dist/assets/index-<hash>.css",
 			limit: "10 kb",
 		},
 		{
-			path: "dist/assets/MessageAssistant-<hash>.css",
+			path: "dist/assets/LazyMessageAssistant-<hash>.css",
 			limit: "8 kb",
 		},
 	],
