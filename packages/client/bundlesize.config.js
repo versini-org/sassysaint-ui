@@ -9,16 +9,24 @@ export default {
 			limit: "77 kb",
 		},
 		{
-			path: "dist/assets/index-<hash>.css",
-			limit: "10 kb",
-		},
-		{
 			path: "dist/assets/LazyHeader-<hash>.js",
 			limit: "31 kb",
 		},
 		{
 			path: "dist/assets/MessageAssistant-<hash>.js",
-			limit: "175 kb",
+			limit: "47 kb",
+		},
+		{
+			path: "dist/assets/LazyMarkdownWithExtra-<hash>.js",
+			limit: "133 kb",
+		},
+		{
+			path: "dist/assets/index-<hash>.css",
+			limit: "10 kb",
+		},
+		{
+			path: "dist/assets/MessageAssistant-<hash>.css",
+			limit: "8 kb",
 		},
 	],
 };
