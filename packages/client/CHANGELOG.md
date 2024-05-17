@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.4](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.3...client-v2.4.4) (2024-05-17)
+
+
+### Performance Improvements
+
+* only load math and syntax highlight when needed ([eb9f6ad](https://github.com/aversini/sassysaint-ui/commit/eb9f6adb6f8a4c6068b8e46b8c9baf6c299cd001))
+
 ## [2.4.3](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.2...client-v2.4.3) (2024-05-16)
 
 
