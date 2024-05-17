@@ -18,7 +18,7 @@ export default {
 		},
 		{
 			path: "dist/assets/LazyMarkdownWithExtra-<hash>.js",
-			limit: "133 kb",
+			limit: "130 kb",
 		},
 		{
 			path: "dist/assets/index-<hash>.css",
