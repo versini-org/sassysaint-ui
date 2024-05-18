@@ -19,13 +19,21 @@ export const Toolbox = () => {
 		});
 	};
 
+	/**
+	 * Focus the clear button when the chat is streaming,
+	 * but only if it was not manually focused before.
+	 */
 	useEffect(() => {
-		if (state?.streaming && !buttonFocusedRef.current && buttonRef.current) {
+		if (
+			state?.streaming === true &&
+			!buttonFocusedRef.current &&
+			buttonRef.current
+		) {
 			buttonFocusedRef.current = true;
 			buttonRef.current.focus();
 		}
 
-		if (!state?.streaming) {
+		if (state?.streaming === false) {
 			buttonFocusedRef.current = false;
 		}
 	}, [state]);
