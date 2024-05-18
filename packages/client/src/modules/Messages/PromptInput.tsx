@@ -18,13 +18,7 @@ import {
 	STATS_SEPARATOR,
 } from "../../common/constants";
 import { serviceCall } from "../../common/services";
-import {
-	FAKE_USER_EMAIL,
-	LOG_IN,
-	SEND,
-	TYPE_QUESTION,
-} from "../../common/strings";
-import { isProd } from "../../common/utilities";
+import { FAKE_USER_EMAIL, SEND, TYPE_QUESTION } from "../../common/strings";
 import { AppContext } from "../App/AppContext";
 
 export type onPromptInputSubmitProps = {
@@ -42,7 +36,7 @@ export const PromptInput = () => {
 	 */
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
-	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+	const { user } = useAuth0();
 
 	const inputFocusedRef = useRef(false);
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
@@ -232,17 +226,7 @@ export const PromptInput = () => {
 		}
 	}, [state]);
 
-	return !isAuthenticated && isProd ? (
-		<Button
-			mode="dark"
-			focusMode="light"
-			noBorder
-			className="mb-4 mt-6"
-			onClick={() => loginWithRedirect()}
-		>
-			{LOG_IN}
-		</Button>
-	) : (
+	return (
 		<form className="mt-2" onSubmit={onSubmit}>
 			<TextArea
 				mode="dark"
