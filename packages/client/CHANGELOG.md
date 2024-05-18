@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.7](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.6...client-v2.4.7) (2024-05-18)
+
+
+### Bug Fixes
+
+* better focus management for "clear chat" and "input" fields ([70bede2](https://github.com/aversini/sassysaint-ui/commit/70bede26a3ab02e0a0bc388fc368bf137e63b207))
+* remove obsolete login code from main input prompt ([a8dfd48](https://github.com/aversini/sassysaint-ui/commit/a8dfd48e307169a4ce3c9a285b825aae4c35b589))
+
 ## [2.4.6](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.5...client-v2.4.6) (2024-05-17)
 
 
