@@ -44,7 +44,7 @@ export const PromptInput = () => {
 	const [userInput, setUserInput] = useState("");
 	const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
-	const isStreaming = useRef(false);
+	const inputFocusedRef = useRef(false);
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
 		null,
@@ -140,6 +140,12 @@ export const PromptInput = () => {
 									},
 								},
 							});
+							dispatch({
+								type: ACTION_STREAMING,
+								payload: {
+									streaming: false,
+								},
+							});
 							break;
 						} else {
 							dispatch({
@@ -185,20 +191,6 @@ export const PromptInput = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [state?.messages]);
 
-	useEffect(() => {
-		/**
-		 * Focus on the input field when the chat is not streaming,
-		 * but only if it was streaming before.
-		 */
-		if (isStreaming.current && !state?.streaming) {
-			inputRef?.current?.focus();
-			isStreaming.current = false;
-		}
-		if (state?.streaming) {
-			isStreaming.current = state.streaming;
-		}
-	}, [state]);
-
 	/**
 	 * On submit, we dispatch the message to the state. The state
 	 * is keeping track of the whole conversation and must be
@@ -220,6 +212,25 @@ export const PromptInput = () => {
 		// Clear the input field
 		setUserInput("");
 	};
+
+	/**
+	 * Focus on the input field when the chat is not streaming,
+	 * but only if it was not manually focused before.
+	 */
+	useEffect(() => {
+		if (
+			state?.streaming === false &&
+			!inputFocusedRef.current &&
+			inputRef.current
+		) {
+			inputFocusedRef.current = true;
+			inputRef.current.focus();
+		}
+
+		if (state?.streaming === true && inputFocusedRef.current === true) {
+			inputFocusedRef.current = false;
+		}
+	}, [state]);
 
 	return !isAuthenticated && isProd ? (
 		<Button
