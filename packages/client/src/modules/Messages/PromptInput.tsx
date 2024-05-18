@@ -74,6 +74,7 @@ export const PromptInput = () => {
 						user: user?.email || FAKE_USER_EMAIL,
 						id: state.id,
 						location: state.location,
+						usage: state.usage,
 					},
 				});
 				if (response && response.ok) {
