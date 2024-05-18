@@ -27,7 +27,8 @@ export const CARDS = {
 	CURRENT_STATISTICS: {
 		TITLE: "Current chat statistics",
 		MODEL_NAME: "GPT model",
-		TOKENS: "Remaining tokens",
+		TOKENS_USED: "Tokens used",
+		REMAINING_TOKENS: "Remaining tokens",
 		PROCESSING_TIME: "Average response time",
 	},
 	MAIN_STATISTICS: {

@@ -18,7 +18,7 @@ import type { MessageAssistantProps } from "../../common/types";
 import { durationFormatter } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-const FOOTER_KEYS = {
+const ASSISTANT_FOOTER_KEYS = {
 	MODEL: "Model",
 	PLUGIN: "Plugin",
 	PROCESSING_TIME: "Processing time",
@@ -48,10 +48,11 @@ export const MessageAssistant = ({
 					copyToClipboard={children}
 					copyToClipboardFocusMode="light"
 					footer={{
-						[FOOTER_KEYS.MODEL]:
+						[ASSISTANT_FOOTER_KEYS.MODEL]:
 							state && state.model && showEngineDetails ? state.model : null,
-						[FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
-						[FOOTER_KEYS.PROCESSING_TIME]:
+						[ASSISTANT_FOOTER_KEYS.PLUGIN]:
+							name && showEngineDetails ? name : null,
+						[ASSISTANT_FOOTER_KEYS.PROCESSING_TIME]:
 							processingTime && showEngineDetails
 								? durationFormatter(processingTime)
 								: null,

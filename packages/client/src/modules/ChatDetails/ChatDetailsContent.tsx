@@ -67,7 +67,8 @@ export const ChatDetailsContent = ({
 					>
 						{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
 							[CARDS.CURRENT_STATISTICS.MODEL_NAME]: state?.model || MODEL_GPT4,
-							[CARDS.CURRENT_STATISTICS.TOKENS]:
+							[CARDS.CURRENT_STATISTICS.TOKENS_USED]: state?.usage,
+							[CARDS.CURRENT_STATISTICS.REMAINING_TOKENS]:
 								numberFormatter.format(remainingTokens),
 							[CARDS.CURRENT_STATISTICS.PROCESSING_TIME]:
 								getAverageProcessingTimePerSession(state?.messages),
