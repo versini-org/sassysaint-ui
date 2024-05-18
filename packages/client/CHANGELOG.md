@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.7...client-v2.5.0) (2024-05-18)
+
+
+### Features
+
+* adding total token used in statistics for current chat ([bd008f7](https://github.com/aversini/sassysaint-ui/commit/bd008f7ba143b9febb446c9294fe7b04aef81cdc))
+
 ## [2.4.7](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.6...client-v2.4.7) (2024-05-18)
 
 
