@@ -102,22 +102,25 @@ export const HistoryContent = ({
 							label="Search"
 							onChange={onSearchChange}
 							spacing={{ t: 2, b: 2 }}
-							rightElement={
-								<Button
-									disabled={!historyState.searchString}
-									mode="dark"
-									noBorder
-									size="small"
-									onClick={() => {
-										updateDataOnSearch("");
-										if (inputRef.current?.value) {
-											inputRef.current.value = "";
-										}
-									}}
-								>
-									Reset
-								</Button>
-							}
+							{...(historyState.searchString && {
+								rightElement: (
+									<Button
+										disabled={!historyState.searchString}
+										mode="dark"
+										noBorder
+										size="small"
+										onClick={() => {
+											updateDataOnSearch("");
+											if (inputRef.current?.value) {
+												inputRef.current.value = "";
+												inputRef.current.focus();
+											}
+										}}
+									>
+										Reset
+									</Button>
+								),
+							})}
 						/>
 					</form>
 					<div className="flex flex-col gap-2 sm:flex-row">
