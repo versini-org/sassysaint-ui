@@ -21,6 +21,27 @@ import { serviceCall } from "../../common/services";
 import { FAKE_USER_EMAIL, SEND, TYPE_QUESTION } from "../../common/strings";
 import { AppContext } from "../App/AppContext";
 
+const dispatchStreaming = (dispatch: any, streaming: boolean) => {
+	dispatch({
+		type: ACTION_STREAMING,
+		payload: {
+			streaming: streaming,
+		},
+	});
+};
+const dispatchError = (dispatch: any) => {
+	dispatchStreaming(dispatch, false);
+	dispatch({
+		type: ACTION_MESSAGE,
+		payload: {
+			message: {
+				role: ROLE_INTERNAL,
+				content: ERROR_MESSAGE,
+			},
+		},
+	});
+};
+
 export type onPromptInputSubmitProps = {
 	message: {
 		content: string;
@@ -44,15 +65,20 @@ export const PromptInput = () => {
 		null,
 	);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: see below
 	useEffect(() => {
 		(async () => {
+			/**
+			 * Cancel the reader stream if there are no messages (e.g. on chat reset)
+			 */
 			if (!state || state.messages.length === 0) {
-				// cancel the reader stream if there are no messages (e.g. on chat reset)
 				readerRef?.current?.cancel();
 				return;
 			}
 
+			/**
+			 * If the last message is not from the user, we simply ignore it.
+			 */
 			const lastMessage = state.messages[state.messages.length - 1];
 			if (
 				state.messages.length === 0 ||
@@ -61,10 +87,13 @@ export const PromptInput = () => {
 				lastMessage.message.role === ROLE_INTERNAL ||
 				lastMessage.message.role === ROLE_HIDDEN
 			) {
-				// the last message is not from the user, ignoring
 				return;
 			}
 
+			/**
+			 * If we are here it means that the last message is from the user
+			 * and we can call the OpenAI API to generate a response.
+			 */
 			try {
 				const response = await serviceCall({
 					name: "generate",
@@ -77,27 +106,19 @@ export const PromptInput = () => {
 						usage: state.usage,
 					},
 				});
+
 				if (response && response.ok) {
 					const messageId = uuidv4();
 					readerRef.current = response.body!.getReader();
 					const decoder = new TextDecoder();
 
 					while (true) {
-						dispatch({
-							type: ACTION_STREAMING,
-							payload: {
-								streaming: true,
-							},
-						});
+						dispatchStreaming(dispatch, true);
+
 						const { done, value } = await readerRef.current.read();
 						if (done) {
 							// stream completed
-							dispatch({
-								type: ACTION_STREAMING,
-								payload: {
-									streaming: false,
-								},
-							});
+							dispatchStreaming(dispatch, false);
 							break;
 						}
 
@@ -135,12 +156,7 @@ export const PromptInput = () => {
 									},
 								},
 							});
-							dispatch({
-								type: ACTION_STREAMING,
-								payload: {
-									streaming: false,
-								},
-							});
+							dispatchStreaming(dispatch, false);
 							break;
 						} else {
 							dispatch({
@@ -155,24 +171,12 @@ export const PromptInput = () => {
 							});
 						}
 					}
+				} else {
+					dispatchError(dispatch);
 				}
 			} catch (error) {
 				console.error(error);
-				dispatch({
-					type: ACTION_STREAMING,
-					payload: {
-						streaming: false,
-					},
-				});
-				dispatch({
-					type: ACTION_MESSAGE,
-					payload: {
-						message: {
-							role: ROLE_INTERNAL,
-							content: ERROR_MESSAGE,
-						},
-					},
-				});
+				dispatchError(dispatch);
 			}
 		})();
 		/**
