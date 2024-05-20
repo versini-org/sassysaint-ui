@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.5.0...client-v2.5.1) (2024-05-20)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([1eeb11d](https://github.com/aversini/sassysaint-ui/commit/1eeb11d456fd6147c1193565ccb05fc254a26cea))
+* graceful degradation on server error ([f3769c9](https://github.com/aversini/sassysaint-ui/commit/f3769c919204baab48bb1ae31b0d5fca3e97224b))
+
 ## [2.5.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.4.7...client-v2.5.0) (2024-05-18)
 
 
