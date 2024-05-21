@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.5.1...client-v2.6.0) (2024-05-21)
+
+
+### Features
+
+* hide "reset" history filter button when there is no filter ([2d81401](https://github.com/aversini/sassysaint-ui/commit/2d81401a495c8c0e6bbe8de93b8d8645d1d9e933))
+
 ## [2.5.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.5.0...client-v2.5.1) (2024-05-20)
 
 
