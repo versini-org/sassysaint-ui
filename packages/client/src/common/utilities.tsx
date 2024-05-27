@@ -207,3 +207,11 @@ export const getMessageContaintWrapperClass = (isAuthenticated?: boolean) => {
 		paddingTop,
 	);
 };
+
+/**
+ * Function that adds an "s" to the end of a word if the count is
+ * 0 or greater than 1.
+ */
+export const pluralize = (word: string, count: number) => {
+	return count === 1 ? word : `${word}s`;
+};

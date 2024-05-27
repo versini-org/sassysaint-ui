@@ -13,6 +13,7 @@ import {
 	extractAverage,
 	isDev,
 	numberFormatter,
+	pluralize,
 	renderDataAsList,
 } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
@@ -82,7 +83,8 @@ export const ChatDetailsContent = ({
 				className="prose-dark dark:prose-lighter"
 			>
 				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
-					[CARDS.MAIN_STATISTICS.TOTAL]: stats.totalChats,
+					[pluralize(CARDS.MAIN_STATISTICS.TOTAL, stats.totalChats)]:
+						stats.totalChats,
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter(
 						stats.averageProcessingTimes,
 					),
