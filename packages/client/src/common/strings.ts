@@ -33,7 +33,7 @@ export const CARDS = {
 	},
 	MAIN_STATISTICS: {
 		TITLE: "Lifetime statistics",
-		TOTAL: "Total chat sessions",
+		TOTAL: "Total chat session",
 		PROCESSING_TIME: "Average response time",
 	},
 	HISTORY: {
@@ -45,7 +45,6 @@ export const CARDS = {
 		VERSION: "Version",
 		BUILD_TIMESTAMP: "Build date",
 		ENGINE: "OpenAI model",
-		ENGINES: "OpenAI models",
-		PLUGINS: "Plugins",
+		PLUGIN: "Plugin",
 	},
 };

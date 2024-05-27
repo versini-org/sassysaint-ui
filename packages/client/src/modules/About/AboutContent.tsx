@@ -2,7 +2,7 @@ import { Card } from "@versini/ui-components";
 
 import { CARDS } from "../../common/strings";
 import type { ServerStatsProps } from "../../common/types";
-import { renderDataAsList } from "../../common/utilities";
+import { pluralize, renderDataAsList } from "../../common/utilities";
 
 export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 	const plugins = stats?.plugins || [];
@@ -29,7 +29,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 				{renderDataAsList("about", {
 					[CARDS.ABOUT.VERSION]: version,
 
-					[CARDS.ABOUT.ENGINES]: (
+					[pluralize(CARDS.ABOUT.ENGINE, models.length)]: (
 						<>
 							{models.map((model: string) => (
 								<div key={model} className="text-right">
@@ -38,7 +38,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 							))}
 						</>
 					),
-					[CARDS.ABOUT.PLUGINS]: (
+					[pluralize(CARDS.ABOUT.PLUGIN, plugins.length)]: (
 						<>
 							{plugins.map((plugin: string) => (
 								<div key={plugin} className="text-right">

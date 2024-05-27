@@ -23,7 +23,7 @@ import {
 } from "../../common/constants";
 import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
 import { CARDS, FAKE_USER_EMAIL } from "../../common/strings";
-import { truncate } from "../../common/utilities";
+import { pluralize, truncate } from "../../common/utilities";
 import { HistoryContext } from "../App/AppContext";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 
@@ -291,8 +291,10 @@ export const HistoryTable = ({
 					<TableRow>
 						<TableCell colSpan={4}>
 							<div>
-								{filteredHistory.data.length}{" "}
-								{`chat${filteredHistory.data.length === 1 ? "" : "s"}`}
+								{pluralize(
+									`${filteredHistory.data.length} chat`,
+									filteredHistory.data.length,
+								)}
 							</div>
 						</TableCell>
 					</TableRow>
