@@ -11,15 +11,6 @@ const LazyApp = lazy(() => import("./modules/App/App"));
 
 const config = getConfig();
 
-const providerConfig = {
-	domain: config.domain,
-	clientId: config.clientId,
-	authorizationParams: {
-		redirect_uri: window.location.origin,
-		...(config.audience ? { audience: config.audience } : undefined),
-	},
-};
-
 const AppBootstrap = () => {
 	const { isAuthenticated, isLoading } = useAuth0();
 	if (!isAuthenticated && isProd) {
@@ -39,7 +30,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 				<LazyApp />
 			</Suspense>
 		) : (
-			<Auth0Provider {...providerConfig}>
+			<Auth0Provider
+				domain={config.domain}
+				clientId={config.clientId}
+				sessionCheckExpiryDays={90}
+				useRefreshTokens={true}
+				legacySameSiteCookie={false}
+				cacheLocation="localstorage"
+				authorizationParams={{
+					redirect_uri: window.location.origin,
+					...(config.audience ? { audience: config.audience } : undefined),
+				}}
+			>
 				<AppBootstrap />
 			</Auth0Provider>
 		)}
