@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.1...client-v2.6.2) (2024-05-27)
+
+
+### Bug Fixes
+
+* better grammar for labels in About, Stats and History panels ([975613b](https://github.com/aversini/sassysaint-ui/commit/975613b6b3ec67c68571ea2a852451b9cf50fdd9))
+
 ## [2.6.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.0...client-v2.6.1) (2024-05-27)
 
 

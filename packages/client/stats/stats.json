@@ -2162,5 +2162,49 @@
       "limit": "8 kb",
       "passed": true
     }
+  },
+  "2.6.2": {
+    "dist/assets/index-<hash>.js": {
+      "fileSize": 212114,
+      "fileSizeGzip": 69123,
+      "limit": "77 kb",
+      "passed": true
+    },
+    "dist/assets/App-<hash>.js": {
+      "fileSize": 17178,
+      "fileSizeGzip": 6050,
+      "limit": "6 kb",
+      "passed": true
+    },
+    "dist/assets/LazyHeader-<hash>.js": {
+      "fileSize": 92403,
+      "fileSizeGzip": 31393,
+      "limit": "31 kb",
+      "passed": true
+    },
+    "dist/assets/LazyMessageAssistant-<hash>.js": {
+      "fileSize": 155291,
+      "fileSizeGzip": 47298,
+      "limit": "47 kb",
+      "passed": true
+    },
+    "dist/assets/LazyMarkdownWithExtra-<hash>.js": {
+      "fileSize": 440001,
+      "fileSizeGzip": 132460,
+      "limit": "130 kb",
+      "passed": true
+    },
+    "dist/assets/index-<hash>.css": {
+      "fileSize": 71010,
+      "fileSizeGzip": 10074,
+      "limit": "10 kb",
+      "passed": true
+    },
+    "dist/assets/LazyMessageAssistant-<hash>.css": {
+      "fileSize": 28632,
+      "fileSizeGzip": 7952,
+      "limit": "8 kb",
+      "passed": true
+    }
   }
 }
