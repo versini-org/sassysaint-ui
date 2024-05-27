@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.0...client-v2.6.1) (2024-05-27)
+
+
+### Bug Fixes
+
+* better auth0 token synchronization ([4262b72](https://github.com/aversini/sassysaint-ui/commit/4262b721e3171cdcb8ee66c2df9a697401f0de3a))
+
 ## [2.6.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.5.1...client-v2.6.0) (2024-05-21)
 
 
