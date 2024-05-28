@@ -109,7 +109,7 @@ function App() {
 		 * Basic location is not available yet.
 		 * We cannot request for detailed location yet.
 		 */
-		if (!state.location) {
+		if (!state.location || state.location.accuracy === 0) {
 			return;
 		}
 
