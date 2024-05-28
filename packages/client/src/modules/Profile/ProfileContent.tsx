@@ -1,7 +1,7 @@
 import { ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { IconRefresh } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
@@ -53,10 +53,11 @@ export const ProfileContent = ({
 	};
 
 	const onRefreshLocation = async () => {
+		// Disable the refresh button
 		setRefreshEnabled(false);
-		// Refresh the location.
-		console.info(`==> [${Date.now()}] : `, "Refresh location");
+		// Remove the cached location
 		removeCachedLocation();
+		// Reset the location in state so that it is reflected in the UI
 		dispatch({
 			type: ACTION_LOCATION,
 			payload: {
@@ -67,8 +68,15 @@ export const ProfileContent = ({
 				},
 			},
 		});
+		// Get the current location (latitude, longitude, accuracy)
 		const location = await getCurrentGeoLocation();
+		// Save the location in the local storage
 		setCachedLocation(location);
+		/**
+		 * Update the location in the state, which will also trigger
+		 * a fetch for detailed location information (city, region, country),
+		 * and update the UI...
+		 */
 		dispatch({
 			type: ACTION_LOCATION,
 			payload: {
@@ -76,6 +84,18 @@ export const ProfileContent = ({
 			},
 		});
 	};
+
+	useEffect(() => {
+		let timeoutId: number;
+		if (!refreshEnabled) {
+			timeoutId = window.setTimeout(() => {
+				setRefreshEnabled(true);
+			}, 3000);
+		}
+		return () => {
+			clearTimeout(timeoutId);
+		};
+	}, [refreshEnabled]);
 
 	const renderLocation = (location?: GeoLocation) => {
 		if (location?.city && location?.countryShort && location?.regionShort) {
@@ -107,8 +127,17 @@ export const ProfileContent = ({
 		const lon = convertLongitudeToDMS(location?.longitude);
 		return (
 			<>
-				<div>{lat}</div>
-				<div>{lon}</div>
+				<Flexgrid alignVertical="center" columnGap={4}>
+					<FlexgridItem>
+						<div>{lat}</div>
+						<div>{lon}</div>
+					</FlexgridItem>
+					<FlexgridItem>
+						<ButtonIcon disabled size="small" className="mt-2">
+							<IconRefresh className="size-3" monotone />
+						</ButtonIcon>
+					</FlexgridItem>
+				</Flexgrid>
 			</>
 		);
 	};
