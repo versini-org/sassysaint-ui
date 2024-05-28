@@ -33,8 +33,8 @@ importers:
         specifier: 2.2.1
         version: 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
-        specifier: 1.8.2
-        version: 1.8.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.9.0
+        version: 1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-system':
         specifier: 1.4.1
         version: 1.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1363,6 +1363,12 @@ packages:
 
   '@versini/ui-icons@1.8.2':
     resolution: {integrity: sha512-aZ9Qj5DoB/UjrA8pE82sNmi0c7vhI5I98l9r8+lcDoG82NiEvqbp+IveJydr9Qc7DVDsddBigDTIZKTibs3Rcg==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-icons@1.9.0':
+    resolution: {integrity: sha512-d1yyWaRQ6c+VwrmGPu8MHGDGOMfNgRDr0EHlpabUws2EcLMaW/gxr7oaR5btn1vnuBD0IGutoZAzQYiczFKLow==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6906,6 +6912,12 @@ snapshots:
   '@versini/ui-icons@1.8.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@versini/ui-private': 1.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-icons@1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@versini/ui-private': 1.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 

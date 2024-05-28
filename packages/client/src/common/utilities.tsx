@@ -77,6 +77,9 @@ export const getCurrentGeoLocation = async (): Promise<GeoLocation> => {
 		maximumAge: 60000,
 	};
 
+	// need arbitrarily to wait for 10 sec
+	await new Promise((resolve) => setTimeout(resolve, 10000));
+
 	return new Promise((resolve, reject) => {
 		navigator?.geolocation?.getCurrentPosition(
 			(position) => {

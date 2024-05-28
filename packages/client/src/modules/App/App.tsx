@@ -1,11 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
 	ACTION_LOCATION,
+	LOCAL_STORAGE_LOCATION,
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 	LOCAL_STORAGE_SORT,
@@ -29,11 +30,11 @@ function App() {
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
 		defaultValue: TableCellSortDirections.ASC,
 	});
-	const locationRef = useRef({
-		latitude: 0,
-		longitude: 0,
-		accuracy: 0,
+	const [cachedLocation, setCachedLocation] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_LOCATION,
+		defaultValue: { latitude: 0, longitude: 0, accuracy: 0 },
 	});
+
 	const [state, dispatch] = useReducer(reducer, {
 		id: uuidv4(),
 		model: MODEL_GPT4,
@@ -82,18 +83,26 @@ function App() {
 			return;
 		}
 
-		if (!locationRef.current || locationRef.current.accuracy === 0) {
+		if (!cachedLocation || cachedLocation.accuracy === 0) {
 			(async () => {
-				locationRef.current = await getCurrentGeoLocation();
+				const location = await getCurrentGeoLocation();
+				setCachedLocation(location);
 				dispatch({
 					type: ACTION_LOCATION,
 					payload: {
-						location: locationRef.current,
+						location,
 					},
 				});
 			})();
+		} else if (cachedLocation.accuracy > 0) {
+			dispatch({
+				type: ACTION_LOCATION,
+				payload: {
+					location: cachedLocation,
+				},
+			});
 		}
-	}, [isAuthenticated, isLoading]);
+	}, [isAuthenticated, isLoading, cachedLocation, setCachedLocation]);
 
 	useEffect(() => {
 		/**
@@ -112,13 +121,17 @@ function App() {
 			return;
 		}
 
+		/**
+		 * We are here because we have the basic location (latitude and longitude).
+		 * We need to request for the detailed location.
+		 */
 		(async () => {
 			try {
 				const response = await graphQLCall({
 					query: GRAPHQL_QUERIES.GET_LOCATION,
 					data: {
-						latitude: locationRef.current.latitude,
-						longitude: locationRef.current.longitude,
+						latitude: cachedLocation.latitude,
+						longitude: cachedLocation.longitude,
 					},
 				});
 
@@ -128,7 +141,7 @@ function App() {
 						type: ACTION_LOCATION,
 						payload: {
 							location: {
-								...locationRef.current,
+								...cachedLocation,
 								city: res?.data?.location?.city,
 								region: res?.data?.location?.region,
 								regionShort: res?.data?.location?.regionShort,
@@ -142,7 +155,7 @@ function App() {
 				// nothing to declare officer
 			}
 		})();
-	}, [state]);
+	}, [state, cachedLocation]);
 
 	useEffect(() => {
 		if (isLoading && !isDev) {
