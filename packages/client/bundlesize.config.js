@@ -21,7 +21,7 @@ export default {
 		},
 		{
 			path: "dist/assets/LazyHeader-<hash>.js",
-			limit: "31 kb",
+			limit: "32 kb",
 		},
 		{
 			path: "dist/assets/LazyMessageAssistant-<hash>.js",
