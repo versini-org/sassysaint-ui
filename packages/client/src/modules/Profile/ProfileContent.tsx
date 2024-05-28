@@ -1,6 +1,6 @@
 import { Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
-import { useLocalStorage } from "@versini/ui-hooks";
+import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
 import { useContext } from "react";
 
 import {
@@ -32,6 +32,7 @@ export const ProfileContent = ({
 		defaultValue: false,
 	});
 
+	const listId = useUniqueId();
 	const { state } = useContext(AppContext);
 	const endUser = isDev
 		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
@@ -68,7 +69,7 @@ export const ProfileContent = ({
 			header={CARDS.PREFERENCES.TITLE}
 			className="prose-dark dark:prose-lighter"
 		>
-			{renderDataAsList({
+			{renderDataAsList(listId, {
 				[CARDS.PREFERENCES.NAME]: endUser.name,
 				[CARDS.PREFERENCES.EMAIL]: endUser.email,
 				[CARDS.PREFERENCES.ENGINE_DETAILS]: (

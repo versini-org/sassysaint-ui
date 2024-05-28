@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import prettyMilliseconds from "pretty-ms";
 
-import { useUniqueId } from "@versini/ui-hooks";
 import type { GeoLocation } from "./types";
 
 export const isProd = process.env.NODE_ENV === "production";
@@ -128,8 +127,10 @@ export const unObfuscate = (str: string) => {
 	);
 };
 
-export const renderDataAsList = (data: Record<string, any>) => {
-	const id = useUniqueId();
+export const renderDataAsList = (
+	id: string | undefined,
+	data: Record<string, any>,
+) => {
 	return data
 		? Object.keys(data).map((key) => {
 				return (
