@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.3](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.2...client-v2.6.3) (2024-05-28)
+
+
+### Performance Improvements
+
+* minor refactor for unique id in panel lists ([2a20a21](https://github.com/aversini/sassysaint-ui/commit/2a20a211dae4f9b506ca1231289604d1a06f709b))
+
 ## [2.6.2](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.1...client-v2.6.2) (2024-05-27)
 
 
