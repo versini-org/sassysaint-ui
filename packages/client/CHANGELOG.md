@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.3...client-v2.7.0) (2024-05-28)
+
+
+### Features
+
+* better location ([bda657e](https://github.com/aversini/sassysaint-ui/commit/bda657ed10fa9ed48c3f6fec79a374e104a27434))
+
 ## [2.6.3](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.2...client-v2.6.3) (2024-05-28)
 
 
