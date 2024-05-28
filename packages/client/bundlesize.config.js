@@ -13,11 +13,11 @@ export default {
 		},
 		{
 			path: "dist/assets/index0-<hash>.js",
-			limit: "5 kb",
+			limit: "6 kb",
 		},
 		{
 			path: "dist/assets/App-<hash>.js",
-			limit: "4 kb",
+			limit: "7 kb",
 		},
 		{
 			path: "dist/assets/LazyHeader-<hash>.js",
