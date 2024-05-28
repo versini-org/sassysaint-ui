@@ -66,7 +66,7 @@ export const ChatDetailsContent = ({
 						header={CARDS.CURRENT_STATISTICS.TITLE}
 						className="prose-dark dark:prose-lighter"
 					>
-						{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
+						{renderDataAsList({
 							[CARDS.CURRENT_STATISTICS.MODEL_NAME]: state?.model || MODEL_GPT4,
 							[CARDS.CURRENT_STATISTICS.TOKENS_USED]: state?.usage,
 							[CARDS.CURRENT_STATISTICS.REMAINING_TOKENS]:
@@ -82,7 +82,7 @@ export const ChatDetailsContent = ({
 				header={CARDS.MAIN_STATISTICS.TITLE}
 				className="prose-dark dark:prose-lighter"
 			>
-				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
+				{renderDataAsList({
 					[pluralize(CARDS.MAIN_STATISTICS.TOTAL, stats.totalChats)]:
 						stats.totalChats,
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter(

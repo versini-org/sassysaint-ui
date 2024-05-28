@@ -68,7 +68,7 @@ export const ProfileContent = ({
 			header={CARDS.PREFERENCES.TITLE}
 			className="prose-dark dark:prose-lighter"
 		>
-			{renderDataAsList(CARDS.PREFERENCES.TITLE, {
+			{renderDataAsList({
 				[CARDS.PREFERENCES.NAME]: endUser.name,
 				[CARDS.PREFERENCES.EMAIL]: endUser.email,
 				[CARDS.PREFERENCES.ENGINE_DETAILS]: (

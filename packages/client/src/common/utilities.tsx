@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import prettyMilliseconds from "pretty-ms";
 
+import { useUniqueId } from "@versini/ui-hooks";
 import type { GeoLocation } from "./types";
 
 export const isProd = process.env.NODE_ENV === "production";
@@ -127,11 +128,12 @@ export const unObfuscate = (str: string) => {
 	);
 };
 
-export const renderDataAsList = (title: string, data: Record<string, any>) => {
+export const renderDataAsList = (data: Record<string, any>) => {
+	const id = useUniqueId();
 	return data
 		? Object.keys(data).map((key) => {
 				return (
-					<dl className="my-0" key={`${title}-${key}`}>
+					<dl className="my-0" key={`${id}-${key}`}>
 						<div className="flex items-center justify-between">
 							<dt className="inline-block font-bold text-copy-dark dark:text-copy-lighter">
 								{key}

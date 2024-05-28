@@ -16,7 +16,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 					header={CARDS.ABOUT.TITLE_CLIENT}
 					className="prose-dark dark:prose-lighter"
 				>
-					{renderDataAsList("about", {
+					{renderDataAsList({
 						[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
 						[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
 					})}
@@ -26,7 +26,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 				header={CARDS.ABOUT.TITLE_SERVER}
 				className="prose-dark dark:prose-lighter"
 			>
-				{renderDataAsList("about", {
+				{renderDataAsList({
 					[CARDS.ABOUT.VERSION]: version,
 
 					[pluralize(CARDS.ABOUT.ENGINE, models.length)]: (
