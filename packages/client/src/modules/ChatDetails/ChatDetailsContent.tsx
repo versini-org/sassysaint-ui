@@ -1,6 +1,7 @@
 import { Card } from "@versini/ui-components";
 import { useContext } from "react";
 
+import { useUniqueId } from "@versini/ui-hooks";
 import {
 	GPT4_MAX_TOKENS,
 	MODEL_GPT4,
@@ -57,6 +58,8 @@ export const ChatDetailsContent = ({
 }: ChatDetailsContentProps) => {
 	const { state } = useContext(AppContext);
 	const remainingTokens = GPT4_MAX_TOKENS - Number(state?.usage);
+	const listIdCurrent = useUniqueId();
+	const listIdMain = useUniqueId();
 
 	return isAuthenticated || isDev ? (
 		<>
@@ -66,7 +69,7 @@ export const ChatDetailsContent = ({
 						header={CARDS.CURRENT_STATISTICS.TITLE}
 						className="prose-dark dark:prose-lighter"
 					>
-						{renderDataAsList(CARDS.CURRENT_STATISTICS.TITLE, {
+						{renderDataAsList(listIdCurrent, {
 							[CARDS.CURRENT_STATISTICS.MODEL_NAME]: state?.model || MODEL_GPT4,
 							[CARDS.CURRENT_STATISTICS.TOKENS_USED]: state?.usage,
 							[CARDS.CURRENT_STATISTICS.REMAINING_TOKENS]:
@@ -82,7 +85,7 @@ export const ChatDetailsContent = ({
 				header={CARDS.MAIN_STATISTICS.TITLE}
 				className="prose-dark dark:prose-lighter"
 			>
-				{renderDataAsList(CARDS.MAIN_STATISTICS.TITLE, {
+				{renderDataAsList(listIdMain, {
 					[pluralize(CARDS.MAIN_STATISTICS.TOTAL, stats.totalChats)]:
 						stats.totalChats,
 					[CARDS.MAIN_STATISTICS.PROCESSING_TIME]: durationFormatter(

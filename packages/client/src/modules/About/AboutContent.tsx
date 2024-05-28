@@ -1,4 +1,5 @@
 import { Card } from "@versini/ui-components";
+import { useUniqueId } from "@versini/ui-hooks";
 
 import { CARDS } from "../../common/strings";
 import type { ServerStatsProps } from "../../common/types";
@@ -8,6 +9,8 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 	const plugins = stats?.plugins || [];
 	const version = stats?.version || "";
 	const models = stats?.models || [];
+	const listIdClient = useUniqueId();
+	const listIdServer = useUniqueId();
 
 	return (
 		<>
@@ -16,7 +19,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 					header={CARDS.ABOUT.TITLE_CLIENT}
 					className="prose-dark dark:prose-lighter"
 				>
-					{renderDataAsList("about", {
+					{renderDataAsList(listIdClient, {
 						[CARDS.ABOUT.VERSION]: import.meta.env.BUILDVERSION,
 						[CARDS.ABOUT.BUILD_TIMESTAMP]: import.meta.env.BUILDTIME,
 					})}
@@ -26,7 +29,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 				header={CARDS.ABOUT.TITLE_SERVER}
 				className="prose-dark dark:prose-lighter"
 			>
-				{renderDataAsList("about", {
+				{renderDataAsList(listIdServer, {
 					[CARDS.ABOUT.VERSION]: version,
 
 					[pluralize(CARDS.ABOUT.ENGINE, models.length)]: (
