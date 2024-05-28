@@ -106,7 +106,7 @@ function App() {
 
 	useEffect(() => {
 		/**
-		 * Basic location is not available yet.
+		 * Basic location (latitude, longitude) is not available yet.
 		 * We cannot request for detailed location yet.
 		 */
 		if (!state.location || state.location.accuracy === 0) {
