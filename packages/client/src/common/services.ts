@@ -53,6 +53,9 @@ export const GRAPHQL_QUERIES = {
 	}`,
 };
 
+const serverUrl =
+	process.env.PUBLIC_SERVER_URL || import.meta.env.VITE_SERVER_URL;
+
 /* c8 ignore start */
 export const graphQLCall = async ({
 	query,
@@ -61,7 +64,7 @@ export const graphQLCall = async ({
 	data: any;
 	query: any;
 }) => {
-	const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/graphql`, {
+	const response = await fetch(`${serverUrl}/graphql`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -84,16 +87,13 @@ export const serviceCall = async ({
 	name: string;
 	method?: string;
 }) => {
-	const response = await fetch(
-		`${import.meta.env.VITE_SERVER_URL}/api/${name}`,
-		{
-			method,
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
+	const response = await fetch(`${serverUrl}/api/${name}`, {
+		method,
+		headers: {
+			"Content-Type": "application/json",
 		},
-	);
+		body: JSON.stringify(data),
+	});
 	return response;
 };
 /* c8 ignore stop */
