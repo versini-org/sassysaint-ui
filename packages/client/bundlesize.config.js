@@ -27,7 +27,7 @@ export default {
 			limit: "6 kb",
 		},
 		{
-			path: "dist/static/js/async/*ui-components*.<hash>.js",
+			path: "dist/static/js/async/vendors-*ui-components*.<hash>.js",
 			limit: "5 kb",
 		},
 		{
@@ -59,7 +59,7 @@ export default {
 		 * CSS static async assets.
 		 */
 		{
-			path: "dist/static/css/async/459.<hash>.css",
+			path: "dist/static/css/async/vendors-*katex*.<hash>.css",
 			limit: "8 kb",
 		},
 	],
