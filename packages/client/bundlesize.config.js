@@ -23,27 +23,27 @@ export default {
 		 * JavaScript static async assets.
 		 */
 		{
-			path: "dist/static/js/async/200.<hash>.js",
+			path: "dist/static/js/async/*Messages_LazyHeader*.<hash>.js",
 			limit: "6 kb",
 		},
 		{
-			path: "dist/static/js/async/29.<hash>.js",
+			path: "dist/static/js/async/*ui-components*.<hash>.js",
 			limit: "5 kb",
 		},
 		{
-			path: "dist/static/js/async/206.<hash>.js",
+			path: "dist/static/js/async/*App_App*.<hash>.js",
 			limit: "8 kb",
 		},
 		{
-			path: "dist/static/js/async/265.<hash>.js",
+			path: "dist/static/js/async/*react-use*.<hash>.js",
 			limit: "30 kb",
 		},
 		{
-			path: "dist/static/js/async/459.<hash>.js",
+			path: "dist/static/js/async/*katex*.<hash>.js",
 			limit: "48 kb",
 		},
 		{
-			path: "dist/static/js/async/816.<hash>.js",
+			path: "dist/static/js/async/*rehype-highlight*.<hash>.js",
 			limit: "130 kb",
 		},
 
