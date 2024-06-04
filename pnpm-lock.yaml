@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@node-cli/bundlesize':
-        specifier: 4.0.4
-        version: 4.0.4
+        specifier: 4.1.0
+        version: 4.1.0
       '@versini/dev-dependencies-client':
         specifier: 5.1.0
         version: 5.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.1))(@swc/core@1.5.24(@swc/helpers@0.5.3))(@swc/helpers@0.5.3)(@types/jest@29.5.12)(@types/node@20.14.1)(@types/react-dom@18.3.0)(@types/react@18.3.3)(encoding@0.1.13)(happy-dom@14.12.0)(jsdom@24.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.0)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))(typescript@5.4.5)
@@ -638,8 +638,8 @@ packages:
   '@module-federation/webpack-bundler-runtime@0.1.6':
     resolution: {integrity: sha512-K5WhKZ4RVNaMEtfHsd/9CNCgGKB0ipbm/tgweNNeC11mEuBTNxJ09Y630vg3WPkKv9vfMCuXg2p2Dk+Q/KWTSA==}
 
-  '@node-cli/bundlesize@4.0.4':
-    resolution: {integrity: sha512-LSrJo9v1VmqQaRsdW+67zRCUgouEHkgYqJRtV8dhRFIwMzPjyaYuIGEUbW1thVn6bxxMDRKRk81wmXi7501/Jg==}
+  '@node-cli/bundlesize@4.1.0':
+    resolution: {integrity: sha512-XCN1WWPX/j3VfrJPlevfdiGai+2rsoyJI/NsswV2biozNCwHNGoBygnyh6wtKPdrHri6R42GHO9JZ+B7AfPk/g==}
     hasBin: true
 
   '@node-cli/logger@1.2.5':
@@ -3556,10 +3556,6 @@ packages:
     resolution: {integrity: sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ==}
     engines: {node: '>=8'}
 
-  minipass@7.0.4:
-    resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
-    engines: {node: '>=16 || 14 >=14.17'}
-
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -5834,7 +5830,7 @@ snapshots:
       '@module-federation/runtime': 0.1.6
       '@module-federation/sdk': 0.1.6
 
-  '@node-cli/bundlesize@4.0.4':
+  '@node-cli/bundlesize@4.1.0':
     dependencies:
       '@node-cli/logger': 1.2.5
       '@node-cli/parser': 2.3.4
@@ -7121,9 +7117,9 @@ snapshots:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
-      glob: 10.3.15
+      glob: 10.4.1
       lru-cache: 7.18.3
-      minipass: 7.0.4
+      minipass: 7.1.2
       minipass-collect: 1.0.2
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -7136,9 +7132,9 @@ snapshots:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
-      glob: 10.3.15
+      glob: 10.4.1
       lru-cache: 10.2.0
-      minipass: 7.0.4
+      minipass: 7.1.2
       minipass-collect: 2.0.1
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -7911,7 +7907,7 @@ snapshots:
 
   fs-minipass@3.0.3:
     dependencies:
-      minipass: 7.0.4
+      minipass: 7.1.2
 
   fs.realpath@1.0.0: {}
 
@@ -8017,7 +8013,7 @@ snapshots:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
       minimatch: 9.0.4
-      minipass: 7.0.4
+      minipass: 7.1.2
       path-scurry: 1.11.1
 
   glob@10.4.1:
@@ -8967,7 +8963,7 @@ snapshots:
       cacache: 18.0.2
       http-cache-semantics: 4.1.1
       is-lambda: 1.0.1
-      minipass: 7.0.4
+      minipass: 7.1.2
       minipass-fetch: 3.0.4
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -9433,11 +9429,11 @@ snapshots:
 
   minipass-collect@2.0.1:
     dependencies:
-      minipass: 7.0.4
+      minipass: 7.1.2
 
   minipass-fetch@3.0.4:
     dependencies:
-      minipass: 7.0.4
+      minipass: 7.1.2
       minipass-sized: 1.0.3
       minizlib: 2.1.2
     optionalDependencies:
@@ -9467,8 +9463,6 @@ snapshots:
   minipass@4.2.8: {}
 
   minipass@5.0.0: {}
-
-  minipass@7.0.4: {}
 
   minipass@7.1.2: {}
 
@@ -9545,7 +9539,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.1
-      glob: 10.3.15
+      glob: 10.4.1
       graceful-fs: 4.2.11
       make-fetch-happen: 13.0.0
       nopt: 7.2.0
@@ -9682,7 +9676,7 @@ snapshots:
   npm-registry-fetch@16.1.0:
     dependencies:
       make-fetch-happen: 13.0.0
-      minipass: 7.0.4
+      minipass: 7.1.2
       minipass-fetch: 3.0.4
       minipass-json-stream: 1.0.1
       minizlib: 2.1.2
@@ -9898,7 +9892,7 @@ snapshots:
       '@npmcli/run-script': 7.0.2
       cacache: 18.0.2
       fs-minipass: 3.0.3
-      minipass: 7.0.4
+      minipass: 7.1.2
       npm-package-arg: 11.0.1
       npm-packlist: 8.0.2
       npm-pick-manifest: 9.0.0
@@ -9974,7 +9968,7 @@ snapshots:
   path-scurry@1.11.1:
     dependencies:
       lru-cache: 10.2.0
-      minipass: 7.0.4
+      minipass: 7.1.2
 
   path-type@3.0.0:
     dependencies:
@@ -10189,14 +10183,14 @@ snapshots:
 
   read-package-json@6.0.4:
     dependencies:
-      glob: 10.3.15
+      glob: 10.4.1
       json-parse-even-better-errors: 3.0.1
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
 
   read-package-json@7.0.0:
     dependencies:
-      glob: 10.3.15
+      glob: 10.4.1
       json-parse-even-better-errors: 3.0.1
       normalize-package-data: 6.0.0
       npm-normalize-package-bin: 3.0.1
@@ -10375,7 +10369,7 @@ snapshots:
 
   rimraf@5.0.7:
     dependencies:
-      glob: 10.3.15
+      glob: 10.4.1
 
   rollup@4.18.0:
     dependencies:
@@ -10624,7 +10618,7 @@ snapshots:
 
   ssri@10.0.5:
     dependencies:
-      minipass: 7.0.4
+      minipass: 7.1.2
 
   ssri@9.0.1:
     dependencies:
@@ -10757,7 +10751,7 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
-      glob: 10.3.15
+      glob: 10.4.1
       lines-and-columns: 1.2.4
       mz: 2.7.0
       pirates: 4.0.6
