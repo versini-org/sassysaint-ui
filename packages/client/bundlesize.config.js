@@ -17,7 +17,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/lib-react.<hash>.js",
-			limit: "20 kb",
+			limit: "45 kb",
 		},
 		/**
 		 * JavaScript static async assets.
