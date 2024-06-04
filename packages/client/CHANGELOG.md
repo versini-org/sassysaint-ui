@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.8.0...client-v2.8.1) (2024-06-04)
+
+
+### Bug Fixes
+
+* remove env.local from repo ([41088d7](https://github.com/aversini/sassysaint-ui/commit/41088d72c631c082eceb37795d3535fe63ef9b46))
+
 ## [2.8.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.7.0...client-v2.8.0) (2024-06-04)
 
 
