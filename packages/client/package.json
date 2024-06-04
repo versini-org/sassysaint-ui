@@ -6,9 +6,8 @@
 	"type": "module",
 	"scripts": {
 		"clean": "rimraf dist build",
-		"dev": "vite --host",
-		"build:vite": "tsc && vite build",
-		"build": "rsbuild build",
+		"dev": "rsbuild dev",
+		"build": "tsc && rsbuild build",
 		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
 		"stats:pr": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o tmp/stats.json --silent",

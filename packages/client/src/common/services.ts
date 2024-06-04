@@ -53,8 +53,7 @@ export const GRAPHQL_QUERIES = {
 	}`,
 };
 
-const serverUrl =
-	process.env.PUBLIC_SERVER_URL || import.meta.env.VITE_SERVER_URL;
+const serverUrl = process.env.PUBLIC_SERVER_URL;
 
 /* c8 ignore start */
 export const graphQLCall = async ({
