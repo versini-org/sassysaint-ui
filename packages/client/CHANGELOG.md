@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.7.0...client-v2.8.0) (2024-06-04)
+
+
+### Features
+
+* migrating from Vite to Rsbuild ([7786b26](https://github.com/aversini/sassysaint-ui/commit/7786b26bb35a09adfe51628f1c5a00fc6685ab7a))
+
 ## [2.7.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.6.3...client-v2.7.0) (2024-05-28)
 
 
