@@ -5,42 +5,61 @@ export default {
 	},
 	sizes: [
 		/**
-		 * JavaScript assets.
+		 * JavaScript static assets.
 		 */
 		{
-			path: "dist/assets/index-<hash>.js",
-			limit: "69 kb",
+			path: "dist/static/js/index.<hash>.js",
+			limit: "5 kb",
 		},
 		{
-			path: "dist/assets/index0-<hash>.js",
+			path: "dist/static/js/650.<hash>.js",
+			limit: "20 kb",
+		},
+		{
+			path: "dist/static/js/lib-react.<hash>.js",
+			limit: "45 kb",
+		},
+		/**
+		 * JavaScript static async assets.
+		 */
+		{
+			path: "dist/static/js/async/200.<hash>.js",
 			limit: "6 kb",
 		},
 		{
-			path: "dist/assets/App-<hash>.js",
-			limit: "7 kb",
+			path: "dist/static/js/async/29.<hash>.js",
+			limit: "5 kb",
 		},
 		{
-			path: "dist/assets/LazyHeader-<hash>.js",
-			limit: "32 kb",
+			path: "dist/static/js/async/206.<hash>.js",
+			limit: "8 kb",
 		},
 		{
-			path: "dist/assets/LazyMessageAssistant-<hash>.js",
-			limit: "47 kb",
+			path: "dist/static/js/async/265.<hash>.js",
+			limit: "30 kb",
 		},
 		{
-			path: "dist/assets/LazyMarkdownWithExtra-<hash>.js",
+			path: "dist/static/js/async/459.<hash>.js",
+			limit: "48 kb",
+		},
+		{
+			path: "dist/static/js/async/816.<hash>.js",
 			limit: "130 kb",
 		},
 
 		/**
-		 * CSS assets.
+		 * CSS static assets.
 		 */
 		{
-			path: "dist/assets/index-<hash>.css",
+			path: "dist/static/css/index.<hash>.css",
 			limit: "10 kb",
 		},
+
+		/**
+		 * CSS static async assets.
+		 */
 		{
-			path: "dist/assets/LazyMessageAssistant-<hash>.css",
+			path: "dist/static/css/async/459.<hash>.css",
 			limit: "8 kb",
 		},
 	],

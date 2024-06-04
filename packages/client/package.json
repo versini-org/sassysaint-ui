@@ -5,9 +5,9 @@
 	"author": "Arno Versini",
 	"type": "module",
 	"scripts": {
-		"clean": "rimraf dist",
-		"dev": "vite --host",
-		"build": "tsc && vite build",
+		"clean": "rimraf dist build",
+		"dev": "rsbuild dev",
+		"build": "tsc && rsbuild build",
 		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
 		"stats:pr": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o tmp/stats.json --silent",
@@ -20,7 +20,9 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.9.2"
+		"@versini/ui-styles": "1.9.2",
+		"@rsbuild/core": "0.7.2",
+		"@rsbuild/plugin-react": "0.7.2"
 	},
 	"dependencies": {
 		"@auth0/auth0-react": "2.2.4",
