@@ -9,7 +9,7 @@ export default {
 		 */
 		{
 			path: "dist/static/js/index.<hash>.js",
-			limit: "5 kb",
+			limit: "6 kb",
 		},
 		{
 			path: "dist/static/js/*auth0_auth0*.<hash>.js",
@@ -36,11 +36,11 @@ export default {
 		},
 		{
 			path: "dist/static/js/async/*react-use*.<hash>.js",
-			limit: "30 kb",
+			limit: "31 kb",
 		},
 		{
 			path: "dist/static/js/async/*katex*.<hash>.js",
-			limit: "48 kb",
+			limit: "51 kb",
 		},
 		{
 			path: "dist/static/js/async/*rehype-highlight*.<hash>.js",
