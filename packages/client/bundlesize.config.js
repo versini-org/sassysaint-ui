@@ -12,7 +12,7 @@ export default {
 			limit: "5 kb",
 		},
 		{
-			path: "dist/static/js/650.<hash>.js",
+			path: "dist/static/js/*auth0_auth0*.<hash>.js",
 			limit: "20 kb",
 		},
 		{
