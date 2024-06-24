@@ -30,8 +30,8 @@ importers:
         specifier: 1.3.4
         version: 1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
-        specifier: 2.2.1
-        version: 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.0.1
+        version: 3.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.9.0
         version: 1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1381,6 +1381,12 @@ packages:
 
   '@versini/ui-hooks@2.2.1':
     resolution: {integrity: sha512-Uz8qf9Yhre/xW33kQ3fIZj7H95NQZOhh2Ymyu0lHjuyJ2uzk8SSkUd9iWeaG6bc1QZd968UsHcIXhw0dbi5Hmg==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-hooks@3.0.1':
+    resolution: {integrity: sha512-tFbu5cWLE2noP43Ml9TvTa0XoiV1JnIBrMjw53ESwSnxP65qjML6PsiNexgDmAtSRhijqmCTV6GiIlxUjVlkUg==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6697,6 +6703,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@versini/ui-hooks@2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-hooks@3.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
