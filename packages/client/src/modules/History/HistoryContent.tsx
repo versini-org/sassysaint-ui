@@ -1,3 +1,4 @@
+import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-components";
 import { TextInput } from "@versini/ui-form";
 import { useLocalStorage } from "@versini/ui-hooks";
@@ -8,16 +9,12 @@ import {
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 } from "../../common/constants";
-import { FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
 import { AppContext, HistoryContext } from "../App/AppContext";
 import { HistoryTable } from "./HistoryTable";
 
 type HistoryContentProps = {
 	historyData: any[];
-	isAuthenticated: boolean;
-	isDev: boolean;
 	onOpenChange: any;
-	user: any;
 };
 
 function filterDataByContent(data: any, searchString: string) {
@@ -31,12 +28,10 @@ function filterDataByContent(data: any, searchString: string) {
 }
 
 export const HistoryContent = ({
-	isAuthenticated,
-	isDev,
-	user,
 	onOpenChange,
 	historyData,
 }: HistoryContentProps) => {
+	const { isAuthenticated } = useAuth();
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const { dispatch } = useContext(AppContext);
@@ -45,7 +40,7 @@ export const HistoryContent = ({
 
 	const [, setCachedSearchString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
-		defaultValue: historyState.searchString,
+		initialValue: historyState.searchString,
 	});
 
 	const [fullHistory, setFullHistory] = useState<any[]>(historyData);
@@ -54,10 +49,6 @@ export const HistoryContent = ({
 	}>({
 		data: fullHistory,
 	});
-
-	const endUser = isDev
-		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
-		: user;
 
 	const updateDataOnSearch = (searchString: string) => {
 		const filteredData = filterDataByContent(fullHistory, searchString);
@@ -90,7 +81,7 @@ export const HistoryContent = ({
 		});
 	}, [fullHistory, historyState.searchString]);
 
-	return (isAuthenticated && endUser) || isDev
+	return isAuthenticated
 		? filteredHistory && filteredHistory.data && (
 				<>
 					<form autoComplete="off" onSubmit={onSubmit}>
@@ -130,7 +121,6 @@ export const HistoryContent = ({
 							setFullHistory={setFullHistory}
 							dispatch={dispatch}
 							onOpenChange={onOpenChange}
-							endUser={endUser}
 						/>
 					</div>
 				</>

@@ -12,7 +12,6 @@ import type { MessageProps } from "../../common/types";
 import {
 	durationFormatter,
 	extractAverage,
-	isDev,
 	numberFormatter,
 	pluralize,
 	renderDataAsList,
@@ -25,7 +24,6 @@ export type ChatDetailsContentProps = {
 		averageProcessingTimes: number;
 		totalChats: number;
 	};
-	user: any;
 };
 
 const averageProcessingTimeFormatter = (value: number) =>
@@ -61,7 +59,7 @@ export const ChatDetailsContent = ({
 	const listIdCurrent = useUniqueId();
 	const listIdMain = useUniqueId();
 
-	return isAuthenticated || isDev ? (
+	return isAuthenticated ? (
 		<>
 			{state && state.messages.length > 0 && (
 				<div className="mb-4">

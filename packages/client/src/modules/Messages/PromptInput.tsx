@@ -1,4 +1,4 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-components";
 import { TextArea } from "@versini/ui-form";
 import React, { useContext, useEffect, useRef, useState } from "react";
@@ -17,8 +17,8 @@ import {
 	ROLE_USER,
 	STATS_SEPARATOR,
 } from "../../common/constants";
-import { serviceCall } from "../../common/services";
-import { FAKE_USER_EMAIL, SEND, TYPE_QUESTION } from "../../common/strings";
+import { restCall } from "../../common/services";
+import { SEND, TYPE_QUESTION } from "../../common/strings";
 import { AppContext } from "../App/AppContext";
 
 const dispatchStreaming = (dispatch: any, streaming: boolean) => {
@@ -57,7 +57,7 @@ export const PromptInput = () => {
 	 */
 	const { state, dispatch } = useContext(AppContext);
 	const [userInput, setUserInput] = useState("");
-	const { user } = useAuth0();
+	const { getAccessToken, user } = useAuth();
 
 	const inputFocusedRef = useRef(false);
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
@@ -95,12 +95,13 @@ export const PromptInput = () => {
 			 * and we can call the OpenAI API to generate a response.
 			 */
 			try {
-				const response = await serviceCall({
+				const response = await restCall({
+					accessToken: await getAccessToken(),
 					name: "generate",
 					data: {
 						messages: state.messages,
 						model: MODEL_GPT4,
-						user: user?.email || FAKE_USER_EMAIL,
+						user: user?.username || "",
 						id: state.id,
 						location: state.location,
 						usage: state.usage,

@@ -5,6 +5,7 @@ export const FAKE_USER_EMAIL = "fake-user@fake.com";
 export const FAKE_USER_NAME = "fake-user-name";
 export const LOG_IN = "Log in";
 export const LOG_OUT = "Log out";
+export const PASSWORD_PLACEHOLDER = "Password";
 export const POWERED_BY = "Powered by OpenAI";
 export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";

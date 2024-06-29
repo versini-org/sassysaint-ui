@@ -1,19 +1,17 @@
-import { useAuth0 } from "@auth0/auth0-react";
-
+import { useAuth } from "@versini/auth-provider";
 import { IconDog } from "@versini/ui-icons";
 import { Suspense, lazy } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
-import { isDev } from "../../common/utilities";
 
 const LazyHeader = lazy(() => import("./LazyHeader"));
 
 export const MessagesContainerHeader = () => {
-	const { isAuthenticated } = useAuth0();
+	const { isAuthenticated } = useAuth();
 
 	return (
 		<>
-			{(isAuthenticated || isDev) && (
+			{isAuthenticated && (
 				<Suspense fallback={<div />}>
 					<LazyHeader />
 				</Suspense>

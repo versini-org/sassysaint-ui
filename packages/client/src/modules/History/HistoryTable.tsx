@@ -1,3 +1,4 @@
+import { useAuth } from "@versini/auth-provider";
 import {
 	ButtonIcon,
 	Table,
@@ -21,8 +22,8 @@ import {
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SORT,
 } from "../../common/constants";
-import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
-import { CARDS, FAKE_USER_EMAIL } from "../../common/strings";
+import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import { CARDS } from "../../common/strings";
 import { pluralize, truncate } from "../../common/utilities";
 import { HistoryContext } from "../App/AppContext";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
@@ -40,17 +41,18 @@ const onClickRestore = async (
 	item: HistoryItemProps,
 	dispatch: any,
 	onOpenChange: any,
+	accessToken: string,
 ) => {
 	try {
-		const response = await graphQLCall({
-			query: GRAPHQL_QUERIES.GET_CHAT,
-			data: {
+		const response = await serviceCall({
+			accessToken,
+			type: SERVICE_TYPES.GET_CHAT,
+			params: {
 				id: item.id,
 			},
 		});
 
 		if (response.status === 200) {
-			const data = await response.json();
 			dispatch({
 				type: ACTION_RESET,
 			});
@@ -58,9 +60,9 @@ const onClickRestore = async (
 				type: ACTION_RESTORE,
 				payload: {
 					id: item.id,
-					model: data.data.chatById.model,
-					usage: data.data.chatById.usage,
-					messages: data.data.chatById.messages,
+					model: response.data.model,
+					usage: response.data.usage,
+					messages: response.data.messages,
 				},
 			});
 			// close the panel
@@ -82,15 +84,14 @@ export const HistoryTable = ({
 	setFullHistory,
 	dispatch,
 	onOpenChange,
-	endUser,
 }: {
 	dispatch: any;
-	endUser: any;
 	filteredHistory: any;
 	onOpenChange: any;
 	setFilteredHistory: any;
 	setFullHistory: any;
 }) => {
+	const { user, getAccessToken } = useAuth();
 	const chatToDeleteRef = useRef({
 		id: 0,
 		timestamp: "",
@@ -102,7 +103,7 @@ export const HistoryTable = ({
 		useContext(HistoryContext);
 	const [, setCachedSortDirection] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SORT,
-		defaultValue: historyState.sortDirection,
+		initialValue: historyState.sortDirection,
 	});
 
 	const data = filteredHistory.data.sort(
@@ -172,17 +173,18 @@ export const HistoryTable = ({
 	const onClickDelete = async () => {
 		const item = chatToDeleteRef.current;
 		try {
-			const response = await graphQLCall({
-				query: GRAPHQL_QUERIES.DELETE_CHAT,
-				data: {
-					userId: endUser?.email || FAKE_USER_EMAIL,
-					id: item?.id,
+			const response = await serviceCall({
+				accessToken: await getAccessToken(),
+				type: SERVICE_TYPES.DELETE_CHAT,
+				params: {
+					userId: user?.username || "",
+					id: item.id,
 				},
 			});
+
 			if (response.status === 200) {
-				const data = await response.json();
-				setFullHistory(data.data.deleteChat);
-				setFilteredHistory({ data: data.data.deleteChat });
+				setFullHistory(response.data);
+				setFilteredHistory({ data: response.data });
 			}
 		} catch (_error) {
 			// nothing to declare officer
@@ -258,8 +260,14 @@ export const HistoryTable = ({
 											focusMode="alt-system"
 											noBorder
 											label="Restore chat"
-											onClick={() => {
-												onClickRestore(item, dispatch, onOpenChange);
+											onClick={async () => {
+												const accessToken = await getAccessToken();
+												onClickRestore(
+													item,
+													dispatch,
+													onOpenChange,
+													accessToken,
+												);
 											}}
 										>
 											<IconRestore className="h-3 w-3" monotone />

@@ -12,7 +12,7 @@ export default {
 			limit: "6 kb",
 		},
 		{
-			path: "dist/static/js/*auth0_auth0*.<hash>.js",
+			path: "dist/static/js/*versini_auth-provider*.<hash>.js",
 			limit: "20 kb",
 		},
 		{
@@ -27,7 +27,7 @@ export default {
 			limit: "6 kb",
 		},
 		{
-			path: "dist/static/js/async/vendors-*ui-components*.<hash>.js",
+			path: "dist/static/js/async/*versini_ui-components*.<hash>.js",
 			limit: "5 kb",
 		},
 		{
@@ -36,7 +36,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/async/*react-use*.<hash>.js",
-			limit: "31 kb",
+			limit: "32 kb",
 		},
 		{
 			path: "dist/static/js/async/*katex*.<hash>.js",

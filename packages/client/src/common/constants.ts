@@ -27,3 +27,5 @@ export const LOCAL_STORAGE_SORT = "sort";
 export const LOCAL_STORAGE_LOCATION = "location";
 
 export const STATS_SEPARATOR = "==stats==";
+
+export const CLIENT_ID = "b44c68f0-e5b3-4a1d-a3e3-df8632b0223b";
