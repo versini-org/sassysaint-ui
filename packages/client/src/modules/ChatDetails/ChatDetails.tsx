@@ -1,9 +1,9 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "@versini/auth-provider";
 import { Panel } from "@versini/ui-components";
 import { useEffect, useState } from "react";
 
-import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
-import { FAKE_USER_EMAIL, STATS } from "../../common/strings";
+import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import { STATS } from "../../common/strings";
 import { ChatDetailsContent } from "./ChatDetailsContent";
 
 export const ChatDetails = ({
@@ -20,10 +20,10 @@ export const ChatDetails = ({
 		averageProcessingTimes: 0,
 		totalChats: 0,
 	});
-	const { isAuthenticated, user } = useAuth0();
+	const { isAuthenticated, getAccessToken, user } = useAuth();
 
 	useEffect(() => {
-		if (!open) {
+		if (!open || !user) {
 			/**
 			 * Menu is closed, no pre-fetching
 			 */
@@ -31,30 +31,26 @@ export const ChatDetails = ({
 		}
 		(async () => {
 			try {
-				const response = await graphQLCall({
-					query: GRAPHQL_QUERIES.GET_CHATS_STATS,
-					data: {
-						userId: user?.email || FAKE_USER_EMAIL,
+				const response = await serviceCall({
+					accessToken: await getAccessToken(),
+					type: SERVICE_TYPES.GET_CHATS_STATS,
+					params: {
+						userId: user.username,
 					},
 				});
 
 				if (response.status === 200) {
-					const data = await response.json();
-					setStats(data.data.chatsStats);
+					setStats(response.data);
 				}
 			} catch (_error) {
 				// nothing to declare officer
 			}
 		})();
-	}, [open, user?.email]);
+	}, [open, getAccessToken, user]);
 
 	return (
 		<Panel open={open} onOpenChange={onOpenChange} title={STATS}>
-			<ChatDetailsContent
-				user={user}
-				isAuthenticated={isAuthenticated}
-				stats={stats}
-			/>
+			<ChatDetailsContent isAuthenticated={isAuthenticated} stats={stats} />
 		</Panel>
 	);
 };

@@ -37,7 +37,12 @@ export default defineConfig({
 		template: "./index.html",
 	},
 	server: {
+		host: "macmini.gizmette.local.com",
 		port: 5173,
+		https: {
+			key: process.env.SSL_KEY,
+			cert: process.env.SSL_CERT,
+		},
 	},
 	plugins: [pluginReact()],
 });

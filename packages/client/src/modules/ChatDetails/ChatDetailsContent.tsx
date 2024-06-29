@@ -25,7 +25,6 @@ export type ChatDetailsContentProps = {
 		averageProcessingTimes: number;
 		totalChats: number;
 	};
-	user: any;
 };
 
 const averageProcessingTimeFormatter = (value: number) =>

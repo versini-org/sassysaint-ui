@@ -1,4 +1,4 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "@versini/auth-provider";
 import {
 	ButtonIcon,
 	Menu,
@@ -14,8 +14,8 @@ import {
 	IconSettings,
 } from "@versini/ui-icons";
 import { useContext, useState } from "react";
-import { GRAPHQL_QUERIES, graphQLCall } from "../../common/services";
-import { FAKE_USER_EMAIL, LOG_OUT, STATS } from "../../common/strings";
+import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import { LOG_OUT, STATS } from "../../common/strings";
 import { AppContext } from "../App/AppContext";
 
 import { About } from "../About/About";
@@ -40,13 +40,7 @@ const LazyHeader = () => {
 		timestamp: Date.now(),
 	});
 
-	const { user, logout } = useAuth0();
-	const logoutWithRedirect = () =>
-		logout({
-			logoutParams: {
-				returnTo: window.location.origin,
-			},
-		});
+	const { logout, getAccessToken, user } = useAuth();
 
 	const onClickProfile = () => {
 		setShowProfile(!showProfile);
@@ -71,6 +65,7 @@ const LazyHeader = () => {
 		}
 
 		if (
+			!user ||
 			!state ||
 			fetchingHistory.progress ||
 			(fetchingHistory.done === true && now - fetchingHistory.timestamp < 5000)
@@ -92,16 +87,15 @@ const LazyHeader = () => {
 		});
 
 		try {
-			const response = await graphQLCall({
-				query: GRAPHQL_QUERIES.GET_CHATS,
-				data: {
-					userId: user?.email || FAKE_USER_EMAIL,
+			const response = await serviceCall({
+				accessToken: await getAccessToken(),
+				type: SERVICE_TYPES.GET_CHATS,
+				params: {
+					userId: user.username,
 				},
 			});
-
 			if (response.status === 200) {
-				const data = await response.json();
-				setHistoryData(data.data.chats);
+				setHistoryData(response.data);
 				setFetchingHistory({
 					done: true,
 					progress: false,
@@ -127,7 +121,7 @@ const LazyHeader = () => {
 			<ConfirmationPanel
 				showConfirmation={showConfirmation}
 				setShowConfirmation={setShowConfirmation}
-				action={logoutWithRedirect}
+				action={logout}
 				customStrings={{
 					confirmAction: LOG_OUT,
 					cancelAction: "Cancel",

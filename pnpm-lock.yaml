@@ -20,9 +20,9 @@ importers:
 
   packages/client:
     dependencies:
-      '@auth0/auth0-react':
-        specifier: 2.2.4
-        version: 2.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/auth-provider':
+        specifier: 5.0.0
+        version: 5.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.19.5
         version: 5.19.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))
@@ -30,8 +30,8 @@ importers:
         specifier: 1.3.4
         version: 1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
-        specifier: 2.2.1
-        version: 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.0.0
+        version: 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.9.0
         version: 1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -72,8 +72,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       uuid:
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 10.0.0
+        version: 10.0.0
     devDependencies:
       '@versini/ui-styles':
         specifier: 1.9.2
@@ -143,15 +143,6 @@ packages:
   '@ast-grep/napi@0.22.3':
     resolution: {integrity: sha512-Viv/PQo4H6heDt0lQ6R0S8INpHhvmhm3MAXCBhMNZbsrrW8hdd9zxJ0rfSgv7jUFqRqRLCxA0crO2ObeMlySjQ==}
     engines: {node: '>= 10'}
-
-  '@auth0/auth0-react@2.2.4':
-    resolution: {integrity: sha512-l29PQC0WdgkCoOc6WeMAY26gsy/yXJICW0jHfj0nz8rZZphYKrLNqTRWFFCMJY+sagza9tSgB1kG/UvQYgGh9A==}
-    peerDependencies:
-      react: ^16.11.0 || ^17 || ^18
-      react-dom: ^16.11.0 || ^17 || ^18
-
-  '@auth0/auth0-spa-js@2.1.3':
-    resolution: {integrity: sha512-NMTBNuuG4g3rame1aCnNS5qFYIzsTUV5qTFPRfTyYFS1feS6jsCBR+eTq9YkxCp1yuoM2UIcjunPaoPl77U9xQ==}
 
   '@babel/code-frame@7.23.5':
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
@@ -1358,6 +1349,15 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
+  '@versini/auth-common@2.10.1':
+    resolution: {integrity: sha512-OlSRFZPlKhRgRPs1RspUgn+GzCkgT6ecgDOIhe71w4y5usYbRG40qHDFkxl/S3dG+6v/4Yr0v2Zj6Sskvh6kYA==}
+
+  '@versini/auth-provider@5.0.0':
+    resolution: {integrity: sha512-jhNJ+QaMQdrcBVmc9JJQ2Vv1nOAoNKkXZ/fp+bPrPKNMhAbw73IHo5FjIDlMy8cItbOrXSX2poVMgujd0X8VIA==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
   '@versini/dev-dependencies-client@5.1.0':
     resolution: {integrity: sha512-vx/3S2aiLNdfokpiEWH43xp28cy94qf3zbnUQLAGOBe5iIRee00c1BKPb7VSCK28Mu5iZcMRumaXHMU73QgpxA==}
 
@@ -1381,6 +1381,12 @@ packages:
 
   '@versini/ui-hooks@2.2.1':
     resolution: {integrity: sha512-Uz8qf9Yhre/xW33kQ3fIZj7H95NQZOhh2Ymyu0lHjuyJ2uzk8SSkUd9iWeaG6bc1QZd968UsHcIXhw0dbi5Hmg==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-hooks@4.0.0':
+    resolution: {integrity: sha512-YnFToKieKB+3txMCnz8cqji0Nc1PFZ3uEWIcyE48TZjDz9rX3/XZzF8pYO4GlA33UWfZtN/ihwvMkm5PNmVQng==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -3051,6 +3057,9 @@ packages:
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
+
+  jose@5.6.2:
+    resolution: {integrity: sha512-F1t1/WZJ4JdmCE/XoMYw1dPOW5g8JF0xGm6Ox2fwaCAPlCzt+4Bh0EWP59iQuZNHHauDkCdjx+kCZSh5z/PGow==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -5033,6 +5042,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
+
   uuid@9.0.1:
     resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
     hasBin: true
@@ -5377,14 +5390,6 @@ snapshots:
       '@ast-grep/napi-win32-arm64-msvc': 0.22.3
       '@ast-grep/napi-win32-ia32-msvc': 0.22.3
       '@ast-grep/napi-win32-x64-msvc': 0.22.3
-
-  '@auth0/auth0-react@2.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@auth0/auth0-spa-js': 2.1.3
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@auth0/auth0-spa-js@2.1.3': {}
 
   '@babel/code-frame@7.23.5':
     dependencies:
@@ -6562,6 +6567,20 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
+  '@versini/auth-common@2.10.1':
+    dependencies:
+      jose: 5.6.2
+      uuid: 10.0.0
+
+  '@versini/auth-provider@5.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@versini/auth-common': 2.10.1
+      '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      jose: 5.6.2
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      uuid: 10.0.0
+
   '@versini/dev-dependencies-client@5.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.1))(@swc/core@1.5.24(@swc/helpers@0.5.3))(@swc/helpers@0.5.3)(@types/jest@29.5.12)(@types/node@20.14.1)(@types/react-dom@18.3.0)(@types/react@18.3.3)(encoding@0.1.13)(happy-dom@14.12.0)(jsdom@24.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.0)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))(typescript@5.4.5)':
     dependencies:
       '@rsbuild/core': 0.7.2
@@ -6697,6 +6716,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@versini/ui-hooks@2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-hooks@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -8601,6 +8625,8 @@ snapshots:
   jiti@1.21.0: {}
 
   jju@1.4.0: {}
+
+  jose@5.6.2: {}
 
   joycon@3.1.1: {}
 
@@ -11130,6 +11156,8 @@ snapshots:
       requires-port: 1.0.0
 
   util-deprecate@1.0.2: {}
+
+  uuid@10.0.0: {}
 
   uuid@9.0.1: {}
 

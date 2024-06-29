@@ -1,4 +1,4 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "@versini/auth-provider";
 
 import { getMessageContaintWrapperClass } from "../../common/utilities";
 import { Toolbox } from "../Toolbox/Toolbox";
@@ -7,7 +7,7 @@ import { MessagesList } from "./MessagesList";
 import { PromptInput } from "./PromptInput";
 
 export const MessagesContainer = () => {
-	const { isAuthenticated } = useAuth0();
+	const { isAuthenticated } = useAuth();
 	const containerClass = getMessageContaintWrapperClass(isAuthenticated);
 
 	return (

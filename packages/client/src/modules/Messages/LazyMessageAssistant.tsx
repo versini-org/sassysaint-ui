@@ -33,7 +33,7 @@ export const MessageAssistant = ({
 	const { state } = useContext(AppContext);
 	const [showEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
-		defaultValue: false,
+		initialValue: false,
 	});
 
 	return (

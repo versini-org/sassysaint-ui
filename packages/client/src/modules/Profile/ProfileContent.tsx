@@ -1,17 +1,18 @@
+import { useAuth } from "@versini/auth-provider";
 import { ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
-import { useContext, useEffect, useState } from "react";
-
 import { IconRefresh } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { useContext, useEffect, useState } from "react";
+
 import {
 	ACTION_LOCATION,
 	LOCAL_STORAGE_CHAT_DETAILS,
 	LOCAL_STORAGE_LOCATION,
 	LOCAL_STORAGE_PREFIX,
 } from "../../common/constants";
-import { CARDS, FAKE_USER_EMAIL, FAKE_USER_NAME } from "../../common/strings";
+import { CARDS } from "../../common/strings";
 import type { GeoLocation } from "../../common/types";
 import {
 	convertLatitudeToDMS,
@@ -21,32 +22,21 @@ import {
 } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-export type ProfileContentProps = {
-	isAuthenticated: boolean;
-	isDev: boolean;
-	user: any;
-};
-
-export const ProfileContent = ({
-	isAuthenticated,
-	isDev,
-	user,
-}: ProfileContentProps) => {
+export const ProfileContent = () => {
+	const { isAuthenticated, user } = useAuth();
 	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
-		defaultValue: false,
+		initialValue: false,
 	});
 	const [, setCachedLocation, removeCachedLocation] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_LOCATION,
-		defaultValue: { latitude: 0, longitude: 0, accuracy: 0 },
+		initialValue: { latitude: 0, longitude: 0, accuracy: 0 },
 	});
 
 	const [refreshEnabled, setRefreshEnabled] = useState(true);
 	const listId = useUniqueId();
 	const { state, dispatch } = useContext(AppContext);
-	const endUser = isDev
-		? { name: FAKE_USER_NAME, email: FAKE_USER_EMAIL }
-		: user;
+	const endUser = user?.username || "";
 
 	const onToggleEngineDetails = (checked: boolean) => {
 		setShowEngineDetails(checked);
@@ -142,14 +132,14 @@ export const ProfileContent = ({
 		);
 	};
 
-	return (isAuthenticated && endUser) || isDev ? (
+	return isAuthenticated && endUser ? (
 		<Card
 			header={CARDS.PREFERENCES.TITLE}
 			className="prose-dark dark:prose-lighter"
 		>
 			{renderDataAsList(listId, {
-				[CARDS.PREFERENCES.NAME]: endUser.name,
-				[CARDS.PREFERENCES.EMAIL]: endUser.email,
+				[CARDS.PREFERENCES.NAME]: endUser,
+				// [CARDS.PREFERENCES.EMAIL]: endUser.email,
 				[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 					<Toggle
 						noBorder
