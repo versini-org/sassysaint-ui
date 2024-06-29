@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.8.1...client-v3.0.0) (2024-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrating from Auth0 to custom Auth
+
+### Features
+
+* migrating from Auth0 to custom Auth ([b0eeb22](https://github.com/aversini/sassysaint-ui/commit/b0eeb22adc2d44a098cea49c81b81d68b4536daf))
+
 ## [2.8.1](https://github.com/aversini/sassysaint-ui/compare/client-v2.8.0...client-v2.8.1) (2024-06-04)
 
 
