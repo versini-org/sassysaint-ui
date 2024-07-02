@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/aversini/sassysaint-ui/compare/client-v3.0.0...client-v3.0.1) (2024-07-02)
+
+
+### Bug Fixes
+
+* better location retrieval ([af4c816](https://github.com/aversini/sassysaint-ui/commit/af4c816ac718983ef5175f8d6dd1088c7e66fca2))
+
 ## [3.0.0](https://github.com/aversini/sassysaint-ui/compare/client-v2.8.1...client-v3.0.0) (2024-06-29)
 
 
