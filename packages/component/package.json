@@ -1,0 +1,52 @@
+{
+	"name": "@versini/sassysaint",
+	"version": "1.4.1",
+	"license": "MIT",
+	"author": "Arno Versini",
+	"publishConfig": {
+		"access": "public"
+	},
+	"homepage": "https://github.com/aversini/ui-components",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:aversini/ui-components.git"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": ["dist"],
+	"scripts": {
+		"build:check": "tsc",
+		"build:js": "vite build",
+		"build:types": "tsup",
+		"build": "npm-run-all --serial clean build:check build:js build:types",
+		"clean": "rimraf dist tmp",
+		"dev:js": "vite build --watch --mode development",
+		"dev:types": "tsup --watch src",
+		"dev": "npm-run-all clean --parallel dev:js dev:types",
+		"lint": "biome lint src",
+		"start": "static-server dist --port 5173",
+		"stats:pr": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o tmp/stats.json --silent",
+		"stats:release": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o stats/stats.json --silent",
+		"stats:report": "bundlesize -c bundlesize.config.js --type report -o tmp/pr-stats.md --silent",
+		"stats": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\"",
+		"test:coverage:ui": "vitest --coverage --ui",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest",
+		"test": "vitest run",
+		"watch": "npm-run-all dev"
+	},
+	"peerDependencies": {
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
+	},
+	"devDependencies": {
+		"@versini/ui-styles": "1.9.2"
+	},
+	"dependencies": {
+		"@versini/ui-hooks": "4.0.0",
+		"clsx": "2.1.1",
+		"tailwindcss": "3.4.3"
+	},
+	"sideEffects": ["**/*.css"]
+}
