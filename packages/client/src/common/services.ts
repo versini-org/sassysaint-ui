@@ -98,7 +98,7 @@ export const SERVICE_TYPES = {
 	},
 };
 
-const serverUrl = process.env.PUBLIC_API_SERVER_URL;
+const serverUrl = process.env.PUBLIC_SASSY_API_SERVER_URL;
 
 const graphQLCall = async ({
 	query,

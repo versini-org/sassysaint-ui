@@ -88,15 +88,15 @@ export const ProfileContent = () => {
 	}, [refreshEnabled]);
 
 	const renderLocation = (location?: GeoLocation) => {
-		if (location?.city && location?.countryShort && location?.regionShort) {
+		if (location?.city && location?.country && location?.region) {
 			return (
 				<>
 					<Flexgrid alignVertical="center" columnGap={4}>
 						<FlexgridItem>
 							<div className="text-right">
-								{location.city}, {location.regionShort}
+								{location.city}, {location.region}
 							</div>
-							<div className="text-right">{location.countryShort}</div>
+							<div className="text-right">{location.country}</div>
 						</FlexgridItem>
 						<FlexgridItem>
 							<ButtonIcon
@@ -123,7 +123,11 @@ export const ProfileContent = () => {
 						<div>{lon}</div>
 					</FlexgridItem>
 					<FlexgridItem>
-						<ButtonIcon disabled size="small" className="mt-2">
+						<ButtonIcon
+							size="small"
+							className="mt-2"
+							onClick={onRefreshLocation}
+						>
 							<IconRefresh className="size-3" monotone />
 						</ButtonIcon>
 					</FlexgridItem>
