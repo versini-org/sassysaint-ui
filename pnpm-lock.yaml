@@ -21,17 +21,17 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 5.0.0
-        version: 5.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.0.2
+        version: 5.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.19.5
         version: 5.19.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))
       '@versini/ui-form':
-        specifier: 1.3.4
-        version: 1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.3.5
+        version: 1.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
-        specifier: 4.0.0
-        version: 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.0.1
+        version: 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.9.0
         version: 1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -40,10 +40,10 @@ importers:
         version: 1.4.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))
       autoprefixer:
         specifier: 10.4.19
-        version: 10.4.19(postcss@8.4.38)
+        version: 10.4.19(postcss@8.4.39)
       postcss:
-        specifier: 8.4.38
-        version: 8.4.38
+        specifier: 8.4.39
+        version: 8.4.39
       pretty-ms:
         specifier: 9.0.0
         version: 9.0.0
@@ -1374,8 +1374,8 @@ packages:
   '@versini/auth-common@2.10.1':
     resolution: {integrity: sha512-OlSRFZPlKhRgRPs1RspUgn+GzCkgT6ecgDOIhe71w4y5usYbRG40qHDFkxl/S3dG+6v/4Yr0v2Zj6Sskvh6kYA==}
 
-  '@versini/auth-provider@5.0.0':
-    resolution: {integrity: sha512-jhNJ+QaMQdrcBVmc9JJQ2Vv1nOAoNKkXZ/fp+bPrPKNMhAbw73IHo5FjIDlMy8cItbOrXSX2poVMgujd0X8VIA==}
+  '@versini/auth-provider@5.0.2':
+    resolution: {integrity: sha512-O/VslRP+v6gPrPBHoSGSqrCzkUXFNMILoDl8z4nlgeD7P+wrjl1b4awdDZQ+NiPgxGGxZPBhD/73DeynaolA+w==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1395,8 +1395,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-form@1.3.4':
-    resolution: {integrity: sha512-1/u/20NCe9c+4SFwwLLOHP9wsOJAPSNqeUhhrq35F/elshwRQmR/Try2IkxpSR/NvuCt8VBZe10WzET8TXFm1A==}
+  '@versini/ui-form@1.3.5':
+    resolution: {integrity: sha512-DiDUgXv6wOPzsuV2P+U9TEfDgVef4UMwr4DZa9vKEBQnZqmEYQi8qUwUhdYHT3gTSMBZnUOldMNZisHKvXeUaA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1409,6 +1409,12 @@ packages:
 
   '@versini/ui-hooks@4.0.0':
     resolution: {integrity: sha512-YnFToKieKB+3txMCnz8cqji0Nc1PFZ3uEWIcyE48TZjDz9rX3/XZzF8pYO4GlA33UWfZtN/ihwvMkm5PNmVQng==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-hooks@4.0.1':
+    resolution: {integrity: sha512-LiYYRGg5j1jFyQniJVx/Ke8hXaXIHBo7LPt0MyJR5b7FfF0AbxoIt8AfQrpYFERvjpq8kXlib0ELMdC0nbO4yw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -3083,6 +3089,9 @@ packages:
   jose@5.6.2:
     resolution: {integrity: sha512-F1t1/WZJ4JdmCE/XoMYw1dPOW5g8JF0xGm6Ox2fwaCAPlCzt+4Bh0EWP59iQuZNHHauDkCdjx+kCZSh5z/PGow==}
 
+  jose@5.6.3:
+    resolution: {integrity: sha512-1Jh//hEEwMhNYPDDLwXHa2ePWgWiFNNUadVmguAAw2IJ6sj9mNxV5tGXJNqlMkJAybF6Lgw1mISDxTePP/187g==}
+
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
@@ -3986,6 +3995,9 @@ packages:
   picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
+  picocolors@1.0.1:
+    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -4078,6 +4090,10 @@ packages:
 
   postcss@8.4.38:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.4.39:
+    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier-plugin-tailwindcss@0.6.1:
@@ -6144,7 +6160,7 @@ snapshots:
       '@swc/helpers': 0.5.3
       core-js: 3.36.1
       html-webpack-plugin: html-rspack-plugin@5.7.2(@rspack/core@0.7.0(@swc/helpers@0.5.3))
-      postcss: 8.4.38
+      postcss: 8.4.39
 
   '@rsbuild/plugin-react@0.7.2(@rsbuild/core@0.7.2)(@swc/helpers@0.5.3)':
     dependencies:
@@ -6160,7 +6176,7 @@ snapshots:
       '@rspack/core': 0.7.0(@swc/helpers@0.5.3)
       caniuse-lite: 1.0.30001627
       html-webpack-plugin: html-rspack-plugin@5.7.2(@rspack/core@0.7.0(@swc/helpers@0.5.3))
-      postcss: 8.4.38
+      postcss: 8.4.39
     optionalDependencies:
       fsevents: 2.3.3
     transitivePeerDependencies:
@@ -6586,11 +6602,11 @@ snapshots:
       jose: 5.6.2
       uuid: 10.0.0
 
-  '@versini/auth-provider@5.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@5.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@versini/auth-common': 2.10.1
       '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      jose: 5.6.2
+      jose: 5.6.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       uuid: 10.0.0
@@ -6721,10 +6737,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-form@1.3.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-form@1.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@versini/ui-hooks': 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-private': 1.4.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-private': 1.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -6735,6 +6751,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@versini/ui-hooks@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-hooks@4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -7056,6 +7077,16 @@ snapshots:
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.38
+      postcss-value-parser: 4.2.0
+
+  autoprefixer@10.4.19(postcss@8.4.39):
+    dependencies:
+      browserslist: 4.23.0
+      caniuse-lite: 1.0.30001627
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.39
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -8642,6 +8673,8 @@ snapshots:
 
   jose@5.6.2: {}
 
+  jose@5.6.3: {}
+
   joycon@3.1.1: {}
 
   js-cookie@2.2.1: {}
@@ -10020,6 +10053,8 @@ snapshots:
 
   picocolors@1.0.0: {}
 
+  picocolors@1.0.1: {}
+
   picomatch@2.3.1: {}
 
   pidtree@0.3.1: {}
@@ -10053,17 +10088,17 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.38):
+  postcss-import@15.1.0(postcss@8.4.39):
     dependencies:
-      postcss: 8.4.38
+      postcss: 8.4.39
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.38):
+  postcss-js@4.0.1(postcss@8.4.39):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.38
+      postcss: 8.4.39
 
   postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5)):
     dependencies:
@@ -10073,9 +10108,17 @@ snapshots:
       postcss: 8.4.38
       ts-node: 10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5)
 
-  postcss-nested@6.0.1(postcss@8.4.38):
+  postcss-load-config@4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5)):
     dependencies:
-      postcss: 8.4.38
+      lilconfig: 3.0.0
+      yaml: 2.3.4
+    optionalDependencies:
+      postcss: 8.4.39
+      ts-node: 10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5)
+
+  postcss-nested@6.0.1(postcss@8.4.39):
+    dependencies:
+      postcss: 8.4.39
       postcss-selector-parser: 6.0.15
 
   postcss-selector-parser@6.0.10:
@@ -10094,6 +10137,12 @@ snapshots:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.0
+      source-map-js: 1.2.0
+
+  postcss@8.4.39:
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   prettier-plugin-tailwindcss@0.6.1(prettier@3.3.0):
@@ -10829,11 +10878,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.38
-      postcss-import: 15.1.0(postcss@8.4.38)
-      postcss-js: 4.0.1(postcss@8.4.38)
-      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))
-      postcss-nested: 6.0.1(postcss@8.4.38)
+      postcss: 8.4.39
+      postcss-import: 15.1.0(postcss@8.4.39)
+      postcss-js: 4.0.1(postcss@8.4.39)
+      postcss-load-config: 4.0.2(postcss@8.4.39)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.1)(typescript@5.4.5))
+      postcss-nested: 6.0.1(postcss@8.4.39)
       postcss-selector-parser: 6.0.15
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -11251,7 +11300,7 @@ snapshots:
   vite@5.2.12(@types/node@20.14.1)(terser@5.31.0):
     dependencies:
       esbuild: 0.20.2
-      postcss: 8.4.38
+      postcss: 8.4.39
       rollup: 4.18.0
     optionalDependencies:
       '@types/node': 20.14.1

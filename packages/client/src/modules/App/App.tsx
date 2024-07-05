@@ -1,7 +1,7 @@
 import { useAuth } from "@versini/auth-provider";
 import { Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -53,6 +53,18 @@ function App() {
 		models: [],
 		plugins: [],
 	});
+
+	const onLocationError = useCallback(() => {
+		dispatch({
+			type: ACTION_LOCATION,
+			payload: {
+				location: {
+					...cachedLocation,
+					city: "N/A",
+				},
+			},
+		});
+	}, [cachedLocation]);
 
 	/**
 	 * Effect to fetch the server stats from the ... server.
@@ -169,8 +181,21 @@ function App() {
 					},
 				});
 				loadingDetailedLocationRef.current = false;
-				if (response.status !== 200 || response?.errors?.length > 0) {
-					throw new Error("Error fetching location");
+				if (
+					response.status !== 200 ||
+					response?.errors?.length > 0 ||
+					!response.data ||
+					!response.data.city ||
+					!response.data.region ||
+					!response.data.country
+				) {
+					/**
+					 * We could not fetch the location. We need to set the city to "N/A" to
+					 * indicate that the location is not available, and prevents further
+					 * requests to the location service, until the user refreshes the page or
+					 * uses the reload button in the profile page.
+					 */
+					onLocationError();
 				} else {
 					dispatch({
 						type: ACTION_LOCATION,
@@ -193,18 +218,10 @@ function App() {
 				 * requests to the location service, until the user refreshes the page or
 				 * uses the reload button in the profile page.
 				 */
-				dispatch({
-					type: ACTION_LOCATION,
-					payload: {
-						location: {
-							...cachedLocation,
-							city: "N/A",
-						},
-					},
-				});
+				onLocationError();
 			}
 		})();
-	}, [state, cachedLocation, getAccessToken]);
+	}, [state, cachedLocation, getAccessToken, onLocationError]);
 
 	/**
 	 * Effect to animate the logo and the app container when the app is loaded.
