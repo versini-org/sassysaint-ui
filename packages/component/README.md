@@ -1,3 +1,3 @@
-# @versini/ui-system
+# @versini/sassysaint
 
-System level components such as Flexgrid and ThemeProvider.
+Sassy Saint UI, but as a consumable package.

@@ -1,6 +1,6 @@
 {
 	"name": "@versini/sassysaint",
-	"version": "1.4.1",
+	"version": "0.0.0",
 	"license": "MIT",
 	"author": "Arno Versini",
 	"publishConfig": {
@@ -26,10 +26,6 @@
 		"dev": "npm-run-all clean --parallel dev:js dev:types",
 		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
-		"stats:pr": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o tmp/stats.json --silent",
-		"stats:release": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\" -o stats/stats.json --silent",
-		"stats:report": "bundlesize -c bundlesize.config.js --type report -o tmp/pr-stats.md --silent",
-		"stats": "bundlesize -c bundlesize.config.js -p \"$npm_package_version\"",
 		"test:coverage:ui": "vitest --coverage --ui",
 		"test:coverage": "vitest run --coverage",
 		"test:watch": "vitest",
