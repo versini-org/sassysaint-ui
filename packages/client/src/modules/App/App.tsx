@@ -244,7 +244,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 					dispatch: dispatchHistory,
 				}}
 			>
-				<Main className={isComponent ? "component" : "not-component"}>
+				<Main>
 					<MessagesContainer />
 				</Main>
 				<AppFooter serverStats={serverStats} />
