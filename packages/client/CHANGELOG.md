@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.0.2...client-v3.1.0) (2024-07-06)
+
+
+### Features
+
+* export as a component ([f81e0bd](https://github.com/aversini/sassysaint-ui/commit/f81e0bd01cb83ee8dd960c853c7421c98b51c393))
+
 ## [3.0.2](https://github.com/aversini/sassysaint-ui/compare/client-v3.0.1...client-v3.0.2) (2024-07-05)
 
 
