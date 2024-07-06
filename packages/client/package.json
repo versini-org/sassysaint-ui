@@ -4,6 +4,7 @@
 	"license": "MIT",
 	"author": "Arno Versini",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"clean": "rimraf dist build",
 		"dev": "rsbuild dev",
