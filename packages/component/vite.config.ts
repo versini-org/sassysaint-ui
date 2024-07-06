@@ -8,7 +8,7 @@ import { defineConfig } from "vite";
 
 import { externalDependencies } from "./vite.common";
 
-const packageJson = fs.readJSONSync("package.json");
+const packageJson = fs.readJSONSync("../client/package.json");
 const copyrightYear = new Date(Date.now()).getFullYear();
 const buildTime = new Date()
 	.toLocaleString("en-US", {
@@ -30,7 +30,6 @@ try {
     window.__VERSINI_SASSY_GLOBAL__ = {
       version: "${packageJson.version}",
 			buildTime: "${buildTime}",
-			homepage: "${packageJson.homepage}",
 			license: "${packageJson.license}",
     };
   }
