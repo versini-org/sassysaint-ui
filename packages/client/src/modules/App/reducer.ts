@@ -49,6 +49,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			model: action.payload.model,
 			usage: action.payload.usage,
 			location: state.location,
+			isComponent: state.isComponent,
 			messages,
 		};
 	}
@@ -94,6 +95,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 						model: state.model,
 						usage: state.usage,
 						location: state.location,
+						isComponent: state.isComponent,
 						messages,
 					};
 				}
@@ -104,6 +106,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 				model: state.model,
 				usage: state.usage,
 				location: state.location,
+				isComponent: state.isComponent,
 				messages: [
 					...state.messages,
 					{
@@ -121,6 +124,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: 0,
 			messages: [],
 			location: state.location,
+			isComponent: state.isComponent,
 		};
 	}
 
@@ -131,6 +135,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: action.payload.usage,
 			messages: state.messages,
 			location: state.location,
+			isComponent: state.isComponent,
 		};
 	}
 
@@ -141,6 +146,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: state.usage,
 			messages: state.messages,
 			location: action.payload.location,
+			isComponent: state.isComponent,
 		};
 	}
 

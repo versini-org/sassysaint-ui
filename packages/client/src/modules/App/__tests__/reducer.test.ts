@@ -25,6 +25,7 @@ describe("Non-DOM tests", () => {
 				model: "gpt-666",
 				usage: 456,
 				messages: [],
+				isComponent: false,
 			};
 			expect(reducer(state, undefined)).toEqual(state);
 		});
@@ -40,6 +41,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				id: "123456",
@@ -82,6 +84,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			expect(
 				reducer(state, {
@@ -107,6 +110,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				model: "gpt-777",
@@ -137,6 +141,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				location: {
@@ -178,6 +183,7 @@ describe("Non-DOM tests", () => {
 						},
 					},
 				],
+				isComponent: false,
 			};
 			const actionPayload = {
 				message: {
@@ -224,6 +230,7 @@ describe("Non-DOM tests", () => {
 						},
 					},
 				],
+				isComponent: false,
 			};
 			const actionPayload = {
 				message: {

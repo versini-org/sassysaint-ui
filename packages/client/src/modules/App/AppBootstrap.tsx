@@ -7,7 +7,7 @@ import { CLIENT_ID } from "../../common/constants";
 import { Login } from "../../modules/Login/Login";
 const LazyApp = lazy(() => import("./App"));
 
-const Bootstrap = () => {
+const Bootstrap = ({ isComponent }: { isComponent: boolean }) => {
 	const { isAuthenticated } = useAuth();
 
 	if (!isAuthenticated) {
@@ -15,16 +15,18 @@ const Bootstrap = () => {
 	}
 	return (
 		<Suspense fallback={<div />}>
-			<LazyApp />
+			<LazyApp isComponent={isComponent} />
 		</Suspense>
 	);
 };
 
-export const AppBootstrap = () => {
+export const AppBootstrap = ({
+	isComponent = false,
+}: { isComponent: boolean }) => {
 	return (
 		<>
 			<AuthProvider clientId={CLIENT_ID}>
-				<Bootstrap />
+				<Bootstrap isComponent={isComponent} />
 			</AuthProvider>
 		</>
 	);

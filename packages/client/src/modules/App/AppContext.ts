@@ -4,7 +4,13 @@ import { MODEL_GPT4 } from "../../common/constants";
 import type { AppContextProps } from "../../common/types";
 
 export const AppContext = React.createContext<AppContextProps>({
-	state: { id: "", model: MODEL_GPT4, usage: 0, messages: [] },
+	state: {
+		id: "",
+		model: MODEL_GPT4,
+		usage: 0,
+		messages: [],
+		isComponent: false,
+	},
 	dispatch: () => {},
 	serverStats: { version: "", models: [], plugins: [] },
 });

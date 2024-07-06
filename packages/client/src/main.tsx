@@ -4,6 +4,6 @@ import { AppBootstrap } from "./modules/App/AppBootstrap";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<AppBootstrap />
+		<AppBootstrap isComponent={false} />
 	</React.StrictMode>,
 );
