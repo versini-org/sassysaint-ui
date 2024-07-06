@@ -109,5 +109,9 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		plugins: [],
+		define: {
+			"import.meta.env.BUILDTIME": JSON.stringify(buildTime),
+			"import.meta.env.BUILDVERSION": JSON.stringify(packageJson.version),
+		},
 	};
 });
