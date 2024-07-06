@@ -70,6 +70,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.messages[0],
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -96,6 +97,7 @@ describe("Non-DOM tests", () => {
 				usage: 0,
 				location: state.location,
 				messages: [],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -127,6 +129,7 @@ describe("Non-DOM tests", () => {
 				usage: actionPayload.usage,
 				location: state.location,
 				messages: state.messages,
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -159,6 +162,7 @@ describe("Non-DOM tests", () => {
 				id: state.id,
 				location: actionPayload.location,
 				messages: state.messages,
+				isComponent: state.isComponent,
 				model: state.model,
 				usage: state.usage,
 			});
@@ -208,6 +212,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.message,
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -254,6 +259,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.message,
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 	});

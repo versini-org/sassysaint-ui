@@ -26,10 +26,6 @@
 		"dev": "npm-run-all clean --parallel dev:js dev:types",
 		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
-		"test:coverage:ui": "vitest --coverage --ui",
-		"test:coverage": "vitest run --coverage",
-		"test:watch": "vitest",
-		"test": "vitest run",
 		"watch": "npm-run-all dev"
 	},
 	"peerDependencies": {
