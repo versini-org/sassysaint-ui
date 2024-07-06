@@ -9,9 +9,7 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build:check": "tsc",
 		"build:js": "vite build",
@@ -30,14 +28,12 @@
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.9.2"
+		"@versini/ui-styles": "1.9.3"
 	},
 	"dependencies": {
-		"@versini/ui-hooks": "4.0.0",
+		"@versini/ui-hooks": "4.0.1",
 		"clsx": "2.1.1",
-		"tailwindcss": "3.4.3"
+		"tailwindcss": "3.4.4"
 	},
-	"sideEffects": [
-		"**/*.css"
-	]
+	"sideEffects": ["**/*.css"]
 }
