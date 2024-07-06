@@ -47,3 +47,9 @@ jobs:
       # env:
       # NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       # run: npx lerna publish from-package --no-push --no-private --yes --loglevel debug
+
+      - name: Publish Package
+        if: ${{ steps.release.outputs.releases_created }}
+        run: npx lerna publish from-package --no-push --no-private --yes --loglevel debug
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}

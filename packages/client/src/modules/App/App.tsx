@@ -20,7 +20,7 @@ import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext, HistoryContext } from "./AppContext";
 import { historyReducer, reducer } from "./reducer";
 
-function App() {
+function App({ isComponent = false }: { isComponent?: boolean }) {
 	const loadingDetailedLocationRef = useRef(false);
 	const loadingServerStatsRef = useRef(false);
 	const { isAuthenticated, getAccessToken } = useAuth();
@@ -42,6 +42,7 @@ function App() {
 		model: MODEL_GPT4,
 		usage: 0,
 		messages: [],
+		isComponent,
 	});
 	const [stateHistory, dispatchHistory] = useReducer(historyReducer, {
 		searchString: cachedSearchedString,

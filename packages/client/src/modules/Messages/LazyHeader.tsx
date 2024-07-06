@@ -172,16 +172,20 @@ const LazyHeader = () => {
 							onClick={onClickAbout}
 							icon={<IconInfo />}
 						/>
-						<MenuSeparator />
-						<MenuItem
-							label="Log out"
-							onClick={onClickConfirmLogout}
-							icon={
-								<div className="text-red-700">
-									<IconBack monotone />
-								</div>
-							}
-						/>
+						{state && state.id && !state.isComponent && (
+							<>
+								<MenuSeparator />
+								<MenuItem
+									label="Log out"
+									onClick={onClickConfirmLogout}
+									icon={
+										<div className="text-red-700">
+											<IconBack monotone />
+										</div>
+									}
+								/>
+							</>
+						)}
 					</Menu>
 				</div>
 			</div>

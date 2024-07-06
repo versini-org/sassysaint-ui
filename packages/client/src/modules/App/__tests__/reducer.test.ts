@@ -25,6 +25,7 @@ describe("Non-DOM tests", () => {
 				model: "gpt-666",
 				usage: 456,
 				messages: [],
+				isComponent: false,
 			};
 			expect(reducer(state, undefined)).toEqual(state);
 		});
@@ -40,6 +41,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				id: "123456",
@@ -68,6 +70,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.messages[0],
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -82,6 +85,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			expect(
 				reducer(state, {
@@ -93,6 +97,7 @@ describe("Non-DOM tests", () => {
 				usage: 0,
 				location: state.location,
 				messages: [],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -107,6 +112,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				model: "gpt-777",
@@ -123,6 +129,7 @@ describe("Non-DOM tests", () => {
 				usage: actionPayload.usage,
 				location: state.location,
 				messages: state.messages,
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -137,6 +144,7 @@ describe("Non-DOM tests", () => {
 					accuracy: 1,
 				},
 				messages: [],
+				isComponent: false,
 			};
 			const actionPayload = {
 				location: {
@@ -154,6 +162,7 @@ describe("Non-DOM tests", () => {
 				id: state.id,
 				location: actionPayload.location,
 				messages: state.messages,
+				isComponent: state.isComponent,
 				model: state.model,
 				usage: state.usage,
 			});
@@ -178,6 +187,7 @@ describe("Non-DOM tests", () => {
 						},
 					},
 				],
+				isComponent: false,
 			};
 			const actionPayload = {
 				message: {
@@ -202,6 +212,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.message,
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 
@@ -224,6 +235,7 @@ describe("Non-DOM tests", () => {
 						},
 					},
 				],
+				isComponent: false,
 			};
 			const actionPayload = {
 				message: {
@@ -247,6 +259,7 @@ describe("Non-DOM tests", () => {
 						message: actionPayload.message,
 					},
 				],
+				isComponent: state.isComponent,
 			});
 		});
 	});

@@ -32,6 +32,7 @@ export type StateProps = {
 	messages: { message: MessageProps }[];
 	model: string;
 	usage: number;
+	isComponent: boolean;
 
 	location?: GeoLocation;
 	streaming?: boolean;

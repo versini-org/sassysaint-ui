@@ -4,6 +4,7 @@
 	"license": "MIT",
 	"author": "Arno Versini",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"clean": "rimraf dist build",
 		"dev": "rsbuild dev",
@@ -21,15 +22,15 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.9.2"
+		"@versini/ui-styles": "1.9.3"
 	},
 	"dependencies": {
-		"@versini/auth-provider": "5.0.2",
-		"@versini/ui-components": "5.19.5",
+		"@versini/auth-provider": "5.0.5",
+		"@versini/ui-components": "5.20.0",
 		"@versini/ui-form": "1.3.5",
 		"@versini/ui-hooks": "4.0.1",
-		"@versini/ui-icons": "1.9.0",
-		"@versini/ui-system": "1.4.1",
+		"@versini/ui-icons": "1.10.0",
+		"@versini/ui-system": "1.4.2",
 		"autoprefixer": "10.4.19",
 		"postcss": "8.4.39",
 		"pretty-ms": "9.0.0",

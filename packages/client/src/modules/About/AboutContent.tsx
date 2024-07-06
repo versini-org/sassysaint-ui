@@ -25,6 +25,7 @@ export const AboutContent = ({ stats }: { stats?: ServerStatsProps }) => {
 					})}
 				</Card>
 			</div>
+
 			<Card
 				header={CARDS.ABOUT.TITLE_SERVER}
 				className="prose-dark dark:prose-lighter"
