@@ -18,6 +18,9 @@ type HistoryContentProps = {
 };
 
 function filterDataByContent(data: any, searchString: string) {
+	if (!searchString) {
+		return data;
+	}
 	return data.filter((item: { messages: any[] }) =>
 		item.messages.some(
 			(message) =>
