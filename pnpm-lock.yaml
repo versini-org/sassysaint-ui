@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 5.0.6
-        version: 5.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.1.1
+        version: 5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.20.0
         version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
@@ -1247,11 +1247,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@2.10.1':
-    resolution: {integrity: sha512-OlSRFZPlKhRgRPs1RspUgn+GzCkgT6ecgDOIhe71w4y5usYbRG40qHDFkxl/S3dG+6v/4Yr0v2Zj6Sskvh6kYA==}
+  '@versini/auth-common@2.11.0':
+    resolution: {integrity: sha512-sZPkvnVnBrtuMaiSrenphlzJ+YvACGa12+aL1pzBwkFWmNDKTNaNMbF5R+LRCXJyqB0DkHQbX2g/E/UbghxQgA==}
 
-  '@versini/auth-provider@5.0.6':
-    resolution: {integrity: sha512-i9vXWSFq7L0VAjxIp/61CmhvujpyHifOolkQrzgCe0m4OnLg3tRT3kG8Soa3UbTryHuOssSK/+CifM8ZovgtFw==}
+  '@versini/auth-provider@5.1.1':
+    resolution: {integrity: sha512-icbGlS/023xcZlzyJYbKem/5c9ZTwf6FD+ok5iLOqk6welNxltgkotvoQeXfQUeN0U7ojw0OSJ8lEwvZNpLAEA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -2901,9 +2901,6 @@ packages:
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
-
-  jose@5.6.2:
-    resolution: {integrity: sha512-F1t1/WZJ4JdmCE/XoMYw1dPOW5g8JF0xGm6Ox2fwaCAPlCzt+4Bh0EWP59iQuZNHHauDkCdjx+kCZSh5z/PGow==}
 
   jose@5.6.3:
     resolution: {integrity: sha512-1Jh//hEEwMhNYPDDLwXHa2ePWgWiFNNUadVmguAAw2IJ6sj9mNxV5tGXJNqlMkJAybF6Lgw1mISDxTePP/187g==}
@@ -6384,14 +6381,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@2.10.1':
+  '@versini/auth-common@2.11.0':
     dependencies:
-      jose: 5.6.2
+      jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@5.0.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@versini/auth-common': 2.10.1
+      '@versini/auth-common': 2.11.0
       '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
       react: 18.3.1
@@ -8341,8 +8338,6 @@ snapshots:
   jiti@1.21.0: {}
 
   jju@1.4.0: {}
-
-  jose@5.6.2: {}
 
   jose@5.6.3: {}
 
