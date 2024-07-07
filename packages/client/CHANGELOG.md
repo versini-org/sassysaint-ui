@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/aversini/sassysaint-ui/compare/client-v3.1.1...client-v3.1.2) (2024-07-07)
+
+
+### Bug Fixes
+
+* history panel crashes if previous search is empty ([5f9d4a7](https://github.com/aversini/sassysaint-ui/commit/5f9d4a725971757a5b1adfd827ae4eddc4882e90))
+
 ## [3.1.1](https://github.com/aversini/sassysaint-ui/compare/client-v3.1.0...client-v3.1.1) (2024-07-06)
 
 
