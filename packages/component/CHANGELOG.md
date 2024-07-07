@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.1...sassysaint-v1.0.2) (2024-07-07)
+
+
+### Bug Fixes
+
+* manually bump sassy component ([d5eacfc](https://github.com/aversini/sassysaint-ui/commit/d5eacfc52555ca4721eff6d9c7e93e96b38d3441))
+
 ## [1.0.1](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.0...sassysaint-v1.0.1) (2024-07-06)
 
 
