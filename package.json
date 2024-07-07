@@ -1,9 +1,7 @@
 {
 	"name": "root",
 	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
+	"workspaces": ["packages/*"],
 	"scripts": {
 		"build": "lerna run build",
 		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
@@ -13,7 +11,7 @@
 		"test": "lerna run test"
 	},
 	"devDependencies": {
-		"@node-cli/bundlesize": "4.1.0",
+		"@node-cli/bundlesize": "4.1.1",
 		"@versini/dev-dependencies-client": "5.1.1",
 		"@versini/dev-dependencies-types": "1.3.1"
 	},
