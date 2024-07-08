@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.1](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.0...client-v3.2.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* trying to fix cookie shared between chat and shortcuts ([645a19f](https://github.com/aversini/sassysaint-ui/commit/645a19faf4de9a13e27a55ea6654f50c44bbae91))
+
 ## [3.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.1.2...client-v3.2.0) (2024-07-08)
 
 
