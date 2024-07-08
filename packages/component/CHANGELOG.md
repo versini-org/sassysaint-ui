@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.2...sassysaint-v1.0.3) (2024-07-08)
+
+
+### Bug Fixes
+
+* triggering a new release for the component ([af500ec](https://github.com/aversini/sassysaint-ui/commit/af500ec02819101aaf948905f39cc89ac4ec2f05))
+
 ## [1.0.2](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.1...sassysaint-v1.0.2) (2024-07-07)
 
 
