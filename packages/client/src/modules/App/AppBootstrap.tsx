@@ -23,10 +23,11 @@ const Bootstrap = ({ isComponent }: { isComponent: boolean }) => {
 
 export const AppBootstrap = ({
 	isComponent = false,
-}: { isComponent: boolean }) => {
+	domain = DOMAIN,
+}: { isComponent: boolean; domain: string }) => {
 	return (
 		<>
-			<AuthProvider clientId={CLIENT_ID} domain={DOMAIN}>
+			<AuthProvider clientId={CLIENT_ID} domain={domain}>
 				<Bootstrap isComponent={isComponent} />
 			</AuthProvider>
 		</>

@@ -5,7 +5,6 @@ import type { GeoLocation } from "./types";
 
 export const isProd = process.env.NODE_ENV === "production";
 export const isDev = !isProd;
-export const isLocal = window.location.hostname !== "chat.gizmette.com";
 
 export const DOMAIN = isDev ? "gizmette.local.com" : "chat.gizmette.com";
 
