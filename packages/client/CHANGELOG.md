@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.1.2...client-v3.2.0) (2024-07-08)
+
+
+### Features
+
+* adding support for access token fallback via httpOnly cookie ([0348d2d](https://github.com/aversini/sassysaint-ui/commit/0348d2d6ce00ddd301ed4c3aafc5f1de9ee51ece))
+
 ## [3.1.2](https://github.com/aversini/sassysaint-ui/compare/client-v3.1.1...client-v3.1.2) (2024-07-07)
 
 
