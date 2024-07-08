@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from "@versini/auth-provider";
 import { Suspense, lazy } from "react";
 
 import { CLIENT_ID } from "../../common/constants";
+import { DOMAIN } from "../../common/utilities";
 import { Login } from "../../modules/Login/Login";
 const LazyApp = lazy(() => import("./App"));
 
@@ -25,7 +26,7 @@ export const AppBootstrap = ({
 }: { isComponent: boolean }) => {
 	return (
 		<>
-			<AuthProvider clientId={CLIENT_ID}>
+			<AuthProvider clientId={CLIENT_ID} domain={DOMAIN}>
 				<Bootstrap isComponent={isComponent} />
 			</AuthProvider>
 		</>

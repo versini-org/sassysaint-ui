@@ -111,6 +111,7 @@ const graphQLCall = async ({
 }) => {
 	const response = await fetch(`${serverUrl}/graphql`, {
 		method: "POST",
+		credentials: "include",
 		headers: {
 			...headers,
 			"Content-Type": "application/json",
@@ -170,6 +171,7 @@ export const restCall = async ({
 	const authorization = `Bearer ${accessToken}`;
 	const response = await fetch(`${serverUrl}/api/${name}`, {
 		method,
+		credentials: "include",
 		headers: {
 			"Content-Type": "application/json",
 			authorization,
