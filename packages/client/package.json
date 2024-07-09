@@ -25,9 +25,9 @@
 		"@versini/ui-styles": "1.9.3"
 	},
 	"dependencies": {
-		"@versini/auth-provider": "5.1.1",
+		"@versini/auth-provider": "5.1.3",
 		"@versini/ui-components": "5.20.0",
-		"@versini/ui-form": "1.3.5",
+		"@versini/ui-form": "1.3.6",
 		"@versini/ui-hooks": "4.0.1",
 		"@versini/ui-icons": "1.10.0",
 		"@versini/ui-system": "1.4.2",
