@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@node-cli/bundlesize':
-        specifier: 4.1.1
-        version: 4.1.1
+        specifier: 4.2.0
+        version: 4.2.0
       '@versini/dev-dependencies-client':
         specifier: 5.1.1
         version: 5.1.1(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.5.24(@swc/helpers@0.5.3))(@swc/helpers@0.5.3)(@types/jest@29.5.12)(@types/node@20.14.10)(@types/react-dom@18.3.0)(@types/react@18.3.3)(encoding@0.1.13)(happy-dom@14.12.3)(jsdom@24.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.0)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))(typescript@5.4.5)
@@ -21,14 +21,14 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 5.1.1
-        version: 5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.1.3
+        version: 5.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.20.0
         version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
       '@versini/ui-form':
-        specifier: 1.3.5
-        version: 1.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.3.6
+        version: 1.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
         specifier: 4.0.1
         version: 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -406,20 +406,8 @@ packages:
   '@floating-ui/dom@1.6.1':
     resolution: {integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==}
 
-  '@floating-ui/react-dom@2.1.0':
-    resolution: {integrity: sha512-lNzj5EQmEKn5FFKc04+zasr09h/uX8RtJRNj5gUXsSQIXHVWTVh+hVAg1vOMCexkX8EgvemMvIFpQfkosnVNyA==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
   '@floating-ui/react-dom@2.1.1':
     resolution: {integrity: sha512-4h84MJt3CHrtG18mGsXuLCHMrug49d7DFkU0RMIyshRveBeyV2hmV/pDaF2Uxtu8kgq5r46llp5E5FQiR0K2Yg==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@floating-ui/react@0.26.16':
-    resolution: {integrity: sha512-HEf43zxZNAI/E781QIVpYSF3K2VH4TTYZpqecjdsFkjsaU1EbaWcM++kw0HXFffj7gDUcBFevX8s0rQGQpxkow==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -516,8 +504,8 @@ packages:
   '@module-federation/webpack-bundler-runtime@0.1.6':
     resolution: {integrity: sha512-K5WhKZ4RVNaMEtfHsd/9CNCgGKB0ipbm/tgweNNeC11mEuBTNxJ09Y630vg3WPkKv9vfMCuXg2p2Dk+Q/KWTSA==}
 
-  '@node-cli/bundlesize@4.1.1':
-    resolution: {integrity: sha512-8C3fkC7HcBKAf75mqmRfXdN740Wh+1RPkUxo/tOVtO1Ek731GmhIRbSmY6m6E+zTEY10URq3di18Lt595iSI3Q==}
+  '@node-cli/bundlesize@4.2.0':
+    resolution: {integrity: sha512-a9mK/7GsA+EpSj1AvWww2MxCSr8fy0mKtdBHRWUyXxGaC6JRc6aP1xbHeCFSF4cvFlD3lrr/FWPNi0gYmxYUiw==}
     hasBin: true
 
   '@node-cli/logger@1.2.5':
@@ -1253,8 +1241,8 @@ packages:
   '@versini/auth-common@2.11.0':
     resolution: {integrity: sha512-sZPkvnVnBrtuMaiSrenphlzJ+YvACGa12+aL1pzBwkFWmNDKTNaNMbF5R+LRCXJyqB0DkHQbX2g/E/UbghxQgA==}
 
-  '@versini/auth-provider@5.1.1':
-    resolution: {integrity: sha512-icbGlS/023xcZlzyJYbKem/5c9ZTwf6FD+ok5iLOqk6welNxltgkotvoQeXfQUeN0U7ojw0OSJ8lEwvZNpLAEA==}
+  '@versini/auth-provider@5.1.3':
+    resolution: {integrity: sha512-n2QTQs8Mws/k5mqekwn3jjtymuzqSl7+5HXgbKSAhtCukMCfbjCCDOPzvAuX0croHszDi/0bqOTeARzIymLKYg==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1274,20 +1262,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-form@1.3.5':
-    resolution: {integrity: sha512-DiDUgXv6wOPzsuV2P+U9TEfDgVef4UMwr4DZa9vKEBQnZqmEYQi8qUwUhdYHT3gTSMBZnUOldMNZisHKvXeUaA==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-hooks@2.2.1':
-    resolution: {integrity: sha512-Uz8qf9Yhre/xW33kQ3fIZj7H95NQZOhh2Ymyu0lHjuyJ2uzk8SSkUd9iWeaG6bc1QZd968UsHcIXhw0dbi5Hmg==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-hooks@4.0.0':
-    resolution: {integrity: sha512-YnFToKieKB+3txMCnz8cqji0Nc1PFZ3uEWIcyE48TZjDz9rX3/XZzF8pYO4GlA33UWfZtN/ihwvMkm5PNmVQng==}
+  '@versini/ui-form@1.3.6':
+    resolution: {integrity: sha512-jA575VfdK6JpLytvKX3uMUigVXbwQ4VyeSBOTtUfUfH0g+/apov3j1AYkITpegq7hMmoyI1+UduTIERoFUUoGw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1300,12 +1276,6 @@ packages:
 
   '@versini/ui-icons@1.10.0':
     resolution: {integrity: sha512-qJ+MacJle2UH1HdAblum/ThDXGAbfKKefWTemnI+WbegBV6C2V5ABOUI1iQGkA2piO5QaBF51UOwG3TyKHXwjQ==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-private@1.4.5':
-    resolution: {integrity: sha512-VO2N1eI/YR6/pth7F5Ywn0Lw3nLQnCiJ83IUo1dn6qzzeMXtT467xKJZy+QCk9e2vHepLEzEKnLah86Y/LzNhQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -5355,25 +5325,11 @@ snapshots:
       '@floating-ui/core': 1.6.0
       '@floating-ui/utils': 0.2.1
 
-  '@floating-ui/react-dom@2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/dom': 1.6.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.6.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-
-  '@floating-ui/react@0.26.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/react-dom': 2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@floating-ui/utils': 0.2.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tabbable: 6.2.0
 
   '@floating-ui/react@0.26.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -5581,7 +5537,7 @@ snapshots:
       '@module-federation/runtime': 0.1.6
       '@module-federation/sdk': 0.1.6
 
-  '@node-cli/bundlesize@4.1.1':
+  '@node-cli/bundlesize@4.2.0':
     dependencies:
       '@node-cli/logger': 1.2.5
       '@node-cli/parser': 2.3.4
@@ -5705,7 +5661,7 @@ snapshots:
   '@npmcli/map-workspaces@3.0.6':
     dependencies:
       '@npmcli/name-from-folder': 2.0.0
-      glob: 10.4.2
+      glob: 10.4.3
       minimatch: 9.0.4
       read-package-json-fast: 3.0.2
 
@@ -5727,7 +5683,7 @@ snapshots:
   '@npmcli/package-json@5.2.0':
     dependencies:
       '@npmcli/git': 5.0.4
-      glob: 10.4.2
+      glob: 10.4.3
       hosted-git-info: 7.0.1
       json-parse-even-better-errors: 3.0.1
       normalize-package-data: 6.0.0
@@ -6380,10 +6336,10 @@ snapshots:
       jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@5.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@5.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@versini/auth-common': 2.11.0
-      '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -6516,21 +6472,11 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-form@1.3.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-form@1.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@versini/ui-hooks': 4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-private': 1.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-private': 1.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@versini/ui-hooks@2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@versini/ui-hooks@4.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -6542,14 +6488,6 @@ snapshots:
   '@versini/ui-icons@1.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@versini/ui-private': 1.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@versini/ui-private@1.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/react': 0.26.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-hooks': 2.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -6923,7 +6861,7 @@ snapshots:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
-      glob: 10.4.2
+      glob: 10.4.3
       lru-cache: 10.2.0
       minipass: 7.1.2
       minipass-collect: 2.0.1
@@ -6938,7 +6876,7 @@ snapshots:
     dependencies:
       '@npmcli/fs': 3.1.1
       fs-minipass: 3.0.3
-      glob: 10.4.2
+      glob: 10.4.3
       lru-cache: 10.3.1
       minipass: 7.1.2
       minipass-collect: 2.0.1
@@ -9236,7 +9174,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.1
-      glob: 10.4.2
+      glob: 10.4.3
       graceful-fs: 4.2.11
       make-fetch-happen: 13.0.0
       nopt: 7.2.0
@@ -10039,7 +9977,7 @@ snapshots:
 
   rimraf@5.0.7:
     dependencies:
-      glob: 10.4.2
+      glob: 10.4.3
 
   rollup@4.18.0:
     dependencies:
@@ -10399,7 +10337,7 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
-      glob: 10.4.2
+      glob: 10.4.3
       lines-and-columns: 1.2.4
       mz: 2.7.0
       pirates: 4.0.6
