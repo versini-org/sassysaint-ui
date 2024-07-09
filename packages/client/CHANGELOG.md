@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.2](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.1...client-v3.2.2) (2024-07-09)
+
+
+### Bug Fixes
+
+* bump dependencies to latest ([ce47d12](https://github.com/aversini/sassysaint-ui/commit/ce47d12656793a145d29b427b039bdf91220d2a1))
+
 ## [3.2.1](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.0...client-v3.2.1) (2024-07-08)
 
 
