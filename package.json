@@ -1,7 +1,9 @@
 {
 	"name": "root",
 	"private": true,
-	"workspaces": ["packages/*"],
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
 		"build": "lerna run build",
 		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
