@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 5.3.0
-        version: 5.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.4.0
+        version: 5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.20.0
         version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
@@ -1244,11 +1244,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@2.11.0':
-    resolution: {integrity: sha512-sZPkvnVnBrtuMaiSrenphlzJ+YvACGa12+aL1pzBwkFWmNDKTNaNMbF5R+LRCXJyqB0DkHQbX2g/E/UbghxQgA==}
+  '@versini/auth-common@2.12.1':
+    resolution: {integrity: sha512-JSeWi4Z1am4KUMbhXLtUKqZ6jPw23P4SdVwR7dw4CtGZbtFfj5QP3DdUhOJX0I6YU63pXKCPmU/zdKZUkzQKcQ==}
 
-  '@versini/auth-provider@5.3.0':
-    resolution: {integrity: sha512-jpoee/WhzgmYJAcmNVtcXGmz1VUH9531krf6V/HTGBr7Ww0Bpls0zXsjErpgK2dfW2HQ7YvcJrNQ/oye2vdjvQ==}
+  '@versini/auth-provider@5.4.0':
+    resolution: {integrity: sha512-FNLPC93pNg3xNN7R0M6N5vP49/shoHHc73rbNFDsEVc3+IGD6pkKfci+HcwuKdCQERjItb0W1OnhsbI3iushFQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6349,15 +6349,15 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@2.11.0':
+  '@versini/auth-common@2.12.1':
     dependencies:
       jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@5.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@5.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@versini/auth-common': 2.11.0
+      '@versini/auth-common': 2.12.1
       '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
       react: 18.3.1
