@@ -1,7 +1,7 @@
 import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon, Main } from "@versini/ui-components";
+import { Button, ButtonIcon, Card, Main } from "@versini/ui-components";
 import { TextInput, TextInputMask } from "@versini/ui-form";
-import { IconHide, IconShow } from "@versini/ui-icons";
+import { IconHide, IconKey, IconShow } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,7 @@ import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
 
 export const Login = () => {
-	const { login, logoutReason } = useAuth();
+	const { login, logoutReason, loginWithPasskey } = useAuth();
 
 	const [errorMessage, setErrorMessage] = useState("");
 	const [globalErrorMessage, setGlobalErrorMessage] = useState("");
@@ -57,72 +57,87 @@ export const Login = () => {
 				</div>
 				<form className="mx-auto mt-5" onSubmit={handleLogin}>
 					<Flexgrid rowGap={7} width="350px">
-						<FlexgridItem span={12}>
-							{globalErrorMessage && (
-								<div className="p-2 text-sm text-center text-copy-error-light bg-surface-darker">
-									{globalErrorMessage}
-								</div>
-							)}
-						</FlexgridItem>
+						<Card mode="dark">
+							<FlexgridItem span={12}>
+								{globalErrorMessage && (
+									<div className="p-2 text-sm text-center text-copy-error-light bg-surface-darker">
+										{globalErrorMessage}
+									</div>
+								)}
+							</FlexgridItem>
 
-						<FlexgridItem span={12}>
-							<TextInput
-								required
-								autoCapitalize="off"
-								autoComplete="off"
-								autoCorrect="off"
-								mode="dark"
-								focusMode="light"
-								name="username"
-								label="Username"
-								onChange={(e) => {
-									setSimpleLogin({
-										...simpleLogin,
-										username: e.target.value,
-									});
-									setErrorMessage("");
-								}}
-								error={errorMessage !== ""}
-							/>
-						</FlexgridItem>
-						<FlexgridItem span={12}>
-							<TextInputMask
-								required
-								autoCapitalize="off"
-								autoComplete="off"
-								autoCorrect="off"
-								mode="dark"
-								focusMode="light"
-								name="password"
-								label={PASSWORD_PLACEHOLDER}
-								rightElement={
-									<ButtonIcon focusMode="light">
-										{masked ? <IconShow /> : <IconHide />}
-									</ButtonIcon>
-								}
-								onMaskChange={setMasked}
-								onChange={(e) => {
-									setSimpleLogin({
-										...simpleLogin,
-										password: e.target.value,
-									});
-									setErrorMessage("");
-								}}
-								error={errorMessage !== ""}
-								helperText={errorMessage}
-							/>
-						</FlexgridItem>
+							<FlexgridItem span={12}>
+								<TextInput
+									required
+									autoCapitalize="off"
+									autoComplete="off"
+									autoCorrect="off"
+									mode="dark"
+									focusMode="light"
+									name="username"
+									label="Username"
+									onChange={(e) => {
+										setSimpleLogin({
+											...simpleLogin,
+											username: e.target.value,
+										});
+										setErrorMessage("");
+									}}
+									error={errorMessage !== ""}
+								/>
+							</FlexgridItem>
+							<FlexgridItem span={12}>
+								<TextInputMask
+									required
+									autoCapitalize="off"
+									autoComplete="off"
+									autoCorrect="off"
+									mode="dark"
+									focusMode="light"
+									name="password"
+									label={PASSWORD_PLACEHOLDER}
+									rightElement={
+										<ButtonIcon focusMode="light">
+											{masked ? <IconShow /> : <IconHide />}
+										</ButtonIcon>
+									}
+									onMaskChange={setMasked}
+									onChange={(e) => {
+										setSimpleLogin({
+											...simpleLogin,
+											password: e.target.value,
+										});
+										setErrorMessage("");
+									}}
+									error={errorMessage !== ""}
+									helperText={errorMessage}
+								/>
+							</FlexgridItem>
 
+							<FlexgridItem span={12}>
+								<Button
+									focusMode="light"
+									fullWidth
+									noBorder
+									type="submit"
+									className="mb-4 mt-6"
+								>
+									{LOG_IN}
+								</Button>
+							</FlexgridItem>
+						</Card>
+						<FlexgridItem span={12}>or</FlexgridItem>
 						<FlexgridItem span={12}>
-							<Button
+							<ButtonIcon
 								focusMode="light"
 								fullWidth
 								noBorder
-								type="submit"
-								className="mb-4 mt-6"
+								className="mb-4 mt-1"
+								labelRight="Sign in with a Passkey"
+								onClick={loginWithPasskey}
 							>
-								{LOG_IN}
-							</Button>
+								<IconKey className="size-4" />
+							</ButtonIcon>
 						</FlexgridItem>
 					</Flexgrid>
 				</form>

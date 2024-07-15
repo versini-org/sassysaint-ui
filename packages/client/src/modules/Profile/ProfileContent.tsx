@@ -1,8 +1,8 @@
 import { useAuth } from "@versini/auth-provider";
-import { ButtonIcon, Card } from "@versini/ui-components";
+import { Button, ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
-import { IconRefresh } from "@versini/ui-icons";
+import { IconKey, IconRefresh } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useEffect, useState } from "react";
 
@@ -23,7 +23,7 @@ import {
 import { AppContext } from "../App/AppContext";
 
 export const ProfileContent = () => {
-	const { isAuthenticated, user } = useAuth();
+	const { isAuthenticated, user, registeringForPasskey } = useAuth();
 	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
 		initialValue: false,
@@ -137,25 +137,49 @@ export const ProfileContent = () => {
 	};
 
 	return isAuthenticated && endUser ? (
-		<Card
-			header={CARDS.PREFERENCES.TITLE}
-			className="prose-dark dark:prose-lighter"
-		>
-			{renderDataAsList(listId, {
-				[CARDS.PREFERENCES.NAME]: endUser,
-				// [CARDS.PREFERENCES.EMAIL]: endUser.email,
-				[CARDS.PREFERENCES.ENGINE_DETAILS]: (
-					<Toggle
-						noBorder
-						labelHidden
-						label={CARDS.PREFERENCES.ENGINE_DETAILS}
-						name={CARDS.PREFERENCES.ENGINE_DETAILS}
-						onChange={onToggleEngineDetails}
-						checked={showEngineDetails}
-					/>
-				),
-				[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
-			})}
-		</Card>
+		<>
+			<Card
+				header={CARDS.PREFERENCES.TITLE}
+				className="prose-dark dark:prose-lighter"
+			>
+				{renderDataAsList(listId, {
+					[CARDS.PREFERENCES.NAME]: endUser,
+					// [CARDS.PREFERENCES.EMAIL]: endUser.email,
+					[CARDS.PREFERENCES.ENGINE_DETAILS]: (
+						<Toggle
+							noBorder
+							labelHidden
+							label={CARDS.PREFERENCES.ENGINE_DETAILS}
+							name={CARDS.PREFERENCES.ENGINE_DETAILS}
+							onChange={onToggleEngineDetails}
+							checked={showEngineDetails}
+						/>
+					),
+					[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
+				})}
+			</Card>
+			<Card
+				spacing={{ t: 4 }}
+				className="prose-dark dark:prose-lighter"
+				header={
+					<h2 className="m-0">
+						<Flexgrid columnGap={3} alignVertical="center">
+							<FlexgridItem>
+								<IconKey className="size-6 text-center" />
+							</FlexgridItem>
+							<FlexgridItem>
+								<div>Passkey</div>
+							</FlexgridItem>
+						</Flexgrid>
+					</h2>
+				}
+			>
+				Sign in without a password using a passkey (face or fingerprint
+				sign-in).
+				<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
+					Create a Passkey
+				</Button>
+			</Card>
+		</>
 	) : null;
 };
