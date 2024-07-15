@@ -5,7 +5,11 @@ import { IconHide, IconKey, IconShow } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useEffect, useState } from "react";
 
-import { LOG_IN, PASSWORD_PLACEHOLDER } from "../../common/strings";
+import {
+	LOG_IN,
+	LOG_IN_PASSKEY,
+	PASSWORD_PLACEHOLDER,
+} from "../../common/strings";
 import { getMessageContaintWrapperClass } from "../../common/utilities";
 import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
@@ -140,7 +144,7 @@ export const Login = () => {
 								fullWidth
 								noBorder
 								className="mb-4 mt-1"
-								labelRight="Sign in with a Passkey"
+								labelRight={LOG_IN_PASSKEY}
 								onClick={loginWithPasskey}
 							>
 								<IconKey className="size-4" />
