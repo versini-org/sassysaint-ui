@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.4...sassysaint-v1.0.5) (2024-07-15)
+
+
+### Bug Fixes
+
+* manual trigger for new component release ([ca5e820](https://github.com/aversini/sassysaint-ui/commit/ca5e82043d95400e57c51418000a5a1355fc71df))
+
 ## [1.0.4](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.3...sassysaint-v1.0.4) (2024-07-09)
 
 
