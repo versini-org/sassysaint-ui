@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.3.0...client-v3.4.0) (2024-07-15)
+
+
+### Features
+
+* bump to the most recent auth provider ([431744f](https://github.com/aversini/sassysaint-ui/commit/431744faec411c63b64944986ed4c02891ef05c2))
+
 ## [3.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.3...client-v3.3.0) (2024-07-15)
 
 
