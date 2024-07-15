@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.3...client-v3.3.0) (2024-07-15)
+
+
+### Features
+
+* adding support for Passkey ([c3e9316](https://github.com/aversini/sassysaint-ui/commit/c3e93167c5933b4107415f97c54f6dd1c0953664))
+
 ## [3.2.3](https://github.com/aversini/sassysaint-ui/compare/client-v3.2.2...client-v3.2.3) (2024-07-14)
 
 
