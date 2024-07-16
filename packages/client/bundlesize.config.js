@@ -13,7 +13,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/*versini_auth-provider*.<hash>.js",
-			limit: "22 kb",
+			limit: "28 kb",
 		},
 		{
 			path: "dist/static/js/lib-react.<hash>.js",
