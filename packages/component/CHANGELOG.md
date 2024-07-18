@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.7...sassysaint-v1.0.8) (2024-07-18)
+
+
+### Bug Fixes
+
+* adding debug support for auth ([301e051](https://github.com/aversini/sassysaint-ui/commit/301e051fa6303954e0bb999d6b118332a88d31f4))
+
 ## [1.0.7](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.6...sassysaint-v1.0.7) (2024-07-16)
 
 

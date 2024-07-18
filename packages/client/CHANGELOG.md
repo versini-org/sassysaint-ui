@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.2](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.1...client-v3.4.2) (2024-07-18)
+
+
+### Bug Fixes
+
+* adding debug support for auth ([301e051](https://github.com/aversini/sassysaint-ui/commit/301e051fa6303954e0bb999d6b118332a88d31f4))
+
 ## [3.4.1](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.0...client-v3.4.1) (2024-07-16)
 
 
