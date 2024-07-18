@@ -56,7 +56,7 @@ jobs:
           npx lerna run test
 
   release-bundlesize:
-    if: github.head_ref == 'release-please--branches--main--components--client'
+    if: github.head_ref == 'release-please--branches--main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
