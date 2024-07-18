@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 6.1.1
-        version: 6.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.2.1
+        version: 6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.20.0
         version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
@@ -1086,9 +1086,6 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@thumbmarkjs/thumbmarkjs@0.14.8':
-    resolution: {integrity: sha512-J+/HnYBv24ufFCoyqbFhtZk1zTGKWzHfyN15sc6kJq/1D/6H1oaKt+W1yWxkUwzclMS1n36EaoHbNjFeiuDqDg==}
-
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
 
@@ -1250,8 +1247,8 @@ packages:
   '@versini/auth-common@2.12.1':
     resolution: {integrity: sha512-JSeWi4Z1am4KUMbhXLtUKqZ6jPw23P4SdVwR7dw4CtGZbtFfj5QP3DdUhOJX0I6YU63pXKCPmU/zdKZUkzQKcQ==}
 
-  '@versini/auth-provider@6.1.1':
-    resolution: {integrity: sha512-YHw6KtRGVbGoRNbwTFoyx27Tf6V6wOGXEg+vh2ZiNm1hqkjZigKFkXrhqE+sAyTr8JYYC37Uz5vykeBTZVXTwg==}
+  '@versini/auth-provider@6.2.1':
+    resolution: {integrity: sha512-jR7NNH8b9+460TnP74HBnCgOIwEjJMHIbqBUBQqdPXPLno3Ui7tmWfcbhodaZmXCwir9m+t6qrLbX9xBQZkxFA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1270,6 +1267,9 @@ packages:
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
+
+  '@versini/ui-fingerprint@1.0.1':
+    resolution: {integrity: sha512-V7Gtyk2FU7lRv3+qcWEHtvTV3XbZSVm9Q2/t28DChQZO89MMHWZQRfrfFH2UV30j8aRxDX0Z/jao0+ZOZ9Ixbg==}
 
   '@versini/ui-form@1.3.6':
     resolution: {integrity: sha512-jA575VfdK6JpLytvKX3uMUigVXbwQ4VyeSBOTtUfUfH0g+/apov3j1AYkITpegq7hMmoyI1+UduTIERoFUUoGw==}
@@ -6191,8 +6191,6 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.3.1
 
-  '@thumbmarkjs/thumbmarkjs@0.14.8': {}
-
   '@tsconfig/node10@1.0.11':
     optional: true
 
@@ -6364,11 +6362,11 @@ snapshots:
       jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@6.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@thumbmarkjs/thumbmarkjs': 0.14.8
       '@versini/auth-common': 2.12.1
+      '@versini/ui-fingerprint': 1.0.1
       '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
       react: 18.3.1
@@ -6501,6 +6499,8 @@ snapshots:
       tailwindcss: 3.4.4(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
     transitivePeerDependencies:
       - ts-node
+
+  '@versini/ui-fingerprint@1.0.1': {}
 
   '@versini/ui-form@1.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
