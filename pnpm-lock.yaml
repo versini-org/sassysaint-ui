@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 6.2.1
-        version: 6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.3.1
+        version: 6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.20.0
         version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
@@ -1244,11 +1244,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@2.12.1':
-    resolution: {integrity: sha512-JSeWi4Z1am4KUMbhXLtUKqZ6jPw23P4SdVwR7dw4CtGZbtFfj5QP3DdUhOJX0I6YU63pXKCPmU/zdKZUkzQKcQ==}
+  '@versini/auth-common@3.3.0':
+    resolution: {integrity: sha512-g3vvlEz9HuxCQgXLl9kClvYVpl18W8La7rlrukhGPk62AxP4K0j/HWViz3S74AdVN6vJVFq2NmNBwUGOOrNb9w==}
 
-  '@versini/auth-provider@6.2.1':
-    resolution: {integrity: sha512-jR7NNH8b9+460TnP74HBnCgOIwEjJMHIbqBUBQqdPXPLno3Ui7tmWfcbhodaZmXCwir9m+t6qrLbX9xBQZkxFA==}
+  '@versini/auth-provider@6.3.1':
+    resolution: {integrity: sha512-XVtff7Fom25+sT223R6D4tGzY0w0BV6/kqr6Pdin0WgTX/UPtWHC+itf3JRs3gZLzxUrml2Qi33vBdIOelW2vQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6357,15 +6357,15 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@2.12.1':
+  '@versini/auth-common@3.3.0':
     dependencies:
       jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@6.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@versini/auth-common': 2.12.1
+      '@versini/auth-common': 3.3.0
       '@versini/ui-fingerprint': 1.0.1
       '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
