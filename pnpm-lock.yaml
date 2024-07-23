@@ -21,11 +21,11 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 6.2.1
-        version: 6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.3.2
+        version: 6.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
-        specifier: 5.20.0
-        version: 5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
+        specifier: 5.21.0
+        version: 5.21.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))
       '@versini/ui-form':
         specifier: 1.3.6
         version: 1.3.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -57,8 +57,8 @@ importers:
         specifier: 9.0.1
         version: 9.0.1(@types/react@18.3.3)(react@18.3.1)
       react-use:
-        specifier: 17.5.0
-        version: 17.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 17.5.1
+        version: 17.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       rehype-highlight:
         specifier: 7.0.0
         version: 7.0.0
@@ -417,9 +417,6 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
-
-  '@floating-ui/utils@0.2.1':
-    resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
 
   '@floating-ui/utils@0.2.4':
     resolution: {integrity: sha512-dWO2pw8hhi+WrXq1YJy2yCuWoL20PddgGaqTgVe4cOS9Q6qklXCiA1tJEqX6BEwRNSCP84/afac9hd4MS+zEUA==}
@@ -1244,11 +1241,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@2.12.1':
-    resolution: {integrity: sha512-JSeWi4Z1am4KUMbhXLtUKqZ6jPw23P4SdVwR7dw4CtGZbtFfj5QP3DdUhOJX0I6YU63pXKCPmU/zdKZUkzQKcQ==}
+  '@versini/auth-common@3.3.0':
+    resolution: {integrity: sha512-g3vvlEz9HuxCQgXLl9kClvYVpl18W8La7rlrukhGPk62AxP4K0j/HWViz3S74AdVN6vJVFq2NmNBwUGOOrNb9w==}
 
-  '@versini/auth-provider@6.2.1':
-    resolution: {integrity: sha512-jR7NNH8b9+460TnP74HBnCgOIwEjJMHIbqBUBQqdPXPLno3Ui7tmWfcbhodaZmXCwir9m+t6qrLbX9xBQZkxFA==}
+  '@versini/auth-provider@6.3.2':
+    resolution: {integrity: sha512-F0rhuqmoCCdGT8LcGP9UF9YB5xIA/BB9ap3Mq2yYZrzDqFxlE59i+WYd51mAl7C57wYIgR8uKsWSZbTOkGxz3A==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1262,8 +1259,8 @@ packages:
   '@versini/dev-dependencies-types@1.3.1':
     resolution: {integrity: sha512-jaIEB8wXomAkRxv/aVbeaoZY/vz6jftIalTdFIN3iyXY9v4yXV+hU5zSwCZAbP4xe/il5DnKYFHjyeEVXqhB3g==}
 
-  '@versini/ui-components@5.20.0':
-    resolution: {integrity: sha512-fbYI/lZXL8ZRQzpRcUN2UT3OLYTuvR9t2bJUDLzV9Vq1KvD4x0lI9hdlLJNF+i0P0woOcPu5fmPQM0G8axo7cw==}
+  '@versini/ui-components@5.21.0':
+    resolution: {integrity: sha512-74OvhCwSxIoLhR1byUg9t0/2wszI7G2gb0cWCFfPnkiuO4SvlUTWTfguqQmZQqwLbhm60YkL7dg/QdpDeffmMg==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1279,12 +1276,6 @@ packages:
 
   '@versini/ui-hooks@4.0.1':
     resolution: {integrity: sha512-LiYYRGg5j1jFyQniJVx/Ke8hXaXIHBo7LPt0MyJR5b7FfF0AbxoIt8AfQrpYFERvjpq8kXlib0ELMdC0nbO4yw==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-icons@1.10.0':
-    resolution: {integrity: sha512-qJ+MacJle2UH1HdAblum/ThDXGAbfKKefWTemnI+WbegBV6C2V5ABOUI1iQGkA2piO5QaBF51UOwG3TyKHXwjQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -2207,9 +2198,6 @@ packages:
   fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
 
-  fast-loops@1.1.3:
-    resolution: {integrity: sha512-8EZzEP0eKkEEVX+drtd9mtuQ+/QrlfW/5MlwcwK5Nds6EkZ/tRzEexkzUY2mIssnAyVLT+TKHuRXmFNNXYUd6g==}
-
   fast-shallow-equal@1.0.0:
     resolution: {integrity: sha512-HPtaa38cPgWvaCFmRNhlc6NG7pv6NUHqjPgVAkWGoB9mQMwYB27/K0CvOM5Czy+qpT3e8XJ6Q4aPAnzpNpzNaw==}
 
@@ -2620,8 +2608,8 @@ packages:
   inline-style-parser@0.2.2:
     resolution: {integrity: sha512-EcKzdTHVe8wFVOGEYXiW9WmJXPjqi1T+234YpJr98RiFYKHV3cdy1+3mkTE+KHTHxFFLH51SfaGOoUdW+v7ViQ==}
 
-  inline-style-prefixer@7.0.0:
-    resolution: {integrity: sha512-I7GEdScunP1dQ6IM2mQWh6v0mOYdYmH3Bp31UecKdrcUgcURTcctSe1IECdUznSHKSmsHtjrT3CwCPI1pyxfUQ==}
+  inline-style-prefixer@7.0.1:
+    resolution: {integrity: sha512-lhYo5qNTQp3EvSSp3sRvXMbVQTLrvGV6DycRMJ5dm2BLMiJ30wpXKdDdgX+GmJZ5uQMucwRKHamXSst3Sj/Giw==}
 
   inquirer@8.2.6:
     resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
@@ -3426,8 +3414,8 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  nano-css@5.6.1:
-    resolution: {integrity: sha512-T2Mhc//CepkTa3X4pUhKgbEheJHYAxD0VptuqFhDbGMUWVV2m+lkNiW/Ieuj35wrfC8Zm0l7HvssQh7zcEttSw==}
+  nano-css@5.6.2:
+    resolution: {integrity: sha512-+6bHaC8dSDGALM1HJjOHVXpuastdu2xFoZlC77Jh4cg+33Zcgm+Gxd+1xsnpZK14eyHObSp82+ll5y3SX75liw==}
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -4029,8 +4017,8 @@ packages:
       react: '*'
       tslib: '*'
 
-  react-use@17.5.0:
-    resolution: {integrity: sha512-PbfwSPMwp/hoL847rLnm/qkjg3sTRCvn6YhUZiHaUa3FA6/aNoFX79ul5Xt70O1rK+9GxSVqkY0eTwMdsR/bWg==}
+  react-use@17.5.1:
+    resolution: {integrity: sha512-LG/uPEVRflLWMwi3j/sZqR00nF6JGqTTDblkXK2nzXsIvij06hXl1V/MZIlwj1OKIQUtlh1l9jK8gLsRyCQxMg==}
     peerDependencies:
       react: '*'
       react-dom: '*'
@@ -5338,12 +5326,12 @@ snapshots:
 
   '@floating-ui/core@1.6.0':
     dependencies:
-      '@floating-ui/utils': 0.2.1
+      '@floating-ui/utils': 0.2.4
 
   '@floating-ui/dom@1.6.1':
     dependencies:
       '@floating-ui/core': 1.6.0
-      '@floating-ui/utils': 0.2.1
+      '@floating-ui/utils': 0.2.4
 
   '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -5358,8 +5346,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tabbable: 6.2.0
-
-  '@floating-ui/utils@0.2.1': {}
 
   '@floating-ui/utils@0.2.4': {}
 
@@ -6357,15 +6343,15 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@2.12.1':
+  '@versini/auth-common@3.3.0':
     dependencies:
       jose: 5.6.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@6.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@6.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@versini/auth-common': 2.12.1
+      '@versini/auth-common': 3.3.0
       '@versini/ui-fingerprint': 1.0.1
       '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.6.3
@@ -6486,12 +6472,12 @@ snapshots:
       '@types/uuid': 10.0.0
       '@types/yargs': 17.0.32
 
-  '@versini/ui-components@5.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))':
+  '@versini/ui-components@5.21.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5))':
     dependencies:
       '@floating-ui/react': 0.26.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tailwindcss/typography': 0.5.13(tailwindcss@3.4.4(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.3))(@types/node@20.14.10)(typescript@5.4.5)))
       '@versini/ui-hooks': 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-icons': 1.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-icons': 1.11.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
@@ -6512,12 +6498,6 @@ snapshots:
 
   '@versini/ui-hooks@4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@versini/ui-icons@1.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@versini/ui-private': 1.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -7581,8 +7561,6 @@ snapshots:
 
   fast-json-stable-stringify@2.1.0: {}
 
-  fast-loops@1.1.3: {}
-
   fast-shallow-equal@1.0.0: {}
 
   fastest-stable-stringify@2.0.2: {}
@@ -8036,10 +8014,9 @@ snapshots:
 
   inline-style-parser@0.2.2: {}
 
-  inline-style-prefixer@7.0.0:
+  inline-style-prefixer@7.0.1:
     dependencies:
       css-in-js-utils: 3.1.0
-      fast-loops: 1.1.3
 
   inquirer@8.2.6:
     dependencies:
@@ -9179,13 +9156,13 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nano-css@5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  nano-css@5.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
       css-tree: 1.1.3
       csstype: 3.1.3
       fastest-stable-stringify: 2.0.2
-      inline-style-prefixer: 7.0.0
+      inline-style-prefixer: 7.0.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       rtl-css-js: 1.16.1
@@ -9801,7 +9778,7 @@ snapshots:
       react: 18.3.1
       tslib: 2.6.2
 
-  react-use@17.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-use@17.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@types/js-cookie': 2.2.7
       '@xobotyi/scrollbar-width': 1.9.5
@@ -9809,7 +9786,7 @@ snapshots:
       fast-deep-equal: 3.1.3
       fast-shallow-equal: 1.0.0
       js-cookie: 2.2.1
-      nano-css: 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nano-css: 5.6.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-universal-interface: 0.6.2(react@18.3.1)(tslib@2.6.2)
