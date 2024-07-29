@@ -32,7 +32,7 @@
 		"@versini/ui-icons": "1.11.0",
 		"@versini/ui-system": "1.4.2",
 		"autoprefixer": "10.4.19",
-		"postcss": "8.4.39",
+		"postcss": "8.4.40",
 		"pretty-ms": "9.0.0",
 		"react-dom": "18.3.1",
 		"react-markdown": "9.0.1",
