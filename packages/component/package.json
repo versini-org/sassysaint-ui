@@ -36,7 +36,7 @@
 	"dependencies": {
 		"@versini/ui-hooks": "4.0.1",
 		"clsx": "2.1.1",
-		"tailwindcss": "3.4.6"
+		"tailwindcss": "3.4.7"
 	},
 	"sideEffects": [
 		"**/*.css"
