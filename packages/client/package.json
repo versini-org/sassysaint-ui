@@ -33,7 +33,7 @@
 		"@versini/ui-system": "1.4.2",
 		"autoprefixer": "10.4.19",
 		"postcss": "8.4.39",
-		"pretty-ms": "9.0.0",
+		"pretty-ms": "9.1.0",
 		"react-dom": "18.3.1",
 		"react-markdown": "9.0.1",
 		"react-use": "17.5.1",
