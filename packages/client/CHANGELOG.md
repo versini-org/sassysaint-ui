@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.5](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.4...client-v3.4.5) (2024-08-01)
+
+
+### Bug Fixes
+
+* do not try to get basic location over and over ([74a7732](https://github.com/aversini/sassysaint-ui/commit/74a7732aec8ba14de49e402c863687f1e4133771))
+
 ## [3.4.4](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.3...client-v3.4.4) (2024-08-01)
 
 
