@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.10...sassysaint-v1.0.11) (2024-08-01)
+
+
+### Bug Fixes
+
+* bump SassySaint component to latest ([2d3b21a](https://github.com/aversini/sassysaint-ui/commit/2d3b21a643081a593de152e4d07595f16cbf1d2a))
+
 ## [1.0.10](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.9...sassysaint-v1.0.10) (2024-08-01)
 
 
