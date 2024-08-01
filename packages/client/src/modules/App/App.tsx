@@ -21,6 +21,7 @@ import { AppContext, HistoryContext } from "./AppContext";
 import { historyReducer, reducer } from "./reducer";
 
 function App({ isComponent = false }: { isComponent?: boolean }) {
+	const loadingBasicLocationRef = useRef(false);
 	const loadingDetailedLocationRef = useRef(false);
 	const loadingServerStatsRef = useRef(false);
 	const { isAuthenticated, getAccessToken } = useAuth();
@@ -107,10 +108,18 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		}
 
 		/**
+		 * We already tried to fetch the location, no need to try again.
+		 */
+		if (loadingBasicLocationRef.current) {
+			return;
+		}
+
+		/**
 		 * If we do not have the location cached in local storage,
 		 * or the accuracy is 0, we need to request for the location.
 		 */
 		if (!cachedLocation || cachedLocation.accuracy === 0) {
+			loadingBasicLocationRef.current = true;
 			(async () => {
 				const location = await getCurrentGeoLocation();
 				setCachedLocation(location);
