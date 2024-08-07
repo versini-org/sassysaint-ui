@@ -1,5 +1,6 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
+import { pluginTypeCheck } from "@rsbuild/plugin-type-check";
 import fs from "fs-extra";
 
 const packageJson = fs.readJSONSync("package.json");
@@ -44,5 +45,5 @@ export default defineConfig({
 			cert: process.env.SSL_CERT,
 		},
 	},
-	plugins: [pluginReact()],
+	plugins: [pluginReact(), pluginTypeCheck()],
 });
