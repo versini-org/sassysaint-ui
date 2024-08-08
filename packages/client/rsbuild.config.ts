@@ -28,8 +28,6 @@ export default defineConfig({
 		},
 	},
 	output: {
-		polyfill: "off",
-		cleanDistPath: true,
 		distPath: {
 			root: "./dist",
 		},
