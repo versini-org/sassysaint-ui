@@ -8,7 +8,8 @@
 	"scripts": {
 		"clean": "rimraf dist build",
 		"dev": "rsbuild dev",
-		"build": "rsbuild build",
+		"build": "npm-run-all clean build:js",
+		"build:js": "rsbuild build",
 		"build:bundlesize": "rsbuild build -c \"../../configuration/rsbuild-bundlesize.config.js\" ",
 		"lint": "biome lint src",
 		"start": "static-server dist --port 5173",
