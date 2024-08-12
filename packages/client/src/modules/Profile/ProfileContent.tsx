@@ -90,7 +90,6 @@ export const ProfileContent = () => {
 
 	const renderLocation = (location?: GeoLocation) => {
 		const { city, state, country, displayName } = location || {};
-		console.info(`==> [${Date.now()}] : `, { location });
 
 		if ((city && country && state) || displayName) {
 			return (
