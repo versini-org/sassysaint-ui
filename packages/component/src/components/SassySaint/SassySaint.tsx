@@ -5,4 +5,4 @@ export type SassySaintProps = {
 export const SassySaint = ({ domain }: SassySaintProps) => {
 	return <AppBootstrap isComponent={true} domain={domain} />;
 };
-SassySaint.displayName = "SassySaint-3.4.6";
+SassySaint.displayName = "SassySaint-3.4.8";
