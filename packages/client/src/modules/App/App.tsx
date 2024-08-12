@@ -163,7 +163,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		 * We already have the detailed location.
 		 * We do not need to request it again.
 		 */
-		if (state.location.city) {
+		if (state.location.city || state.location.displayName) {
 			return;
 		}
 
@@ -177,7 +177,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		/**
 		 * We are here because we have the basic location (latitude and
 		 * longitude), but we do not have the detailed
-		 * location (city, region, country) yet.
+		 * location (city, region, country or display name) yet.
 		 */
 		(async () => {
 			loadingDetailedLocationRef.current = true;
@@ -191,14 +191,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 					},
 				});
 				loadingDetailedLocationRef.current = false;
-				if (
-					response.status !== 200 ||
-					response?.errors?.length > 0 ||
-					!response.data ||
-					!response.data.city ||
-					!response.data.region ||
-					!response.data.country
-				) {
+				if (response.status !== 200 || response?.errors?.length > 0) {
 					/**
 					 * We could not fetch the location. We need to set the city to "N/A" to
 					 * indicate that the location is not available, and prevents further
@@ -212,11 +205,11 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 						payload: {
 							location: {
 								...cachedLocation,
-								city: response.data.city,
-								region: response.data.region,
-								regionShort: response.data.regionShort,
-								country: response.data.country,
-								countryShort: response.data.countryShort,
+
+								country: response?.data?.country,
+								state: response?.data?.state,
+								city: response?.data?.city || "N/A",
+								displayName: response?.data?.displayName,
 							},
 						},
 					});

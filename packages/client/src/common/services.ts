@@ -1,11 +1,10 @@
 export const GRAPHQL_QUERIES = {
 	GET_LOCATION: `query GetLocation($latitude: Float!, $longitude: Float!) {
     location(latitude: $latitude, longitude: $longitude) {
-      city
-      region
-      regionShort
-      country
-      countryShort
+    	country
+			state
+			city
+			displayName
     }
   }`,
 	GET_CHATS: `query GetChats($userId: String!) {
@@ -129,7 +128,11 @@ export const serviceCall = async ({
 	accessToken,
 	type,
 	params = {},
-}: { accessToken: string; type: any; params?: any }) => {
+}: {
+	accessToken: string;
+	type: any;
+	params?: any;
+}) => {
 	const requestData = type?.data ? type.data(params) : params;
 	try {
 		const authorization = `Bearer ${accessToken}`;
