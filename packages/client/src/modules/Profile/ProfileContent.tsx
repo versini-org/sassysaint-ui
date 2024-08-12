@@ -89,15 +89,24 @@ export const ProfileContent = () => {
 	}, [refreshEnabled]);
 
 	const renderLocation = (location?: GeoLocation) => {
-		if (location?.city && location?.country && location?.region) {
+		const { city, state, country, displayName } = location || {};
+		console.info(`==> [${Date.now()}] : `, { location });
+
+		if ((city && country && state) || displayName) {
 			return (
 				<>
 					<Flexgrid alignVertical="center" columnGap={4}>
 						<FlexgridItem>
-							<div className="text-right">
-								{location.city}, {location.region}
-							</div>
-							<div className="text-right">{location.country}</div>
+							{city && state && country ? (
+								<>
+									<div className="text-right">
+										{city}, {state}
+									</div>
+									<div className="text-right">{country}</div>
+								</>
+							) : displayName ? (
+								<div className="text-right">{displayName}</div>
+							) : null}
 						</FlexgridItem>
 						<FlexgridItem>
 							<ButtonIcon

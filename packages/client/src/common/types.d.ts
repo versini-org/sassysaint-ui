@@ -12,11 +12,11 @@ export type GeoLocation = {
 	latitude: number;
 	longitude: number;
 
-	city?: string;
 	country?: string;
-	countryShort?: string;
-	region?: string;
-	regionShort?: string;
+	state?: string;
+	city?: string;
+
+	displayName?: string;
 };
 
 export type MessageProps = {
