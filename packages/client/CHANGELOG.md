@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.7](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.6...client-v3.4.7) (2024-08-12)
+
+
+### Bug Fixes
+
+* better geo-location display ([b010aba](https://github.com/aversini/sassysaint-ui/commit/b010aba351fe71423bacdb7cd0d23a4f352655ed))
+
 ## [3.4.6](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.5...client-v3.4.6) (2024-08-07)
 
 
