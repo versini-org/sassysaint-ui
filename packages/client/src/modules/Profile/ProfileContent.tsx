@@ -97,14 +97,14 @@ export const ProfileContent = () => {
 					<Flexgrid alignVertical="center" columnGap={4}>
 						<FlexgridItem>
 							{city && state && country ? (
-								<>
+								<div className="mt-2">
 									<div className="text-right">
 										{city}, {state}
 									</div>
 									<div className="text-right">{country}</div>
-								</>
+								</div>
 							) : displayName ? (
-								<div className="text-right">{displayName}</div>
+								<div className="mt-2 text-right">{displayName}</div>
 							) : null}
 						</FlexgridItem>
 						<FlexgridItem>
@@ -132,11 +132,7 @@ export const ProfileContent = () => {
 						<div>{lon}</div>
 					</FlexgridItem>
 					<FlexgridItem>
-						<ButtonIcon
-							size="small"
-							className="mt-2"
-							onClick={onRefreshLocation}
-						>
+						<ButtonIcon size="small" onClick={onRefreshLocation}>
 							<IconRefresh className="size-3" monotone />
 						</ButtonIcon>
 					</FlexgridItem>
@@ -153,7 +149,6 @@ export const ProfileContent = () => {
 			>
 				{renderDataAsList(listId, {
 					[CARDS.PREFERENCES.NAME]: endUser,
-					// [CARDS.PREFERENCES.EMAIL]: endUser.email,
 					[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 						<Toggle
 							noBorder
@@ -184,11 +179,17 @@ export const ProfileContent = () => {
 						</h2>
 					}
 				>
-					Sign in without a password using a passkey (face or fingerprint
-					sign-in).
-					<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
-						Create a Passkey
-					</Button>
+					<Flexgrid columnGap={3} alignVertical="center">
+						<FlexgridItem>
+							Sign in without a password using a passkey (face or fingerprint
+							sign-in).
+						</FlexgridItem>
+						<FlexgridItem>
+							<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
+								Create a Passkey
+							</Button>
+						</FlexgridItem>
+					</Flexgrid>
 				</Card>
 			)}
 		</>
