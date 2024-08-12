@@ -23,7 +23,7 @@ export const CARDS = {
 		NAME: "Name",
 		EMAIL: "Email",
 		ENGINE_DETAILS: "Show message statistics",
-		LOCATION: "Current location",
+		LOCATION: "Location",
 		MODEL_TYPE: "Use GPT model 4",
 	},
 	CURRENT_STATISTICS: {
