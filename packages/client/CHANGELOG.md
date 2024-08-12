@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.8](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.7...client-v3.4.8) (2024-08-12)
+
+
+### Bug Fixes
+
+* slightly better profile content at lower breakpoints ([3376755](https://github.com/aversini/sassysaint-ui/commit/3376755934428fc4ec729a84ef47e0682ce3e64a))
+
 ## [3.4.7](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.6...client-v3.4.7) (2024-08-12)
 
 
