@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.9](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.8...client-v3.4.9) (2024-08-13)
+
+
+### Bug Fixes
+
+* if there are no chats, stats should not be 0ms ([bd28db1](https://github.com/aversini/sassysaint-ui/commit/bd28db167a304d8adff2810911c9cb3f3366a0da))
+
 ## [3.4.8](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.7...client-v3.4.8) (2024-08-12)
 
 
