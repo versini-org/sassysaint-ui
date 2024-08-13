@@ -198,10 +198,12 @@ export const numberFormatter = new Intl.NumberFormat("en", {
 });
 
 export const durationFormatter = (value: number) => {
-	return prettyMilliseconds(value, {
-		secondsDecimalDigits: 2,
-		unitCount: 2,
-	});
+	return value > 0
+		? prettyMilliseconds(value, {
+				secondsDecimalDigits: 2,
+				unitCount: 2,
+			})
+		: "N/A";
 };
 
 export const getMessageContaintWrapperClass = (isAuthenticated?: boolean) => {
