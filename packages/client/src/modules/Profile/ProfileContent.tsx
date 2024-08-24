@@ -1,4 +1,4 @@
-import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
+import { useAuth } from "@versini/auth-provider";
 import { Button, ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
@@ -23,8 +23,7 @@ import {
 import { AppContext } from "../App/AppContext";
 
 export const ProfileContent = () => {
-	const { isAuthenticated, user, registeringForPasskey, authenticationType } =
-		useAuth();
+	const { isAuthenticated, user, registeringForPasskey } = useAuth();
 	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
 		initialValue: false,
@@ -162,36 +161,35 @@ export const ProfileContent = () => {
 					[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
 				})}
 			</Card>
-			{authenticationType !== AUTH_TYPES.PASSKEY && (
-				<Card
-					spacing={{ t: 4 }}
-					className="prose-dark dark:prose-lighter"
-					header={
-						<h2 className="m-0">
-							<Flexgrid columnGap={3} alignVertical="center">
-								<FlexgridItem>
-									<IconKey className="size-6 text-center" />
-								</FlexgridItem>
-								<FlexgridItem>
-									<div>Passkey</div>
-								</FlexgridItem>
-							</Flexgrid>
-						</h2>
-					}
-				>
-					<Flexgrid columnGap={3} alignVertical="center">
-						<FlexgridItem>
-							Sign in without a password using a passkey (face or fingerprint
-							sign-in).
-						</FlexgridItem>
-						<FlexgridItem>
-							<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
-								Create a Passkey
-							</Button>
-						</FlexgridItem>
-					</Flexgrid>
-				</Card>
-			)}
+
+			<Card
+				spacing={{ t: 4 }}
+				className="prose-dark dark:prose-lighter"
+				header={
+					<h2 className="m-0">
+						<Flexgrid columnGap={3} alignVertical="center">
+							<FlexgridItem>
+								<IconKey className="size-6 text-center" />
+							</FlexgridItem>
+							<FlexgridItem>
+								<div>Passkey</div>
+							</FlexgridItem>
+						</Flexgrid>
+					</h2>
+				}
+			>
+				<Flexgrid columnGap={3} alignVertical="center">
+					<FlexgridItem>
+						Sign in without a password using a passkey (face or fingerprint
+						sign-in).
+					</FlexgridItem>
+					<FlexgridItem>
+						<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
+							Create a Passkey
+						</Button>
+					</FlexgridItem>
+				</Flexgrid>
+			</Card>
 		</>
 	) : null;
 };
