@@ -1,6 +1,6 @@
 {
 	"name": "@sassysaint/client",
-	"version": "3.4.9",
+	"version": "4.0.0",
 	"license": "MIT",
 	"author": "Arno Versini",
 	"type": "module",
