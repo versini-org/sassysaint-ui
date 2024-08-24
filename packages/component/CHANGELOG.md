@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v2.0.0...sassysaint-v2.0.1) (2024-08-24)
+
+
+### Bug Fixes
+
+* update component version ([23a854f](https://github.com/aversini/sassysaint-ui/commit/23a854ff54b174951f01801e739ac0a25a9b7aca))
+* wrong version for component - oops ([bcdce2f](https://github.com/aversini/sassysaint-ui/commit/bcdce2f3cd37067ca11003b51165e88ef6c98eb6))
+
 ## [2.0.0](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.13...sassysaint-v2.0.0) (2024-08-24)
 
 
