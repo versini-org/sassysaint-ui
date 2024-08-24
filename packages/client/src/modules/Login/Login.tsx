@@ -1,4 +1,4 @@
-import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
+import { useAuth } from "@versini/auth-provider";
 import { Button, ButtonIcon, Card, Main } from "@versini/ui-components";
 import { TextInput, TextInputMask } from "@versini/ui-form";
 import { IconHide, IconKey, IconShow } from "@versini/ui-icons";
@@ -27,11 +27,7 @@ export const Login = () => {
 
 	const handleLogin = async (e: { preventDefault: () => void }) => {
 		e.preventDefault();
-		const response = await login(
-			simpleLogin.username,
-			simpleLogin.password,
-			AUTH_TYPES.CODE,
-		);
+		const response = await login(simpleLogin.username, simpleLogin.password);
 		if (!response) {
 			setGlobalErrorMessage("");
 			setErrorMessage("Invalid username or password");
