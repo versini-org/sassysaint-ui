@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.9...client-v4.0.0) (2024-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* using new AuthProvider v7 that uses the new Auth Server v9
+
+### Features
+
+* using new AuthProvider v7 that uses the new Auth Server v9 ([3954285](https://github.com/aversini/sassysaint-ui/commit/39542850f924180443fdf4d1c4638bd021fa982e))
+
 ## [3.4.9](https://github.com/aversini/sassysaint-ui/compare/client-v3.4.8...client-v3.4.9) (2024-08-13)
 
 

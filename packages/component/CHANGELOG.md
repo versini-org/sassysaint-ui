@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.13...sassysaint-v2.0.0) (2024-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* using new AuthProvider v7 that uses the new Auth Server v9
+
+### Features
+
+* using new AuthProvider v7 that uses the new Auth Server v9 ([3954285](https://github.com/aversini/sassysaint-ui/commit/39542850f924180443fdf4d1c4638bd021fa982e))
+
 ## [1.0.13](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v1.0.12...sassysaint-v1.0.13) (2024-08-12)
 
 
