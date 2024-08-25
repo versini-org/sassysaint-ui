@@ -3190,5 +3190,73 @@
       "limit": "8 kb",
       "passed": true
     }
+  },
+  "4.0.1": {
+    "dist/static/js/index.<hash>.js": {
+      "fileSize": 17771,
+      "fileSizeGzip": 6078,
+      "limit": "7 kb",
+      "passed": true
+    },
+    "dist/static/js/*versini_auth-provider*.<hash>.js": {
+      "fileSize": 82565,
+      "fileSizeGzip": 22492,
+      "limit": "28 kb",
+      "passed": true
+    },
+    "dist/static/js/lib-react.<hash>.js": {
+      "fileSize": 141669,
+      "fileSizeGzip": 45220,
+      "limit": "45 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*Messages_LazyHeader*.<hash>.js": {
+      "fileSize": 20234,
+      "fileSizeGzip": 5427,
+      "limit": "6 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*versini_ui-components*.<hash>.js": {
+      "fileSize": 5384,
+      "fileSizeGzip": 2094,
+      "limit": "5 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*App_App*.<hash>.js": {
+      "fileSize": 12331,
+      "fileSizeGzip": 3955,
+      "limit": "8 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*react-use*.<hash>.js": {
+      "fileSize": 99061,
+      "fileSizeGzip": 29562,
+      "limit": "32 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*katex*.<hash>.js": {
+      "fileSize": 160007,
+      "fileSizeGzip": 45184,
+      "limit": "51 kb",
+      "passed": true
+    },
+    "dist/static/js/async/*rehype-highlight*.<hash>.js": {
+      "fileSize": 442007,
+      "fileSizeGzip": 127325,
+      "limit": "130 kb",
+      "passed": true
+    },
+    "dist/static/css/index.<hash>.css": {
+      "fileSize": 69723,
+      "fileSizeGzip": 9985,
+      "limit": "10 kb",
+      "passed": true
+    },
+    "dist/static/css/async/vendors-*katex*.<hash>.css": {
+      "fileSize": 28665,
+      "fileSizeGzip": 7871,
+      "limit": "8 kb",
+      "passed": true
+    }
   }
 }
