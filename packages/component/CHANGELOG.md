@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v2.0.1...sassysaint-v2.0.2) (2024-08-25)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([45addbd](https://github.com/aversini/sassysaint-ui/commit/45addbd90ce93fb536767016bc2f55e0fd0727c8))
+
 ## [2.0.1](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v2.0.0...sassysaint-v2.0.1) (2024-08-24)
 
 
