@@ -43,5 +43,10 @@ export default defineConfig({
 			cert: process.env.SSL_CERT,
 		},
 	},
-	plugins: [pluginReact(), pluginTypeCheck()],
+	plugins: [
+		pluginReact(),
+		pluginTypeCheck({
+			enable: process.env.HUSKY !== "0",
+		}),
+	],
 });
