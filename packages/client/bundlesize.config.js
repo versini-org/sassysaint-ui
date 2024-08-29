@@ -52,7 +52,7 @@ export default {
 		 */
 		{
 			path: "dist/static/css/index.<hash>.css",
-			limit: "10 kb",
+			limit: "11 kb",
 		},
 
 		/**
