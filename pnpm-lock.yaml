@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 7.1.1
-        version: 7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.1.2
+        version: 7.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.21.2
         version: 5.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1398,8 +1398,8 @@ packages:
   '@versini/auth-common@4.0.0':
     resolution: {integrity: sha512-adVfzk703mzZ6nFlqPh2R8r4wDxkZMbPpDuUrnl+8GpEmdB1+cwNxnE4Ec/PgqEEhHZnB6I+YSs4I+HHp3zd7g==}
 
-  '@versini/auth-provider@7.1.1':
-    resolution: {integrity: sha512-Ihb1yUkkYZ+YhoA4McaM4atAb98e9KiaA6TA+X2ms82dhdVgQQVbkq7lfLOmF/3cG5TKySYAAQfJTdkS2Ex7lA==}
+  '@versini/auth-provider@7.1.2':
+    resolution: {integrity: sha512-95hMNprvjQrRgLRNdC1z6woo3YH1UDTaKMZA5fkjAf9z2E1GPZ64FEx8Vo7Zckz0Tm8ZeFaWE6zVsb0VA/Eb0w==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -5860,7 +5860,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
     optional: true
 
   '@lerna/create@8.1.8(@swc/core@1.5.24(@swc/helpers@0.5.11))(encoding@0.1.13)(typescript@5.5.4)':
@@ -6813,7 +6813,7 @@ snapshots:
       jose: 5.7.0
       uuid: 10.0.0
 
-  '@versini/auth-provider@7.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@7.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
       '@versini/auth-common': 4.0.0
