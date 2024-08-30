@@ -2,5 +2,10 @@
 	"packages": {
 		"packages/client": {},
 		"packages/component": {}
-	}
+	},
+	"plugins": [
+		{
+			"type": "linked-versions"
+		}
+	]
 }
