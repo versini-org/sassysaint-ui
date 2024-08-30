@@ -1,11 +1,17 @@
 {
 	"packages": {
-		"packages/client": {},
-		"packages/component": {}
+		"packages/client": {
+			"component": "client"
+		},
+		"packages/component": {
+			"component": "component"
+		}
 	},
 	"plugins": [
 		{
-			"type": "linked-versions"
+			"type": "linked-versions",
+			"groupName": "sassysaint",
+			"components": ["client", "component"]
 		}
 	]
 }
