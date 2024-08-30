@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/aversini/sassysaint-ui/compare/client-v4.0.1...client-v4.0.2) (2024-08-30)
+
+
+### Bug Fixes
+
+* bundling highlightjs css instead of external link ([191da35](https://github.com/aversini/sassysaint-ui/commit/191da35666a6c06b089f47b38bda3effb7ea6e07))
+
 ## [4.0.1](https://github.com/aversini/sassysaint-ui/compare/client-v4.0.0...client-v4.0.1) (2024-08-25)
 
 
