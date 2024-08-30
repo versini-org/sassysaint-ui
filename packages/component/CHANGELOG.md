@@ -1,5 +1,38 @@
 # Changelog
 
+## [4.0.2](https://github.com/aversini/sassysaint-ui/compare/component-v2.0.2...component-v4.0.2) (2024-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* using new AuthProvider v7 that uses the new Auth Server v9
+
+### Features
+
+* export as a component ([f81e0bd](https://github.com/aversini/sassysaint-ui/commit/f81e0bd01cb83ee8dd960c853c7421c98b51c393))
+* export as a component ([dcf0117](https://github.com/aversini/sassysaint-ui/commit/dcf0117ca63b4c1b3d6b246e43df45f87f7bd336))
+* using new AuthProvider v7 that uses the new Auth Server v9 ([3954285](https://github.com/aversini/sassysaint-ui/commit/39542850f924180443fdf4d1c4638bd021fa982e))
+
+
+### Bug Fixes
+
+* adding debug support for auth ([301e051](https://github.com/aversini/sassysaint-ui/commit/301e051fa6303954e0bb999d6b118332a88d31f4))
+* bump dependencies to latest ([292d5d4](https://github.com/aversini/sassysaint-ui/commit/292d5d4f4e7b6ff80111c624920a912cbd4230e4))
+* bump dependencies to latest ([63f63f3](https://github.com/aversini/sassysaint-ui/commit/63f63f35ffe6ce46bc2e8c00d43f368d5500a23a))
+* bump dependencies to latest ([a280cfe](https://github.com/aversini/sassysaint-ui/commit/a280cfe841d39a684c406e6789901e595fabdaaf))
+* bump dependencies to latest ([daa03ff](https://github.com/aversini/sassysaint-ui/commit/daa03ff5deb48f4ff79b0acf5ad419b29cad23b0))
+* bump non-breaking dependencies to latest ([45addbd](https://github.com/aversini/sassysaint-ui/commit/45addbd90ce93fb536767016bc2f55e0fd0727c8))
+* bump sassy component ([4f6020c](https://github.com/aversini/sassysaint-ui/commit/4f6020cecb8f776602b5e854983b9a41ea3c6ede))
+* bump SassySaint component to latest ([2d3b21a](https://github.com/aversini/sassysaint-ui/commit/2d3b21a643081a593de152e4d07595f16cbf1d2a))
+* bump to latest dependencies ([b4c9d04](https://github.com/aversini/sassysaint-ui/commit/b4c9d044c85f69f472e60f62978a514322d2ce8a))
+* manual trigger for new component release ([1ac3729](https://github.com/aversini/sassysaint-ui/commit/1ac3729bdff4bf93685537086991de646e1722d2))
+* manual trigger for new component release ([ca5e820](https://github.com/aversini/sassysaint-ui/commit/ca5e82043d95400e57c51418000a5a1355fc71df))
+* manual trigger for new component release ([1beaa9e](https://github.com/aversini/sassysaint-ui/commit/1beaa9ee3ca43e5a7914d6bbae8136f8bab63b82))
+* manually bump sassy component ([d5eacfc](https://github.com/aversini/sassysaint-ui/commit/d5eacfc52555ca4721eff6d9c7e93e96b38d3441))
+* triggering a new release for the component ([af500ec](https://github.com/aversini/sassysaint-ui/commit/af500ec02819101aaf948905f39cc89ac4ec2f05))
+* update component version ([23a854f](https://github.com/aversini/sassysaint-ui/commit/23a854ff54b174951f01801e739ac0a25a9b7aca))
+* wrong version for component - oops ([bcdce2f](https://github.com/aversini/sassysaint-ui/commit/bcdce2f3cd37067ca11003b51165e88ef6c98eb6))
+
 ## [2.0.2](https://github.com/aversini/sassysaint-ui/compare/sassysaint-v2.0.1...sassysaint-v2.0.2) (2024-08-25)
 
 
