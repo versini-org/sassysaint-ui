@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.5](https://github.com/versini-org/sassysaint-ui/compare/client-v4.0.4...client-v4.0.5) (2024-08-31)
+
+
+### Bug Fixes
+
+* history data Panel can remain empty on slow networks ([25d25d8](https://github.com/versini-org/sassysaint-ui/commit/25d25d80ce084399d3030061224d3bd30a3746c6))
+
 ## [4.0.4](https://github.com/versini-org/sassysaint-ui/compare/client-v4.0.3...client-v4.0.4) (2024-08-31)
 
 
