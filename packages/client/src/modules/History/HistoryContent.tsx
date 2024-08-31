@@ -53,6 +53,10 @@ export const HistoryContent = ({
 		data: fullHistory,
 	});
 
+	useEffect(() => {
+		setFullHistory(historyData);
+	}, [historyData]);
+
 	const updateDataOnSearch = (searchString: string) => {
 		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({
