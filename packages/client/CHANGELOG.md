@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.4](https://github.com/versini-org/sassysaint-ui/compare/client-v4.0.3...client-v4.0.4) (2024-08-31)
+
+
+### Bug Fixes
+
+* use the official Passkey icon ([5b91d5c](https://github.com/versini-org/sassysaint-ui/commit/5b91d5c1e0618c1e2ea9a3b9aa05d0f0c4b3cd66))
+
 ## [4.0.3](https://github.com/versini-org/sassysaint-ui/compare/client-v4.0.2...client-v4.0.3) (2024-08-30)
 
 
