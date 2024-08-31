@@ -2,7 +2,7 @@ import { useAuth } from "@versini/auth-provider";
 import { Button, ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
-import { IconKey, IconRefresh } from "@versini/ui-icons";
+import { IconPasskey, IconRefresh } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useEffect, useState } from "react";
 
@@ -169,7 +169,7 @@ export const ProfileContent = () => {
 					<h2 className="m-0">
 						<Flexgrid columnGap={3} alignVertical="center">
 							<FlexgridItem>
-								<IconKey className="size-6 text-center" />
+								<IconPasskey className="size-8 text-center" />
 							</FlexgridItem>
 							<FlexgridItem>
 								<div>Passkey</div>

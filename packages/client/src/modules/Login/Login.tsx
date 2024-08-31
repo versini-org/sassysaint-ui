@@ -1,7 +1,7 @@
 import { useAuth } from "@versini/auth-provider";
 import { Button, ButtonIcon, Card, Main } from "@versini/ui-components";
 import { TextInput, TextInputMask } from "@versini/ui-form";
-import { IconHide, IconKey, IconShow } from "@versini/ui-icons";
+import { IconHide, IconPasskey, IconShow } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useEffect, useState } from "react";
 
@@ -143,7 +143,7 @@ export const Login = () => {
 								labelRight={LOG_IN_PASSKEY}
 								onClick={loginWithPasskey}
 							>
-								<IconKey className="size-4" />
+								<IconPasskey className="size-7" />
 							</ButtonIcon>
 						</FlexgridItem>
 					</Flexgrid>
