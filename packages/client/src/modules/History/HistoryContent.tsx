@@ -2,7 +2,7 @@ import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-components";
 import { TextInput } from "@versini/ui-form";
 import { useLocalStorage } from "@versini/ui-hooks";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 
 import {
 	ACTION_SEARCH,
@@ -46,7 +46,7 @@ export const HistoryContent = ({
 		initialValue: historyState.searchString,
 	});
 
-	const [fullHistory, setFullHistory] = useState<any[]>(historyData);
+	const fullHistory = useMemo(() => historyData, [historyData]);
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
 	}>({
@@ -76,13 +76,13 @@ export const HistoryContent = ({
 
 	useEffect(() => {
 		const filteredData = filterDataByContent(
-			fullHistory,
+			historyData,
 			historyState.searchString,
 		);
 		setFilteredHistory({
 			data: filteredData,
 		});
-	}, [fullHistory, historyState.searchString]);
+	}, [historyData, historyState.searchString]);
 
 	return isAuthenticated
 		? filteredHistory && filteredHistory.data && (
@@ -121,7 +121,6 @@ export const HistoryContent = ({
 						<HistoryTable
 							filteredHistory={filteredHistory}
 							setFilteredHistory={setFilteredHistory}
-							setFullHistory={setFullHistory}
 							dispatch={dispatch}
 							onOpenChange={onOpenChange}
 						/>
