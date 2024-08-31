@@ -81,7 +81,6 @@ const extractFirstUserMessage = (messages: any[]) => {
 export const HistoryTable = ({
 	filteredHistory,
 	setFilteredHistory,
-	setFullHistory,
 	dispatch,
 	onOpenChange,
 }: {
@@ -89,7 +88,6 @@ export const HistoryTable = ({
 	filteredHistory: any;
 	onOpenChange: any;
 	setFilteredHistory: any;
-	setFullHistory: any;
 }) => {
 	const { user, getAccessToken } = useAuth();
 	const chatToDeleteRef = useRef({
@@ -183,7 +181,6 @@ export const HistoryTable = ({
 			});
 
 			if (response.status === 200) {
-				setFullHistory(response.data);
 				setFilteredHistory({ data: response.data });
 			}
 		} catch (_error) {
