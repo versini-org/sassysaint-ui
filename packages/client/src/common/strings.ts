@@ -17,14 +17,18 @@ export const TYPE_QUESTION = "Type your question here";
 export const CLEAR = "Clear chat";
 export const CANCEL = "Cancel chat";
 export const NA = "N/A";
+
 export const CARDS = {
 	PREFERENCES: {
-		TITLE: "User preferences",
+		TITLE: "User settings",
 		NAME: "Name",
 		EMAIL: "Email",
 		ENGINE_DETAILS: "Show message statistics",
 		LOCATION: "Location",
-		MODEL_TYPE: "Use GPT model 4",
+		PASSKEY_TITLE: "Passkey",
+		PASSKEY_INSTRUCTIONS:
+			"Log in password-free with a passkey (facial recognition or fingerprint authentication).",
+		PASSKEY_BUTTON: "Create a Passkey",
 	},
 	CURRENT_STATISTICS: {
 		TITLE: "Current chat statistics",

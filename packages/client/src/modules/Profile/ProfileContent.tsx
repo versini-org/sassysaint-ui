@@ -1,4 +1,4 @@
-import { useAuth } from "@versini/auth-provider";
+import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
 import { Button, ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
@@ -23,7 +23,8 @@ import {
 import { AppContext } from "../App/AppContext";
 
 export const ProfileContent = () => {
-	const { isAuthenticated, user, registeringForPasskey } = useAuth();
+	const { isAuthenticated, user, registeringForPasskey, authenticationType } =
+		useAuth();
 	const [showEngineDetails, setShowEngineDetails] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_CHAT_DETAILS,
 		initialValue: false,
@@ -148,6 +149,7 @@ export const ProfileContent = () => {
 			>
 				{renderDataAsList(listId, {
 					[CARDS.PREFERENCES.NAME]: endUser,
+					[CARDS.PREFERENCES.EMAIL]: user?.email || "",
 					[CARDS.PREFERENCES.ENGINE_DETAILS]: (
 						<Toggle
 							noBorder
@@ -162,34 +164,35 @@ export const ProfileContent = () => {
 				})}
 			</Card>
 
-			<Card
-				spacing={{ t: 4 }}
-				className="prose-dark dark:prose-lighter"
-				header={
-					<h2 className="m-0">
-						<Flexgrid columnGap={3} alignVertical="center">
-							<FlexgridItem>
-								<IconPasskey className="size-8 text-center" />
-							</FlexgridItem>
-							<FlexgridItem>
-								<div>Passkey</div>
-							</FlexgridItem>
-						</Flexgrid>
-					</h2>
-				}
-			>
-				<Flexgrid columnGap={3} alignVertical="center">
-					<FlexgridItem>
-						Sign in without a password using a passkey (face or fingerprint
-						sign-in).
-					</FlexgridItem>
-					<FlexgridItem>
-						<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
-							Create a Passkey
-						</Button>
-					</FlexgridItem>
-				</Flexgrid>
-			</Card>
+			{authenticationType !== AUTH_TYPES.PASSKEY && (
+				<Card
+					spacing={{ t: 4 }}
+					className="prose-dark dark:prose-lighter"
+					header={
+						<h2 className="m-0">
+							<Flexgrid columnGap={3} alignVertical="center">
+								<FlexgridItem>
+									<IconPasskey className="size-8 text-center" />
+								</FlexgridItem>
+								<FlexgridItem>
+									<div>{CARDS.PREFERENCES.PASSKEY_TITLE}</div>
+								</FlexgridItem>
+							</Flexgrid>
+						</h2>
+					}
+				>
+					<Flexgrid columnGap={3} alignVertical="center">
+						<FlexgridItem>
+							{CARDS.PREFERENCES.PASSKEY_INSTRUCTIONS}
+						</FlexgridItem>
+						<FlexgridItem>
+							<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
+								{CARDS.PREFERENCES.PASSKEY_BUTTON}
+							</Button>
+						</FlexgridItem>
+					</Flexgrid>
+				</Card>
+			)}
 		</>
 	) : null;
 };

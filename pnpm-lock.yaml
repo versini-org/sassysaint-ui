@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 7.1.2
-        version: 7.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.3.0
+        version: 7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-components':
         specifier: 5.21.2
         version: 5.21.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -40,10 +40,10 @@ importers:
         version: 1.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       autoprefixer:
         specifier: 10.4.20
-        version: 10.4.20(postcss@8.4.41)
+        version: 10.4.20(postcss@8.4.43)
       postcss:
-        specifier: 8.4.41
-        version: 8.4.41
+        specifier: 8.4.43
+        version: 8.4.43
       pretty-ms:
         specifier: 9.1.0
         version: 9.1.0
@@ -82,8 +82,8 @@ importers:
   packages/component:
     dependencies:
       '@versini/ui-hooks':
-        specifier: 4.1.0
-        version: 4.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.1.1
+        version: 4.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1395,11 +1395,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@4.0.0':
-    resolution: {integrity: sha512-adVfzk703mzZ6nFlqPh2R8r4wDxkZMbPpDuUrnl+8GpEmdB1+cwNxnE4Ec/PgqEEhHZnB6I+YSs4I+HHp3zd7g==}
+  '@versini/auth-common@4.1.0':
+    resolution: {integrity: sha512-cAJHhQEBRRIBwUDIgJeIVMXGG/mdeJEjFw2BNgQV3h5tmMF8RJvlpYZtC4U9KjCxDornN1zLOqCzSSNRljgLCA==}
 
-  '@versini/auth-provider@7.1.2':
-    resolution: {integrity: sha512-95hMNprvjQrRgLRNdC1z6woo3YH1UDTaKMZA5fkjAf9z2E1GPZ64FEx8Vo7Zckz0Tm8ZeFaWE6zVsb0VA/Eb0w==}
+  '@versini/auth-provider@7.3.0':
+    resolution: {integrity: sha512-CH47+pTrFm+IY5OUVKBq4A1YlXoHfdLfO7gaOehpfv6PbtkzlHCztklxODs2eSG7o3D4dOsaig1AnRXOB9u2jQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -4196,6 +4196,10 @@ packages:
     resolution: {integrity: sha512-TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==}
     engines: {node: ^10 || ^12 || >=14}
 
+  postcss@8.4.43:
+    resolution: {integrity: sha512-gJAQVYbh5R3gYm33FijzCZj7CHyQ3hWMgJMprLUlIYqCwTeZhBQ19wp0e9mA25BUbEvY5+EXuuaAjqQsrBxQBQ==}
+    engines: {node: ^10 || ^12 || >=14}
+
   prettier-plugin-tailwindcss@0.6.6:
     resolution: {integrity: sha512-OPva5S7WAsPLEsOuOWXATi13QrCKACCiIonFgIR6V4lYv4QLp++UXVhZSzRbZxXGimkQtQT86CC6fQqTOybGng==}
     engines: {node: '>=14.21.3'}
@@ -6820,15 +6824,15 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@4.0.0':
+  '@versini/auth-common@4.1.0':
     dependencies:
       jose: 5.7.0
       uuid: 10.0.0
 
-  '@versini/auth-provider@7.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@7.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@versini/auth-common': 4.0.0
+      '@versini/auth-common': 4.1.0
       '@versini/ui-hooks': 4.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jose: 5.7.0
       react: 18.3.1
@@ -7405,6 +7409,16 @@ snapshots:
       normalize-range: 0.1.2
       picocolors: 1.0.1
       postcss: 8.4.41
+      postcss-value-parser: 4.2.0
+
+  autoprefixer@10.4.20(postcss@8.4.43):
+    dependencies:
+      browserslist: 4.23.3
+      caniuse-lite: 1.0.30001650
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.1
+      postcss: 8.4.43
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -10321,24 +10335,24 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.41):
+  postcss-import@15.1.0(postcss@8.4.43):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.43
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.41):
+  postcss-js@4.0.1(postcss@8.4.43):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.41
+      postcss: 8.4.43
 
-  postcss-load-config@4.0.2(postcss@8.4.41)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.11))(@types/node@22.5.0)(typescript@5.5.4)):
+  postcss-load-config@4.0.2(postcss@8.4.43)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.11))(@types/node@22.5.0)(typescript@5.5.4)):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
-      postcss: 8.4.41
+      postcss: 8.4.43
       ts-node: 10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.11))(@types/node@22.5.0)(typescript@5.5.4)
 
   postcss-load-config@6.0.1(jiti@1.21.0)(postcss@8.4.41)(yaml@2.5.0):
@@ -10349,9 +10363,9 @@ snapshots:
       postcss: 8.4.41
       yaml: 2.5.0
 
-  postcss-nested@6.0.1(postcss@8.4.41):
+  postcss-nested@6.0.1(postcss@8.4.43):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.43
       postcss-selector-parser: 6.0.15
 
   postcss-selector-parser@6.0.10:
@@ -10367,6 +10381,12 @@ snapshots:
   postcss-value-parser@4.2.0: {}
 
   postcss@8.4.41:
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
+      source-map-js: 1.2.0
+
+  postcss@8.4.43:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -11100,11 +11120,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.41
-      postcss-import: 15.1.0(postcss@8.4.41)
-      postcss-js: 4.0.1(postcss@8.4.41)
-      postcss-load-config: 4.0.2(postcss@8.4.41)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.11))(@types/node@22.5.0)(typescript@5.5.4))
-      postcss-nested: 6.0.1(postcss@8.4.41)
+      postcss: 8.4.43
+      postcss-import: 15.1.0(postcss@8.4.43)
+      postcss-js: 4.0.1(postcss@8.4.43)
+      postcss-load-config: 4.0.2(postcss@8.4.43)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.11))(@types/node@22.5.0)(typescript@5.5.4))
+      postcss-nested: 6.0.1(postcss@8.4.43)
       postcss-selector-parser: 6.0.15
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -11525,7 +11545,7 @@ snapshots:
   vite@5.4.2(@types/node@22.5.0)(terser@5.31.0):
     dependencies:
       esbuild: 0.21.4
-      postcss: 8.4.41
+      postcss: 8.4.43
       rollup: 4.21.0
     optionalDependencies:
       '@types/node': 22.5.0
