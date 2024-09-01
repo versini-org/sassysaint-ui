@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.1.0](https://github.com/versini-org/sassysaint-ui/compare/component-v4.0.5...component-v4.1.0) (2024-09-01)
+
+
+### Features
+
+* adding email to profile content ([fa3a140](https://github.com/versini-org/sassysaint-ui/commit/fa3a140356efc5957e858141316866e0ddfa3833))
+
 ## [4.0.5](https://github.com/versini-org/sassysaint-ui/compare/component-v4.0.4...component-v4.0.5) (2024-08-31)
 
 
