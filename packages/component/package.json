@@ -9,9 +9,7 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build:check": "tsc",
 		"build:js": "vite build",
@@ -34,11 +32,9 @@
 		"@sassysaint/client": "workspace:../client"
 	},
 	"dependencies": {
-		"@versini/ui-hooks": "4.1.0",
+		"@versini/ui-hooks": "4.1.1",
 		"clsx": "2.1.1",
 		"tailwindcss": "3.4.10"
 	},
-	"sideEffects": [
-		"**/*.css"
-	]
+	"sideEffects": ["**/*.css"]
 }
