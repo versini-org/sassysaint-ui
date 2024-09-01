@@ -2,9 +2,12 @@
 
 reviews:
   poem: false
+  sequence_diagrams: false
   auto_review:
     enabled: true
     ignore_title_keywords:
       - "chore(main): release client"
+      - "chore(main): release server"
+      - "chore: release main"
 chat:
   auto_reply: true
