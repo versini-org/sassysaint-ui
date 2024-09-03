@@ -1,5 +1,5 @@
 import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon, Card } from "@versini/ui-components";
+import { ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
 import { IconEdit, IconPasskey, IconRefresh } from "@versini/ui-icons";
