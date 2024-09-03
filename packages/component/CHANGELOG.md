@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/versini-org/sassysaint-ui/compare/component-v4.1.0...component-v4.2.0) (2024-09-03)
+
+
+### Miscellaneous Chores
+
+* **component:** Synchronize sassysaint versions
+
 ## [4.1.0](https://github.com/versini-org/sassysaint-ui/compare/component-v4.0.5...component-v4.1.0) (2024-09-01)
 
 
