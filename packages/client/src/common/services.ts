@@ -50,6 +50,12 @@ export const GRAPHQL_QUERIES = {
 			plugins
 		}
 	}`,
+	GET_CUSTOM_INSTRUCTIONS: `query GetCustomInstructions($user: String!) {
+		getCustomInstructions(user: $user)
+	}`,
+	SET_CUSTOM_INSTRUCTIONS: `mutation SetCustomInstructions($user: String!, $instructions: String!) {
+		setCustomInstructions(user: $user, instructions: $instructions)
+	}`,
 };
 
 export const SERVICE_TYPES = {
@@ -94,6 +100,21 @@ export const SERVICE_TYPES = {
 		schema: GRAPHQL_QUERIES.ABOUT,
 		method: "about",
 		data: () => ({}),
+	},
+	GET_CUSTOM_INSTRUCTIONS: {
+		schema: GRAPHQL_QUERIES.GET_CUSTOM_INSTRUCTIONS,
+		method: "getCustomInstructions",
+		data: (params: any) => ({
+			user: params.user,
+		}),
+	},
+	SET_CUSTOM_INSTRUCTIONS: {
+		schema: GRAPHQL_QUERIES.SET_CUSTOM_INSTRUCTIONS,
+		method: "setCustomInstructions",
+		data: (params: any) => ({
+			user: params.user,
+			instructions: params.instructions,
+		}),
 	},
 };
 

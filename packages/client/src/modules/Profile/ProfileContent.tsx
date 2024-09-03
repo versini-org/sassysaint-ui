@@ -1,8 +1,8 @@
 import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon, Card } from "@versini/ui-components";
+import { ButtonIcon, Card } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
-import { IconPasskey, IconRefresh } from "@versini/ui-icons";
+import { IconEdit, IconPasskey, IconRefresh } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useEffect, useState } from "react";
 
@@ -21,6 +21,7 @@ import {
 	renderDataAsList,
 } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
+import { CustomInstructionsPanel } from "./CustomInstructions";
 
 export const ProfileContent = () => {
 	const { isAuthenticated, user, registeringForPasskey, authenticationType } =
@@ -34,13 +35,19 @@ export const ProfileContent = () => {
 		initialValue: { latitude: 0, longitude: 0, accuracy: 0 },
 	});
 
+	const [showCustomInstructions, setShowCustomInstructions] = useState(false);
 	const [refreshEnabled, setRefreshEnabled] = useState(true);
+
 	const listId = useUniqueId();
 	const { state, dispatch } = useContext(AppContext);
 	const endUser = user?.username || "";
 
 	const onToggleEngineDetails = (checked: boolean) => {
 		setShowEngineDetails(checked);
+	};
+
+	const onClickCustomInstructions = () => {
+		setShowCustomInstructions(!showCustomInstructions);
 	};
 
 	const onRefreshLocation = async () => {
@@ -143,6 +150,13 @@ export const ProfileContent = () => {
 
 	return isAuthenticated && endUser ? (
 		<>
+			{showCustomInstructions && (
+				<CustomInstructionsPanel
+					open={showCustomInstructions}
+					onOpenChange={setShowCustomInstructions}
+				/>
+			)}
+
 			<Card
 				header={CARDS.PREFERENCES.TITLE}
 				className="prose-dark dark:prose-lighter"
@@ -162,6 +176,13 @@ export const ProfileContent = () => {
 					),
 					[CARDS.PREFERENCES.LOCATION]: renderLocation(state?.location),
 				})}
+				<ButtonIcon
+					size="small"
+					onClick={onClickCustomInstructions}
+					labelLeft="Engine Fine Tuning"
+				>
+					<IconEdit className="size-3" monotone />
+				</ButtonIcon>
 			</Card>
 
 			{authenticationType !== AUTH_TYPES.PASSKEY && (
@@ -172,7 +193,7 @@ export const ProfileContent = () => {
 						<h2 className="m-0">
 							<Flexgrid columnGap={3} alignVertical="center">
 								<FlexgridItem>
-									<IconPasskey className="size-8 text-center" />
+									<IconPasskey className="size-8" />
 								</FlexgridItem>
 								<FlexgridItem>
 									<div>{CARDS.PREFERENCES.PASSKEY_TITLE}</div>
@@ -181,16 +202,15 @@ export const ProfileContent = () => {
 						</h2>
 					}
 				>
-					<Flexgrid columnGap={3} alignVertical="center">
-						<FlexgridItem>
-							{CARDS.PREFERENCES.PASSKEY_INSTRUCTIONS}
-						</FlexgridItem>
-						<FlexgridItem>
-							<Button spacing={{ t: 2 }} onClick={registeringForPasskey}>
-								{CARDS.PREFERENCES.PASSKEY_BUTTON}
-							</Button>
-						</FlexgridItem>
-					</Flexgrid>
+					<p>{CARDS.PREFERENCES.PASSKEY_INSTRUCTIONS}</p>
+					<ButtonIcon
+						size="small"
+						spacing={{ t: 2 }}
+						onClick={registeringForPasskey}
+						labelLeft={CARDS.PREFERENCES.PASSKEY_BUTTON}
+					>
+						<IconPasskey className="size-5" monotone />
+					</ButtonIcon>
 				</Card>
 			)}
 		</>
