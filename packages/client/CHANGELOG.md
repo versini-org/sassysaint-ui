@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.1.0...client-v4.2.0) (2024-09-03)
+
+
+### Features
+
+* adding support for custom instructions ([d709651](https://github.com/versini-org/sassysaint-ui/commit/d7096511802844f6c0bb764f5456fca0b5026d79))
+
 ## [4.1.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.0.5...client-v4.1.0) (2024-09-01)
 
 
