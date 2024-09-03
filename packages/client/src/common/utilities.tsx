@@ -137,10 +137,10 @@ export const renderDataAsList = (
 				return (
 					<dl className="my-0" key={`${id}-${key}`}>
 						<div className="flex items-center justify-between">
-							<dt className="inline-block font-bold text-copy-dark dark:text-copy-lighter">
+							<dt className="my-1 inline-block font-bold text-copy-dark dark:text-copy-lighter">
 								{key}
 							</dt>
-							<dd className="inline-block">{data[key]}</dd>
+							<dd className="my-1 inline-block">{data[key]}</dd>
 						</div>
 					</dl>
 				);

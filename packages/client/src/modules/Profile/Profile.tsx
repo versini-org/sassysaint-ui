@@ -11,7 +11,12 @@ export const Profile = ({
 	open: boolean;
 }) => {
 	return (
-		<Panel open={open} onOpenChange={onOpenChange} title={PROFILE_TITLE}>
+		<Panel
+			open={open}
+			onOpenChange={onOpenChange}
+			title={PROFILE_TITLE}
+			className="max-h-[60vh]"
+		>
 			<ProfileContent />
 		</Panel>
 	);
