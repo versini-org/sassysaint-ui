@@ -27,7 +27,7 @@ export default {
 			limit: "6 kb",
 		},
 		{
-			path: "dist/static/js/async/*versini_ui-components*.<hash>.js",
+			path: "dist/static/js/async/node_modules*versini_ui-components*.<hash>.js",
 			limit: "5 kb",
 		},
 		{
