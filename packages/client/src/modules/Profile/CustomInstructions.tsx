@@ -39,7 +39,7 @@ export const CustomInstructionsPanel = ({
 		}
 	};
 
-	const updateLocation = async () => {
+	const onDetectLocation = async () => {
 		setCustomInstructions((prev) => ({
 			...prev,
 			location: "",
@@ -88,6 +88,10 @@ export const CustomInstructionsPanel = ({
 		}
 	};
 
+	/**
+	 * Effect to fetch the custom instructions (including custom location)
+	 * from the server.
+	 */
 	// biome-ignore lint/correctness/useExhaustiveDependencies: getAccessToken is stable
 	useEffect(() => {
 		if (!open || !user) {
@@ -214,7 +218,7 @@ export const CustomInstructionsPanel = ({
 								mode="light"
 								focusMode="light"
 								disabled={customInstructions.loadingLocation}
-								onClick={updateLocation}
+								onClick={onDetectLocation}
 							>
 								{customInstructions.loadingLocation
 									? "Detecting..."
