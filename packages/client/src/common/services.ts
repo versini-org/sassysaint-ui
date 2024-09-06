@@ -51,10 +51,19 @@ export const GRAPHQL_QUERIES = {
 		}
 	}`,
 	GET_CUSTOM_INSTRUCTIONS: `query GetCustomInstructions($user: String!) {
-		getCustomInstructions(user: $user)
+		getCustomInstructions(user: $user) {
+			instructions
+			location
+		}
 	}`,
-	SET_CUSTOM_INSTRUCTIONS: `mutation SetCustomInstructions($user: String!, $instructions: String!) {
-		setCustomInstructions(user: $user, instructions: $instructions)
+	SET_CUSTOM_INSTRUCTIONS: `mutation SetCustomInstructions(
+		$user: String!,
+		$instructions: String!,
+		$location: String) {
+			setCustomInstructions(
+			user: $user,
+			instructions: $instructions,
+			location: $location)
 	}`,
 };
 
@@ -114,6 +123,7 @@ export const SERVICE_TYPES = {
 		data: (params: any) => ({
 			user: params.user,
 			instructions: params.instructions,
+			location: params.location,
 		}),
 	},
 };

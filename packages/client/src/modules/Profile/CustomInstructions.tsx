@@ -5,6 +5,7 @@ import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useEffect, useState } from "react";
 
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import { getCurrentGeoLocation } from "../../common/utilities";
 
 export const CustomInstructionsPanel = ({
 	open,
@@ -17,6 +18,8 @@ export const CustomInstructionsPanel = ({
 	const [customInstructions, setCustomInstructions] = useState({
 		loaded: false,
 		content: "",
+		loadingLocation: false,
+		location: "",
 	});
 
 	const onSave = async (e: { preventDefault: () => void }) => {
@@ -28,6 +31,7 @@ export const CustomInstructionsPanel = ({
 				params: {
 					user: user?.username,
 					instructions: customInstructions.content,
+					location: customInstructions.location,
 				},
 			});
 		} catch (_error) {
@@ -35,6 +39,60 @@ export const CustomInstructionsPanel = ({
 		}
 	};
 
+	const onDetectLocation = async () => {
+		setCustomInstructions((prev) => ({
+			...prev,
+			location: "",
+			loadingLocation: true,
+		}));
+		try {
+			const start = Date.now();
+			const rawLocation = await getCurrentGeoLocation();
+			const response = await serviceCall({
+				accessToken: await getAccessToken(),
+				type: SERVICE_TYPES.GET_LOCATION,
+				params: {
+					latitude: rawLocation.latitude,
+					longitude: rawLocation.longitude,
+				},
+			});
+			const end = Date.now();
+			const elapsed = end - start;
+			// Ensure the loading spinner is visible for at least 2 seconds
+			if (elapsed < 2000) {
+				await new Promise((resolve) => setTimeout(resolve, 2000 - elapsed));
+			}
+
+			if (response.status === 200) {
+				const { city, state, country, displayName } = response.data;
+				const location =
+					city && state && country
+						? `${city}, ${state}, ${country}`
+						: displayName;
+				setCustomInstructions((prev) => ({
+					...prev,
+					loaded: true,
+					location,
+					loadingLocation: false,
+				}));
+			} else {
+				setCustomInstructions((prev) => ({
+					...prev,
+					loaded: true,
+					location: "",
+					loadingLocation: false,
+				}));
+			}
+		} catch (_error) {
+			// nothing to declare officer
+		}
+	};
+
+	/**
+	 * Effect to fetch the custom instructions (including custom location)
+	 * from the server.
+	 */
+	// biome-ignore lint/correctness/useExhaustiveDependencies: getAccessToken is stable
 	useEffect(() => {
 		if (!open || !user) {
 			/**
@@ -42,10 +100,13 @@ export const CustomInstructionsPanel = ({
 			 */
 			setCustomInstructions({
 				loaded: false,
+				loadingLocation: false,
 				content: "",
+				location: "",
 			});
 			return;
 		}
+
 		(async () => {
 			try {
 				const response = await serviceCall({
@@ -57,16 +118,18 @@ export const CustomInstructionsPanel = ({
 				});
 
 				if (response.status === 200) {
-					setCustomInstructions({
+					setCustomInstructions((prev) => ({
+						...prev,
 						loaded: true,
-						content: response.data,
-					});
+						content: response.data.instructions,
+						location: response.data.location,
+					}));
 				}
 			} catch (_error) {
 				// nothing to declare officer
 			}
 		})();
-	}, [getAccessToken, user, open]);
+	}, [user, open]);
 
 	return (
 		<>
@@ -106,6 +169,7 @@ export const CustomInstructionsPanel = ({
 						</Flexgrid>
 					}
 				>
+					<h2 className="mt-0">Custom Instructions</h2>
 					<p>
 						What would you like Sassy Saint to know about you to provide better
 						responses?
@@ -118,14 +182,49 @@ export const CustomInstructionsPanel = ({
 						autoCorrect="off"
 						name="customInstructions"
 						label="Custom Instructions"
-						defaultValue={customInstructions.content}
+						value={customInstructions.content}
 						onChange={(e: any) => {
-							setCustomInstructions({
+							setCustomInstructions((prev) => ({
+								...prev,
 								loaded: true,
 								content: e.target.value,
-							});
+							}));
 						}}
 						helperText="Press ENTER to add a new line."
+					/>
+					<h2>Location</h2>
+					<p>
+						You can share your location to receive customized responses based on
+						your area.
+					</p>
+					<TextArea
+						mode="dark"
+						focusMode="light"
+						name="location"
+						label="Location"
+						value={customInstructions.location}
+						onChange={(e: any) => {
+							setCustomInstructions((prev) => ({
+								...prev,
+								loaded: true,
+								location: e.target.value,
+							}));
+						}}
+						helperText="Enter your location or press auto-detect."
+						rightElement={
+							<Button
+								size="small"
+								noBorder
+								mode="light"
+								focusMode="light"
+								disabled={customInstructions.loadingLocation}
+								onClick={onDetectLocation}
+							>
+								{customInstructions.loadingLocation
+									? "Detecting..."
+									: "Auto-detect"}
+							</Button>
+						}
 					/>
 				</Panel>
 			)}

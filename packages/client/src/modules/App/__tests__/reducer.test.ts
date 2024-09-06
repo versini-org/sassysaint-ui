@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
 import {
-	ACTION_LOCATION,
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
@@ -35,11 +34,6 @@ describe("Non-DOM tests", () => {
 				id: "123",
 				model: "gpt-666",
 				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
 				messages: [],
 				isComponent: false,
 			};
@@ -64,7 +58,6 @@ describe("Non-DOM tests", () => {
 				id: actionPayload.id,
 				model: actionPayload.model,
 				usage: actionPayload.usage,
-				location: state.location,
 				messages: [
 					{
 						message: actionPayload.messages[0],
@@ -79,11 +72,6 @@ describe("Non-DOM tests", () => {
 				id: "123",
 				model: "gpt-666",
 				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
 				messages: [],
 				isComponent: false,
 			};
@@ -95,7 +83,6 @@ describe("Non-DOM tests", () => {
 				id: MOCK_UUIDV4,
 				model: state.model,
 				usage: 0,
-				location: state.location,
 				messages: [],
 				isComponent: state.isComponent,
 			});
@@ -106,11 +93,6 @@ describe("Non-DOM tests", () => {
 				id: "123",
 				model: "gpt-666",
 				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
 				messages: [],
 				isComponent: false,
 			};
@@ -127,44 +109,8 @@ describe("Non-DOM tests", () => {
 				id: state.id,
 				model: actionPayload.model,
 				usage: actionPayload.usage,
-				location: state.location,
 				messages: state.messages,
 				isComponent: state.isComponent,
-			});
-		});
-
-		it("should return a new location state on ACTION_LOCATION", () => {
-			const state = {
-				id: "123",
-				model: "gpt-666",
-				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
-				messages: [],
-				isComponent: false,
-			};
-			const actionPayload = {
-				location: {
-					latitude: 2,
-					longitude: 2,
-					accuracy: 2,
-				},
-			};
-			expect(
-				reducer(state, {
-					type: ACTION_LOCATION,
-					payload: actionPayload,
-				}),
-			).toEqual({
-				id: state.id,
-				location: actionPayload.location,
-				messages: state.messages,
-				isComponent: state.isComponent,
-				model: state.model,
-				usage: state.usage,
 			});
 		});
 
@@ -173,11 +119,6 @@ describe("Non-DOM tests", () => {
 				id: "123",
 				model: "gpt-666",
 				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
 				messages: [
 					{
 						message: {
@@ -205,7 +146,6 @@ describe("Non-DOM tests", () => {
 				id: state.id,
 				model: state.model,
 				usage: state.usage,
-				location: state.location,
 				messages: [
 					...state.messages,
 					{
@@ -221,11 +161,6 @@ describe("Non-DOM tests", () => {
 				id: "123",
 				model: "gpt-666",
 				usage: 456,
-				location: {
-					latitude: 1,
-					longitude: 1,
-					accuracy: 1,
-				},
 				messages: [
 					{
 						message: {
@@ -252,7 +187,6 @@ describe("Non-DOM tests", () => {
 				id: state.id,
 				model: state.model,
 				usage: state.usage,
-				location: state.location,
 				messages: [
 					...state.messages,
 					{

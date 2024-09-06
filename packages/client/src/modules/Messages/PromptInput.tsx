@@ -103,7 +103,6 @@ export const PromptInput = () => {
 						model: MODEL_GPT4,
 						user: user?.username || "",
 						id: state.id,
-						location: state.location,
 						usage: state.usage,
 					},
 				});
