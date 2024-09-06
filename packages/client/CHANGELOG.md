@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.2.0...client-v4.3.0) (2024-09-06)
+
+
+### Features
+
+* getting location is now opt-in via Profile settings ([33962fe](https://github.com/versini-org/sassysaint-ui/commit/33962fe7a04247b57b67b101e7ac32a3a7cc593c))
+
 ## [4.2.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.1.0...client-v4.2.0) (2024-09-03)
 
 
