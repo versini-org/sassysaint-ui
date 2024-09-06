@@ -34,7 +34,6 @@ export type StateProps = {
 	usage: number;
 	isComponent: boolean;
 
-	location?: GeoLocation;
 	streaming?: boolean;
 };
 
@@ -63,12 +62,6 @@ export type ActionProps =
 			type: typeof ACTION_MESSAGE;
 	  }
 	| { type: typeof ACTION_RESET }
-	| {
-			payload: {
-				location: GeoLocation;
-			};
-			type: typeof ACTION_LOCATION;
-	  }
 	| {
 			payload: {
 				streaming: boolean;
