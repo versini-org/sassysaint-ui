@@ -201,7 +201,7 @@ export const CustomInstructionsPanel = ({
 						mode="dark"
 						focusMode="light"
 						name="location"
-						label="Location"
+						label={customInstructions.loadingLocation ? "..." : "Location"}
 						value={customInstructions.location}
 						onChange={(e: any) => {
 							setCustomInstructions((prev) => ({
@@ -211,21 +211,19 @@ export const CustomInstructionsPanel = ({
 							}));
 						}}
 						helperText="Enter your location or press auto-detect."
-						rightElement={
-							<Button
-								size="small"
-								noBorder
-								mode="light"
-								focusMode="light"
-								disabled={customInstructions.loadingLocation}
-								onClick={onDetectLocation}
-							>
-								{customInstructions.loadingLocation
-									? "Detecting..."
-									: "Auto-detect"}
-							</Button>
-						}
 					/>
+					<Button
+						spacing={{ t: 2 }}
+						noBorder
+						mode="dark"
+						focusMode="light"
+						disabled={customInstructions.loadingLocation}
+						onClick={onDetectLocation}
+					>
+						{customInstructions.loadingLocation
+							? "Detecting..."
+							: "Auto-detect"}
+					</Button>
 				</Panel>
 			)}
 		</>
