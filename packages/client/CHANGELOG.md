@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.2](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.1...client-v4.3.2) (2024-09-07)
+
+
+### Bug Fixes
+
+* location input field is not responsive ([517f4fb](https://github.com/versini-org/sassysaint-ui/commit/517f4fbb8b4f8a7dc160ecab00aea278a835413a))
+
 ## [4.3.1](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.0...client-v4.3.1) (2024-09-06)
 
 
