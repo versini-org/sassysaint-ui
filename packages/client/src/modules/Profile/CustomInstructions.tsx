@@ -1,5 +1,5 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button, Panel } from "@versini/ui-components";
+import { Button, Card, Panel } from "@versini/ui-components";
 import { TextArea } from "@versini/ui-form";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ export const CustomInstructionsPanel = ({
 	const onDetectLocation = async () => {
 		setCustomInstructions((prev) => ({
 			...prev,
-			location: "",
+			location: "...",
 			loadingLocation: true,
 		}));
 		try {
@@ -169,61 +169,72 @@ export const CustomInstructionsPanel = ({
 						</Flexgrid>
 					}
 				>
-					<h2 className="mt-0">Custom Instructions</h2>
-					<p>
-						What would you like Sassy Saint to know about you to provide better
-						responses?
-					</p>
-					<TextArea
-						mode="dark"
-						focusMode="light"
-						autoCapitalize="off"
-						autoComplete="off"
-						autoCorrect="off"
-						name="customInstructions"
-						label="Custom Instructions"
-						value={customInstructions.content}
-						onChange={(e: any) => {
-							setCustomInstructions((prev) => ({
-								...prev,
-								loaded: true,
-								content: e.target.value,
-							}));
-						}}
-						helperText="Press ENTER to add a new line."
-					/>
-					<h2>Location</h2>
-					<p>
-						You can share your location to receive customized responses based on
-						your area.
-					</p>
-					<TextArea
-						mode="dark"
-						focusMode="light"
-						name="location"
-						label={customInstructions.loadingLocation ? "..." : "Location"}
-						value={customInstructions.location}
-						onChange={(e: any) => {
-							setCustomInstructions((prev) => ({
-								...prev,
-								loaded: true,
-								location: e.target.value,
-							}));
-						}}
-						helperText="Enter your location or press auto-detect."
-					/>
-					<Button
-						spacing={{ t: 2 }}
-						noBorder
-						mode="dark"
-						focusMode="light"
-						disabled={customInstructions.loadingLocation}
-						onClick={onDetectLocation}
+					<Card
+						header={"Custom Instructions"}
+						className="prose-dark dark:prose-lighter"
 					>
-						{customInstructions.loadingLocation
-							? "Detecting..."
-							: "Auto-detect"}
-					</Button>
+						<p>
+							What would you like Sassy Saint to know about you to provide
+							better responses?
+						</p>
+						<TextArea
+							mode="alt-system"
+							autoCapitalize="off"
+							autoComplete="off"
+							autoCorrect="off"
+							name="customInstructions"
+							label="Custom Instructions"
+							value={customInstructions.content}
+							onChange={(e: any) => {
+								setCustomInstructions((prev) => ({
+									...prev,
+									loaded: true,
+									content: e.target.value,
+								}));
+							}}
+							helperText="Press ENTER to add a new line."
+						/>
+					</Card>
+
+					<Card
+						header={"Location"}
+						className="prose-dark dark:prose-lighter"
+						spacing={{ t: 4 }}
+					>
+						<p>
+							You can share your location to receive customized responses based
+							on your area.
+						</p>
+						<TextArea
+							mode="alt-system"
+							name="location"
+							// label={customInstructions.loadingLocation ? "..." : "Location"}
+							label={"Location"}
+							value={customInstructions.location}
+							onChange={(e: any) => {
+								setCustomInstructions((prev) => ({
+									...prev,
+									loaded: true,
+									location: e.target.value,
+								}));
+							}}
+							helperText="Enter your location or press auto-detect."
+							rightElement={
+								<Button
+									size="small"
+									noBorder
+									mode="alt-system"
+									focusMode="alt-system"
+									disabled={customInstructions.loadingLocation}
+									onClick={onDetectLocation}
+								>
+									{customInstructions.loadingLocation
+										? "Detecting..."
+										: "Auto-detect"}
+								</Button>
+							}
+						/>
+					</Card>
 				</Panel>
 			)}
 		</>
