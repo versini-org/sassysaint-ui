@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.3](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.2...client-v4.3.3) (2024-09-08)
+
+
+### Bug Fixes
+
+* slightly better UI for engine fine tuning Panel ([356b009](https://github.com/versini-org/sassysaint-ui/commit/356b00980e3cc847614d53c83f8ba998cc1c81b2))
+
 ## [4.3.2](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.1...client-v4.3.2) (2024-09-07)
 
 
