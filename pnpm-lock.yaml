@@ -27,11 +27,11 @@ importers:
         specifier: 5.21.3
         version: 5.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-form':
-        specifier: 1.3.8
-        version: 1.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.3.9
+        version: 1.3.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
-        specifier: 4.1.1
-        version: 4.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.1.2
+        version: 4.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.12.0
         version: 1.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1403,8 +1403,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-form@1.3.8':
-    resolution: {integrity: sha512-nOLaEP5UFgUsE4Vi8/Tz2htXAUcEGxJn08ldDzHyfIW3f08Q5G73QJnJECY+Kr+0RC3MMZEOR+VUMyeJrinoMg==}
+  '@versini/ui-form@1.3.9':
+    resolution: {integrity: sha512-n0Iu+5VOad9guF2FfO9+JqiaEdHXDff49k5SPGjQNyqFWLfmzNmYJ+JsDNpT8P9LiccDVKoxxTZhtAQqahdgWw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1417,6 +1417,12 @@ packages:
 
   '@versini/ui-hooks@4.1.1':
     resolution: {integrity: sha512-SYHvE/0/zgXLd4fqjNLnSqY0kAKrcwXcsugygikMAcQEEm4pZ+8RtrrUHGN0ZhlKwnjr3vWFOJXzjD4H0pq1iA==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-hooks@4.1.2':
+    resolution: {integrity: sha512-GKSKUyTU6mJ6zJ3bbEZ/xHrTSBw5I5z9KJMLnNkdUfloIpff0CdULsn4BGGj41otm6d6H2gl/abH+oIOMoJCzw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -6909,9 +6915,9 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-form@1.3.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-form@1.3.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@versini/ui-hooks': 4.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
@@ -6923,6 +6929,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
 
   '@versini/ui-hooks@4.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-hooks@4.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
