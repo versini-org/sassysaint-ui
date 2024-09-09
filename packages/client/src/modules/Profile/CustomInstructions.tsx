@@ -208,7 +208,6 @@ export const CustomInstructionsPanel = ({
 						<TextArea
 							mode="alt-system"
 							name="location"
-							// label={customInstructions.loadingLocation ? "..." : "Location"}
 							label={"Location"}
 							value={customInstructions.location}
 							onChange={(e: any) => {
