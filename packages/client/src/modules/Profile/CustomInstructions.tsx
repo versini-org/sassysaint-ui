@@ -218,21 +218,18 @@ export const CustomInstructionsPanel = ({
 								}));
 							}}
 							helperText="Enter your location or press auto-detect."
-							rightElement={
-								<Button
-									size="small"
-									noBorder
-									mode="alt-system"
-									focusMode="alt-system"
-									disabled={customInstructions.loadingLocation}
-									onClick={onDetectLocation}
-								>
-									{customInstructions.loadingLocation
-										? "Detecting..."
-										: "Auto-detect"}
-								</Button>
-							}
 						/>
+						<Button
+							spacing={{ t: 2 }}
+							size="small"
+							noBorder
+							disabled={customInstructions.loadingLocation}
+							onClick={onDetectLocation}
+						>
+							{customInstructions.loadingLocation
+								? "Detecting..."
+								: "Auto-detect"}
+						</Button>
 					</Card>
 				</Panel>
 			)}
