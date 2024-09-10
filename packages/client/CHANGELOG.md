@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.3.5](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.4...client-v4.3.5) (2024-09-10)
+
+
+### Bug Fixes
+
+* still fighting with the fine tuning UX panel ([ac200d2](https://github.com/versini-org/sassysaint-ui/commit/ac200d231ab9be6a52de9e6cbd9d8908b8ebf3a4))
+
 ## [4.3.4](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.3...client-v4.3.4) (2024-09-09)
 
 
