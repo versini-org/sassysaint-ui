@@ -1,6 +1,5 @@
 {
-	"version": "0.0.0",
-	"npmClient": "pnpm",
-	"packages": ["packages/*"],
-	"$schema": "node_modules/lerna/schemas/lerna-schema.json"
+	"$schema": "node_modules/lerna/schemas/lerna-schema.json",
+	"version": "independent",
+	"npmClient": "pnpm"
 }
