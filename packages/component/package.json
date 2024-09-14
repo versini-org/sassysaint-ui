@@ -34,7 +34,7 @@
 		"@sassysaint/client": "workspace:../client"
 	},
 	"dependencies": {
-		"@versini/ui-hooks": "4.1.1",
+		"@versini/ui-hooks": "4.1.3",
 		"clsx": "2.1.1",
 		"tailwindcss": "3.4.10"
 	},
