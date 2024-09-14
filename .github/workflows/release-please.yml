@@ -16,7 +16,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.NODE_CLI }}
@@ -42,11 +42,6 @@ jobs:
       # Release Please has already incremented versions and published tags, so we just
       # need to publish all unpublished versions to NPM here
       # See: https://github.com/lerna/lerna/tree/main/commands/publish#bump-from-package
-      # - name: Publish to NPM
-      # if: ${{ steps.release.outputs.releases_created }}
-      # env:
-      # NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-      # run: npx lerna publish from-package --no-push --no-private --yes --loglevel debug
 
       - name: Publish Package
         if: ${{ steps.release.outputs.releases_created }}

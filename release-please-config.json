@@ -1,17 +1,8 @@
 {
 	"packages": {
-		"packages/client": {
-			"component": "client"
-		},
-		"packages/component": {
-			"component": "component"
-		}
+		"packages/client": {},
+		"packages/component": {}
 	},
-	"plugins": [
-		{
-			"type": "linked-versions",
-			"groupName": "sassysaint",
-			"components": ["client", "component"]
-		}
-	]
+	"plugins": ["node-workspace"],
+	"pull-request-header": ":rocket: Automated Release"
 }
