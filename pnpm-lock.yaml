@@ -33,8 +33,8 @@ importers:
         specifier: 4.1.3
         version: 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
-        specifier: 1.12.0
-        version: 1.12.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.12.1
+        version: 1.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-system':
         specifier: 1.4.4
         version: 1.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.4)(typescript@5.5.4))
@@ -556,14 +556,29 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  '@floating-ui/react-dom@2.1.2':
+    resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   '@floating-ui/react@0.26.23':
     resolution: {integrity: sha512-9u3i62fV0CFF3nIegiWiRDwOs7OW/KhSUJDNx2MkQM3LbE5zQOY01sL3nelcVBXvX7Ovvo3A49I8ql+20Wg/Hw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
+  '@floating-ui/react@0.26.24':
+    resolution: {integrity: sha512-2ly0pCkZIGEQUq5H8bBK0XJmc1xIK/RM3tvVzY3GBER7IOD1UgmC2Y2tjj4AuS+TC+vTE1KJv2053290jua0Sw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
   '@floating-ui/utils@0.2.7':
     resolution: {integrity: sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==}
+
+  '@floating-ui/utils@0.2.8':
+    resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
   '@hutson/parse-repository-url@3.0.2':
     resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
@@ -1428,8 +1443,20 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
+  '@versini/ui-icons@1.12.1':
+    resolution: {integrity: sha512-/bNF3/quOmFnXVTIaPR4qozxZV6ax7XtZAhET5+X2OYLc6fWb4GXldUVuECDcGHOiYDEM3FtfmLE6fapOzTTmQ==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
   '@versini/ui-private@1.4.8':
     resolution: {integrity: sha512-U+FuYzY2QfoyStW6l5nkpsn1l8nqcg/H3W/OwLDWxlRLj1r+MjOyTl9+SSEcDkzRwOEs0jOZLOF8tQBKpVMBcQ==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-private@1.4.9':
+    resolution: {integrity: sha512-nF3KeIGvVW+des+efg9hGaUMakO5AgOj6QQiWXmdPF7ePDmwVkmKxCb9f+fUmJqmg1+intO2V5Ja0Rt3pGE6kw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -5743,14 +5770,20 @@ snapshots:
 
   '@floating-ui/core@1.6.0':
     dependencies:
-      '@floating-ui/utils': 0.2.7
+      '@floating-ui/utils': 0.2.8
 
   '@floating-ui/dom@1.6.1':
     dependencies:
       '@floating-ui/core': 1.6.0
-      '@floating-ui/utils': 0.2.7
+      '@floating-ui/utils': 0.2.8
 
   '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.6.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@floating-ui/react-dom@2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/dom': 1.6.1
       react: 18.3.1
@@ -5764,7 +5797,17 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       tabbable: 6.2.0
 
+  '@floating-ui/react@0.26.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/utils': 0.2.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tabbable: 6.2.0
+
   '@floating-ui/utils@0.2.7': {}
+
+  '@floating-ui/utils@0.2.8': {}
 
   '@hutson/parse-repository-url@3.0.2': {}
 
@@ -6940,10 +6983,24 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@versini/ui-icons@1.12.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@versini/ui-private': 1.4.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@versini/ui-private@1.4.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks': 4.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      clsx: 2.1.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-private@1.4.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react': 0.26.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
