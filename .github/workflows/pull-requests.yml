@@ -23,7 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
       - run: |
-
           pnpm install
           npx lerna run build
           npx lerna run stats:pr --scope=@sassysaint/client
