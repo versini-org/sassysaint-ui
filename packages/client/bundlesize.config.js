@@ -4,63 +4,17 @@ export default {
 		current: "tmp/stats.json",
 	},
 	sizes: [
-		/**
-		 * JavaScript static assets.
-		 */
-		{
-			path: "dist/static/js/index.<hash>.js",
-			limit: "7 kb",
-		},
-		{
-			path: "dist/static/js/*versini_auth-provider*.<hash>.js",
-			limit: "28 kb",
-		},
-		{
-			path: "dist/static/js/lib-react.<hash>.js",
-			limit: "45 kb",
-		},
-		/**
-		 * JavaScript static async assets.
-		 */
-		{
-			path: "dist/static/js/async/*Messages_LazyHeader*.<hash>.js",
-			limit: "6 kb",
-		},
-		{
-			path: "dist/static/js/async/node_modules*versini_ui-components*.<hash>.js",
-			limit: "5 kb",
-		},
-		{
-			path: "dist/static/js/async/*App_App*.<hash>.js",
-			limit: "8 kb",
-		},
-		{
-			path: "dist/static/js/async/*react-use*.<hash>.js",
-			limit: "32 kb",
-		},
-		{
-			path: "dist/static/js/async/*katex*.<hash>.js",
-			limit: "51 kb",
-		},
-		{
-			path: "dist/static/js/async/*rehype-highlight*.<hash>.js",
-			limit: "130 kb",
-		},
-
-		/**
-		 * CSS static assets.
-		 */
-		{
-			path: "dist/static/css/index.<hash>.css",
-			limit: "11 kb",
-		},
-
-		/**
-		 * CSS static async assets.
-		 */
-		{
-			path: "dist/static/css/async/vendors-*katex*.<hash>.css",
-			limit: "8 kb",
-		},
+		{ path: "dist/static/js/async/574.<hash>.js", limit: "1 kb" },
+		{ path: "dist/static/js/async/59.<hash>.js", limit: "1 kb" },
+		{ path: "dist/static/js/async/693.<hash>.js", limit: "3 kb" },
+		{ path: "dist/static/js/async/918.<hash>.js", limit: "5 kb" },
+		{ path: "dist/static/js/async/208.<hash>.js", limit: "9 kb" },
+		{ path: "dist/static/js/async/939.<hash>.js", limit: "45 kb" },
+		{ path: "dist/static/js/async/44.<hash>.js", limit: "128 kb" },
+		{ path: "dist/static/js/index.<hash>.js", limit: "6 kb" },
+		{ path: "dist/static/js/lib-react.<hash>.js", limit: "46 kb" },
+		{ path: "dist/static/js/383.<hash>.js", limit: "53 kb" },
+		{ path: "dist/static/css/async/939.<hash>.css", limit: "9 kb" },
+		{ path: "dist/static/css/index.<hash>.css", limit: "11 kb" },
 	],
 };
