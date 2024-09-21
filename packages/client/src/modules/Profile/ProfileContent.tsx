@@ -13,7 +13,8 @@ import {
 import { CARDS } from "../../common/strings";
 
 import { renderDataAsList } from "../../common/utilities";
-import { CustomInstructionsPanel } from "./CustomInstructions";
+import { FineTuningPanel } from "./FineTuning";
+import { TagsPanel } from "./Tags";
 
 export const ProfileContent = () => {
 	const { isAuthenticated, user, registeringForPasskey, authenticationType } =
@@ -23,7 +24,8 @@ export const ProfileContent = () => {
 		initialValue: false,
 	});
 
-	const [showCustomInstructions, setShowCustomInstructions] = useState(false);
+	const [showFineTuning, setShowFineTuning] = useState(false);
+	const [showTags, setShowTags] = useState(false);
 
 	const listId = useUniqueId();
 	const endUser = user?.username || "";
@@ -32,18 +34,23 @@ export const ProfileContent = () => {
 		setShowEngineDetails(checked);
 	};
 
-	const onClickCustomInstructions = () => {
-		setShowCustomInstructions(!showCustomInstructions);
+	const onClickFineTuning = () => {
+		setShowFineTuning(!showFineTuning);
+	};
+
+	const onClickTags = () => {
+		setShowTags(!showTags);
 	};
 
 	return isAuthenticated && endUser ? (
 		<>
-			{showCustomInstructions && (
-				<CustomInstructionsPanel
-					open={showCustomInstructions}
-					onOpenChange={setShowCustomInstructions}
+			{showFineTuning && (
+				<FineTuningPanel
+					open={showFineTuning}
+					onOpenChange={setShowFineTuning}
 				/>
 			)}
+			{showTags && <TagsPanel open={showTags} onOpenChange={setShowTags} />}
 
 			<Card
 				header={CARDS.PREFERENCES.TITLE}
@@ -66,8 +73,16 @@ export const ProfileContent = () => {
 				<ButtonIcon
 					spacing={{ t: 2 }}
 					size="small"
-					onClick={onClickCustomInstructions}
+					onClick={onClickFineTuning}
 					labelLeft="Engine Fine Tuning"
+				>
+					<IconEdit className="size-3" monotone />
+				</ButtonIcon>
+				<ButtonIcon
+					spacing={{ t: 2, l: 2 }}
+					size="small"
+					onClick={onClickTags}
+					labelLeft="Tags"
 				>
 					<IconEdit className="size-3" monotone />
 				</ButtonIcon>

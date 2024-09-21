@@ -1,7 +1,12 @@
 import { Button } from "@versini/ui-components";
 import { useContext, useEffect, useRef } from "react";
 
-import { ACTION_RESET, ROLE_ASSISTANT } from "../../common/constants";
+import { useLocalStorage } from "@versini/ui-hooks";
+import {
+	ACTION_RESET,
+	LOCAL_STORAGE_PREFIX,
+	ROLE_ASSISTANT,
+} from "../../common/constants";
 import { CANCEL, CLEAR } from "../../common/strings";
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
@@ -11,6 +16,11 @@ export const Toolbox = () => {
 	const toolboxClass = "mt-2 flex justify-center rounded-md";
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const buttonFocusedRef = useRef(false);
+
+	const [showSummarizeArticle] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + "summarize-article",
+		initialValue: false,
+	});
 
 	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
@@ -38,17 +48,29 @@ export const Toolbox = () => {
 		}
 	}, [state]);
 
-	return isLastMessageFromRole(ROLE_ASSISTANT, state) ? (
-		<div className={toolboxClass}>
-			<Button
-				ref={buttonRef}
-				noBorder
-				onClick={clearChat}
-				mode="dark"
-				focusMode="light"
-			>
-				{state?.streaming ? CANCEL : CLEAR}
-			</Button>
-		</div>
-	) : null;
+	return (
+		<>
+			{showSummarizeArticle && (
+				<div className={toolboxClass}>
+					<Button noBorder mode="dark" focusMode="light" size="small">
+						Summarize
+					</Button>
+				</div>
+			)}
+
+			{isLastMessageFromRole(ROLE_ASSISTANT, state) && (
+				<div className={toolboxClass}>
+					<Button
+						noBorder
+						mode="dark"
+						focusMode="light"
+						ref={buttonRef}
+						onClick={clearChat}
+					>
+						{state?.streaming ? CANCEL : CLEAR}
+					</Button>
+				</div>
+			)}
+		</>
+	);
 };
