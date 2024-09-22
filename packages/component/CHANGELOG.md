@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.1.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.0.2...sassysaint-v5.1.0) (2024-09-22)
+
+
+### Features
+
+* truncating user message when it's too long ([1f07c53](https://github.com/versini-org/sassysaint-ui/commit/1f07c53f59ae34c270eb9047ae92f6f366ef9a46))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 4.4.0
+
 ## [5.0.2](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.0.1...sassysaint-v5.0.2) (2024-09-19)
 
 
