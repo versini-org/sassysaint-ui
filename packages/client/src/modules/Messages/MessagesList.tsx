@@ -10,7 +10,12 @@ import {
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-const LazyMessageAssistant = lazy(() => import("./LazyMessageAssistant"));
+const LazyMessageAssistant = lazy(
+	() =>
+		import(
+			/* webpackChunkName: "LazyMessageAssistant" */ "./LazyMessageAssistant"
+		),
+);
 
 export const MessagesList = () => {
 	const { state } = useContext(AppContext);
