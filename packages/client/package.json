@@ -23,15 +23,16 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.9.9"
+		"@versini/ui-styles": "1.10.0"
 	},
 	"dependencies": {
 		"@versini/auth-provider": "7.3.2",
-		"@versini/ui-components": "5.31.3",
-		"@versini/ui-form": "1.6.2",
+		"@versini/ui-components": "5.31.4",
+		"@versini/ui-form": "1.6.3",
 		"@versini/ui-hooks": "4.1.3",
-		"@versini/ui-icons": "1.12.3",
-		"@versini/ui-system": "1.4.12",
+		"@versini/ui-icons": "1.12.4",
+		"@versini/ui-system": "1.4.13",
+		"@versini/ui-truncate": "1.0.0",
 		"autoprefixer": "10.4.20",
 		"postcss": "8.4.47",
 		"pretty-ms": "9.1.0",

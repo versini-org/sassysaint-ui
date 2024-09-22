@@ -4,7 +4,9 @@ import { Suspense, lazy } from "react";
 
 import { APP_MOTTO, APP_NAME } from "../../common/strings";
 
-const LazyHeader = lazy(() => import("./LazyHeader"));
+const LazyHeader = lazy(
+	() => import(/* webpackChunkName: "LazyHeader" */ "./LazyHeader"),
+);
 
 export const MessagesContainerHeader = () => {
 	const { isAuthenticated } = useAuth();

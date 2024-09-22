@@ -7,7 +7,10 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const LazyReactMarkdownWithExtra = lazy(
-	() => import("./LazyMarkdownWithExtra"),
+	() =>
+		import(
+			/* webpackChunkName: "LazyMarkdownWithExtra" */ "./LazyMarkdownWithExtra"
+		),
 );
 
 import {

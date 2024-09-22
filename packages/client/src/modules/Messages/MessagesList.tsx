@@ -1,4 +1,5 @@
 import { Bubble } from "@versini/ui-components";
+import { Truncate } from "@versini/ui-truncate";
 import { Suspense, lazy, useContext } from "react";
 
 import {
@@ -9,7 +10,12 @@ import {
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-const LazyMessageAssistant = lazy(() => import("./LazyMessageAssistant"));
+const LazyMessageAssistant = lazy(
+	() =>
+		import(
+			/* webpackChunkName: "LazyMessageAssistant" */ "./LazyMessageAssistant"
+		),
+);
 
 export const MessagesList = () => {
 	const { state } = useContext(AppContext);
@@ -40,7 +46,9 @@ export const MessagesList = () => {
 								copyToClipboard={content}
 								copyToClipboardFocusMode="light"
 							>
-								{content}
+								<Truncate mode="light" focusMode="light">
+									{content}
+								</Truncate>
 							</Bubble>
 						);
 					}
