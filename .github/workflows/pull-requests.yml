@@ -24,7 +24,7 @@ jobs:
           cache: "pnpm"
       - run: |
           pnpm install
-          npx lerna run build
+          npx lerna run build:bundlesize
           npx lerna run stats:pr --scope=@sassysaint/client
           npx lerna run stats:report --scope=@sassysaint/client
       - uses: mshick/add-pr-comment@v2
@@ -75,7 +75,7 @@ jobs:
           cache: "pnpm"
       - run: |
           pnpm install
-          npx lerna run build
+          npx lerna run build:bundlesize
           npx lerna run stats:release --scope=@sassysaint/client
       - name: Commit Release Stats
         uses: stefanzweifel/git-auto-commit-action@v5

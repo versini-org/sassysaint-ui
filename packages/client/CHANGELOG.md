@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.7...client-v4.4.0) (2024-09-22)
+
+
+### Features
+
+* truncating user message when it's too long ([1f07c53](https://github.com/versini-org/sassysaint-ui/commit/1f07c53f59ae34c270eb9047ae92f6f366ef9a46))
+
 ## [4.3.7](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.6...client-v4.3.7) (2024-09-19)
 
 
