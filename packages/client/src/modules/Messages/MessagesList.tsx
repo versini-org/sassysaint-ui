@@ -1,4 +1,5 @@
 import { Bubble } from "@versini/ui-components";
+import { Truncate } from "@versini/ui-truncate";
 import { Suspense, lazy, useContext } from "react";
 
 import {
@@ -40,7 +41,9 @@ export const MessagesList = () => {
 								copyToClipboard={content}
 								copyToClipboardFocusMode="light"
 							>
-								{content}
+								<Truncate mode="light" focusMode="light">
+									{content}
+								</Truncate>
 							</Bubble>
 						);
 					}
