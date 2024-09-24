@@ -1,11 +1,16 @@
-import { useAuth } from "@versini/auth-provider";
 import { Card, Panel } from "@versini/ui-components";
 import { Toggle } from "@versini/ui-form";
-import { useEffect, useState } from "react";
 
 import { useLocalStorage } from "@versini/ui-hooks";
-import { LOCAL_STORAGE_PREFIX } from "../../common/constants";
-import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import {
+	LOCAL_STORAGE_PREFIX,
+	LOCAL_STORAGE_TAG_PROOFREAD,
+	LOCAL_STORAGE_TAG_REPHRASE,
+	LOCAL_STORAGE_TAG_SUMMARIZE,
+	TAGS,
+	TAG_CONTENT,
+} from "../../common/constants";
+import { CARDS } from "../../common/strings";
 
 export const TagsPanel = ({
 	open,
@@ -15,86 +20,56 @@ export const TagsPanel = ({
 	open: boolean;
 }) => {
 	const [showSummarizeArticle, setShowSummarizeArticle] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + "summarize-article",
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_SUMMARIZE,
 		initialValue: false,
 	});
-	const { getAccessToken, user } = useAuth();
-	const [customInstructions, setCustomInstructions] = useState({
-		loaded: false,
-		content: "",
-		loadingLocation: false,
-		location: "",
+	const [showProofreadContent, setShowProofreadContent] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_PROOFREAD,
+		initialValue: false,
 	});
-
-	/**
-	 * Effect to fetch the custom instructions (including custom location)
-	 * from the server.
-	 */
-	// biome-ignore lint/correctness/useExhaustiveDependencies: getAccessToken is stable
-	useEffect(() => {
-		if (!open || !user) {
-			/**
-			 * Panel is closed, no pre-fetching
-			 */
-			setCustomInstructions({
-				loaded: false,
-				loadingLocation: false,
-				content: "",
-				location: "",
-			});
-			return;
-		}
-
-		(async () => {
-			try {
-				const response = await serviceCall({
-					accessToken: await getAccessToken(),
-					type: SERVICE_TYPES.GET_CUSTOM_INSTRUCTIONS,
-					params: {
-						user: user.username,
-					},
-				});
-
-				if (response.status === 200) {
-					setCustomInstructions((prev) => ({
-						...prev,
-						loaded: true,
-						content: response.data.instructions,
-						location: response.data.location,
-					}));
-				}
-			} catch (_error) {
-				// nothing to declare officer
-			}
-		})();
-	}, [user, open]);
+	const [showRephraseContent, setShowRephraseContent] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_REPHRASE,
+		initialValue: false,
+	});
 
 	const onToggleSummarizeArticle = (checked: boolean) => {
 		setShowSummarizeArticle(checked);
 	};
+	const onToggleProofreadContent = (checked: boolean) => {
+		setShowProofreadContent(checked);
+	};
+	const onToggleRephraseContent = (checked: boolean) => {
+		setShowRephraseContent(checked);
+	};
 
 	return (
-		<>
-			{customInstructions.loaded && (
-				<Panel open={open} onOpenChange={onOpenChange} title={"Tags"}>
-					<Card
-						header={"Pre-filled Tags"}
-						className="prose-dark dark:prose-lighter"
-					>
-						<p>
-							Tags are pre-filled buttons available on the main screen, to help
-							you quickly start requests.
-						</p>
-						<Toggle
-							noBorder
-							label={"Summarize Article"}
-							name={"summarize-article"}
-							onChange={onToggleSummarizeArticle}
-							checked={showSummarizeArticle}
-						/>
-					</Card>
-				</Panel>
-			)}
-		</>
+		<Panel open={open} onOpenChange={onOpenChange} title={"Tags"}>
+			<Card header={CARDS.TAGS.TITLE} className="prose-dark dark:prose-lighter">
+				<p>{CARDS.TAGS.DESCRIPTION}</p>
+				<Toggle
+					noBorder
+					label={TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].label}
+					name={LOCAL_STORAGE_TAG_SUMMARIZE}
+					onChange={onToggleSummarizeArticle}
+					checked={showSummarizeArticle}
+				/>
+				<Toggle
+					spacing={{ t: 2 }}
+					noBorder
+					label={TAG_CONTENT[TAGS.PROOFREAD_CONTENT].label}
+					name={LOCAL_STORAGE_TAG_PROOFREAD}
+					onChange={onToggleProofreadContent}
+					checked={showProofreadContent}
+				/>
+				<Toggle
+					spacing={{ t: 2 }}
+					noBorder
+					label={TAG_CONTENT[TAGS.REPHRASE_CONTENT].label}
+					name={LOCAL_STORAGE_TAG_REPHRASE}
+					onChange={onToggleRephraseContent}
+					checked={showRephraseContent}
+				/>
+			</Card>
+		</Panel>
 	);
 };

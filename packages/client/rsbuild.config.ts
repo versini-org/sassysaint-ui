@@ -18,7 +18,6 @@ const buildTime = new Date()
 	.replace(/,/g, "");
 
 export default defineConfig({
-	mode: "production",
 	source: {
 		entry: {
 			index: "./src/main.tsx",

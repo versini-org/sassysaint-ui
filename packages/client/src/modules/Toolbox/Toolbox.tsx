@@ -2,23 +2,37 @@ import { Button } from "@versini/ui-components";
 import { useContext, useEffect, useRef } from "react";
 
 import { useLocalStorage } from "@versini/ui-hooks";
+import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import {
 	ACTION_RESET,
+	ACTION_TOGGLE_TAG,
 	LOCAL_STORAGE_PREFIX,
 	ROLE_ASSISTANT,
+	TAGS,
+	TAG_CONTENT,
 } from "../../common/constants";
 import { CANCEL, CLEAR } from "../../common/strings";
 import { isLastMessageFromRole } from "../../common/utilities";
-import { AppContext } from "../App/AppContext";
+import { AppContext, TagsContext } from "../App/AppContext";
 
 export const Toolbox = () => {
 	const { dispatch, state } = useContext(AppContext);
+	const { dispatch: tagsDispatch } = useContext(TagsContext);
+
 	const toolboxClass = "mt-2 flex justify-center rounded-md";
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const buttonFocusedRef = useRef(false);
 
 	const [showSummarizeArticle] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + "summarize-article",
+		initialValue: false,
+	});
+	const [showProofreadContent] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + "proofread-content",
+		initialValue: false,
+	});
+	const [showRephraseContent] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + "rephrase-content",
 		initialValue: false,
 	});
 
@@ -48,15 +62,68 @@ export const Toolbox = () => {
 		}
 	}, [state]);
 
+	const onClickToggleTag = (
+		e: { preventDefault: () => void },
+		tagType: string,
+	) => {
+		e.preventDefault();
+		tagsDispatch({
+			type: ACTION_TOGGLE_TAG,
+			payload: {
+				tag: tagType,
+			},
+		});
+	};
+
 	return (
 		<>
-			{showSummarizeArticle && (
-				<div className={toolboxClass}>
-					<Button noBorder mode="dark" focusMode="light" size="small">
-						Summarize
-					</Button>
-				</div>
-			)}
+			<Flexgrid alignHorizontal="center" columnGap={2}>
+				<FlexgridItem>
+					{showSummarizeArticle && (
+						<div className={toolboxClass}>
+							<Button
+								noBorder
+								mode="dark"
+								focusMode="light"
+								size="small"
+								onClick={(e) => onClickToggleTag(e, TAGS.SUMMARIZE_ARTICLE)}
+							>
+								{TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].label}
+							</Button>
+						</div>
+					)}
+				</FlexgridItem>
+				<FlexgridItem>
+					{showProofreadContent && (
+						<div className={toolboxClass}>
+							<Button
+								noBorder
+								mode="dark"
+								focusMode="light"
+								size="small"
+								onClick={(e) => onClickToggleTag(e, TAGS.PROOFREAD_CONTENT)}
+							>
+								{TAG_CONTENT[TAGS.PROOFREAD_CONTENT].label}
+							</Button>
+						</div>
+					)}
+				</FlexgridItem>
+				<FlexgridItem>
+					{showRephraseContent && (
+						<div className={toolboxClass}>
+							<Button
+								noBorder
+								mode="dark"
+								focusMode="light"
+								size="small"
+								onClick={(e) => onClickToggleTag(e, TAGS.REPHRASE_CONTENT)}
+							>
+								{TAG_CONTENT[TAGS.REPHRASE_CONTENT].label}
+							</Button>
+						</div>
+					)}
+				</FlexgridItem>
+			</Flexgrid>
 
 			{isLastMessageFromRole(ROLE_ASSISTANT, state) && (
 				<div className={toolboxClass}>

@@ -14,8 +14,8 @@ import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import type { ServerStatsProps } from "../../common/types";
 import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainer } from "../Messages/MessagesContainer";
-import { AppContext, HistoryContext } from "./AppContext";
-import { historyReducer, reducer } from "./reducer";
+import { AppContext, HistoryContext, TagsContext } from "./AppContext";
+import { historyReducer, reducer, tagsReducer } from "./reducer";
 
 function App({ isComponent = false }: { isComponent?: boolean }) {
 	const loadingServerStatsRef = useRef(false);
@@ -41,6 +41,10 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		sortedCell: "timestamp",
 		sortDirection: cachedSortDirection,
 	});
+	const [stateTags, dispatchTags] = useReducer(tagsReducer, {
+		tag: "",
+	});
+
 	const [serverStats, setServerStats] = useState<ServerStatsProps>({
 		version: "",
 		models: [],
@@ -93,10 +97,14 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 					dispatch: dispatchHistory,
 				}}
 			>
-				<Main>
-					<MessagesContainer />
-				</Main>
-				<AppFooter serverStats={serverStats} />
+				<TagsContext.Provider
+					value={{ state: stateTags, dispatch: dispatchTags }}
+				>
+					<Main>
+						<MessagesContainer />
+					</Main>
+					<AppFooter serverStats={serverStats} />
+				</TagsContext.Provider>
 			</HistoryContext.Provider>
 		</AppContext.Provider>
 	);

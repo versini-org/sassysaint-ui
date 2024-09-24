@@ -4,13 +4,29 @@ import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
+	ACTION_RESET_TAGS,
 	ACTION_RESTORE,
 	ACTION_SEARCH,
 	ACTION_SORT,
 	ACTION_STREAMING,
+	ACTION_TOGGLE_TAG,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { ActionProps, StateProps } from "../../common/types";
+
+export const tagsReducer = (state: any, action: any) => {
+	if (action?.type === ACTION_TOGGLE_TAG) {
+		return {
+			tag: action.payload.tag,
+		};
+	}
+	if (action?.type === ACTION_RESET_TAGS) {
+		return {
+			tag: "",
+		};
+	}
+	return state;
+};
 
 export const historyReducer = (state: any, action: any) => {
 	if (action?.type === ACTION_SEARCH) {

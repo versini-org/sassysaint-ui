@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
+	ACTION_RESET_TAGS,
 	ACTION_STREAMING,
 	ERROR_MESSAGE,
 	MODEL_GPT4,
@@ -16,10 +17,11 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 	STATS_SEPARATOR,
+	TAG_CONTENT,
 } from "../../common/constants";
 import { restCall } from "../../common/services";
 import { SEND, TYPE_QUESTION } from "../../common/strings";
-import { AppContext } from "../App/AppContext";
+import { AppContext, TagsContext } from "../App/AppContext";
 
 const dispatchStreaming = (dispatch: any, streaming: boolean) => {
 	dispatch({
@@ -50,12 +52,8 @@ export type onPromptInputSubmitProps = {
 };
 
 export const PromptInput = () => {
-	/**
-	 * Save all messages to the state in order to keep track of
-	 * the whole conversation. This is needed so that the
-	 * gpt engine can generate a response based on context.
-	 */
 	const { state, dispatch } = useContext(AppContext);
+	const { state: tagsState, dispatch: tagsDispatch } = useContext(TagsContext);
 	const [userInput, setUserInput] = useState("");
 	const { getAccessToken, user } = useAuth();
 
@@ -230,6 +228,16 @@ export const PromptInput = () => {
 			inputFocusedRef.current = false;
 		}
 	}, [state]);
+
+	useEffect(() => {
+		if (tagsState.tag !== "" && TAG_CONTENT[tagsState.tag]) {
+			setUserInput(TAG_CONTENT[tagsState.tag].content);
+			inputRef.current && inputRef.current.focus();
+			tagsDispatch({
+				type: ACTION_RESET_TAGS,
+			});
+		}
+	}, [tagsState, tagsDispatch]);
 
 	return (
 		<form className="mt-2" onSubmit={onSubmit}>
