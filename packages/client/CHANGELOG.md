@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.4.0...client-v4.5.0) (2024-09-24)
+
+
+### Features
+
+* adding pre-filled tags ([071061a](https://github.com/versini-org/sassysaint-ui/commit/071061a3c8599689d535907c9b81bbded0dece2f))
+
 ## [4.4.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.3.7...client-v4.4.0) (2024-09-22)
 
 
