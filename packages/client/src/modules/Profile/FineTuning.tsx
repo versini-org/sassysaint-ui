@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { getCurrentGeoLocation } from "../../common/utilities";
 
-export const CustomInstructionsPanel = ({
+export const FineTuningPanel = ({
 	open,
 	onOpenChange,
 }: {

@@ -19,6 +19,11 @@ export const CANCEL = "Cancel chat";
 export const NA = "N/A";
 
 export const CARDS = {
+	TAGS: {
+		TITLE: "Pre-filled tags",
+		DESCRIPTION:
+			"Tags are pre-filled buttons available on the main screen, to help you quickly start requests.",
+	},
 	PREFERENCES: {
 		TITLE: "User settings",
 		NAME: "Name",

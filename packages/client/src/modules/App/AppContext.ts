@@ -19,3 +19,8 @@ export const HistoryContext = React.createContext<any>({
 	state: { searchString: "", sortedCell: "", sortDirection: "" },
 	dispatch: () => {},
 });
+
+export const TagsContext = React.createContext<any>({
+	state: { tag: "" },
+	dispatch: () => {},
+});
