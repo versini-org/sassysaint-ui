@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.1.1](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.1.0...sassysaint-v5.1.1) (2024-09-24)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 4.5.0
+
 ## [5.1.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.0.2...sassysaint-v5.1.0) (2024-09-22)
 
 
