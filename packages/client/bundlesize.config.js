@@ -11,22 +11,22 @@ export default {
 		},
 		{
 			path: "dist/static/css/async/LazyMessageAssistant.<hash>.css",
-			limit: "10 kb",
+			limit: "9 kb",
 			alias: "Lazy Message Assistant CSS",
 		},
 		{
 			path: "dist/static/js/index.<hash>.js",
-			limit: "105 kb",
+			limit: "73 kb",
 			alias: "Initial JS + Vendors (React, auth-provider, etc.)",
 		},
 		{
 			path: "dist/static/js/async/LazyApp.<hash>.js",
-			limit: "7 kb",
+			limit: "15 kb",
 			alias: "Lazy App JS",
 		},
 		{
 			path: "dist/static/js/async/LazyHeader.<hash>.js",
-			limit: "9 kb",
+			limit: "41 kb",
 			alias: "Lazy Header JS",
 		},
 		{
@@ -36,7 +36,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/async/LazyMarkdownWithExtra.<hash>.js",
-			limit: "129 kb",
+			limit: "126 kb",
 			alias: "Lazy Markdown With Extra JS",
 		},
 	],
