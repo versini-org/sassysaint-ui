@@ -25,6 +25,9 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
         uses: actions/checkout@v4
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node
         uses: useblacksmith/setup-node@v5
         if: ${{ steps.release.outputs.releases_created }}
