@@ -1,5 +1,5 @@
 import { useAuth } from "@versini/auth-provider";
-import { Panel } from "@versini/ui-components";
+import { Panel } from "@versini/ui-panel";
 import { useEffect, useState } from "react";
 
 import { SERVICE_TYPES, serviceCall } from "../../common/services";

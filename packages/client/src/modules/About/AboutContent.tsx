@@ -1,4 +1,4 @@
-import { Card } from "@versini/ui-components";
+import { Card } from "@versini/ui-card";
 import { useUniqueId } from "@versini/ui-hooks";
 
 import { CARDS } from "../../common/strings";

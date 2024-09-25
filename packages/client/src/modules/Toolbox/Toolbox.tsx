@@ -1,8 +1,8 @@
-import { Button } from "@versini/ui-components";
-import { useContext, useEffect, useRef } from "react";
-
+import { Button } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { useContext, useEffect, useRef } from "react";
+
 import {
 	ACTION_RESET,
 	ACTION_TOGGLE_TAG,

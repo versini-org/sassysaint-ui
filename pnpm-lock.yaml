@@ -23,21 +23,51 @@ importers:
       '@versini/auth-provider':
         specifier: 7.3.2
         version: 7.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-components':
-        specifier: 5.31.5
-        version: 5.31.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-form':
-        specifier: 1.6.4
-        version: 1.6.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-bubble':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-button':
+        specifier: 1.1.4
+        version: 1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-card':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-footer':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
       '@versini/ui-hooks':
         specifier: 4.1.3
         version: 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.12.5
         version: 1.12.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-main':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-menu':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-panel':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-spinner':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
       '@versini/ui-system':
         specifier: 1.4.14
         version: 1.4.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-table':
+        specifier: 1.0.4
+        version: 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-textarea':
+        specifier: 1.0.3
+        version: 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-textinput':
+        specifier: 1.0.3
+        version: 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
+      '@versini/ui-toggle':
+        specifier: 1.0.3
+        version: 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
       '@versini/ui-truncate':
         specifier: 1.0.1
         version: 1.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
@@ -1415,12 +1445,6 @@ packages:
   '@versini/dev-dependencies-types@1.3.7':
     resolution: {integrity: sha512-M7a/d4xj1k7k3BQj2m4kGS953Q1gCB6m9buHNnFGnoTuuclyyEiLjRn86j9uIBa0e5FweW+R5YnKbPnHcoOGeg==}
 
-  '@versini/ui-anchor@1.1.4':
-    resolution: {integrity: sha512-0b3Uv959aJKUQlRPBQ2cxgQMeMC9O6sQzqDWeelqev7fsc7cQBixkWkMvu0MYVOzMTmC7vOqmbxGCDT8/sMgaQ==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
   '@versini/ui-bubble@1.0.4':
     resolution: {integrity: sha512-OACS5dwJqs/ol1cFbcPvGmNob4KzqI4yFpBrDAdHL1HKJXwdKWkp3RBkrEfXWYaAsv5bSRARGsFSL7s5WgEKWQ==}
     peerDependencies:
@@ -1439,26 +1463,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-components@5.31.5':
-    resolution: {integrity: sha512-0JbpgQQ8sJ0E5WYnLG6H7poCQkqe5IDjo0JDW6jlxWOT/aS/SMGrwH6/QeHL5n2y17QGDDe9iIxMQSFHWicUFA==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
   '@versini/ui-footer@1.0.4':
     resolution: {integrity: sha512-gmTlMqSGmX5aSvSrvZ8IdzXsEF+gCG7h07DRnni8zLyGYzyc4yT2j/0Y1lVKh47d/qMMG/EuB8yNkmfTqroCJQ==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-form@1.6.4':
-    resolution: {integrity: sha512-cFlQIro5+pN+gSMnQZsezdruJjTR2TL0tyoQ2lHq6hVHIJi2GNsj3mfAqqnpzDBpOLcdURr/VUpi3BkGwe6YbQ==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-header@1.0.4':
-    resolution: {integrity: sha512-zI0iTMsrQHC3cFisJaCeB8uNhuLEUi1yAi0Mz7yzooKen8PQtH35MTIQpSRa2baeZ+5LL5jO/H+/kwSVFvh0uw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1489,12 +1495,6 @@ packages:
 
   '@versini/ui-panel@1.0.4':
     resolution: {integrity: sha512-7MFsdvbY2DHDA5GX9JUR3CO/AxTyDqSWQ5aGazmA6HvpCLjoYRYMS9O+iVU25mGHYn93F1a5RIpimslwPZ1kxg==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-pill@1.0.4':
-    resolution: {integrity: sha512-ewn/RwfjBDxXRjEeH58BDXYmCfXizImJuce080KXTzEqZFcIwvRe2qnKiHcEll257UIFTzNaf+wiXA6WSZI6hQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -7076,16 +7076,6 @@ snapshots:
       '@types/uuid': 10.0.0
       '@types/yargs': 17.0.33
 
-  '@versini/ui-anchor@1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
-    dependencies:
-      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
-      '@versini/ui-button': 1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tailwindcss: 3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-    transitivePeerDependencies:
-      - ts-node
-
   '@versini/ui-bubble@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
@@ -7122,56 +7112,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-components@5.31.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
-    dependencies:
-      '@versini/ui-anchor': 1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-bubble': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-button': 1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-card': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-footer': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-header': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-hooks': 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-icons': 1.12.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-main': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-menu': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-panel': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-pill': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-spinner': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-table': 1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    transitivePeerDependencies:
-      - ts-node
-
   '@versini/ui-footer@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
       '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tailwindcss: 3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-    transitivePeerDependencies:
-      - ts-node
-
-  '@versini/ui-form@1.6.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
-    dependencies:
-      '@versini/ui-hooks': 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-textarea': 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-textinput': 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      '@versini/ui-toggle': 1.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-      clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    transitivePeerDependencies:
-      - ts-node
-
-  '@versini/ui-header@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
-    dependencies:
-      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
-      '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      clsx: 2.1.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tailwindcss: 3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
@@ -7215,17 +7159,6 @@ snapshots:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
       '@versini/ui-button': 1.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
       '@versini/ui-icons': 1.12.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tailwindcss: 3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))
-    transitivePeerDependencies:
-      - ts-node
-
-  '@versini/ui-pill@1.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4))':
-    dependencies:
-      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.5.4)))
       '@versini/ui-private': 1.4.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1

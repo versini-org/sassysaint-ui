@@ -1,8 +1,10 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon, Card, Main } from "@versini/ui-components";
-import { TextInput, TextInputMask } from "@versini/ui-form";
+import { Button, ButtonIcon } from "@versini/ui-button";
+import { Card } from "@versini/ui-card";
 import { IconHide, IconPasskey, IconShow } from "@versini/ui-icons";
+import { Main } from "@versini/ui-main";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { TextInput, TextInputMask } from "@versini/ui-textinput";
 import { useEffect, useState } from "react";
 
 import {

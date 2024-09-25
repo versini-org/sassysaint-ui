@@ -1,7 +1,8 @@
 import "katex/dist/katex.min.css";
 
-import { Bubble, Spinner } from "@versini/ui-components";
+import { Bubble } from "@versini/ui-bubble";
 import { useLocalStorage } from "@versini/ui-hooks";
+import { Spinner } from "@versini/ui-spinner";
 import { Suspense, lazy, useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";

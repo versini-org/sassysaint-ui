@@ -1,7 +1,7 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button } from "@versini/ui-components";
-import { TextInput } from "@versini/ui-form";
+import { Button } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
+import { TextInput } from "@versini/ui-textinput";
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 
 import {

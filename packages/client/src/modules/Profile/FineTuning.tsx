@@ -1,7 +1,9 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button, Card, Panel } from "@versini/ui-components";
-import { TextArea } from "@versini/ui-form";
+import { Button } from "@versini/ui-button";
+import { Card } from "@versini/ui-card";
+import { Panel } from "@versini/ui-panel";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { TextArea } from "@versini/ui-textarea";
 import { useEffect, useState } from "react";
 
 import { SERVICE_TYPES, serviceCall } from "../../common/services";

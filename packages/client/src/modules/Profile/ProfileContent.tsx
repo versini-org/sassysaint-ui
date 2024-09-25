@@ -1,9 +1,10 @@
 import { AUTH_TYPES, useAuth } from "@versini/auth-provider";
-import { ButtonIcon, Card } from "@versini/ui-components";
-import { Toggle } from "@versini/ui-form";
+import { ButtonIcon } from "@versini/ui-button";
+import { Card } from "@versini/ui-card";
 import { useLocalStorage, useUniqueId } from "@versini/ui-hooks";
 import { IconEdit, IconPasskey } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { Toggle } from "@versini/ui-toggle";
 import { useState } from "react";
 
 import {

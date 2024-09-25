@@ -1,7 +1,7 @@
-import { Card } from "@versini/ui-components";
+import { Card } from "@versini/ui-card";
+import { useUniqueId } from "@versini/ui-hooks";
 import { useContext } from "react";
 
-import { useUniqueId } from "@versini/ui-hooks";
 import {
 	GPT4_MAX_TOKENS,
 	MODEL_GPT4,

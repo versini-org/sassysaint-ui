@@ -1,6 +1,6 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button } from "@versini/ui-components";
-import { TextArea } from "@versini/ui-form";
+import { Button } from "@versini/ui-button";
+import { TextArea } from "@versini/ui-textarea";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 

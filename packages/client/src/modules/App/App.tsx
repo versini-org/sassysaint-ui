@@ -1,6 +1,7 @@
 import { useAuth } from "@versini/auth-provider";
-import { Main, TableCellSortDirections } from "@versini/ui-components";
 import { useLocalStorage } from "@versini/ui-hooks";
+import { Main } from "@versini/ui-main";
+import { TableCellSortDirections } from "@versini/ui-table";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
