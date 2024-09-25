@@ -1,6 +1,6 @@
-import { Panel } from "@versini/ui-components";
-
+import { Panel } from "@versini/ui-panel";
 import { useContext } from "react";
+
 import { ABOUT_TITLE } from "../../common/strings";
 import { AppContext } from "../App/AppContext";
 import { AboutContent } from "./AboutContent";

@@ -1,4 +1,4 @@
-import { Panel } from "@versini/ui-components";
+import { Panel } from "@versini/ui-panel";
 
 import { HISTORY_TITLE } from "../../common/strings";
 import { HistoryContent } from "./HistoryContent";

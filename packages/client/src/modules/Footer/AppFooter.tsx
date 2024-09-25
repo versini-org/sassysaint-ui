@@ -1,4 +1,5 @@
-import { Footer } from "@versini/ui-components";
+import { Footer } from "@versini/ui-footer";
+
 import { APP_NAME, APP_OWNER, POWERED_BY } from "../../common/strings";
 import type { ServerStatsProps } from "../../common/types";
 import { isDev } from "../../common/utilities";

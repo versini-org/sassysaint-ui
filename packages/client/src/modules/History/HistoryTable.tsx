@@ -1,6 +1,8 @@
 import { useAuth } from "@versini/auth-provider";
+import { ButtonIcon } from "@versini/ui-button";
+import { useLocalStorage } from "@versini/ui-hooks";
+import { IconDelete, IconRestore } from "@versini/ui-icons";
 import {
-	ButtonIcon,
 	Table,
 	TableBody,
 	TableCell,
@@ -9,9 +11,7 @@ import {
 	TableFooter,
 	TableHead,
 	TableRow,
-} from "@versini/ui-components";
-import { useLocalStorage } from "@versini/ui-hooks";
-import { IconDelete, IconRestore } from "@versini/ui-icons";
+} from "@versini/ui-table";
 import { useContext, useRef, useState } from "react";
 import { useMedia } from "react-use";
 

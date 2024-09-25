@@ -1,4 +1,4 @@
-import { Panel } from "@versini/ui-components";
+import { Panel } from "@versini/ui-panel";
 
 import { PROFILE_TITLE } from "../../common/strings";
 import { ProfileContent } from "./ProfileContent";

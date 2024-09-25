@@ -1,10 +1,5 @@
 import { useAuth } from "@versini/auth-provider";
-import {
-	ButtonIcon,
-	Menu,
-	MenuItem,
-	MenuSeparator,
-} from "@versini/ui-components";
+import { ButtonIcon } from "@versini/ui-button";
 import {
 	IconBack,
 	IconChart,
@@ -13,13 +8,13 @@ import {
 	IconProfile,
 	IconSettings,
 } from "@versini/ui-icons";
+import { Menu, MenuItem, MenuSeparator } from "@versini/ui-menu";
 import { useContext, useState } from "react";
+
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { LOG_OUT, STATS } from "../../common/strings";
-import { AppContext } from "../App/AppContext";
-
 import { About } from "../About/About";
-
+import { AppContext } from "../App/AppContext";
 import { ChatDetails } from "../ChatDetails/ChatDetails";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 import { History } from "../History/History";

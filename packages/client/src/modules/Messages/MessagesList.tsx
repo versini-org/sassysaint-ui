@@ -1,4 +1,4 @@
-import { Bubble } from "@versini/ui-components";
+import { Bubble } from "@versini/ui-bubble";
 import { Truncate } from "@versini/ui-truncate";
 import { Suspense, lazy, useContext } from "react";
 

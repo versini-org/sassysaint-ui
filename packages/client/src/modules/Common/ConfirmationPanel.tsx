@@ -1,5 +1,5 @@
-import { Button } from "@versini/ui-components";
-import { Panel } from "@versini/ui-components";
+import { Button } from "@versini/ui-button";
+import { Panel } from "@versini/ui-panel";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 
 export const ConfirmationPanel = ({

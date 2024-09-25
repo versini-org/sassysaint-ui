@@ -1,5 +1,6 @@
-import { Card, Panel } from "@versini/ui-components";
-import { Toggle } from "@versini/ui-form";
+import { Card } from "@versini/ui-card";
+import { Panel } from "@versini/ui-panel";
+import { Toggle } from "@versini/ui-toggle";
 
 import { useLocalStorage } from "@versini/ui-hooks";
 import {
