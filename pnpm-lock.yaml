@@ -21,8 +21,8 @@ importers:
   packages/client:
     dependencies:
       '@versini/auth-provider':
-        specifier: 7.3.2
-        version: 7.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.3.3
+        version: 7.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-bubble':
         specifier: 1.0.10
         version: 1.0.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -63,8 +63,8 @@ importers:
         specifier: 1.0.7
         version: 1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-textinput':
-        specifier: 1.1.6
-        version: 1.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.2.0
+        version: 1.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-toggle':
         specifier: 1.0.7
         version: 1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1417,11 +1417,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@versini/auth-common@4.1.2':
-    resolution: {integrity: sha512-/NIzvlbmu09EX5mA09KxXbYZhH28/unR40rF/Jhajl76QPco+p/EQviKXCxdPa6jpXpatq1E6KViXAbMzb2shg==}
+  '@versini/auth-common@4.1.3':
+    resolution: {integrity: sha512-GZi5HOg2jpsww76ktGN8ELBYxZgDV89yjX45ASpUlTIZOSDLbPHF+1gqS/+pjrrMYEyTm5uuRbkv7nONs0z5MA==}
 
-  '@versini/auth-provider@7.3.2':
-    resolution: {integrity: sha512-OwXkUEYZ8lpfrmGptLEKn2euej4/lBDX1a/id1GvkZYJp2gZ3wcf8sc6IpZ+Ld1UZFa3KzTzaokSYLwWASx/7w==}
+  '@versini/auth-provider@7.3.3':
+    resolution: {integrity: sha512-8HTQhA4j8iqVWs47S7ik54919hAnRG6uBDqfTO+qA6MEnwEw1og8VD+bvN2GQd9ZUQAZQIFnAyl+IYWiGfmldQ==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1455,12 +1455,6 @@ packages:
 
   '@versini/ui-footer@1.0.8':
     resolution: {integrity: sha512-/2vyoHugkk8xiwg0VuscRoRbJ77B8rKp2vMHsSYkUaSkgktUaaTbzQaWFz69Q6+4Kl8xUk8L4Xwsf0i7YtkJzA==}
-    peerDependencies:
-      react: ^18.3.1
-      react-dom: ^18.3.1
-
-  '@versini/ui-hooks@4.1.3':
-    resolution: {integrity: sha512-wJrjTw/GP0mtaYKrGz4PxTYT4cUt/wYnLm7To2z1ZRToQB3JEKEPh8TvlUKZKS4+Te/0bbRR+L+rWcof4nZkjg==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1528,8 +1522,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-textinput@1.1.6':
-    resolution: {integrity: sha512-BaD3CGQJF9v89/ZTKMEuDAOnlbWGcooLr5VolK387jK+/W5p+2kr+28okG3WSTpUBb4Fd7lWlFjEzJNF74shgg==}
+  '@versini/ui-textinput@1.2.0':
+    resolution: {integrity: sha512-tPp4BGYWxotgRQVF5fFGK3kYW/0kwcjOiH0iDNf93fIXW+AmFnR8oc8Kbmm/RT41MoYcOfsi2qAbJTISSXQNEw==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -3303,8 +3297,8 @@ packages:
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
-  jose@5.9.2:
-    resolution: {integrity: sha512-ILI2xx/I57b20sd7rHZvgiiQrmp2mcotwsAH+5ajbpFQbrYVQdNHYlQhoA5cFb78CgtBOxtC05TeA+mcgkuCqQ==}
+  jose@5.9.3:
+    resolution: {integrity: sha512-egLIoYSpcd+QUF+UHgobt5YzI2Pkw/H39ou9suW687MY6PmCwPmkNV/4TNjn1p2tX5xO3j0d0sq5hiYE24bSlg==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -6896,17 +6890,17 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@versini/auth-common@4.1.2':
+  '@versini/auth-common@4.1.3':
     dependencies:
-      jose: 5.9.2
+      jose: 5.9.3
       uuid: 10.0.0
 
-  '@versini/auth-provider@7.3.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/auth-provider@7.3.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@simplewebauthn/browser': 10.0.0
-      '@versini/auth-common': 4.1.2
-      '@versini/ui-hooks': 4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      jose: 5.9.2
+      '@versini/auth-common': 4.1.3
+      '@versini/ui-hooks': 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      jose: 5.9.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       uuid: 10.0.0
@@ -7077,11 +7071,6 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-hooks@4.1.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@versini/ui-hooks@4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
@@ -7187,7 +7176,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-textinput@1.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-textinput@1.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.7.4)(typescript@5.6.2)))
       '@versini/ui-hooks': 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9165,7 +9154,7 @@ snapshots:
 
   jju@1.4.0: {}
 
-  jose@5.9.2: {}
+  jose@5.9.3: {}
 
   joycon@3.1.1: {}
 

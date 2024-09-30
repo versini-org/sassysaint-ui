@@ -26,7 +26,7 @@
 		"@versini/ui-styles": "1.10.2"
 	},
 	"dependencies": {
-		"@versini/auth-provider": "7.3.2",
+		"@versini/auth-provider": "7.3.3",
 		"@versini/ui-bubble": "1.0.10",
 		"@versini/ui-button": "1.1.10",
 		"@versini/ui-card": "1.0.8",
@@ -40,7 +40,7 @@
 		"@versini/ui-system": "1.4.19",
 		"@versini/ui-table": "1.0.10",
 		"@versini/ui-textarea": "1.0.7",
-		"@versini/ui-textinput": "1.1.6",
+		"@versini/ui-textinput": "1.2.0",
 		"@versini/ui-toggle": "1.0.7",
 		"@versini/ui-truncate": "1.0.7",
 		"autoprefixer": "10.4.20",
