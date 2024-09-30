@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.5.3](https://github.com/versini-org/sassysaint-ui/compare/client-v4.5.2...client-v4.5.3) (2024-09-30)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([ed55aa7](https://github.com/versini-org/sassysaint-ui/commit/ed55aa72cc78a8c5a246809e44163309b9acbe05))
+
 ## [4.5.2](https://github.com/versini-org/sassysaint-ui/compare/client-v4.5.1...client-v4.5.2) (2024-09-29)
 
 
