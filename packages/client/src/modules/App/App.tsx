@@ -6,10 +6,11 @@ import { useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
+	ACTION_ENGINE,
+	DEFAULT_AI_ENGINE,
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 	LOCAL_STORAGE_SORT,
-	MODEL_GPT4,
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import type { ServerStatsProps } from "../../common/types";
@@ -20,7 +21,7 @@ import { historyReducer, reducer, tagsReducer } from "./reducer";
 
 function App({ isComponent = false }: { isComponent?: boolean }) {
 	const loadingServerStatsRef = useRef(false);
-	const { getAccessToken } = useAuth();
+	const { getAccessToken, user } = useAuth();
 	const [cachedSearchedString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
 		initialValue: "",
@@ -32,7 +33,8 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 
 	const [state, dispatch] = useReducer(reducer, {
 		id: uuidv4(),
-		model: MODEL_GPT4,
+		model: DEFAULT_AI_ENGINE,
+		engine: DEFAULT_AI_ENGINE,
 		usage: 0,
 		messages: [],
 		isComponent,
@@ -50,6 +52,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		version: "",
 		models: [],
 		plugins: [],
+		engine: DEFAULT_AI_ENGINE,
 	});
 
 	/**
@@ -66,17 +69,26 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 				const response = await serviceCall({
 					accessToken: await getAccessToken(),
 					type: SERVICE_TYPES.ABOUT,
+					params: {
+						user: user?.username,
+					},
 				});
 				loadingServerStatsRef.current = false;
 
 				if (response.status === 200) {
 					setServerStats(response.data);
+					dispatch({
+						type: ACTION_ENGINE,
+						payload: {
+							engine: response.data.engine,
+						},
+					});
 				}
 			} catch (_error) {
 				// nothing to declare officer
 			}
 		})();
-	}, [serverStats, getAccessToken]);
+	}, [serverStats, getAccessToken, user]);
 
 	/**
 	 * Effect to animate the logo and the app container when the app is loaded.

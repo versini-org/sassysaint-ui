@@ -9,8 +9,8 @@ import {
 	ACTION_MODEL,
 	ACTION_RESET_TAGS,
 	ACTION_STREAMING,
+	DEFAULT_AI_ENGINE,
 	ERROR_MESSAGE,
-	MODEL_GPT4,
 	ROLE_ASSISTANT,
 	ROLE_HIDDEN,
 	ROLE_INTERNAL,
@@ -98,7 +98,7 @@ export const PromptInput = () => {
 					name: "generate",
 					data: {
 						messages: state.messages,
-						model: MODEL_GPT4,
+						model: state.engine || DEFAULT_AI_ENGINE,
 						user: user?.username || "",
 						id: state.id,
 						usage: state.usage,

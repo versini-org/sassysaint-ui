@@ -1,18 +1,24 @@
 import React from "react";
 
-import { MODEL_GPT4 } from "../../common/constants";
+import { DEFAULT_AI_ENGINE } from "../../common/constants";
 import type { AppContextProps } from "../../common/types";
 
 export const AppContext = React.createContext<AppContextProps>({
 	state: {
 		id: "",
-		model: MODEL_GPT4,
+		model: DEFAULT_AI_ENGINE,
+		engine: DEFAULT_AI_ENGINE,
 		usage: 0,
 		messages: [],
 		isComponent: false,
 	},
 	dispatch: () => {},
-	serverStats: { version: "", models: [], plugins: [] },
+	serverStats: {
+		version: "",
+		models: [],
+		plugins: [],
+		engine: DEFAULT_AI_ENGINE,
+	},
 });
 
 export const HistoryContext = React.createContext<any>({

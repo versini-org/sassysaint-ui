@@ -7,7 +7,9 @@ export const ROLE_HIDDEN = "hidden";
 export const ERROR_MESSAGE =
 	"I'm having trouble right now. Please try again later.";
 
-export const MODEL_GPT4 = "gpt-4";
+export const DEFAULT_AI_ENGINE = "OpenAI";
+export const ENGINE_OPENAI = "OpenAI";
+export const ENGINE_ANTHROPIC = "Anthropic";
 export const GPT4_MAX_TOKENS = 128000;
 
 /**
@@ -18,6 +20,7 @@ export const ACTION_RESET = "action-reset";
 export const ACTION_MODEL = "action-model";
 export const ACTION_RESTORE = "action-restore";
 export const ACTION_STREAMING = "action-streaming";
+export const ACTION_ENGINE = "action-engine";
 
 /**
  * History reducer action types
