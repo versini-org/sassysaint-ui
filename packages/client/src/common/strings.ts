@@ -7,7 +7,7 @@ export const LOG_IN = "Log in";
 export const LOG_IN_PASSKEY = "Sign in with a Passkey";
 export const LOG_OUT = "Log out";
 export const PASSWORD_PLACEHOLDER = "Password";
-export const POWERED_BY = "Powered by OpenAI";
+export const POWERED_BY = "Powered by ";
 export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";
 export const STATS = "Statistics";
@@ -55,7 +55,7 @@ export const CARDS = {
 		TITLE_SERVER: "Server details",
 		VERSION: "Version",
 		BUILD_TIMESTAMP: "Build date",
-		ENGINE: "OpenAI model",
+		ENGINE: "AI model",
 		PLUGIN: "Plugin",
 	},
 };

@@ -3,8 +3,8 @@ import { useUniqueId } from "@versini/ui-hooks";
 import { useContext } from "react";
 
 import {
+	DEFAULT_AI_ENGINE,
 	GPT4_MAX_TOKENS,
-	MODEL_GPT4,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { CARDS, NA } from "../../common/strings";
@@ -68,7 +68,8 @@ export const ChatDetailsContent = ({
 						className="prose-dark dark:prose-lighter"
 					>
 						{renderDataAsList(listIdCurrent, {
-							[CARDS.CURRENT_STATISTICS.MODEL_NAME]: state?.model || MODEL_GPT4,
+							[CARDS.CURRENT_STATISTICS.MODEL_NAME]:
+								state?.model || DEFAULT_AI_ENGINE,
 							[CARDS.CURRENT_STATISTICS.TOKENS_USED]: state?.usage,
 							[CARDS.CURRENT_STATISTICS.REMAINING_TOKENS]:
 								numberFormatter.format(remainingTokens),

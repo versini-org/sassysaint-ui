@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 import {
+	ACTION_ENGINE,
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
@@ -65,6 +66,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: action.payload.usage,
 			isComponent: state.isComponent,
 			messages,
+			engine: state.engine,
 		};
 	}
 
@@ -110,6 +112,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 						usage: state.usage,
 						isComponent: state.isComponent,
 						messages,
+						engine: state.engine,
 					};
 				}
 			}
@@ -117,6 +120,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			return {
 				id: state.id,
 				model: state.model,
+				engine: state.engine,
 				usage: state.usage,
 				isComponent: state.isComponent,
 				messages: [
@@ -133,6 +137,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		return {
 			id: uuidv4(),
 			model: state.model,
+			engine: state.engine,
 			usage: 0,
 			messages: [],
 			isComponent: state.isComponent,
@@ -143,9 +148,17 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 		return {
 			id: state.id,
 			model: action.payload.model,
+			engine: state.engine,
 			usage: action.payload.usage,
 			messages: state.messages,
 			isComponent: state.isComponent,
+		};
+	}
+
+	if (action?.type === ACTION_ENGINE) {
+		return {
+			...state,
+			engine: action.payload.engine,
 		};
 	}
 

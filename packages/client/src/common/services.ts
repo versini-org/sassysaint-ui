@@ -43,27 +43,31 @@ export const GRAPHQL_QUERIES = {
 			}
 		}
 	}`,
-	ABOUT: `query About {
-		about {
+	ABOUT: `query About($user: String!) {
+		about(user: $user) {
 			version
 			models
 			plugins
+			engine
 		}
 	}`,
-	GET_CUSTOM_INSTRUCTIONS: `query GetCustomInstructions($user: String!) {
-		getCustomInstructions(user: $user) {
+	GET_USER_PREFERENCES: `query GetUserPreferences($user: String!) {
+		getUserPreferences(user: $user) {
 			instructions
 			location
+			engine
 		}
 	}`,
-	SET_CUSTOM_INSTRUCTIONS: `mutation SetCustomInstructions(
+	SET_USER_PREFERENCES: `mutation SetUserPreferences(
 		$user: String!,
 		$instructions: String!,
-		$location: String) {
-			setCustomInstructions(
+		$location: String,
+		$engine: String) {
+			setUserPreferences(
 			user: $user,
 			instructions: $instructions,
-			location: $location)
+			location: $location,
+			engine: $engine)
 	}`,
 };
 
@@ -108,22 +112,25 @@ export const SERVICE_TYPES = {
 	ABOUT: {
 		schema: GRAPHQL_QUERIES.ABOUT,
 		method: "about",
-		data: () => ({}),
-	},
-	GET_CUSTOM_INSTRUCTIONS: {
-		schema: GRAPHQL_QUERIES.GET_CUSTOM_INSTRUCTIONS,
-		method: "getCustomInstructions",
 		data: (params: any) => ({
 			user: params.user,
 		}),
 	},
-	SET_CUSTOM_INSTRUCTIONS: {
-		schema: GRAPHQL_QUERIES.SET_CUSTOM_INSTRUCTIONS,
-		method: "setCustomInstructions",
+	GET_USER_PREFERENCES: {
+		schema: GRAPHQL_QUERIES.GET_USER_PREFERENCES,
+		method: "getUserPreferences",
+		data: (params: any) => ({
+			user: params.user,
+		}),
+	},
+	SET_USER_PREFERENCES: {
+		schema: GRAPHQL_QUERIES.SET_USER_PREFERENCES,
+		method: "setUserPreferences",
 		data: (params: any) => ({
 			user: params.user,
 			instructions: params.instructions,
 			location: params.location,
+			engine: params.engine,
 		}),
 	},
 };

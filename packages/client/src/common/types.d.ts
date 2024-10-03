@@ -1,4 +1,5 @@
 import {
+	ACTION_ENGINE,
 	ACTION_LOCATION,
 	ACTION_MESSAGE,
 	ACTION_MODEL,
@@ -33,6 +34,7 @@ export type StateProps = {
 	model: string;
 	usage: number;
 	isComponent: boolean;
+	engine: string;
 
 	streaming?: boolean;
 };
@@ -67,12 +69,19 @@ export type ActionProps =
 				streaming: boolean;
 			};
 			type: typeof ACTION_STREAMING;
+	  }
+	| {
+			payload: {
+				engine: string;
+			};
+			type: typeof ACTION_ENGINE;
 	  };
 
 export type ServerStatsProps = {
 	version: string;
 	models: string[];
 	plugins: string[];
+	engine: string;
 };
 
 export type AppContextProps = {

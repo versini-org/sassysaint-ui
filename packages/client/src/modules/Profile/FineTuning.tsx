@@ -4,10 +4,18 @@ import { Card } from "@versini/ui-card";
 import { Panel } from "@versini/ui-panel";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { TextArea } from "@versini/ui-textarea";
-import { useEffect, useState } from "react";
+import { Toggle } from "@versini/ui-toggle";
+import { useContext, useEffect, useState } from "react";
 
+import {
+	ACTION_ENGINE,
+	DEFAULT_AI_ENGINE,
+	ENGINE_ANTHROPIC,
+	ENGINE_OPENAI,
+} from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { getCurrentGeoLocation } from "../../common/utilities";
+import { AppContext } from "../App/AppContext";
 
 export const FineTuningPanel = ({
 	open,
@@ -16,12 +24,14 @@ export const FineTuningPanel = ({
 	onOpenChange: any;
 	open: boolean;
 }) => {
+	const { dispatch } = useContext(AppContext);
 	const { getAccessToken, user } = useAuth();
-	const [customInstructions, setCustomInstructions] = useState({
+	const [userPreferences, setUserPreferences] = useState({
 		loaded: false,
 		content: "",
 		loadingLocation: false,
 		location: "",
+		engine: DEFAULT_AI_ENGINE,
 	});
 
 	const onSave = async (e: { preventDefault: () => void }) => {
@@ -29,11 +39,18 @@ export const FineTuningPanel = ({
 		try {
 			await serviceCall({
 				accessToken: await getAccessToken(),
-				type: SERVICE_TYPES.SET_CUSTOM_INSTRUCTIONS,
+				type: SERVICE_TYPES.SET_USER_PREFERENCES,
 				params: {
 					user: user?.username,
-					instructions: customInstructions.content,
-					location: customInstructions.location,
+					instructions: userPreferences.content,
+					location: userPreferences.location,
+					engine: userPreferences.engine,
+				},
+			});
+			dispatch({
+				type: ACTION_ENGINE,
+				payload: {
+					engine: userPreferences.engine,
 				},
 			});
 		} catch (_error) {
@@ -42,7 +59,7 @@ export const FineTuningPanel = ({
 	};
 
 	const onDetectLocation = async () => {
-		setCustomInstructions((prev) => ({
+		setUserPreferences((prev) => ({
 			...prev,
 			location: "...",
 			loadingLocation: true,
@@ -71,14 +88,14 @@ export const FineTuningPanel = ({
 					city && state && country
 						? `${city}, ${state}, ${country}`
 						: displayName;
-				setCustomInstructions((prev) => ({
+				setUserPreferences((prev) => ({
 					...prev,
 					loaded: true,
 					location,
 					loadingLocation: false,
 				}));
 			} else {
-				setCustomInstructions((prev) => ({
+				setUserPreferences((prev) => ({
 					...prev,
 					loaded: true,
 					location: "",
@@ -88,6 +105,19 @@ export const FineTuningPanel = ({
 		} catch (_error) {
 			// nothing to declare officer
 		}
+	};
+
+	const onToggleEngineOpenAI = (checked: boolean) => {
+		setUserPreferences((prev) => ({
+			...prev,
+			engine: checked ? ENGINE_OPENAI : ENGINE_ANTHROPIC,
+		}));
+	};
+	const onToggleEngineAnthropic = (checked: boolean) => {
+		setUserPreferences((prev) => ({
+			...prev,
+			engine: checked ? ENGINE_ANTHROPIC : ENGINE_OPENAI,
+		}));
 	};
 
 	/**
@@ -100,11 +130,12 @@ export const FineTuningPanel = ({
 			/**
 			 * Panel is closed, no pre-fetching
 			 */
-			setCustomInstructions({
+			setUserPreferences({
 				loaded: false,
 				loadingLocation: false,
 				content: "",
 				location: "",
+				engine: DEFAULT_AI_ENGINE,
 			});
 			return;
 		}
@@ -113,18 +144,19 @@ export const FineTuningPanel = ({
 			try {
 				const response = await serviceCall({
 					accessToken: await getAccessToken(),
-					type: SERVICE_TYPES.GET_CUSTOM_INSTRUCTIONS,
+					type: SERVICE_TYPES.GET_USER_PREFERENCES,
 					params: {
 						user: user.username,
 					},
 				});
 
 				if (response.status === 200) {
-					setCustomInstructions((prev) => ({
+					setUserPreferences((prev) => ({
 						...prev,
 						loaded: true,
 						content: response.data.instructions,
 						location: response.data.location,
+						engine: response.data.engine,
 					}));
 				}
 			} catch (_error) {
@@ -135,7 +167,7 @@ export const FineTuningPanel = ({
 
 	return (
 		<>
-			{customInstructions.loaded && (
+			{userPreferences.loaded && (
 				<Panel
 					open={open}
 					onOpenChange={onOpenChange}
@@ -171,68 +203,99 @@ export const FineTuningPanel = ({
 						</Flexgrid>
 					}
 				>
-					<Card
-						header={"Custom Instructions"}
-						className="prose-dark dark:prose-lighter"
-					>
-						<p>
-							What would you like Sassy Saint to know about you to provide
-							better responses?
-						</p>
-						<TextArea
-							mode="alt-system"
-							autoCapitalize="off"
-							autoComplete="off"
-							autoCorrect="off"
-							name="customInstructions"
-							label="Custom Instructions"
-							value={customInstructions.content}
-							onChange={(e: any) => {
-								setCustomInstructions((prev) => ({
-									...prev,
-									loaded: true,
-									content: e.target.value,
-								}));
-							}}
-							helperText="Press ENTER to add a new line."
-						/>
-					</Card>
-
-					<Card
-						header={"Location"}
-						className="prose-dark dark:prose-lighter"
-						spacing={{ t: 4 }}
-					>
-						<p>
-							You can share your location to receive customized responses based
-							on your area.
-						</p>
-						<TextArea
-							mode="alt-system"
-							name="location"
-							label={"Location"}
-							value={customInstructions.location}
-							onChange={(e: any) => {
-								setCustomInstructions((prev) => ({
-									...prev,
-									loaded: true,
-									location: e.target.value,
-								}));
-							}}
-							helperText="Enter your location or press auto-detect."
-						/>
-						<Button
-							spacing={{ t: 2 }}
-							size="small"
-							noBorder
-							disabled={customInstructions.loadingLocation}
-							onClick={onDetectLocation}
+					<>
+						<Card
+							header={"AI Engine"}
+							className="prose-dark dark:prose-lighter"
 						>
-							{customInstructions.loadingLocation
-								? "Detecting..."
-								: "Auto-detect"}
-						</Button>
-					</Card>
+							<p>
+								Select the AI engine that will be used to generate responses.
+							</p>
+							<Toggle
+								noBorder
+								label={"OpenAI"}
+								name={"OpenAI"}
+								onChange={onToggleEngineOpenAI}
+								checked={userPreferences.engine === ENGINE_OPENAI}
+							/>
+							<Toggle
+								spacing={{ t: 2 }}
+								noBorder
+								label={"Anthropic"}
+								name={"Anthropic"}
+								onChange={onToggleEngineAnthropic}
+								checked={userPreferences.engine === ENGINE_ANTHROPIC}
+							/>
+							<p className="text-xs">
+								NOTE: Anthropic is currently in beta and may not be as accurate
+								as OpenAI. It also cannot take advantage yet of internal helper
+								tools such as the OpenWeather or Google Images plugin.
+							</p>
+						</Card>
+						<Card
+							spacing={{ t: 4 }}
+							header={"Custom Instructions"}
+							className="prose-dark dark:prose-lighter"
+						>
+							<p>
+								What would you like Sassy Saint to know about you to provide
+								better responses?
+							</p>
+							<TextArea
+								mode="alt-system"
+								autoCapitalize="off"
+								autoComplete="off"
+								autoCorrect="off"
+								name="customInstructions"
+								label="Custom Instructions"
+								value={userPreferences.content}
+								onChange={(e: any) => {
+									setUserPreferences((prev) => ({
+										...prev,
+										loaded: true,
+										content: e.target.value,
+									}));
+								}}
+								helperText="Press ENTER to add a new line."
+							/>
+						</Card>
+
+						<Card
+							header={"Location"}
+							className="prose-dark dark:prose-lighter"
+							spacing={{ t: 4 }}
+						>
+							<p>
+								You can share your location to receive customized responses
+								based on your area.
+							</p>
+							<TextArea
+								mode="alt-system"
+								name="location"
+								label={"Location"}
+								value={userPreferences.location}
+								onChange={(e: any) => {
+									setUserPreferences((prev) => ({
+										...prev,
+										loaded: true,
+										location: e.target.value,
+									}));
+								}}
+								helperText="Enter your location or press auto-detect."
+							/>
+							<Button
+								spacing={{ t: 2 }}
+								size="small"
+								noBorder
+								disabled={userPreferences.loadingLocation}
+								onClick={onDetectLocation}
+							>
+								{userPreferences.loadingLocation
+									? "Detecting..."
+									: "Auto-detect"}
+							</Button>
+						</Card>
+					</>
 				</Panel>
 			)}
 		</>
