@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.0.0...client-v5.0.1) (2024-10-03)
+
+
+### Bug Fixes
+
+* fine tuning panel with brand new user is missing default data ([5e4bbc6](https://github.com/versini-org/sassysaint-ui/commit/5e4bbc63af700b99a08dc54a64cc59fc9cc0f658))
+
 ## [5.0.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.5.3...client-v5.0.0) (2024-10-03)
 
 
