@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/versini-org/sassysaint-ui/compare/client-v4.5.3...client-v5.0.0) (2024-10-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* this feature requires server v4+
+
+### Features
+
+* adding option to choose between OpenAI and Anthropic ([fda7a83](https://github.com/versini-org/sassysaint-ui/commit/fda7a83f8a5f9e79a0ccc1130b5319600d062171))
+
 ## [4.5.3](https://github.com/versini-org/sassysaint-ui/compare/client-v4.5.2...client-v4.5.3) (2024-09-30)
 
 
