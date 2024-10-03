@@ -53,7 +53,9 @@ export const MessageAssistant = ({
 					copyToClipboardFocusMode="light"
 					footer={{
 						[ASSISTANT_FOOTER_KEYS.MODEL]:
-							state && state.model && showEngineDetails ? state.model : null,
+							state && state.model && !state.streaming && showEngineDetails
+								? state.model
+								: null,
 						[ASSISTANT_FOOTER_KEYS.PLUGIN]:
 							name && showEngineDetails ? name : null,
 						[ASSISTANT_FOOTER_KEYS.PROCESSING_TIME]:
