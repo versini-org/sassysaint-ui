@@ -28,7 +28,7 @@ export const FineTuningPanel = ({
 	const { getAccessToken, user } = useAuth();
 	const [userPreferences, setUserPreferences] = useState({
 		loaded: false,
-		content: "",
+		instructions: "",
 		loadingLocation: false,
 		location: "",
 		engine: DEFAULT_AI_ENGINE,
@@ -42,7 +42,7 @@ export const FineTuningPanel = ({
 				type: SERVICE_TYPES.SET_USER_PREFERENCES,
 				params: {
 					user: user?.username,
-					instructions: userPreferences.content,
+					instructions: userPreferences.instructions,
 					location: userPreferences.location,
 					engine: userPreferences.engine,
 				},
@@ -133,7 +133,7 @@ export const FineTuningPanel = ({
 			setUserPreferences({
 				loaded: false,
 				loadingLocation: false,
-				content: "",
+				instructions: "",
 				location: "",
 				engine: DEFAULT_AI_ENGINE,
 			});
@@ -154,9 +154,9 @@ export const FineTuningPanel = ({
 					setUserPreferences((prev) => ({
 						...prev,
 						loaded: true,
-						content: response.data.instructions,
-						location: response.data.location,
-						engine: response.data.engine,
+						instructions: response.data.instructions || "",
+						location: response.data.location || "",
+						engine: response.data.engine || DEFAULT_AI_ENGINE,
 					}));
 				}
 			} catch (_error) {
@@ -248,12 +248,12 @@ export const FineTuningPanel = ({
 								autoCorrect="off"
 								name="customInstructions"
 								label="Custom Instructions"
-								value={userPreferences.content}
+								value={userPreferences.instructions}
 								onChange={(e: any) => {
 									setUserPreferences((prev) => ({
 										...prev,
 										loaded: true,
-										content: e.target.value,
+										instructions: e.target.value,
 									}));
 								}}
 								helperText="Press ENTER to add a new line."
