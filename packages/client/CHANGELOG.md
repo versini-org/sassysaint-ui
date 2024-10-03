@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.0.1...client-v5.0.2) (2024-10-03)
+
+
+### Bug Fixes
+
+* do not show the model until stream is complete ([2a1083f](https://github.com/versini-org/sassysaint-ui/commit/2a1083f987b978e76a6111b73f3e206a70a1e4ac))
+
 ## [5.0.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.0.0...client-v5.0.1) (2024-10-03)
 
 
