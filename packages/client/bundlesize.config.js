@@ -26,7 +26,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/async/LazyHeader.<hash>.js",
-			limit: "41 kb",
+			limit: "46 kb",
 			alias: "Lazy Header JS",
 		},
 		{

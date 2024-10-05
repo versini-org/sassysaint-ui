@@ -53,6 +53,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		models: [],
 		plugins: [],
 		engine: DEFAULT_AI_ENGINE,
+		engines: [],
 	});
 
 	/**
