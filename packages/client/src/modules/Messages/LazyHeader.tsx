@@ -1,5 +1,6 @@
 import { useAuth } from "@versini/auth-provider";
 import { ButtonIcon } from "@versini/ui-button";
+import { useLocalStorage } from "@versini/ui-hooks";
 import {
 	IconBack,
 	IconChart,
@@ -9,8 +10,15 @@ import {
 	IconSettings,
 } from "@versini/ui-icons";
 import { Menu, MenuItem, MenuSeparator } from "@versini/ui-menu";
-import { useContext, useState } from "react";
+import { ToggleGroup, ToggleGroupItem } from "@versini/ui-togglegroup";
+import { useContext, useEffect, useState } from "react";
 
+import {
+	ACTION_ENGINE,
+	DEFAULT_AI_ENGINE,
+	LOCAL_STORAGE_ENGINE_TOGGLE,
+	LOCAL_STORAGE_PREFIX,
+} from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { LOG_OUT, STATS } from "../../common/strings";
 import { About } from "../About/About";
@@ -21,8 +29,9 @@ import { History } from "../History/History";
 import { Profile } from "../Profile/Profile";
 
 const LazyHeader = () => {
-	const { state } = useContext(AppContext);
+	const { state, dispatch, serverStats } = useContext(AppContext);
 
+	const [engine, setEngine] = useState(state?.engine || DEFAULT_AI_ENGINE);
 	const [showProfile, setShowProfile] = useState(false);
 	const [showChatDetails, setShowChatDetails] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
@@ -33,6 +42,11 @@ const LazyHeader = () => {
 		done: false,
 		progress: false,
 		timestamp: Date.now(),
+	});
+
+	const [showEngineToggleInMenu] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_ENGINE_TOGGLE,
+		initialValue: false,
 	});
 
 	const { logout, getAccessToken, user } = useAuth();
@@ -106,10 +120,15 @@ const LazyHeader = () => {
 			// nothing to declare officer
 		}
 	};
-
 	const onClickConfirmLogout = () => {
 		setShowConfirmation(!showConfirmation);
 	};
+
+	useEffect(() => {
+		if (state && state.engine && state.engine !== engine) {
+			setEngine(state.engine);
+		}
+	}, [state, engine]);
 
 	return (
 		<>
@@ -167,6 +186,47 @@ const LazyHeader = () => {
 							onClick={onClickAbout}
 							icon={<IconInfo />}
 						/>
+						{showEngineToggleInMenu && serverStats && (
+							<>
+								<MenuSeparator />
+								<MenuItem raw ignoreClick>
+									<ToggleGroup
+										size="small"
+										mode="dark"
+										focusMode="light"
+										value={engine}
+										onValueChange={async (value: string) => {
+											if (value) {
+												try {
+													await serviceCall({
+														accessToken: await getAccessToken(),
+														type: SERVICE_TYPES.SET_USER_PREFERENCES,
+														params: {
+															user: user?.username,
+															engine: value,
+														},
+													});
+													dispatch({
+														type: ACTION_ENGINE,
+														payload: {
+															engine: value,
+														},
+													});
+												} catch (_error) {
+													// nothing to declare officer
+												}
+											}
+										}}
+									>
+										{serverStats &&
+											serverStats.engines.map((engine) => (
+												<ToggleGroupItem key={engine} value={engine} />
+											))}
+									</ToggleGroup>
+								</MenuItem>
+							</>
+						)}
+
 						{state && state.id && !state.isComponent && (
 							<>
 								<MenuSeparator />

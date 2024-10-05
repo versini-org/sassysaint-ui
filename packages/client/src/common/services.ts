@@ -49,6 +49,7 @@ export const GRAPHQL_QUERIES = {
 			models
 			plugins
 			engine
+			engines
 		}
 	}`,
 	GET_USER_PREFERENCES: `query GetUserPreferences($user: String!) {
@@ -60,7 +61,7 @@ export const GRAPHQL_QUERIES = {
 	}`,
 	SET_USER_PREFERENCES: `mutation SetUserPreferences(
 		$user: String!,
-		$instructions: String!,
+		$instructions: String,
 		$location: String,
 		$engine: String) {
 			setUserPreferences(
@@ -75,63 +76,34 @@ export const SERVICE_TYPES = {
 	GET_LOCATION: {
 		schema: GRAPHQL_QUERIES.GET_LOCATION,
 		method: "location",
-		data: (params: any) => ({
-			latitude: params.latitude,
-			longitude: params.longitude,
-		}),
 	},
 	GET_CHATS: {
 		schema: GRAPHQL_QUERIES.GET_CHATS,
 		method: "chats",
-		data: (params: any) => ({
-			userId: params.userId,
-		}),
 	},
 	GET_CHATS_STATS: {
 		schema: GRAPHQL_QUERIES.GET_CHATS_STATS,
 		method: "chatsStats",
-		data: (params: any) => ({
-			userId: params.userId,
-		}),
 	},
 	GET_CHAT: {
 		schema: GRAPHQL_QUERIES.GET_CHAT,
 		method: "chatById",
-		data: (params: any) => ({
-			id: params.id,
-		}),
 	},
 	DELETE_CHAT: {
 		schema: GRAPHQL_QUERIES.DELETE_CHAT,
 		method: "deleteChat",
-		data: (params: any) => ({
-			id: params.id,
-			userId: params.userId,
-		}),
 	},
 	ABOUT: {
 		schema: GRAPHQL_QUERIES.ABOUT,
 		method: "about",
-		data: (params: any) => ({
-			user: params.user,
-		}),
 	},
 	GET_USER_PREFERENCES: {
 		schema: GRAPHQL_QUERIES.GET_USER_PREFERENCES,
 		method: "getUserPreferences",
-		data: (params: any) => ({
-			user: params.user,
-		}),
 	},
 	SET_USER_PREFERENCES: {
 		schema: GRAPHQL_QUERIES.SET_USER_PREFERENCES,
 		method: "setUserPreferences",
-		data: (params: any) => ({
-			user: params.user,
-			instructions: params.instructions,
-			location: params.location,
-			engine: params.engine,
-		}),
 	},
 };
 

@@ -58,6 +58,7 @@ export const LOCAL_STORAGE_LOCATION = "location";
 export const LOCAL_STORAGE_TAG_SUMMARIZE = "summarize-article";
 export const LOCAL_STORAGE_TAG_PROOFREAD = "proofread-content";
 export const LOCAL_STORAGE_TAG_REPHRASE = "rephrase-content";
+export const LOCAL_STORAGE_ENGINE_TOGGLE = "engine-toggle";
 
 export const STATS_SEPARATOR = "==stats==";
 

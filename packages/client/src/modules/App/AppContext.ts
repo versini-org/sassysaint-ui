@@ -18,6 +18,7 @@ export const AppContext = React.createContext<AppContextProps>({
 		models: [],
 		plugins: [],
 		engine: DEFAULT_AI_ENGINE,
+		engines: [],
 	},
 });
 

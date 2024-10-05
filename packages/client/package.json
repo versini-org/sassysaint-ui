@@ -23,7 +23,7 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.10.2"
+		"@versini/ui-styles": "1.11.0"
 	},
 	"dependencies": {
 		"@versini/auth-provider": "7.3.3",
@@ -34,7 +34,7 @@
 		"@versini/ui-hooks": "4.2.1",
 		"@versini/ui-icons": "1.14.0",
 		"@versini/ui-main": "1.0.8",
-		"@versini/ui-menu": "1.0.11",
+		"@versini/ui-menu": "1.1.0",
 		"@versini/ui-panel": "1.0.12",
 		"@versini/ui-spinner": "1.0.8",
 		"@versini/ui-system": "1.4.19",
@@ -42,6 +42,7 @@
 		"@versini/ui-textarea": "1.0.7",
 		"@versini/ui-textinput": "1.2.0",
 		"@versini/ui-toggle": "1.0.7",
+		"@versini/ui-togglegroup": "1.1.0",
 		"@versini/ui-truncate": "1.0.7",
 		"autoprefixer": "10.4.20",
 		"postcss": "8.4.47",

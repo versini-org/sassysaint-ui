@@ -1,6 +1,7 @@
 import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-button";
 import { Card } from "@versini/ui-card";
+import { useLocalStorage } from "@versini/ui-hooks";
 import { Panel } from "@versini/ui-panel";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { TextArea } from "@versini/ui-textarea";
@@ -12,6 +13,8 @@ import {
 	DEFAULT_AI_ENGINE,
 	ENGINE_ANTHROPIC,
 	ENGINE_OPENAI,
+	LOCAL_STORAGE_ENGINE_TOGGLE,
+	LOCAL_STORAGE_PREFIX,
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { getCurrentGeoLocation } from "../../common/utilities";
@@ -32,6 +35,10 @@ export const FineTuningPanel = ({
 		loadingLocation: false,
 		location: "",
 		engine: DEFAULT_AI_ENGINE,
+	});
+	const [showEngineToggleInMenu, setShowEngineToggleInMenu] = useLocalStorage({
+		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_ENGINE_TOGGLE,
+		initialValue: false,
 	});
 
 	const onSave = async (e: { preventDefault: () => void }) => {
@@ -113,6 +120,7 @@ export const FineTuningPanel = ({
 			engine: checked ? ENGINE_OPENAI : ENGINE_ANTHROPIC,
 		}));
 	};
+
 	const onToggleEngineAnthropic = (checked: boolean) => {
 		setUserPreferences((prev) => ({
 			...prev,
@@ -230,6 +238,18 @@ export const FineTuningPanel = ({
 								NOTE: Anthropic is currently in beta and may not be as accurate
 								as OpenAI. It also cannot take advantage yet of internal helper
 								tools such as the OpenWeather or Google Images plugin.
+							</p>
+							<Toggle
+								spacing={{ t: 2 }}
+								noBorder
+								label={"Show Engine Toggle in Menu"}
+								name={"show-toggle-engine-menu"}
+								onChange={setShowEngineToggleInMenu}
+								checked={showEngineToggleInMenu}
+							/>
+							<p className="text-xs">
+								This option will show the engine toggle in the main menu. This
+								is useful if you want to quickly switch between engines.
 							</p>
 						</Card>
 						<Card

@@ -82,6 +82,7 @@ export type ServerStatsProps = {
 	models: string[];
 	plugins: string[];
 	engine: string;
+	engines: string[];
 };
 
 export type AppContextProps = {
