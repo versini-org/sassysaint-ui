@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.2.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.1.7...sassysaint-v5.2.0) (2024-10-05)
+
+
+### Features
+
+* allowing engine toggle directly in the menu ([cf84ff4](https://github.com/versini-org/sassysaint-ui/commit/cf84ff424fcbc302aff563cef54418a07f38f88f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.1.0
+
 ## [5.1.7](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.1.6...sassysaint-v5.1.7) (2024-10-03)
 
 
