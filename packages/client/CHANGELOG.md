@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.1.0...client-v5.2.0) (2024-10-05)
+
+
+### Features
+
+* hotkey ctrl+enter is the equivalent on clicking "send" ([4a07213](https://github.com/versini-org/sassysaint-ui/commit/4a0721374407fdd1b003ebc01dc9c7ff0fdda4fb))
+
 ## [5.1.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.0.2...client-v5.1.0) (2024-10-05)
 
 
