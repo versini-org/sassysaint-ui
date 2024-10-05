@@ -30,14 +30,14 @@ importers:
         specifier: 1.1.10
         version: 1.1.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-card':
-        specifier: 1.0.8
-        version: 1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.0.9
+        version: 1.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-footer':
         specifier: 1.0.8
         version: 1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-hooks':
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.2.2
+        version: 4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-icons':
         specifier: 1.14.0
         version: 1.14.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -60,11 +60,11 @@ importers:
         specifier: 1.0.11
         version: 1.0.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-textarea':
-        specifier: 1.0.7
-        version: 1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.0.8
+        version: 1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-textinput':
-        specifier: 1.2.0
-        version: 1.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.2.1
+        version: 1.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-toggle':
         specifier: 1.0.7
         version: 1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -118,8 +118,8 @@ importers:
   packages/component:
     dependencies:
       '@versini/ui-hooks':
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.2.2
+        version: 4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1590,8 +1590,8 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-card@1.0.8':
-    resolution: {integrity: sha512-ueq8LgCihy5cqg72XLqChBTLCrXponkxPxveHq0DAGnruC3VS1DzIyhGwURz0t7AGZ8qANMjjTWV0HjjV2JOdg==}
+  '@versini/ui-card@1.0.9':
+    resolution: {integrity: sha512-oWpqI79zUpJYnqx655sc8uLf4jkeBuvHluPqXiokQcnpcqoCp+K6vP/+xpr2Xjg9KzT3BekNPGdQL44PQYXC+w==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1604,6 +1604,12 @@ packages:
 
   '@versini/ui-hooks@4.2.1':
     resolution: {integrity: sha512-CTvJWkqnIofQV8GYZSHO3O4Y7dmJf1kCVoC780NbyKhgPl3810Bx4oFBDTYGV9S2kkRcQZaJvPLiaPTyYfu8hA==}
+    peerDependencies:
+      react: ^18.3.1
+      react-dom: ^18.3.1
+
+  '@versini/ui-hooks@4.2.2':
+    resolution: {integrity: sha512-+oolqMWNN9Hg3+sxXUB5uyL5viIxB6J4ngosqKiioaMJ3f499+T8ju+IvGrIG8hHwhqPHgI9U08XugaYBLLwmA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -1659,14 +1665,14 @@ packages:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-textarea@1.0.7':
-    resolution: {integrity: sha512-dxVFp97jTyLufjXvKAPKC1HWY1VFdLkfAVVeLawnJWyoEX+kvovgoVB0k/NgPP1LwqcCljYcOdm/9keEdca1ow==}
+  '@versini/ui-textarea@1.0.8':
+    resolution: {integrity: sha512-8By+u03o/MmilCQIgkhUZ7PajCJmRg2pCxbdGm3bvSJ0r+3KgV5OLNhALp2urTVJuUa9Im9uKtlzkBjgCocpKA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
 
-  '@versini/ui-textinput@1.2.0':
-    resolution: {integrity: sha512-tPp4BGYWxotgRQVF5fFGK3kYW/0kwcjOiH0iDNf93fIXW+AmFnR8oc8Kbmm/RT41MoYcOfsi2qAbJTISSXQNEw==}
+  '@versini/ui-textinput@1.2.1':
+    resolution: {integrity: sha512-O3eTrJNSVpHXDXxcxXYBX1MsXCA0yhqI1vTG2pudSAkFZsBNYpcOcEBSMBkH+2rjJFSa3pJ2Rrp2Nsk9v17U7w==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -7315,10 +7321,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-card@1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-card@1.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.7.4)(typescript@5.6.2)))
-      '@versini/ui-hooks': 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
@@ -7338,6 +7344,11 @@ snapshots:
       - ts-node
 
   '@versini/ui-hooks@4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@versini/ui-hooks@4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -7430,10 +7441,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-textarea@1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-textarea@1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.7.4)(typescript@5.6.2)))
-      '@versini/ui-hooks': 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
@@ -7442,10 +7453,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-textinput@1.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@versini/ui-textinput@1.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.13(ts-node@10.9.2(@swc/core@1.5.24(@swc/helpers@0.5.13))(@types/node@22.7.4)(typescript@5.6.2)))
-      '@versini/ui-hooks': 4.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@versini/ui-hooks': 4.2.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@versini/ui-private': 1.4.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       react: 18.3.1
