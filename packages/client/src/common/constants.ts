@@ -21,6 +21,7 @@ export const ACTION_MODEL = "action-model";
 export const ACTION_RESTORE = "action-restore";
 export const ACTION_STREAMING = "action-streaming";
 export const ACTION_ENGINE = "action-engine";
+export const ACTION_TAGS = "action-tags";
 
 /**
  * History reducer action types
@@ -40,14 +41,14 @@ export const TAGS = {
 };
 export const TAG_CONTENT = {
 	[TAGS.SUMMARIZE_ARTICLE]: {
-		label: "Summarize...",
+		label: "Summarize",
 		content: "Summarize this article: ",
 	},
 	[TAGS.PROOFREAD_CONTENT]: {
-		label: "Proofread...",
+		label: "Proofread",
 		content: "Proofread this: ",
 	},
-	[TAGS.REPHRASE_CONTENT]: { label: "Rephrase...", content: "Rephrase this: " },
+	[TAGS.REPHRASE_CONTENT]: { label: "Rephrase", content: "Rephrase this: " },
 };
 
 export const LOCAL_STORAGE_PREFIX = "sassy-saint-";

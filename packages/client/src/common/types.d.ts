@@ -35,6 +35,7 @@ export type StateProps = {
 	usage: number;
 	isComponent: boolean;
 	engine: string;
+	tags: string[];
 
 	streaming?: boolean;
 };

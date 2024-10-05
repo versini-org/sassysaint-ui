@@ -10,6 +10,7 @@ import {
 	ACTION_SEARCH,
 	ACTION_SORT,
 	ACTION_STREAMING,
+	ACTION_TAGS,
 	ACTION_TOGGLE_TAG,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
@@ -67,6 +68,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			isComponent: state.isComponent,
 			messages,
 			engine: state.engine,
+			tags: state.tags,
 		};
 	}
 
@@ -113,6 +115,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 						isComponent: state.isComponent,
 						messages,
 						engine: state.engine,
+						tags: state.tags,
 					};
 				}
 			}
@@ -121,6 +124,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 				id: state.id,
 				model: state.model,
 				engine: state.engine,
+				tags: state.tags,
 				usage: state.usage,
 				isComponent: state.isComponent,
 				messages: [
@@ -141,6 +145,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: 0,
 			messages: [],
 			isComponent: state.isComponent,
+			tags: state.tags,
 		};
 	}
 
@@ -149,6 +154,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			id: state.id,
 			model: action.payload.model,
 			engine: state.engine,
+			tags: state.tags,
 			usage: action.payload.usage,
 			messages: state.messages,
 			isComponent: state.isComponent,

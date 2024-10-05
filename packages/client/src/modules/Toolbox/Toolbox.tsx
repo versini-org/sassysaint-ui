@@ -17,6 +17,8 @@ import { AppContext, TagsContext } from "../App/AppContext";
 
 export const Toolbox = () => {
 	const { dispatch, state } = useContext(AppContext);
+	console.info(`==> [${Date.now()}] : `, state);
+
 	const { dispatch: tagsDispatch } = useContext(TagsContext);
 
 	const toolboxClass = "mt-2 flex justify-center rounded-md";
@@ -89,6 +91,7 @@ export const Toolbox = () => {
 								onClick={(e) => onClickToggleTag(e, TAGS.SUMMARIZE_ARTICLE)}
 							>
 								{TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].label}
+								{"..."}
 							</Button>
 						</div>
 					)}
@@ -104,6 +107,7 @@ export const Toolbox = () => {
 								onClick={(e) => onClickToggleTag(e, TAGS.PROOFREAD_CONTENT)}
 							>
 								{TAG_CONTENT[TAGS.PROOFREAD_CONTENT].label}
+								{"..."}
 							</Button>
 						</div>
 					)}
@@ -119,6 +123,7 @@ export const Toolbox = () => {
 								onClick={(e) => onClickToggleTag(e, TAGS.REPHRASE_CONTENT)}
 							>
 								{TAG_CONTENT[TAGS.REPHRASE_CONTENT].label}
+								{"..."}
 							</Button>
 						</div>
 					)}

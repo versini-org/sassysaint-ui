@@ -11,6 +11,7 @@ export const AppContext = React.createContext<AppContextProps>({
 		usage: 0,
 		messages: [],
 		isComponent: false,
+		tags: [],
 	},
 	dispatch: () => {},
 	serverStats: {
