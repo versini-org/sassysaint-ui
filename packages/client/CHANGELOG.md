@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.0...client-v5.3.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* **Fine tuning:** adding some space at the bottom of the panel at smaller viewport ([63d0b0c](https://github.com/versini-org/sassysaint-ui/commit/63d0b0cb78fd07526cd950c755f3e4a8e95c3b10))
+
 ## [5.3.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.2.0...client-v5.3.0) (2024-10-06)
 
 
