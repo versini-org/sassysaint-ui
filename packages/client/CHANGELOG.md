@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.3.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.2.0...client-v5.3.0) (2024-10-06)
+
+
+### Features
+
+* moving the quick engine toggle to the left of the screen ([5293af7](https://github.com/versini-org/sassysaint-ui/commit/5293af7dd1c1d07fa584cbae7dc0c2ffb1d70f42))
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([0cb2a83](https://github.com/versini-org/sassysaint-ui/commit/0cb2a83c781ddf674c8d497f5772bfc8231bedc7))
+
 ## [5.2.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.1.0...client-v5.2.0) (2024-10-05)
 
 
