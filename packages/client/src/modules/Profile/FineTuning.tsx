@@ -181,7 +181,11 @@ export const FineTuningPanel = ({
 					onOpenChange={onOpenChange}
 					title={"Engine Fine Tuning"}
 					footer={
-						<Flexgrid columnGap={2} alignHorizontal="flex-end">
+						<Flexgrid
+							columnGap={2}
+							alignHorizontal="flex-end"
+							className="pb-8 sm:pb-0"
+						>
 							<FlexgridItem>
 								<Button
 									mode="dark"
