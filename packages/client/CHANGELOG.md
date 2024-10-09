@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.1...client-v5.4.0) (2024-10-09)
+
+
+### Features
+
+* adding model to history list ([911d9d1](https://github.com/versini-org/sassysaint-ui/commit/911d9d1d3447f859dd6e96eb84d1d7675efa743c))
+
 ## [5.3.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.0...client-v5.3.1) (2024-10-06)
 
 
