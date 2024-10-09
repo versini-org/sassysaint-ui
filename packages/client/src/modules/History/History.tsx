@@ -13,7 +13,12 @@ export const History = ({
 	open: boolean;
 }) => {
 	return (
-		<Panel open={open} onOpenChange={onOpenChange} title={HISTORY_TITLE}>
+		<Panel
+			open={open}
+			onOpenChange={onOpenChange}
+			title={HISTORY_TITLE}
+			className="max-2-xl sm:max-w-4xl xl:max-w-5xl"
+		>
 			<HistoryContent onOpenChange={onOpenChange} historyData={historyData} />
 		</Panel>
 	);

@@ -11,6 +11,7 @@ export const GRAPHQL_QUERIES = {
 		chats(user: $userId) {
 			timestamp
 			id
+			model
 			messages {
 				content
 			}
