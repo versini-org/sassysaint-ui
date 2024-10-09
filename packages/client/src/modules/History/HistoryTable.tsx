@@ -232,6 +232,7 @@ export const HistoryTable = ({
 							Date
 						</TableCellSort>
 						<TableCell>First message</TableCell>
+						<TableCell className="hidden md:table-cell">Model</TableCell>
 						<TableCell className="text-right">Actions</TableCell>
 					</TableRow>
 				</TableHead>
@@ -249,6 +250,14 @@ export const HistoryTable = ({
 								</TableCell>
 								<TableCell className="max-w-[100px] text-white sm:max-w-full">
 									{extractFirstUserMessage(item.messages)}
+								</TableCell>
+
+								<TableCell
+									component="th"
+									scope="row"
+									className="hidden md:table-cell font-medium text-gray-400 sm:whitespace-nowrap"
+								>
+									{item.model}
 								</TableCell>
 
 								<TableCell>
@@ -294,7 +303,7 @@ export const HistoryTable = ({
 				</TableBody>
 				<TableFooter>
 					<TableRow>
-						<TableCell colSpan={4}>
+						<TableCell colSpan={5}>
 							<div>
 								{pluralize(
 									`${filteredHistory.data.length} chat`,
