@@ -240,8 +240,7 @@ export const FineTuningPanel = ({
 							/>
 							<p className="text-xs">
 								NOTE: Anthropic is currently in beta and may not be as accurate
-								as OpenAI. It also cannot take advantage yet of internal helper
-								tools such as the OpenWeather or Google Images plugin.
+								as OpenAI.
 							</p>
 							<Toggle
 								spacing={{ t: 2 }}
