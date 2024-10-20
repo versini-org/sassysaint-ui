@@ -89,6 +89,8 @@ export const HistoryContent = ({
 				<>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
+							autoComplete="off"
+							autoCorrect="off"
 							ref={inputRef}
 							defaultValue={historyState.searchString}
 							focusMode="light"
