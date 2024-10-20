@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.0...client-v5.4.1) (2024-10-20)
+
+
+### Bug Fixes
+
+* search input should not auto complete/capitalize ([d0cbb1e](https://github.com/versini-org/sassysaint-ui/commit/d0cbb1eb9778d9d20a931eb62a30326b9ebdf56b))
+
 ## [5.4.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.1...client-v5.4.0) (2024-10-09)
 
 
