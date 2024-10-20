@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.5](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.4...sassysaint-v5.3.5) (2024-10-20)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([28a1e79](https://github.com/versini-org/sassysaint-ui/commit/28a1e792af7e6239fafd0981df88d44dcc49fdf1))
+
 ## [5.3.4](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.3...sassysaint-v5.3.4) (2024-10-20)
 
 
