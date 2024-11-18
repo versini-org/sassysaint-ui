@@ -81,8 +81,8 @@ importers:
         specifier: 8.4.47
         version: 8.4.47
       pretty-ms:
-        specifier: 9.1.0
-        version: 9.1.0
+        specifier: 9.2.0
+        version: 9.2.0
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -4525,8 +4525,8 @@ packages:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  pretty-ms@9.1.0:
-    resolution: {integrity: sha512-o1piW0n3tgKIKCwk2vpM/vOV13zjJzvP37Ioze54YlTHE06m4tjEbzg9WsKkvTuyYln2DHjo5pY4qrZGI0otpw==}
+  pretty-ms@9.2.0:
+    resolution: {integrity: sha512-4yf0QO/sllf/1zbZWYnvWw3NxCQwLXKzIj0G849LSufP15BXKM0rbD2Z3wVnkMfjdn/CB0Dpp444gYAACdsplg==}
     engines: {node: '>=18'}
 
   proc-log@3.0.0:
@@ -10891,7 +10891,7 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
-  pretty-ms@9.1.0:
+  pretty-ms@9.2.0:
     dependencies:
       parse-ms: 4.0.0
 
