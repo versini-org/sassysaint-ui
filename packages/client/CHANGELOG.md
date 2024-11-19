@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.4.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.1...client-v5.4.2) (2024-11-19)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([8a77494](https://github.com/versini-org/sassysaint-ui/commit/8a7749401ee8a8a0e4546bbcc4d5a46b9eb40a03))
+* **History:** replacing text model with icon for better rendering ([8ad4c95](https://github.com/versini-org/sassysaint-ui/commit/8ad4c95a28ad573691a72021cd119dcec5d097f5))
+
 ## [5.4.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.0...client-v5.4.1) (2024-10-20)
 
 
