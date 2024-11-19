@@ -257,10 +257,10 @@ export const HistoryTable = ({
 								</TableCell>
 
 								<TableCell component="th" scope="row" className="text-gray-400">
-									{item.model.startsWith("claude") && (
+									{item.model && item.model.startsWith("claude") && (
 										<IconAnthropic className="size-4 sm:size-5" />
 									)}
-									{item.model.startsWith("gpt") && (
+									{item.model && item.model.startsWith("gpt") && (
 										<IconOpenAI className="size-4 sm:size-5" />
 									)}
 								</TableCell>

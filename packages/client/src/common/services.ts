@@ -39,6 +39,7 @@ export const GRAPHQL_QUERIES = {
 		deleteChat(id: $id, user: $userId) {
 			timestamp
 			id
+			model
 			messages {
 				content
 			}
