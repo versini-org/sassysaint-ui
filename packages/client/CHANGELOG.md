@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.4.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.2...client-v5.4.3) (2024-11-19)
+
+
+### Bug Fixes
+
+* **History:** models are lost when deleting a chat ([3780491](https://github.com/versini-org/sassysaint-ui/commit/3780491d164760079ea7634f3ce0430fabb70cd8))
+* **History:** Panel width should not change on filter ([f5310ec](https://github.com/versini-org/sassysaint-ui/commit/f5310ec823a8b6f1564797a076ad555d991ef07e))
+
 ## [5.4.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.1...client-v5.4.2) (2024-11-19)
 
 
