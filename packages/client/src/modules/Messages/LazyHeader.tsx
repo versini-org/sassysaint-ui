@@ -17,6 +17,7 @@ import { useContext, useEffect, useState } from "react";
 
 import {
 	ACTION_ENGINE,
+	ACTION_RESET,
 	DEFAULT_AI_ENGINE,
 	ENGINE_ANTHROPIC,
 	LOCAL_STORAGE_ENGINE_TOGGLE,
@@ -195,6 +196,9 @@ const LazyHeader = () => {
 													payload: {
 														engine: value,
 													},
+												});
+												dispatch({
+													type: ACTION_RESET,
 												});
 											} catch (_error) {
 												// nothing to declare officer
