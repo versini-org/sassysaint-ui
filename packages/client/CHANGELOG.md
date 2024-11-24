@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.3...client-v5.5.0) (2024-11-24)
+
+
+### Features
+
+* reset current chat when switching engines ([b433905](https://github.com/versini-org/sassysaint-ui/commit/b43390528ce8d68262c6eed635b12acebcb4f7e2))
+
 ## [5.4.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.2...client-v5.4.3) (2024-11-19)
 
 
