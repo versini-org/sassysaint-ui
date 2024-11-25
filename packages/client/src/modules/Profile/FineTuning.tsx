@@ -181,7 +181,11 @@ export const FineTuningPanel = ({
 					onOpenChange={onOpenChange}
 					title={"Engine Fine Tuning"}
 					footer={
-						<Flexgrid columnGap={2} alignHorizontal="flex-end">
+						<Flexgrid
+							columnGap={2}
+							alignHorizontal="flex-end"
+							className="pb-8 sm:pb-0"
+						>
 							<FlexgridItem>
 								<Button
 									mode="dark"
@@ -236,20 +240,19 @@ export const FineTuningPanel = ({
 							/>
 							<p className="text-xs">
 								NOTE: Anthropic is currently in beta and may not be as accurate
-								as OpenAI. It also cannot take advantage yet of internal helper
-								tools such as the OpenWeather or Google Images plugin.
+								as OpenAI.
 							</p>
 							<Toggle
 								spacing={{ t: 2 }}
 								noBorder
-								label={"Show Engine Toggle in Menu"}
+								label={"Show Quick Engine Toggle"}
 								name={"show-toggle-engine-menu"}
 								onChange={setShowEngineToggleInMenu}
 								checked={showEngineToggleInMenu}
 							/>
 							<p className="text-xs">
-								This option will show the engine toggle in the main menu. This
-								is useful if you want to quickly switch between engines.
+								This option introduces a new menu on the left side of the
+								screen, enabling you to quickly switch between engines.
 							</p>
 						</Card>
 						<Card

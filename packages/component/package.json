@@ -1,6 +1,6 @@
 {
 	"name": "@versini/sassysaint",
-	"version": "5.2.0",
+	"version": "5.3.8",
 	"license": "MIT",
 	"author": "Arno Versini",
 	"publishConfig": {
@@ -30,13 +30,13 @@
 		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.11.0",
+		"@versini/ui-styles": "1.11.1",
 		"@sassysaint/client": "workspace:../client"
 	},
 	"dependencies": {
-		"@versini/ui-hooks": "4.2.1",
+		"@versini/ui-hooks": "4.2.2",
 		"clsx": "2.1.1",
-		"tailwindcss": "3.4.13"
+		"tailwindcss": "3.4.15"
 	},
 	"sideEffects": [
 		"**/*.css"

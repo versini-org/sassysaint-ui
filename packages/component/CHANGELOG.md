@@ -1,5 +1,95 @@
 # Changelog
 
+## [5.3.8](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.7...sassysaint-v5.3.8) (2024-11-24)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.5.0
+
+## [5.3.7](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.6...sassysaint-v5.3.7) (2024-11-19)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.4.3
+
+## [5.3.6](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.5...sassysaint-v5.3.6) (2024-11-19)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([8a77494](https://github.com/versini-org/sassysaint-ui/commit/8a7749401ee8a8a0e4546bbcc4d5a46b9eb40a03))
+* **History:** replacing text model with icon for better rendering ([8ad4c95](https://github.com/versini-org/sassysaint-ui/commit/8ad4c95a28ad573691a72021cd119dcec5d097f5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.4.2
+
+## [5.3.5](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.4...sassysaint-v5.3.5) (2024-10-20)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([28a1e79](https://github.com/versini-org/sassysaint-ui/commit/28a1e792af7e6239fafd0981df88d44dcc49fdf1))
+
+## [5.3.4](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.3...sassysaint-v5.3.4) (2024-10-20)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.4.1
+
+## [5.3.3](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.2...sassysaint-v5.3.3) (2024-10-09)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.4.0
+
+## [5.3.2](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.1...sassysaint-v5.3.2) (2024-10-06)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.3.1
+
+## [5.3.1](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.0...sassysaint-v5.3.1) (2024-10-06)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.3.0
+
+## [5.3.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.2.0...sassysaint-v5.3.0) (2024-10-05)
+
+
+### Features
+
+* hotkey ctrl+enter is the equivalent on clicking "send" ([4a07213](https://github.com/versini-org/sassysaint-ui/commit/4a0721374407fdd1b003ebc01dc9c7ff0fdda4fb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.2.0
+
 ## [5.2.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.1.7...sassysaint-v5.2.0) (2024-10-05)
 
 

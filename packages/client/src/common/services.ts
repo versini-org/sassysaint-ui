@@ -11,6 +11,7 @@ export const GRAPHQL_QUERIES = {
 		chats(user: $userId) {
 			timestamp
 			id
+			model
 			messages {
 				content
 			}
@@ -38,6 +39,7 @@ export const GRAPHQL_QUERIES = {
 		deleteChat(id: $id, user: $userId) {
 			timestamp
 			id
+			model
 			messages {
 				content
 			}

@@ -1,5 +1,68 @@
 # Changelog
 
+## [5.5.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.3...client-v5.5.0) (2024-11-24)
+
+
+### Features
+
+* reset current chat when switching engines ([b433905](https://github.com/versini-org/sassysaint-ui/commit/b43390528ce8d68262c6eed635b12acebcb4f7e2))
+
+## [5.4.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.2...client-v5.4.3) (2024-11-19)
+
+
+### Bug Fixes
+
+* **History:** models are lost when deleting a chat ([3780491](https://github.com/versini-org/sassysaint-ui/commit/3780491d164760079ea7634f3ce0430fabb70cd8))
+* **History:** Panel width should not change on filter ([f5310ec](https://github.com/versini-org/sassysaint-ui/commit/f5310ec823a8b6f1564797a076ad555d991ef07e))
+
+## [5.4.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.1...client-v5.4.2) (2024-11-19)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([8a77494](https://github.com/versini-org/sassysaint-ui/commit/8a7749401ee8a8a0e4546bbcc4d5a46b9eb40a03))
+* **History:** replacing text model with icon for better rendering ([8ad4c95](https://github.com/versini-org/sassysaint-ui/commit/8ad4c95a28ad573691a72021cd119dcec5d097f5))
+
+## [5.4.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.4.0...client-v5.4.1) (2024-10-20)
+
+
+### Bug Fixes
+
+* search input should not auto complete/capitalize ([d0cbb1e](https://github.com/versini-org/sassysaint-ui/commit/d0cbb1eb9778d9d20a931eb62a30326b9ebdf56b))
+
+## [5.4.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.1...client-v5.4.0) (2024-10-09)
+
+
+### Features
+
+* adding model to history list ([911d9d1](https://github.com/versini-org/sassysaint-ui/commit/911d9d1d3447f859dd6e96eb84d1d7675efa743c))
+
+## [5.3.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.3.0...client-v5.3.1) (2024-10-06)
+
+
+### Bug Fixes
+
+* **Fine tuning:** adding some space at the bottom of the panel at smaller viewport ([63d0b0c](https://github.com/versini-org/sassysaint-ui/commit/63d0b0cb78fd07526cd950c755f3e4a8e95c3b10))
+
+## [5.3.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.2.0...client-v5.3.0) (2024-10-06)
+
+
+### Features
+
+* moving the quick engine toggle to the left of the screen ([5293af7](https://github.com/versini-org/sassysaint-ui/commit/5293af7dd1c1d07fa584cbae7dc0c2ffb1d70f42))
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([0cb2a83](https://github.com/versini-org/sassysaint-ui/commit/0cb2a83c781ddf674c8d497f5772bfc8231bedc7))
+
+## [5.2.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.1.0...client-v5.2.0) (2024-10-05)
+
+
+### Features
+
+* hotkey ctrl+enter is the equivalent on clicking "send" ([4a07213](https://github.com/versini-org/sassysaint-ui/commit/4a0721374407fdd1b003ebc01dc9c7ff0fdda4fb))
+
 ## [5.1.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.0.2...client-v5.1.0) (2024-10-05)
 
 

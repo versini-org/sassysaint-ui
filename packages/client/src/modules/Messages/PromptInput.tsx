@@ -1,5 +1,6 @@
 import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-button";
+import { getHotkeyHandler } from "@versini/ui-hooks";
 import { TextArea } from "@versini/ui-textarea";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -252,6 +253,7 @@ export const PromptInput = () => {
 				required
 				value={userInput}
 				onChange={(e) => setUserInput(e.target.value)}
+				onKeyDown={getHotkeyHandler([["mod+Enter", onSubmit]])}
 				rightElement={
 					<Button
 						disabled={state?.streaming}

@@ -2,6 +2,7 @@ import { useAuth } from "@versini/auth-provider";
 import { ButtonIcon } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
+import { IconAnthropic, IconOpenAI } from "@versini/ui-icons";
 import {
 	Table,
 	TableBody,
@@ -221,6 +222,7 @@ export const HistoryTable = ({
 					<TableRow>
 						{isWide && <TableCell className="sr-only">Row</TableCell>}
 						<TableCellSort
+							buttonClassName="text-xs sm:text-sm"
 							cellId="timestamp"
 							align="left"
 							sortDirection={historyState.sortDirection}
@@ -231,8 +233,11 @@ export const HistoryTable = ({
 						>
 							Date
 						</TableCellSort>
-						<TableCell>First message</TableCell>
-						<TableCell className="text-right">Actions</TableCell>
+						<TableCell className="text-xs sm:text-sm">First message</TableCell>
+						<TableCell className="text-xs sm:text-sm">Model</TableCell>
+						<TableCell className="text-xs sm:text-sm text-right">
+							Actions
+						</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
@@ -243,15 +248,24 @@ export const HistoryTable = ({
 								<TableCell
 									component="th"
 									scope="row"
-									className="font-medium text-gray-400 sm:whitespace-nowrap"
+									className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm"
 								>
 									{item.timestamp}
 								</TableCell>
-								<TableCell className="max-w-[100px] text-white sm:max-w-full">
+								<TableCell className="max-w-[100px] text-white sm:max-w-full text-xs sm:text-sm">
 									{extractFirstUserMessage(item.messages)}
 								</TableCell>
 
-								<TableCell>
+								<TableCell component="th" scope="row" className="text-gray-400">
+									{item.model && item.model.startsWith("claude") && (
+										<IconAnthropic className="size-4 sm:size-5" />
+									)}
+									{item.model && item.model.startsWith("gpt") && (
+										<IconOpenAI className="size-4 sm:size-5" />
+									)}
+								</TableCell>
+
+								<TableCell className="px-2">
 									<div className="flex justify-end gap-2">
 										<ButtonIcon
 											focusMode="alt-system"
@@ -294,7 +308,7 @@ export const HistoryTable = ({
 				</TableBody>
 				<TableFooter>
 					<TableRow>
-						<TableCell colSpan={4}>
+						<TableCell colSpan={5}>
 							<div>
 								{pluralize(
 									`${filteredHistory.data.length} chat`,
