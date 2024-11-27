@@ -8,9 +8,9 @@ import {
 	ACTION_RESET_TAGS,
 	ACTION_RESTORE,
 	ACTION_SEARCH,
+	ACTION_SET_TAGS,
 	ACTION_SORT,
 	ACTION_STREAMING,
-	ACTION_TAGS,
 	ACTION_TOGGLE_TAG,
 	ROLE_ASSISTANT,
 } from "../../common/constants";
@@ -19,11 +19,19 @@ import { ActionProps, StateProps } from "../../common/types";
 export const tagsReducer = (state: any, action: any) => {
 	if (action?.type === ACTION_TOGGLE_TAG) {
 		return {
+			tags: state.tags,
 			tag: action.payload.tag,
 		};
 	}
 	if (action?.type === ACTION_RESET_TAGS) {
 		return {
+			tags: state.tags,
+			tag: "",
+		};
+	}
+	if (action?.type === ACTION_SET_TAGS) {
+		return {
+			tags: action.payload.tags,
 			tag: "",
 		};
 	}

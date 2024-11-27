@@ -99,3 +99,10 @@ export type MessageAssistantProps = {
 	name?: string;
 	processingTime?: number;
 };
+
+export type Tag = {
+	enabled: boolean;
+	slot: number;
+	label: string;
+	content: string;
+};

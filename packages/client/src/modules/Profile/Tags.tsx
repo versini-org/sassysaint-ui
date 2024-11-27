@@ -1,23 +1,17 @@
 import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-button";
 import { Card } from "@versini/ui-card";
-import { useLocalStorage } from "@versini/ui-hooks";
 import { Panel } from "@versini/ui-panel";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
+import { TextInput } from "@versini/ui-textinput";
 import { Toggle } from "@versini/ui-toggle";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
-import {
-	LOCAL_STORAGE_PREFIX,
-	LOCAL_STORAGE_TAG_PROOFREAD,
-	LOCAL_STORAGE_TAG_REPHRASE,
-	LOCAL_STORAGE_TAG_SUMMARIZE,
-	TAGS,
-	TAG_CONTENT,
-} from "../../common/constants";
+import { ACTION_SET_TAGS } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
-import { CARDS } from "../../common/strings";
-import { AppContext } from "../App/AppContext";
+import { TAGS_DESCRIPTION } from "../../common/strings";
+import type { Tag } from "../../common/types";
+import { TagsContext } from "../App/AppContext";
 
 export const TagsPanel = ({
 	open,
@@ -26,10 +20,9 @@ export const TagsPanel = ({
 	onOpenChange: any;
 	open: boolean;
 }) => {
-	const { dispatch } = useContext(AppContext);
+	const { state: tagsState, dispatch: tagsDispatch } = useContext(TagsContext);
 	const { getAccessToken, user } = useAuth();
-	const [userPreferences, setUserPreferences] = useState<{
-		loaded: boolean;
+	const [localTags, setLocalTags] = useState<{
 		tags: Array<{
 			enabled: boolean;
 			slot: number;
@@ -37,20 +30,7 @@ export const TagsPanel = ({
 			content: string;
 		}>;
 	}>({
-		loaded: false,
-		tags: [],
-	});
-	const [showSummarizeArticle, setShowSummarizeArticle] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_SUMMARIZE,
-		initialValue: false,
-	});
-	const [showProofreadContent, setShowProofreadContent] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_PROOFREAD,
-		initialValue: false,
-	});
-	const [showRephraseContent, setShowRephraseContent] = useLocalStorage({
-		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_TAG_REPHRASE,
-		initialValue: false,
+		tags: [...tagsState.tags],
 	});
 
 	const updatePreferences = ({
@@ -64,70 +44,28 @@ export const TagsPanel = ({
 		label: string;
 		content: string;
 	}) => {
-		/**
-		 * if checked, we need to replace the existing tag with the new one (the tag
-		 * object contains the following props: slot, label and content). If the tag slot
-		 * did not exist, we need to add it to the list of tags.
-		 */
-		if (checked) {
-			setUserPreferences((prev) => {
-				const tags = prev.tags;
-				const tag = {
-					slot,
-					label,
-					content,
-				};
-				const index = tags.findIndex((t) => t.slot === slot);
+		setLocalTags((prev) => {
+			const tags = prev.tags;
+			const tag = {
+				slot,
+				label,
+				content,
+				enabled: checked,
+			};
+			const index = tags.findIndex((t) => t.slot === slot);
 
-				if (index === -1) {
-					return {
-						...prev,
-						tags: [...tags, { ...tag, slot }],
-					};
-				}
-
-				tags[index] = tag;
+			if (index === -1) {
 				return {
 					...prev,
-					tags: [...tags],
+					tags: [...tags, { ...tag, slot }],
 				};
-			});
-		} else {
-			/**
-			 * if unchecked, we need to remove the tag from the list of tags
-			 */
-			setUserPreferences((prev) => ({
-				...prev,
-				tags: prev.tags.filter((t) => t.slot !== slot),
-			}));
-		}
-	};
+			}
 
-	const onToggleSummarizeArticle = (checked: boolean) => {
-		setShowSummarizeArticle(checked);
-		updatePreferences({
-			slot: 1,
-			checked,
-			label: TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].label,
-			content: TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].content,
-		});
-	};
-	const onToggleProofreadContent = (checked: boolean) => {
-		setShowProofreadContent(checked);
-		updatePreferences({
-			slot: 2,
-			checked,
-			label: TAG_CONTENT[TAGS.PROOFREAD_CONTENT].label,
-			content: TAG_CONTENT[TAGS.PROOFREAD_CONTENT].content,
-		});
-	};
-	const onToggleRephraseContent = (checked: boolean) => {
-		setShowRephraseContent(checked);
-		updatePreferences({
-			slot: 3,
-			checked,
-			label: TAG_CONTENT[TAGS.REPHRASE_CONTENT].label,
-			content: TAG_CONTENT[TAGS.REPHRASE_CONTENT].content,
+			tags[index] = tag;
+			return {
+				...prev,
+				tags: [...tags],
+			};
 		});
 	};
 
@@ -139,63 +77,19 @@ export const TagsPanel = ({
 				type: SERVICE_TYPES.SET_USER_PREFERENCES,
 				params: {
 					user: user?.username,
-					tags: userPreferences.tags,
+					tags: localTags.tags,
 				},
 			});
-			// dispatch({
-			// 	type: ACTION_ENGINE,
-			// 	payload: {
-			// 		engine: userPreferences.engine,
-			// 	},
-			// });
+			tagsDispatch({
+				type: ACTION_SET_TAGS,
+				payload: {
+					tags: localTags.tags,
+				},
+			});
 		} catch (_error) {
 			// nothing to declare officer
 		}
 	};
-
-	useEffect(() => {
-		console.info(`==> [${Date.now()}] : `, userPreferences);
-	}, [userPreferences]);
-
-	/**
-	 * Effect to fetch the user preferences (including custom location)
-	 * from the server.
-	 */
-	// biome-ignore lint: getAccessToken is stable
-	useEffect(() => {
-		if (!open || !user) {
-			/**
-			 * Panel is closed, no pre-fetching
-			 */
-			setUserPreferences({
-				loaded: false,
-				tags: [],
-			});
-			return;
-		}
-
-		(async () => {
-			try {
-				const response = await serviceCall({
-					accessToken: await getAccessToken(),
-					type: SERVICE_TYPES.GET_USER_PREFERENCES,
-					params: {
-						user: user.username,
-					},
-				});
-
-				if (response.status === 200) {
-					setUserPreferences((prev) => ({
-						...prev,
-						loaded: true,
-						tags: response.data.tags || [],
-					}));
-				}
-			} catch (_error) {
-				// nothing to declare officer
-			}
-		})();
-	}, [user, open]);
 
 	return (
 		<Panel
@@ -233,32 +127,68 @@ export const TagsPanel = ({
 				</Flexgrid>
 			}
 		>
-			<Card header={CARDS.TAGS.TITLE} className="prose-dark dark:prose-lighter">
-				<p>{CARDS.TAGS.DESCRIPTION}</p>
-				<Toggle
-					noBorder
-					label={TAG_CONTENT[TAGS.SUMMARIZE_ARTICLE].label}
-					name={LOCAL_STORAGE_TAG_SUMMARIZE}
-					onChange={onToggleSummarizeArticle}
-					checked={showSummarizeArticle}
-				/>
-				<Toggle
-					spacing={{ t: 2 }}
-					noBorder
-					label={TAG_CONTENT[TAGS.PROOFREAD_CONTENT].label}
-					name={LOCAL_STORAGE_TAG_PROOFREAD}
-					onChange={onToggleProofreadContent}
-					checked={showProofreadContent}
-				/>
-				<Toggle
-					spacing={{ t: 2 }}
-					noBorder
-					label={TAG_CONTENT[TAGS.REPHRASE_CONTENT].label}
-					name={LOCAL_STORAGE_TAG_REPHRASE}
-					onChange={onToggleRephraseContent}
-					checked={showRephraseContent}
-				/>
-			</Card>
+			<p>{TAGS_DESCRIPTION}</p>
+			{localTags.tags &&
+				localTags.tags.map((tag: Tag) => (
+					<Card
+						key={`tag-slot-${tag.slot}`}
+						header={
+							tag.label !== ""
+								? `Tag ${tag.slot} - ${tag.label}`
+								: `Tag ${tag.slot}`
+						}
+						className="prose-dark dark:prose-lighter"
+						spacing={{ b: 2 }}
+					>
+						<Flexgrid spacing={{ t: 8, b: 6 }} columnGap={2} rowGap={6}>
+							<FlexgridItem span={{ fallback: 12, sm: 6 }}>
+								<TextInput
+									label="Label"
+									name={`tag${tag.slot}-label`}
+									value={tag.label}
+									onChange={(e) => {
+										updatePreferences({
+											slot: tag.slot,
+											checked: tag.enabled,
+											label: e.target.value,
+											content: tag.content,
+										});
+									}}
+								/>
+							</FlexgridItem>
+							<FlexgridItem span={{ fallback: 12, sm: 6 }}>
+								<TextInput
+									label="Content"
+									name={`tag${tag.slot}-content`}
+									value={tag.content}
+									onChange={(e) => {
+										updatePreferences({
+											slot: tag.slot,
+											checked: tag.enabled,
+											label: tag.label,
+											content: e.target.value,
+										});
+									}}
+								/>
+							</FlexgridItem>
+						</Flexgrid>
+						<Toggle
+							spacing={{ t: 2 }}
+							noBorder
+							label={"Enabled"}
+							name={tag.slot.toString()}
+							onChange={(checked) => {
+								updatePreferences({
+									slot: tag.slot,
+									checked,
+									label: tag.label,
+									content: tag.content,
+								});
+							}}
+							checked={tag.enabled}
+						/>
+					</Card>
+				))}
 		</Panel>
 	);
 };
