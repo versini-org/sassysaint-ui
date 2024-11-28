@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.5.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.5.1...client-v5.5.2) (2024-11-28)
+
+
+### Bug Fixes
+
+* do not focus on input field when GPT is done streaming ([9002f2b](https://github.com/versini-org/sassysaint-ui/commit/9002f2bd19d72882faed820b74c6177155553e99))
+* do not focus on input field when GPT is done streaming ([9002f2b](https://github.com/versini-org/sassysaint-ui/commit/9002f2bd19d72882faed820b74c6177155553e99))
+* do not focus on input field when GPT is done streaming ([f617050](https://github.com/versini-org/sassysaint-ui/commit/f617050ad1217122b2223e7cacbd0cd4c99f357d))
+
 ## [5.5.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.5.0...client-v5.5.1) (2024-11-28)
 
 
