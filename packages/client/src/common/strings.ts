@@ -14,8 +14,14 @@ export const STATS = "Statistics";
 export const HISTORY_TITLE = "Chat history";
 export const ABOUT_TITLE = "About";
 export const TYPE_QUESTION = "Type your question here";
-export const CLEAR = "Clear chat";
-export const CANCEL = "Cancel chat";
+export const TOOLBOX = {
+	ACTION_WHILE_STREAMING: {
+		content: "Cancel chat",
+	},
+	ACTION_WHILE_NOT_STREAMING: {
+		content: "New chat",
+	},
+};
 export const NA = "N/A";
 export const TAGS_DESCRIPTION =
 	"Tags are pre-filled buttons available on the main screen, to help you quickly start requests. The label is used for the button, and the content is what will be inserted in the chat when the button is pressed.";
