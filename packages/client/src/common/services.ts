@@ -52,12 +52,6 @@ export const GRAPHQL_QUERIES = {
 			plugins
 			engine
 			engines
-			tags {
-				enabled
-				slot
-				label
-				content
-			}
 		}
 	}`,
 	GET_USER_PREFERENCES: `query GetUserPreferences($user: String!) {
