@@ -1,5 +1,6 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button } from "@versini/ui-button";
+import { Button, ButtonIcon } from "@versini/ui-button";
+import { IconClose, IconEdit } from "@versini/ui-icons";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import { useContext, useEffect, useRef, useState } from "react";
 
@@ -10,11 +11,10 @@ import {
 	ROLE_ASSISTANT,
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
-import { CANCEL, CLEAR } from "../../common/strings";
+import { TOOLBOX } from "../../common/strings";
+import type { Tag } from "../../common/types";
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext, TagsContext } from "../App/AppContext";
-
-import type { Tag } from "../../common/types";
 
 export const Toolbox = () => {
 	const { dispatch, state } = useContext(AppContext);
@@ -31,7 +31,7 @@ export const Toolbox = () => {
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const buttonFocusedRef = useRef(false);
 
-	const clearChat = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const toolboxPrimaryAction = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
 		dispatch({
 			type: ACTION_RESET,
@@ -54,6 +54,7 @@ export const Toolbox = () => {
 
 		if (state?.streaming === false) {
 			buttonFocusedRef.current = false;
+			buttonRef.current?.blur();
 		}
 	}, [state]);
 
@@ -145,15 +146,24 @@ export const Toolbox = () => {
 
 			{isLastMessageFromRole(ROLE_ASSISTANT, state) && (
 				<div className={toolboxClass}>
-					<Button
+					<ButtonIcon
 						noBorder
 						mode="dark"
 						focusMode="light"
 						ref={buttonRef}
-						onClick={clearChat}
+						onClick={toolboxPrimaryAction}
+						labelRight={
+							state?.streaming
+								? TOOLBOX.ACTION_WHILE_STREAMING.content
+								: TOOLBOX.ACTION_WHILE_NOT_STREAMING.content
+						}
 					>
-						{state?.streaming ? CANCEL : CLEAR}
-					</Button>
+						{state?.streaming ? (
+							<IconClose className="size-4" />
+						) : (
+							<IconEdit className="size-4" />
+						)}
+					</ButtonIcon>
 				</div>
 			)}
 		</>

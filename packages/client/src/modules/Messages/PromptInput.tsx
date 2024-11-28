@@ -57,7 +57,6 @@ export const PromptInput = () => {
 	const [userInput, setUserInput] = useState("");
 	const { getAccessToken, user } = useAuth();
 
-	const inputFocusedRef = useRef(false);
 	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
 		null,
@@ -211,24 +210,10 @@ export const PromptInput = () => {
 	};
 
 	/**
-	 * Focus on the input field when the chat is not streaming,
-	 * but only if it was not manually focused before.
+	 * If the user clicks on a tag, the content of the tag is placed in the
+	 * input field, the input field gets the focus, and we reset the tag
+	 * toggle status.
 	 */
-	useEffect(() => {
-		if (
-			state?.streaming === false &&
-			!inputFocusedRef.current &&
-			inputRef.current
-		) {
-			inputFocusedRef.current = true;
-			inputRef.current.focus();
-		}
-
-		if (state?.streaming === true && inputFocusedRef.current === true) {
-			inputFocusedRef.current = false;
-		}
-	}, [state]);
-
 	useEffect(() => {
 		if (tagsState.tag !== "") {
 			setUserInput(tagsState.tag);
@@ -238,6 +223,15 @@ export const PromptInput = () => {
 			});
 		}
 	}, [tagsState, tagsDispatch]);
+
+	/**
+	 * If the chat is reset, we focus the input field.
+	 */
+	useEffect(() => {
+		if (state && state.usage === 0 && state.messages.length === 0) {
+			inputRef.current && inputRef.current.focus();
+		}
+	}, [state]);
 
 	return (
 		<form className="mt-2" onSubmit={onSubmit}>
