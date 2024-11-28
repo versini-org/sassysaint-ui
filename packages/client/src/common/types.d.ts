@@ -35,6 +35,7 @@ export type StateProps = {
 	usage: number;
 	isComponent: boolean;
 	engine: string;
+	tags: string[];
 
 	streaming?: boolean;
 };
@@ -97,4 +98,11 @@ export type MessageAssistantProps = {
 	loading?: boolean;
 	name?: string;
 	processingTime?: number;
+};
+
+export type Tag = {
+	enabled: boolean;
+	slot: number;
+	label: string;
+	content: string;
 };

@@ -129,7 +129,7 @@ export const FineTuningPanel = ({
 	};
 
 	/**
-	 * Effect to fetch the custom instructions (including custom location)
+	 * Effect to fetch the user preferences (including custom location)
 	 * from the server.
 	 */
 	// biome-ignore lint/correctness/useExhaustiveDependencies: getAccessToken is stable

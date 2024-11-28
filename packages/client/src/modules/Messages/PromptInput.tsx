@@ -18,7 +18,6 @@ import {
 	ROLE_SYSTEM,
 	ROLE_USER,
 	STATS_SEPARATOR,
-	TAG_CONTENT,
 } from "../../common/constants";
 import { restCall } from "../../common/services";
 import { SEND, TYPE_QUESTION } from "../../common/strings";
@@ -231,8 +230,8 @@ export const PromptInput = () => {
 	}, [state]);
 
 	useEffect(() => {
-		if (tagsState.tag !== "" && TAG_CONTENT[tagsState.tag]) {
-			setUserInput(TAG_CONTENT[tagsState.tag].content);
+		if (tagsState.tag !== "") {
+			setUserInput(tagsState.tag);
 			inputRef.current && inputRef.current.focus();
 			tagsDispatch({
 				type: ACTION_RESET_TAGS,

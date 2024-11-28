@@ -8,6 +8,7 @@ import {
 	ACTION_RESET_TAGS,
 	ACTION_RESTORE,
 	ACTION_SEARCH,
+	ACTION_SET_TAGS,
 	ACTION_SORT,
 	ACTION_STREAMING,
 	ACTION_TOGGLE_TAG,
@@ -18,11 +19,19 @@ import { ActionProps, StateProps } from "../../common/types";
 export const tagsReducer = (state: any, action: any) => {
 	if (action?.type === ACTION_TOGGLE_TAG) {
 		return {
+			tags: state.tags,
 			tag: action.payload.tag,
 		};
 	}
 	if (action?.type === ACTION_RESET_TAGS) {
 		return {
+			tags: state.tags,
+			tag: "",
+		};
+	}
+	if (action?.type === ACTION_SET_TAGS) {
+		return {
+			tags: action.payload.tags,
 			tag: "",
 		};
 	}
@@ -67,6 +76,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			isComponent: state.isComponent,
 			messages,
 			engine: state.engine,
+			tags: state.tags,
 		};
 	}
 
@@ -113,6 +123,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 						isComponent: state.isComponent,
 						messages,
 						engine: state.engine,
+						tags: state.tags,
 					};
 				}
 			}
@@ -121,6 +132,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 				id: state.id,
 				model: state.model,
 				engine: state.engine,
+				tags: state.tags,
 				usage: state.usage,
 				isComponent: state.isComponent,
 				messages: [
@@ -141,6 +153,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			usage: 0,
 			messages: [],
 			isComponent: state.isComponent,
+			tags: state.tags,
 		};
 	}
 
@@ -149,6 +162,7 @@ export const reducer = (state: StateProps, action: ActionProps) => {
 			id: state.id,
 			model: action.payload.model,
 			engine: state.engine,
+			tags: state.tags,
 			usage: action.payload.usage,
 			messages: state.messages,
 			isComponent: state.isComponent,

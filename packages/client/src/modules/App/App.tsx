@@ -37,6 +37,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		engine: DEFAULT_AI_ENGINE,
 		usage: 0,
 		messages: [],
+		tags: [],
 		isComponent,
 	});
 	const [stateHistory, dispatchHistory] = useReducer(historyReducer, {

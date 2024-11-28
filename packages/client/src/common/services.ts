@@ -59,18 +59,26 @@ export const GRAPHQL_QUERIES = {
 			instructions
 			location
 			engine
+			tags {
+				enabled
+				slot
+				label
+				content
+			}
 		}
 	}`,
 	SET_USER_PREFERENCES: `mutation SetUserPreferences(
 		$user: String!,
 		$instructions: String,
 		$location: String,
-		$engine: String) {
+		$engine: String,
+		$tags: [TagIn]) {
 			setUserPreferences(
 			user: $user,
 			instructions: $instructions,
 			location: $location,
-			engine: $engine)
+			engine: $engine,
+			tags: $tags)
 	}`,
 };
 
