@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.5.2...client-v5.6.0) (2024-11-30)
+
+
+### Features
+
+* renaming app from SS to CL ([d965346](https://github.com/versini-org/sassysaint-ui/commit/d965346807de0175b2318d50ade7a969cc5a9fc5))
+
 ## [5.5.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.5.1...client-v5.5.2) (2024-11-28)
 
 
