@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.0...client-v5.6.1) (2024-11-30)
+
+
+### Bug Fixes
+
+* app rename was not complete ([967ea48](https://github.com/versini-org/sassysaint-ui/commit/967ea48b772dbd9db04f400e78f883fd0f507631))
+
 ## [5.6.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.5.2...client-v5.6.0) (2024-11-30)
 
 
