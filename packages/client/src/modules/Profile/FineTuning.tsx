@@ -17,6 +17,7 @@ import {
 	LOCAL_STORAGE_PREFIX,
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
+import { APP_NAME } from "../../common/strings";
 import { getCurrentGeoLocation } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
@@ -261,8 +262,8 @@ export const FineTuningPanel = ({
 							className="prose-dark dark:prose-lighter"
 						>
 							<p>
-								What would you like Sassy Saint to know about you to provide
-								better responses?
+								What would you like <em>{APP_NAME}</em> to know about you to
+								provide better responses?
 							</p>
 							<TextArea
 								mode="alt-system"
