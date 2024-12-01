@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.6.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.1...client-v5.6.2) (2024-12-01)
+
+
+### Bug Fixes
+
+* minor size update to title and sub-title ([3feed56](https://github.com/versini-org/sassysaint-ui/commit/3feed56a682c6d9c0b4845ca3392321cc607e17b))
+* Tags Panel footer is not reachable on devices ([740fce1](https://github.com/versini-org/sassysaint-ui/commit/740fce1d7227c034dc2ff6a33c76802884bcada8))
+* **Tags:** automatically adding an ending space if it's missing ([f0ad052](https://github.com/versini-org/sassysaint-ui/commit/f0ad052c30e1e2396d9015d6bb0e96f6491b02ea))
+
 ## [5.6.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.0...client-v5.6.1) (2024-11-30)
 
 
