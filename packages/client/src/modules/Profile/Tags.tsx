@@ -136,11 +136,7 @@ export const TagsPanel = ({
 				localTags.tags.map((tag: Tag) => (
 					<Card
 						key={`tag-slot-${tag.slot}`}
-						header={
-							tag.label !== ""
-								? `Tag ${tag.slot} - ${tag.label}`
-								: `Tag ${tag.slot}`
-						}
+						header={`Tag ${tag.slot + 1}`}
 						className="prose-dark dark:prose-lighter"
 						spacing={{ b: 2 }}
 					>

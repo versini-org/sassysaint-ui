@@ -216,7 +216,16 @@ export const PromptInput = () => {
 	 */
 	useEffect(() => {
 		if (tagsState.tag !== "") {
-			setUserInput(tagsState.tag);
+			/**
+			 * If the tag ends with a colon but does not ends with a space,
+			 * we add a space at the end.
+			 */
+			const newTag =
+				tagsState.tag.endsWith(":") && !tagsState.tag.endsWith(": ")
+					? tagsState.tag + " "
+					: tagsState.tag;
+
+			setUserInput(newTag);
 			inputRef.current && inputRef.current.focus();
 			tagsDispatch({
 				type: ACTION_RESET_TAGS,
