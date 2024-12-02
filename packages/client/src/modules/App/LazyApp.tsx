@@ -12,12 +12,14 @@ import {
 	LOCAL_STORAGE_SEARCH,
 	LOCAL_STORAGE_SORT,
 } from "../../common/constants";
+import { appReducer } from "../../common/reducers/appReducer";
+import { historyReducer } from "../../common/reducers/historyReducer";
+import { tagsReducer } from "../../common/reducers/tagsReducer";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import type { ServerStatsProps } from "../../common/types";
 import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext, HistoryContext, TagsContext } from "./AppContext";
-import { historyReducer, reducer, tagsReducer } from "./reducer";
 
 function App({ isComponent = false }: { isComponent?: boolean }) {
 	const loadingServerStatsRef = useRef(false);
@@ -31,7 +33,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		initialValue: TableCellSortDirections.ASC,
 	});
 
-	const [state, dispatch] = useReducer(reducer, {
+	const [state, dispatch] = useReducer(appReducer, {
 		id: uuidv4(),
 		model: DEFAULT_AI_ENGINE,
 		engine: DEFAULT_AI_ENGINE,
@@ -47,6 +49,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 	});
 	const [stateTags, dispatchTags] = useReducer(tagsReducer, {
 		tag: "",
+		tags: [],
 	});
 
 	const [serverStats, setServerStats] = useState<ServerStatsProps>({

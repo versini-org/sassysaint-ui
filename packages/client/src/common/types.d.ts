@@ -4,8 +4,13 @@ import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
+	ACTION_RESET_TAGS,
 	ACTION_RESTORE,
+	ACTION_SEARCH,
+	ACTION_SET_TAGS,
+	ACTION_SORT,
 	ACTION_STREAMING,
+	ACTION_TOGGLE_TAG,
 } from "./constants";
 
 export type GeoLocation = {
@@ -106,3 +111,48 @@ export type Tag = {
 	label: string;
 	content: string;
 };
+
+export type StateTagsProps = {
+	tag: string;
+	tags: Tag[];
+};
+
+export type ActionTagsProps =
+	| undefined
+	| {
+			payload: {
+				tag: string;
+			};
+			type: typeof ACTION_TOGGLE_TAG;
+	  }
+	| {
+			type: typeof ACTION_RESET_TAGS;
+	  }
+	| {
+			payload: {
+				tags: Tag[];
+			};
+			type: typeof ACTION_SET_TAGS;
+	  };
+
+export type StateHistoryProps = {
+	searchString: string;
+	sortedCell: string;
+	sortDirection: string;
+};
+
+export type ActionHistoryProps =
+	| undefined
+	| {
+			payload: {
+				searchString: string;
+			};
+			type: typeof ACTION_SEARCH;
+	  }
+	| {
+			payload: {
+				sortedCell: string;
+				sortDirection: string;
+			};
+			type: typeof ACTION_SORT;
+	  };

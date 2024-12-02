@@ -1,12 +1,11 @@
 import { describe, expect, it, vi } from "vitest";
-
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
 	ACTION_RESTORE,
-} from "../../../common/constants";
-import { reducer } from "../reducer";
+} from "../constants";
+import { appReducer } from "../reducers/appReducer";
 
 const MOCK_UUIDV4 = "123456-7890-1234567890";
 
@@ -25,8 +24,10 @@ describe("Non-DOM tests", () => {
 				usage: 456,
 				messages: [],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
-			expect(reducer(state, undefined)).toEqual(state);
+			expect(appReducer(state, undefined)).toEqual(state);
 		});
 
 		it("should return the payload state on ACTION_RESTORE", () => {
@@ -36,6 +37,8 @@ describe("Non-DOM tests", () => {
 				usage: 456,
 				messages: [],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
 			const actionPayload = {
 				id: "123456",
@@ -50,7 +53,7 @@ describe("Non-DOM tests", () => {
 				],
 			};
 			expect(
-				reducer(state, {
+				appReducer(state, {
 					type: ACTION_RESTORE,
 					payload: actionPayload,
 				}),
@@ -64,6 +67,8 @@ describe("Non-DOM tests", () => {
 					},
 				],
 				isComponent: state.isComponent,
+				engine: state.engine,
+				tags: state.tags,
 			});
 		});
 
@@ -74,9 +79,11 @@ describe("Non-DOM tests", () => {
 				usage: 456,
 				messages: [],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
 			expect(
-				reducer(state, {
+				appReducer(state, {
 					type: ACTION_RESET,
 				}),
 			).toEqual({
@@ -85,6 +92,8 @@ describe("Non-DOM tests", () => {
 				usage: 0,
 				messages: [],
 				isComponent: state.isComponent,
+				engine: state.engine,
+				tags: state.tags,
 			});
 		});
 
@@ -95,13 +104,15 @@ describe("Non-DOM tests", () => {
 				usage: 456,
 				messages: [],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
 			const actionPayload = {
 				model: "gpt-777",
 				usage: 456789,
 			};
 			expect(
-				reducer(state, {
+				appReducer(state, {
 					type: ACTION_MODEL,
 					payload: actionPayload,
 				}),
@@ -111,6 +122,8 @@ describe("Non-DOM tests", () => {
 				usage: actionPayload.usage,
 				messages: state.messages,
 				isComponent: state.isComponent,
+				engine: state.engine,
+				tags: state.tags,
 			});
 		});
 
@@ -129,6 +142,8 @@ describe("Non-DOM tests", () => {
 					},
 				],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
 			const actionPayload = {
 				message: {
@@ -138,7 +153,7 @@ describe("Non-DOM tests", () => {
 				},
 			};
 			expect(
-				reducer(state, {
+				appReducer(state, {
 					type: ACTION_MESSAGE,
 					payload: actionPayload,
 				}),
@@ -153,6 +168,8 @@ describe("Non-DOM tests", () => {
 					},
 				],
 				isComponent: state.isComponent,
+				engine: state.engine,
+				tags: state.tags,
 			});
 		});
 
@@ -171,6 +188,8 @@ describe("Non-DOM tests", () => {
 					},
 				],
 				isComponent: false,
+				engine: "",
+				tags: [],
 			};
 			const actionPayload = {
 				message: {
@@ -179,7 +198,7 @@ describe("Non-DOM tests", () => {
 				},
 			};
 			expect(
-				reducer(state, {
+				appReducer(state, {
 					type: ACTION_MESSAGE,
 					payload: actionPayload,
 				}),
@@ -194,6 +213,8 @@ describe("Non-DOM tests", () => {
 					},
 				],
 				isComponent: state.isComponent,
+				engine: state.engine,
+				tags: state.tags,
 			});
 		});
 	});

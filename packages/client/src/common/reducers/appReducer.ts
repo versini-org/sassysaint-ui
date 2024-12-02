@@ -5,59 +5,13 @@ import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
 	ACTION_RESET,
-	ACTION_RESET_TAGS,
 	ACTION_RESTORE,
-	ACTION_SEARCH,
-	ACTION_SET_TAGS,
-	ACTION_SORT,
 	ACTION_STREAMING,
-	ACTION_TOGGLE_TAG,
 	ROLE_ASSISTANT,
-} from "../../common/constants";
-import { ActionProps, StateProps } from "../../common/types";
+} from "../constants";
+import type { ActionProps, StateProps } from "../types";
 
-export const tagsReducer = (state: any, action: any) => {
-	if (action?.type === ACTION_TOGGLE_TAG) {
-		return {
-			tags: state.tags,
-			tag: action.payload.tag,
-		};
-	}
-	if (action?.type === ACTION_RESET_TAGS) {
-		return {
-			tags: state.tags,
-			tag: "",
-		};
-	}
-	if (action?.type === ACTION_SET_TAGS) {
-		return {
-			tags: action.payload.tags,
-			tag: "",
-		};
-	}
-	return state;
-};
-
-export const historyReducer = (state: any, action: any) => {
-	if (action?.type === ACTION_SEARCH) {
-		return {
-			searchString: action.payload.searchString,
-			sortedCell: state.sortedCell,
-			sortDirection: state.sortDirection,
-		};
-	}
-
-	if (action?.type === ACTION_SORT) {
-		return {
-			searchString: state.searchString,
-			sortedCell: action.payload.sortedCell,
-			sortDirection: action.payload.sortDirection,
-		};
-	}
-	return state;
-};
-
-export const reducer = (state: StateProps, action: ActionProps) => {
+export const appReducer = (state: StateProps, action: ActionProps) => {
 	if (action?.type === ACTION_RESTORE) {
 		const messages = action.payload.messages.map((item: any) => {
 			return {
