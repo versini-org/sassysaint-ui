@@ -10,7 +10,9 @@ import { Login } from "../../modules/Login/Login";
 const params = new URL(document.location.href).searchParams;
 const debug = Boolean(params.get("debug")) || false;
 
-const LazyApp = lazy(() => import(/* webpackChunkName: "LazyApp" */ "./App"));
+const LazyApp = lazy(
+	() => import(/* webpackChunkName: "LazyApp" */ "./LazyApp"),
+);
 
 const Bootstrap = ({ isComponent }: { isComponent: boolean }) => {
 	const { isAuthenticated } = useAuth();
