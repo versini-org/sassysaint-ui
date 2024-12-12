@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.2...client-v5.6.3) (2024-12-12)
+
+
+### Bug Fixes
+
+* another name change ([6ff93b4](https://github.com/versini-org/sassysaint-ui/commit/6ff93b401bdfdd514e85bf61c7a792959e739037))
+
 ## [5.6.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.1...client-v5.6.2) (2024-12-01)
 
 
