@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.3...client-v5.6.4) (2024-12-12)
+
+
+### Bug Fixes
+
+* minor size update to title and sub-title - take 2 ([e884dcd](https://github.com/versini-org/sassysaint-ui/commit/e884dcd6ac247c03b09c810e6d628eef995e1dd1))
+
 ## [5.6.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.2...client-v5.6.3) (2024-12-12)
 
 
