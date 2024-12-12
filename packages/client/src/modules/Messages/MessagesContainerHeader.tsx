@@ -23,7 +23,7 @@ export const MessagesContainerHeader = () => {
 				<div className="basis-1/4">
 					<IconDog />
 				</div>
-				<div className="prose prose-light prose-sm md:prose-base prose-h1:mb-0 prose-h2:mt-0  prose-h1:text-2xl">
+				<div className="prose prose-sm prose-light md:prose-base prose-h1:mb-0 prose-h2:mt-0">
 					<h1>{APP_NAME}</h1>
 					<h2>{APP_MOTTO}</h2>
 				</div>
