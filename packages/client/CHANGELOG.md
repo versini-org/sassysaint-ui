@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.5](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.4...client-v5.6.5) (2024-12-13)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest + build on node 22 ([04b9153](https://github.com/versini-org/sassysaint-ui/commit/04b91534a0432e07760031d2a2376d687cc2d8f9))
+
 ## [5.6.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.3...client-v5.6.4) (2024-12-12)
 
 
