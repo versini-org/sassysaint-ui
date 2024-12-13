@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.3.16](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.15...sassysaint-v5.3.16) (2024-12-13)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest + build on node 22 ([04b9153](https://github.com/versini-org/sassysaint-ui/commit/04b91534a0432e07760031d2a2376d687cc2d8f9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.6.5
+
 ## [5.3.15](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.14...sassysaint-v5.3.15) (2024-12-12)
 
 
