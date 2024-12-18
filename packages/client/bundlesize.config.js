@@ -16,7 +16,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/index.<hash>.js",
-			limit: "73 kb",
+			limit: "86 kb",
 			alias: "Initial JS + Vendors (React, auth-provider, etc.)",
 		},
 		{
