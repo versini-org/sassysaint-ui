@@ -57,7 +57,7 @@ export const PromptInput = () => {
 	const [userInput, setUserInput] = useState("");
 	const { getAccessToken, user } = useAuth();
 
-	const inputRef: React.RefObject<HTMLTextAreaElement> = useRef(null);
+	const inputRef = useRef<HTMLTextAreaElement>(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
 		null,
 	);
