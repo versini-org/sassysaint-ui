@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.7.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.5...client-v5.7.0) (2024-12-18)
+
+
+### Features
+
+* migrating to React 19.x ([6294720](https://github.com/versini-org/sassysaint-ui/commit/6294720d10cdc8a96c99efdf67b8055f5fa14d73))
+* migrating to React 19.x ([250593a](https://github.com/versini-org/sassysaint-ui/commit/250593a39f13b296d928dba62103e61de9fd43d2))
+
 ## [5.6.5](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.4...client-v5.6.5) (2024-12-13)
 
 

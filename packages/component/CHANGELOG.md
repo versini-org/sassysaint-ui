@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.4.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.16...sassysaint-v5.4.0) (2024-12-18)
+
+
+### Features
+
+* migrating to React 19.x ([250593a](https://github.com/versini-org/sassysaint-ui/commit/250593a39f13b296d928dba62103e61de9fd43d2))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.7.0
+
 ## [5.3.16](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.15...sassysaint-v5.3.16) (2024-12-13)
 
 
