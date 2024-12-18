@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.1](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.4.0...sassysaint-v5.4.1) (2024-12-18)
+
+
+### Bug Fixes
+
+* invalid peer dependencies ([7428d1e](https://github.com/versini-org/sassysaint-ui/commit/7428d1e5e634006fb356d0e8060e67a91dd66ffb))
+
 ## [5.4.0](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.3.16...sassysaint-v5.4.0) (2024-12-18)
 
 

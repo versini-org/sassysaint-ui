@@ -1,6 +1,6 @@
 {
 	"name": "@versini/sassysaint",
-	"version": "5.4.0",
+	"version": "5.4.1",
 	"license": "MIT",
 	"author": "Arno Versini",
 	"publishConfig": {
@@ -9,7 +9,9 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build:check": "tsc",
 		"build:js": "vite build",
@@ -36,5 +38,7 @@
 		"clsx": "2.1.1",
 		"tailwindcss": "3.4.17"
 	},
-	"sideEffects": ["**/*.css"]
+	"sideEffects": [
+		"**/*.css"
+	]
 }
