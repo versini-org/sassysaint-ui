@@ -20,7 +20,7 @@ import {
 	STATS_SEPARATOR,
 } from "../../common/constants";
 import { restCall } from "../../common/services";
-import { SEND, TYPE_QUESTION } from "../../common/strings";
+import { CLIPBOARD_TAG, SEND, TYPE_QUESTION } from "../../common/strings";
 import { AppContext, TagsContext } from "../App/AppContext";
 
 const dispatchStreaming = (dispatch: any, streaming: boolean) => {
@@ -230,11 +230,10 @@ export const PromptInput = () => {
 			 * current content of the clipboard, or an empty string if the
 			 * clipboard is empty.
 			 */
-			const clipboardIndex = newTag.indexOf("<clipboard>");
-
+			const clipboardIndex = newTag.indexOf(CLIPBOARD_TAG);
 			if (clipboardIndex !== -1) {
 				navigator.clipboard.readText().then((clipboard) => {
-					setUserInput(newTag.replace("<clipboard>", clipboard));
+					setUserInput(newTag.replace(CLIPBOARD_TAG, clipboard));
 				});
 			} else {
 				setUserInput(newTag);
