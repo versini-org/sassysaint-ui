@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.7.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.7.0...client-v5.7.1) (2024-12-21)
+
+
+### Bug Fixes
+
+* truncate long URLs in chats and history table ([#688](https://github.com/versini-org/sassysaint-ui/issues/688)) ([44ae009](https://github.com/versini-org/sassysaint-ui/commit/44ae0096bdcd9899354e6896e397c90047831487))
+
 ## [5.7.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.6.5...client-v5.7.0) (2024-12-18)
 
 
