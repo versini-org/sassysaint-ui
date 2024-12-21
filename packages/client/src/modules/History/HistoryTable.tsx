@@ -14,7 +14,6 @@ import {
 	TableRow,
 } from "@versini/ui-table";
 import { useContext, useRef, useState } from "react";
-import { useMedia } from "react-use";
 
 import {
 	ACTION_RESET,
@@ -97,7 +96,6 @@ export const HistoryTable = ({
 		message: "",
 	});
 	const [showConfirmation, setShowConfirmation] = useState(false);
-	const isWide = useMedia("(min-width: 480px)");
 	const { state: historyState, dispatch: historyDispatch } =
 		useContext(HistoryContext);
 	const [, setCachedSortDirection] = useLocalStorage({
@@ -220,7 +218,6 @@ export const HistoryTable = ({
 			<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
 				<TableHead>
 					<TableRow>
-						{isWide && <TableCell className="sr-only">Row</TableCell>}
 						<TableCellSort
 							buttonClassName="text-xs sm:text-sm"
 							cellId="timestamp"
@@ -244,7 +241,6 @@ export const HistoryTable = ({
 					{data.map((item: HistoryItemProps, idx: any) => {
 						return item?.messages?.length > 0 ? (
 							<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
-								{isWide && <TableCell>{idx + 1}</TableCell>}
 								<TableCell
 									component="th"
 									scope="row"
@@ -252,7 +248,12 @@ export const HistoryTable = ({
 								>
 									{item.timestamp}
 								</TableCell>
-								<TableCell className="max-w-[100px] text-white sm:max-w-full text-xs sm:text-sm">
+								<TableCell
+									className="max-w-[100px] text-white sm:max-w-full text-xs sm:text-sm"
+									style={{
+										wordBreak: "break-word",
+									}}
+								>
 									{extractFirstUserMessage(item.messages)}
 								</TableCell>
 
@@ -308,7 +309,7 @@ export const HistoryTable = ({
 				</TableBody>
 				<TableFooter>
 					<TableRow>
-						<TableCell colSpan={5}>
+						<TableCell colSpan={4}>
 							<div>
 								{pluralize(
 									`${filteredHistory.data.length} chat`,
