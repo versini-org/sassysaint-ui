@@ -225,7 +225,21 @@ export const PromptInput = () => {
 					? tagsState.tag + " "
 					: tagsState.tag;
 
-			setUserInput(newTag);
+			/**
+			 * If the tag contains the string <clipboard>, replace this string with the
+			 * current content of the clipboard, or an empty string if the
+			 * clipboard is empty.
+			 */
+			const clipboardIndex = newTag.indexOf("<clipboard>");
+
+			if (clipboardIndex !== -1) {
+				navigator.clipboard.readText().then((clipboard) => {
+					setUserInput(newTag.replace("<clipboard>", clipboard));
+				});
+			} else {
+				setUserInput(newTag);
+			}
+
 			inputRef.current && inputRef.current.focus();
 			tagsDispatch({
 				type: ACTION_RESET_TAGS,
