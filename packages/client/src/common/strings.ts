@@ -24,7 +24,7 @@ export const TOOLBOX = {
 };
 export const NA = "N/A";
 export const TAGS_DESCRIPTION =
-	"Tags are pre-filled buttons available on the main screen, to help you quickly start requests. The label is used for the button, and the content is what will be inserted in the chat when the button is pressed.";
+	"Tags are pre-filled buttons available on the main screen, to help you quickly start requests. The label is used for the button, and the content is what will be inserted in the chat when the button is pressed. You can use the special placeholder <clipboard> to automatically insert the content of your clipboard.";
 
 export const CARDS = {
 	PREFERENCES: {
