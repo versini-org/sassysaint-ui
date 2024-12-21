@@ -72,8 +72,8 @@ importers:
         specifier: 1.2.1
         version: 1.2.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))
       '@versini/ui-truncate':
-        specifier: 1.1.1
-        version: 1.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))
+        specifier: 1.1.2
+        version: 1.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
@@ -1705,8 +1705,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-truncate@1.1.1':
-    resolution: {integrity: sha512-dDKUDMTJm2Lv6IQVxY1EcMIP3F4DLkXM7CtXG5yTIBlnp385q1N0dhZbIFuUlTRqLWZDkxYHHt7SJL1AwDJrHg==}
+  '@versini/ui-truncate@1.1.2':
+    resolution: {integrity: sha512-8Xs5jc+QGXkXIy2KqkscSXa8AZGuBX0gGUXEK9rNfUIRDkejDMLPHF0xpl2QlvFfcdueWfNnFgHRpy69ztXT/A==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -7410,7 +7410,7 @@ snapshots:
       - '@types/react-dom'
       - ts-node
 
-  '@versini/ui-truncate@1.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))':
+  '@versini/ui-truncate@1.1.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
       '@versini/ui-button': 1.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))
