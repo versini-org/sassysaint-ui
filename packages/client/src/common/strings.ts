@@ -14,6 +14,7 @@ export const STATS = "Statistics";
 export const HISTORY_TITLE = "Chat history";
 export const ABOUT_TITLE = "About";
 export const TYPE_QUESTION = "Type your question here";
+export const CLIPBOARD_TAG = "<clipboard>";
 export const TOOLBOX = {
 	ACTION_WHILE_STREAMING: {
 		content: "Cancel chat",
