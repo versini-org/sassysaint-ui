@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.8.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.7.1...client-v5.8.0) (2024-12-21)
+
+
+### Features
+
+* adding tags automatic paste from clipboard ([#690](https://github.com/versini-org/sassysaint-ui/issues/690)) ([b031e75](https://github.com/versini-org/sassysaint-ui/commit/b031e757d67f774bc62d107631cdd36165240653))
+
 ## [5.7.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.7.0...client-v5.7.1) (2024-12-21)
 
 
