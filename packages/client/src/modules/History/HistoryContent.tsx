@@ -9,6 +9,7 @@ import {
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 } from "../../common/constants";
+import { debounce } from "../../common/utilities";
 import { AppContext, HistoryContext } from "../App/AppContext";
 import { HistoryTable } from "./HistoryTable";
 
@@ -54,6 +55,8 @@ export const HistoryContent = ({
 	});
 
 	const updateDataOnSearch = (searchString: string) => {
+		console.info(`==> [${Date.now()}] searchString: `, searchString);
+
 		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({
 			data: filteredData,
@@ -66,9 +69,9 @@ export const HistoryContent = ({
 		});
 	};
 
-	const onSearchChange = (e: any) => {
+	const onSearchChange = debounce((e: any) => {
 		updateDataOnSearch(e.target.value);
-	};
+	}, 200);
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
