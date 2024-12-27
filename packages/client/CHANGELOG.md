@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.8.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.1...client-v5.8.2) (2024-12-27)
+
+
+### Bug Fixes
+
+* debounce search action in history by 200ms ([#698](https://github.com/versini-org/sassysaint-ui/issues/698)) ([c97d77a](https://github.com/versini-org/sassysaint-ui/commit/c97d77aa3882c939d3d6c879b9f3a989ae5dae24))
+* filtering history data is not taking timestamp into account ([#697](https://github.com/versini-org/sassysaint-ui/issues/697)) ([03a23dd](https://github.com/versini-org/sassysaint-ui/commit/03a23dd66509fd718393cd50821c8845278fe9f5))
+
 ## [5.8.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.0...client-v5.8.1) (2024-12-27)
 
 
