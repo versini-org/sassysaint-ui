@@ -216,7 +216,7 @@ export const HistoryTable = ({
 					</li>
 				</ul>
 			</ConfirmationPanel>
-			<Table stickyHeader stickyFooter wrapperClassName="max-h-[60vh]">
+			<Table stickyHeader stickyFooter compact wrapperClassName="max-h-[60vh]">
 				<TableHead>
 					<TableRow>
 						<TableCellSort
@@ -245,7 +245,8 @@ export const HistoryTable = ({
 								<TableCell
 									component="th"
 									scope="row"
-									className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm"
+									className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm max-w-20 sm:max-w-none"
+									// className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm"
 								>
 									{item.timestamp}
 								</TableCell>
