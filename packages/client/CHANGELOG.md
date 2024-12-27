@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.8.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.0...client-v5.8.1) (2024-12-27)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([#693](https://github.com/versini-org/sassysaint-ui/issues/693)) ([3e4f02b](https://github.com/versini-org/sassysaint-ui/commit/3e4f02bd7ec767985bbadac5ad7f086b6e2f3746))
+* model in history table should be centered ([#695](https://github.com/versini-org/sassysaint-ui/issues/695)) ([6d526e5](https://github.com/versini-org/sassysaint-ui/commit/6d526e5010882d6b6ca48a2b9eb29d603cf35bcf))
+* slightly more compact history table ([#696](https://github.com/versini-org/sassysaint-ui/issues/696)) ([cef8f20](https://github.com/versini-org/sassysaint-ui/commit/cef8f2042b91a5fa92dc4829e260484ff22b6752))
+
 ## [5.8.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.7.1...client-v5.8.0) (2024-12-21)
 
 
