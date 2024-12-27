@@ -3,6 +3,7 @@
 	"private": true,
 	"scripts": {
 		"build": "lerna run build",
+		"clean": "lerna run clean",
 		"deploy": "cp -r packages/client/dist/* /var/www/chat.gizmette.com/",
 		"lint": "lerna run lint",
 		"lint-staged": "lint-staged --config \"./configuration/lint-staged.config.cjs\"",
@@ -11,8 +12,9 @@
 	},
 	"devDependencies": {
 		"@node-cli/bundlesize": "4.2.1",
-		"@versini/dev-dependencies-client": "7.0.2",
-		"@versini/dev-dependencies-types": "3.0.0"
+		"@versini/dev-dependencies-client": "7.0.3",
+		"@versini/dev-dependencies-common": "5.0.2",
+		"@versini/dev-dependencies-types": "3.0.1"
 	},
-	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf"
+	"packageManager": "pnpm@9.15.2"
 }
