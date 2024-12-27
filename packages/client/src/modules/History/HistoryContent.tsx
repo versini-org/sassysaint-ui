@@ -55,8 +55,6 @@ export const HistoryContent = ({
 	});
 
 	const updateDataOnSearch = (searchString: string) => {
-		console.info(`==> [${Date.now()}] searchString: `, searchString);
-
 		const filteredData = filterDataByContent(fullHistory, searchString);
 		setFilteredHistory({
 			data: filteredData,
