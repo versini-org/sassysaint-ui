@@ -246,7 +246,6 @@ export const HistoryTable = ({
 									component="th"
 									scope="row"
 									className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm max-w-20 sm:max-w-none"
-									// className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm"
 								>
 									{item.timestamp}
 								</TableCell>
