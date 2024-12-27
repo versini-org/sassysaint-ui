@@ -15,6 +15,7 @@ import {
 } from "@versini/ui-table";
 import { useContext, useRef, useState } from "react";
 
+import { Flexgrid } from "@versini/ui-system";
 import {
 	ACTION_RESET,
 	ACTION_RESTORE,
@@ -258,12 +259,14 @@ export const HistoryTable = ({
 								</TableCell>
 
 								<TableCell component="th" scope="row" className="text-gray-400">
-									{item.model && item.model.startsWith("claude") && (
-										<IconAnthropic className="size-4 sm:size-5" />
-									)}
-									{item.model && item.model.startsWith("gpt") && (
-										<IconOpenAI className="size-4 sm:size-5" />
-									)}
+									<Flexgrid alignHorizontal="center">
+										{item.model && item.model.startsWith("claude") && (
+											<IconAnthropic className="size-4 sm:size-5" />
+										)}
+										{item.model && item.model.startsWith("gpt") && (
+											<IconOpenAI className="size-4 sm:size-5" />
+										)}
+									</Flexgrid>
 								</TableCell>
 
 								<TableCell className="px-2">
