@@ -30,7 +30,7 @@
 		"react-dom": "^18.3.1 || ^19.0.0"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "1.12.0",
+		"@versini/ui-styles": "1.14.0",
 		"@sassysaint/client": "workspace:../client"
 	},
 	"dependencies": {
