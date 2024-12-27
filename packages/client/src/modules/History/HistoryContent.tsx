@@ -22,12 +22,15 @@ function filterDataByContent(data: any, searchString: string) {
 	if (!searchString) {
 		return data;
 	}
-	return data.filter((item: { messages: any[] }) =>
-		item.messages.some(
-			(message) =>
-				message.content !== null &&
-				message.content.toLowerCase().includes(searchString.toLowerCase()),
-		),
+	return data.filter(
+		(item: { messages: any[]; timestamp: string }) =>
+			item.messages.some(
+				(message) =>
+					message.content !== null &&
+					message.content.toLowerCase().includes(searchString.toLowerCase()),
+			) ||
+			(item.timestamp &&
+				item.timestamp.toLowerCase().includes(searchString.toLowerCase())),
 	);
 }
 
