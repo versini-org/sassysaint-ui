@@ -221,3 +221,20 @@ export const getMessageContaintWrapperClass = (isAuthenticated?: boolean) => {
 export const pluralize = (word: string, count: number) => {
 	return count === 1 ? word : `${word}s`;
 };
+
+/**
+ * Creates a debounced function that delays invoking the provided function until
+ * after the specified wait time has elapsed since the last time the debounced
+ * function was invoked.
+ *
+ * @param func - The function to debounce.
+ * @param wait - The number of milliseconds to delay.
+ * @returns A new debounced function.
+ */
+export const debounce = (func: (...args: any[]) => void, wait: number) => {
+	let timeout: number | undefined;
+	return (...args: any[]) => {
+		window.clearTimeout(timeout);
+		timeout = window.setTimeout(() => func(...args), wait);
+	};
+};
