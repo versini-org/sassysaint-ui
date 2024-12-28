@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.9.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.2...client-v5.9.0) (2024-12-28)
+
+
+### Features
+
+* minor optimization in search history panel ([#702](https://github.com/versini-org/sassysaint-ui/issues/702)) ([3f7e339](https://github.com/versini-org/sassysaint-ui/commit/3f7e339d30421ba1d9540cf5578ae7dbcae63f0c))
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([#700](https://github.com/versini-org/sassysaint-ui/issues/700)) ([2bfc945](https://github.com/versini-org/sassysaint-ui/commit/2bfc945dfcbefb1324d40b9f36a2bf9c7cb27d7a))
+
 ## [5.8.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.1...client-v5.8.2) (2024-12-27)
 
 
