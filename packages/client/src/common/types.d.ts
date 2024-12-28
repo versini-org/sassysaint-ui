@@ -138,7 +138,7 @@ export type ActionTagsProps =
 export type StateHistoryProps = {
 	searchString: string;
 	sortedCell: string;
-	sortDirection: string;
+	sortDirection: "asc" | "desc";
 };
 
 export type ActionHistoryProps =
@@ -156,3 +156,8 @@ export type ActionHistoryProps =
 			};
 			type: typeof ACTION_SORT;
 	  };
+
+export type HistoryContextProps = {
+	dispatch: React.Dispatch<ActionHistoryProps>;
+	state: StateHistoryProps;
+};

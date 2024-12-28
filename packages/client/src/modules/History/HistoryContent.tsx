@@ -4,6 +4,7 @@ import { useLocalStorage } from "@versini/ui-hooks";
 import { TextInput } from "@versini/ui-textinput";
 import { useContext, useEffect, useRef, useState } from "react";
 
+import { TableCellSortDirections } from "@versini/ui-table";
 import {
 	ACTION_SEARCH,
 	LOCAL_STORAGE_PREFIX,
@@ -22,10 +23,12 @@ const filterDataByContent = async ({
 	searchString,
 	username,
 	accessToken,
+	direction = "asc",
 }: {
 	searchString: string;
 	username?: string;
 	accessToken: string;
+	direction?: string;
 }) => {
 	if (!username) {
 		return [];
@@ -39,6 +42,7 @@ const filterDataByContent = async ({
 				userId: username,
 				searchString,
 				limit: 1,
+				direction,
 			},
 		});
 		if (response.status === 200) {
@@ -67,8 +71,10 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
+		sortedDirection: "asc" | "desc";
 	}>({
 		data: [],
+		sortedDirection: historyState.sortDirection,
 	});
 
 	const updateDataOnSearch = async (searchString: string) => {
@@ -77,9 +83,11 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 			searchString,
 			username: user?.username,
 			accessToken,
+			direction: historyState.sortDirection,
 		});
 		setFilteredHistory({
 			data: filteredData,
+			sortedDirection: historyState.sortDirection,
 		});
 		setCachedSearchString(searchString);
 
@@ -109,12 +117,33 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 				searchString: historyState.searchString,
 				username: user?.username,
 				accessToken,
+				direction: historyState.sortDirection,
 			});
 			setFilteredHistory({
 				data: filteredData,
+				sortedDirection: historyState.sortDirection,
 			});
 		})();
 	});
+
+	useEffect(() => {
+		if (historyState.sortDirection !== filteredHistory.sortedDirection) {
+			const sortedData = [...filteredHistory.data].sort((a, b) => {
+				if (historyState.sortedCell === "timestamp") {
+					const dateA = new Date(a[historyState.sortedCell]).getTime();
+					const dateB = new Date(b[historyState.sortedCell]).getTime();
+					return historyState.sortDirection === TableCellSortDirections.ASC
+						? dateA - dateB
+						: dateB - dateA;
+				}
+				return 0;
+			});
+			setFilteredHistory({
+				data: sortedData,
+				sortedDirection: historyState.sortDirection,
+			});
+		}
+	}, [filteredHistory, historyState]);
 
 	return isAuthenticated
 		? filteredHistory && filteredHistory.data && (

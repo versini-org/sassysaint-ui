@@ -1,7 +1,7 @@
 import React from "react";
 
 import { DEFAULT_AI_ENGINE } from "../../common/constants";
-import type { AppContextProps } from "../../common/types";
+import type { AppContextProps, HistoryContextProps } from "../../common/types";
 
 export const AppContext = React.createContext<AppContextProps>({
 	state: {
@@ -23,7 +23,7 @@ export const AppContext = React.createContext<AppContextProps>({
 	},
 });
 
-export const HistoryContext = React.createContext<any>({
+export const HistoryContext = React.createContext<HistoryContextProps>({
 	state: { searchString: "", sortedCell: "", sortDirection: "" },
 	dispatch: () => {},
 });
