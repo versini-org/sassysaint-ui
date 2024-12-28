@@ -216,7 +216,12 @@ export const HistoryTable = ({
 					</li>
 				</ul>
 			</ConfirmationPanel>
-			<Table stickyHeader stickyFooter compact wrapperClassName="max-h-[60vh]">
+			<Table
+				stickyHeader
+				stickyFooter
+				compact
+				wrapperClassName="max-h-[60vh] min-h-[60vh]"
+			>
 				<TableHead>
 					<TableRow>
 						<TableCellSort

@@ -29,7 +29,7 @@ import { About } from "../About/About";
 import { AppContext } from "../App/AppContext";
 import { ChatDetails } from "../ChatDetails/ChatDetails";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
-import { History } from "../History/History";
+import { HistoryPanel } from "../History/HistoryPanel";
 import { Profile } from "../Profile/Profile";
 
 const LazyHeader = () => {
@@ -40,13 +40,7 @@ const LazyHeader = () => {
 	const [showChatDetails, setShowChatDetails] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
 	const [showAbout, setShowAbout] = useState(false);
-	const [historyData, setHistoryData] = useState<any[]>([]);
 	const [showConfirmation, setShowConfirmation] = useState(false);
-	const [fetchingHistory, setFetchingHistory] = useState({
-		done: false,
-		progress: false,
-		timestamp: Date.now(),
-	});
 
 	const [showEngineToggleInMenu] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_ENGINE_TOGGLE,
@@ -66,63 +60,6 @@ const LazyHeader = () => {
 	};
 	const onClickAbout = () => {
 		setShowAbout(!showAbout);
-	};
-	const onOpenChange = async (open: boolean) => {
-		const now = Date.now();
-
-		if (!open) {
-			/**
-			 * Menu is closed, no pre-fetching
-			 */
-			return;
-		}
-
-		if (
-			!user ||
-			!state ||
-			fetchingHistory.progress ||
-			(fetchingHistory.done === true && now - fetchingHistory.timestamp < 5000)
-		) {
-			/**
-			 * Menu is opened, but
-			 * - prefetching is in progress, or
-			 * - prefetching was done at least once, but it was less than 5 seconds ago
-			 *
-			 * Therefore, no prefetching.
-			 */
-			return;
-		}
-
-		setFetchingHistory({
-			done: true,
-			progress: true,
-			timestamp: now,
-		});
-
-		try {
-			const response = await serviceCall({
-				accessToken: await getAccessToken(),
-				type: SERVICE_TYPES.GET_CHATS,
-				params: {
-					userId: user.username,
-				},
-			});
-			if (response.status === 200) {
-				setHistoryData(response.data);
-				setFetchingHistory({
-					done: true,
-					progress: false,
-					timestamp: Date.now(),
-				});
-			}
-		} catch (_error) {
-			setFetchingHistory({
-				done: true,
-				progress: false,
-				timestamp: Date.now(),
-			});
-			// nothing to declare officer
-		}
 	};
 	const onClickConfirmLogout = () => {
 		setShowConfirmation(!showConfirmation);
@@ -151,11 +88,7 @@ const LazyHeader = () => {
 
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
 			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
-			<History
-				open={showHistory}
-				onOpenChange={setShowHistory}
-				historyData={historyData}
-			/>
+			<HistoryPanel open={showHistory} onOpenChange={setShowHistory} />
 			<About open={showAbout} onOpenChange={setShowAbout} />
 			<div className="relative">
 				{showEngineToggleInMenu && serverStats && (
@@ -226,7 +159,6 @@ const LazyHeader = () => {
 							</ButtonIcon>
 						}
 						defaultPlacement="bottom-end"
-						onOpenChange={onOpenChange}
 					>
 						<MenuItem
 							label="Profile"

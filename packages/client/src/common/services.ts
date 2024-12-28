@@ -7,8 +7,8 @@ export const GRAPHQL_QUERIES = {
 			displayName
     }
   }`,
-	GET_CHATS: `query GetChats($userId: String!) {
-		chats(user: $userId) {
+	GET_CHATS: `query GetChats($userId: String!, $searchString: String, $limit: Float) {
+		chats(user: $userId, searchString: $searchString, limit: $limit) {
 			timestamp
 			id
 			model

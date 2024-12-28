@@ -2,44 +2,59 @@ import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { TextInput } from "@versini/ui-textinput";
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import {
 	ACTION_SEARCH,
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SEARCH,
 } from "../../common/constants";
+import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { debounce } from "../../common/utilities";
 import { AppContext, HistoryContext } from "../App/AppContext";
 import { HistoryTable } from "./HistoryTable";
 
 type HistoryContentProps = {
-	historyData: any[];
 	onOpenChange: any;
 };
 
-function filterDataByContent(data: any, searchString: string) {
-	if (!searchString) {
-		return data;
+const filterDataByContent = async ({
+	searchString,
+	username,
+	accessToken,
+}: {
+	searchString: string;
+	username?: string;
+	accessToken: string;
+}) => {
+	if (!username) {
+		return [];
 	}
-	return data.filter(
-		(item: { messages: any[]; timestamp: string }) =>
-			item.messages.some(
-				(message) =>
-					message.content !== null &&
-					message.content.toLowerCase().includes(searchString.toLowerCase()),
-			) ||
-			(item.timestamp &&
-				item.timestamp.toLowerCase().includes(searchString.toLowerCase())),
-	);
-}
 
-export const HistoryContent = ({
-	onOpenChange,
-	historyData,
-}: HistoryContentProps) => {
-	const { isAuthenticated } = useAuth();
+	try {
+		const response = await serviceCall({
+			accessToken,
+			type: SERVICE_TYPES.GET_CHATS,
+			params: {
+				userId: username,
+				searchString,
+				limit: 1,
+			},
+		});
+		if (response.status === 200) {
+			return response.data;
+		}
+	} catch (_error) {
+		return [];
+	}
+
+	return [];
+};
+
+export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
+	const { isAuthenticated, getAccessToken, user } = useAuth();
 	const inputRef = useRef<HTMLInputElement>(null);
+	const loadingInitialDataRef = useRef(false);
 
 	const { dispatch } = useContext(AppContext);
 	const { state: historyState, dispatch: historyDispatch } =
@@ -50,15 +65,19 @@ export const HistoryContent = ({
 		initialValue: historyState.searchString,
 	});
 
-	const fullHistory = useMemo(() => historyData, [historyData]);
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
 	}>({
-		data: fullHistory,
+		data: [],
 	});
 
-	const updateDataOnSearch = (searchString: string) => {
-		const filteredData = filterDataByContent(fullHistory, searchString);
+	const updateDataOnSearch = async (searchString: string) => {
+		const accessToken = await getAccessToken();
+		const filteredData = await filterDataByContent({
+			searchString,
+			username: user?.username,
+			accessToken,
+		});
 		setFilteredHistory({
 			data: filteredData,
 		});
@@ -72,21 +91,30 @@ export const HistoryContent = ({
 
 	const onSearchChange = debounce((e: any) => {
 		updateDataOnSearch(e.target.value);
-	}, 200);
+	}, 500);
 
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 	};
 
 	useEffect(() => {
-		const filteredData = filterDataByContent(
-			historyData,
-			historyState.searchString,
-		);
-		setFilteredHistory({
-			data: filteredData,
-		});
-	}, [historyData, historyState.searchString]);
+		if (loadingInitialDataRef.current) {
+			return;
+		}
+		(async () => {
+			loadingInitialDataRef.current = true;
+
+			const accessToken = await getAccessToken();
+			const filteredData = await filterDataByContent({
+				searchString: historyState.searchString,
+				username: user?.username,
+				accessToken,
+			});
+			setFilteredHistory({
+				data: filteredData,
+			});
+		})();
+	});
 
 	return isAuthenticated
 		? filteredHistory && filteredHistory.data && (
