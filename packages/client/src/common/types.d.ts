@@ -1,3 +1,5 @@
+import { TableCellSortDirections } from "@versini/ui-table";
+
 import {
 	ACTION_ENGINE,
 	ACTION_LOCATION,
@@ -138,7 +140,9 @@ export type ActionTagsProps =
 export type StateHistoryProps = {
 	searchString: string;
 	sortedCell: string;
-	sortDirection: string;
+	sortDirection:
+		| typeof TableCellSortDirections.ASC
+		| typeof TableCellSortDirections.DESC;
 };
 
 export type ActionHistoryProps =
@@ -156,3 +160,8 @@ export type ActionHistoryProps =
 			};
 			type: typeof ACTION_SORT;
 	  };
+
+export type HistoryContextProps = {
+	dispatch: React.Dispatch<ActionHistoryProps>;
+	state: StateHistoryProps;
+};

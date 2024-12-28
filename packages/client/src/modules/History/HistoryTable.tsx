@@ -3,6 +3,7 @@ import { ButtonIcon } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
 import { IconAnthropic, IconOpenAI } from "@versini/ui-icons";
+import { Flexgrid } from "@versini/ui-system";
 import {
 	Table,
 	TableBody,
@@ -15,7 +16,6 @@ import {
 } from "@versini/ui-table";
 import { useContext, useRef, useState } from "react";
 
-import { Flexgrid } from "@versini/ui-system";
 import {
 	ACTION_RESET,
 	ACTION_RESTORE,
@@ -86,7 +86,12 @@ export const HistoryTable = ({
 	onOpenChange,
 }: {
 	dispatch: any;
-	filteredHistory: any;
+	filteredHistory: {
+		data: any[];
+		sortedDirection:
+			| typeof TableCellSortDirections.ASC
+			| typeof TableCellSortDirections.DESC;
+	};
 	onOpenChange: any;
 	setFilteredHistory: any;
 }) => {
@@ -104,47 +109,8 @@ export const HistoryTable = ({
 		initialValue: historyState.sortDirection,
 	});
 
-	const data = filteredHistory.data.sort(
-		(
-			a: { [x: string]: string | number | Date },
-			b: { [x: string]: string | number | Date },
-		) => {
-			switch (historyState.sortedCell) {
-				case "timestamp":
-					if (historyState.sortDirection === TableCellSortDirections.ASC) {
-						return (
-							new Date(a[historyState.sortedCell]).getTime() -
-							new Date(b[historyState.sortedCell]).getTime()
-						);
-					} else if (
-						historyState.sortDirection === TableCellSortDirections.DESC
-					) {
-						return (
-							new Date(b[historyState.sortedCell]).getTime() -
-							new Date(a[historyState.sortedCell]).getTime()
-						);
-					}
-					break;
-
-				default:
-					return 0;
-			}
-			return 0;
-		},
-	);
-
 	const onClickSort = (key: string) => {
 		switch (historyState.sortDirection) {
-			case false:
-				setCachedSortDirection(TableCellSortDirections.ASC);
-				historyDispatch({
-					type: ACTION_SORT,
-					payload: {
-						sortedCell: key,
-						sortDirection: TableCellSortDirections.ASC,
-					},
-				});
-				break;
 			case TableCellSortDirections.ASC:
 				setCachedSortDirection(TableCellSortDirections.DESC);
 				historyDispatch({
@@ -244,7 +210,7 @@ export const HistoryTable = ({
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{data.map((item: HistoryItemProps, idx: any) => {
+					{filteredHistory.data.map((item: HistoryItemProps, idx: any) => {
 						return item?.messages?.length > 0 ? (
 							<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
 								<TableCell
