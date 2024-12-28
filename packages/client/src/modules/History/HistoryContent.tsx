@@ -28,7 +28,9 @@ const filterDataByContent = async ({
 	searchString: string;
 	username?: string;
 	accessToken: string;
-	direction?: string;
+	direction?:
+		| typeof TableCellSortDirections.ASC
+		| typeof TableCellSortDirections.DESC;
 }) => {
 	if (!username) {
 		return [];
