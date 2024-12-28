@@ -48,11 +48,11 @@ importers:
         specifier: 1.4.0
         version: 1.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-menu':
-        specifier: 1.4.0
-        version: 1.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.4.1
+        version: 1.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-panel':
-        specifier: 1.2.2
-        version: 1.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.2.3
+        version: 1.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-spinner':
         specifier: 1.4.0
         version: 1.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1651,8 +1651,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-menu@1.4.0':
-    resolution: {integrity: sha512-JK4hePDJwxsk1PKFQrBGFEzjHApha1dfHN6rN5WwnOem0LpR8RPYzWxrCC7g3zDmNFreR1tFlS0v2wGQ3LwPvA==}
+  '@versini/ui-menu@1.4.1':
+    resolution: {integrity: sha512-4NIeUG5wD3LcJxWZE8p2j4hdBaoWYaPHlGFpRbdT3mWt5xnnD9sf2AgR52JvwkKbjwHqtoPc++2eOILcyoTf8Q==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1663,8 +1663,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-panel@1.2.2':
-    resolution: {integrity: sha512-r2BJA/rEH2X3hd8v21P6jdRiRbSgOdQQ1s2vgiXglmBs8e9MjcszEHtg+u2lpPLJAuq/qcLnsCSfsPPC8qBFMA==}
+  '@versini/ui-panel@1.2.3':
+    resolution: {integrity: sha512-HHwu63W9X8RrMYFtoA62eqNNW22JS8mijvcLMWOSfzC1TGHs8CCmPyDldhomrOvkuyXE/ye9i/3MUbEVH7UOmw==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -7321,7 +7321,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-menu@1.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-menu@1.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@floating-ui/react': 0.27.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
@@ -7341,7 +7341,7 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@versini/ui-panel@1.2.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-panel@1.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
       '@versini/ui-button': 1.6.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
