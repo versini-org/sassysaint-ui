@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.9.0...client-v5.10.0) (2024-12-28)
+
+
+### Features
+
+* optimized sort process for chats history table ([#703](https://github.com/versini-org/sassysaint-ui/issues/703)) ([fe5b846](https://github.com/versini-org/sassysaint-ui/commit/fe5b846645d4a8789dd6b2342faf8a20f9a36e1a))
+
 ## [5.9.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.8.2...client-v5.9.0) (2024-12-28)
 
 
