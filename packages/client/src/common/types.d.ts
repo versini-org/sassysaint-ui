@@ -1,3 +1,4 @@
+import { TableCellSortDirections } from "@versini/ui-table";
 import {
 	ACTION_ENGINE,
 	ACTION_LOCATION,
@@ -138,7 +139,9 @@ export type ActionTagsProps =
 export type StateHistoryProps = {
 	searchString: string;
 	sortedCell: string;
-	sortDirection: "asc" | "desc";
+	sortDirection:
+		| typeof TableCellSortDirections.ASC
+		| typeof TableCellSortDirections.DESC;
 };
 
 export type ActionHistoryProps =

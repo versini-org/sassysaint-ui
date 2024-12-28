@@ -23,7 +23,7 @@ const filterDataByContent = async ({
 	searchString,
 	username,
 	accessToken,
-	direction = "asc",
+	direction = TableCellSortDirections.ASC,
 }: {
 	searchString: string;
 	username?: string;
@@ -71,7 +71,9 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 
 	const [filteredHistory, setFilteredHistory] = useState<{
 		data: any[];
-		sortedDirection: "asc" | "desc";
+		sortedDirection:
+			| typeof TableCellSortDirections.ASC
+			| typeof TableCellSortDirections.DESC;
 	}>({
 		data: [],
 		sortedDirection: historyState.sortDirection,

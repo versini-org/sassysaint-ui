@@ -86,7 +86,12 @@ export const HistoryTable = ({
 	onOpenChange,
 }: {
 	dispatch: any;
-	filteredHistory: { data: any[]; sortedDirection: "asc" | "desc" };
+	filteredHistory: {
+		data: any[];
+		sortedDirection:
+			| typeof TableCellSortDirections.ASC
+			| typeof TableCellSortDirections.DESC;
+	};
 	onOpenChange: any;
 	setFilteredHistory: any;
 }) => {
