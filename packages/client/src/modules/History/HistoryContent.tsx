@@ -1,10 +1,10 @@
 import { useAuth } from "@versini/auth-provider";
 import { Button } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
+import { TableCellSortDirections } from "@versini/ui-table";
 import { TextInput } from "@versini/ui-textinput";
 import { useContext, useEffect, useRef, useState } from "react";
 
-import { TableCellSortDirections } from "@versini/ui-table";
 import {
 	ACTION_SEARCH,
 	LOCAL_STORAGE_PREFIX,
