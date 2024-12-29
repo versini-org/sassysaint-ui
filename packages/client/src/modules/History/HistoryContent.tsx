@@ -159,15 +159,17 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 							ref={inputRef}
 							defaultValue={historyState.searchString}
 							focusMode="light"
+							mode="dark"
 							name="Search"
 							label="Search"
 							onChange={onSearchChange}
-							spacing={{ t: 2, b: 2 }}
+							className="mt-2 mb-2"
 							{...(historyState.searchString && {
 								rightElement: (
 									<Button
 										disabled={!historyState.searchString}
-										mode="dark"
+										mode="light"
+										focusMode="light"
 										noBorder
 										size="small"
 										onClick={() => {

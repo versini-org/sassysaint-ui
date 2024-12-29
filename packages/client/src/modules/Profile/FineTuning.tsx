@@ -232,7 +232,7 @@ export const FineTuningPanel = ({
 								checked={userPreferences.engine === ENGINE_OPENAI}
 							/>
 							<Toggle
-								spacing={{ t: 2 }}
+								className="mt-2"
 								noBorder
 								label={"Anthropic"}
 								name={"Anthropic"}
@@ -244,7 +244,7 @@ export const FineTuningPanel = ({
 								as OpenAI.
 							</p>
 							<Toggle
-								spacing={{ t: 2 }}
+								className="mt-2"
 								noBorder
 								label={"Show Quick Engine Toggle"}
 								name={"show-toggle-engine-menu"}
@@ -257,9 +257,8 @@ export const FineTuningPanel = ({
 							</p>
 						</Card>
 						<Card
-							spacing={{ t: 4 }}
 							header={"Custom Instructions"}
-							className="prose-dark dark:prose-lighter"
+							className="prose-dark dark:prose-lighter mt-4"
 						>
 							<p>
 								What would you like <em>{APP_NAME}</em> to know about you to
@@ -286,8 +285,7 @@ export const FineTuningPanel = ({
 
 						<Card
 							header={"Location"}
-							className="prose-dark dark:prose-lighter"
-							spacing={{ t: 4 }}
+							className="prose-dark dark:prose-lighter mt-4"
 						>
 							<p>
 								You can share your location to receive customized responses
@@ -308,7 +306,7 @@ export const FineTuningPanel = ({
 								helperText="Enter your location or press auto-detect."
 							/>
 							<Button
-								spacing={{ t: 2 }}
+								className="mt-2"
 								size="small"
 								noBorder
 								disabled={userPreferences.loadingLocation}

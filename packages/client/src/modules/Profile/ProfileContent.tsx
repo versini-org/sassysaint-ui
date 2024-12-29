@@ -72,7 +72,7 @@ export const ProfileContent = () => {
 					),
 				})}
 				<ButtonIcon
-					spacing={{ t: 2 }}
+					className="mt-2"
 					size="small"
 					onClick={onClickFineTuning}
 					labelLeft="Engine Fine Tuning"
@@ -80,7 +80,7 @@ export const ProfileContent = () => {
 					<IconEdit className="size-3" monotone />
 				</ButtonIcon>
 				<ButtonIcon
-					spacing={{ t: 2, l: 2 }}
+					className="mt-2 ml-2"
 					size="small"
 					onClick={onClickTags}
 					labelLeft="Tags"
@@ -91,8 +91,7 @@ export const ProfileContent = () => {
 
 			{authenticationType !== AUTH_TYPES.PASSKEY && (
 				<Card
-					spacing={{ t: 4 }}
-					className="prose-dark dark:prose-lighter"
+					className="prose-dark dark:prose-lighter mt-4"
 					header={
 						<h2 className="m-0">
 							<Flexgrid columnGap={3} alignVertical="center">
@@ -109,7 +108,7 @@ export const ProfileContent = () => {
 					<p>{CARDS.PREFERENCES.PASSKEY_INSTRUCTIONS}</p>
 					<ButtonIcon
 						size="small"
-						spacing={{ t: 2 }}
+						className="mt-2"
 						onClick={registeringForPasskey}
 						labelLeft={CARDS.PREFERENCES.PASSKEY_BUTTON}
 					>
