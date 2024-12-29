@@ -137,10 +137,9 @@ export const TagsPanel = ({
 					<Card
 						key={`tag-slot-${tag.slot}`}
 						header={`Tag ${tag.slot + 1}`}
-						className="prose-dark dark:prose-lighter"
-						spacing={{ b: 2 }}
+						className="prose-dark dark:prose-lighter mb-2"
 					>
-						<Flexgrid spacing={{ t: 8, b: 6 }} columnGap={2} rowGap={6}>
+						<Flexgrid className="mt-8 mb-6" columnGap={2} rowGap={6}>
 							<FlexgridItem span={{ fallback: 12, sm: 6 }}>
 								<TextInput
 									label="Label"
@@ -173,7 +172,7 @@ export const TagsPanel = ({
 							</FlexgridItem>
 						</Flexgrid>
 						<Toggle
-							spacing={{ t: 2 }}
+							className="mt-2"
 							noBorder
 							label={"Enabled"}
 							name={tag.slot.toString()}
