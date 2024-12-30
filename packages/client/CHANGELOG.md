@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.0...client-v5.11.1) (2024-12-30)
+
+
+### Bug Fixes
+
+* pressing ENTER in search field should not trigger reset ([#713](https://github.com/versini-org/sassysaint-ui/issues/713)) ([fc55642](https://github.com/versini-org/sassysaint-ui/commit/fc5564263d273eb11925c1ff7c053ede2be279e8))
+
 ## [5.11.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.2...client-v5.11.0) (2024-12-30)
 
 
