@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.11.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.2...client-v5.11.0) (2024-12-30)
+
+
+### Features
+
+* adding capability to copy code snippets to clipboard ([#710](https://github.com/versini-org/sassysaint-ui/issues/710)) ([a04f2c8](https://github.com/versini-org/sassysaint-ui/commit/a04f2c86f2e2f5acc44d2e70742d4c5f7f675b28))
+
+
+### Bug Fixes
+
+* adding missing prod dependency ([#712](https://github.com/versini-org/sassysaint-ui/issues/712)) ([abfe84f](https://github.com/versini-org/sassysaint-ui/commit/abfe84fb684a4b792f05bfbcec05a19d56980987))
+
 ## [5.10.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.1...client-v5.10.2) (2024-12-30)
 
 
