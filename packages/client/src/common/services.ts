@@ -45,8 +45,20 @@ export const GRAPHQL_QUERIES = {
 			}
 		}
 	}`,
-	DELETE_CHAT: `mutation DeleteChat($id: String!, $userId: String!) {
-		deleteChat(id: $id, user: $userId) {
+	DELETE_CHAT: `mutation DeleteChat(
+	$id: String!,
+	$userId: String!,
+	$searchString: String,
+	$limit: Float,
+	$direction: String,
+	$truncateSize: Float) {
+		deleteChat(
+		id: $id,
+		user: $userId,
+		searchString: $searchString,
+		limit: $limit,
+		direction: $direction,
+		truncateSize: $truncateSize) {
 			timestamp
 			id
 			model

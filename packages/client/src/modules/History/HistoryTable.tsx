@@ -138,6 +138,10 @@ export const HistoryTable = ({
 				params: {
 					userId: user?.username || "",
 					id: item.id,
+					limit: 1,
+					searchString: historyState.searchString,
+					direction: historyState.sortDirection,
+					truncateSize: 100,
 				},
 			});
 
