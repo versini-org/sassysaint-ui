@@ -168,6 +168,7 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 							{...(historyState.searchString && {
 								rightElement: (
 									<Button
+										type="button"
 										disabled={!historyState.searchString}
 										mode="light"
 										focusMode="light"
