@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.1...client-v5.11.2) (2024-12-30)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([#715](https://github.com/versini-org/sassysaint-ui/issues/715)) ([9a412b1](https://github.com/versini-org/sassysaint-ui/commit/9a412b17511807f4ea4ce359b2f88876e9245214))
+
 ## [5.11.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.0...client-v5.11.1) (2024-12-30)
 
 
