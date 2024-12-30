@@ -231,10 +231,10 @@ export const HistoryTable = ({
 								<TableCell component="th" scope="row" className="text-gray-400">
 									<Flexgrid alignHorizontal="center">
 										{item.model && item.model.startsWith("claude") && (
-											<IconAnthropic className="size-4 sm:size-5" />
+											<IconAnthropic size="size-4 sm:size-5" />
 										)}
 										{item.model && item.model.startsWith("gpt") && (
-											<IconOpenAI className="size-4 sm:size-5" />
+											<IconOpenAI size="size-4 sm:size-5" />
 										)}
 									</Flexgrid>
 								</TableCell>
@@ -255,7 +255,7 @@ export const HistoryTable = ({
 												);
 											}}
 										>
-											<IconRestore className="h-3 w-3" monotone />
+											<IconRestore size="size-3" monotone />
 										</ButtonIcon>
 										<ButtonIcon
 											focusMode="alt-system"
@@ -274,7 +274,7 @@ export const HistoryTable = ({
 											}}
 										>
 											<div className="text-red-400">
-												<IconDelete className="h-3 w-3" monotone />
+												<IconDelete size="size-3" monotone />
 											</div>
 										</ButtonIcon>
 									</div>

@@ -77,7 +77,7 @@ export const ProfileContent = () => {
 					onClick={onClickFineTuning}
 					labelLeft="Engine Fine Tuning"
 				>
-					<IconEdit className="size-3" monotone />
+					<IconEdit size="size-3" monotone />
 				</ButtonIcon>
 				<ButtonIcon
 					className="mt-2 ml-2"
@@ -85,7 +85,7 @@ export const ProfileContent = () => {
 					onClick={onClickTags}
 					labelLeft="Tags"
 				>
-					<IconEdit className="size-3" monotone />
+					<IconEdit size="size-3" monotone />
 				</ButtonIcon>
 			</Card>
 
@@ -96,7 +96,7 @@ export const ProfileContent = () => {
 						<h2 className="m-0">
 							<Flexgrid columnGap={3} alignVertical="center">
 								<FlexgridItem>
-									<IconPasskey className="size-8" />
+									<IconPasskey size="size-8" />
 								</FlexgridItem>
 								<FlexgridItem>
 									<div>{CARDS.PREFERENCES.PASSKEY_TITLE}</div>
@@ -112,7 +112,7 @@ export const ProfileContent = () => {
 						onClick={registeringForPasskey}
 						labelLeft={CARDS.PREFERENCES.PASSKEY_BUTTON}
 					>
-						<IconPasskey className="size-5" monotone />
+						<IconPasskey size="size-5" monotone />
 					</ButtonIcon>
 				</Card>
 			)}
