@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.10.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.0...client-v5.10.1) (2024-12-30)
+
+
+### Bug Fixes
+
+* bump breaking dependencies to latest ([#705](https://github.com/versini-org/sassysaint-ui/issues/705)) ([17f4514](https://github.com/versini-org/sassysaint-ui/commit/17f45145f5a3114a01bac94913c1d137938b0d48))
+* **History:** truncating message on the server instead of the client ([#707](https://github.com/versini-org/sassysaint-ui/issues/707)) ([1b4bd62](https://github.com/versini-org/sassysaint-ui/commit/1b4bd62ebf800bee1c6a51debd345072552d3dc7))
+
 ## [5.10.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.9.0...client-v5.10.0) (2024-12-28)
 
 
