@@ -145,7 +145,7 @@ export const Login = () => {
 								labelRight={LOG_IN_PASSKEY}
 								onClick={loginWithPasskey}
 							>
-								<IconPasskey className="size-7" />
+								<IconPasskey size="size-7" />
 							</ButtonIcon>
 						</FlexgridItem>
 					</Flexgrid>

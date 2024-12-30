@@ -159,9 +159,9 @@ export const Toolbox = () => {
 						}
 					>
 						{state?.streaming ? (
-							<IconClose className="size-4" />
+							<IconClose size="size-4" />
 						) : (
-							<IconEdit className="size-4" />
+							<IconEdit size="size-4" />
 						)}
 					</ButtonIcon>
 				</div>
