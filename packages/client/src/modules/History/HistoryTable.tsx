@@ -25,13 +25,13 @@ import {
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import { CARDS } from "../../common/strings";
-import { pluralize, truncate } from "../../common/utilities";
+import { pluralize } from "../../common/utilities";
 import { HistoryContext } from "../App/AppContext";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 
 type HistoryItemProps = {
 	id: number;
-	messages: [];
+	messages: { content: string }[];
 	model: string;
 	timestamp: string;
 	usage: number;
@@ -72,11 +72,6 @@ const onClickRestore = async (
 	} catch (_error) {
 		// nothing to declare officer
 	}
-};
-
-const extractFirstUserMessage = (messages: any[]) => {
-	const message = messages[0];
-	return truncate(message?.content, 100);
 };
 
 export const HistoryTable = ({
@@ -226,7 +221,7 @@ export const HistoryTable = ({
 										wordBreak: "break-word",
 									}}
 								>
-									{extractFirstUserMessage(item.messages)}
+									{item.messages.length > 0 ? item.messages[0]?.content : ""}
 								</TableCell>
 
 								<TableCell component="th" scope="row" className="text-gray-400">
@@ -266,7 +261,10 @@ export const HistoryTable = ({
 												chatToDeleteRef.current = {
 													id: item.id,
 													timestamp: item.timestamp,
-													message: extractFirstUserMessage(item.messages),
+													message:
+														item.messages.length > 0
+															? item.messages[0]?.content
+															: "",
 												};
 												setShowConfirmation(!showConfirmation);
 											}}

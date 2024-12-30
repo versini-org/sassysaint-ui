@@ -45,6 +45,7 @@ const filterDataByContent = async ({
 				searchString,
 				limit: 1,
 				direction,
+				truncateSize: 100,
 			},
 		});
 		if (response.status === 200) {

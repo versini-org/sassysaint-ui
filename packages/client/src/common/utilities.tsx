@@ -8,10 +8,6 @@ export const isDev = !isProd;
 
 export const DOMAIN = isDev ? "gizmette.local.com" : "gizmette.com";
 
-export const truncate = (str: string, length: number) => {
-	return str.length > length ? str.substring(0, length) + "..." : str;
-};
-
 // function to convert latitude and longitude to degree minutes seconds format
 export const convertDDToDMS = (dd: number, lng: boolean) => {
 	const dir = dd < 0 ? (lng ? "W" : "S") : lng ? "E" : "N";
