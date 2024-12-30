@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.1...client-v5.10.2) (2024-12-30)
+
+
+### Bug Fixes
+
+* deleting chats should return to the same data as before minus the deleted chat ([#708](https://github.com/versini-org/sassysaint-ui/issues/708)) ([852e4e6](https://github.com/versini-org/sassysaint-ui/commit/852e4e61c3a9d81c573cd5f4464784ebbe57cc18))
+
 ## [5.10.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.10.0...client-v5.10.1) (2024-12-30)
 
 
