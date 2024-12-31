@@ -119,6 +119,7 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 				<TagsContext.Provider
 					value={{ state: stateTags, dispatch: dispatchTags }}
 				>
+					{/* 118 (prompt + tags height) + 45 (buffer) = 163 */}
 					<Main className="max-h-[calc(100svh_-_163px)]">
 						<MessagesContainer />
 					</Main>
