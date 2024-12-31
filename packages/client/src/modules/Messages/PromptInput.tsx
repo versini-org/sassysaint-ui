@@ -308,6 +308,7 @@ export const PromptInput = () => {
 						focusMode="light"
 						ref={buttonRef}
 						onClick={toolboxPrimaryAction}
+						className="mr-1"
 					>
 						{state?.streaming ? (
 							<IconClose size="size-4" />
