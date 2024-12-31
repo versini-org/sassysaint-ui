@@ -1,6 +1,7 @@
 import "katex/dist/katex.min.css";
 
 import { ButtonCopy } from "@versini/ui-button";
+import { Flexgrid, FlexgridItem } from "@versini/ui-system";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
@@ -36,17 +37,24 @@ const LazyReactMarkdownWithExtra = ({
 			components={{
 				pre: (node: PreNode) => {
 					return (
-						<div className="flex flex-row gap-2">
+						<>
+							<Flexgrid alignHorizontal="flex-end">
+								<FlexgridItem>
+									<ButtonCopy
+										copyToClipboard={() => handleCopyClick(node)}
+										labelRight="copy code"
+										radius="small"
+										className="mb-2 px-1"
+									/>
+								</FlexgridItem>
+							</Flexgrid>
+
 							<pre
 								{...node}
 								style={{ marginTop: 0, marginBottom: 0 }}
 								className="text-xs"
 							></pre>
-							{/* The extra div is needed to prevent flex from squashing the button */}
-							<div>
-								<ButtonCopy copyToClipboard={() => handleCopyClick(node)} />
-							</div>
-						</div>
+						</>
 					);
 				},
 			}}
