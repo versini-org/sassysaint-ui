@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.3...client-v5.11.4) (2024-12-31)
+
+
+### Bug Fixes
+
+* move "copy code" button above code block ([#720](https://github.com/versini-org/sassysaint-ui/issues/720)) ([195236c](https://github.com/versini-org/sassysaint-ui/commit/195236cf140f7e13a6d0ebe9aac7f100157fa855))
+
 ## [5.11.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.2...client-v5.11.3) (2024-12-31)
 
 
