@@ -13,7 +13,6 @@ import {
 	PASSWORD_PLACEHOLDER,
 } from "../../common/strings";
 import { getMessageContaintWrapperClass } from "../../common/utilities";
-import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
 
 export const Login = () => {
@@ -151,7 +150,6 @@ export const Login = () => {
 					</Flexgrid>
 				</form>
 			</Main>
-			<AppFooter />
 		</>
 	);
 };
