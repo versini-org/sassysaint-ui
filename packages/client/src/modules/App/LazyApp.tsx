@@ -119,7 +119,8 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 				<TagsContext.Provider
 					value={{ state: stateTags, dispatch: dispatchTags }}
 				>
-					<Main className="max-h-[calc(100svh_-_203px)]">
+					{/* 118 (prompt + tags height) + 45 (buffer) = 163 */}
+					<Main className="max-h-[calc(100svh_-_163px)]">
 						<MessagesContainer />
 					</Main>
 					<div className="md:mx-auto md:max-w-4xl w-11/12 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-1000">

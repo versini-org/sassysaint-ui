@@ -23,7 +23,7 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "2.0.0"
+		"@versini/ui-styles": "2.1.0"
 	},
 	"dependencies": {
 		"@versini/auth-provider": "7.4.0",
@@ -39,7 +39,7 @@
 		"@versini/ui-spinner": "2.0.5",
 		"@versini/ui-system": "2.0.6",
 		"@versini/ui-table": "2.0.8",
-		"@versini/ui-textarea": "2.0.5",
+		"@versini/ui-textarea": "2.1.1",
 		"@versini/ui-textinput": "2.0.5",
 		"@versini/ui-toggle": "2.0.5",
 		"@versini/ui-togglegroup": "2.0.5",

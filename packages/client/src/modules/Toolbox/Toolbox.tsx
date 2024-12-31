@@ -1,23 +1,14 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon } from "@versini/ui-button";
-import { IconClose, IconEdit } from "@versini/ui-icons";
+import { Button } from "@versini/ui-button";
 import { Flexgrid, FlexgridItem } from "@versini/ui-system";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
-import {
-	ACTION_RESET,
-	ACTION_SET_TAGS,
-	ACTION_TOGGLE_TAG,
-	ROLE_ASSISTANT,
-} from "../../common/constants";
+import { ACTION_SET_TAGS, ACTION_TOGGLE_TAG } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
-import { TOOLBOX } from "../../common/strings";
 import type { Tag } from "../../common/types";
-import { isLastMessageFromRole } from "../../common/utilities";
-import { AppContext, TagsContext } from "../App/AppContext";
+import { TagsContext } from "../App/AppContext";
 
 export const Toolbox = () => {
-	const { dispatch, state } = useContext(AppContext);
 	const { dispatch: tagsDispatch, state: tagsState } = useContext(TagsContext);
 	const { getAccessToken, user } = useAuth();
 
@@ -28,35 +19,6 @@ export const Toolbox = () => {
 	});
 
 	const toolboxClass = "mt-2 flex justify-center rounded-md";
-	const buttonRef = useRef<HTMLButtonElement>(null);
-	const buttonFocusedRef = useRef(false);
-
-	const toolboxPrimaryAction = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		dispatch({
-			type: ACTION_RESET,
-		});
-	};
-
-	/**
-	 * Focus the clear button when the chat is streaming,
-	 * but only if it was not manually focused before.
-	 */
-	useEffect(() => {
-		if (
-			state?.streaming === true &&
-			!buttonFocusedRef.current &&
-			buttonRef.current
-		) {
-			buttonFocusedRef.current = true;
-			buttonRef.current.focus();
-		}
-
-		if (state?.streaming === false) {
-			buttonFocusedRef.current = false;
-			buttonRef.current?.blur();
-		}
-	}, [state]);
 
 	const onClickToggleTag = (
 		e: { preventDefault: () => void },
@@ -143,29 +105,6 @@ export const Toolbox = () => {
 						);
 					})}
 			</Flexgrid>
-
-			{isLastMessageFromRole(ROLE_ASSISTANT, state) && (
-				<div className={toolboxClass}>
-					<ButtonIcon
-						noBorder
-						mode="dark"
-						focusMode="light"
-						ref={buttonRef}
-						onClick={toolboxPrimaryAction}
-						labelRight={
-							state?.streaming
-								? TOOLBOX.ACTION_WHILE_STREAMING.content
-								: TOOLBOX.ACTION_WHILE_NOT_STREAMING.content
-						}
-					>
-						{state?.streaming ? (
-							<IconClose size="size-4" />
-						) : (
-							<IconEdit size="size-4" />
-						)}
-					</ButtonIcon>
-				</div>
-			)}
 		</>
 	);
 };
