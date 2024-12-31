@@ -1,10 +1,8 @@
 import { useAuth } from "@versini/auth-provider";
 
 import { getMessageContaintWrapperClass } from "../../common/utilities";
-import { Toolbox } from "../Toolbox/Toolbox";
 import { MessagesContainerHeader } from "./MessagesContainerHeader";
 import { MessagesList } from "./MessagesList";
-import { PromptInput } from "./PromptInput";
 
 export const MessagesContainer = () => {
 	const { isAuthenticated } = useAuth();
@@ -16,9 +14,6 @@ export const MessagesContainer = () => {
 				<MessagesContainerHeader />
 				<MessagesList />
 			</div>
-
-			<Toolbox />
-			<PromptInput />
 		</>
 	);
 };

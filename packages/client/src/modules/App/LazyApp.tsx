@@ -17,8 +17,9 @@ import { historyReducer } from "../../common/reducers/historyReducer";
 import { tagsReducer } from "../../common/reducers/tagsReducer";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import type { ServerStatsProps } from "../../common/types";
-import { AppFooter } from "../Footer/AppFooter";
 import { MessagesContainer } from "../Messages/MessagesContainer";
+import { PromptInput } from "../Messages/PromptInput";
+import { Toolbox } from "../Toolbox/Toolbox";
 import { AppContext, HistoryContext, TagsContext } from "./AppContext";
 
 function App({ isComponent = false }: { isComponent?: boolean }) {
@@ -118,10 +119,13 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 				<TagsContext.Provider
 					value={{ state: stateTags, dispatch: dispatchTags }}
 				>
-					<Main>
+					<Main className="max-h-[calc(100svh_-_203px)]">
 						<MessagesContainer />
 					</Main>
-					<AppFooter serverStats={serverStats} />
+					<div className="md:mx-auto md:max-w-4xl w-11/12 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-1000">
+						<Toolbox />
+						<PromptInput />
+					</div>
 				</TagsContext.Provider>
 			</HistoryContext.Provider>
 		</AppContext.Provider>
