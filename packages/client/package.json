@@ -27,7 +27,7 @@
 	},
 	"dependencies": {
 		"@versini/auth-provider": "7.4.0",
-		"@versini/ui-bubble": "2.0.7",
+		"@versini/ui-bubble": "2.0.8",
 		"@versini/ui-button": "3.0.1",
 		"@versini/ui-card": "2.0.4",
 		"@versini/ui-footer": "2.0.4",

@@ -27,8 +27,8 @@ importers:
         specifier: 7.4.0
         version: 7.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-bubble':
-        specifier: 2.0.7
-        version: 2.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.0.8
+        version: 2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-button':
         specifier: 3.0.1
         version: 3.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1606,8 +1606,8 @@ packages:
   '@versini/dev-dependencies-types@3.0.1':
     resolution: {integrity: sha512-Jy/+g7t2nn85WXvqRdqmZnaZsI/WDLFYU60Qc7Im+D4RpItC/z4e4AAHStMrnA7ectGg4GVBlo2Tz9MpeJyN3g==}
 
-  '@versini/ui-bubble@2.0.7':
-    resolution: {integrity: sha512-oPEYGKjf5KDcgtAZU8ywh2rDWQfMwiCwfdnH92cejCpTUGbn9g3giDFZ0uXBhT9EcMx/LKDTj1jXh7PKtavGAQ==}
+  '@versini/ui-bubble@2.0.8':
+    resolution: {integrity: sha512-hc4dcJgQFgLDcNqU+2xCxW9LmKxdIFwTLUuka04TUI66OAu7wwQBGwUYFdUAt9b+sqLWeHiwmo1su2YHMxFhBw==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -7245,7 +7245,7 @@ snapshots:
       '@types/uuid': 10.0.0
       '@types/yargs': 17.0.33
 
-  '@versini/ui-bubble@2.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-bubble@2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
       '@versini/ui-button': 3.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
