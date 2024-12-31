@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.12.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.4...client-v5.12.0) (2024-12-31)
+
+
+### Features
+
+* moving the input prompt field at the bottom of the screen ([#722](https://github.com/versini-org/sassysaint-ui/issues/722)) ([b865976](https://github.com/versini-org/sassysaint-ui/commit/b865976a44129c2fb94a86506a0b623663040ee6))
+
 ## [5.11.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.3...client-v5.11.4) (2024-12-31)
 
 
