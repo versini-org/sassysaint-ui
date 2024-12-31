@@ -155,6 +155,7 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 				<>
 					<form autoComplete="off" onSubmit={onSubmit}>
 						<TextInput
+							autoCapitalize="off"
 							autoComplete="off"
 							autoCorrect="off"
 							ref={inputRef}
