@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.11.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.2...client-v5.11.3) (2024-12-31)
+
+
+### Bug Fixes
+
+* bump non-breaking dependencies to latest ([#717](https://github.com/versini-org/sassysaint-ui/issues/717)) ([ff691f0](https://github.com/versini-org/sassysaint-ui/commit/ff691f07a2f324a50e8a7bfc2581811694e57fbb))
+* do not auto-capitalize search text ([#718](https://github.com/versini-org/sassysaint-ui/issues/718)) ([7ae77ad](https://github.com/versini-org/sassysaint-ui/commit/7ae77ad26d54153bf55d09951b5727e7a2957b54))
+
 ## [5.11.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.1...client-v5.11.2) (2024-12-30)
 
 
