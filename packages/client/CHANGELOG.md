@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.12.0...client-v5.13.0) (2024-12-31)
+
+
+### Features
+
+* moving "new chat" button inline with the prompt area ([#724](https://github.com/versini-org/sassysaint-ui/issues/724)) ([4aa75fd](https://github.com/versini-org/sassysaint-ui/commit/4aa75fd4e4c3432add2d43938dbef1abdf8df3c3))
+
 ## [5.12.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.11.4...client-v5.12.0) (2024-12-31)
 
 
