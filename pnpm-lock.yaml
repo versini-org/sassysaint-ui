@@ -63,8 +63,8 @@ importers:
         specifier: 2.0.8
         version: 2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-textarea':
-        specifier: 2.1.0
-        version: 2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.1.1
+        version: 2.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-textinput':
         specifier: 2.0.5
         version: 2.0.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -1699,8 +1699,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-textarea@2.1.0':
-    resolution: {integrity: sha512-rB8OG3sYdiGvTlLUIhFkdSmsGiobH+o8qb0dRDbw99dgeHK50we9MX365jPpAgDKjcY4lGU9didzoGE7uTrsXw==}
+  '@versini/ui-textarea@2.1.1':
+    resolution: {integrity: sha512-t1QQr6gtUhpfLwnrEodQhTot/gqNVdgHQNq1DWN8iUM/WQm9yLKLljoOkg0wWmDdpcNiHMGAJ1kSDcysqKoKKw==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -7400,7 +7400,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-textarea@2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-textarea@2.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
       '@versini/ui-hooks': 4.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
