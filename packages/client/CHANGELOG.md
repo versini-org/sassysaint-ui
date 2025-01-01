@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.14.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.14.0...client-v5.14.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* minor layout update for the logo ([#728](https://github.com/versini-org/sassysaint-ui/issues/728)) ([f40e28e](https://github.com/versini-org/sassysaint-ui/commit/f40e28eb1fb30ebb626c58c3def825eef0d04365))
+* remove debug code that went to prod by mistake ([#730](https://github.com/versini-org/sassysaint-ui/issues/730)) ([767484e](https://github.com/versini-org/sassysaint-ui/commit/767484e2f338810b4519fdbe53b396283f88b967))
+
 ## [5.14.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.13.0...client-v5.14.0) (2025-01-01)
 
 
