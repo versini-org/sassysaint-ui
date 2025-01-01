@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.1...client-v5.16.2) (2025-01-01)
+
+
+### Bug Fixes
+
+* isMobile was really for iPhone 16 pro ([#739](https://github.com/versini-org/sassysaint-ui/issues/739)) ([20a36d1](https://github.com/versini-org/sassysaint-ui/commit/20a36d102af08deb41b8b4302314c50380456226))
+
 ## [5.16.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.0...client-v5.16.1) (2025-01-01)
 
 
