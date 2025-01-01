@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.14.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.13.0...client-v5.14.0) (2025-01-01)
+
+
+### Features
+
+* sticky header + new chat trigger in header too ([#726](https://github.com/versini-org/sassysaint-ui/issues/726)) ([ddc2908](https://github.com/versini-org/sassysaint-ui/commit/ddc2908d853ff9ad8fbaa3b14e39b25570ddfab8))
+
 ## [5.13.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.12.0...client-v5.13.0) (2024-12-31)
 
 
