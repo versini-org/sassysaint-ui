@@ -36,7 +36,7 @@ export const Footer = () => {
 	}, [state]);
 
 	return (
-		<div
+		<footer
 			className={clsx(
 				"md:mx-auto md:max-w-4xl w-11/12 fixed left-1/2 transform -translate-x-1/2 z-1000",
 				footerClass,
@@ -44,6 +44,6 @@ export const Footer = () => {
 		>
 			<Toolbox />
 			<PromptInput />
-		</div>
+		</footer>
 	);
 };
