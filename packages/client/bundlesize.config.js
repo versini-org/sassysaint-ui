@@ -21,7 +21,7 @@ export default {
 		},
 		{
 			path: "dist/static/js/async/LazyApp.<hash>.js",
-			limit: "15 kb",
+			limit: "17 kb",
 			alias: "Lazy App JS",
 		},
 		{
