@@ -40,9 +40,18 @@ export const MessageAssistant = ({
 		initialValue: false,
 	});
 
+	const footerContent = {
+		[ASSISTANT_FOOTER_KEYS.MODEL]:
+			state && state.model && showEngineDetails ? state.model : null,
+		[ASSISTANT_FOOTER_KEYS.PLUGIN]: name && showEngineDetails ? name : null,
+		[ASSISTANT_FOOTER_KEYS.PROCESSING_TIME]:
+			processingTime && showEngineDetails
+				? durationFormatter(processingTime)
+				: null,
+	};
+
 	return (
 		<>
-			<div className="h-0.5" />
 			{loading ? (
 				<Bubble>
 					<Spinner type="dots" />
@@ -51,18 +60,7 @@ export const MessageAssistant = ({
 				<Bubble
 					copyToClipboard={children}
 					copyToClipboardFocusMode="light"
-					footer={{
-						[ASSISTANT_FOOTER_KEYS.MODEL]:
-							state && state.model && !state.streaming && showEngineDetails
-								? state.model
-								: null,
-						[ASSISTANT_FOOTER_KEYS.PLUGIN]:
-							name && showEngineDetails ? name : null,
-						[ASSISTANT_FOOTER_KEYS.PROCESSING_TIME]:
-							processingTime && showEngineDetails
-								? durationFormatter(processingTime)
-								: null,
-					}}
+					footer={footerContent}
 				>
 					{children &&
 						(children.includes("$$") || children.includes("```")) && (
