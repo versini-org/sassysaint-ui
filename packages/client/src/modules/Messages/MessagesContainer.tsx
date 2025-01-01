@@ -3,7 +3,6 @@ import { ButtonIcon } from "@versini/ui-button";
 import { useResizeObserver } from "@versini/ui-hooks";
 import { IconDown } from "@versini/ui-icons";
 import {
-	use,
 	useCallback,
 	useContext,
 	useEffect,
