@@ -5,7 +5,6 @@ import { TextArea } from "@versini/ui-textarea";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { IconClose } from "@versini/ui-icons";
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
@@ -259,7 +258,6 @@ export const PromptInput = () => {
 
 	return (
 		<>
-			{state?.streaming ? <IconClose size="size-4" /> : null}
 			<form className="mt-2" onSubmit={onSubmit}>
 				<TextArea
 					mode="dark"
