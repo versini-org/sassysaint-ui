@@ -23,7 +23,8 @@
 		"test:watch": "vitest"
 	},
 	"devDependencies": {
-		"@versini/ui-styles": "2.1.0"
+		"@versini/ui-styles": "2.1.0",
+		"@versini/ui-types": "3.0.2"
 	},
 	"dependencies": {
 		"@versini/auth-provider": "7.4.0",

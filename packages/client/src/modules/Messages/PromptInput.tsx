@@ -1,15 +1,14 @@
 import { useAuth } from "@versini/auth-provider";
-import { Button, ButtonIcon } from "@versini/ui-button";
+import { Button } from "@versini/ui-button";
 import { getHotkeyHandler } from "@versini/ui-hooks";
 import { TextArea } from "@versini/ui-textarea";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import { IconAdd, IconClose } from "@versini/ui-icons";
+import { IconClose } from "@versini/ui-icons";
 import {
 	ACTION_MESSAGE,
 	ACTION_MODEL,
-	ACTION_RESET,
 	ACTION_RESET_TAGS,
 	ACTION_STREAMING,
 	DEFAULT_AI_ENGINE,
@@ -24,6 +23,7 @@ import {
 import { restCall } from "../../common/services";
 import { CLIPBOARD_TAG, SEND, TYPE_QUESTION } from "../../common/strings";
 import { AppContext, TagsContext } from "../App/AppContext";
+import { NewChatButton } from "../Common/NewChatButton";
 
 const dispatchStreaming = (dispatch: any, streaming: boolean) => {
 	dispatch({
@@ -59,32 +59,10 @@ export const PromptInput = () => {
 	const [userInput, setUserInput] = useState("");
 	const { getAccessToken, user } = useAuth();
 
-	const buttonRef = useRef<HTMLButtonElement>(null);
-	const buttonFocusedRef = useRef(false);
 	const inputRef = useRef<HTMLTextAreaElement>(null);
 	const readerRef = useRef<ReadableStreamDefaultReader<Uint8Array> | null>(
 		null,
 	);
-
-	/**
-	 * Focus the clear button when the chat is streaming,
-	 * but only if it was not manually focused before.
-	 */
-	useEffect(() => {
-		if (
-			state?.streaming === true &&
-			!buttonFocusedRef.current &&
-			buttonRef.current
-		) {
-			buttonFocusedRef.current = true;
-			buttonRef.current.focus();
-		}
-
-		if (state?.streaming === false) {
-			buttonFocusedRef.current = false;
-			buttonRef.current?.blur();
-		}
-	}, [state]);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: see below
 	useEffect(() => {
@@ -233,13 +211,6 @@ export const PromptInput = () => {
 		setUserInput("");
 	};
 
-	const toolboxPrimaryAction = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault();
-		dispatch({
-			type: ACTION_RESET,
-		});
-	};
-
 	/**
 	 * If the user clicks on a tag, the content of the tag is placed in the
 	 * input field, the input field gets the focus, and we reset the tag
@@ -287,47 +258,35 @@ export const PromptInput = () => {
 	}, [state]);
 
 	return (
-		<form className="mt-2" onSubmit={onSubmit}>
-			<TextArea
-				mode="dark"
-				focusMode="light"
-				ref={inputRef}
-				name="chat-input"
-				label={TYPE_QUESTION}
-				helperText={"Press ENTER to add a new line"}
-				helperTextOnFocus
-				required
-				value={userInput}
-				onChange={(e) => setUserInput(e.target.value)}
-				onKeyDown={getHotkeyHandler([["mod+Enter", onSubmit]])}
-				leftElement={
-					<ButtonIcon
-						radius="small"
-						noBorder
-						mode="light"
-						focusMode="light"
-						ref={buttonRef}
-						onClick={toolboxPrimaryAction}
-					>
-						{state?.streaming ? (
-							<IconClose size="size-4" />
-						) : (
-							<IconAdd size="size-4" />
-						)}
-					</ButtonIcon>
-				}
-				rightElement={
-					<Button
-						disabled={state?.streaming}
-						noBorder
-						type="submit"
-						mode="light"
-						focusMode="light"
-					>
-						{SEND}
-					</Button>
-				}
-			/>
-		</form>
+		<>
+			{state?.streaming ? <IconClose size="size-4" /> : null}
+			<form className="mt-2" onSubmit={onSubmit}>
+				<TextArea
+					mode="dark"
+					focusMode="light"
+					ref={inputRef}
+					name="chat-input"
+					label={TYPE_QUESTION}
+					helperText={"Press ENTER to add a new line"}
+					helperTextOnFocus
+					required
+					value={userInput}
+					onChange={(e) => setUserInput(e.target.value)}
+					onKeyDown={getHotkeyHandler([["mod+Enter", onSubmit]])}
+					leftElement={<NewChatButton />}
+					rightElement={
+						<Button
+							disabled={state?.streaming}
+							noBorder
+							type="submit"
+							mode="light"
+							focusMode="light"
+						>
+							{SEND}
+						</Button>
+					}
+				/>
+			</form>
+		</>
 	);
 };
