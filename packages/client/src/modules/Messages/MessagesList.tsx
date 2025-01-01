@@ -21,7 +21,7 @@ export const MessagesList = () => {
 	const { state } = useContext(AppContext);
 
 	return (
-		<>
+		<div className="space-y-6 mt-2">
 			{state &&
 				state.messages.length > 0 &&
 				state.messages.map((data, index) => {
@@ -60,6 +60,6 @@ export const MessagesList = () => {
 					<LazyMessageAssistant loading />
 				</Suspense>
 			)}
-		</>
+		</div>
 	);
 };
