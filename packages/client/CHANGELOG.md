@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.15.0...client-v5.16.0) (2025-01-01)
+
+
+### Features
+
+* moving prompt from center to bottom depending on state ([#735](https://github.com/versini-org/sassysaint-ui/issues/735)) ([6640075](https://github.com/versini-org/sassysaint-ui/commit/6640075ad4daf43373bc6ee772a48ed2ac8bb060))
+
 ## [5.15.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.14.1...client-v5.15.0) (2025-01-01)
 
 
