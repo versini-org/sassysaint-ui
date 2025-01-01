@@ -22,6 +22,7 @@ export const MessagesContainer = () => {
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [scrollContainerRef, rect] = useResizeObserver<HTMLDivElement>();
 	const containerClass = getMessageContaintWrapperClass(isAuthenticated);
+	const previousStreamingRef = useRef(false);
 
 	const scrollToBottom = useCallback(() => {
 		const container = scrollContainerRef.current;
@@ -77,8 +78,6 @@ export const MessagesContainer = () => {
 			updateButtonVisibility();
 		}
 	}, [state, updateButtonVisibility]);
-
-	const previousStreamingRef = useRef(false);
 
 	/**
 	 * Scroll to bottom when streaming starts.
