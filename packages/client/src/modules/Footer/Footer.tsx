@@ -8,7 +8,7 @@ import { Toolbox } from "../Toolbox/Toolbox";
 export const Footer = () => {
 	const { state } = useContext(AppContext);
 	const previousStreamingRef = useRef(false);
-	const isMobile = window.innerWidth < 400;
+	const isMobile = window.innerWidth < 403;
 	const [footerClass, setFooterClass] = useState(
 		isMobile ? "bottom-10" : "top-[245px]",
 	);
