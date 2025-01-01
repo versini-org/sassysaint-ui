@@ -8,12 +8,18 @@ import { Toolbox } from "../Toolbox/Toolbox";
 export const Footer = () => {
 	const { state } = useContext(AppContext);
 	const previousStreamingRef = useRef(false);
-	const [footerClass, setFooterClass] = useState("top-[245px]");
+	const isMobile = window.innerWidth < 400;
+	const [footerClass, setFooterClass] = useState(
+		isMobile ? "bottom-10" : "top-[245px]",
+	);
 
 	/**
 	 * Scroll to bottom when streaming starts.
 	 */
 	useEffect(() => {
+		if (isMobile) {
+			return;
+		}
 		if (state) {
 			const handleStreamingChange = () => {
 				if (!previousStreamingRef.current && state.streaming) {
@@ -24,16 +30,19 @@ export const Footer = () => {
 			};
 			handleStreamingChange();
 		}
-	}, [state]);
+	}, [state, isMobile]);
 
 	useEffect(() => {
+		if (isMobile) {
+			return;
+		}
 		if (state && state.messages.length === 0) {
 			setFooterClass("top-[245px]");
 		}
 		if (state && !state.streaming && state.messages.length > 0) {
 			setFooterClass("bottom-10");
 		}
-	}, [state]);
+	}, [state, isMobile]);
 
 	return (
 		<footer
