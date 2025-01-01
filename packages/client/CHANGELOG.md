@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.16.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.0...client-v5.16.1) (2025-01-01)
+
+
+### Bug Fixes
+
+* keep the footer at the bottom all the time in mobile ([#737](https://github.com/versini-org/sassysaint-ui/issues/737)) ([7b37a5a](https://github.com/versini-org/sassysaint-ui/commit/7b37a5ae7551f453d48105c1a7ce6c6ad3005dab))
+
 ## [5.16.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.15.0...client-v5.16.0) (2025-01-01)
 
 
