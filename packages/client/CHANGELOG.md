@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.15.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.14.1...client-v5.15.0) (2025-01-01)
+
+
+### Features
+
+* adding "scroll to bottom" floating button ([#734](https://github.com/versini-org/sassysaint-ui/issues/734)) ([9cfd150](https://github.com/versini-org/sassysaint-ui/commit/9cfd1503f6b66a22caa3164421d957bff15d9c94))
+
+
+### Bug Fixes
+
+* regression - missing space between bubbles ([#732](https://github.com/versini-org/sassysaint-ui/issues/732)) ([e9dda18](https://github.com/versini-org/sassysaint-ui/commit/e9dda18f9c4e939a53038d789219a730842527d5))
+
 ## [5.14.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.14.0...client-v5.14.1) (2025-01-01)
 
 
