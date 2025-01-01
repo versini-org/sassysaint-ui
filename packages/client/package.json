@@ -46,6 +46,7 @@
 		"@versini/ui-togglegroup": "2.0.5",
 		"@versini/ui-truncate": "2.0.8",
 		"autoprefixer": "10.4.20",
+		"clsx": "2.1.1",
 		"postcss": "8.4.49",
 		"pretty-ms": "9.2.0",
 		"react-dom": "19.0.0",
