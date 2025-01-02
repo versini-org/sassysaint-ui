@@ -149,10 +149,11 @@ export const Login = () => {
 					<Flexgrid alignHorizontal="center">
 						<FlexgridItem span={6}>
 							<ButtonIcon
+								variant="selected"
 								mode="dark"
 								focusMode="light"
 								fullWidth
-								noBorder
+								// noBorder
 								className="mb-4 mt-1"
 								labelRight={LOG_IN_PASSKEY}
 								onClick={loginWithPasskey}
