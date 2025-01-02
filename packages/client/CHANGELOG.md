@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.17.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.17.0...client-v5.17.1) (2025-01-02)
+
+
+### Bug Fixes
+
+* new name - take 2 ([#743](https://github.com/versini-org/sassysaint-ui/issues/743)) ([e4e4a3f](https://github.com/versini-org/sassysaint-ui/commit/e4e4a3f0b198ed9d34c112f9caffc0a8e61fcc90))
+
 ## [5.17.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.2...client-v5.17.0) (2025-01-02)
 
 
