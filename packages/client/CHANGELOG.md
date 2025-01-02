@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.1...client-v5.18.2) (2025-01-02)
+
+
+### Bug Fixes
+
+* double padding clashes in production build ([#750](https://github.com/versini-org/sassysaint-ui/issues/750)) ([3a2d35a](https://github.com/versini-org/sassysaint-ui/commit/3a2d35a9b1bd9b5e6088b4c0d3d65ded224e23a1))
+
 ## [5.18.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.0...client-v5.18.1) (2025-01-02)
 
 
