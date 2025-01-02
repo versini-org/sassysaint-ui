@@ -6372,5 +6372,49 @@
       "limit": "126 kb",
       "passed": true
     }
+  },
+  "5.18.0": {
+    "Initial CSS": {
+      "fileSize": 73739,
+      "fileSizeGzip": 10292,
+      "limit": "11 kb",
+      "passed": true
+    },
+    "Lazy Message Assistant CSS": {
+      "fileSize": 28665,
+      "fileSizeGzip": 7871,
+      "limit": "9 kb",
+      "passed": true
+    },
+    "Initial JS + Vendors (React, auth-provider, etc.)": {
+      "fileSize": 279003,
+      "fileSizeGzip": 85545,
+      "limit": "86 kb",
+      "passed": true
+    },
+    "Lazy App JS": {
+      "fileSize": 74506,
+      "fileSizeGzip": 15906,
+      "limit": "17 kb",
+      "passed": true
+    },
+    "Lazy Header JS": {
+      "fileSize": 160064,
+      "fileSizeGzip": 47217,
+      "limit": "47 kb",
+      "passed": true
+    },
+    "Lazy Message Assistant JS": {
+      "fileSize": 161486,
+      "fileSizeGzip": 45782,
+      "limit": "46 kb",
+      "passed": true
+    },
+    "Lazy Markdown With Extra JS": {
+      "fileSize": 445974,
+      "fileSizeGzip": 128841,
+      "limit": "126 kb",
+      "passed": true
+    }
   }
 }
