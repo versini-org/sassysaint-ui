@@ -27,11 +27,11 @@ importers:
         specifier: 7.4.0
         version: 7.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-bubble':
-        specifier: 2.0.11
-        version: 2.0.11(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.0.12
+        version: 2.0.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-button':
-        specifier: 3.2.0
-        version: 3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 3.2.1
+        version: 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-card':
         specifier: 2.0.5
         version: 2.0.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -42,17 +42,17 @@ importers:
         specifier: 4.3.0
         version: 4.3.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-icons':
-        specifier: 3.0.2
-        version: 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 3.1.0
+        version: 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-main':
         specifier: 2.0.5
         version: 2.0.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-menu':
-        specifier: 2.0.6
-        version: 2.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.0.7
+        version: 2.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-panel':
-        specifier: 1.2.13
-        version: 1.2.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 1.2.14
+        version: 1.2.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-spinner':
         specifier: 2.0.5
         version: 2.0.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -60,8 +60,8 @@ importers:
         specifier: 2.0.6
         version: 2.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-table':
-        specifier: 2.0.8
-        version: 2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.0.9
+        version: 2.0.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-textarea':
         specifier: 2.1.1
         version: 2.1.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -75,8 +75,8 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@types/react-dom@19.0.2(@types/react@19.0.2))(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-truncate':
-        specifier: 2.0.8
-        version: 2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 2.0.9
+        version: 2.0.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
@@ -1612,14 +1612,14 @@ packages:
   '@versini/dev-dependencies-types@3.0.1':
     resolution: {integrity: sha512-Jy/+g7t2nn85WXvqRdqmZnaZsI/WDLFYU60Qc7Im+D4RpItC/z4e4AAHStMrnA7ectGg4GVBlo2Tz9MpeJyN3g==}
 
-  '@versini/ui-bubble@2.0.11':
-    resolution: {integrity: sha512-y1x4/TLVlj7s5yAWeihVZlFKhsiSscpl/CHXP9Hz0NqDVL+IkTc6UprSDGHzzPHBkDOBzlyRSU64OXCSiY/F6w==}
+  '@versini/ui-bubble@2.0.12':
+    resolution: {integrity: sha512-i97J0joLwn4LwN6R/iVZuTBgsXnBXazP89c9JCZP/celB7/3ChD9XqQgweyeSdcsZAurU3kmvwDwnRoGpdojYw==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-button@3.2.0':
-    resolution: {integrity: sha512-SnUYD1F602ZVqhkpz66FggEoxpV87Z4/feK+Zp2KTVi0C/fmgt8tdcswGmfRfZDd2+GJfenp+RfZsxOoOrAc4A==}
+  '@versini/ui-button@3.2.1':
+    resolution: {integrity: sha512-o2xc1uG27UpDoOZgDiQbmxaYYSXP3b48k27iaAaMMmmLdWySH8qfl0k94YAeCNh+KP95S+gc0ot/EB05NPD/kg==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1642,8 +1642,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-icons@3.0.2':
-    resolution: {integrity: sha512-pah0C+orcok2Wsi+ZQOcPMiUZp8ajaGKfryQgN3e5A8PRkrqcRM9lXw7AED0ZTWGIu0AaVsXbH7GCO2tyLU3sA==}
+  '@versini/ui-icons@3.1.0':
+    resolution: {integrity: sha512-f7qmqRHnGyTv6KN5cTjK1dL1ArgSWnKO2M5r9SAf8evB52BPfP6hWKCxAPND5ttlWqrE77uW8oiWrAHnYqy0LQ==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1660,8 +1660,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-menu@2.0.6':
-    resolution: {integrity: sha512-8Oq4A4xa4YQVriy5891JfVtFmSzo8Jlmp1wwJBm16QqUbdgIW3SrX33L8JjBgI5BrN1+RejfMYMxcOIlxZD0GA==}
+  '@versini/ui-menu@2.0.7':
+    resolution: {integrity: sha512-KQKDwToVIfVEsIqXxFQy4T64BrjRNQLYzGA5xbs0r+SzPPF6gj7DWrEST140lPwFdhUCK7bNcJMynOvXxR/a/w==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1672,8 +1672,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-panel@1.2.13':
-    resolution: {integrity: sha512-IhMYmjeImyMSvQRgPszt1vFmLSjIV+81fhIBg+UpUj7oEbaCzcc3s288YUzKAsjaFI3yhPvVk9mghwfi66NKeA==}
+  '@versini/ui-panel@1.2.14':
+    resolution: {integrity: sha512-8UdYYW76mr3wLmn0alzd3vHUPpY29vQ4Wlb2mx1KAt7w4s6oL0NdMEy82sE4yLkC8xe0SuJ6EQqIfuhJldbwjg==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1699,8 +1699,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-table@2.0.8':
-    resolution: {integrity: sha512-XErih9pNHM2/naHuo2iirGEZ22P66W3XHlZsUspFsSS2+KKmO+0LygNHBcmG844VGjbo6QDKGi0FAP/cbCj/hw==}
+  '@versini/ui-table@2.0.9':
+    resolution: {integrity: sha512-t4yYVJf9ktv8GVowY03dMdfhDRLSnvT5CvROv+Uu4ZNHUrg4JW/KdItBVS3cv6aUCmN7Denjk/nkkvfTMMXvfg==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -1729,8 +1729,8 @@ packages:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
 
-  '@versini/ui-truncate@2.0.8':
-    resolution: {integrity: sha512-F9BlyjJSKMy4i6VkpSdq3WDDcY7ZsxrAyLNKUUrA5b+z2pDvB1HLYy2mVQULhuXwehUBU0m4VmjsLMJUmu0imw==}
+  '@versini/ui-truncate@2.0.9':
+    resolution: {integrity: sha512-8Z3sKB9Gr+2uUmV0htUFDBor7mqGetbV37evAoHYUIvF26+LiH//M2VGk/tzwS8yP3wqY5GfA9Jj6nnJPsTLlA==}
     peerDependencies:
       react: ^18.3.1 || ^19.0.0
       react-dom: ^18.3.1 || ^19.0.0
@@ -7251,11 +7251,11 @@ snapshots:
       '@types/uuid': 10.0.0
       '@types/yargs': 17.0.33
 
-  '@versini/ui-bubble@2.0.11(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-bubble@2.0.12(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
-      '@versini/ui-button': 3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@versini/ui-icons': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-button': 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-icons': 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-types': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx: 2.1.1
       react: 19.0.0
@@ -7264,10 +7264,10 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-button@3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-button@3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
-      '@versini/ui-icons': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-icons': 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-types': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx: 2.1.1
       react: 19.0.0
@@ -7303,7 +7303,7 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@versini/ui-icons@3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-icons@3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@versini/ui-svgicon': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-types': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -7326,7 +7326,7 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-menu@2.0.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-menu@2.0.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@floating-ui/react': 0.27.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
@@ -7346,11 +7346,11 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  '@versini/ui-panel@1.2.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-panel@1.2.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
-      '@versini/ui-button': 3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@versini/ui-icons': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-button': 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-icons': 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-modal': 1.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx: 2.1.1
       react: 19.0.0
@@ -7393,11 +7393,11 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  '@versini/ui-table@2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-table@2.0.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
-      '@versini/ui-button': 3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@versini/ui-icons': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-button': 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-icons': 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@versini/ui-types': 3.0.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx: 2.1.1
       react: 19.0.0
@@ -7457,10 +7457,10 @@ snapshots:
       - '@types/react-dom'
       - ts-node
 
-  '@versini/ui-truncate@2.0.8(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@versini/ui-truncate@2.0.9(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2)))
-      '@versini/ui-button': 3.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@versini/ui-button': 3.2.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       tailwindcss: 3.4.17(ts-node@10.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@types/node@22.10.2)(typescript@5.7.2))

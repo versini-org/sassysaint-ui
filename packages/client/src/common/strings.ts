@@ -10,6 +10,7 @@ export const PASSWORD_PLACEHOLDER = "Password";
 export const POWERED_BY = "Powered by ";
 export const SEND = "Send";
 export const PROFILE_TITLE = "Profile";
+export const SETTINGS_TITLE = "Settings";
 export const STATS = "Statistics";
 export const HISTORY_TITLE = "Chat history";
 export const ABOUT_TITLE = "About";
@@ -29,7 +30,7 @@ export const TAGS_DESCRIPTION =
 
 export const CARDS = {
 	PREFERENCES: {
-		TITLE: "User settings",
+		TITLE: "User profile",
 		NAME: "Name",
 		EMAIL: "Email",
 		ENGINE_DETAILS: "Show message statistics",
@@ -61,5 +62,8 @@ export const CARDS = {
 		BUILD_TIMESTAMP: "Build date",
 		ENGINE: "AI model",
 		PLUGIN: "Plugin",
+	},
+	SETTINGS_ENGINE: {
+		TITLE: "AI Engine",
 	},
 };
