@@ -1,5 +1,5 @@
 export const APP_MOTTO = "ASK! ME! ANYTHING!";
-export const APP_NAME = "LeeLou";
+export const APP_NAME = "Callisto";
 export const APP_OWNER = "gizmette.com";
 export const FAKE_USER_EMAIL = "fake-user@fake.com";
 export const FAKE_USER_NAME = "fake-user-name";
