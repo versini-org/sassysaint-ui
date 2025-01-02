@@ -153,7 +153,6 @@ export const Login = () => {
 								mode="dark"
 								focusMode="light"
 								fullWidth
-								// noBorder
 								className="mb-4 mt-1"
 								labelRight={LOG_IN_PASSKEY}
 								onClick={loginWithPasskey}
