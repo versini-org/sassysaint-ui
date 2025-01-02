@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.17.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.2...client-v5.17.0) (2025-01-02)
+
+
+### Features
+
+* new year new name ([#741](https://github.com/versini-org/sassysaint-ui/issues/741)) ([2c75e0f](https://github.com/versini-org/sassysaint-ui/commit/2c75e0f8c08e8d02fd2913bae3f5432e601b40c3))
+
 ## [5.16.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.16.1...client-v5.16.2) (2025-01-01)
 
 
