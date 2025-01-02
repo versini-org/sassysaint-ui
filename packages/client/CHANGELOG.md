@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.17.1...client-v5.18.0) (2025-01-02)
+
+
+### Features
+
+* moving chat details into profile panel and settings panel standalone ([#745](https://github.com/versini-org/sassysaint-ui/issues/745)) ([9a51a5b](https://github.com/versini-org/sassysaint-ui/commit/9a51a5bd9c1becdf340d60f5183f44a3b742f106))
+
 ## [5.17.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.17.0...client-v5.17.1) (2025-01-02)
 
 
