@@ -211,7 +211,7 @@ export const getMessageContaintWrapperClass = ({
 }) => {
 	const paddingTop = isAuthenticated ? "pt-0" : "pt-10";
 	return clsx(
-		"flex-1 overflow-y-auto bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7 pt-10",
+		"flex-1 overflow-y-auto bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7",
 		paddingTop,
 		extraClass,
 	);
