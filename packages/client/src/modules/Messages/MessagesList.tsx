@@ -10,11 +10,9 @@ import {
 import { isLastMessageFromRole } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 
-const LazyMessageAssistant = lazy(
+const MessageAssistant = lazy(
 	() =>
-		import(
-			/* webpackChunkName: "LazyMessageAssistant" */ "./LazyMessageAssistant"
-		),
+		import(/* webpackChunkName: "LazyMessageAssistant" */ "./MessageAssistant"),
 );
 
 export const MessagesList = () => {
@@ -29,12 +27,9 @@ export const MessagesList = () => {
 					if ((role === ROLE_ASSISTANT || role === ROLE_INTERNAL) && content) {
 						return (
 							<Suspense key={`${index}-${role}`} fallback={<span></span>}>
-								<LazyMessageAssistant
-									name={name}
-									processingTime={processingTime}
-								>
+								<MessageAssistant name={name} processingTime={processingTime}>
 									{content}
-								</LazyMessageAssistant>
+								</MessageAssistant>
 							</Suspense>
 						);
 					}
@@ -57,7 +52,7 @@ export const MessagesList = () => {
 
 			{isLastMessageFromRole(ROLE_USER, state) && (
 				<Suspense fallback={<span></span>}>
-					<LazyMessageAssistant loading />
+					<MessageAssistant loading />
 				</Suspense>
 			)}
 		</div>

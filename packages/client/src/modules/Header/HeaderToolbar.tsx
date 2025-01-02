@@ -93,7 +93,7 @@ const LazyHeader = () => {
 			<HistoryPanel open={showHistory} onOpenChange={setShowHistory} />
 			<About open={showAbout} onOpenChange={setShowAbout} />
 
-			<div className="sticky top-0 bg-slate-900 py-4">
+			<div className="bg-slate-900 py-4 px-4 rounded-t-md">
 				<Flexgrid alignHorizontal="space-between" alignVertical="center">
 					<FlexgridItem>
 						<NewChatButton mode="dark" radius="large" />

@@ -13,7 +13,7 @@ import {
 
 import { getMessageContaintWrapperClass } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
-import { MessagesContainerHeader } from "./MessagesContainerHeader";
+import { Logo } from "../Logo/Logo";
 import { MessagesList } from "./MessagesList";
 
 export const MessagesContainer = () => {
@@ -21,7 +21,10 @@ export const MessagesContainer = () => {
 	const { state } = useContext(AppContext);
 	const [showScrollButton, setShowScrollButton] = useState(false);
 	const [scrollContainerRef, rect] = useResizeObserver<HTMLDivElement>();
-	const containerClass = getMessageContaintWrapperClass(isAuthenticated);
+	const containerClass = getMessageContaintWrapperClass({
+		isAuthenticated,
+		extraClass: "rounded-b-md",
+	});
 	const previousStreamingRef = useRef(false);
 
 	const scrollToBottom = useCallback(() => {
@@ -109,8 +112,8 @@ export const MessagesContainer = () => {
 					</ButtonIcon>
 				</div>
 			)}
-			<MessagesContainerHeader />
-			<MessagesList />
+			<Logo />
+			{isAuthenticated && <MessagesList />}
 		</div>
 	);
 };
