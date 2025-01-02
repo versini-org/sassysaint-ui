@@ -12,8 +12,11 @@ import {
 	LOG_IN_PASSKEY,
 	PASSWORD_PLACEHOLDER,
 } from "../../common/strings";
-import { getMessageContaintWrapperClass } from "../../common/utilities";
-import { MessagesContainerHeader } from "../Messages/MessagesContainerHeader";
+import {
+	getMainPaddingClass,
+	getMessageContaintWrapperClass,
+} from "../../common/utilities";
+import { Logo } from "../Logo/Logo";
 
 export const Login = () => {
 	const { login, logoutReason, loginWithPasskey } = useAuth();
@@ -52,9 +55,19 @@ export const Login = () => {
 
 	return (
 		<>
-			<Main>
-				<div className={getMessageContaintWrapperClass()}>
-					<MessagesContainerHeader />
+			<Main
+				className={getMainPaddingClass({
+					extraClass: "mt-5",
+				})}
+				noMargin
+				noPadding
+			>
+				<div
+					className={getMessageContaintWrapperClass({
+						extraClass: "rounded-md",
+					})}
+				>
+					<Logo />
 				</div>
 				<form className="mt-5" onSubmit={handleLogin}>
 					<Flexgrid alignHorizontal="center" rowGap={7}>

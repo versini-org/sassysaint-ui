@@ -202,12 +202,32 @@ export const durationFormatter = (value: number) => {
 		: "N/A";
 };
 
-export const getMessageContaintWrapperClass = (isAuthenticated?: boolean) => {
-	const paddingTop = isAuthenticated || isDev ? "pt-0" : "pt-10";
+export const getMessageContaintWrapperClass = ({
+	isAuthenticated,
+	extraClass,
+}: {
+	isAuthenticated?: boolean;
+	extraClass?: string;
+}) => {
+	const paddingTop = isAuthenticated ? "pt-0" : "pt-10";
 	return clsx(
-		"flex-1 overflow-y-auto rounded-md bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7",
+		"flex-1 overflow-y-auto bg-slate-900 px-4 pb-10 text-base leading-6 text-slate-300 shadow-sm sm:text-base sm:leading-7 pt-10",
 		paddingTop,
+		extraClass,
 	);
+};
+
+/**
+ * We need to add padding to the main containers (header and main):
+ * padding on small screens: 2 (pretty on iPhone)
+ * no padding on medium screens and above
+ */
+export const getMainPaddingClass = ({
+	extraClass,
+}: {
+	extraClass?: string;
+}) => {
+	return clsx("px-2 sm:px-0", extraClass);
 };
 
 /**

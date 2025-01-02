@@ -1,8 +1,9 @@
 import { useAuth } from "@versini/auth-provider";
+import { Header } from "@versini/ui-header";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { Main } from "@versini/ui-main";
 import { TableCellSortDirections } from "@versini/ui-table";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useReducer, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -17,13 +18,18 @@ import { historyReducer } from "../../common/reducers/historyReducer";
 import { tagsReducer } from "../../common/reducers/tagsReducer";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
 import type { ServerStatsProps } from "../../common/types";
+import { getMainPaddingClass } from "../../common/utilities";
 import { Footer } from "../Footer/Footer";
 import { MessagesContainer } from "../Messages/MessagesContainer";
 import { AppContext, HistoryContext, TagsContext } from "./AppContext";
 
+const HeaderToolbar = lazy(
+	() => import(/* webpackChunkName: "LazyHeader" */ "../Header/HeaderToolbar"),
+);
+
 function App({ isComponent = false }: { isComponent?: boolean }) {
 	const loadingServerStatsRef = useRef(false);
-	const { getAccessToken, user } = useAuth();
+	const { getAccessToken, user, isAuthenticated } = useAuth();
 	const [cachedSearchedString] = useLocalStorage({
 		key: LOCAL_STORAGE_PREFIX + LOCAL_STORAGE_SEARCH,
 		initialValue: "",
@@ -107,6 +113,15 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 		}, 500);
 	});
 
+	/**
+	 * We need to set the main tag height depending on other elements:
+	 * - footer (including the input and tags): 118px + 10px (fixed position) = 128px
+	 * - header: 64px + 20px margin top = 84px
+	 * - buffer: 48px
+	 * - total: 128px + 84px + 38px = 250px
+	 */
+	const mainClassName = "max-h-[calc(100svh_-_250px)]";
+
 	return (
 		<AppContext.Provider value={{ state, dispatch, serverStats }}>
 			<HistoryContext.Provider
@@ -118,8 +133,28 @@ function App({ isComponent = false }: { isComponent?: boolean }) {
 				<TagsContext.Provider
 					value={{ state: stateTags, dispatch: dispatchTags }}
 				>
-					{/* 118 (prompt + tags height) + 45 (buffer) = 163 */}
-					<Main className="max-h-[calc(100svh_-_163px)]">
+					<Header
+						noColors
+						noMargin
+						noPadding
+						noBorder
+						className={getMainPaddingClass({
+							extraClass: "mt-5",
+						})}
+					>
+						{isAuthenticated && (
+							<Suspense fallback={<div />}>
+								<HeaderToolbar />
+							</Suspense>
+						)}
+					</Header>
+					<Main
+						className={getMainPaddingClass({
+							extraClass: mainClassName,
+						})}
+						noMargin
+						noPadding
+					>
 						<MessagesContainer />
 					</Main>
 					<Footer />

@@ -7,10 +7,10 @@ import { Suspense, lazy, useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const LazyReactMarkdownWithExtra = lazy(
+const ReactMarkdownWithExtra = lazy(
 	() =>
 		import(
-			/* webpackChunkName: "LazyMarkdownWithExtra" */ "./LazyMarkdownWithExtra"
+			/* webpackChunkName: "LazyMarkdownWithExtra" */ "./MarkdownWithExtra"
 		),
 );
 
@@ -65,7 +65,7 @@ export const MessageAssistant = ({
 					{children &&
 						(children.includes("$$") || children.includes("```")) && (
 							<Suspense fallback={<div />}>
-								<LazyReactMarkdownWithExtra content={children} />
+								<ReactMarkdownWithExtra content={children} />
 							</Suspense>
 						)}
 
