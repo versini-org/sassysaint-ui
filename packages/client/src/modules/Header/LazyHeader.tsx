@@ -4,12 +4,12 @@ import { useLocalStorage } from "@versini/ui-hooks";
 import {
 	IconAnthropic,
 	IconBack,
-	IconChart,
 	IconHistory,
 	IconInfo,
 	IconOpenAI,
 	IconProfile,
 	IconSettings,
+	IconSliders,
 } from "@versini/ui-icons";
 import { Menu, MenuItem, MenuSeparator } from "@versini/ui-menu";
 import { ToggleGroup, ToggleGroupItem } from "@versini/ui-togglegroup";
@@ -25,21 +25,21 @@ import {
 	LOCAL_STORAGE_PREFIX,
 } from "../../common/constants";
 import { SERVICE_TYPES, serviceCall } from "../../common/services";
-import { LOG_OUT, STATS } from "../../common/strings";
+import { LOG_OUT } from "../../common/strings";
 import { About } from "../About/About";
 import { AppContext } from "../App/AppContext";
-import { ChatDetails } from "../ChatDetails/ChatDetails";
 import { ConfirmationPanel } from "../Common/ConfirmationPanel";
 import { NewChatButton } from "../Common/NewChatButton";
 import { HistoryPanel } from "../History/HistoryPanel";
 import { Profile } from "../Profile/Profile";
+import { SettingsPanel } from "../Settings/SettingsPanel";
 
 const LazyHeader = () => {
 	const { state, dispatch, serverStats } = useContext(AppContext);
 
 	const [engine, setEngine] = useState(state?.engine || DEFAULT_AI_ENGINE);
 	const [showProfile, setShowProfile] = useState(false);
-	const [showChatDetails, setShowChatDetails] = useState(false);
+	const [showSettings, setShowSettings] = useState(false);
 	const [showHistory, setShowHistory] = useState(false);
 	const [showAbout, setShowAbout] = useState(false);
 	const [showConfirmation, setShowConfirmation] = useState(false);
@@ -54,8 +54,8 @@ const LazyHeader = () => {
 	const onClickProfile = () => {
 		setShowProfile(!showProfile);
 	};
-	const onClickChatDetails = () => {
-		setShowChatDetails(!showChatDetails);
+	const onClickSettings = () => {
+		setShowSettings(!showSettings);
 	};
 	const onClickHistory = () => {
 		setShowHistory(!showHistory);
@@ -89,7 +89,7 @@ const LazyHeader = () => {
 			</ConfirmationPanel>
 
 			<Profile open={showProfile} onOpenChange={setShowProfile} />
-			<ChatDetails open={showChatDetails} onOpenChange={setShowChatDetails} />
+			<SettingsPanel open={showSettings} onOpenChange={setShowSettings} />
 			<HistoryPanel open={showHistory} onOpenChange={setShowHistory} />
 			<About open={showAbout} onOpenChange={setShowAbout} />
 
@@ -175,9 +175,9 @@ const LazyHeader = () => {
 										icon={<IconProfile />}
 									/>
 									<MenuItem
-										label={STATS}
-										onClick={onClickChatDetails}
-										icon={<IconChart />}
+										label="Settings"
+										onClick={onClickSettings}
+										icon={<IconSliders />}
 									/>
 									<MenuItem
 										label="History"
