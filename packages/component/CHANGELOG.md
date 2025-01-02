@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.5.10](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.5.9...sassysaint-v5.5.10) (2025-01-02)
+
+
+### Bug Fixes
+
+* better variant color for passkey login button ([#749](https://github.com/versini-org/sassysaint-ui/issues/749)) ([9eba73f](https://github.com/versini-org/sassysaint-ui/commit/9eba73f6150a47bdc6f9ee8705ca64741b679ded))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.18.1
+
 ## [5.5.9](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.5.8...sassysaint-v5.5.9) (2025-01-02)
 
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.18.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.0...client-v5.18.1) (2025-01-02)
+
+
+### Bug Fixes
+
+* better variant color for passkey login button ([#749](https://github.com/versini-org/sassysaint-ui/issues/749)) ([9eba73f](https://github.com/versini-org/sassysaint-ui/commit/9eba73f6150a47bdc6f9ee8705ca64741b679ded))
+* minor refactor - mostly extracting header toolbar ([#747](https://github.com/versini-org/sassysaint-ui/issues/747)) ([f06dcbd](https://github.com/versini-org/sassysaint-ui/commit/f06dcbdb10a727a9127b55feb7502e6c0734be34))
+
 ## [5.18.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.17.1...client-v5.18.0) (2025-01-02)
 
 
