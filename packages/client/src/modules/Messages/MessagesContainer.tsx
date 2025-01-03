@@ -11,6 +11,7 @@ import {
 	useState,
 } from "react";
 
+import clsx from "clsx";
 import { getMessageContaintWrapperClass } from "../../common/utilities";
 import { AppContext } from "../App/AppContext";
 import { Logo } from "../Logo/Logo";
@@ -103,12 +104,20 @@ export const MessagesContainer = () => {
 			{showScrollButton && (
 				<div className="bottom-44 z-40 fixed left-1/2 transform -translate-x-1/2">
 					<ButtonIcon
-						className="bg-white hover:bg-white active:bg-slate-400"
+						className={clsx(
+							"dark:bg-slate-50 dark:hover:bg-slate-300 dark:active:bg-slate-400",
+							"bg-slate-500 hover:bg-slate-600 active:bg-slate-700",
+						)}
+						noBorder
 						size="medium"
 						mode="dark"
 						onClick={scrollToBottom}
 					>
-						<IconDown monotone size="size-3" className="text-copy-dark" />
+						<IconDown
+							monotone
+							size="size-4"
+							className="dark:text-copy-dark text-copy-lighter"
+						/>
 					</ButtonIcon>
 				</div>
 			)}
