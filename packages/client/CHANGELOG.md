@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.18.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.2...client-v5.18.3) (2025-01-03)
+
+
+### Bug Fixes
+
+* better dark vs light "scroll to bottom" button color ([#754](https://github.com/versini-org/sassysaint-ui/issues/754)) ([01c68ea](https://github.com/versini-org/sassysaint-ui/commit/01c68eaaf11e1116aba588f171708cf3f83702b6))
+* removing current chat stats from profile due to invalid data ([#752](https://github.com/versini-org/sassysaint-ui/issues/752)) ([85e8014](https://github.com/versini-org/sassysaint-ui/commit/85e8014905e664ef342f795b3509154799157d9f))
+
 ## [5.18.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.1...client-v5.18.2) (2025-01-02)
 
 
