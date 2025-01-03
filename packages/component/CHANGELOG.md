@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.5.13](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.5.12...sassysaint-v5.5.13) (2025-01-03)
+
+
+### Bug Fixes
+
+* **History:** minor optimization on rendering history table ([#755](https://github.com/versini-org/sassysaint-ui/issues/755)) ([37faee7](https://github.com/versini-org/sassysaint-ui/commit/37faee7100ad6c176db5d9a8358059d0b4118dda))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @sassysaint/client bumped to 5.18.4
+
 ## [5.5.12](https://github.com/versini-org/sassysaint-ui/compare/sassysaint-v5.5.11...sassysaint-v5.5.12) (2025-01-03)
 
 

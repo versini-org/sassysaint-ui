@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.18.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.3...client-v5.18.4) (2025-01-03)
+
+
+### Bug Fixes
+
+* **History:** minor optimization on rendering history table ([#755](https://github.com/versini-org/sassysaint-ui/issues/755)) ([37faee7](https://github.com/versini-org/sassysaint-ui/commit/37faee7100ad6c176db5d9a8358059d0b4118dda))
+
 ## [5.18.3](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.2...client-v5.18.3) (2025-01-03)
 
 
