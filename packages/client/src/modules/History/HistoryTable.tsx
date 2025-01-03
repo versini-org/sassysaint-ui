@@ -3,7 +3,6 @@ import { ButtonIcon } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { IconDelete, IconRestore } from "@versini/ui-icons";
 import { IconAnthropic, IconOpenAI } from "@versini/ui-icons";
-import { Flexgrid } from "@versini/ui-system";
 import {
 	Table,
 	TableBody,
@@ -228,56 +227,53 @@ export const HistoryTable = ({
 									{item.messages.length > 0 ? item.messages[0]?.content : ""}
 								</TableCell>
 
-								<TableCell component="th" scope="row" className="text-gray-400">
-									<Flexgrid alignHorizontal="center">
-										{item.model && item.model.startsWith("claude") && (
-											<IconAnthropic size="size-4 sm:size-5" />
-										)}
-										{item.model && item.model.startsWith("gpt") && (
-											<IconOpenAI size="size-4 sm:size-5" />
-										)}
-									</Flexgrid>
+								<TableCell
+									component="th"
+									scope="row"
+									className="text-gray-400"
+									align="center"
+								>
+									{item.model && item.model.startsWith("claude") && (
+										<IconAnthropic size="size-4 sm:size-5" />
+									)}
+									{item.model && item.model.startsWith("gpt") && (
+										<IconOpenAI size="size-4 sm:size-5" />
+									)}
 								</TableCell>
 
-								<TableCell className="px-2">
-									<div className="flex justify-end gap-2">
-										<ButtonIcon
-											focusMode="alt-system"
-											noBorder
-											label="Restore chat"
-											onClick={async () => {
-												const accessToken = await getAccessToken();
-												onClickRestore(
-													item,
-													dispatch,
-													onOpenChange,
-													accessToken,
-												);
-											}}
-										>
-											<IconRestore size="size-3" monotone />
-										</ButtonIcon>
-										<ButtonIcon
-											focusMode="alt-system"
-											noBorder
-											label="Delete chat"
-											onClick={() => {
-												chatToDeleteRef.current = {
-													id: item.id,
-													timestamp: item.timestamp,
-													message:
-														item.messages.length > 0
-															? item.messages[0]?.content
-															: "",
-												};
-												setShowConfirmation(!showConfirmation);
-											}}
-										>
-											<div className="text-red-400">
-												<IconDelete size="size-3" monotone />
-											</div>
-										</ButtonIcon>
-									</div>
+								<TableCell align="right">
+									<ButtonIcon
+										className="mr-2"
+										focusMode="alt-system"
+										noBorder
+										label="Restore chat"
+										onClick={async () => {
+											const accessToken = await getAccessToken();
+											onClickRestore(item, dispatch, onOpenChange, accessToken);
+										}}
+									>
+										<IconRestore size="size-3" monotone />
+									</ButtonIcon>
+									<ButtonIcon
+										focusMode="alt-system"
+										noBorder
+										label="Delete chat"
+										onClick={() => {
+											chatToDeleteRef.current = {
+												id: item.id,
+												timestamp: item.timestamp,
+												message:
+													item.messages.length > 0
+														? item.messages[0]?.content
+														: "",
+											};
+											setShowConfirmation(!showConfirmation);
+										}}
+									>
+										<div className="text-red-400">
+											<IconDelete size="size-3" monotone />
+										</div>
+									</ButtonIcon>
 								</TableCell>
 							</TableRow>
 						) : null;
