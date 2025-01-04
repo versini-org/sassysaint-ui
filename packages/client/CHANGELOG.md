@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.19.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.19.0...client-v5.19.1) (2025-01-04)
+
+
+### Bug Fixes
+
+* **history:** delay rendering with useLayoutEffect to reduce flashing ([#759](https://github.com/versini-org/sassysaint-ui/issues/759)) ([708c744](https://github.com/versini-org/sassysaint-ui/commit/708c74462617782114cb15b1cbb8c840c79a63f3))
+
 ## [5.19.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.4...client-v5.19.0) (2025-01-04)
 
 
