@@ -13,12 +13,21 @@ import {
 	TableHead,
 	TableRow,
 } from "@versini/ui-table";
-import { useContext, useRef, useState } from "react";
+import {
+	Fragment,
+	useCallback,
+	useContext,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 
 import {
 	ACTION_RESET,
 	ACTION_RESTORE,
 	ACTION_SORT,
+	INFINITE_SCROLL_LIMIT,
+	INFINITE_SCROLL_THRESHOLD,
 	LOCAL_STORAGE_PREFIX,
 	LOCAL_STORAGE_SORT,
 } from "../../common/constants";
@@ -90,12 +99,16 @@ export const HistoryTable = ({
 	setFilteredHistory: any;
 }) => {
 	const { user, getAccessToken } = useAuth();
+	const infinityScrollMarkerRef = useRef<HTMLTableRowElement>(null);
 	const chatToDeleteRef = useRef({
 		id: 0,
 		timestamp: "",
 		message: "",
 	});
 	const [showConfirmation, setShowConfirmation] = useState(false);
+	const [lastEntryToLoad, setLastEntryToLoad] = useState(
+		INFINITE_SCROLL_LIMIT + INFINITE_SCROLL_THRESHOLD,
+	);
 	const { state: historyState, dispatch: historyDispatch } =
 		useContext(HistoryContext);
 	const [, setCachedSortDirection] = useLocalStorage({
@@ -152,6 +165,24 @@ export const HistoryTable = ({
 		}
 	};
 
+	const handleObserver = useCallback((entries: IntersectionObserverEntry[]) => {
+		const target = entries[0];
+		if (target.isIntersecting) {
+			setLastEntryToLoad((prev) => prev + INFINITE_SCROLL_LIMIT);
+		}
+	}, []);
+
+	useEffect(() => {
+		const option: IntersectionObserverInit = {
+			// root: null,
+			rootMargin: "20px",
+		};
+		const observer = new IntersectionObserver(handleObserver, option);
+		if (infinityScrollMarkerRef.current) {
+			observer.observe(infinityScrollMarkerRef.current);
+		}
+	});
+
 	return (
 		<>
 			<ConfirmationPanel
@@ -188,6 +219,7 @@ export const HistoryTable = ({
 			>
 				<TableHead>
 					<TableRow>
+						<TableCell className="sr-only">Row</TableCell>
 						<TableCellSort
 							buttonClassName="text-xs sm:text-sm"
 							cellId="timestamp"
@@ -208,80 +240,95 @@ export const HistoryTable = ({
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{filteredHistory.data.map((item: HistoryItemProps, idx: any) => {
-						return item?.messages?.length > 0 ? (
-							<TableRow key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
-								<TableCell
-									component="th"
-									scope="row"
-									className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm max-w-20 sm:max-w-none"
-								>
-									{item.timestamp}
-								</TableCell>
-								<TableCell
-									className="max-w-[100px] text-white sm:max-w-full text-xs sm:text-sm"
-									style={{
-										wordBreak: "break-word",
-									}}
-								>
-									{item.messages.length > 0 ? item.messages[0]?.content : ""}
-								</TableCell>
-
-								<TableCell
-									component="th"
-									scope="row"
-									className="text-gray-400"
-									align="center"
-								>
-									{item.model && item.model.startsWith("claude") && (
-										<IconAnthropic size="size-4 sm:size-5" />
+					{filteredHistory.data
+						.slice(0, lastEntryToLoad)
+						.map((item: HistoryItemProps, idx: any) => {
+							return item?.messages?.length > 0 ? (
+								<Fragment key={`${CARDS.HISTORY.TITLE}-${item.id}-${idx}`}>
+									{idx === lastEntryToLoad - INFINITE_SCROLL_THRESHOLD && (
+										<tr ref={infinityScrollMarkerRef} />
 									)}
-									{item.model && item.model.startsWith("gpt") && (
-										<IconOpenAI size="size-4 sm:size-5" />
-									)}
-								</TableCell>
+									<TableRow>
+										<TableCell>{idx + 1}</TableCell>
+										<TableCell
+											component="th"
+											scope="row"
+											className="text-gray-400 sm:whitespace-nowrap text-xs sm:text-sm max-w-20 sm:max-w-none"
+										>
+											{item.timestamp}
+										</TableCell>
+										<TableCell
+											className="max-w-[100px] text-white sm:max-w-full text-xs sm:text-sm"
+											style={{
+												wordBreak: "break-word",
+											}}
+										>
+											{item.messages.length > 0
+												? item.messages[0]?.content
+												: ""}
+										</TableCell>
 
-								<TableCell align="right">
-									<ButtonIcon
-										className="mr-2"
-										focusMode="alt-system"
-										noBorder
-										label="Restore chat"
-										onClick={async () => {
-											const accessToken = await getAccessToken();
-											onClickRestore(item, dispatch, onOpenChange, accessToken);
-										}}
-									>
-										<IconRestore size="size-3" monotone />
-									</ButtonIcon>
-									<ButtonIcon
-										focusMode="alt-system"
-										noBorder
-										label="Delete chat"
-										onClick={() => {
-											chatToDeleteRef.current = {
-												id: item.id,
-												timestamp: item.timestamp,
-												message:
-													item.messages.length > 0
-														? item.messages[0]?.content
-														: "",
-											};
-											setShowConfirmation(!showConfirmation);
-										}}
-									>
-										<div className="text-red-400">
-											<IconDelete size="size-3" monotone />
-										</div>
-									</ButtonIcon>
-								</TableCell>
-							</TableRow>
-						) : null;
-					})}
+										<TableCell
+											component="th"
+											scope="row"
+											className="text-gray-400"
+											align="center"
+										>
+											{item.model && item.model.startsWith("claude") && (
+												<IconAnthropic size="size-4 sm:size-5" />
+											)}
+											{item.model && item.model.startsWith("gpt") && (
+												<IconOpenAI size="size-4 sm:size-5" />
+											)}
+										</TableCell>
+
+										<TableCell align="right">
+											<ButtonIcon
+												className="mr-2"
+												focusMode="alt-system"
+												noBorder
+												label="Restore chat"
+												onClick={async () => {
+													const accessToken = await getAccessToken();
+													onClickRestore(
+														item,
+														dispatch,
+														onOpenChange,
+														accessToken,
+													);
+												}}
+											>
+												<IconRestore size="size-3" monotone />
+											</ButtonIcon>
+											<ButtonIcon
+												focusMode="alt-system"
+												noBorder
+												label="Delete chat"
+												onClick={() => {
+													chatToDeleteRef.current = {
+														id: item.id,
+														timestamp: item.timestamp,
+														message:
+															item.messages.length > 0
+																? item.messages[0]?.content
+																: "",
+													};
+													setShowConfirmation(!showConfirmation);
+												}}
+											>
+												<div className="text-red-400">
+													<IconDelete size="size-3" monotone />
+												</div>
+											</ButtonIcon>
+										</TableCell>
+									</TableRow>
+								</Fragment>
+							) : null;
+						})}
 				</TableBody>
 				<TableFooter>
 					<TableRow>
-						<TableCell colSpan={4}>
+						<TableCell colSpan={1000}>
 							<div>
 								{pluralize(
 									`${filteredHistory.data.length} chat`,
