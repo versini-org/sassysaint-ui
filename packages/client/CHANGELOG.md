@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.19.2](https://github.com/versini-org/sassysaint-ui/compare/client-v5.19.1...client-v5.19.2) (2025-01-04)
+
+
+### Bug Fixes
+
+* **History:** fetch data before rendering the Panel to prevent flash ([#761](https://github.com/versini-org/sassysaint-ui/issues/761)) ([2b7f629](https://github.com/versini-org/sassysaint-ui/commit/2b7f629ca0dc0a34478aa0364e84f7bee7a734a2))
+
 ## [5.19.1](https://github.com/versini-org/sassysaint-ui/compare/client-v5.19.0...client-v5.19.1) (2025-01-04)
 
 
