@@ -3,7 +3,7 @@ import { Button } from "@versini/ui-button";
 import { useLocalStorage } from "@versini/ui-hooks";
 import { TableCellSortDirections } from "@versini/ui-table";
 import { TextInput } from "@versini/ui-textinput";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 
 import {
 	ACTION_SEARCH,
@@ -110,7 +110,7 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 		e.preventDefault();
 	};
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (loadingInitialDataRef.current) {
 			return;
 		}
@@ -131,7 +131,7 @@ export const HistoryContent = ({ onOpenChange }: HistoryContentProps) => {
 		})();
 	});
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (historyState.sortDirection !== filteredHistory.sortedDirection) {
 			const sortedData = [...filteredHistory.data].sort((a, b) => {
 				if (historyState.sortedCell === "timestamp") {
