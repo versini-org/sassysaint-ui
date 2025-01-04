@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.19.0](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.4...client-v5.19.0) (2025-01-04)
+
+
+### Features
+
+* adding infinite scrolling to history table ([#757](https://github.com/versini-org/sassysaint-ui/issues/757)) ([e7cd697](https://github.com/versini-org/sassysaint-ui/commit/e7cd697736368b8e4eebcc435b76736bd3c181cc))
+
 ## [5.18.4](https://github.com/versini-org/sassysaint-ui/compare/client-v5.18.3...client-v5.18.4) (2025-01-03)
 
 
